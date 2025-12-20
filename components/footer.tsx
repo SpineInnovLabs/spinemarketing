@@ -3,22 +3,28 @@ import { Github, Linkedin, Twitter } from "lucide-react"
 
 const footerLinks = {
   product: [
-    { name: "Features", href: "#services" },
+    { name: "Features", href: "#features" },
+    { name: "Templates", href: "#templates" },
     { name: "Pricing", href: "#pricing" },
     { name: "Integrations", href: "#" },
-    { name: "Changelog", href: "#" },
   ],
-  company: [
-    { name: "About", href: "#" },
-    { name: "Blog", href: "#" },
-    { name: "Careers", href: "#" },
-    { name: "Contact", href: "#" },
+  solutions: [
+    { name: "Customer Success", href: "#" },
+    { name: "Sales Operations", href: "#" },
+    { name: "Marketing Automation", href: "#" },
+    { name: "Support Teams", href: "#" },
   ],
   resources: [
     { name: "Documentation", href: "#" },
-    { name: "Help Center", href: "#" },
+    { name: "API Reference", href: "#" },
     { name: "Community", href: "#" },
-    { name: "Workshops", href: "#" },
+    { name: "Blog", href: "#" },
+  ],
+  company: [
+    { name: "About", href: "#" },
+    { name: "Careers", href: "#" },
+    { name: "Contact", href: "#" },
+    { name: "Partners", href: "#" },
   ],
   legal: [
     { name: "Privacy", href: "#" },
@@ -30,16 +36,19 @@ const footerLinks = {
 
 export function Footer() {
   return (
-    <footer className="border-t border-border/40 bg-background">
+    <footer id="footer" role="contentinfo" className="border-t border-border/40 bg-background">
       <div className="container mx-auto px-4 py-12 md:py-16">
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-5">
+        <nav aria-label="Footer" className="grid gap-8 md:grid-cols-2 lg:grid-cols-6">
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center space-x-2">
               <div className="h-8 w-8 rounded-lg bg-primary" />
               <span className="text-xl font-bold">IntegrateWise</span>
             </Link>
-            <p className="mt-4 text-sm text-muted-foreground">Expert integration solutions for modern businesses.</p>
+            <p className="mt-4 text-sm text-muted-foreground">Normalize once. Render anywhere.</p>
+            <Link href="mailto:connect@integratewise.co" className="mt-4 block text-sm text-primary hover:underline">
+              connect@integratewise.co
+            </Link>
             <div className="mt-6 flex items-center gap-4">
               <Link
                 href="#"
@@ -83,9 +92,9 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="mb-4 text-sm font-semibold">Company</h3>
+            <h3 className="mb-4 text-sm font-semibold">Solutions</h3>
             <ul className="space-y-3">
-              {footerLinks.company.map((link) => (
+              {footerLinks.solutions.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
@@ -115,6 +124,22 @@ export function Footer() {
           </div>
 
           <div>
+            <h3 className="mb-4 text-sm font-semibold">Company</h3>
+            <ul className="space-y-3">
+              {footerLinks.company.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
             <h3 className="mb-4 text-sm font-semibold">Legal</h3>
             <ul className="space-y-3">
               {footerLinks.legal.map((link) => (
@@ -129,7 +154,7 @@ export function Footer() {
               ))}
             </ul>
           </div>
-        </div>
+        </nav>
 
         <div className="mt-12 border-t border-border/40 pt-8 text-center text-sm text-muted-foreground">
           <p>&copy; {new Date().getFullYear()} IntegrateWise. All rights reserved.</p>

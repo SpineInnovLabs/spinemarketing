@@ -1,55 +1,56 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Check } from "lucide-react"
+import Link from "next/link"
 
 const plans = [
   {
     name: "Starter",
-    price: "$2,999",
+    price: "$499",
     period: "/month",
-    description: "Perfect for small teams getting started with integration",
-    features: [
-      "Up to 5 integrations",
-      "Email support",
-      "Basic MuleSoft setup",
-      "Monthly strategy calls",
-      "Documentation access",
-    ],
+    description: "Perfect for small teams getting started",
+    features: ["Up to 3 templates", "500 events/month", "Email support", "Basic integrations", "Community access"],
     cta: "Start Free Trial",
+    href: "/start",
+    dataCta: "pricing-starter",
     highlighted: false,
   },
   {
-    name: "Professional",
-    price: "$7,999",
+    name: "Growth",
+    price: "$1,999",
     period: "/month",
-    description: "For growing businesses that need advanced capabilities",
+    description: "For growing teams that need more power",
     features: [
-      "Unlimited integrations",
-      "Priority support 24/7",
-      "Advanced MuleSoft solutions",
-      "Weekly advisory sessions",
-      "Custom workshop included",
-      "Dedicated account manager",
-      "Salesforce automation",
+      "Unlimited templates",
+      "10,000 events/month",
+      "Priority support",
+      "Advanced integrations",
+      "Custom workflows",
+      "Health scoring",
+      "Churn radar",
     ],
     cta: "Get Started",
+    href: "/start",
+    dataCta: "pricing-growth",
     highlighted: true,
   },
   {
     name: "Enterprise",
     price: "Custom",
     period: "",
-    description: "Tailored solutions for large-scale organizations",
+    description: "Tailored solutions for large organizations",
     features: [
-      "Everything in Professional",
-      "Custom SLA agreements",
-      "On-site training available",
-      "Certification programs",
-      "Dedicated team assigned",
-      "Architecture review",
+      "Everything in Growth",
+      "Unlimited events",
+      "Dedicated support",
       "White-glove onboarding",
+      "Custom integrations",
+      "SLA guarantees",
+      "Architecture review",
     ],
     cta: "Contact Sales",
+    href: "/sales",
+    dataCta: "pricing-enterprise",
     highlighted: false,
   },
 ]
@@ -94,8 +95,10 @@ export function PricingSection() {
               </ul>
             </CardContent>
             <CardFooter>
-              <Button className="w-full" variant={plan.highlighted ? "default" : "outline"}>
-                {plan.cta}
+              <Button className="w-full" variant={plan.highlighted ? "default" : "outline"} asChild>
+                <Link href={plan.href} data-cta={plan.dataCta}>
+                  {plan.cta}
+                </Link>
               </Button>
             </CardFooter>
           </Card>

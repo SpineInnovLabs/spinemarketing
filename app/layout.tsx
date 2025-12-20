@@ -8,9 +8,8 @@ const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "IntegrateWise - Expert Integration Solutions",
-  description:
-    "Transform your business with expert MuleSoft integration, Salesforce automation, and comprehensive advisory services.",
+  title: "IntegrateWise — Reliable Integration. Accelerated Automation.",
+  description: "Normalize once. Render anywhere. Cut churn 15–25% with a schema-first, AI-assisted automation layer.",
   generator: "v0.app",
   icons: {
     icon: [
@@ -29,6 +28,17 @@ export const metadata: Metadata = {
     ],
     apple: "/apple-icon.png",
   },
+  openGraph: {
+    title: "IntegrateWise — Reliable Integration. Accelerated Automation.",
+    description: "Normalize once. Render anywhere. Cut churn 15–25% with a schema-first, AI-assisted automation layer.",
+    siteName: "IntegrateWise",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "IntegrateWise — Reliable Integration. Accelerated Automation.",
+    description: "Normalize once. Render anywhere. Cut churn 15–25% with a schema-first, AI-assisted automation layer.",
+  },
 }
 
 export default function RootLayout({
@@ -38,6 +48,28 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "IntegrateWise",
+              url: "https://integratewise.co",
+              logo: "https://integratewise.co/logo.png",
+              sameAs: [],
+              contactPoint: [
+                {
+                  "@type": "ContactPoint",
+                  email: "connect@integratewise.co",
+                  contactType: "sales",
+                },
+              ],
+            }),
+          }}
+        />
+      </head>
       <body className={`font-sans antialiased`}>
         {children}
         <Analytics />
