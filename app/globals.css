@@ -1,84 +1,83 @@
 @import "tailwindcss";
-@import "tw-animate-css";
+/* Removed tw-animate-css import that was causing parsing errors */
 
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Using exact specified colors: Deep Blue #0B1B2B, Emerald #1BA784, Gold #C8A041, Slate #64748B, Off-white #F8FAFC */
-  --background: 11 27 43; /* Deep Blue #0B1B2B */
-  --foreground: 248 250 252; /* Off-white #F8FAFC */
-  --card: 15 35 55; /* Slightly lighter blue for cards */
-  --card-foreground: 248 250 252;
-  --popover: 15 35 55;
-  --popover-foreground: 248 250 252;
-  --primary: 27 167 132; /* Emerald #1BA784 */
+  /* Attio-style light theme with green as primary instead of black */
+  --background: 255 255 255;
+  --foreground: 10 32 28;
+  --card: 250 253 252;
+  --card-foreground: 10 32 28;
+  --popover: 255 255 255;
+  --popover-foreground: 10 32 28;
+  --primary: 27 167 132;
   --primary-foreground: 255 255 255;
-  --secondary: 22 40 60;
-  --secondary-foreground: 248 250 252;
-  --muted: 22 40 60;
-  --muted-foreground: 100 116 139; /* Slate #64748B */
-  --accent: 200 160 65; /* Gold #C8A041 */
-  --accent-foreground: 11 27 43; /* Deep blue text on gold */
+  --secondary: 240 253 250;
+  --secondary-foreground: 10 32 28;
+  --muted: 245 250 249;
+  --muted-foreground: 100 116 120;
+  --accent: 27 167 132;
+  --accent-foreground: 255 255 255;
   --destructive: 239 68 68;
-  --destructive-foreground: 248 250 252;
-  --border: 30 50 70;
-  --input: 30 50 70;
+  --destructive-foreground: 255 255 255;
+  --border: 230 240 238;
+  --input: 230 240 238;
   --ring: 27 167 132;
   --chart-1: 27 167 132;
-  --chart-2: 200 160 65;
-  --chart-3: 100 116 139;
-  --chart-4: 59 130 246;
-  --chart-5: 168 85 247;
-  --radius: 0.5rem;
-  --sidebar: 11 27 43;
-  --sidebar-foreground: 248 250 252;
+  --chart-2: 16 120 95;
+  --chart-3: 52 211 153;
+  --chart-4: 110 231 183;
+  --chart-5: 167 243 208;
+  --radius: 0.625rem;
+  --sidebar: 250 253 252;
+  --sidebar-foreground: 10 32 28;
   --sidebar-primary: 27 167 132;
   --sidebar-primary-foreground: 255 255 255;
-  --sidebar-accent: 15 35 55;
-  --sidebar-accent-foreground: 248 250 252;
-  --sidebar-border: 30 50 70;
+  --sidebar-accent: 240 253 250;
+  --sidebar-accent-foreground: 10 32 28;
+  --sidebar-border: 230 240 238;
   --sidebar-ring: 27 167 132;
 }
 
 .dark {
-  /* Dark theme uses same deep blue scheme, NO black */
-  --background: 11 27 43;
-  --foreground: 248 250 252;
-  --card: 15 35 55;
-  --card-foreground: 248 250 252;
-  --popover: 15 35 55;
-  --popover-foreground: 248 250 252;
-  --primary: 27 167 132;
-  --primary-foreground: 255 255 255;
-  --secondary: 22 40 60;
-  --secondary-foreground: 248 250 252;
-  --muted: 22 40 60;
-  --muted-foreground: 100 116 139;
-  --accent: 200 160 65;
-  --accent-foreground: 11 27 43;
+  --background: 10 32 28;
+  --foreground: 250 253 252;
+  --card: 15 45 38;
+  --card-foreground: 250 253 252;
+  --popover: 15 45 38;
+  --popover-foreground: 250 253 252;
+  --primary: 52 211 153;
+  --primary-foreground: 10 32 28;
+  --secondary: 20 55 48;
+  --secondary-foreground: 250 253 252;
+  --muted: 20 55 48;
+  --muted-foreground: 156 180 175;
+  --accent: 52 211 153;
+  --accent-foreground: 10 32 28;
   --destructive: 220 38 38;
-  --destructive-foreground: 248 250 252;
-  --border: 30 50 70;
-  --input: 30 50 70;
-  --ring: 27 167 132;
-  --chart-1: 27 167 132;
-  --chart-2: 200 160 65;
-  --chart-3: 100 116 139;
-  --chart-4: 59 130 246;
-  --chart-5: 168 85 247;
-  --sidebar: 11 27 43;
-  --sidebar-foreground: 248 250 252;
-  --sidebar-primary: 27 167 132;
-  --sidebar-primary-foreground: 255 255 255;
-  --sidebar-accent: 15 35 55;
-  --sidebar-accent-foreground: 248 250 252;
-  --sidebar-border: 30 50 70;
-  --sidebar-ring: 27 167 132;
+  --destructive-foreground: 250 253 252;
+  --border: 30 70 60;
+  --input: 30 70 60;
+  --ring: 52 211 153;
+  --chart-1: 52 211 153;
+  --chart-2: 110 231 183;
+  --chart-3: 167 243 208;
+  --chart-4: 27 167 132;
+  --chart-5: 16 120 95;
+  --sidebar: 10 32 28;
+  --sidebar-foreground: 250 253 252;
+  --sidebar-primary: 52 211 153;
+  --sidebar-primary-foreground: 10 32 28;
+  --sidebar-accent: 20 55 48;
+  --sidebar-accent-foreground: 250 253 252;
+  --sidebar-border: 30 70 60;
+  --sidebar-ring: 52 211 153;
 }
 
 @theme inline {
-  --font-sans: "Geist", "Geist Fallback";
-  --font-mono: "Geist Mono", "Geist Mono Fallback";
+  --font-sans: "Inter", "Inter Fallback", system-ui, sans-serif;
+  --font-mono: "Geist Mono", "Geist Mono Fallback", monospace;
   --color-background: rgb(var(--background));
   --color-foreground: rgb(var(--foreground));
   --color-card: rgb(var(--card));
@@ -124,37 +123,11 @@
   body {
     @apply bg-background text-foreground;
   }
-
-  /* Add Attio-style smooth scrolling */
   html {
     scroll-behavior: smooth;
   }
-
-  /* Add Attio-style font antialiasing */
   body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-  }
-}
-
-/* Add Attio-inspired gradient and animation utilities */
-@layer utilities {
-  .text-gradient-green {
-    @apply bg-gradient-to-r from-primary via-emerald-400 to-primary bg-clip-text text-transparent;
-  }
-
-  .animate-fade-in {
-    animation: fadeIn 0.6s ease-out;
-  }
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
   }
 }

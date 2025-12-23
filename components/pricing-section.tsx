@@ -1,108 +1,125 @@
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Check } from "lucide-react"
 import Link from "next/link"
 
 const plans = [
   {
-    name: "Starter",
-    price: "$499",
-    period: "/month",
-    description: "Perfect for small teams getting started",
-    features: ["Up to 3 templates", "500 events/month", "Email support", "Basic integrations", "Community access"],
-    cta: "Start Free Trial",
-    href: "/start",
-    dataCta: "pricing-starter",
+    name: "Advisory Retainer",
+    price: "Custom",
+    period: "",
+    description: "On-demand integration expertise",
+    features: [
+      "Monthly strategy sessions",
+      "Architecture review calls",
+      "Slack/email support",
+      "Priority response time",
+      "Documentation templates",
+    ],
+    cta: "Book a Call",
+    href: "mailto:connect@integratewise.co",
     highlighted: false,
   },
   {
-    name: "Growth",
-    price: "$1,999",
-    period: "/month",
-    description: "For growing teams that need more power",
+    name: "Project-Based",
+    price: "Scoped",
+    period: "",
+    description: "Full implementation delivery",
     features: [
-      "Unlimited templates",
-      "10,000 events/month",
-      "Priority support",
-      "Advanced integrations",
-      "Custom workflows",
-      "Health scoring",
-      "Churn radar",
+      "Everything in Advisory",
+      "Dedicated project team",
+      "n8n workflow builds",
+      "MuleSoft implementations",
+      "AI agent deployment",
+      "Knowledge transfer",
+      "30-day support",
     ],
-    cta: "Get Started",
-    href: "/start",
-    dataCta: "pricing-growth",
+    cta: "Get a Quote",
+    href: "mailto:connect@integratewise.co",
     highlighted: true,
   },
   {
     name: "Enterprise",
     price: "Custom",
     period: "",
-    description: "Tailored solutions for large organizations",
+    description: "Strategic partnership",
     features: [
-      "Everything in Growth",
-      "Unlimited events",
-      "Dedicated support",
-      "White-glove onboarding",
-      "Custom integrations",
+      "Everything in Project-Based",
+      "Embedded team members",
+      "COE establishment",
+      "Custom AI agents",
       "SLA guarantees",
-      "Architecture review",
+      "Executive sponsorship",
+      "Quarterly business reviews",
     ],
     cta: "Contact Sales",
-    href: "/sales",
-    dataCta: "pricing-enterprise",
+    href: "mailto:connect@integratewise.co",
     highlighted: false,
   },
 ]
 
 export function PricingSection() {
   return (
-    <section id="pricing" className="container mx-auto px-4 py-24 md:py-32">
-      <div className="mx-auto max-w-2xl text-center">
-        <h2 className="text-balance text-3xl font-bold tracking-tight md:text-5xl">Pricing that scales with you</h2>
-        <p className="mt-4 text-pretty text-lg text-muted-foreground">
-          Choose the plan that fits your needs. Upgrade or downgrade anytime.
-        </p>
-      </div>
+    <section id="pricing" className="border-y border-border/60 bg-muted/30 py-24 sm:py-32">
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="flex items-baseline gap-4 justify-center">
+          <span className="text-sm font-medium text-primary">[06]</span>
+          <span className="text-sm font-medium text-muted-foreground">Engagement Models</span>
+        </div>
 
-      <div className="mx-auto mt-16 grid max-w-6xl gap-8 lg:grid-cols-3">
-        {plans.map((plan, index) => (
-          <Card
-            key={index}
-            className={`relative flex flex-col ${plan.highlighted ? "border-primary shadow-lg" : "border-border/50"}`}
-          >
-            {plan.highlighted && (
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-primary px-3 py-1 text-xs font-semibold text-primary-foreground">
-                Most Popular
+        <div className="mx-auto max-w-2xl text-center">
+          <h2 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
+            Flexible engagement <span className="text-primary">models.</span>
+          </h2>
+          <p className="mt-4 text-lg text-muted-foreground">
+            From advisory retainers to full project delivery. Choose what works for your team.
+          </p>
+        </div>
+
+        {/* Pricing cards */}
+        <div className="mx-auto mt-16 grid max-w-5xl gap-8 lg:grid-cols-3">
+          {plans.map((plan, index) => (
+            <div
+              key={index}
+              className={`relative flex flex-col rounded-2xl border p-8 ${
+                plan.highlighted ? "border-primary bg-background shadow-lg" : "border-border bg-background"
+              }`}
+            >
+              {plan.highlighted && (
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                  <span className="rounded-full bg-primary px-3 py-1 text-xs font-semibold text-primary-foreground">
+                    Most popular
+                  </span>
+                </div>
+              )}
+
+              <div>
+                <h3 className="text-lg font-semibold">{plan.name}</h3>
+                <p className="mt-1 text-sm text-muted-foreground">{plan.description}</p>
+                <div className="mt-4">
+                  <span className="text-3xl font-semibold">{plan.price}</span>
+                  <span className="text-muted-foreground">{plan.period}</span>
+                </div>
               </div>
-            )}
-            <CardHeader>
-              <CardTitle className="text-2xl">{plan.name}</CardTitle>
-              <CardDescription>{plan.description}</CardDescription>
-              <div className="mt-4">
-                <span className="text-4xl font-bold">{plan.price}</span>
-                <span className="text-muted-foreground">{plan.period}</span>
-              </div>
-            </CardHeader>
-            <CardContent className="flex-1">
-              <ul className="space-y-3">
-                {plan.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="flex items-start gap-3">
+
+              <ul className="mt-8 flex-1 space-y-3">
+                {plan.features.map((feature, i) => (
+                  <li key={i} className="flex items-start gap-3">
                     <Check className="h-5 w-5 shrink-0 text-primary" />
                     <span className="text-sm">{feature}</span>
                   </li>
                 ))}
               </ul>
-            </CardContent>
-            <CardFooter>
-              <Button className="w-full" variant={plan.highlighted ? "default" : "outline"} asChild>
-                <Link href={plan.href} data-cta={plan.dataCta}>
-                  {plan.cta}
-                </Link>
+
+              <Button
+                className={`mt-8 w-full ${plan.highlighted ? "" : "bg-transparent"}`}
+                variant={plan.highlighted ? "default" : "outline"}
+                asChild
+              >
+                <Link href={plan.href}>{plan.cta}</Link>
               </Button>
-            </CardFooter>
-          </Card>
-        ))}
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   )
