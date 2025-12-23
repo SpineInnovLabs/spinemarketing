@@ -34,19 +34,15 @@ export function TestimonialsSection() {
   return (
     <section id="testimonials" className="py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="flex items-baseline gap-4">
-          <span className="text-sm font-medium text-primary">[05]</span>
-          <span className="text-sm font-medium text-muted-foreground">Customer Stories</span>
-        </div>
+        <p className="text-sm font-medium uppercase tracking-widest text-primary">Customer Stories</p>
 
         <h2 className="mt-4 max-w-2xl text-4xl font-semibold tracking-tight sm:text-5xl">
-          Trusted by scaling <span className="text-primary">SaaS teams.</span>
+          Trusted by scaling SaaS teams.
         </h2>
 
         <div className="mt-12 grid gap-8 lg:grid-cols-3">
           {testimonials.map((testimonial, index) => (
             <div key={index} className="relative rounded-2xl border border-border bg-card p-8">
-              {/* Avatar and info */}
               <div className="flex items-center gap-4">
                 <Avatar className="h-12 w-12">
                   <AvatarImage src={testimonial.avatar || "/placeholder.svg"} alt={testimonial.author} />
@@ -62,17 +58,14 @@ export function TestimonialsSection() {
                 </div>
               </div>
 
-              {/* Quote */}
               <blockquote className="mt-6">
                 <p className="text-base leading-relaxed">"{testimonial.quote}"</p>
               </blockquote>
 
-              {/* Author */}
               <div className="mt-6 text-sm text-muted-foreground">
                 <span className="font-medium text-foreground">{testimonial.author}</span>, {testimonial.role}
               </div>
 
-              {/* Feature tags */}
               <div className="mt-6 flex flex-wrap gap-2">
                 {testimonial.features.map((feature, i) => (
                   <span
