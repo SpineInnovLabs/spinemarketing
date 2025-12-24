@@ -61,14 +61,21 @@ export function PricingSection() {
   return (
     <section id="pricing" className="border-y border-border/60 bg-muted/30 py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6">
+        <div className="flex items-baseline gap-4 justify-center">
+          <span className="text-sm font-medium text-primary">[06]</span>
+          <span className="text-sm font-medium text-muted-foreground">Engagement Models</span>
+        </div>
+
         <div className="mx-auto max-w-2xl text-center">
-          <p className="text-sm font-medium uppercase tracking-widest text-primary">Engagement Models</p>
-          <h2 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">Flexible engagement models.</h2>
+          <h2 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
+            Flexible engagement <span className="text-primary">models.</span>
+          </h2>
           <p className="mt-4 text-lg text-muted-foreground">
             From advisory retainers to full project delivery. Choose what works for your team.
           </p>
         </div>
 
+        {/* Pricing cards */}
         <div className="mx-auto mt-16 grid max-w-5xl gap-8 lg:grid-cols-3">
           {plans.map((plan, index) => (
             <div
