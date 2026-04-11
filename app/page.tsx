@@ -5,6 +5,7 @@ import { ProblemSection } from "@/components/problem-section"
 import { SolutionSection } from "@/components/solution-section"
 import { SolutionsDoorsSection } from "@/components/solutions-doors-section"
 import { HowItWorksSection } from "@/components/how-it-works-section"
+import { TruthLayerSection } from "@/components/truthlayer-section"
 import { DayOneSection } from "@/components/day-one-section"
 import { ProofSection } from "@/components/proof-section"
 import { PricingSection } from "@/components/pricing-section"
@@ -22,6 +23,7 @@ export default function Home() {
         <SolutionSection />
         <SolutionsDoorsSection />
         <HowItWorksSection />
+        <TruthLayerSection />
         <DayOneSection />
         <ProofSection />
         <PricingSection />
