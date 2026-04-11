@@ -1,44 +1,38 @@
 import { Metadata } from "next"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import { entries } from "@/content/changelog"
 
 export const metadata: Metadata = {
   title: "Changelog | IntegrateWise",
   description: "What's new in IntegrateWise — product updates, new connectors, and improvements.",
 }
 
-const entries = [
-  {
-    date: "April 2026",
-    title: "Launch",
-    items: [
-      "Website live with full product, solutions, and pricing pages",
-      "Firebase Analytics integrated",
-      "Contact form with email fallback",
-    ],
-  },
-]
-
 export default function ChangelogPage() {
   return (
     <div className="min-h-screen bg-background">
       <Header />
       <main id="main">
-        <section className="mx-auto max-w-[800px] px-6 pt-[140px] pb-24 md:px-16">
-          <h1 className="text-[36px] font-semibold tracking-[-0.04em] leading-[1.2] sm:text-[44px]">Changelog</h1>
-          <p className="mt-4 max-w-xl text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">
-            What&apos;s new in IntegrateWise.
-          </p>
+        <section className="relative overflow-hidden" style={{ backgroundColor: "rgb(8, 7, 14)" }}>
+          <div className="mx-auto max-w-[800px] px-6 pt-[160px] pb-[80px] md:px-16">
+            <h1 className="text-[40px] font-semibold tracking-[-0.05em] leading-[1.1] text-white sm:text-[52px]">Changelog</h1>
+            <p className="mt-4 max-w-xl text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-white/55">
+              What&apos;s new in IntegrateWise.
+            </p>
+          </div>
+        </section>
 
-          <div className="mt-16 space-y-12">
+        <section className="mx-auto max-w-[800px] px-6 py-16 md:px-16">
+          <div className="space-y-16">
             {entries.map((entry) => (
-              <div key={entry.date}>
+              <div key={entry.date} className="relative pl-8 before:absolute before:left-0 before:top-0 before:bottom-0 before:w-px before:bg-border">
+                <div className="absolute left-0 top-1 h-2.5 w-2.5 -translate-x-[calc(50%-0.5px)] rounded-full bg-primary" />
                 <div className="text-[13px] font-semibold uppercase tracking-widest text-primary">{entry.date}</div>
-                <h2 className="mt-2 text-[20px] font-semibold tracking-[-0.03em]">{entry.title}</h2>
+                <h2 className="mt-2 text-[22px] font-semibold tracking-[-0.03em]">{entry.title}</h2>
                 <ul className="mt-4 space-y-2">
                   {entry.items.map((item, i) => (
                     <li key={i} className="flex items-start gap-2 text-[15px] font-medium text-foreground/80">
-                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/40" />
                       {item}
                     </li>
                   ))}

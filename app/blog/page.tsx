@@ -2,6 +2,9 @@ import { Metadata } from "next"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { FinalCTA } from "@/components/final-cta"
+import { posts } from "@/content/blog"
+import Link from "next/link"
+import { ArrowRight } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Blog | IntegrateWise",
@@ -13,16 +16,49 @@ export default function BlogPage() {
     <div className="min-h-screen bg-background">
       <Header />
       <main id="main">
-        <section className="mx-auto max-w-[1100px] px-6 pt-[140px] pb-24 md:px-16">
-          <h1 className="text-[36px] font-semibold tracking-[-0.04em] leading-[1.2] sm:text-[44px]">Blog</h1>
-          <p className="mt-4 max-w-xl text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">
-            Insights on connected workspaces, AI that waits for your approval, and how teams are fixing their morning routines.
-          </p>
-          <div className="mt-16 rounded-2xl border border-border/50 bg-muted/30 p-12 text-center">
-            <p className="text-[17px] font-semibold tracking-[-0.03em]">Coming soon</p>
-            <p className="mt-2 text-[15px] font-medium text-muted-foreground">We&apos;re writing our first posts. Check back shortly.</p>
+        <section className="relative overflow-hidden" style={{ backgroundColor: "rgb(8, 7, 14)" }}>
+          <div className="mx-auto max-w-[1100px] px-6 pt-[160px] pb-[80px] md:px-16">
+            <h1 className="text-[40px] font-semibold tracking-[-0.05em] leading-[1.1] text-white sm:text-[52px]">Blog</h1>
+            <p className="mt-4 max-w-xl text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-white/55">
+              Insights on connected workspaces, AI that waits for your approval, and how teams are fixing their morning routines.
+            </p>
           </div>
         </section>
+
+        <section className="mx-auto max-w-[1100px] px-6 py-16 md:px-16">
+          <div className="grid gap-6 sm:grid-cols-2">
+            {posts.map((post) => (
+              <Link
+                key={post.slug}
+                href={`/blog/${post.slug}`}
+                className="group arvio-card flex flex-col p-6 transition-all hover:shadow-lg"
+              >
+                <div className="flex flex-wrap gap-2">
+                  {post.tags.map((tag) => (
+                    <span key={tag} className="rounded-full bg-primary/10 px-2.5 py-0.5 text-[12px] font-semibold text-primary">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <h2 className="mt-4 text-[20px] font-semibold tracking-[-0.03em] leading-[1.3] group-hover:text-primary transition-colors">
+                  {post.title}
+                </h2>
+                <p className="mt-3 flex-1 text-[15px] font-medium leading-[1.5] text-muted-foreground">
+                  {post.description}
+                </p>
+                <div className="mt-6 flex items-center justify-between">
+                  <div className="flex items-center gap-3 text-[13px] font-medium text-muted-foreground">
+                    <span>{post.author}</span>
+                    <span>·</span>
+                    <span>{post.readTime}</span>
+                  </div>
+                  <ArrowRight className="h-4 w-4 text-primary opacity-0 transition-opacity group-hover:opacity-100" />
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+
         <FinalCTA />
       </main>
       <Footer />
