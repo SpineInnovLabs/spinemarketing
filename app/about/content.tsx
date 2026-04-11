@@ -206,6 +206,60 @@ export function AboutContent() {
         </div>
       </section>
 
+      {/* Why This Is Different */}
+      <section className="arvio-section">
+        <div className="mx-auto max-w-[1100px]">
+          <div className="mx-auto max-w-3xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+            >
+              <h2 className="section-heading">Why this is{" "}<span className="text-primary">different</span></h2>
+              <div className="mt-8 space-y-6 text-[17px] font-medium leading-[1.7] tracking-[-0.02em] text-muted-foreground">
+                <p>
+                  Most platforms do one thing: dashboards show data, iPaaS tools move data, copilots suggest actions, CRMs store records.
+                </p>
+                <p>IntegrateWise does what none of them do alone:</p>
+              </div>
+
+              <div className="mt-8 space-y-4">
+                {[
+                  "It connects your tools into one living intelligence layer. Not just syncing fields — preserving the relationships, context, and meaning between them.",
+                  "It gives AI the full picture. Not one tool's view. Not one conversation's context. Everything — across every system, every interaction, every prior AI session.",
+                  "It never acts without your approval. Every insight has evidence. Every action waits for your OK. Nothing becomes truth without your say.",
+                  "It gets smarter the more you use it. Every decision, correction, and denied action teaches the system. The intelligence compounds over time — and it's yours.",
+                ].map((item, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, x: -12 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ type: "spring", bounce: 0.2, duration: 0.6, delay: i * 0.08 }}
+                    className="flex items-start gap-3 rounded-xl border border-border/50 bg-white p-5"
+                    style={{ boxShadow: "var(--shadow-card)" }}
+                  >
+                    <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-primary" />
+                    <span className="text-[15px] font-medium leading-[1.6] text-foreground/80">{item}</span>
+                  </motion.div>
+                ))}
+              </div>
+
+              <div className="mt-10 rounded-xl bg-muted/50 p-6">
+                <p className="text-[15px] font-semibold leading-[1.6] tracking-[-0.02em] text-foreground">
+                  CRM stores. Search finds. iPaaS moves. Copilots suggest.{" "}
+                  <span className="text-primary">IntegrateWise governs truth and action.</span>
+                </p>
+                <p className="mt-4 text-[15px] font-medium leading-[1.6] tracking-[-0.02em] text-muted-foreground italic">
+                  This is the workspace I wish I&apos;d had. Now it exists.
+                </p>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="arvio-section">
         <div className="mx-auto max-w-[1100px]">

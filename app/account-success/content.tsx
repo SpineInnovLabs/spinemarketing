@@ -3,51 +3,41 @@
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { Check, ShieldCheck, TrendingUp, Users, Eye, AlertTriangle, BarChart3 } from "lucide-react"
+import { ShieldCheck, TrendingUp, Eye, AlertTriangle, BarChart3, Heart, CalendarCheck, Zap } from "lucide-react"
 
-const whoFor = [
-  "Customer Success leaders managing 50+ accounts",
-  "Account Managers who need full context before every call",
-  "Revenue leaders who can't afford blind spots on renewals",
-  "CS Ops teams building health scores from scattered data",
-]
-
-const tiers = [
+const whatChanges = [
   {
-    name: "Starter",
-    features: [
-      "Complete account views for up to 50 accounts",
-      "5 connectors (CRM, support, billing, email, chat)",
-      "Basic health signals and risk alerts",
-      "You approve every AI suggestion before it runs",
-    ],
+    icon: Eye,
+    title: "One complete view of every account",
+    desc: "Connect your CRM, support desk, billing, email, messaging, and project tools. IntegrateWise assembles a complete profile for every account — interactions, contracts, health signals, and context — so you never have to tab-switch again.",
   },
   {
-    name: "Growth",
-    features: [
-      "Unlimited accounts with complete views",
-      "15 connectors including product analytics",
-      "Advanced signal detection and trend analysis",
-      "Custom playbooks and escalation rules",
-      "Team collaboration and shared insights",
-    ],
+    icon: AlertTriangle,
+    title: "AI that spots problems before you do",
+    desc: "IntegrateWise watches your accounts for risk signals across every connected tool. A champion going silent. Support tickets climbing. Payments failing. Usage dropping. It surfaces these signals with evidence — not guesses.",
   },
   {
-    name: "Command",
-    features: [
-      "Enterprise-grade controls and audit trails",
-      "Premium connectors and custom integrations",
-      "Executive dashboards and portfolio risk views",
-      "Dedicated success team and SLA",
-      "SSO, RBAC, and compliance packages",
-    ],
+    icon: Heart,
+    title: "Health scores that reflect reality",
+    desc: "Health scores built from actual data across every system — not a single CRM field someone forgot to update. Support volume, product usage, billing status, relationship activity, and sentiment — updated continuously.",
+  },
+  {
+    icon: CalendarCheck,
+    title: "Renewal tracking with full context",
+    desc: "Know exactly where every renewal stands. See the timeline, the stakeholders, the risks, and the history — pulled from every tool, not just your CRM. Identify at-risk renewals 90 days out, with evidence.",
+  },
+  {
+    icon: Zap,
+    title: "Playbooks that run on real data",
+    desc: "Build repeatable workflows for onboarding, QBR prep, renewals, and escalations. Each playbook pulls live data from your connected tools — so your next QBR deck is built from what's actually happening.",
   },
 ]
 
-const industries = [
-  { icon: BarChart3, name: "SaaS & Technology", desc: "Track product usage, support tickets, and billing signals in one view." },
-  { icon: Users, name: "Professional Services", desc: "Connect project delivery, client communication, and billing data." },
-  { icon: TrendingUp, name: "Financial Services", desc: "Unify relationship data across compliance, advisory, and operations." },
+const steps = [
+  { num: "01", title: "Connect your tools", desc: "Salesforce, HubSpot, Zendesk, Stripe, Slack, Jira, Notion, QuickBooks, Gmail — plug in the tools you already use. One-time setup, secure OAuth." },
+  { num: "02", title: "The Spine builds the full picture", desc: "Your account data, support tickets, billing records, conversations, and documents flow into a single intelligence layer. Relationships between records are preserved — not flattened into a spreadsheet." },
+  { num: "03", title: "AI surfaces what matters", desc: "Churn risks, renewal threats, champion changes, escalation patterns. Evidence-backed, not hallucinated. You see what needs attention and why." },
+  { num: "04", title: "You review and act", desc: "Every proposed action — a renewal email, an escalation, an internal alert — comes with evidence. You approve, adjust, or dismiss. Nothing happens without your say." },
 ]
 
 export function AccountSuccessContent() {
@@ -65,160 +55,140 @@ export function AccountSuccessContent() {
               style={{ boxShadow: "0px 0px 0px 3px rgb(248 248 250)" }}
             >
               <span className="h-2 w-2 rounded-full" style={{ background: "var(--gradient-primary-icon)" }} />
-              <span className="text-[14px] font-semibold tracking-[-0.03em] text-[#0a0b10]">Solutions</span>
+              <span className="text-[14px] font-semibold tracking-[-0.03em] text-[#0a0b10]">Account Success</span>
             </motion.div>
-
             <motion.h1
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ type: "spring", damping: 16, mass: 1, stiffness: 52, delay: 0.4 }}
-              className="text-[48px] font-semibold leading-[1em] tracking-[-0.05em] text-white sm:text-[54px] lg:text-[64px]"
+              className="text-[40px] font-semibold leading-[1.1em] tracking-[-0.05em] text-white sm:text-[52px] lg:text-[60px]"
             >
-              Account Success{" "}
-              <span className="text-primary">without the blind spots.</span>
+              Protect revenue. Spot risks early.{" "}
+              <span className="text-primary">Know every account completely.</span>
             </motion.h1>
-
             <motion.p
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ type: "spring", damping: 16, mass: 1, stiffness: 52, delay: 0.6 }}
               className="mx-auto mt-8 max-w-2xl text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-white/55"
             >
-              Turn scattered account data into a complete, live view. Spot risks early, act on signals, and protect revenue
-              — all with AI that always waits for your approval.
+              You manage dozens of accounts across CRMs, support desks, billing systems, inboxes, and Slack channels.
+              The information you need is always there — just scattered across eight different tools.
+              IntegrateWise brings it all into one view.
             </motion.p>
-
             <motion.div
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ type: "spring", damping: 16, mass: 1, stiffness: 52, delay: 0.8 }}
               className="mt-10 flex flex-col items-center justify-center gap-2.5 sm:flex-row"
             >
-              <Button
-                size="lg"
-                className="h-[42px] rounded-xl px-4 text-[15px] font-semibold tracking-[-0.3px]"
-                style={{ background: "var(--gradient-primary)", border: "2px solid rgba(248,248,250,0.12)", boxShadow: "var(--shadow-button)" }}
-                asChild
-              >
+              <Button size="lg" className="h-[42px] rounded-xl px-6 text-[15px] font-semibold" style={{ background: "var(--gradient-primary)", boxShadow: "var(--shadow-button)" }} asChild>
                 <Link href="/contact?intent=demo">Book a demo</Link>
               </Button>
+              <Button size="lg" variant="outline" className="h-[42px] rounded-xl border-2 border-white/15 bg-transparent px-6 text-[15px] font-semibold text-white hover:bg-white/10" asChild>
+                <Link href="/platform">See how it works</Link>
+              </Button>
+            </motion.div>
+            <p className="mt-6 text-[14px] font-medium text-white/30">For CS teams, account managers, agency owners, and freelancers.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* The Problem */}
+      <section className="arvio-section">
+        <div className="mx-auto max-w-[1100px]">
+          <div className="mx-auto max-w-3xl">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}>
+              <h2 className="section-heading">You check 8 tools every morning{" "}<span className="text-primary">just to understand one account.</span></h2>
+              <div className="mt-8 space-y-6 text-[17px] font-medium leading-[1.7] tracking-[-0.02em] text-muted-foreground">
+                <p>Your CRM says the account is healthy. Your support desk has three open P1 tickets. Billing shows a failed payment. The champion hasn&apos;t replied to email in two weeks. Slack has a thread where someone flagged a risk — but nobody saw it.</p>
+                <p>No single tool tells you what&apos;s actually happening. So you become the bridge. You open tabs, cross-reference data, copy notes between systems, and try to hold the full picture in your head.</p>
+                <p className="text-foreground font-semibold">That&apos;s not Customer Success. That&apos;s data plumbing.</p>
+              </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Who This Is For */}
-      <section className="arvio-section">
-        <div className="mx-auto max-w-[1100px]">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-            className="mx-auto max-w-2xl text-center"
-          >
-            <h2 className="section-heading">
-              Built for teams who{" "}
-              <span className="text-primary">can&apos;t afford to miss signals</span>
-            </h2>
-          </motion.div>
-          <div className="mx-auto mt-12 max-w-2xl">
-            <ul className="space-y-3">
-              {whoFor.map((item, i) => (
-                <motion.li
-                  key={i}
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ type: "spring", bounce: 0.2, duration: 0.6, delay: i * 0.08 }}
-                  className="arvio-card flex items-start gap-3 p-4"
-                >
-                  <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full" style={{ background: "var(--gradient-primary-icon)" }}>
-                    <Check className="h-3 w-3 text-white" />
-                  </div>
-                  <span className="text-[15px] font-medium leading-[1.5] tracking-[-0.02em] text-foreground">{item}</span>
-                </motion.li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* What You Get Per Tier */}
+      {/* What Changes */}
       <section className="arvio-section bg-muted">
         <div className="mx-auto max-w-[1100px]">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-            className="mx-auto max-w-2xl text-center"
-          >
-            <h2 className="section-heading">
-              What you get{" "}
-              <span className="text-primary">at every level</span>
-            </h2>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ type: "spring", bounce: 0.2, duration: 0.6 }} className="mx-auto max-w-2xl text-center">
+            <h2 className="section-heading">What changes with{" "}<span className="text-primary">IntegrateWise</span></h2>
           </motion.div>
-          <div className="mx-auto mt-16 grid max-w-5xl gap-6 lg:grid-cols-3">
-            {tiers.map((tier, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ type: "spring", bounce: 0.2, duration: 0.6, delay: i * 0.1 }}
-                className="arvio-card flex flex-col p-8"
-              >
-                <h3 className="text-[18px] font-semibold tracking-[-0.03em]">{tier.name}</h3>
-                <ul className="mt-6 flex-1 space-y-3">
-                  {tier.features.map((f, j) => (
-                    <li key={j} className="flex items-start gap-3">
-                      <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full" style={{ background: "var(--gradient-primary-icon)" }}>
-                        <Check className="h-3 w-3 text-white" />
-                      </div>
-                      <span className="text-[15px] font-medium leading-[1.5] text-foreground">{f}</span>
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Industry Examples */}
-      <section className="arvio-section">
-        <div className="mx-auto max-w-[1100px]">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-            className="mx-auto max-w-2xl text-center"
-          >
-            <h2 className="section-heading">
-              Works across{" "}
-              <span className="text-primary">industries</span>
-            </h2>
-          </motion.div>
-          <div className="mx-auto mt-16 grid max-w-5xl gap-6 sm:grid-cols-3">
-            {industries.map(({ icon: Icon, name, desc }, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ type: "spring", bounce: 0.2, duration: 0.6, delay: i * 0.1 }}
-                className="arvio-card flex flex-col items-start p-8"
-              >
+          <div className="mx-auto mt-16 grid max-w-4xl gap-6 sm:grid-cols-2">
+            {whatChanges.map(({ icon: Icon, title, desc }, i) => (
+              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ type: "spring", bounce: 0.2, duration: 0.6, delay: i * 0.08 }} className={`arvio-card p-6 ${i === whatChanges.length - 1 && whatChanges.length % 2 !== 0 ? "sm:col-span-2 sm:max-w-md sm:mx-auto" : ""}`}>
                 <div className="flex h-10 w-10 items-center justify-center rounded-lg" style={{ background: "var(--gradient-primary-icon)" }}>
                   <Icon className="h-5 w-5 text-white" />
                 </div>
-                <h3 className="mt-5 text-[18px] font-semibold tracking-[-0.03em] leading-[1.3]">{name}</h3>
-                <p className="mt-3 text-[15px] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">{desc}</p>
+                <h3 className="mt-4 text-[16px] font-semibold tracking-[-0.03em]">{title}</h3>
+                <p className="mt-2 text-[14px] font-medium leading-[1.6] text-muted-foreground">{desc}</p>
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* How It Works */}
+      <section className="arvio-section">
+        <div className="mx-auto max-w-[1100px]">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ type: "spring", bounce: 0.2, duration: 0.6 }} className="mx-auto max-w-2xl text-center">
+            <h2 className="section-heading">How it{" "}<span className="text-primary">works</span></h2>
+          </motion.div>
+          <div className="mx-auto mt-16 grid max-w-3xl gap-8">
+            {steps.map(({ num, title, desc }, i) => (
+              <motion.div key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ type: "spring", bounce: 0.2, duration: 0.6, delay: i * 0.08 }} className="flex gap-6">
+                <div className="text-[40px] font-bold tracking-[-0.05em] text-primary/15 leading-none">{num}</div>
+                <div>
+                  <h3 className="text-[16px] font-semibold tracking-[-0.03em]">{title}</h3>
+                  <p className="mt-2 text-[14px] font-medium leading-[1.6] text-muted-foreground">{desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Proof */}
+      <section className="arvio-section bg-muted">
+        <div className="mx-auto max-w-[1100px]">
+          <div className="mx-auto max-w-3xl">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}>
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl" style={{ background: "var(--gradient-primary-icon)" }}>
+                <TrendingUp className="h-6 w-6 text-white" />
+              </div>
+              <h2 className="mt-6 section-heading-sm">Proof it{" "}<span className="text-primary">works</span></h2>
+              <p className="mt-6 text-[17px] font-medium leading-[1.7] tracking-[-0.02em] text-muted-foreground">
+                In a live deployment, IntegrateWise spotted early warning signs that a major customer account was at risk.
+                Support tickets were climbing. Product usage was dropping. The champion had gone silent. Payments had failed twice.
+              </p>
+              <p className="mt-4 text-[17px] font-medium leading-[1.7] tracking-[-0.02em] text-muted-foreground">
+                No single tool saw the full picture. The Spine did — because it connected all of them.
+                The team intervened at the right time and saved an <span className="text-foreground font-semibold">$8M account</span> that had already turned red.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="arvio-section">
+        <div className="mx-auto max-w-[1100px]">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ type: "spring", bounce: 0.2, duration: 0.6 }} className="mx-auto max-w-2xl text-center">
+            <h2 className="section-heading">Stop being the human bridge{" "}<span className="text-primary">between your account tools.</span></h2>
+            <p className="mt-6 text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">
+              See every account completely. Spot risks before they become crises. Act with confidence.
+            </p>
+            <div className="mt-10 flex flex-col items-center justify-center gap-2.5 sm:flex-row">
+              <Button size="lg" className="h-[42px] rounded-xl px-6 text-[15px] font-semibold" style={{ background: "var(--gradient-primary)", boxShadow: "var(--shadow-button)" }} asChild>
+                <Link href="/contact?intent=demo">Book a demo</Link>
+              </Button>
+              <Button size="lg" variant="outline" className="h-[42px] rounded-xl border-2 border-border/75 bg-white px-6 text-[15px] font-semibold text-foreground" asChild>
+                <Link href="/contact">Start free</Link>
+              </Button>
+            </div>
+          </motion.div>
         </div>
       </section>
     </>
