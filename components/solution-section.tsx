@@ -8,23 +8,23 @@ const pillars = [
   {
     num: "01",
     icon: Database,
-    title: "Truth",
+    title: "Your workspace",
     description:
-      "Verified, normalized data from every connected tool. CRM, billing, support, product usage — cleaned, deduplicated, and linked into one source of truth.",
+      "Manage accounts, track tasks, run workflows, review renewals — all in one place. This is where you work every day. It replaces the 12 tabs.",
   },
   {
     num: "02",
     icon: Brain,
-    title: "Context",
+    title: "The Twin accelerates you",
     description:
-      "Emails, meetings, Slack threads, documents — the human layer that gives meaning to data. AI reads across all of it, not just isolated records.",
+      "AI reads your data, your conversations, and your accumulated knowledge. It surfaces what matters, proposes actions, and learns from your decisions — inside the workspace you're already using.",
   },
   {
     num: "03",
     icon: ShieldCheck,
-    title: "AI Session Memory",
+    title: "Nothing happens without you",
     description:
-      "AI conversations don't disappear. Decisions, corrections, and insights persist across sessions and across AI providers. Intelligence compounds over time.",
+      "Every insight has evidence. Every action waits for your approval. Approved actions create real tasks, update real records, and flow back into the system.",
   },
 ]
 
@@ -40,11 +40,11 @@ export function SolutionSection() {
           className="mx-auto max-w-2xl text-center"
         >
           <h2 className="section-heading">
-            Three foundations.{" "}
-            <span className="text-primary">One intelligent workspace.</span>
+            Your workspace.{" "}
+            <span className="text-primary">AI that makes you faster.</span>
           </h2>
           <p className="mt-6 text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">
-            Most AI tools see fragments. IntegrateWise sees the full picture — because it&apos;s built on three things no other platform combines.
+            This is where you work — accounts, tasks, renewals, workflows. The Twin reads everything and surfaces what matters. You stay in control.
           </p>
         </motion.div>
 
@@ -93,8 +93,8 @@ export function SolutionSection() {
           className="mx-auto mt-10 max-w-2xl text-center"
         >
           <p className="text-[15px] font-semibold tracking-[-0.02em] text-foreground">
-            Truth + Context + AI Memory ={" "}
-            <span className="text-primary">an AI that thinks in context, not in isolation.</span>
+            The workspace is the daily driver.{" "}
+            <span className="text-primary">The Twin is the accelerator.</span>
           </p>
         </motion.div>
       </div>
