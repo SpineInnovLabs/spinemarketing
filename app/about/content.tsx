@@ -4,6 +4,16 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 
+const timeline = [
+  { year: "2011", title: "Integration Architect", desc: "Began building enterprise integrations across telecom, finance, healthcare, retail, and insurance. 13+ years wiring the systems that power industries." },
+  { year: "13 Years", title: "MuleSoft Expert", desc: "Became one of India's leading MuleSoft Integration Architects. Deep expertise in API-led connectivity, canonical data models, and enterprise-grade integration patterns." },
+  { year: "CSM Era", title: "Customer Success at Salesforce", desc: "Joined as a Customer Success Manager managing MuleSoft enterprise accounts. Saw the same plumbing failures playing out at the human layer." },
+  { year: "The Crisis", title: "The Red Account", desc: "Inherited an $8M enterprise account marked 100% attrition risk with zero handover context. Spent weeks doing manually what no tool could do." },
+  { year: "The Discovery", title: "Two Hidden Signals", desc: "Found an unsigned contract nobody knew about. Found interpersonal conflicts buried in fragmented records. Two signals invisible to every dashboard." },
+  { year: "The Save", title: "$8M Renewed", desc: "Resolved both signals. Rebuilt the relationship from scratch. Full renewal. An account written off as lost — brought back." },
+  { year: "2025", title: "Founded IntegrateWise LLP", desc: "Stopped waiting for someone else to build it. Founded IntegrateWise in Bengaluru to automate everything done manually." },
+]
+
 export function AboutContent() {
   return (
     <>
@@ -19,276 +29,258 @@ export function AboutContent() {
               style={{ boxShadow: "0px 0px 0px 3px rgb(248 248 250)" }}
             >
               <span className="h-2 w-2 rounded-full" style={{ background: "var(--gradient-primary-icon)" }} />
-              <span className="text-[14px] font-semibold tracking-[-0.03em] text-[#0a0b10]">Our Story</span>
+              <span className="text-[14px] font-semibold tracking-[-0.03em] text-[#0a0b10]">The Founder Story</span>
             </motion.div>
-
             <motion.h1
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ type: "spring", damping: 16, mass: 1, stiffness: 52, delay: 0.4 }}
-              className="text-[48px] font-semibold leading-[1em] tracking-[-0.05em] text-white sm:text-[54px] lg:text-[64px]"
+              className="text-[40px] font-semibold leading-[1.1em] tracking-[-0.05em] text-white sm:text-[48px] lg:text-[56px]"
             >
-              The story of{" "}
-              <span className="text-primary">effortless work.</span>
+              How a red account, a missing signature, and 13 years of plumbing work led to{" "}
+              <span className="text-primary">a new category of software.</span>
             </motion.h1>
-
             <motion.p
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ type: "spring", damping: 16, mass: 1, stiffness: 52, delay: 0.6 }}
-              className="mx-auto mt-8 max-w-2xl text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-white/55"
+              className="mx-auto mt-8 max-w-xl text-[15px] font-medium leading-[1.5] tracking-[-0.02em] text-white/40"
             >
-              Modern work isn&apos;t hard because people lack capability. It&apos;s hard because they&apos;re constantly fighting their tools.
+              Nirmal Prince J · Founder &amp; CEO, IntegrateWise LLP · Bengaluru, India
             </motion.p>
           </div>
         </div>
       </section>
 
-      {/* The Problem */}
+      {/* Chapter 1 */}
       <section className="arvio-section">
-        <div className="mx-auto max-w-[1100px]">
-          <div className="mx-auto max-w-3xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-            >
-              <h2 className="section-heading">We became the{" "}<span className="text-primary">human APIs</span></h2>
-              <div className="mt-8 space-y-6 text-[17px] font-medium leading-[1.7] tracking-[-0.02em] text-muted-foreground">
-                <p>
-                  We&apos;ve become &quot;human APIs,&quot; copying context between productivity apps, communication tools,
-                  and AI chats every 30 minutes — only to start from zero again in the 31st minute.
-                </p>
-                <p>
-                  Work now lives across Notion, Coda, Slack, email, CRMs, calendars, billing tools, and AI apps
-                  like ChatGPT, Claude, Gemini, Grok, and Perplexity — just to move one task forward.
-                </p>
-                <p>
-                  Information is trapped in different tabs and histories. Tasks fall between tools. AI brainstorms
-                  vanish when chats end. Data exports break formulas and relationships.
-                </p>
-                <p>
-                  The result: copy–paste–export–import, again and again. It&apos;s exhausting, destroys momentum,
-                  and quietly slows down even the best teams.
-                </p>
-              </div>
-            </motion.div>
-          </div>
+        <div className="mx-auto max-w-[800px]">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}>
+            <div className="text-[12px] font-bold uppercase tracking-[0.2em] text-primary">Chapter 1</div>
+            <h2 className="mt-3 text-[32px] font-semibold tracking-[-0.04em] leading-[1.2] sm:text-[38px]">The man who built the plumbing</h2>
+            <div className="mt-8 space-y-6 text-[16px] font-medium leading-[1.8] tracking-[-0.01em] text-foreground/75">
+              <blockquote className="border-l-2 border-primary pl-6 text-[17px] italic text-foreground">
+                &ldquo;I spent 13 years connecting enterprise systems — telecom, finance, healthcare, retail, insurance.
+                I saw every kind of integration failure there is. But the one that kept me up at night wasn&apos;t a broken API.
+                It was watching smart people make the wrong decisions because their tools couldn&apos;t talk to each other.&rdquo;
+              </blockquote>
+              <p>
+                Nirmal Prince J&apos;s career began where most software problems are invisible — in the wiring behind enterprise systems.
+                As a MuleSoft Integration Architect for over 13 years, he worked across some of the most complex data environments
+                on the planet: telecom networks, financial institutions, hospital systems, retail supply chains, insurance platforms.
+              </p>
+              <p>
+                His job was to make disconnected systems speak the same language. To build the invisible infrastructure that carries
+                data from one place to another without loss, without duplication, and without ambiguity.
+              </p>
+              <p>
+                But the more systems he connected, the more clearly he saw a deeper problem — one that no integration project could solve.
+                The tools were connected. The data was flowing. And yet, the people using those tools still couldn&apos;t see the full picture.
+                The CRM knew one thing. The support tool knew another. The project tracker knew a third. And nobody — not the software,
+                not the dashboards, not the reports — could put it all together in a way that was actually useful for the human making a decision.
+              </p>
+            </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* The Turning Point */}
+      {/* Chapter 2 */}
       <section className="arvio-section bg-muted">
-        <div className="mx-auto max-w-[1100px]">
-          <div className="mx-auto max-w-3xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-            >
-              <h2 className="section-heading">The turning{" "}<span className="text-primary">point</span></h2>
-              <div className="mt-8 space-y-6 text-[17px] font-medium leading-[1.7] tracking-[-0.02em] text-muted-foreground">
-                <p>
-                  As a Customer Success Manager, I tried everything: Slack workflows, manual exports, new project
-                  tools, and every &quot;smart&quot; AI assistant I could find.
-                </p>
-                <p>
-                  I talked to multiple AIs to get the best thinking and wording, then realised those conversations
-                  were scattered everywhere with no way to pull them together when it mattered.
-                </p>
-                <p>
-                  No matter which tool I tried, the same problems came back: data silos, broken relationships,
-                  lost context, and no single place where my work and my thinking truly lived.
-                </p>
-                <p className="text-foreground font-semibold">
-                  That&apos;s when it became clear: the world doesn&apos;t need yet another tool. It needs a way to
-                  bring all of its tools — and all of its AI conversations — together, intelligently and effortlessly.
-                </p>
-                <p className="text-foreground font-semibold">
-                  That&apos;s how IntegrateWise was born.
+        <div className="mx-auto max-w-[800px]">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}>
+            <div className="text-[12px] font-bold uppercase tracking-[0.2em] text-primary">Chapter 2</div>
+            <h2 className="mt-3 text-[32px] font-semibold tracking-[-0.04em] leading-[1.2] sm:text-[38px]">The red account — when everything went dark</h2>
+
+            <div className="mt-8 flex flex-wrap gap-4">
+              {[
+                { label: "Status", value: "RED" },
+                { label: "Attrition risk", value: "100%" },
+                { label: "Contract value", value: "~$8,000,000" },
+              ].map(({ label, value }) => (
+                <div key={label} className="rounded-lg border border-destructive/20 bg-destructive/5 px-4 py-2">
+                  <div className="text-[11px] font-bold uppercase tracking-widest text-destructive/60">{label}</div>
+                  <div className="text-[16px] font-bold text-destructive">{value}</div>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-8 space-y-6 text-[16px] font-medium leading-[1.8] tracking-[-0.01em] text-foreground/75">
+              <p>
+                After more than a decade building enterprise integrations, Nirmal joined Salesforce as a Customer Success Manager
+                managing MuleSoft accounts. A fellow CSM left the company. Their biggest account — worth approximately $8 million —
+                landed on his desk with no warning, no handover, and no context.
+              </p>
+              <p>
+                There was no transition document. No relationship history. No notes on stakeholder dynamics. No record of what had been
+                promised, what had been delivered, or what was currently in dispute. The account had been marked Red — 100% attrition risk.
+                But nobody could explain why.
+              </p>
+              <blockquote className="border-l-2 border-primary pl-6 text-[17px] italic text-foreground">
+                &ldquo;The data existed. It was all there — in seven different places, in seven different formats, owned by seven different teams.
+                But nobody could see across all of it at once. And without that view, the account was invisible.&rdquo;
+              </blockquote>
+              <p>
+                Nirmal did what he had spent 13 years training himself to do. He became the integration layer. For weeks, he manually
+                cross-referenced everything. Every support ticket against every CRM note. Every email thread against every project milestone.
+                Every Slack message against every contract term.
+              </p>
+            </div>
+
+            <h3 className="mt-10 text-[20px] font-semibold tracking-[-0.03em]">The two hidden signals</h3>
+            <div className="mt-6 grid gap-4 sm:grid-cols-2">
+              <div className="rounded-xl border border-border bg-background p-6">
+                <div className="text-[12px] font-bold uppercase tracking-widest text-primary">Signal 1</div>
+                <h4 className="mt-2 text-[16px] font-semibold">The unsigned contract</h4>
+                <p className="mt-3 text-[14px] font-medium leading-[1.6] text-muted-foreground">
+                  The $8 million contract had never actually been signed. Not by the client. Not by the vendor.
+                  An untold mystery that had quietly stalled every conversation and blocked every milestone.
+                  This wasn&apos;t in the CRM. It wasn&apos;t in the support tool. It lived in the gap between systems.
                 </p>
               </div>
-            </motion.div>
+              <div className="rounded-xl border border-border bg-background p-6">
+                <div className="text-[12px] font-bold uppercase tracking-widest text-primary">Signal 2</div>
+                <h4 className="mt-2 text-[16px] font-semibold">The hidden conflict</h4>
+                <p className="mt-3 text-[14px] font-medium leading-[1.6] text-muted-foreground">
+                  Buried deep in the records — fragments of notes, email tones, stakeholder interaction patterns —
+                  was evidence of significant interpersonal conflict between key decision-makers. The kind of tension
+                  that derails renewals not because the product fails, but because the relationship fractures.
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Chapter 3 */}
+      <section className="arvio-section">
+        <div className="mx-auto max-w-[800px]">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}>
+            <div className="text-[12px] font-bold uppercase tracking-[0.2em] text-primary">Chapter 3</div>
+            <h2 className="mt-3 text-[32px] font-semibold tracking-[-0.04em] leading-[1.2] sm:text-[38px]">The save — $8 million back from the edge</h2>
+            <div className="mt-8 space-y-6 text-[16px] font-medium leading-[1.8] tracking-[-0.01em] text-foreground/75">
+              <p>
+                With both signals identified, Nirmal had what he needed. He resolved the unsigned contract, navigating the
+                bureaucratic and legal complexity that had quietly frozen the relationship. He addressed the interpersonal dynamics
+                with the care and precision that only someone who had already mapped the full context could manage.
+              </p>
+              <p>
+                He rebuilt the relationship from zero. Meeting by meeting. Conversation by conversation. System by system.
+              </p>
+              <p className="text-[18px] text-foreground font-semibold">
+                When renewal time came — they renewed. The full $8 million.
+              </p>
+              <p>
+                An account that had been written off as 100% attrition — saved. Not because a better tool surfaced the right alert.
+                Because one person was willing to manually connect every piece of data across every system, find the signals that
+                no single tool could see, and act on them with the full weight of human judgment.
+              </p>
+              <blockquote className="border-l-2 border-primary pl-6 text-[17px] italic text-foreground">
+                &ldquo;I saved it. But it nearly killed me to do it by hand. And in that moment, I knew two things with absolute certainty:
+                this should never require one human being to do alone. And I was the only person in a position to build the system
+                that would make sure it never did again.&rdquo;
+              </blockquote>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Chapter 4 */}
+      <section className="arvio-section bg-muted">
+        <div className="mx-auto max-w-[800px]">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}>
+            <div className="text-[12px] font-bold uppercase tracking-[0.2em] text-primary">Chapter 4</div>
+            <h2 className="mt-3 text-[32px] font-semibold tracking-[-0.04em] leading-[1.2] sm:text-[38px]">The birth of IntegrateWise</h2>
+            <div className="mt-8 space-y-6 text-[16px] font-medium leading-[1.8] tracking-[-0.01em] text-foreground/75">
+              <p>
+                The Red Account recovery wasn&apos;t a whiteboard exercise or a market research report. It was a lived experience —
+                a specific account, a specific crisis, a specific set of hidden signals that only became visible through weeks
+                of manual integration work.
+              </p>
+              <p>
+                Nirmal didn&apos;t set out to build another CRM, another analytics tool, or another workflow automation platform.
+                He set out to automate everything he had done by hand: the cross-referencing, the signal discovery, the context building,
+                the pattern recognition across disconnected systems, and the surfacing of insights that no individual tool could produce alone.
+              </p>
+              <p className="text-foreground font-semibold">
+                He had spent 13 years building the plumbing. Now he was going to build the brain.
+              </p>
+            </div>
+
+            <h3 className="mt-10 text-[20px] font-semibold tracking-[-0.03em]">What IntegrateWise actually solves</h3>
+            <div className="mt-6 space-y-3">
+              {[
+                "Connect every data source into a single truth store — so nothing lives in a silo where it can't be seen.",
+                "Normalize and enrich every data point — so signals from seven different tools can be read against each other.",
+                "Surface hidden context automatically — the unsigned contract, the buried conflict, the pattern nobody noticed.",
+                "Recommend action in full context — vendor goals and client goals simultaneously, never in isolation.",
+                "Wait for human approval — because the highest-stakes decisions require human judgment, not automation alone.",
+              ].map((item, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, x: -12 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ type: "spring", bounce: 0.2, duration: 0.6, delay: i * 0.06 }}
+                  className="flex items-start gap-3 rounded-xl border border-border bg-background p-4"
+                >
+                  <span className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-[12px] font-bold text-white" style={{ background: "var(--gradient-primary-icon)" }}>{i + 1}</span>
+                  <span className="text-[15px] font-medium leading-[1.6] text-foreground/80">{item}</span>
+                </motion.div>
+              ))}
+            </div>
+
+            <div className="mt-10 rounded-xl p-6" style={{ background: "var(--gradient-primary)" }}>
+              <p className="text-[17px] font-semibold leading-[1.5] text-white">
+                AI that thinks in context. Actions that wait for humans.
+              </p>
+              <p className="mt-1 text-[15px] font-medium text-white/70">This is IntegrateWise.</p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Timeline */}
+      <section className="arvio-section">
+        <div className="mx-auto max-w-[800px]">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}>
+            <h2 className="text-[32px] font-semibold tracking-[-0.04em] leading-[1.2] sm:text-[38px]">The journey</h2>
+          </motion.div>
+          <div className="mt-12 space-y-0">
+            {timeline.map(({ year, title, desc }, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ type: "spring", bounce: 0.2, duration: 0.6, delay: i * 0.05 }}
+                className="relative pl-8 pb-10 last:pb-0 before:absolute before:left-0 before:top-0 before:bottom-0 before:w-px before:bg-border last:before:hidden"
+              >
+                <div className="absolute left-0 top-1 h-2.5 w-2.5 -translate-x-[calc(50%-0.5px)] rounded-full bg-primary" />
+                <div className="text-[13px] font-bold tracking-[-0.02em] text-primary">{year}</div>
+                <h3 className="mt-1 text-[16px] font-semibold tracking-[-0.03em]">{title}</h3>
+                <p className="mt-2 text-[14px] font-medium leading-[1.6] text-muted-foreground">{desc}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Who It's For */}
-      <section className="arvio-section">
-        <div className="mx-auto max-w-[1100px]">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-            className="mx-auto max-w-3xl"
-          >
-            <h2 className="section-heading">Who IntegrateWise{" "}<span className="text-primary">is for</span></h2>
-            <p className="mt-6 text-[17px] font-medium leading-[1.7] tracking-[-0.02em] text-muted-foreground">
-              IntegrateWise is for everyone who feels like a human connector — a &quot;Human API&quot; — in their day-to-day work:
+      {/* Closing quote + CTA */}
+      <section className="arvio-section" style={{ backgroundColor: "rgb(8, 7, 14)" }}>
+        <div className="mx-auto max-w-[800px] text-center">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}>
+            <blockquote className="text-[28px] font-semibold leading-[1.3] tracking-[-0.04em] text-white sm:text-[36px]">
+              &ldquo;We built it to save ourselves.{" "}
+              <span className="text-primary">Now it saves you.</span>&rdquo;
+            </blockquote>
+            <p className="mt-6 text-[15px] font-medium text-white/40">
+              Nirmal Prince J · Founder &amp; CEO · IntegrateWise LLP · Bengaluru, India
             </p>
-          </motion.div>
-
-          <div className="mx-auto mt-10 max-w-3xl divide-y divide-border/60">
-            {[
-              { who: "Founders & leaders", what: "A single, truthful view of how the business is actually running." },
-              { who: "Sales, success & support", what: "The full story in one place — not scattered across CRMs, help desks, and inboxes." },
-              { who: "Finance & ops", what: "Billing, invoices, and reports connected across tools — no more juggling." },
-              { who: "Product & project teams", what: "Tickets, documents, and chats coordinated in one workspace." },
-              { who: "Analysts & RevOps", what: "Trustworthy, connected data to diagnose issues and surface opportunities." },
-              { who: "Students & freelancers", what: "A personal workspace where your knowledge grows and follows you across AI tools." },
-            ].map(({ who, what }, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 12 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ type: "spring", bounce: 0.2, duration: 0.6, delay: i * 0.06 }}
-                className="flex flex-col gap-1 py-5 sm:flex-row sm:items-start sm:gap-8"
-              >
-                <div className="w-48 shrink-0 text-[15px] font-semibold text-foreground">{who}</div>
-                <div className="text-[15px] font-medium leading-[1.5] text-muted-foreground">{what}</div>
-              </motion.div>
-            ))}
-          </div>
-
-          <motion.p
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ type: "spring", bounce: 0.2, duration: 0.6, delay: 0.3 }}
-            className="mx-auto mt-10 max-w-3xl text-[17px] font-semibold leading-[1.7] tracking-[-0.02em] text-foreground"
-          >
-            If your work depends on data spread across tools — and you want AI that truly understands your
-            context while respecting your control — IntegrateWise is built for you.
-          </motion.p>
-        </div>
-      </section>
-
-      {/* Values */}
-      <section className="arvio-section bg-muted">
-        <div className="mx-auto max-w-[1100px]">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-            className="mx-auto max-w-2xl text-center"
-          >
-            <h2 className="section-heading">
-              What we{" "}
-              <span className="text-primary">stand for</span>
-            </h2>
-          </motion.div>
-
-          <div className="mx-auto mt-16 grid max-w-4xl gap-6 sm:grid-cols-2">
-            {[
-              { title: "Truth over convenience", desc: "We'd rather show you an uncomfortable truth than a comfortable hallucination. One source of truth means real honesty." },
-              { title: "Control is non-negotiable", desc: "The approval layer exists because AI without oversight is AI without trust. There's no admin override. Period." },
-              { title: "Context is everything", desc: "An AI with partial context is worse than no AI at all. Your connected workspace gives AI the full picture before it speaks." },
-              { title: "You stay in the loop, always", desc: "We believe AI should augment human judgment, not replace it. The approval step isn't a speed bump — it's the whole point." },
-            ].map((v, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ type: "spring", bounce: 0.2, duration: 0.6, delay: i * 0.1 }}
-                className="arvio-card p-8"
-              >
-                <h3 className="text-[18px] font-semibold tracking-[-0.03em]">{v.title}</h3>
-                <p className="mt-3 text-[15px] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">{v.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Why This Is Different */}
-      <section className="arvio-section">
-        <div className="mx-auto max-w-[1100px]">
-          <div className="mx-auto max-w-3xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-            >
-              <h2 className="section-heading">Why this is{" "}<span className="text-primary">different</span></h2>
-              <div className="mt-8 space-y-6 text-[17px] font-medium leading-[1.7] tracking-[-0.02em] text-muted-foreground">
-                <p>
-                  Most platforms do one thing: dashboards show data, iPaaS tools move data, copilots suggest actions, CRMs store records.
-                </p>
-                <p>IntegrateWise does what none of them do alone:</p>
-              </div>
-
-              <div className="mt-8 space-y-4">
-                {[
-                  "It connects your tools into one living intelligence layer. Not just syncing fields — preserving the relationships, context, and meaning between them.",
-                  "It gives AI the full picture. Not one tool's view. Not one conversation's context. Everything — across every system, every interaction, every prior AI session.",
-                  "It never acts without your approval. Every insight has evidence. Every action waits for your OK. Nothing becomes truth without your say.",
-                  "It gets smarter the more you use it. Every decision, correction, and denied action teaches the system. The intelligence compounds over time — and it's yours.",
-                ].map((item, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, x: -12 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ type: "spring", bounce: 0.2, duration: 0.6, delay: i * 0.08 }}
-                    className="flex items-start gap-3 rounded-xl border border-border/50 bg-white p-5"
-                    style={{ boxShadow: "var(--shadow-card)" }}
-                  >
-                    <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-primary" />
-                    <span className="text-[15px] font-medium leading-[1.6] text-foreground/80">{item}</span>
-                  </motion.div>
-                ))}
-              </div>
-
-              <div className="mt-10 rounded-xl bg-muted/50 p-6">
-                <p className="text-[15px] font-semibold leading-[1.6] tracking-[-0.02em] text-foreground">
-                  CRM stores. Search finds. iPaaS moves. Copilots suggest.{" "}
-                  <span className="text-primary">IntegrateWise governs truth and action.</span>
-                </p>
-                <p className="mt-4 text-[15px] font-medium leading-[1.6] tracking-[-0.02em] text-muted-foreground italic">
-                  This is the workspace I wish I&apos;d had. Now it exists.
-                </p>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="arvio-section">
-        <div className="mx-auto max-w-[1100px]">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-            className="mx-auto max-w-2xl text-center"
-          >
-            <h2 className="section-heading">
-              Ready to stop being the{" "}
-              <span className="text-primary">human API?</span>
-            </h2>
             <div className="mt-10 flex flex-col items-center justify-center gap-2.5 sm:flex-row">
-              <Button
-                size="lg"
-                className="h-[42px] rounded-xl px-6 text-[15px] font-semibold tracking-[-0.3px]"
-                style={{ background: "var(--gradient-primary)", border: "2px solid rgba(248,248,250,0.12)", boxShadow: "var(--shadow-button)" }}
-                asChild
-              >
+              <Button size="lg" className="h-[42px] rounded-xl px-6 text-[15px] font-semibold" style={{ background: "var(--gradient-primary)", boxShadow: "var(--shadow-button)" }} asChild>
                 <Link href="/contact?intent=demo">Book a demo</Link>
               </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="h-[42px] rounded-xl border-2 border-border/75 bg-white px-6 text-[15px] font-semibold tracking-[-0.3px] text-foreground"
-                asChild
-              >
+              <Button size="lg" variant="outline" className="h-[42px] rounded-xl border-2 border-white/15 bg-transparent px-6 text-[15px] font-semibold text-white hover:bg-white/10" asChild>
                 <Link href="/platform">See how it works</Link>
               </Button>
             </div>
