@@ -22,7 +22,7 @@ const navigation = [
     href: "/platform",
     items: [
       { name: "How It Works", href: "/platform", icon: Layers, desc: "Connect, see, and act — in three steps" },
-      { name: "Integrations", href: "/integrations", icon: Plug, desc: "20+ connectors for the tools you use" },
+      { name: "Integrations", href: "/integrations", icon: Plug, desc: "70+ integrations for the tools you use" },
       { name: "AI & Approvals", href: "/ai", icon: Brain, desc: "AI that helps, but only acts with your OK" },
       { name: "Security", href: "/security", icon: ShieldCheck, desc: "Enterprise-grade security and compliance" },
     ],

@@ -27,7 +27,7 @@ const plans = [
       "Basic signals and alerts",
       "Email support",
     ],
-    cta: "Get started",
+    cta: "Book a demo",
     href: "/contact?intent=pricing",
     highlighted: false,
   },

@@ -7,7 +7,7 @@ import { PlatformContent } from "./content"
 export const metadata: Metadata = {
   title: "How It Works | IntegrateWise",
   description:
-    "Connect your tools, clean your data automatically, build complete views of every account, and let AI propose actions — with your approval. See how IntegrateWise works.",
+    "Connect 70+ tools, work in one workspace, and let The Twin propose actions — with your approval. See how IntegrateWise works.",
 }
 
 export default function PlatformPage() {

@@ -3,88 +3,135 @@
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { Plug, Layers, Eye, ShieldCheck, Brain, RefreshCw, ArrowRight } from "lucide-react"
+import { Plug, Layers, Brain, ArrowRight, Database, MessageSquare, BookOpen, RefreshCw } from "lucide-react"
 import { OrbitingCircles } from "@/components/ui/orbiting-circles"
 import { StickyScrollReveal, StickyScrollFallback } from "@/components/ui/sticky-scroll-reveal"
 import type { StickyScrollStep } from "@/components/ui/sticky-scroll-reveal"
 import Image from "next/image"
 
-const steps = [
-  {
-    number: "01",
-    icon: Plug,
-    title: "Connect",
-    subtitle: "Plug in your tools",
-    description:
-      "Connect your CRM, support desk, billing, email, chat, docs, and databases. Each tool syncs automatically — no data migration, no engineering work.",
-    details: [
-      "Pre-built connectors for 20+ popular tools",
-      "Custom API and webhook support",
-      "Real-time sync with change detection",
-      "No data migration — we read from your systems",
-    ],
-  },
-  {
-    number: "02",
-    icon: Eye,
-    title: "See",
-    subtitle: "Get the full picture",
-    description:
-      "IntegrateWise automatically builds a complete, live view of every customer, account, project, and ticket. Every signal, every interaction, in one place.",
-    details: [
-      "Automatically links related data across tools",
-      "Full timeline of interactions and events",
-      "Relationship mapping between people and accounts",
-      "Health signals and trend detection",
-    ],
-  },
-  {
-    number: "03",
-    icon: Brain,
-    title: "Act",
-    subtitle: "AI suggests, you decide",
-    description:
-      "AI assistants see the complete picture and suggest what to do next — with clear reasoning. Nothing happens until you explicitly approve.",
-    details: [
-      "AI with full context across all your tools",
-      "Clear reasoning behind every suggestion",
-      "You approve every action before it happens",
-      "Complete record of every action taken",
-    ],
-  },
-]
+/* ── Step visuals ── */
 
-function StepVisual({ step }: { step: (typeof steps)[number] }) {
-  const Icon = step.icon
+function ConnectVisual() {
+  const tools = [
+    { name: "CRM", count: "6" },
+    { name: "Support", count: "9" },
+    { name: "Billing", count: "6" },
+    { name: "Communication", count: "7" },
+    { name: "Productivity", count: "7" },
+    { name: "Project", count: "6" },
+    { name: "Analytics", count: "6" },
+    { name: "Marketing", count: "8" },
+    { name: "Engineering", count: "3" },
+    { name: "Commerce", count: "3" },
+    { name: "AI", count: "3" },
+    { name: "HR", count: "1" },
+    { name: "Custom", count: "∞" },
+  ]
   return (
-    <div className="flex w-full max-w-sm flex-col items-center gap-6">
-      <div
-        className="flex h-20 w-20 items-center justify-center rounded-2xl"
-        style={{ background: "var(--gradient-primary)", boxShadow: "0 16px 48px -12px rgba(27,167,132,0.35)" }}
-      >
-        <Icon className="h-10 w-10 text-white" />
-      </div>
-      <ul className="w-full space-y-3">
-        {step.details.map((detail, j) => (
-          <li key={j} className="arvio-card flex items-start gap-3 p-4">
-            <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full" style={{ background: "var(--gradient-primary-icon)" }}>
-              <ArrowRight className="h-3 w-3 text-white" />
-            </div>
-            <span className="text-[15px] font-medium leading-[1.5] tracking-[-0.02em] text-foreground">{detail}</span>
-          </li>
+    <div className="w-full max-w-sm">
+      <div className="grid grid-cols-3 gap-2">
+        {tools.map((t) => (
+          <div key={t.name} className="arvio-card flex flex-col items-center p-3 text-center">
+            <span className="text-[18px] font-bold text-primary">{t.count}</span>
+            <span className="text-[10px] font-semibold text-muted-foreground uppercase tracking-wider">{t.name}</span>
+          </div>
         ))}
-      </ul>
+      </div>
+      <p className="mt-3 text-center text-[12px] font-semibold text-primary">70+ integrations across 13 categories</p>
     </div>
   )
 }
 
-const stickySteps: StickyScrollStep[] = steps.map((step) => ({
-  label: `Step ${step.number}`,
-  title: `${step.title}. ${step.subtitle}`,
-  description: step.description,
-  visual: <StepVisual step={step} />,
-}))
+function WorkspaceVisual() {
+  const layers = [
+    { icon: Database, label: "Truth", desc: "Your data from connected tools", color: "rgb(27,167,132)" },
+    { icon: MessageSquare, label: "Context", desc: "Emails, Slack, docs, meetings", color: "rgb(52,211,153)" },
+    { icon: BookOpen, label: "Knowledge Memory", desc: "AI sessions that compound over time", color: "rgb(110,231,183)" },
+  ]
+  return (
+    <div className="w-full max-w-sm space-y-3">
+      {layers.map(({ icon: Icon, label, desc, color }, i) => (
+        <motion.div
+          key={label}
+          initial={{ opacity: 0, x: -16 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: i * 0.12, type: "spring", bounce: 0.2, duration: 0.6 }}
+          className="arvio-card flex items-center gap-4 p-4"
+        >
+          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg" style={{ backgroundColor: `${color}15` }}>
+            <Icon className="h-5 w-5" style={{ color }} />
+          </div>
+          <div>
+            <p className="text-[14px] font-semibold tracking-[-0.02em]">{label}</p>
+            <p className="text-[12px] font-medium text-muted-foreground">{desc}</p>
+          </div>
+        </motion.div>
+      ))}
+      <div className="rounded-xl border border-primary/20 bg-primary/5 p-3 text-center">
+        <p className="text-[12px] font-semibold text-primary">All three layers → one complete view per entity</p>
+      </div>
+    </div>
+  )
+}
 
+function TwinVisual() {
+  const insights = [
+    "Usage dropped 42%, renewal in 45 days",
+    "Champion silent 12 days, 3 P1 tickets open",
+    "Payment failed twice, invoice overdue",
+    "Competitor mentioned in Slack thread",
+  ]
+  return (
+    <div className="w-full max-w-sm space-y-2">
+      {insights.map((insight, i) => (
+        <motion.div
+          key={i}
+          initial={{ opacity: 0, y: 8 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: i * 0.15, type: "spring", bounce: 0.2, duration: 0.5 }}
+          className="arvio-card flex items-start gap-3 p-4"
+        >
+          <div className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-[9px] font-bold text-white" style={{ background: "var(--gradient-primary-icon)" }}>
+            T
+          </div>
+          <div>
+            <p className="text-[13px] font-semibold tracking-[-0.02em]">{insight}</p>
+            <p className="text-[11px] font-medium text-muted-foreground">Evidence from 3 sources · Confidence 94%</p>
+          </div>
+        </motion.div>
+      ))}
+      <div className="flex items-center justify-center gap-2 pt-2">
+        <span className="rounded-md border border-border px-3 py-1.5 text-[11px] font-semibold text-muted-foreground">Dismiss</span>
+        <span className="rounded-md px-3 py-1.5 text-[11px] font-semibold text-white" style={{ background: "var(--gradient-primary)" }}>Approve & Act</span>
+      </div>
+    </div>
+  )
+}
+
+const stickySteps: StickyScrollStep[] = [
+  {
+    label: "Step 01",
+    title: "Connect. 70+ integrations, one-time setup.",
+    description: "CRM, billing, support, email, chat, docs, analytics — plug in via OAuth in minutes. No data migration. No engineering team. Your tools keep working as they do today.",
+    visual: <ConnectVisual />,
+  },
+  {
+    label: "Step 02",
+    title: "Work. Everything in one workspace.",
+    description: "Your data gets cleaned and organized automatically. Three layers assemble into one complete view per entity — your data, your conversations, and your accumulated knowledge. All in one place.",
+    visual: <WorkspaceVisual />,
+  },
+  {
+    label: "Step 03",
+    title: "The Twin proposes. You decide.",
+    description: "The Twin reads all three layers before reasoning. It spots patterns no single tool can see, surfaces insights with evidence, and proposes actions. Nothing happens without your approval.",
+    visual: <TwinVisual />,
+  },
+]
+
+/* ── Orbiting circles data ── */
 const innerIcons = [
   { src: "/logos/salesforce.svg", alt: "Salesforce" },
   { src: "/logos/hubspot.svg", alt: "HubSpot" },
@@ -92,7 +139,6 @@ const innerIcons = [
   { src: "/logos/stripe.svg", alt: "Stripe" },
   { src: "/logos/jira.svg", alt: "Jira" },
 ]
-
 const outerIcons = [
   { src: "/logos/notion.svg", alt: "Notion" },
   { src: "/logos/gmail.svg", alt: "Gmail" },
@@ -101,6 +147,9 @@ const outerIcons = [
   { src: "/logos/github.svg", alt: "GitHub" },
   { src: "/logos/airtable.svg", alt: "Airtable" },
 ]
+
+/* ── Backend loop steps ── */
+const loopSteps = ["Load", "Store", "Think", "Act", "Adjust", "Loop"]
 
 export function PlatformContent() {
   return (
@@ -117,31 +166,28 @@ export function PlatformContent() {
               style={{ boxShadow: "0px 0px 0px 3px rgb(248 248 250)" }}
             >
               <span className="h-2 w-2 rounded-full" style={{ background: "var(--gradient-primary-icon)" }} />
-              <span className="text-[14px] font-semibold tracking-[-0.03em] text-[#0a0b10]">Platform</span>
+              <span className="text-[14px] font-semibold tracking-[-0.03em] text-[#0a0b10]">How It Works</span>
             </motion.div>
-
             <motion.h1
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ type: "spring", damping: 16, mass: 1, stiffness: 52, delay: 0.4 }}
               className="text-[48px] font-semibold leading-[1em] tracking-[-0.05em] text-white sm:text-[54px] lg:text-[64px]"
             >
-              Connect. See. Act.{" "}
-               <span className="text-primary">With full control.</span>
+              Connect. Work.{" "}
+              <span className="text-primary">The Twin proposes.</span>
             </motion.h1>
-
             <motion.p
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ type: "spring", damping: 16, mass: 1, stiffness: 52, delay: 0.6 }}
               className="mx-auto mt-8 max-w-2xl text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-white/55"
             >
-               Three steps to turn scattered systems into a single connected workspace.
-               Here&apos;s exactly how IntegrateWise works under the hood.
+              Plug in your tools. Work in one workspace. The Twin reads everything and proposes actions — you approve.
             </motion.p>
           </div>
 
-          {/* Orbiting Circles visual */}
+          {/* Orbiting Circles */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -150,10 +196,7 @@ export function PlatformContent() {
           >
             <div className="relative flex h-[340px] w-full items-center justify-center overflow-hidden">
               <div className="z-10 flex flex-col items-center gap-2">
-                <div
-                  className="flex h-14 w-14 items-center justify-center rounded-2xl border-2 border-white/10"
-                  style={{ background: "var(--gradient-primary)" }}
-                >
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl border-2 border-white/10" style={{ background: "var(--gradient-primary)" }}>
                   <Image src="/icon.svg" alt="IntegrateWise" width={28} height={28} className="brightness-0 invert" />
                 </div>
                 <span className="text-[12px] font-semibold tracking-[-0.02em] text-white/60">Your workspace</span>
@@ -177,47 +220,92 @@ export function PlatformContent() {
         </div>
       </section>
 
-      {/* Connect / See / Act — Sticky Scroll (desktop) */}
+      {/* Three steps — Sticky Scroll (desktop) */}
       <div className="hidden lg:block">
         <StickyScrollReveal
           steps={stickySteps}
           heading={
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-              className="mx-auto max-w-2xl text-center"
-            >
-              <h2 className="section-heading">
-                Three steps to{" "}
-                <span className="text-primary">full clarity</span>
-              </h2>
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ type: "spring", bounce: 0.2, duration: 0.6 }} className="mx-auto max-w-2xl text-center">
+              <h2 className="section-heading">Three steps.{" "}<span className="text-primary">You stay in control.</span></h2>
+            </motion.div>
+          }
+        />
+      </div>
+      <div className="lg:hidden">
+        <StickyScrollFallback
+          steps={stickySteps}
+          heading={
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ type: "spring", bounce: 0.2, duration: 0.6 }} className="mx-auto max-w-2xl text-center">
+              <h2 className="section-heading">Three steps.{" "}<span className="text-primary">You stay in control.</span></h2>
             </motion.div>
           }
         />
       </div>
 
-      {/* Connect / See / Act — Fallback (mobile) */}
-      <div className="lg:hidden">
-        <StickyScrollFallback
-          steps={stickySteps}
-          heading={
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-              className="mx-auto max-w-2xl text-center"
-            >
-              <h2 className="section-heading">
-                Three steps to{" "}
-                <span className="text-primary">full clarity</span>
-              </h2>
-            </motion.div>
-          }
-        />
-      </div>
+      {/* Behind the scenes — backend loop */}
+      <section className="arvio-section" style={{ backgroundColor: "rgb(8, 7, 14)" }}>
+        <div className="mx-auto max-w-[1100px]">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ type: "spring", bounce: 0.2, duration: 0.6 }} className="mx-auto max-w-2xl text-center">
+            <p className="text-[12px] font-bold uppercase tracking-[0.2em] text-primary">Behind the scenes</p>
+            <h2 className="mt-3 text-[32px] font-semibold tracking-[-0.04em] leading-[1.2] text-white sm:text-[40px]">
+              The engine that powers your workspace
+            </h2>
+            <p className="mt-4 text-[15px] font-medium leading-[1.5] tracking-[-0.02em] text-white/40">
+              While you work, a continuous loop runs in the background — loading data, storing it, thinking across all three layers, acting on approvals, adjusting from your decisions, and repeating.
+            </p>
+          </motion.div>
+
+          <div className="mx-auto mt-12 flex max-w-3xl items-center justify-center gap-2 sm:gap-4">
+            {loopSteps.map((step, i) => (
+              <motion.div
+                key={step}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08, type: "spring", bounce: 0.2, duration: 0.5 }}
+                className="flex items-center gap-2 sm:gap-4"
+              >
+                <div className="flex flex-col items-center">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] sm:h-12 sm:w-12">
+                    <RefreshCw className="h-4 w-4 text-primary sm:h-5 sm:w-5" />
+                  </div>
+                  <span className="mt-2 text-[10px] font-semibold text-white/50 sm:text-[11px]">{step}</span>
+                </div>
+                {i < loopSteps.length - 1 && (
+                  <ArrowRight className="h-3 w-3 text-white/20" />
+                )}
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.p
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ type: "spring", bounce: 0.2, duration: 0.6, delay: 0.4 }}
+            className="mx-auto mt-8 max-w-lg text-center text-[13px] font-medium text-white/25"
+          >
+            You never interact with this loop directly. It powers the workspace, keeps your views current, and makes The Twin smarter with every cycle.
+          </motion.p>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="arvio-section">
+        <div className="mx-auto max-w-[1100px]">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ type: "spring", bounce: 0.2, duration: 0.6 }} className="mx-auto max-w-2xl text-center">
+            <h2 className="section-heading">See it{" "}<span className="text-primary">in action.</span></h2>
+            <div className="mt-10 flex flex-col items-center justify-center gap-2.5 sm:flex-row">
+              <Button size="lg" className="h-[42px] rounded-xl px-6 text-[15px] font-semibold" style={{ background: "var(--gradient-primary)", boxShadow: "var(--shadow-button)" }} asChild>
+                <Link href="/contact?intent=demo">Book a demo</Link>
+              </Button>
+              <Button size="lg" variant="outline" className="h-[42px] rounded-xl border-2 border-border/75 bg-white px-6 text-[15px] font-semibold text-foreground" asChild>
+                <Link href="/integrations">See 70+ integrations</Link>
+              </Button>
+            </div>
+          </motion.div>
+        </div>
+      </section>
     </>
   )
 }
