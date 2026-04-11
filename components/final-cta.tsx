@@ -1,48 +1,61 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { ArrowRight, Mail } from "lucide-react"
+import { motion } from "framer-motion"
 
 export function FinalCTA() {
   return (
-    <section className="bg-primary py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-4xl font-semibold tracking-tight text-primary-foreground sm:text-5xl">
-            Ready to integrate wisely?
+    <section
+      className="relative overflow-hidden"
+      style={{ backgroundColor: "rgb(8, 7, 14)" }}
+    >
+      <div className="mx-auto max-w-[1100px] px-6 py-[100px] md:px-16">
+        {/* Subtle radial overlay */}
+        <div
+          className="pointer-events-none absolute inset-0 rounded-[50px]"
+          style={{
+            background: "radial-gradient(50% 50% at 50% 50%, rgba(27,167,132,0.08) 0%, transparent 100%)",
+          }}
+        />
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+          className="relative mx-auto max-w-2xl text-center"
+        >
+          <h2 className="text-[40px] font-semibold tracking-[-0.05em] leading-[1.2] text-white sm:text-[48px] lg:text-[52px]">
+            Ready to see everything{" "}
+            <span className="text-primary">in one place?</span>
           </h2>
-          <p className="mt-6 text-lg text-primary-foreground/80">
-            Book a strategy call to discuss your integration challenges. We'll help you build systems that scale without
-            becoming technical debt.
+          <p className="mt-6 text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-white/55">
+            See a live demo of how IntegrateWise connects your tools, gives you the full picture, and keeps you in control of what AI does.
           </p>
-          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <div className="mt-10 flex flex-col items-center justify-center gap-2.5 sm:flex-row">
             <Button
               size="lg"
-              className="h-12 bg-white px-6 text-base font-medium text-primary hover:bg-white/90"
+              className="h-[42px] rounded-xl px-4 text-[15px] font-semibold tracking-[-0.3px]"
+              style={{
+                background: "var(--gradient-primary)",
+                border: "2px solid rgba(248,248,250,0.12)",
+                boxShadow: "var(--shadow-button)",
+              }}
               asChild
             >
-              <Link href="mailto:connect@integratewise.co" className="flex items-center gap-2">
-                <Mail className="h-4 w-4" />
-                Book a Strategy Call
-              </Link>
+              <Link href="/contact?intent=demo">Book a demo</Link>
             </Button>
             <Button
               size="lg"
               variant="outline"
-              className="h-12 border-white/30 bg-transparent px-6 text-base font-medium text-white hover:bg-white/10"
+              className="h-[42px] rounded-xl border-2 border-white/15 bg-transparent px-4 text-[15px] font-semibold tracking-[-0.3px] text-white hover:bg-white/10 hover:text-white"
               asChild
             >
-              <Link href="https://integratewise.co/services" className="flex items-center gap-2">
-                Explore Services <ArrowRight className="h-4 w-4" />
-              </Link>
+              <Link href="/contact">Talk to us</Link>
             </Button>
           </div>
-          <p className="mt-8 text-sm text-primary-foreground/60">
-            Or email us directly at{" "}
-            <a href="mailto:connect@integratewise.co" className="underline hover:text-primary-foreground">
-              connect@integratewise.co
-            </a>
-          </p>
-        </div>
+        </motion.div>
       </div>
     </section>
   )

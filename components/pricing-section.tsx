@@ -1,125 +1,232 @@
+"use client"
+
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Check } from "lucide-react"
 import Link from "next/link"
+import { motion } from "framer-motion"
+
+type Region = "india" | "international" | "enterprise"
+
+const regions: { key: Region; label: string }[] = [
+  { key: "india", label: "India" },
+  { key: "international", label: "International" },
+  { key: "enterprise", label: "Enterprise" },
+]
 
 const plans = [
   {
-    name: "Advisory Retainer",
-    price: "Custom",
-    period: "",
-    description: "On-demand integration expertise",
+    name: "Starter",
+    prices: { india: "₹999", international: "$49", enterprise: "Custom" },
+    period: "/mo",
+    description: "For founders and small teams proving value.",
     features: [
-      "Monthly strategy sessions",
-      "Architecture review calls",
-      "Slack/email support",
-      "Priority response time",
-      "Documentation templates",
+      "Up to 5 users",
+      "5 connectors",
+      "Entity 360 — complete view of any account",
+      "Basic AI signals",
+      "Approval workflows",
+      "Email support",
     ],
-    cta: "Book a Call",
-    href: "mailto:connect@integratewise.co",
+    cta: "Get started",
+    href: "/contact?intent=pricing",
     highlighted: false,
   },
   {
-    name: "Project-Based",
-    price: "Scoped",
-    period: "",
-    description: "Full implementation delivery",
+    name: "Growth",
+    prices: { india: "₹2,999", international: "$99", enterprise: "Custom" },
+    period: "/mo",
+    description: "For mid-market teams with 2-3 departments.",
     features: [
-      "Everything in Advisory",
-      "Dedicated project team",
-      "n8n workflow builds",
-      "MuleSoft implementations",
-      "AI agent deployment",
-      "Knowledge transfer",
-      "30-day support",
+      "Up to 15 users",
+      "15 connectors",
+      "Advanced signal detection",
+      "Custom playbooks",
+      "Team collaboration",
+      "Priority support",
     ],
-    cta: "Get a Quote",
-    href: "mailto:connect@integratewise.co",
+    cta: "Book a demo",
+    href: "/contact?intent=pricing",
     highlighted: true,
   },
   {
-    name: "Enterprise",
-    price: "Custom",
-    period: "",
-    description: "Strategic partnership",
+    name: "Command",
+    prices: { india: "₹7,999", international: "$199", enterprise: "Custom" },
+    period: "/mo",
+    description: "For organizations that need full governance.",
     features: [
-      "Everything in Project-Based",
-      "Embedded team members",
-      "COE establishment",
-      "Custom AI agents",
-      "SLA guarantees",
-      "Executive sponsorship",
-      "Quarterly business reviews",
+      "Unlimited users",
+      "Unlimited connectors",
+      "Enterprise governance & audit",
+      "Custom integrations",
+      "SSO, RBAC, compliance",
+      "Dedicated success team",
     ],
-    cta: "Contact Sales",
-    href: "mailto:connect@integratewise.co",
+    cta: "Contact sales",
+    href: "/contact?intent=pricing",
     highlighted: false,
   },
 ]
 
 export function PricingSection() {
+  const [region, setRegion] = useState<Region>("international")
+
   return (
-    <section id="pricing" className="border-y border-border/60 bg-muted/30 py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6">
-        <div className="flex items-baseline gap-4 justify-center">
-          <span className="text-sm font-medium text-primary">[06]</span>
-          <span className="text-sm font-medium text-muted-foreground">Engagement Models</span>
-        </div>
-
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
-            Flexible engagement <span className="text-primary">models.</span>
+    <section id="pricing" className="arvio-section bg-muted">
+      <div className="mx-auto max-w-[1100px]">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+          className="mx-auto max-w-2xl text-center"
+        >
+          <h2 className="section-heading">
+            Pricing that reflects{" "}
+            <span className="text-primary">truth, not seats</span>
           </h2>
-          <p className="mt-4 text-lg text-muted-foreground">
-            From advisory retainers to full project delivery. Choose what works for your team.
+          <p className="mt-4 text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">
+            Start with a platform fee, then scale with your team. No hidden costs, no surprise overages.
           </p>
-        </div>
 
-        {/* Pricing cards */}
-        <div className="mx-auto mt-16 grid max-w-5xl gap-8 lg:grid-cols-3">
-          {plans.map((plan, index) => (
-            <div
-              key={index}
-              className={`relative flex flex-col rounded-2xl border p-8 ${
-                plan.highlighted ? "border-primary bg-background shadow-lg" : "border-border bg-background"
+          {/* Geo Toggle */}
+          <div className="mt-8 inline-flex items-center rounded-full border border-border/50 bg-white p-1" style={{ boxShadow: "var(--shadow-card)" }}>
+            {regions.map((r) => (
+              <button
+                key={r.key}
+                onClick={() => setRegion(r.key)}
+                className={`relative rounded-full px-5 py-2 text-[14px] font-semibold tracking-[-0.02em] transition-all ${
+                  region === r.key
+                    ? "text-white"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                {region === r.key && (
+                  <motion.div
+                    layoutId="region-pill"
+                    className="absolute inset-0 rounded-full"
+                    style={{ background: "var(--gradient-primary)" }}
+                    transition={{ type: "spring", bounce: 0.2, duration: 0.4 }}
+                  />
+                )}
+                <span className="relative z-10">{r.label}</span>
+              </button>
+            ))}
+          </div>
+        </motion.div>
+
+        <div className="mx-auto mt-16 grid max-w-5xl gap-6 lg:grid-cols-3">
+          {plans.map((plan, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ type: "spring", bounce: 0.2, duration: 0.6, delay: i * 0.1 }}
+              className={`relative flex flex-col rounded-[20px] p-8 ${
+                plan.highlighted ? "text-white" : "bg-white"
               }`}
+              style={
+                plan.highlighted
+                  ? {
+                      background: "var(--gradient-primary)",
+                      boxShadow: "var(--shadow-card-elevated)",
+                    }
+                  : {
+                      boxShadow: "var(--shadow-card)",
+                    }
+              }
             >
               {plan.highlighted && (
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                  <span className="rounded-full bg-primary px-3 py-1 text-xs font-semibold text-primary-foreground">
+                  <span
+                    className="rounded-full px-3 py-1 text-[12px] font-semibold text-white"
+                    style={{
+                      background: "rgba(255,255,255,0.2)",
+                      backdropFilter: "blur(8px)",
+                    }}
+                  >
                     Most popular
                   </span>
                 </div>
               )}
-
               <div>
-                <h3 className="text-lg font-semibold">{plan.name}</h3>
-                <p className="mt-1 text-sm text-muted-foreground">{plan.description}</p>
+                <h3 className="text-[18px] font-semibold tracking-[-0.03em]">{plan.name}</h3>
+                <p className={`mt-1 text-[15px] font-medium ${plan.highlighted ? "text-white/70" : "text-muted-foreground"}`}>
+                  {plan.description}
+                </p>
                 <div className="mt-4">
-                  <span className="text-3xl font-semibold">{plan.price}</span>
-                  <span className="text-muted-foreground">{plan.period}</span>
+                  <motion.span
+                    key={region}
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.2 }}
+                    className="text-[34px] font-semibold tracking-[-0.05em]"
+                  >
+                    {plan.prices[region]}
+                  </motion.span>
+                  {region !== "enterprise" && (
+                    <span className={`text-[15px] ${plan.highlighted ? "text-white/60" : "text-muted-foreground"}`}>{plan.period}</span>
+                  )}
                 </div>
               </div>
-
               <ul className="mt-8 flex-1 space-y-3">
-                {plan.features.map((feature, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <Check className="h-5 w-5 shrink-0 text-primary" />
-                    <span className="text-sm">{feature}</span>
+                {plan.features.map((feature, j) => (
+                  <li key={j} className="flex items-start gap-3">
+                    <div
+                      className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full"
+                      style={{
+                        background: plan.highlighted ? "rgba(255,255,255,0.2)" : "var(--gradient-primary-icon)",
+                      }}
+                    >
+                      <Check className="h-3 w-3 text-white" />
+                    </div>
+                    <span className={`text-[15px] font-medium leading-[1.5] ${plan.highlighted ? "text-white/90" : ""}`}>{feature}</span>
                   </li>
                 ))}
               </ul>
-
               <Button
-                className={`mt-8 w-full ${plan.highlighted ? "" : "bg-transparent"}`}
-                variant={plan.highlighted ? "default" : "outline"}
+                className={`mt-8 h-[42px] w-full rounded-xl text-[15px] font-semibold tracking-[-0.3px] ${
+                  plan.highlighted
+                    ? "border-2 border-white/20 bg-white text-foreground hover:bg-white/90"
+                    : "border-2 border-border/75 bg-white text-foreground"
+                }`}
+                variant={plan.highlighted ? "secondary" : "outline"}
                 asChild
               >
                 <Link href={plan.href}>{plan.cta}</Link>
               </Button>
-            </div>
+            </motion.div>
           ))}
         </div>
+
+        {/* Implementation services */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ type: "spring", bounce: 0.2, duration: 0.6, delay: 0.3 }}
+          className="mx-auto mt-12 max-w-3xl"
+        >
+          <div className="arvio-card p-6">
+            <p className="text-[17px] font-semibold tracking-[-0.03em] text-foreground">Implementation &amp; services</p>
+            <p className="mt-2 text-[15px] font-medium leading-[1.5] text-muted-foreground">
+              Optional onboarding packages to get you live faster. Available for all tiers.
+            </p>
+            <div className="mt-4 grid gap-3 sm:grid-cols-3">
+              {[
+                { name: "Platform setup", price: "From $3K" },
+                { name: "Connector workshop", price: "From $2K" },
+                { name: "Custom add-ons", price: "Custom" },
+              ].map((item, i) => (
+                <div key={i} className="rounded-xl bg-muted p-4">
+                  <div className="text-[15px] font-semibold tracking-[-0.03em]">{item.name}</div>
+                  <div className="mt-1 text-[15px] font-semibold text-primary">{item.price}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   )

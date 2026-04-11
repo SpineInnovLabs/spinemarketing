@@ -1,20 +1,54 @@
-export function LogosSection() {
-  const partners = ["n8n", "HubSpot", "MuleSoft", "Salesforce", "Slack", "Zendesk", "Gainsight", "Neon"]
+"use client"
 
+import { Marquee } from "@/components/ui/marquee"
+import Image from "next/image"
+
+const logos = [
+  { name: "Salesforce", src: "/logos/salesforce.svg" },
+  { name: "HubSpot", src: "/logos/hubspot.svg" },
+  { name: "Stripe", src: "/logos/stripe.svg" },
+  { name: "Jira", src: "/logos/jira.svg" },
+  { name: "Notion", src: "/logos/notion.svg" },
+  { name: "Slack", src: "/logos/slack.svg" },
+  { name: "Zendesk", src: "/logos/zendesk.svg" },
+  { name: "Gmail", src: "/logos/gmail.svg" },
+  { name: "Shopify", src: "/logos/shopify.svg" },
+  { name: "QuickBooks", src: "/logos/quickbooks.svg" },
+  { name: "Intercom", src: "/logos/intercom.svg" },
+  { name: "GitHub", src: "/logos/github.svg" },
+  { name: "Airtable", src: "/logos/airtable.svg" },
+  { name: "Asana", src: "/logos/asana.svg" },
+  { name: "Google Drive", src: "/logos/googledrive.svg" },
+]
+
+function LogoCard({ name, src }: { name: string; src: string }) {
   return (
-    <section className="border-y border-border/60 bg-muted/30 py-16">
-      <div className="mx-auto max-w-7xl px-6">
-        <p className="mb-10 text-center text-sm font-medium text-muted-foreground">Platforms We Integrate</p>
-        <div className="flex flex-wrap items-center justify-center gap-x-16 gap-y-8">
-          {partners.map((partner, index) => (
-            <span
-              key={index}
-              className="text-lg font-semibold tracking-wide text-foreground/70 transition-colors hover:text-foreground"
-            >
-              {partner}
-            </span>
+    <div className="flex items-center gap-3 rounded-xl border border-border/50 bg-white px-5 py-3 shadow-sm">
+      <Image src={src} alt={name} width={24} height={24} />
+      <span className="whitespace-nowrap text-[15px] font-semibold tracking-[-0.02em] text-foreground/70">
+        {name}
+      </span>
+    </div>
+  )
+}
+
+export function LogosSection() {
+  return (
+    <section className="py-16 md:pt-16 md:pb-8">
+      <div className="mx-auto max-w-[1200px] px-6 md:px-16">
+        <p className="text-center text-[18px] font-semibold tracking-[-0.03em] leading-[1.3] text-foreground">
+          Connect the tools you already use
+        </p>
+      </div>
+      {/* Magic UI Marquee with fade edges */}
+      <div className="relative mt-8">
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-white to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-white to-transparent" />
+        <Marquee pauseOnHover className="[--duration:45s] [--gap:1rem]">
+          {logos.map((logo) => (
+            <LogoCard key={logo.name} name={logo.name} src={logo.src} />
           ))}
-        </div>
+        </Marquee>
       </div>
     </section>
   )

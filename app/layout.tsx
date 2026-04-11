@@ -1,44 +1,35 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Geist, Geist_Mono, Inter } from "next/font/google"
-import { Analytics } from "@vercel/analytics/next"
+import { Inter } from "next/font/google"
 import "./globals.css"
 
-const _geist = Geist({ subsets: ["latin"] })
-const _geistMono = Geist_Mono({ subsets: ["latin"] })
+import { FirebaseAnalytics } from "@/components/firebase-analytics"
+
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 
 export const metadata: Metadata = {
-  title: "IntegrateWise — Reliable Integration. Accelerated Automation.",
-  description: "Normalize once. Render anywhere. Cut churn 15–25% with a schema-first, AI-assisted automation layer.",
-  generator: "v0.app",
+  metadataBase: new URL("https://integratewise.ai"),
+  title: "IntegrateWise — Stop being the human API between your tools.",
+  description:
+    "IntegrateWise connects your tools into one knowledge workspace, gives you the complete picture of every account, and lets AI help — but nothing happens without your OK.",
   icons: {
-    icon: [
-      {
-        url: "/icon-light-32x32.png",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "/icon-dark-32x32.png",
-        media: "(prefers-color-scheme: dark)",
-      },
-      {
-        url: "/icon.svg",
-        type: "image/svg+xml",
-      },
-    ],
+    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
     apple: "/apple-icon.png",
   },
   openGraph: {
-    title: "IntegrateWise — Reliable Integration. Accelerated Automation.",
-    description: "Normalize once. Render anywhere. Cut churn 15–25% with a schema-first, AI-assisted automation layer.",
+    title: "IntegrateWise — Stop being the human API between your tools.",
+    description:
+      "IntegrateWise connects your tools into one knowledge workspace, gives you the complete picture of every account, and lets AI help — but nothing happens without your OK.",
     siteName: "IntegrateWise",
     type: "website",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "IntegrateWise" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "IntegrateWise — Reliable Integration. Accelerated Automation.",
-    description: "Normalize once. Render anywhere. Cut churn 15–25% with a schema-first, AI-assisted automation layer.",
+    title: "IntegrateWise — Stop being the human API between your tools.",
+    description:
+      "IntegrateWise connects your tools into one knowledge workspace, gives you the complete picture of every account, and lets AI help — but nothing happens without your OK.",
+    images: ["/og.png"],
   },
 }
 
@@ -57,13 +48,13 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Organization",
               name: "IntegrateWise",
-              url: "https://integratewise.co",
-              logo: "https://integratewise.co/logo.png",
+              url: "https://integratewise.ai",
+              logo: "https://integratewise.ai/icon.svg",
               sameAs: [],
               contactPoint: [
                 {
                   "@type": "ContactPoint",
-                  email: "connect@integratewise.co",
+                  email: "connect@integratewise.ai",
                   contactType: "sales",
                 },
               ],
@@ -72,8 +63,11 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.className} antialiased`}>
+        <a href="#main" className="skip-link">
+          Skip to main content
+        </a>
         {children}
-        <Analytics />
+        <FirebaseAnalytics />
       </body>
     </html>
   )

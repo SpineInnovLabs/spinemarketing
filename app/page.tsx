@@ -1,9 +1,12 @@
 import { Header } from "@/components/header"
 import { HeroSection } from "@/components/hero-section"
 import { LogosSection } from "@/components/logos-section"
-import { ServicesSection } from "@/components/services-section"
-import { AIAgentsSection } from "@/components/ai-agents-section"
-import { TestimonialsSection } from "@/components/testimonials-section"
+import { ProblemSection } from "@/components/problem-section"
+import { SolutionSection } from "@/components/solution-section"
+import { SolutionsDoorsSection } from "@/components/solutions-doors-section"
+import { HowItWorksSection } from "@/components/how-it-works-section"
+import { DayOneSection } from "@/components/day-one-section"
+import { ProofSection } from "@/components/proof-section"
 import { PricingSection } from "@/components/pricing-section"
 import { FinalCTA } from "@/components/final-cta"
 import { Footer } from "@/components/footer"
@@ -11,13 +14,16 @@ import { Footer } from "@/components/footer"
 export default function Home() {
   return (
     <div className="min-h-screen bg-background">
-      <Header />
-      <main>
+      <Header initiallyHidden />
+      <main id="main">
         <HeroSection />
         <LogosSection />
-        <ServicesSection />
-        <AIAgentsSection />
-        <TestimonialsSection />
+        <ProblemSection />
+        <SolutionSection />
+        <SolutionsDoorsSection />
+        <HowItWorksSection />
+        <DayOneSection />
+        <ProofSection />
         <PricingSection />
         <FinalCTA />
       </main>
