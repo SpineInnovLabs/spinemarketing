@@ -5,9 +5,9 @@ import { FinalCTA } from "@/components/final-cta"
 import { AIContent } from "./content"
 
 export const metadata: Metadata = {
-  title: "AI & Approvals | IntegrateWise",
+  title: "The Twin | IntegrateWise",
   description:
-    "7 specialized AI assistants — every recommendation is evidence-backed, every action requires your approval.",
+    "One AI that reads your data, your conversations, and your accumulated knowledge. The Twin proposes — you approve. Nothing happens without your say.",
 }
 
 export default function AIPage() {
