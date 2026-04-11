@@ -162,16 +162,22 @@ export function HeroSection() {
   const [logosReady, setLogosReady] = useState(false)
   const [visibleCount, setVisibleCount] = useState(0)
   const [alertMap, setAlertMap] = useState<Record<number, string>>({})
+  const [isMobile, setIsMobile] = useState(false)
 
-  const chaosPos = useMemo(() => chaosCenterPositions(TOOLS.length), [])
-  const scatterPos = useMemo(() => scatterEdgePositions(TOOLS.length), [])
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 768)
+  }, [])
+
+  const maxLogos = isMobile ? 10 : TOOLS.length
+  const chaosPos = useMemo(() => chaosCenterPositions(maxLogos), [maxLogos])
+  const scatterPos = useMemo(() => scatterEdgePositions(maxLogos), [maxLogos])
 
   useEffect(() => {
     if (!prefersReducedMotion) return
     setPhase("reveal")
     setLogosReady(true)
-    setVisibleCount(TOOLS.length)
-  }, [prefersReducedMotion])
+    setVisibleCount(maxLogos)
+  }, [prefersReducedMotion, maxLogos])
 
   /* Stagger logo entrance — 60ms per logo */
   useEffect(() => {
@@ -180,13 +186,13 @@ export function HeroSection() {
     const id = setInterval(() => {
       i++
       setVisibleCount(i)
-      if (i >= TOOLS.length) {
+      if (i >= maxLogos) {
         clearInterval(id)
         setTimeout(() => setLogosReady(true), 300)
       }
     }, 60)
     return () => clearInterval(id)
-  }, [prefersReducedMotion])
+  }, [prefersReducedMotion, maxLogos])
 
   /* Auto-transition: chaos → reveal after 2.5s once logos are ready */
   useEffect(() => {
@@ -209,7 +215,7 @@ export function HeroSection() {
     if (prefersReducedMotion) return
     if (phase !== "chaos") return
     const id = setInterval(() => {
-      const toolIdx = Math.floor(Math.random() * TOOLS.length)
+      const toolIdx = Math.floor(Math.random() * maxLogos)
       const alertText = ALERTS[Math.floor(Math.random() * ALERTS.length)]
       setAlertMap((prev) => ({ ...prev, [toolIdx]: alertText }))
       setTimeout(() => {
@@ -294,7 +300,7 @@ export function HeroSection() {
 
       {/* ── Floating Tool Logos ── */}
       <div className="absolute inset-0 z-10 pointer-events-none">
-        {TOOLS.map((tool, idx) => {
+        {TOOLS.slice(0, maxLogos).map((tool, idx) => {
           if (idx >= visibleCount) return null
           const pos = currentPositions[idx]
           return (

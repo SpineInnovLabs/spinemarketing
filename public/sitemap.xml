@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://integratewise.ai/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://integratewise.ai/account-success</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://integratewise.ai/business-ops</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://integratewise.ai/personal-ops</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://integratewise.ai/platform</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://integratewise.ai/integrations</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://integratewise.ai/ai</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://integratewise.ai/security</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://integratewise.ai/pricing</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://integratewise.ai/about</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://integratewise.ai/contact</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://integratewise.ai/blog</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://integratewise.ai/blog/stop-being-the-human-api</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://integratewise.ai/blog/why-ai-needs-your-approval</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://integratewise.ai/resources</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://integratewise.ai/changelog</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://integratewise.ai/docs</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://integratewise.ai/privacy</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://integratewise.ai/terms</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+</urlset>

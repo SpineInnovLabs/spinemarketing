@@ -9,6 +9,10 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://integratewise.ai"),
+  alternates: {
+    canonical: "/",
+    types: { "application/rss+xml": "/rss.xml" },
+  },
   title: "IntegrateWise — Stop being the human API between your tools.",
   description:
     "IntegrateWise connects your tools into one knowledge workspace, gives you the complete picture of every account, and lets AI help — but nothing happens without your OK.",

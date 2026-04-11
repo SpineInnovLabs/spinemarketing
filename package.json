@@ -31,12 +31,16 @@
     "@types/react-dom": "^19",
     "postcss": "^8.5",
     "tailwindcss": "^4.1.9",
+    "tsx": "^4.21.0",
     "typescript": "^5"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
       "@tailwindcss/oxide",
       "sharp"
+    ],
+    "ignoredBuiltDependencies": [
+      "esbuild"
     ]
   }
 }

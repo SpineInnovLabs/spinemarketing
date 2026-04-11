@@ -76,7 +76,35 @@ export function Footer() {
           ))}
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row">
+        {/* Email capture */}
+        <div className="mt-12 rounded-xl border border-white/10 p-6 sm:flex sm:items-center sm:justify-between sm:gap-6">
+          <div>
+            <p className="text-[15px] font-semibold text-white">Stay in the loop</p>
+            <p className="mt-1 text-[13px] font-medium text-white/40">Product updates, new connectors, and insights. No spam.</p>
+          </div>
+          <form
+            action="mailto:connect@integratewise.ai"
+            method="GET"
+            className="mt-4 flex gap-2 sm:mt-0 sm:shrink-0"
+          >
+            <input
+              type="email"
+              name="subject"
+              placeholder="you@company.com"
+              required
+              className="h-10 w-full rounded-lg border border-white/10 bg-white/5 px-3 text-[14px] font-medium text-white placeholder:text-white/25 outline-none focus:border-primary sm:w-56"
+            />
+            <button
+              type="submit"
+              className="h-10 shrink-0 rounded-lg px-4 text-[14px] font-semibold text-white"
+              style={{ background: "var(--gradient-primary)" }}
+            >
+              Subscribe
+            </button>
+          </form>
+        </div>
+
+        <div className="mt-8 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row">
           <p className="text-[14px] font-medium text-white/40">
             &copy; {new Date().getFullYear()} IntegrateWise. All rights reserved.
           </p>
