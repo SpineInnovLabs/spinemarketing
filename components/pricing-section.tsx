@@ -19,11 +19,11 @@ const plans = [
     name: "Starter",
     prices: { india: "₹999", international: "$49", enterprise: "Custom" },
     period: "/mo",
-    description: "Data + Dashboards. Connect your tools, see everything in one place.",
+    description: "Connect your tools. See everything in one place.",
     features: [
       "Up to 5 connectors",
-      "Unified workspace with truth layer",
-      "Complete account views",
+      "One workspace for all your tools",
+      "Complete view of every account",
       "Basic signals and alerts",
       "Email support",
     ],
@@ -35,13 +35,13 @@ const plans = [
     name: "Growth",
     prices: { india: "₹2,999", international: "$99", enterprise: "Custom" },
     period: "/mo",
-    description: "AI that thinks in context. Truth + Context + basic session memory.",
+    description: "AI that watches your business and tells you what matters.",
     features: [
       "Up to 15 connectors",
-      "Context-aware AI insights",
-      "AI session memory across conversations",
+      "Everything in Starter",
+      "AI insights with evidence",
+      "Knowledge that compounds over time",
       "Custom playbooks and workflows",
-      "Approval-driven actions",
       "Priority support",
     ],
     cta: "Book a demo",
@@ -52,14 +52,14 @@ const plans = [
     name: "Command",
     prices: { india: "₹7,999", international: "$199", enterprise: "Custom" },
     period: "/mo",
-    description: "Full TruthLayer. All three foundations with complete governance.",
+    description: "Full intelligence. Full governance. Nothing happens without your say.",
     features: [
       "Unlimited connectors",
-      "Full TruthLayer with confidence scoring",
-      "Multi-AI verified memory",
+      "Everything in Growth",
+      "Confidence scoring on every insight",
+      "Multi-AI verified knowledge",
       "Enterprise governance and audit trail",
-      "SSO, RBAC, compliance",
-      "Dedicated success team",
+      "SSO, RBAC, dedicated success team",
     ],
     cta: "Contact sales",
     href: "/contact?intent=pricing",
@@ -81,11 +81,11 @@ export function PricingSection() {
           className="mx-auto max-w-2xl text-center"
         >
           <h2 className="section-heading">
-            Pricing that reflects{" "}
-            <span className="text-primary">truth, not seats</span>
+            Simple pricing.{" "}
+            <span className="text-primary">Scale as you grow.</span>
           </h2>
           <p className="mt-4 text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">
-            Start with a platform fee, then scale with your team. No hidden costs, no surprise overages.
+            Start small, add more tools and intelligence as your team needs it. No hidden costs.
           </p>
 
           {/* Geo Toggle */}
