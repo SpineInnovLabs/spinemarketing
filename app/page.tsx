@@ -3,6 +3,7 @@ import { HeroSection } from "@/components/hero-section"
 import { LogosSection } from "@/components/logos-section"
 import { ProblemSection } from "@/components/problem-section"
 import { SolutionSection } from "@/components/solution-section"
+import { AIDifferentiators } from "@/components/ai-differentiators"
 import { SolutionsDoorsSection } from "@/components/solutions-doors-section"
 import { HowItWorksSection } from "@/components/how-it-works-section"
 import { TruthLayerSection } from "@/components/truthlayer-section"
@@ -21,6 +22,7 @@ export default function Home() {
         <LogosSection />
         <ProblemSection />
         <SolutionSection />
+        <AIDifferentiators />
         <SolutionsDoorsSection />
         <HowItWorksSection />
         <TruthLayerSection />
