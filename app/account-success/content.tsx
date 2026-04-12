@@ -185,7 +185,7 @@ export function AccountSuccessContent() {
                 <Link href="/contact?intent=demo">Book a demo</Link>
               </Button>
               <Button size="lg" variant="outline" className="h-[42px] rounded-xl border-2 border-border/75 bg-white px-6 text-[15px] font-semibold text-foreground" asChild>
-                <Link href="/contact">Start free</Link>
+                <Link href="/contact?intent=demo">Book a demo</Link>
               </Button>
             </div>
           </motion.div>

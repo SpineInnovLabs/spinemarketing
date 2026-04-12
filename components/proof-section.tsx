@@ -51,15 +51,15 @@ export function ProofSection() {
               </div>
               <div className="text-center">
                 <div className="text-[34px] font-semibold tracking-[-0.05em] leading-[1.3] text-primary">
-                  <NumberTicker value={99.99} decimalPlaces={2} className="text-[34px] font-semibold tracking-[-0.05em] leading-[1.3] text-primary" />%
+                  <NumberTicker value={70} className="text-[34px] font-semibold tracking-[-0.05em] leading-[1.3] text-primary" />+
                 </div>
-                <div className="mt-1 text-[14px] font-medium tracking-[-0.03em] text-muted-foreground">Uptime reliability</div>
+                <div className="mt-1 text-[14px] font-medium tracking-[-0.03em] text-muted-foreground">Systems connected</div>
               </div>
               <div className="text-center">
                 <div className="text-[34px] font-semibold tracking-[-0.05em] leading-[1.3] text-primary">
-                  <NumberTicker value={12} className="text-[34px] font-semibold tracking-[-0.05em] leading-[1.3] text-primary" />
+                  <NumberTicker value={3} className="text-[34px] font-semibold tracking-[-0.05em] leading-[1.3] text-primary" /> layers
                 </div>
-                <div className="mt-1 text-[14px] font-medium tracking-[-0.03em] text-muted-foreground">Systems connected</div>
+                <div className="mt-1 text-[14px] font-medium tracking-[-0.03em] text-muted-foreground">Intelligence layers</div>
               </div>
             </div>
           </div>

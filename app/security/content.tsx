@@ -31,8 +31,8 @@ const securityFeatures = [
   },
   {
     icon: Server,
-    title: "Data residency options",
-    desc: "Choose where your data lives. Multi-region deployment options for compliance with local data regulations.",
+    title: "Data residency",
+    desc: "Your data is stored securely. Multi-region deployment options coming soon for compliance with local data regulations.",
   },
   {
     icon: FileCheck,
@@ -42,7 +42,7 @@ const securityFeatures = [
   {
     icon: ClipboardCheck,
     title: "Compliance packages",
-    desc: "Pre-built compliance configurations for GDPR, HIPAA, and industry-specific regulatory requirements.",
+    desc: "Pre-built compliance configurations for GDPR and industry-specific regulatory requirements. SOC 2 aligned.",
   },
 ]
 

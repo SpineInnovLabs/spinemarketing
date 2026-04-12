@@ -11,14 +11,13 @@ const footerLinks = {
   Platform: [
     { name: "How It Works", href: "/platform" },
     { name: "Integrations", href: "/integrations" },
-    { name: "AI & Approvals", href: "/ai" },
+    { name: "The Twin", href: "/ai" },
     { name: "Security", href: "/security" },
   ],
   Resources: [
     { name: "Blog", href: "/blog" },
-    { name: "Documentation", href: "/docs" },
-    { name: "Changelog", href: "/changelog" },
-    { name: "Resources", href: "/resources" },
+    { name: "Documentation", href: "https://docs.integratewise.ai" },
+    { name: "Changelog", href: "https://changelog.integratewise.ai" },
   ],
   Company: [
     { name: "About", href: "/about" },

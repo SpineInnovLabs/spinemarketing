@@ -131,7 +131,7 @@ export function BusinessOpsContent() {
             <p className="mt-6 text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">Stop assembling context from twelve tabs. Start making decisions from one.</p>
             <div className="mt-10 flex flex-col items-center justify-center gap-2.5 sm:flex-row">
               <Button size="lg" className="h-[42px] rounded-xl px-6 text-[15px] font-semibold" style={{ background: "var(--gradient-primary)", boxShadow: "var(--shadow-button)" }} asChild><Link href="/contact?intent=demo">Book a demo</Link></Button>
-              <Button size="lg" variant="outline" className="h-[42px] rounded-xl border-2 border-border/75 bg-white px-6 text-[15px] font-semibold text-foreground" asChild><Link href="/contact">Start free</Link></Button>
+              <Button size="lg" variant="outline" className="h-[42px] rounded-xl border-2 border-border/75 bg-white px-6 text-[15px] font-semibold text-foreground" asChild><Link href="/contact?intent=demo">Book a demo</Link></Button>
             </div>
           </motion.div>
         </div>

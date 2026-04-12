@@ -26,12 +26,13 @@ export function TruthLayerSection() {
             <span className="text-[14px] font-semibold tracking-[-0.03em] text-primary">TruthLayer</span>
           </div>
           <h2 className="text-[40px] font-semibold tracking-[-0.05em] leading-[1.15] text-white sm:text-[48px]">
-            AI proposes.{" "}
-            <span className="text-primary">You decide what&apos;s true.</span>
+            AI thinks in context.{" "}
+            <span className="text-primary">You decide what becomes knowledge.</span>
           </h2>
           <p className="mt-6 text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-white/50">
-            Every insight has evidence. Every action waits for your OK. Nothing becomes truth without your say.
-            TruthLayer can&apos;t be bypassed, overridden, or turned off.
+            Every insight draws from three layers — your data, your conversations, and your accumulated knowledge.
+            When AI learns something new, it proposes it first. You review the evidence. You approve, reject, or edit.
+            Nothing enters knowledge without your say.
           </p>
         </motion.div>
 
