@@ -9,7 +9,7 @@ const whatChanges = [
   {
     icon: Inbox,
     title: "Morning briefing, already waiting",
-    desc: "Emails, tasks, Slack threads, and meetings — pulled from your connected apps into one view in L1. No manual assembly.",
+    desc: "Emails, tasks, Slack threads, and meetings — pulled from your connected apps into one view. No manual assembly.",
   },
   {
     icon: Brain,
@@ -41,18 +41,18 @@ const steps = [
   },
   {
     num: "02",
-    title: "L1 — Your Daily Workbench",
-    desc: "Tasks, emails, messages, and AI conversations flow into one clean workspace (L1). Manage everything from one surface — no switching between tabs.",
+    title: "Your Daily Workbench",
+    desc: "Tasks, emails, messages, and AI conversations flow into one clean workspace. Manage everything from one surface — no switching between tabs.",
   },
   {
     num: "03",
-    title: "L2 — The Twin works with your full context",
-    desc: "In the Intelligence Layer (L2), the Twin reads your calendar, tasks, conversations, and session history. Ask a question, get an answer grounded in everything. No copy-pasting context.",
+    title: "The Twin works with your full context",
+    desc: "In the Intelligence Layer, the Twin reads your calendar, tasks, conversations, and session history. Ask a question, get an answer grounded in everything. No copy-pasting context.",
   },
   {
     num: "04",
-    title: "Approve in L1. Nothing happens without you.",
-    desc: "The Twin proposes actions in L2. You review the evidence and approve. Approved actions flow to L1 and execute. Session summaries go through TruthLayer before entering your knowledge.",
+    title: "Approve in the Workbench. Nothing happens without you.",
+    desc: "The Twin proposes actions in the Intelligence Layer. You review the evidence and approve. Approved actions flow to your Workbench and execute. Session summaries go through TruthLayer before entering your knowledge.",
   },
 ];
 
@@ -99,8 +99,8 @@ export function PersonalOpsContent() {
               }}
               className="text-[40px] font-semibold leading-[1.1em] tracking-[-0.05em] text-white sm:text-[52px] lg:text-[60px]"
             >
-              Organize your work, your thinking, and your goals —{" "}
-              <span className="text-primary">in one calm workspace.</span>
+              A calm Personal Ops workspace{" "}
+              <span className="text-primary">above all your apps.</span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 12 }}
@@ -114,10 +114,11 @@ export function PersonalOpsContent() {
               }}
               className="mx-auto mt-8 max-w-2xl text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-white/55"
             >
-              Email, Slack, calendar, project apps, notes, AI chats — by the
-              time you&apos;ve assembled enough context to start working, 45
-              minutes have passed. IntegrateWise pulls them into one view so you
-              start the day clear, not overwhelmed.
+              Personal Ops is the Workbench for individual operators, managers,
+              and leaders who work across many apps and threads — giving them
+              one clear view of today&apos;s priorities powered by an
+              Intelligence Layer that understands context and never acts without
+              your permission.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 12 }}
@@ -305,7 +306,7 @@ export function PersonalOpsContent() {
                 num: "01",
                 title: "Morning briefing",
                 quote: "At the start of my day, pull today's meetings, priority emails, tasks, and open threads into one list and give me a short brief on what to do first.",
-                desc: "The Twin reads your connected apps through the Spine and generates a morning brief. You see it in L2, linked to the actual emails, meetings, and tasks in L1. Five minutes to clarity.",
+                desc: "The Twin reads your connected apps through the Spine and generates a morning brief. You see it in the Intelligence Layer, linked to the actual emails, meetings, and tasks in your Workbench. Five minutes to clarity.",
               },
               {
                 num: "02",
@@ -317,13 +318,13 @@ export function PersonalOpsContent() {
                 num: "03",
                 title: "Promise and follow-up tracker",
                 quote: "Scan recent emails and messages to find promises I made or requests I accepted that don't have a task yet. Let me turn them into tracked items in one click.",
-                desc: "The Twin reads your Context signals — emails, Slack messages, meeting notes — and surfaces commitments without follow-ups. You turn them into tasks in L1 with one click.",
+                desc: "The Twin reads your Context signals — emails, Slack messages, meeting notes — and surfaces commitments without follow-ups. You turn them into tasks in your Workbench with one click.",
               },
               {
                 num: "04",
                 title: "Weekly planning",
                 quote: "Help me plan my week combining work tasks, personal tasks, and meetings into one view. Suggest what to move, drop, or delegate. I review and confirm the plan.",
-                desc: "The Twin pulls tasks, meetings, and goals into one weekly view. It suggests priorities and trade-offs. You approve the plan, and it becomes your L1 workbench for the week.",
+                desc: "The Twin pulls tasks, meetings, and goals into one weekly view. It suggests priorities and trade-offs. You approve the plan, and it becomes your Workbench for the week.",
               },
             ].map(({ num, title, quote, desc }, i) => (
               <motion.div

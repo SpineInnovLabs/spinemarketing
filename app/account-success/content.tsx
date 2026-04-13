@@ -37,7 +37,7 @@ const csLogos = [
 const comparisons = [
   {
     before: "Check 8 apps every morning",
-    after: "One live profile per account in L1 — assembled automatically",
+    after: "One live profile per account — assembled automatically",
   },
   {
     before: "Health scores in a spreadsheet someone updates weekly",
@@ -673,9 +673,9 @@ export function AccountSuccessContent() {
                 }}
                 className="text-[40px] font-semibold leading-[1.1em] tracking-[-0.05em] text-white sm:text-[52px] lg:text-[60px]"
               >
-                Protect revenue. Spot risks early.{" "}
+                Protect revenue with a clear{" "}
                 <span className="text-primary">
-                  Know every account completely.
+                  Account Success workspace.
                 </span>
               </motion.h1>
               <motion.p
@@ -690,11 +690,10 @@ export function AccountSuccessContent() {
                 }}
                 className="mx-auto mt-8 max-w-2xl text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-white/55 lg:mx-0"
               >
-                You manage dozens of accounts across CRMs, support desks,
-                billing systems, and inboxes. The information is always there
-                &mdash; just scattered across eight apps. IntegrateWise brings
-                it into one workspace so you see the full story, and AI surfaces
-                what matters before it&apos;s too late.
+                Account Success is the Workbench where CSMs, account managers,
+                and leaders see the full story of every account in one place,
+                while the Intelligence Layer explains what changed and proposes
+                next steps that always wait for your approval.
               </motion.p>
               <motion.div
                 initial={{ opacity: 0, y: 12 }}

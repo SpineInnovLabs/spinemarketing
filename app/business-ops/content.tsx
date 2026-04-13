@@ -571,21 +571,21 @@ const howItWorksSteps: StickyScrollStep[] = [
     label: "Step 02 \u2014 Build the Spine",
     title: "Three data flows. One complete picture.",
     description:
-      "Revenue, pipeline, and costs sync into the Spine as Truth. Emails and conversations enrich entities as Context. AI session outputs become Session Summaries after TruthLayer review. All three converge in L1 — your Daily Workbench.",
+      "Revenue, pipeline, and costs sync into the Spine as Truth. Emails and conversations enrich entities as Context. AI session outputs become Session Summaries after TruthLayer review. All three converge in your Daily Workbench.",
     visual: <OpsNormalizeVisual />,
   },
   {
-    label: "Step 03 \u2014 L1 Daily Workbench",
+    label: "Step 03 \u2014 Daily Workbench",
     title: "Your operating view — always current.",
     description:
-      "MRR, pipeline health, support costs, team velocity, and cash flow converge into a live workspace. Manage accounts, run tasks, and review renewals — all in L1. Same truth, four role-specific lenses. No more assembling context from twelve tabs.",
+      "MRR, pipeline health, support costs, team velocity, and cash flow converge into a live workspace. Manage accounts, run tasks, and review renewals — all in the Workbench. Same truth, four role-specific lenses. No more assembling context from twelve tabs.",
     visual: <OpsViewVisual />,
   },
   {
-    label: "Step 04 \u2014 L2 Intelligence Layer",
-    title: "AI proposes in L2. You decide in L1.",
+    label: "Step 04 \u2014 Intelligence Layer",
+    title: "AI proposes. You decide.",
     description:
-      "The Twin surfaces anomalies, generates board decks, flags cash flow risks, and recommends actions \u2014 all in the Intelligence Layer (L2). Nothing moves to L1 or writes to connected apps without your approval. Evidence on every insight. Full audit trail.",
+      "The Twin surfaces anomalies, generates board decks, flags cash flow risks, and recommends actions \u2014 all in the Intelligence Layer. Nothing moves to the Workbench or writes to connected apps without your approval. Evidence on every insight. Full audit trail.",
     visual: <OpsGovernVisual />,
   },
 ];
@@ -672,8 +672,8 @@ export function BusinessOpsContent() {
                 }}
                 className="text-[40px] font-semibold leading-[1.1em] tracking-[-0.05em] text-white sm:text-[52px] lg:text-[60px]"
               >
-                Run your business from one dashboard.{" "}
-                <span className="text-primary">Not twelve tabs.</span>
+                Run Business Ops from one{" "}
+                <span className="text-primary">governed intelligence workspace.</span>
               </motion.h1>
               <motion.p
                 initial={{ opacity: 0, y: 12 }}
@@ -687,10 +687,11 @@ export function BusinessOpsContent() {
                 }}
                 className="mx-auto mt-8 max-w-2xl text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-white/55 lg:mx-0"
               >
-                You make decisions every day about revenue, operations, and risk
-                &mdash; but the data lives in different apps, owned by
-                different teams. IntegrateWise pulls it into one operating view
-                so you see what changed and what needs attention today.
+                Business Ops is the Workbench for founders, COOs, RevOps, and
+                operations leaders who need a clear, live picture of the
+                business across CRM, finance, support, product, and internal
+                work — backed by an Intelligence Layer that reasons across
+                systems with human-in-the-loop control.
               </motion.p>
               <motion.div
                 initial={{ opacity: 0, y: 12 }}

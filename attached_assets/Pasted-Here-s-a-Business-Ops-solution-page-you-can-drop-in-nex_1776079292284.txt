@@ -1,0 +1,85 @@
+Here’s a **Business Ops solution page** you can drop in next to Account Success.
+
+***
+
+## Hero
+
+- Run Business Ops from one governed intelligence workspace.  
+- See revenue, risk, and operations in one view, with AI explaining what changed and you approving what happens next. [ppl-ai-file-upload.s3.amazonaws](https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/130797605/8c393b7e-2933-432e-bdd6-4a3023e9867c/paste.txt)
+
+***
+
+## Subheadline
+
+- Business Ops is the L1 workspace for founders, COOs, RevOps, and operations leaders who need a clear, live picture of the business across CRM, finance, support, product, and internal work—backed by L2 intelligence that reasons across systems with human‑in‑the‑loop control. [ppl-ai-file-upload.s3.amazonaws](https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/collection_b96f066b-28e5-4bae-b33e-ebb97f40ebfd/9539369b-f2e7-4f09-ac4b-520b6c8c2e2e/pasted-text.txt)
+
+***
+
+## What Business Ops is
+
+- A live operating workspace that unifies revenue, pipeline, collections, support, product signals, and delivery status into one place, instead of separate dashboards and spreadsheets. [ppl-ai-file-upload.s3.amazonaws](https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/130797605/8c393b7e-2933-432e-bdd6-4a3023e9867c/paste.txt)
+- Underneath, the Spine normalizes truth across apps, and the intelligence layer surfaces cross‑system signals with evidence and approvals before any action executes. [ppl-ai-file-upload.s3.amazonaws](https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/130797605/8c393b7e-2933-432e-bdd6-4a3023e9867c/paste.txt)
+
+***
+
+## Where you work (L1 Workspace)
+
+- One screen for Business Ops that shows:  
+  - Revenue, pipeline, and key commercial metrics.  
+  - Collections, overdue invoices, and cash risk signals.  
+  - Support and delivery risks tied to high‑value customers.  
+  - Product adoption and account‑level usage patterns.  
+  - Open approvals, escalations, and owner‑level action items. [ppl-ai-file-upload.s3.amazonaws](https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/130797605/8c393b7e-2933-432e-bdd6-4a3023e9867c/paste.txt)
+
+***
+
+## How intelligence helps (L2 Layer)
+
+- AI reads the Spine and:  
+  - Spots revenue and churn risk patterns across CRM, billing, and support.  
+  - Explains why a segment, region, or product line is trending up or down, with linked evidence.  
+  - Proposes concrete actions (who should do what, by when) that you can approve, reassign, or decline.  
+  - Generates short operating briefs for weekly reviews and board updates from the same truth layer. [ppl-ai-file-upload.s3.amazonaws](https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/collection_b96f066b-28e5-4bae-b33e-ebb97f40ebfd/9539369b-f2e7-4f09-ac4b-520b6c8c2e2e/pasted-text.txt)
+
+***
+
+## Core use cases
+
+- Weekly operating brief  
+  - “Give me a one‑page view of this week: revenue movement, at‑risk accounts, major escalations, cash risk, and top 5 actions we should approve.” [ppl-ai-file-upload.s3.amazonaws](https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/130797605/8c393b7e-2933-432e-bdd6-4a3023e9867c/paste.txt)
+
+- Revenue and risk cockpit  
+  - “Show me accounts or segments where revenue is at risk because usage is falling, tickets are spiking, or payments are slipping—and propose save plays with owners.” [ppl-ai-file-upload.s3.amazonaws](https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/130797605/8c393b7e-2933-432e-bdd6-4a3023e9867c/paste.txt)
+
+- Collections and cash control  
+  - “Prioritize overdue invoices by impact and risk, show related account context, and draft follow‑ups or internal actions for Finance and CS to approve.” [ppl-ai-file-upload.s3.amazonaws](https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/130797605/8c393b7e-2933-432e-bdd6-4a3023e9867c/paste.txt)
+
+- Cross‑functional alignment  
+  - “For this key initiative or customer, bring CS, Sales, Support, and Finance into one shared view with the same Spine data and a clear list of approved actions.” [ppl-ai-file-upload.s3.amazonaws](https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/130797605/8c393b7e-2933-432e-bdd6-4a3023e9867c/paste.txt)
+
+***
+
+## Works across industries
+
+- SaaS and subscription businesses: ARR, NRR, churn risk, expansion, and collections in one place. [ppl-ai-file-upload.s3.amazonaws](https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/130797605/8c393b7e-2933-432e-bdd6-4a3023e9867c/paste.txt)
+- Services and agencies: project status, margins, billing, escalations, and renewals.  
+- Manufacturing, trade, and operations‑heavy businesses: orders, shipments, payments, and exceptions as one operating picture. [ppl-ai-file-upload.s3.amazonaws](https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/130797605/8c393b7e-2933-432e-bdd6-4a3023e9867c/paste.txt)
+
+***
+
+## Adapted to different roles
+
+- Founders / CEOs  
+  - A focused command center for revenue, risk, and strategic accounts, with AI‑generated briefs.  
+
+- COOs / Heads of Operations  
+  - A control room for process health, SLAs, escalations, and cross‑team actions grounded in one truth layer.  
+
+- RevOps / BizOps  
+  - A workspace to manage Spine configuration, workflows, approvals, and signal definitions, instead of juggling spreadsheets and ad‑hoc reports. [ppl-ai-file-upload.s3.amazonaws](https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/130797605/8c393b7e-2933-432e-bdd6-4a3023e9867c/paste.txt)
+
+***
+
+## Human‑in‑control model
+
+- AI can aggregate, analyze, and propose; humans approve or edit before any change hits CRM, billing, support, or notification systems, with full audit trails for every Business Ops decision. [ppl-ai-file-upload.s3.amazonaws](https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/collection_b96f066b-28e5-4bae-b33e-ebb97f40ebfd/9539369b-f2e7-4f09-ac4b-520b6c8c2e2e/pasted-text.txt)

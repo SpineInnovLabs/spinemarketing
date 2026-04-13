@@ -1,0 +1,85 @@
+Here’s a **ready-to-use Account Success page** in your current framing.
+
+***
+
+## Hero
+
+- Protect revenue with a clear Account Success workspace.  
+- See every account completely, spot risk early, and act with confidence—powered by truth, context, and governed intelligence. [ppl-ai-file-upload.s3.amazonaws](https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/130797605/8c393b7e-2933-432e-bdd6-4a3023e9867c/paste.txt)
+
+***
+
+## Subheadline
+
+- Account Success is the L1 workspace where CSMs, account managers, and leaders see the full story of every account in one place, while L2 intelligence explains what changed and proposes next steps that always wait for approval. [ppl-ai-file-upload.s3.amazonaws](https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/collection_b96f066b-28e5-4bae-b33e-ebb97f40ebfd/9539369b-f2e7-4f09-ac4b-520b6c8c2e2e/pasted-text.txt)
+
+***
+
+## What Account Success is
+
+- A live Account 360 workspace that unifies data from CRM, product usage, support, billing, emails, and conversations into one view per account. [ppl-ai-file-upload.s3.amazonaws](https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/130797605/8c393b7e-2933-432e-bdd6-4a3023e9867c/paste.txt)
+- Underneath, the Spine keeps account truth aligned across apps, and the intelligence layer surfaces risks and opportunities with evidence and human‑in‑the‑loop control. [ppl-ai-file-upload.s3.amazonaws](https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/collection_b96f066b-28e5-4bae-b33e-ebb97f40ebfd/9539369b-f2e7-4f09-ac4b-520b6c8c2e2e/pasted-text.txt)
+
+***
+
+## Where you work (L1 Workspace)
+
+- One screen per account showing:  
+  - Revenue and subscriptions.  
+  - Product usage and adoption.  
+  - Support tickets and SLA status.  
+  - Invoices, payments, and risk on cash.  
+  - Key contacts, champions, and stakeholders.  
+  - Health signals and recent events on a single timeline. [ppl-ai-file-upload.s3.amazonaws](https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/130797605/8c393b7e-2933-432e-bdd6-4a3023e9867c/paste.txt)
+
+***
+
+## How intelligence helps (L2 Layer)
+
+- AI reads the Spine and:  
+  - Detects early churn signals across systems.  
+  - Explains why an account is healthy or at risk.  
+  - Proposes save plans or expansion motions with evidence.  
+  - Drafts emails, call plans, and tasks that you review and approve before anything is sent or updated. [ppl-ai-file-upload.s3.amazonaws](https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/collection_b96f066b-28e5-4bae-b33e-ebb97f40ebfd/9539369b-f2e7-4f09-ac4b-520b6c8c2e2e/pasted-text.txt)
+
+***
+
+## Core use cases
+
+- Early churn detection  
+  - “Show me accounts whose usage is dropping, tickets are rising, invoices are late, or champions have gone quiet—before renewal is close.” [ppl-ai-file-upload.s3.amazonaws](https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/130797605/8c393b7e-2933-432e-bdd6-4a3023e9867c/paste.txt)
+
+- Guided renewal save  
+  - “For this at‑risk account, summarize what changed, explain the risk, and propose the top 3 actions with drafted outreach for me to edit and approve.” [ppl-ai-file-upload.s3.amazonaws](https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/collection_b96f066b-28e5-4bae-b33e-ebb97f40ebfd/9539369b-f2e7-4f09-ac4b-520b6c8c2e2e/pasted-text.txt)
+
+- QBR in minutes  
+  - “Assemble a QBR for this customer: revenue trend, product usage, support history, NPS, and key events, then turn it into a short brief and slide outline.” [ppl-ai-file-upload.s3.amazonaws](https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/130797605/8c393b7e-2933-432e-bdd6-4a3023e9867c/paste.txt)
+
+- Expansion opportunity surfacing  
+  - “List customers with strong adoption, good NPS, and new stakeholders appearing in email or Slack, and suggest the next expansion motion and talking points.” [ppl-ai-file-upload.s3.amazonaws](https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/130797605/8c393b7e-2933-432e-bdd6-4a3023e9867c/paste.txt)
+
+***
+
+## Works across domains and industries
+
+- SaaS: product adoption, license usage, support intensity, renewal and expansion windows.  
+- Services and agencies: project delivery status, client feedback, invoices, and renewals.  
+- Managed IT / MSP: tickets, SLAs, contract terms, and service health per account.  
+- Finance / fintech and other B2B: high‑value client health, usage, and payment risk. [ppl-ai-file-upload.s3.amazonaws](https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/130797605/8c393b7e-2933-432e-bdd6-4a3023e9867c/paste.txt)
+
+***
+
+## Adapted to different roles
+
+- CSMs / Account Managers  
+  - Daily Account 360, risk list, and action queue. [ppl-ai-file-upload.s3.amazonaws](https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/130797605/8c393b7e-2933-432e-bdd6-4a3023e9867c/paste.txt)
+- Heads of Customer Success  
+  - Portfolio‑level health, renewals at risk, and expansion pipeline. [ppl-ai-file-upload.s3.amazonaws](https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/130797605/8c393b7e-2933-432e-bdd6-4a3023e9867c/paste.txt)
+- Founders / CROs  
+  - A focused view of key accounts, major risks, and where to step in. [ppl-ai-file-upload.s3.amazonaws](https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/130797605/8c393b7e-2933-432e-bdd6-4a3023e9867c/paste.txt)
+
+***
+
+## Human‑in‑control model
+
+- AI can analyze, explain, and draft; humans always review and approve before any update goes into CRM, support, billing, or communication apps. [ppl-ai-file-upload.s3.amazonaws](https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/collection_b96f066b-28e5-4bae-b33e-ebb97f40ebfd/9539369b-f2e7-4f09-ac4b-520b6c8c2e2e/pasted-text.txt)
