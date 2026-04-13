@@ -81,7 +81,7 @@ export function Footer() {
             </Link>
             <p className="mt-5 max-w-[220px] text-[13px] font-medium leading-[1.6] text-white/40">
               The Knowledge Workspace over the Spine and empowered by AI.
-              <br /><br />
+              <br /><br /><br />
               AI Think in Context and Waits for your Approval.
             </p>
             <a
