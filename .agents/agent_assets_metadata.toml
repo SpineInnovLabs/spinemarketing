@@ -36,3 +36,21 @@ id = "JQPcD-rRGTxgJL7Q-2oxq"
 uri = "file://artifacts/mockup-sandbox/public/images/hero-identity.png"
 type = "image"
 title = "executive at holographic command center"
+
+[[generated]]
+id = "pE8nYCr9x38HouG0LdaGG"
+uri = "file://artifacts/mockup-sandbox/public/images/hero-wa-problem.png"
+type = "image"
+title = "overwhelmed person holographic screens"
+
+[[generated]]
+id = "ijkeCb_GBZs_Y4wIk_55Q"
+uri = "file://artifacts/mockup-sandbox/public/images/hero-fb-product.png"
+type = "image"
+title = "unified dashboard workspace desk"
+
+[[generated]]
+id = "jsyJt-NERx79Wpq6djfUA"
+uri = "file://artifacts/mockup-sandbox/public/images/hero-google-trust.png"
+type = "image"
+title = "human hand approve shield vault"
