@@ -1,33 +1,39 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
-import { Analytics } from "@vercel/analytics/next"
+import { Inter } from "next/font/google"
 import "./globals.css"
 
-const _geist = Geist({ subsets: ["latin"] })
-const _geistMono = Geist_Mono({ subsets: ["latin"] })
+import { FirebaseAnalytics } from "@/components/firebase-analytics"
+
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 
 export const metadata: Metadata = {
-  title: "IntegrateWise - Expert Integration Solutions",
+  metadataBase: new URL("https://integratewise.ai"),
+  alternates: {
+    canonical: "/",
+    types: { "application/rss+xml": "/rss.xml" },
+  },
+  title: "IntegrateWise — Stop being the human API between your tools.",
   description:
-    "Transform your business with expert MuleSoft integration, Salesforce automation, and comprehensive advisory services.",
-  generator: "v0.app",
+    "IntegrateWise turns tool data, conversations, and AI session memory into a governed knowledge workspace, so AI works with full context and every action stays under your control.",
   icons: {
-    icon: [
-      {
-        url: "/icon-light-32x32.png",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "/icon-dark-32x32.png",
-        media: "(prefers-color-scheme: dark)",
-      },
-      {
-        url: "/icon.svg",
-        type: "image/svg+xml",
-      },
-    ],
+    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
     apple: "/apple-icon.png",
+  },
+  openGraph: {
+    title: "IntegrateWise — Stop being the human API between your tools.",
+    description:
+      "IntegrateWise turns tool data, conversations, and AI session memory into a governed knowledge workspace, so AI works with full context and every action stays under your control.",
+    siteName: "IntegrateWise",
+    type: "website",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "IntegrateWise" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "IntegrateWise — Stop being the human API between your tools.",
+    description:
+      "IntegrateWise turns tool data, conversations, and AI session memory into a governed knowledge workspace, so AI works with full context and every action stays under your control.",
+    images: ["/og.png"],
   },
 }
 
@@ -38,9 +44,34 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`font-sans antialiased`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "IntegrateWise",
+              url: "https://integratewise.ai",
+              logo: "https://integratewise.ai/icon.svg",
+              sameAs: [],
+              contactPoint: [
+                {
+                  "@type": "ContactPoint",
+                  email: "connect@integratewise.ai",
+                  contactType: "sales",
+                },
+              ],
+            }),
+          }}
+        />
+      </head>
+      <body className={`${inter.className} antialiased`}>
+        <a href="#main" className="skip-link">
+          Skip to main content
+        </a>
         {children}
-        <Analytics />
+        <FirebaseAnalytics />
       </body>
     </html>
   )
