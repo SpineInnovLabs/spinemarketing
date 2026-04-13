@@ -17,61 +17,89 @@ import {
   ShieldCheck,
   Building2,
   Mail,
+  Cloud,
+  Wrench,
+  Package,
+  ShoppingCart,
+  Briefcase,
+  TrendingUp,
+  UserCheck,
+  Telescope,
+  Settings2,
+  Truck,
+  DollarSign,
+  User,
+  BookOpen,
+  GitMerge,
+  HelpCircle,
 } from "lucide-react";
 import { motion, useScroll, useSpring } from "framer-motion";
 
-const navigation = [
-  {
-    label: "Solutions",
-    href: "/account-success",
-    items: [
-      {
-        name: "Account Success",
-        href: "/account-success",
-        icon: Users,
-        desc: "Complete view of every account and customer",
-      },
-      {
-        name: "Business Ops",
-        href: "/business-ops",
-        icon: BarChart3,
-        desc: "Automate operations and streamline workflows",
-      },
-      {
-        name: "Personal Ops",
-        href: "/personal-ops",
-        icon: Sparkles,
-        desc: "Your personal AI workspace for daily work",
-      },
-    ],
-  },
+type NavItemChild = {
+  name: string;
+  href: string;
+  icon: React.ComponentType<{ className?: string }>;
+  desc: string;
+};
+
+type NavGroup = {
+  label: string;
+  items: NavItemChild[];
+};
+
+type NavItem = {
+  label: string;
+  href: string;
+  items?: NavItemChild[];
+  groups?: NavGroup[];
+};
+
+const navigation: NavItem[] = [
+  { label: "Why", href: "/why" },
   {
     label: "Product",
     href: "/platform",
     items: [
+      { name: "How It Works", href: "/platform", icon: Layers, desc: "Five steps, one Canonical Loop, you in control" },
+      { name: "Spine & Intelligence", href: "/spine", icon: GitMerge, desc: "The adaptive layer that unifies every app" },
+      { name: "The Twin", href: "/ai", icon: Brain, desc: "AI that reads everything — acts only with your OK" },
+      { name: "Integrations", href: "/integrations", icon: Plug, desc: "70+ apps connected over the Spine" },
+      { name: "Security", href: "/security", icon: ShieldCheck, desc: "Govern Gate, audit trails, enterprise-grade" },
+    ],
+  },
+  {
+    label: "Solutions",
+    href: "/solutions",
+    groups: [
       {
-        name: "How It Works",
-        href: "/platform",
-        icon: Layers,
-        desc: "Connect, work, and let The Twin propose",
+        label: "By Function",
+        items: [
+          { name: "Account Success", href: "/account-success", icon: Users, desc: "Account 360 across every app" },
+          { name: "Business Ops", href: "/business-ops", icon: BarChart3, desc: "The live operating picture" },
+          { name: "Personal Ops", href: "/personal-ops", icon: Sparkles, desc: "Your workspace, your context" },
+        ],
       },
       {
-        name: "Integrations",
-        href: "/integrations",
-        icon: Plug,
-        desc: "70+ integrations for the tools you use",
+        label: "By Industry",
+        items: [
+          { name: "SaaS", href: "/solutions/saas", icon: Cloud, desc: "Renewals, expansion, adoption" },
+          { name: "Services & Agencies", href: "/solutions/services", icon: Wrench, desc: "Projects, utilisation, billing" },
+          { name: "Manufacturing & Trade", href: "/solutions/manufacturing", icon: Package, desc: "Orders, shipments, exceptions" },
+          { name: "Retail & Ecommerce", href: "/solutions/retail", icon: ShoppingCart, desc: "Stock, orders, returns, support" },
+          { name: "Professional Services", href: "/solutions/professional-services", icon: Briefcase, desc: "Engagements, billing, relationships" },
+          { name: "Finance", href: "/solutions/finance", icon: TrendingUp, desc: "Revenue, risk, collections, cash" },
+        ],
       },
       {
-        name: "The Twin",
-        href: "/ai",
-        icon: Brain,
-        desc: "One AI that reads everything — acts only with your OK",
-      },
-      {
-        name: "Security",
-        href: "/security",
-        icon: ShieldCheck,
-        desc: "Enterprise-grade security and compliance",
+        label: "By Role",
+        items: [
+          { name: "Customer Success & AMs", href: "/solutions/customer-success", icon: UserCheck, desc: "Save accounts, accelerate renewals" },
+          { name: "Founders & CXOs", href: "/solutions/founders", icon: Telescope, desc: "Monday brief, board pack, full view" },
+          { name: "RevOps & Business Ops", href: "/solutions/revops", icon: Settings2, desc: "Pipeline, headcount, risk — connected" },
+          { name: "Operations & Delivery", href: "/solutions/operations", icon: Truck, desc: "Projects, utilisation, exceptions" },
+          { name: "Finance Leaders", href: "/solutions/finance-leaders", icon: DollarSign, desc: "Cash, collections, runway" },
+          { name: "Individual Professionals", href: "/solutions/individual", icon: User, desc: "Morning brief, session memory" },
+        ],
       },
     ],
   },
@@ -80,23 +108,13 @@ const navigation = [
     label: "Company",
     href: "/about",
     items: [
-      {
-        name: "About",
-        href: "/about",
-        icon: Building2,
-        desc: "Our story and what we stand for",
-      },
-      {
-        name: "Contact",
-        href: "/contact",
-        icon: Mail,
-        desc: "Get in touch with our team",
-      },
+      { name: "Why IntegrateWise", href: "/why", icon: HelpCircle, desc: "The problem we exist to solve" },
+      { name: "About", href: "/about", icon: Building2, desc: "Our story and what we stand for" },
+      { name: "Resources", href: "/resources", icon: BookOpen, desc: "Blog, guides, and playbooks" },
+      { name: "Contact", href: "/contact", icon: Mail, desc: "Get in touch with our team" },
     ],
   },
 ];
-
-type NavItem = (typeof navigation)[number];
 
 const ENTER_DELAY = 150;
 const LEAVE_DELAY = 300;
@@ -117,6 +135,31 @@ const dropdownVariants = {
   },
 };
 
+function DropdownItem({ item }: { item: NavItemChild }) {
+  const Icon = item.icon;
+  return (
+    <Link
+      href={item.href}
+      className="group flex items-start gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50"
+    >
+      <div
+        className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg transition-all group-hover:scale-105"
+        style={{ background: "var(--gradient-primary-icon)" }}
+      >
+        <Icon className="h-[15px] w-[15px] text-white" />
+      </div>
+      <div className="flex flex-col">
+        <span className="text-[14px] font-semibold tracking-[-0.03em] text-foreground leading-tight">
+          {item.name}
+        </span>
+        <span className="mt-0.5 text-[12px] font-medium leading-[1.4] tracking-[-0.01em] text-muted-foreground">
+          {item.desc}
+        </span>
+      </div>
+    </Link>
+  );
+}
+
 function MegaDropdown({
   nav,
   menuId,
@@ -128,7 +171,8 @@ function MegaDropdown({
   onMouseEnter: () => void;
   onMouseLeave: () => void;
 }) {
-  if (!nav.items) return null;
+  if (!nav.items && !nav.groups) return null;
+  const isGrouped = !!nav.groups;
 
   return (
     <motion.div
@@ -141,49 +185,45 @@ function MegaDropdown({
       exit="exit"
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
-      className="absolute left-1/2 top-full z-50 mt-2 -translate-x-1/2"
-      style={{ minWidth: nav.items.length > 3 ? "480px" : "380px" }}
+      className={`absolute top-full z-50 mt-2 ${isGrouped ? "left-1/2 -translate-x-1/2" : "left-0"}`}
+      style={{
+        minWidth: isGrouped ? "720px" : nav.items && nav.items.length >= 4 ? "460px" : "340px",
+      }}
     >
       <div
-        className="overflow-hidden rounded-2xl border border-border/40 bg-white/95 p-2 backdrop-blur-xl"
+        className="overflow-hidden rounded-2xl border border-border/40 bg-white/96 p-3 backdrop-blur-xl"
         style={{
           boxShadow:
             "0 20px 60px -15px rgba(0,0,0,0.12), 0 0px 0px 1px rgba(0,0,0,0.04)",
         }}
       >
-        <div
-          className={
-            nav.items.length > 3
-              ? "grid grid-cols-2 gap-0.5"
-              : "flex flex-col gap-0.5"
-          }
-        >
-          {nav.items.map((item) => {
-            const Icon = item.icon;
-            return (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="group flex items-start gap-3.5 rounded-xl px-4 py-3.5 transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50"
-              >
-                <div
-                  className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg transition-all group-hover:scale-105"
-                  style={{ background: "var(--gradient-primary-icon)" }}
-                >
-                  <Icon className="h-[18px] w-[18px] text-white" />
+        {isGrouped && nav.groups && (
+          <div className="grid grid-cols-3 gap-x-2 gap-y-1">
+            {nav.groups.map((group) => (
+              <div key={group.label}>
+                <div className="mb-1 px-3 pt-1 text-[11px] font-bold uppercase tracking-[0.1em] text-primary/70">
+                  {group.label}
                 </div>
-                <div className="flex flex-col">
-                  <span className="text-[15px] font-semibold tracking-[-0.03em] text-foreground">
-                    {item.name}
-                  </span>
-                  <span className="mt-0.5 text-[13px] font-medium leading-[1.4] tracking-[-0.01em] text-muted-foreground">
-                    {item.desc}
-                  </span>
+                <div className="flex flex-col gap-0.5">
+                  {group.items.map((item) => (
+                    <DropdownItem key={item.name} item={item} />
+                  ))}
                 </div>
-              </Link>
-            );
-          })}
-        </div>
+              </div>
+            ))}
+          </div>
+        )}
+        {!isGrouped && nav.items && (
+          <div
+            className={
+              nav.items.length >= 4 ? "grid grid-cols-2 gap-0.5" : "flex flex-col gap-0.5"
+            }
+          >
+            {nav.items.map((item) => (
+              <DropdownItem key={item.name} item={item} />
+            ))}
+          </div>
+        )}
       </div>
     </motion.div>
   );
@@ -202,12 +242,13 @@ function NavTrigger({
 }) {
   const isOpen = activeMenu === nav.label;
   const menuId = `mega-${nav.label.replace(/\s+/g, "-").toLowerCase()}`;
+  const hasDropdown = !!(nav.items || nav.groups);
 
-  if (!nav.items) {
+  if (!hasDropdown) {
     return (
       <Link
         href={nav.href}
-        className="rounded-md px-2 py-2 text-[16px] font-medium tracking-[-0.03em] leading-[1.4] text-foreground/50 transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50"
+        className="rounded-md px-3 py-2 text-[15px] font-medium tracking-[-0.02em] text-foreground/60 transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50"
         onMouseEnter={onLeave}
       >
         {nav.label}
@@ -227,10 +268,8 @@ function NavTrigger({
         aria-haspopup="true"
         aria-controls={isOpen ? menuId : undefined}
         id={`${menuId}-trigger`}
-        className={`flex items-center gap-1 rounded-md px-2 py-2 text-[16px] font-medium tracking-[-0.03em] leading-[1.4] transition-colors focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 ${
-          isOpen
-            ? "text-foreground"
-            : "text-foreground/50 hover:text-foreground"
+        className={`flex items-center gap-1 rounded-md px-3 py-2 text-[15px] font-medium tracking-[-0.02em] transition-colors focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 ${
+          isOpen ? "text-foreground" : "text-foreground/60 hover:text-foreground"
         }`}
       >
         {nav.label}
@@ -259,12 +298,12 @@ export function Header({
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [heroRevealed, setHeroRevealed] = useState(!initiallyHidden);
+  const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
   const enterTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const leaveTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const mobilePanelRef = useRef<HTMLDivElement>(null);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
 
-  /* Listen for hero phase change event (dispatched by HeroSection) */
   useEffect(() => {
     if (!initiallyHidden) return;
     const handler = () => setHeroRevealed(true);
@@ -273,42 +312,25 @@ export function Header({
   }, [initiallyHidden]);
 
   const clearTimers = useCallback(() => {
-    if (enterTimer.current) {
-      clearTimeout(enterTimer.current);
-      enterTimer.current = null;
-    }
-    if (leaveTimer.current) {
-      clearTimeout(leaveTimer.current);
-      leaveTimer.current = null;
-    }
+    if (enterTimer.current) { clearTimeout(enterTimer.current); enterTimer.current = null; }
+    if (leaveTimer.current) { clearTimeout(leaveTimer.current); leaveTimer.current = null; }
   }, []);
 
   const handleEnter = useCallback(
     (label: string) => {
       clearTimers();
-      // If already open on a different menu, switch instantly
-      if (activeMenu && activeMenu !== label) {
-        setActiveMenu(label);
-        return;
-      }
-      enterTimer.current = setTimeout(() => {
-        setActiveMenu(label);
-      }, ENTER_DELAY);
+      if (activeMenu && activeMenu !== label) { setActiveMenu(label); return; }
+      enterTimer.current = setTimeout(() => setActiveMenu(label), ENTER_DELAY);
     },
     [activeMenu, clearTimers],
   );
 
   const handleLeave = useCallback(() => {
     clearTimers();
-    leaveTimer.current = setTimeout(() => {
-      setActiveMenu(null);
-    }, LEAVE_DELAY);
+    leaveTimer.current = setTimeout(() => setActiveMenu(null), LEAVE_DELAY);
   }, [clearTimers]);
 
-  // Cleanup on unmount
-  useEffect(() => {
-    return () => clearTimers();
-  }, [clearTimers]);
+  useEffect(() => { return () => clearTimers(); }, [clearTimers]);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -323,8 +345,7 @@ export function Header({
   useEffect(() => {
     if (!mobileMenuOpen) return;
     const id = requestAnimationFrame(() => {
-      const first =
-        mobilePanelRef.current?.querySelector<HTMLElement>("a[href], button");
+      const first = mobilePanelRef.current?.querySelector<HTMLElement>("a[href], button");
       first?.focus();
     });
     return () => cancelAnimationFrame(id);
@@ -337,9 +358,7 @@ export function Header({
     const handler = (e: KeyboardEvent) => {
       if (e.key !== "Tab") return;
       const focusables = [
-        ...panel.querySelectorAll<HTMLElement>(
-          "a[href], button:not([disabled])",
-        ),
+        ...panel.querySelectorAll<HTMLElement>("a[href], button:not([disabled])"),
       ].filter((el) => !el.closest("[aria-hidden='true']"));
       if (focusables.length === 0) return;
       const first = focusables[0];
@@ -365,7 +384,6 @@ export function Header({
 
   return (
     <>
-      {/* Backdrop overlay when menu is open */}
       {activeMenu && heroRevealed && (
         <motion.div
           initial={{ opacity: 0 }}
@@ -378,44 +396,35 @@ export function Header({
 
       <motion.header
         className="fixed top-0 left-0 right-0 z-50 bg-white"
-        initial={
-          initiallyHidden ? { y: "-100%", opacity: 0 } : { y: 0, opacity: 1 }
-        }
-        animate={
-          heroRevealed ? { y: 0, opacity: 1 } : { y: "-100%", opacity: 0 }
-        }
+        initial={initiallyHidden ? { y: "-100%", opacity: 0 } : { y: 0, opacity: 1 }}
+        animate={heroRevealed ? { y: 0, opacity: 1 } : { y: "-100%", opacity: 0 }}
         transition={{ type: "spring", damping: 22, stiffness: 200, mass: 0.8 }}
         style={{
-          borderBottom: "5px solid rgb(248, 248, 250)",
+          borderBottom: "1px solid rgb(240, 240, 243)",
           boxShadow: "var(--shadow-nav)",
         }}
       >
         {/* Scroll progress bar */}
         <motion.div
           className="absolute bottom-0 left-0 right-0 h-[2px] origin-left"
-          style={{
-            scaleX,
-            background: "var(--gradient-primary)",
-          }}
+          style={{ scaleX, background: "var(--gradient-primary)" }}
           suppressHydrationWarning
         />
-        <nav className="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-6 md:px-16">
+
+        <nav className="mx-auto flex h-[60px] max-w-[1200px] items-center justify-between px-6 md:px-10">
           {/* Logo */}
           <Link
             href="/"
-            className="flex items-center gap-2.5 rounded-lg focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50"
+            className="flex shrink-0 items-center gap-2.5 rounded-lg focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50"
           >
-            <SpineLogo
-              className="h-8 w-8 shrink-0 md:h-9 md:w-9"
-              variant="on-light"
-            />
+            <SpineLogo className="h-8 w-8 shrink-0" variant="on-light" />
             <span className="text-[17px] font-semibold tracking-[-0.04em] text-foreground">
               Integrate<span className="text-primary">Wise</span>
             </span>
           </Link>
 
-          {/* Desktop nav links */}
-          <div className="hidden items-center gap-1 lg:flex">
+          {/* Desktop nav — centred */}
+          <div className="hidden items-center gap-0.5 lg:flex">
             {navigation.map((nav) => (
               <NavTrigger
                 key={nav.label}
@@ -428,16 +437,16 @@ export function Header({
           </div>
 
           {/* Desktop CTAs */}
-          <div className="hidden items-center gap-2.5 lg:flex">
+          <div className="hidden shrink-0 items-center gap-2 lg:flex">
             <Button
-              variant="outline"
-              className="h-[42px] rounded-xl border-2 border-border/75 bg-white px-4 text-[15px] font-semibold tracking-[-0.3px] text-foreground"
+              variant="ghost"
+              className="h-[38px] rounded-xl px-4 text-[14px] font-semibold tracking-[-0.02em] text-foreground/60 hover:text-foreground hover:bg-muted"
               asChild
             >
               <Link href="/contact">Contact</Link>
             </Button>
             <Button
-              className="h-[42px] rounded-xl px-4 text-[15px] font-semibold tracking-[-0.3px]"
+              className="h-[38px] rounded-xl px-4 text-[14px] font-semibold tracking-[-0.02em]"
               style={{
                 background: "var(--gradient-primary)",
                 border: "2px solid rgba(248,248,250,0.12)",
@@ -453,7 +462,7 @@ export function Header({
           <button
             ref={menuButtonRef}
             type="button"
-            className="rounded-md lg:hidden focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50"
+            className="rounded-md p-1.5 lg:hidden focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileMenuOpen}
@@ -475,53 +484,102 @@ export function Header({
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             transition={{ duration: 0.2, ease: "easeInOut" }}
-            className="overflow-hidden border-t border-border/40 bg-white lg:hidden"
+            className="max-h-[82vh] overflow-y-auto border-t border-border/40 bg-white lg:hidden"
             role="dialog"
             aria-modal="true"
             aria-label="Site navigation"
           >
-            <div className="flex flex-col gap-1 px-6 py-4">
-              {navigation.map((nav) => (
-                <div key={nav.label} className="py-2">
-                  <Link
-                    href={nav.href}
-                    className="block text-[16px] font-semibold tracking-[-0.03em] text-foreground"
-                    onClick={() => setMobileMenuOpen(false)}
+            <div className="flex flex-col px-6 py-3">
+              {navigation.map((nav) => {
+                const hasDropdown = !!(nav.items || nav.groups);
+                const isExpanded = mobileExpanded === nav.label;
+                return (
+                  <div
+                    key={nav.label}
+                    className="border-b border-border/30 last:border-0"
                   >
-                    {nav.label}
-                  </Link>
-                  {nav.items && (
-                    <div className="mt-2 flex flex-col gap-1 pl-4">
-                      {nav.items.map((item) => (
-                        <Link
-                          key={item.name}
-                          href={item.href}
-                          className="flex items-center gap-2.5 rounded-md py-1.5 text-[15px] font-medium text-muted-foreground hover:text-foreground"
-                          onClick={() => setMobileMenuOpen(false)}
+                    <div className="flex items-center justify-between py-3">
+                      <Link
+                        href={nav.href}
+                        className="text-[15px] font-semibold tracking-[-0.03em] text-foreground"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {nav.label}
+                      </Link>
+                      {hasDropdown && (
+                        <button
+                          type="button"
+                          className="rounded-md p-1.5 text-muted-foreground hover:text-foreground"
+                          onClick={() =>
+                            setMobileExpanded(isExpanded ? null : nav.label)
+                          }
+                          aria-label={isExpanded ? "Collapse" : "Expand"}
                         >
-                          <item.icon className="h-4 w-4" />
-                          {item.name}
-                        </Link>
-                      ))}
+                          <ChevronDown
+                            className={`h-4 w-4 transition-transform duration-200 ${isExpanded ? "rotate-180" : ""}`}
+                          />
+                        </button>
+                      )}
                     </div>
-                  )}
-                </div>
-              ))}
-              <div className="mt-4 flex flex-col gap-2.5 border-t border-border/40 pt-4">
+
+                    {/* Flat items */}
+                    {hasDropdown && isExpanded && nav.items && (
+                      <div className="mb-3 flex flex-col gap-0.5 pl-2">
+                        {nav.items.map((item) => (
+                          <Link
+                            key={item.name}
+                            href={item.href}
+                            className="flex items-center gap-3 rounded-lg py-2 px-2 text-[14px] font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            <item.icon className="h-4 w-4 shrink-0 text-primary/60" />
+                            {item.name}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+
+                    {/* Grouped items */}
+                    {hasDropdown && isExpanded && nav.groups && (
+                      <div className="mb-3 flex flex-col gap-4 pl-2">
+                        {nav.groups.map((group) => (
+                          <div key={group.label}>
+                            <div className="mb-1.5 text-[11px] font-bold uppercase tracking-[0.1em] text-primary/60">
+                              {group.label}
+                            </div>
+                            <div className="flex flex-col gap-0.5">
+                              {group.items.map((item) => (
+                                <Link
+                                  key={item.name}
+                                  href={item.href}
+                                  className="flex items-center gap-3 rounded-lg px-2 py-2 text-[14px] font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                                  onClick={() => setMobileMenuOpen(false)}
+                                >
+                                  <item.icon className="h-4 w-4 shrink-0 text-primary/60" />
+                                  {item.name}
+                                </Link>
+                              ))}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+
+              <div className="mt-4 flex flex-col gap-2 pb-4">
                 <Button
                   variant="outline"
-                  className="w-full rounded-xl border-2 border-border/75 bg-white text-foreground"
+                  className="w-full rounded-xl border-2 border-border/75 text-foreground"
                   asChild
                 >
-                  <Link
-                    href="/contact"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
+                  <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>
                     Contact
                   </Link>
                 </Button>
                 <Button
-                  className="w-full rounded-xl"
+                  className="w-full rounded-xl font-semibold"
                   style={{
                     background: "var(--gradient-primary)",
                     boxShadow: "var(--shadow-button)",
