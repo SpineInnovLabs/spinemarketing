@@ -2,10 +2,10 @@ import React from 'react';
 
 export const BannerA = () => {
   const tools = [
-    { letter: 'H', name: 'HubSpot', color: '#FF7A59' },
-    { letter: 'J', name: 'Jira', color: '#0052CC' },
-    { letter: 'S', name: 'Slack', color: '#E01E5A' },
-    { letter: 'Z', name: 'Zendesk', color: '#03363D' },
+    { name: 'HubSpot', color: '#FF7A59', logo: 'https://logo.clearbit.com/hubspot.com' },
+    { name: 'Jira', color: '#0052CC', logo: 'https://logo.clearbit.com/atlassian.com' },
+    { name: 'Slack', color: '#E01E5A', logo: 'https://logo.clearbit.com/slack.com' },
+    { name: 'Zendesk', color: '#03363D', logo: 'https://logo.clearbit.com/zendesk.com' },
   ];
 
   return (
@@ -87,10 +87,10 @@ export const BannerA = () => {
             </div>
 
             {[
-              { source: 'HubSpot', data: 'Deal: $48K — Negotiation stage', dot: '#FF7A59' },
-              { source: 'Jira', data: '3 open tickets, 1 critical', dot: '#0052CC' },
-              { source: 'Slack', data: '12 threads this week, sentiment: positive', dot: '#E01E5A' },
-              { source: 'Zendesk', data: '0 open, avg resolution: 4h', dot: '#03363D' },
+              { source: 'HubSpot', data: 'Deal: $48K — Negotiation stage', logo: 'https://logo.clearbit.com/hubspot.com' },
+              { source: 'Jira', data: '3 open tickets, 1 critical', logo: 'https://logo.clearbit.com/atlassian.com' },
+              { source: 'Slack', data: '12 threads this week, sentiment: positive', logo: 'https://logo.clearbit.com/slack.com' },
+              { source: 'Zendesk', data: '0 open, avg resolution: 4h', logo: 'https://logo.clearbit.com/zendesk.com' },
             ].map((row) => (
               <div key={row.source} style={{
                 display: 'flex',
@@ -98,14 +98,18 @@ export const BannerA = () => {
                 gap: '0.6vw',
                 marginBottom: '1vh',
               }}>
-                <div style={{
-                  width: '0.6vw',
-                  height: '0.6vw',
-                  borderRadius: '50%',
-                  backgroundColor: row.dot,
-                  marginTop: '1vh',
-                  flexShrink: 0,
-                }} />
+                <img
+                  src={row.logo}
+                  alt={row.source}
+                  style={{
+                    width: '2.2vh',
+                    height: '2.2vh',
+                    borderRadius: '3px',
+                    marginTop: '0.3vh',
+                    flexShrink: 0,
+                    objectFit: 'contain',
+                  }}
+                />
                 <div>
                   <div style={{ fontFamily: 'Sora, sans-serif', fontWeight: 600, color: 'rgba(255,255,255,0.8)', fontSize: '1.8vh' }}>
                     {row.source}
@@ -144,21 +148,27 @@ export const BannerA = () => {
             gap: '1.8vh',
           }}>
             {tools.map((t) => (
-              <div key={t.letter} style={{
-                width: '4.5vh',
-                height: '4.5vh',
+              <div key={t.name} style={{
+                width: '5vh',
+                height: '5vh',
                 borderRadius: '50%',
                 backgroundColor: '#1A1F2E',
                 border: `2px solid ${t.color}`,
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                fontFamily: 'Sora, sans-serif',
-                fontWeight: 700,
-                color: 'white',
-                fontSize: '2vh',
+                overflow: 'hidden',
               }}>
-                {t.letter}
+                <img
+                  src={t.logo}
+                  alt={t.name}
+                  style={{
+                    width: '3vh',
+                    height: '3vh',
+                    objectFit: 'contain',
+                    borderRadius: '2px',
+                  }}
+                />
               </div>
             ))}
           </div>
@@ -166,7 +176,7 @@ export const BannerA = () => {
           {tools.map((t, i) => {
             const startY = 50 - ((tools.length - 1) * 12) / 2 + i * 12;
             return (
-              <svg key={t.letter} style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', pointerEvents: 'none' }}>
+              <svg key={t.name} style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', pointerEvents: 'none' }}>
                 <line
                   x1="6%"
                   y1={`${startY}%`}

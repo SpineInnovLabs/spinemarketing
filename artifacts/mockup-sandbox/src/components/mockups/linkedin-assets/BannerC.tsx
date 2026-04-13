@@ -2,14 +2,14 @@ import React from 'react';
 
 export const BannerC = () => {
   const tabs = [
-    { name: 'HubSpot', color: '#FF7A59' },
-    { name: 'Slack', color: '#E01E5A' },
-    { name: 'Jira', color: '#0052CC' },
-    { name: 'Zendesk', color: '#03363D' },
-    { name: 'Sheets', color: '#34A853' },
-    { name: 'Salesforce', color: '#00A1E0' },
-    { name: 'Intercom', color: '#6AFDEF' },
-    { name: 'Notion', color: '#FFFFFF' },
+    { name: 'HubSpot', color: '#FF7A59', logo: 'https://logo.clearbit.com/hubspot.com' },
+    { name: 'Slack', color: '#E01E5A', logo: 'https://logo.clearbit.com/slack.com' },
+    { name: 'Jira', color: '#0052CC', logo: 'https://logo.clearbit.com/atlassian.com' },
+    { name: 'Zendesk', color: '#03363D', logo: 'https://logo.clearbit.com/zendesk.com' },
+    { name: 'Sheets', color: '#34A853', logo: 'https://logo.clearbit.com/google.com' },
+    { name: 'Salesforce', color: '#00A1E0', logo: 'https://logo.clearbit.com/salesforce.com' },
+    { name: 'Intercom', color: '#6AFDEF', logo: 'https://logo.clearbit.com/intercom.com' },
+    { name: 'Notion', color: '#FFFFFF', logo: 'https://logo.clearbit.com/notion.so' },
   ];
 
   return (
@@ -81,12 +81,16 @@ export const BannerC = () => {
               opacity: 0.5 + (i % 3) * 0.15,
               transform: i % 2 === 0 ? 'rotate(-1deg)' : 'rotate(0.5deg)',
             }}>
-              <div style={{
-                width: '1.2vh',
-                height: '1.2vh',
-                borderRadius: '50%',
-                backgroundColor: tab.color,
-              }} />
+              <img
+                src={tab.logo}
+                alt={tab.name}
+                style={{
+                  width: '2vh',
+                  height: '2vh',
+                  objectFit: 'contain',
+                  borderRadius: '2px',
+                }}
+              />
               <span style={{
                 fontFamily: 'Inter, sans-serif',
                 fontWeight: 500,
