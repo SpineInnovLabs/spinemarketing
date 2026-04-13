@@ -386,7 +386,7 @@ export function PlatformContent() {
               className="mx-auto max-w-2xl text-center"
             >
               <h2 className="section-heading">
-                Three steps.{" "}
+                Five steps.{" "}
                 <span className="text-primary">You stay in control.</span>
               </h2>
             </motion.div>
@@ -405,7 +405,7 @@ export function PlatformContent() {
               className="mx-auto max-w-2xl text-center"
             >
               <h2 className="section-heading">
-                Three steps.{" "}
+                Five steps.{" "}
                 <span className="text-primary">You stay in control.</span>
               </h2>
             </motion.div>
@@ -500,8 +500,14 @@ export function PlatformContent() {
             className="mx-auto max-w-2xl text-center"
           >
             <h2 className="section-heading">
-              See it <span className="text-primary">in action.</span>
+              See how your apps come together{" "}
+              <span className="text-primary">in one workspace.</span>
             </h2>
+            <p className="mt-4 text-[15px] font-medium text-muted-foreground">
+              Connect your existing apps, see Entity 360 in action, and watch
+              the Twin propose your first insight — with you in control of
+              every step.
+            </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-2.5 sm:flex-row">
               <Button
                 size="lg"
@@ -512,7 +518,7 @@ export function PlatformContent() {
                 }}
                 asChild
               >
-                <Link href="/contact?intent=demo">Book a demo</Link>
+                <Link href="/contact?intent=demo">Book a product demo</Link>
               </Button>
               <Button
                 size="lg"

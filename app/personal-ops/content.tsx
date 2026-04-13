@@ -284,8 +284,77 @@ export function PersonalOpsContent() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* 4 Use Cases */}
       <section className="arvio-section bg-muted">
+        <div className="mx-auto max-w-[1100px]">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+            className="mx-auto max-w-2xl text-center"
+          >
+            <h2 className="section-heading">
+              What individuals{" "}
+              <span className="text-primary">do inside IntegrateWise</span>
+            </h2>
+          </motion.div>
+          <div className="mt-12 grid gap-6 sm:grid-cols-2">
+            {[
+              {
+                num: "01",
+                title: "Morning briefing",
+                quote: "At the start of my day, pull today's meetings, priority emails, tasks, and open threads into one list and give me a short brief on what to do first.",
+                desc: "The Twin reads your connected apps through the Spine and generates a morning brief. You see it in L2, linked to the actual emails, meetings, and tasks in L1. Five minutes to clarity.",
+              },
+              {
+                num: "02",
+                title: "Conversation and session memory",
+                quote: "Summarize my latest AI chats, documents, and meeting notes into a clean project summary that I can approve and save as my current source of truth.",
+                desc: "The Twin creates session summaries from your recent work. TruthLayer governs what enters knowledge. You approve, edit, or reject. Only confirmed insights become part of your AI's memory.",
+              },
+              {
+                num: "03",
+                title: "Promise and follow-up tracker",
+                quote: "Scan recent emails and messages to find promises I made or requests I accepted that don't have a task yet. Let me turn them into tracked items in one click.",
+                desc: "The Twin reads your Context signals — emails, Slack messages, meeting notes — and surfaces commitments without follow-ups. You turn them into tasks in L1 with one click.",
+              },
+              {
+                num: "04",
+                title: "Weekly planning",
+                quote: "Help me plan my week combining work tasks, personal tasks, and meetings into one view. Suggest what to move, drop, or delegate. I review and confirm the plan.",
+                desc: "The Twin pulls tasks, meetings, and goals into one weekly view. It suggests priorities and trade-offs. You approve the plan, and it becomes your L1 workbench for the week.",
+              },
+            ].map(({ num, title, quote, desc }, i) => (
+              <motion.div
+                key={num}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08, type: "spring", bounce: 0.2, duration: 0.6 }}
+                className="arvio-card p-6"
+              >
+                <div className="flex items-center gap-3 mb-3">
+                  <span
+                    className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg text-[12px] font-bold text-white"
+                    style={{ background: "var(--gradient-primary-icon)" }}
+                  >
+                    {num}
+                  </span>
+                  <h3 className="text-[15px] font-semibold tracking-[-0.03em]">{title}</h3>
+                </div>
+                <p className="text-[13px] font-medium italic text-muted-foreground border-l-2 border-primary/30 pl-3 mb-3">
+                  &ldquo;{quote}&rdquo;
+                </p>
+                <p className="text-[13px] font-medium leading-[1.6] text-foreground/70">{desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="arvio-section">
         <div className="mx-auto max-w-[1100px]">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -299,8 +368,8 @@ export function PersonalOpsContent() {
               <span className="text-primary">Not the other way around.</span>
             </h2>
             <p className="mt-6 text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">
-              One workspace. One morning briefing. One place for all your
-              thinking.
+              See how one calm workspace gives you a clear start every morning,
+              with AI that remembers your context and waits for your approval.
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-2.5 sm:flex-row">
               <Button

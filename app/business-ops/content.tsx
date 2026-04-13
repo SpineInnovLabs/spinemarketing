@@ -866,10 +866,12 @@ export function BusinessOpsContent() {
             className="mx-auto max-w-2xl text-center"
           >
             <h2 className="section-heading">
-              Four views. <span className="text-primary">One truth.</span>
+              Same workspace.{" "}
+              <span className="text-primary">Different lenses.</span>
             </h2>
             <p className="mt-4 text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">
-              Same data. Different lenses for every leader.
+              Every leader sees the same truth from the Spine — just through
+              the lens that matters most for their role.
             </p>
           </motion.div>
           <div className="mx-auto mt-16 grid max-w-4xl gap-6 sm:grid-cols-2">
@@ -1008,6 +1010,75 @@ export function BusinessOpsContent() {
         </div>
       </section>
 
+      {/* ── 4 USE CASES ───────────────────────────────────── */}
+      <section className="arvio-section">
+        <div className="mx-auto max-w-[1100px]">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+            className="mx-auto max-w-2xl text-center"
+          >
+            <h2 className="section-heading">
+              What Business Ops leaders{" "}
+              <span className="text-primary">do inside IntegrateWise</span>
+            </h2>
+          </motion.div>
+          <div className="mt-12 grid gap-6 sm:grid-cols-2">
+            {[
+              {
+                num: "01",
+                title: "Monday operating brief for leadership",
+                quote: "Give me a weekly brief combining MRR, pipeline, churn risk, cash, support load, and project status — with a narrative of what changed and why.",
+                desc: "The Twin reads the Spine on Monday morning and generates a brief covering every function. You see it in L2, linked to live data in L1. One screen instead of twelve tabs.",
+              },
+              {
+                num: "02",
+                title: "Revenue movement analysis",
+                quote: "Explain this month's net revenue change: new business, expansions, contractions, and churn. Show me the key accounts and events behind each.",
+                desc: "The Twin traces revenue shifts back to specific accounts, deals, and signals from Salesforce, Stripe, support, and product usage. Evidence comes through the Spine. You see the full breakdown in L2.",
+              },
+              {
+                num: "03",
+                title: "Cross-system risk radar",
+                quote: "Surface situations where multiple systems point to trouble — rising support volume, slipping delivery milestones, and delayed payments for the same accounts.",
+                desc: "The Twin correlates signals across apps that no single tool can see. When support, delivery, and payments all flash red for the same account, it surfaces the pattern with evidence. You review in L2, approve the intervention, and it executes in L1.",
+              },
+              {
+                num: "04",
+                title: "Board pack generation",
+                quote: "From live data, generate a board-ready summary with key charts and a written explanation. Let me approve and export instead of building from spreadsheets.",
+                desc: "Entity 360 has the data. The Twin drafts the narrative. You review, edit, approve, and export. Board prep goes from days to minutes.",
+              },
+            ].map(({ num, title, quote, desc }, i) => (
+              <motion.div
+                key={num}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08, type: "spring", bounce: 0.2, duration: 0.6 }}
+                className="arvio-card p-6"
+              >
+                <div className="flex items-center gap-3 mb-3">
+                  <span
+                    className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg text-[12px] font-bold text-white"
+                    style={{ background: "var(--gradient-primary-icon)" }}
+                  >
+                    {num}
+                  </span>
+                  <h3 className="text-[15px] font-semibold tracking-[-0.03em]">{title}</h3>
+                </div>
+                <p className="text-[13px] font-medium italic text-muted-foreground border-l-2 border-primary/30 pl-3 mb-3">
+                  &ldquo;{quote}&rdquo;
+                </p>
+                <p className="text-[13px] font-medium leading-[1.6] text-foreground/70">{desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── CTA ──────────────────────────────────────────── */}
       <section className="arvio-section bg-muted">
         <div className="mx-auto max-w-[1100px]">
@@ -1024,7 +1095,7 @@ export function BusinessOpsContent() {
             </h2>
             <p className="mt-6 text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">
               See how one workspace shows how the business is really doing, why
-              it moved, and what to do next &mdash; with AI that thinks in full
+              it moved, and what to do next — with AI that thinks in full
               context and waits for your approval.
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-2.5 sm:flex-row">

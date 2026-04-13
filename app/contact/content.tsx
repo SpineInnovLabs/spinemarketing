@@ -180,27 +180,27 @@ export function ContactContent({
             {[
               {
                 q: "How long does setup take?",
-                a: "Most teams connect their first apps and see Entity 360 within a day. Full workspace setup with all integrations typically takes 1–2 weeks with our guided onboarding.",
+                a: <span>Most teams connect their first apps and see Entity 360 within a day. Full workspace setup with all integrations typically takes 1–2 weeks with our guided onboarding.</span>,
               },
               {
                 q: "Do I need an engineering team?",
-                a: "No. Every integration uses one-time OAuth setup. No code, no data migration, no engineering resources required.",
+                a: <span>No. Every integration uses one-time OAuth setup. No code, no data migration, no engineering resources required.</span>,
               },
               {
                 q: "Can I try it before committing?",
-                a: "Yes. We run a guided POC where you connect your real apps and see your real data in the workspace — including L1 (your Daily Workbench), L2 (the Intelligence Layer), and the Twin working with your actual context.",
+                a: <span>Yes. We run a guided POC where you connect your real apps and see your real data in the workspace — including L1 (your Daily Workbench), L2 (the Intelligence Layer), and the Twin working with your actual context.</span>,
               },
               {
                 q: "What if I need a connector you don't have?",
-                a: "We build custom connectors. Our Spine architecture supports REST API, GraphQL, webhooks, and direct database connections. Request a connector and we'll scope it.",
+                a: <span>We build custom connectors. Our Spine architecture supports REST API, GraphQL, webhooks, and direct database connections. Request a connector and we&apos;ll scope it.</span>,
               },
               {
                 q: "How does billing work?",
-                a: "Monthly or annual billing. No hidden costs. You can upgrade or downgrade anytime. Implementation services are billed separately as one-time packages.",
+                a: <span>Monthly or annual billing. No hidden costs. You can upgrade or downgrade anytime. Implementation services are billed separately as one-time packages.</span>,
               },
               {
                 q: "Is my data secure?",
-                a: "Yes. AES-256 encryption at rest, TLS 1.3 in transit, SOC 2 aligned practices, full audit trails, and non-bypassable human approval on every AI action. See our Security page for details.",
+                a: <span>Yes. AES-256 encryption at rest, TLS 1.3 in transit, SOC 2 aligned practices, full audit trails, and non-bypassable human approval on every AI action.{" "}<Link href="/security" className="text-primary underline underline-offset-2">See our Security page</Link> for details.</span>,
               },
             ].map((faq, i) => (
               <motion.div

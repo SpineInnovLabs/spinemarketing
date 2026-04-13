@@ -967,8 +967,77 @@ export function AccountSuccessContent() {
         </div>
       </section>
 
-      {/* ── CTA ──────────────────────────────────────────── */}
+      {/* ── 4 USE CASES ───────────────────────────────────── */}
       <section className="arvio-section bg-muted">
+        <div className="mx-auto max-w-[1100px]">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+            className="mx-auto max-w-2xl text-center"
+          >
+            <h2 className="section-heading">
+              What Account Success teams{" "}
+              <span className="text-primary">do inside IntegrateWise</span>
+            </h2>
+          </motion.div>
+          <div className="mt-12 grid gap-6 sm:grid-cols-2">
+            {[
+              {
+                num: "01",
+                title: "Early churn detection",
+                quote: "Show me accounts whose usage is dropping, tickets are rising, invoices are late, or champions are quiet — all in one view, before renewal is close.",
+                desc: "The workspace shows a ranked list of at-risk accounts with evidence from every connected app. You see the full picture in L1. The Twin flags what changed and why in L2.",
+              },
+              {
+                num: "02",
+                title: "Guided renewal save plan",
+                quote: "For this at-risk account, generate a renewal risk summary, propose the top 3 actions, and draft the outreach and internal tasks for me to approve.",
+                desc: "The Twin reads the account's Entity 360, prepares a recovery plan with evidence, and queues draft emails and tasks. You review in L2, approve, and the actions execute in L1.",
+              },
+              {
+                num: "03",
+                title: "QBR in a click",
+                quote: "Assemble a QBR for this customer: revenue trend, product usage, support history, NPS, and key events. Turn it into a brief and slide outline I can refine.",
+                desc: "Entity 360 already has the data. The Twin drafts a QBR outline with talking points. You review, edit, and approve before sharing. Minutes, not hours.",
+              },
+              {
+                num: "04",
+                title: "Expansion opportunity surfacing",
+                quote: "List customers with strong adoption, good NPS, and new stakeholders appearing in email or Slack. Suggest the next expansion motion for each.",
+                desc: "The Twin scans Truth and Context signals across your portfolio and surfaces accounts ready to grow. Suggested actions appear in L2 with evidence. You approve the ones that make sense.",
+              },
+            ].map(({ num, title, quote, desc }, i) => (
+              <motion.div
+                key={num}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08, type: "spring", bounce: 0.2, duration: 0.6 }}
+                className="arvio-card p-6"
+              >
+                <div className="flex items-center gap-3 mb-3">
+                  <span
+                    className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg text-[12px] font-bold text-white"
+                    style={{ background: "var(--gradient-primary-icon)" }}
+                  >
+                    {num}
+                  </span>
+                  <h3 className="text-[15px] font-semibold tracking-[-0.03em]">{title}</h3>
+                </div>
+                <p className="text-[13px] font-medium italic text-muted-foreground border-l-2 border-primary/30 pl-3 mb-3">
+                  &ldquo;{quote}&rdquo;
+                </p>
+                <p className="text-[13px] font-medium leading-[1.6] text-foreground/70">{desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── CTA ──────────────────────────────────────────── */}
+      <section className="arvio-section">
         <div className="mx-auto max-w-[1100px]">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -982,8 +1051,8 @@ export function AccountSuccessContent() {
               <span className="text-primary">between your account apps.</span>
             </h2>
             <p className="mt-6 text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">
-              See every account completely. Spot risks before they become
-              crises. Act with confidence.
+              See how one workspace gives you the full story for every account,
+              with AI that thinks in context and waits for your approval.
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-2.5 sm:flex-row">
               <Button

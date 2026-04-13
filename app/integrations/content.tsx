@@ -70,6 +70,33 @@ export function IntegrationsContent() {
         </div>
       </section>
 
+      {/* Every app becomes part of the picture */}
+      <section className="arvio-section bg-muted">
+        <div className="mx-auto max-w-[900px]">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ type: "spring", bounce: 0.2, duration: 0.6 }} className="mx-auto max-w-2xl text-center">
+            <h2 className="section-heading">Every app becomes <span className="text-primary">part of the picture</span></h2>
+            <p className="mt-4 text-[17px] font-medium leading-[1.7] text-muted-foreground">
+              When you connect an app, its data flows into the Spine and becomes part of Entity 360. Structured data becomes Truth. Unstructured data enriches Context. The Twin reads the full picture and surfaces insights in L2. Actions you approve in L2 write back to the connected apps through L1.
+            </p>
+          </motion.div>
+          <div className="mx-auto mt-12 grid max-w-3xl gap-4 sm:grid-cols-3">
+            {[
+              { label: "Truth", desc: "Structured records from CRM, billing, support, and project apps sync into the Spine as entities." },
+              { label: "Context", desc: "Emails, chats, documents, and conversations enrich each entity with the meaning behind the numbers." },
+              { label: "Session Summaries", desc: "AI session outputs go through TruthLayer first. Only approved summaries become knowledge." },
+            ].map(({ label, desc }, i) => (
+              <motion.div key={label} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1, type: "spring", bounce: 0.2, duration: 0.6 }} className="arvio-card p-6 text-center">
+                <h3 className="text-[14px] font-bold uppercase tracking-[0.1em] text-primary">{label}</h3>
+                <p className="mt-2 text-[13px] font-medium text-muted-foreground">{desc}</p>
+              </motion.div>
+            ))}
+          </div>
+          <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.3, duration: 0.6 }} className="mx-auto mt-6 max-w-xl text-center text-[14px] font-semibold text-foreground">
+            Connect once. The Spine keeps everything aligned.
+          </motion.p>
+        </div>
+      </section>
+
       {/* Catalog */}
       <section className="arvio-section">
         <div className="mx-auto max-w-[1100px]">
@@ -111,12 +138,12 @@ export function IntegrationsContent() {
           {/* Custom CTA */}
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ type: "spring", bounce: 0.2, duration: 0.6 }} className="mt-12 text-center">
             <div className="arvio-card mx-auto max-w-2xl p-8">
-              <h3 className="text-[18px] font-semibold tracking-[-0.03em]">Don&apos;t see your tool?</h3>
+              <h3 className="text-[18px] font-semibold tracking-[-0.03em]">Connect your stack in minutes</h3>
               <p className="mt-2 text-[15px] font-medium leading-[1.5] text-muted-foreground">
-                Custom API connectors, webhooks, and database connections. If it has an API, we can connect it.
+                One-time OAuth setup for each app. No engineering team needed. Your data flows into the Spine and shows up in your workspace immediately. Need a custom connector? We build them.
               </p>
               <Button className="mt-6 h-[42px] rounded-xl px-4 text-[15px] font-semibold" style={{ background: "var(--gradient-primary)", boxShadow: "var(--shadow-button)" }} asChild>
-                <Link href="/contact">Request a connector</Link>
+                <Link href="/contact?intent=demo">See all integrations in a demo</Link>
               </Button>
             </div>
           </motion.div>

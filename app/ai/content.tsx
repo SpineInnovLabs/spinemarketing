@@ -286,6 +286,156 @@ export function AIContent() {
         </div>
       </section>
 
+      {/* The Twin lives in L2 */}
+      <section className="arvio-section">
+        <div className="mx-auto max-w-[1100px]">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+            className="mx-auto max-w-2xl text-center"
+          >
+            <h2 className="section-heading">
+              The Twin lives in <span className="text-primary">L2</span>.
+              Actions execute in <span className="text-primary">L1</span>.
+            </h2>
+            <p className="mt-4 text-[15px] font-medium text-muted-foreground">
+              The Intelligence Layer (L2) is where the Twin surfaces insights,
+              proposes actions, and lets you chat with it. Twin Chat, action
+              buttons, and draft previews all live in L2. When you approve an
+              action, it executes in L1 — your Daily Workbench. Tasks are
+              created, records are updated, emails are sent, and everything
+              writes back to the Spine.
+            </p>
+          </motion.div>
+          <div className="mx-auto mt-12 grid max-w-3xl gap-4 sm:grid-cols-3">
+            {[
+              {
+                label: "L2 — The Twin proposes",
+                desc: "Signals surface with evidence. Chat, action buttons, and draft previews live here. You decide.",
+              },
+              {
+                label: "You approve",
+                desc: "Full reasoning visible. Approve, edit, or reject. Nothing moves without your say.",
+              },
+              {
+                label: "L1 — Executes",
+                desc: "Approved actions create tasks, update records, send emails, and write back to connected apps.",
+              },
+            ].map(({ label, desc }, i) => (
+              <motion.div
+                key={label}
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{
+                  delay: i * 0.1,
+                  type: "spring",
+                  bounce: 0.2,
+                  duration: 0.6,
+                }}
+                className="arvio-card p-6 text-center"
+              >
+                <h3 className="text-[15px] font-semibold tracking-[-0.03em] text-primary">
+                  {label}
+                </h3>
+                <p className="mt-2 text-[13px] font-medium text-muted-foreground">
+                  {desc}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+            className="mx-auto mt-6 max-w-xl text-center text-[14px] font-semibold text-foreground"
+          >
+            The Twin proposes. You decide. L1 executes.
+          </motion.p>
+        </div>
+      </section>
+
+      {/* What makes the Twin different */}
+      <section className="arvio-section bg-muted">
+        <div className="mx-auto max-w-[1100px]">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+            className="mx-auto max-w-2xl text-center"
+          >
+            <h2 className="section-heading">
+              Not just a chatbot.{" "}
+              <span className="text-primary">
+                An AI that actually understands your work.
+              </span>
+            </h2>
+          </motion.div>
+          <div className="mx-auto mt-12 grid max-w-3xl gap-4 sm:grid-cols-2">
+            {[
+              {
+                num: "01",
+                title: "Proactive, not reactive",
+                desc: "Surfaces what matters before you ask.",
+              },
+              {
+                num: "02",
+                title: "Reads your apps, not just your prompts",
+                desc: "Full context from every connected app through the Spine.",
+              },
+              {
+                num: "03",
+                title: "Complete context of your work",
+                desc: "Every app, every conversation, every decision — all connected.",
+              },
+              {
+                num: "04",
+                title: "Learns without polluting",
+                desc: "Reads truth and context. Never overwrites them. Session summaries go through TruthLayer.",
+              },
+              {
+                num: "05",
+                title: "Limited by design",
+                desc: "Maximum 3 insights per entity per day. Quality over noise.",
+              },
+            ].map(({ num, title, desc }, i) => (
+              <motion.div
+                key={num}
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{
+                  delay: i * 0.08,
+                  type: "spring",
+                  bounce: 0.2,
+                  duration: 0.6,
+                }}
+                className="arvio-card flex items-start gap-4 p-5"
+              >
+                <span
+                  className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-lg text-[12px] font-bold text-white"
+                  style={{ background: "var(--gradient-primary-icon)" }}
+                >
+                  {num}
+                </span>
+                <div>
+                  <p className="text-[14px] font-semibold tracking-[-0.02em]">
+                    {title}
+                  </p>
+                  <p className="mt-1 text-[12px] font-medium text-muted-foreground">
+                    {desc}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* TruthLayer — Approval Flow */}
       <section
         className="arvio-section"

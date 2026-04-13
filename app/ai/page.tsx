@@ -7,7 +7,7 @@ import { AIContent } from "./content"
 export const metadata: Metadata = {
   title: "The Twin | IntegrateWise",
   description:
-    "One AI that reads your data, your conversations, and your accumulated knowledge. The Twin proposes — you approve. Nothing happens without your say.",
+    "The Twin reads Truth, Context, and Session Summaries through the Spine. It thinks in full context, surfaces signals in L2, and waits for your approval before anything changes.",
 }
 
 export default function AIPage() {
