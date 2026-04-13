@@ -45,7 +45,7 @@ type NavItemChild = {
   name: string;
   href: string;
   icon: React.ComponentType<{ className?: string }>;
-  desc: string;
+  desc?: string;
 };
 
 type NavGroup = {
@@ -65,24 +65,25 @@ const navigation: NavItem[] = [
     label: "Platform",
     href: "/platform",
     items: [
-      { name: "Spine", href: "/platform/the-spine", icon: Database, desc: "SpineVault, 8-stage normalization, canonical entities" },
-      { name: "Indefinities", href: "/platform/flows", icon: GitBranch, desc: "Structured, UnStructured and AI Chats" },
-      { name: "Execution Path", href: "/platform/execution-path", icon: Layers, desc: "Load - Store - Think - Act - Adjust - Repeat" },
-      { name: "Connectors EcoSystem", href: "/platform/connectors", icon: Plug, desc: "MCP protocol, auto-upgrade, integration infrastructure" },
-      { name: "Knowledge Base", href: "/platform/knowledge-base", icon: BookOpen, desc: "Unified search across records, documents, and AI sessions" },
-      { name: "Security", href: "/platform/security", icon: ShieldCheck, desc: "Truth Boundary, encryption, compliance, audit trail" },
-      { name: "Infrastructure", href: "/platform/infrastructure", icon: Server, desc: "Multi-region deployment, event bus, observability" },
+      { name: "Spine", href: "/platform/spine", icon: Database },
+      { name: "Identities", href: "/platform/identities", icon: GitBranch },
+      { name: "Execution Path", href: "/platform/execution-path", icon: Layers },
+      { name: "Connectors EcoSystem", href: "/platform/connectors-ecosystem", icon: Plug },
+      { name: "Knowledge Base", href: "/platform/knowledge-base", icon: BookOpen },
+      { name: "Security", href: "/platform/security", icon: ShieldCheck },
+      { name: "Infrastructure", href: "/platform/infrastructure", icon: Server },
     ],
   },
   {
     label: "Product",
     href: "/product",
     items: [
-      { name: "Workbench", href: "/product/workbench", icon: Cpu, desc: "12 domain-specific views, schema-driven UI" },
-      { name: "Twin", href: "/product/twin", icon: Brain, desc: "Living model for every Account, Contact, Deal, and Project" },
-      { name: "Human in the Loop", href: "/product/human-in-the-loop", icon: UserCheck, desc: "AI proposes, you decide — full approval and audit trail" },
-      { name: "Twin Insights", href: "/product/twin-insights", icon: TrendingUp, desc: "Trigger scores, risk signals, freshness heatmap" },
-      { name: "Twin Operations", href: "/product/twin-operations", icon: Settings2, desc: "Execute actions, fire playbooks, configure twin behaviour" },
+      { name: "Workbench", href: "/product/workbench", icon: Cpu },
+      { name: "Twin", href: "/product/twin", icon: Brain },
+      { name: "Human in the Loop", href: "/product/human-in-the-loop", icon: UserCheck },
+      { name: "Twin Insights", href: "/product/twin-insights", icon: TrendingUp },
+      { name: "Twin Operations", href: "/product/twin-operations", icon: Settings2 },
+      { name: "Security", href: "/product/security", icon: ShieldCheck },
     ],
   },
   {
@@ -166,12 +167,9 @@ function DropdownItem({ item }: { item: NavItemChild }) {
       >
         <Icon className="h-[15px] w-[15px] text-white" />
       </div>
-      <div className="flex flex-col">
+      <div className="flex flex-col justify-center">
         <span className="text-[14px] font-semibold tracking-[-0.03em] text-foreground leading-tight">
           {item.name}
-        </span>
-        <span className="mt-0.5 text-[12px] font-medium leading-[1.4] tracking-[-0.01em] text-muted-foreground">
-          {item.desc}
         </span>
       </div>
     </Link>

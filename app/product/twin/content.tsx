@@ -1,47 +1,26 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Cpu, RefreshCw, GitBranch, Eye, Zap, BarChart3 } from "lucide-react";
+import { Cpu, RefreshCw, Clock, Brain } from "lucide-react";
 import Header from "@/components/header";
 import { Footer } from "@/components/footer";
 
-const capabilities = [
-  {
-    icon: GitBranch,
-    title: "One Twin Per Entity",
-    desc: "Every Account, Contact, Deal, and Project has its own Digital Twin — a living model that tracks current state, relationship signals, and change history across every connected source.",
-    tags: ["Account twin", "Contact twin", "Deal twin", "Project twin"],
-  },
-  {
-    icon: RefreshCw,
-    title: "Continuously Updated",
-    desc: "Twins update automatically as new data arrives — from CRM syncs, email threads, AI sessions, or user edits. No manual refresh. No stale snapshots.",
-    tags: ["Event-driven updates", "Always current", "No manual refresh", "Multi-source sync"],
-  },
-  {
-    icon: Eye,
-    title: "Temporal State Views",
-    desc: "Reconstruct any twin at any point in time. See exactly what was known about an account last quarter, before a deal closed, or at the moment a support ticket was raised.",
-    tags: ["Point-in-time replay", "Change timeline", "Historical accuracy", "Audit support"],
-  },
-  {
-    icon: Zap,
-    title: "Twin Trigger Scoring",
-    desc: "Each twin carries a live trigger score — a composite signal built from engagement patterns, data freshness, risk indicators, and AI session outcomes that surfaces what needs attention now.",
-    tags: ["Composite scoring", "Risk signals", "Engagement patterns", "Attention ranking"],
-  },
-  {
-    icon: BarChart3,
-    title: "Relationship Graph",
-    desc: "Twins are never isolated. The Relation Graph connects entities — Account → Contacts → Deals → Tickets → Invoices — so context flows across your entire data model.",
-    tags: ["Entity relationships", "Graph navigation", "Cross-entity context", "Dependency mapping"],
-  },
-  {
-    icon: Cpu,
-    title: "Memory Layer",
-    desc: "Twins persist context across AI sessions, preserving decisions, summaries, and extracted signals. Your AI never starts from scratch — it inherits everything the twin already knows.",
-    tags: ["Persistent context", "Session memory", "Decision retention", "Knowledge carry-forward"],
-  },
+const virtualState = [
+  { title: "Entity 360 Mirroring", desc: "Real-time digital representation of the user's entire work context across all connected tools — every field, relation, and signal in one model." },
+  { title: "Live Synchronization", desc: "Firebase Realtime listeners ensure Twin state matches Workbench activities within sub-100ms from normalization to UI update." },
+  { title: "Context Persistence", desc: "Survives browser refreshes, session timeouts, and device switches without data loss. The Twin never starts from scratch." },
+];
+
+const scoringLevels = [
+  { score: "0 – 30", badge: "🟢", label: "Informational", desc: "Background monitoring. Entity changes logged; no action surfaced." },
+  { score: "31 – 70", badge: "🟡", label: "Watch", desc: "Surfaced in the daily Morning Brief for awareness. No immediate action required." },
+  { score: "71 – 100", badge: "🔴", label: "Critical / Action Required", desc: "Immediate notification + Proposed Action generated and routed to the HITL approval queue." },
+];
+
+const sessionItems = [
+  { icon: Brain, color: "text-violet-400", title: "Zero-Shot Operation", desc: "No training period required. The Twin operates immediately on current SpineVault state from the moment a connector is active." },
+  { icon: RefreshCw, color: "text-blue-400", title: "Context Grounding", desc: "All reasoning is hyperlinked to specific Entity 360 objects — not floating chat contexts. Every insight traces back to a canonical record." },
+  { icon: Clock, color: "text-emerald-400", title: "Memory Continuity", desc: "Remembers prior interactions without model retraining via Knowledge Memory integration. Context accumulates across sessions automatically." },
 ];
 
 export function TwinContent() {
@@ -57,38 +36,73 @@ export function TwinContent() {
               Twin
             </div>
             <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white to-white/60 bg-clip-text text-transparent">
-              A living model of every<br />entity in your workspace.
+              A virtual state machine<br />for your entire work context.
             </h1>
-            <p className="text-xl text-white/60 max-w-2xl mx-auto">
-              The Digital Twin is a continuously updated, relationship-aware model for every Account, Contact, Deal, and Project — carrying state, history, and AI memory in one place.
+            <p className="text-xl text-white/60 max-w-2xl mx-auto leading-relaxed">
+              The Digital Twin mirrors your Entity 360 in real time — scoring changes, surfacing critical signals, and maintaining context across every session without retraining.
             </p>
           </motion.div>
         </div>
       </section>
 
       <section className="pb-24 px-6">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {capabilities.map((c, i) => (
-            <motion.div
-              key={c.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.07 }}
-              className="rounded-2xl border border-white/10 bg-white/[0.03] p-7 hover:border-white/20 transition-colors"
-            >
-              <div className="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-5">
-                <c.icon className="w-5 h-5 text-purple-400" />
-              </div>
-              <h3 className="text-lg font-semibold mb-3">{c.title}</h3>
-              <p className="text-white/55 text-sm leading-relaxed mb-5">{c.desc}</p>
-              <div className="flex flex-wrap gap-2">
-                {c.tags.map((t) => (
-                  <span key={t} className="px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-white/40">{t}</span>
-                ))}
-              </div>
-            </motion.div>
-          ))}
+        <div className="max-w-5xl mx-auto space-y-8">
+
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}
+            className="rounded-2xl border border-white/10 bg-white/[0.03] p-8">
+            <h2 className="text-lg font-bold mb-6 flex items-center gap-3"><Cpu className="w-5 h-5 text-blue-400" /> Virtual State Machine</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+              {virtualState.map((v) => (
+                <div key={v.title} className="rounded-xl border border-white/8 bg-white/[0.02] p-5">
+                  <div className="font-semibold mb-2 text-sm">{v.title}</div>
+                  <p className="text-white/50 text-sm leading-relaxed">{v.desc}</p>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }}
+            className="rounded-2xl border border-white/10 bg-white/[0.03] p-8">
+            <h2 className="text-lg font-bold mb-2">Twin Trigger Scoring</h2>
+            <p className="text-white/50 text-sm mb-6 leading-relaxed">
+              Visual 0-100 scoring gauge. When Entity 360 changes cross a threshold, the Twin surfaces a signal at the appropriate severity — from background monitoring to immediate action.
+            </p>
+            <div className="space-y-3">
+              {scoringLevels.map((s) => (
+                <div key={s.label} className="rounded-xl border border-white/8 bg-white/[0.02] p-5 flex items-start gap-4">
+                  <span className="text-2xl">{s.badge}</span>
+                  <div className="flex-1">
+                    <div className="flex items-center gap-3 mb-1">
+                      <span className="font-semibold text-sm">{s.label}</span>
+                      <span className="text-xs font-mono text-white/30">{s.score}</span>
+                    </div>
+                    <p className="text-white/50 text-sm leading-relaxed">{s.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="mt-5 rounded-xl border border-white/8 bg-white/[0.02] p-5">
+              <div className="text-xs text-white/40 mb-1 font-semibold uppercase tracking-widest">Pattern Recognition Example</div>
+              <p className="text-white/60 text-sm">"Usage down 40% + Champion left + 3 P1 tickets = <span className="text-red-400 font-semibold">Churn risk score 87</span>"</p>
+            </div>
+          </motion.div>
+
+          <div>
+            <h2 className="text-sm font-bold mb-5 text-white/50 uppercase tracking-widest">Session Management</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+              {sessionItems.map((s, i) => (
+                <motion.div key={s.title} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.07 }}
+                  className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+                  <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-4">
+                    <s.icon className={`w-5 h-5 ${s.color}`} />
+                  </div>
+                  <div className="font-semibold mb-2">{s.title}</div>
+                  <p className="text-white/50 text-sm leading-relaxed">{s.desc}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
         </div>
       </section>
 

@@ -1,47 +1,32 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { UserCheck, CheckCircle, Eye, Edit3, ShieldCheck, AlertTriangle } from "lucide-react";
+import { UserCheck, Eye, Edit3, ShieldCheck, AlertTriangle, RotateCcw } from "lucide-react";
 import Header from "@/components/header";
 import { Footer } from "@/components/footer";
 
-const controls = [
-  {
-    icon: AlertTriangle,
-    title: "Proposed Action Queue",
-    desc: "Every action the system wants to take — update a record, send a message, trigger a workflow — enters a review queue before executing. Nothing runs without a human decision.",
-    tags: ["Pre-execution review", "Action queue", "Batch approval", "Priority ordering"],
-  },
-  {
-    icon: Eye,
-    title: "Impact Preview",
-    desc: "Before approving any action, see exactly what will change — which fields, which systems, which downstream records. Full impact visibility before a single write occurs.",
-    tags: ["Field-level diff", "System impact", "Downstream preview", "Before/after view"],
-  },
-  {
-    icon: CheckCircle,
-    title: "Confidence Scoring",
-    desc: "Each proposed action carries a confidence score built from data quality, source agreement, and historical approval patterns. High-confidence actions can be auto-approved on your terms.",
-    tags: ["Confidence signals", "Auto-approve thresholds", "Source agreement", "Approval history"],
-  },
-  {
-    icon: Edit3,
-    title: "Edit Before Execute",
-    desc: "Approve isn't a binary choice. Any proposed action can be edited — adjust field values, change target records, or narrow scope — before it executes against connected systems.",
-    tags: ["Inline editing", "Partial approval", "Scope adjustment", "Safe execution"],
-  },
-  {
-    icon: ShieldCheck,
-    title: "Truth Boundary",
-    desc: "Certain entities and fields are designated as Truth Boundary — requiring explicit human confirmation on every change, regardless of confidence level. Your canonical source is protected.",
-    tags: ["Canonical protection", "Mandatory review", "Field-level locks", "Override audit"],
-  },
-  {
-    icon: UserCheck,
-    title: "Approval Audit Trail",
-    desc: "Every approval, rejection, and edit is logged against the acting user, the proposed action, and the resulting system state — giving you a complete governance record.",
-    tags: ["Full audit log", "User attribution", "Decision capture", "Compliance export"],
-  },
+const queueFeatures = [
+  { title: "Proposed Action Queue", desc: "Central inbox of all AI-suggested actions requiring human approval before execution. Sortable by urgency, impact ($), confidence score, and entity type. Filterable by department, account tier, and action type." },
+  { title: "Impact Preview Panel", desc: "Visual confirmation of exact system effects before approval — \"This will update Salesforce Opportunity Stage to Negotiation\", \"This will send Slack notification to #customer-success\"." },
+  { title: "Evidence Inspector", desc: "Side-by-side display with hyperlinked proof. Source data from SpineVault, confidence score visualization (87/100), and goal_refs linking to canonical entities." },
+];
+
+const approvalTiers = [
+  { tier: "Tier 1", who: "CSM", what: "Routine health score updates, standard emails", impact: "< $1K impact" },
+  { tier: "Tier 2", who: "Manager", what: "Escalations, contract modifications", impact: "$1K – $10K impact" },
+  { tier: "Tier 3", who: "VP / Executive", what: "Strategic actions, pricing changes, churn interventions", impact: "> $10K impact" },
+];
+
+const govControls = [
+  { icon: Edit3, color: "text-blue-400", title: "Edit Before Approve", desc: "Full text editor for AI-drafted emails, field value adjustment, and escalation level modification before any system is touched." },
+  { icon: UserCheck, color: "text-emerald-400", title: "Delegation Settings", desc: "Temporary approval authority transfer — \"While on PTO, route my approvals to [Name]\" with full audit trail maintained." },
+  { icon: ShieldCheck, color: "text-amber-400", title: "Bulk Approval Safety", desc: "Maximum 10 actions per batch approval with mandatory rollback capability. No runaway automated batches." },
+];
+
+const emergency = [
+  { icon: AlertTriangle, color: "text-red-400", title: "Pause Twin", desc: "Instant suspension of all proactive suggestions during critical incidents. One click, immediate effect." },
+  { icon: Eye, color: "text-violet-400", title: "Override with Audit", desc: "Force-execute actions with mandatory justification entry. Creates an immutable override log that cannot be modified." },
+  { icon: RotateCcw, color: "text-cyan-400", title: "Rollback Interface", desc: "24-hour window to reverse approved actions with a single-click revert. Post-execution safety net for every write." },
 ];
 
 export function HumanInTheLoopContent() {
@@ -57,38 +42,75 @@ export function HumanInTheLoopContent() {
               Human in the Loop
             </div>
             <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white to-white/60 bg-clip-text text-transparent">
-              AI proposes.<br />You decide.
+              The Truth Boundary<br />Control Center.
             </h1>
-            <p className="text-xl text-white/60 max-w-2xl mx-auto">
-              Every system action passes through a human review gate. See what will change, why it was proposed, and decide before anything executes — with a full audit trail of every decision.
+            <p className="text-xl text-white/60 max-w-2xl mx-auto leading-relaxed">
+              Every AI-proposed action enters a governed approval queue. Preview impact, inspect evidence, edit before approving — with tiered routing, delegation, and a 24-hour rollback window.
             </p>
           </motion.div>
         </div>
       </section>
 
       <section className="pb-24 px-6">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {controls.map((c, i) => (
-            <motion.div
-              key={c.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.07 }}
-              className="rounded-2xl border border-white/10 bg-white/[0.03] p-7 hover:border-white/20 transition-colors"
-            >
-              <div className="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-5">
-                <c.icon className="w-5 h-5 text-amber-400" />
-              </div>
-              <h3 className="text-lg font-semibold mb-3">{c.title}</h3>
-              <p className="text-white/55 text-sm leading-relaxed mb-5">{c.desc}</p>
-              <div className="flex flex-wrap gap-2">
-                {c.tags.map((t) => (
-                  <span key={t} className="px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-white/40">{t}</span>
-                ))}
-              </div>
-            </motion.div>
-          ))}
+        <div className="max-w-5xl mx-auto space-y-8">
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {queueFeatures.map((q, i) => (
+              <motion.div key={q.title} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.07 }}
+                className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+                <div className="font-semibold mb-3">{q.title}</div>
+                <p className="text-white/50 text-sm leading-relaxed">{q.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}
+            className="rounded-2xl border border-amber-500/20 bg-amber-500/[0.03] p-8">
+            <h2 className="text-lg font-bold mb-6">Approval Rules Engine</h2>
+            <div className="space-y-3">
+              {approvalTiers.map((t) => (
+                <div key={t.tier} className="rounded-xl border border-white/8 bg-white/[0.02] p-5 grid grid-cols-1 md:grid-cols-4 gap-2 items-center">
+                  <span className="font-semibold text-amber-400 text-sm">{t.tier}</span>
+                  <span className="text-sm text-white/70">{t.who}</span>
+                  <span className="text-sm text-white/50">{t.what}</span>
+                  <span className="text-xs text-white/35 font-mono">{t.impact}</span>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
+          <div>
+            <h2 className="text-sm font-bold mb-5 text-white/50 uppercase tracking-widest">Governance Controls</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+              {govControls.map((g, i) => (
+                <motion.div key={g.title} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.07 }}
+                  className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+                  <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-4">
+                    <g.icon className={`w-5 h-5 ${g.color}`} />
+                  </div>
+                  <div className="font-semibold mb-2">{g.title}</div>
+                  <p className="text-white/50 text-sm leading-relaxed">{g.desc}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h2 className="text-sm font-bold mb-5 text-white/50 uppercase tracking-widest">Emergency Controls</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+              {emergency.map((e, i) => (
+                <motion.div key={e.title} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.07 }}
+                  className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+                  <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-4">
+                    <e.icon className={`w-5 h-5 ${e.color}`} />
+                  </div>
+                  <div className="font-semibold mb-2">{e.title}</div>
+                  <p className="text-white/50 text-sm leading-relaxed">{e.desc}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
         </div>
       </section>
 

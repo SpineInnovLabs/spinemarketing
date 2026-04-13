@@ -1,47 +1,35 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Server, Globe, ShieldCheck, Zap, BarChart3, RefreshCw } from "lucide-react";
+import { Server, Zap, Database, Globe, BarChart3, Layers } from "lucide-react";
 import Header from "@/components/header";
 import { Footer } from "@/components/footer";
 
-const specs = [
-  {
-    icon: Server,
-    title: "Multi-Region Deployment",
-    desc: "IntegrateWise runs across distributed cloud regions with automatic failover, ensuring your workspace stays online regardless of provider-level incidents.",
-    tags: ["Auto failover", "Multi-region", "99.9% SLA", "Zero-downtime deploys"],
-  },
-  {
-    icon: ShieldCheck,
-    title: "Encryption at Rest & In Transit",
-    desc: "All data is encrypted at rest using AES-256 and in transit using TLS 1.3. Encryption keys are managed per-tenant and rotated on a configurable schedule.",
-    tags: ["AES-256 at rest", "TLS 1.3 in transit", "Per-tenant keys", "Key rotation"],
-  },
-  {
-    icon: Globe,
-    title: "Connector Gateway",
-    desc: "All outbound API calls to your SaaS tools flow through a managed Connector Gateway — rate-limited, retried, logged, and firewalled per integration.",
-    tags: ["Rate limiting", "Retry logic", "Per-connector firewall", "Full request logs"],
-  },
-  {
-    icon: Zap,
-    title: "Event Bus",
-    desc: "An internal event bus routes every data change, AI trigger, and user action as a typed event — enabling real-time reactions across the Execution Path without polling.",
-    tags: ["Typed events", "Real-time routing", "No polling", "Fan-out delivery"],
-  },
-  {
-    icon: BarChart3,
-    title: "Observability",
-    desc: "Full telemetry across sync pipelines, AI sessions, and connector calls. Latency, error rates, queue depth, and data freshness are monitored continuously.",
-    tags: ["Pipeline telemetry", "Error rate tracking", "Queue monitoring", "Freshness dashboards"],
-  },
-  {
-    icon: RefreshCw,
-    title: "Background Sync Engine",
-    desc: "A persistent sync engine manages incremental updates from every connected source — batching, deduplicating, and scheduling refreshes based on data criticality.",
-    tags: ["Incremental sync", "Deduplication", "Priority scheduling", "Criticality-aware refresh"],
-  },
+const firebase = [
+  { title: "Realtime Database", desc: "High-velocity synchronization for live Workbench views. Entity state updates propagate to every connected client within sub-100ms." },
+  { title: "State Persistence", desc: "Current state of every entity, signal, and Twin activation maintained across sessions — survives browser refreshes, timeouts, and device switches." },
+  { title: "Cloud Functions Eventing", desc: "Cloud Functions trigger on SpineVault updates — driving downstream view assembly, signal detection, and notification routing automatically." },
+];
+
+const dataAccess = [
+  { title: "Realtime Listeners", desc: "Domain-specific views update instantly as the Spine processes data. Sub-100ms latency from normalization to UI update." },
+  { title: "Entity 360 Assembly", desc: "Graph queries join Account → Contacts → Deals → Tickets in a single request — assembled at read time from versioned Spine records." },
+  { title: "Temporal Queries", desc: "Point-in-time reconstruction via versioned Spine records. Reconstruct any entity state at any historical moment." },
+];
+
+const services = [
+  { icon: Database, color: "text-blue-400", name: "Spine Service", desc: "Core SSOT, entity resolution, schema governance. The authoritative source for all canonical data." },
+  { icon: Layers, color: "text-violet-400", name: "Context Service", desc: "Real-time view assembly, conflict detection. Composes domain-specific views from raw Spine data on demand." },
+  { icon: Zap, color: "text-purple-400", name: "Twin Service", desc: "AI reasoning engine, signal detection. Evaluates Entity 360 changes and generates trigger scoring." },
+  { icon: Globe, color: "text-amber-400", name: "Approval Service", desc: "TruthLayer governance and routing logic. Manages the HITL queue and approval topology." },
+  { icon: BarChart3, color: "text-emerald-400", name: "Action Service", desc: "Write-back execution, idempotency, rollback. Executes approved actions against connected systems." },
+  { icon: Server, color: "text-cyan-400", name: "Notification Service", desc: "Alert routing and digest generation. Delivers signals, Morning Briefs, and exception alerts to the right people." },
+];
+
+const scalability = [
+  { title: "Cloudflare Edge", desc: "Workers deployed at the edge for low-latency global access. Requests route to the nearest point of presence automatically." },
+  { title: "D1 / R2 Storage", desc: "Distributed storage for SpineVault (D1) and blob data (R2) — durable, globally replicated, and cost-efficient at scale." },
+  { title: "Queue Management", desc: "Cloudflare Queues handle async processing and Dead Letter Queue management — ensuring no data is lost during ingestion spikes." },
 ];
 
 export function InfrastructureContent() {
@@ -57,38 +45,73 @@ export function InfrastructureContent() {
               Infrastructure
             </div>
             <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white to-white/60 bg-clip-text text-transparent">
-              Built for reliability,<br />security, and scale.
+              Firebase. Cloudflare Edge.<br />Built to scale.
             </h1>
-            <p className="text-xl text-white/60 max-w-2xl mx-auto">
-              The infrastructure layer handles encryption, regional redundancy, real-time event routing, and full observability — so your workspace never has a single point of failure.
+            <p className="text-xl text-white/60 max-w-2xl mx-auto leading-relaxed">
+              Six purpose-built services, real-time listeners, edge distribution, and versioned storage — the engine behind every sync, signal, and action.
             </p>
           </motion.div>
         </div>
       </section>
 
       <section className="pb-24 px-6">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {specs.map((s, i) => (
-            <motion.div
-              key={s.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.07 }}
-              className="rounded-2xl border border-white/10 bg-white/[0.03] p-7 hover:border-white/20 transition-colors"
-            >
-              <div className="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-5">
-                <s.icon className="w-5 h-5 text-cyan-400" />
-              </div>
-              <h3 className="text-lg font-semibold mb-3">{s.title}</h3>
-              <p className="text-white/55 text-sm leading-relaxed mb-5">{s.desc}</p>
-              <div className="flex flex-wrap gap-2">
-                {s.tags.map((t) => (
-                  <span key={t} className="px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-white/40">{t}</span>
-                ))}
-              </div>
-            </motion.div>
-          ))}
+        <div className="max-w-5xl mx-auto space-y-10">
+
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}
+            className="rounded-2xl border border-white/10 bg-white/[0.03] p-8">
+            <h2 className="text-lg font-bold mb-6 flex items-center gap-3"><Zap className="w-5 h-5 text-amber-400" /> Firebase Architecture</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+              {firebase.map((f) => (
+                <div key={f.title} className="rounded-xl border border-white/8 bg-white/[0.02] p-5">
+                  <div className="font-semibold mb-2 text-sm">{f.title}</div>
+                  <p className="text-white/50 text-sm leading-relaxed">{f.desc}</p>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
+          <div>
+            <h2 className="text-sm font-bold mb-5 text-white/50 uppercase tracking-widest">Service Architecture</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+              {services.map((s, i) => (
+                <motion.div key={s.name} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.06 }}
+                  className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
+                  <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-4">
+                    <s.icon className={`w-5 h-5 ${s.color}`} />
+                  </div>
+                  <div className="font-semibold mb-2">{s.name}</div>
+                  <p className="text-white/50 text-sm leading-relaxed">{s.desc}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}
+            className="rounded-2xl border border-white/10 bg-white/[0.03] p-8">
+            <h2 className="text-lg font-bold mb-6 flex items-center gap-3"><Globe className="w-5 h-5 text-cyan-400" /> Scalability</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+              {scalability.map((s) => (
+                <div key={s.title} className="rounded-xl border border-white/8 bg-white/[0.02] p-5">
+                  <div className="font-semibold mb-2 text-sm">{s.title}</div>
+                  <p className="text-white/50 text-sm leading-relaxed">{s.desc}</p>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}
+            className="rounded-2xl border border-white/10 bg-white/[0.03] p-8">
+            <h2 className="text-lg font-bold mb-6 flex items-center gap-3"><Database className="w-5 h-5 text-blue-400" /> Data Access Patterns</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+              {dataAccess.map((d) => (
+                <div key={d.title} className="rounded-xl border border-white/8 bg-white/[0.02] p-5">
+                  <div className="font-semibold mb-2 text-sm">{d.title}</div>
+                  <p className="text-white/50 text-sm leading-relaxed">{d.desc}</p>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
         </div>
       </section>
 
