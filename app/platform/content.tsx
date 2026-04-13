@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ShieldCheck, RefreshCw, Database, Brain } from "lucide-react";
+import { Database, Brain, Layers, ShieldCheck, Plug, Wrench, ArrowRight } from "lucide-react";
 
 const fade = (delay = 0) => ({
   initial: { opacity: 0, y: 16 },
@@ -17,109 +17,63 @@ const heroFade = (delay = 0) => ({
   transition: { type: "spring" as const, damping: 16, mass: 1, stiffness: 52, delay },
 });
 
-const operationalLoop = [
+const dataChain = [
   {
-    num: "1",
-    stage: "Load",
-    action: "Data ingests from connected tools via APIs, webhooks, email, and file drops",
-    layer: "L3 Backend — 8-stage normalization pipeline",
-    human: "Configure connections",
+    id: "loader",
+    label: "Loader",
+    desc: "Pulls raw data from every connected tool via APIs, webhooks, streaming events, and file drops. Idempotent ingestion with dead-letter queuing.",
   },
   {
-    num: "2",
-    stage: "Store",
-    action: "Normalized into Spine SSOT as canonical entities (Account, Contact, Deal, Ticket…)",
-    layer: "L0/L3 Spine",
-    human: "Review schema alignment",
+    id: "normalizer",
+    label: "Normalizer",
+    desc: "Validates, parses, deduplicates, and maps vendor-specific payloads to canonical Spine schema. Golden record creation with conflict resolution.",
   },
   {
-    num: "3",
-    stage: "Think",
-    action: "AI reasons on unified context — detects signals, builds evidence chains, proposes actions",
-    layer: "L2 Cognitive — The Twin",
-    human: "Set confidence thresholds",
+    id: "spine-context",
+    label: "Spine + Context",
+    desc: "Normalized entities (Account, Contact, Deal, Ticket) persist in the SSOT with full versioning. Relationship graphs and temporal markers enrich every record.",
   },
   {
-    num: "4",
-    stage: "Approve",
-    action: "TruthLayer governance checkpoint — confidence scored, evidence reviewed",
-    layer: "L2 Governance — TruthLayer",
-    human: "Mandatory approval — architectural law, not configuration",
-    highlight: true,
+    id: "entity-360",
+    label: "Entity 360",
+    desc: "A queryable, living object assembled in real-time from Spine — CRM health, billing, tickets, usage, and stakeholder signals unified in one view.",
   },
   {
-    num: "5",
-    stage: "Act",
-    action: "Approved actions execute write-backs to source systems: CRM, billing, support, email",
-    layer: "L3 Backend",
-    human: "Trigger or schedule execution",
-  },
-  {
-    num: "6",
-    stage: "Adjust",
-    action: "Outcomes feed back; AI learns from approved and rejected actions, sharpens future signals",
-    layer: "L2 Learning",
-    human: "Validate outcomes",
-  },
-  {
-    num: "7",
-    stage: "Repeat",
-    action: "New data loads, enriched by prior approved knowledge — the loop compounds over time",
-    layer: "Full Stack",
-    human: "Monitor and govern",
+    id: "twin-data",
+    label: "Twin",
+    desc: "The Cognitive Layer reads from Spine continuously, detecting cross-system signals and building reasoning chains grounded in canonical entity data.",
   },
 ];
 
-const normalizationPipeline = [
-  { num: "1", stage: "Ingest", fn: "API polling, webhooks, streaming events, file drops" },
-  { num: "2", stage: "Validate", fn: "Schema checking, auth verification, payload integrity" },
-  { num: "3", stage: "Parse", fn: "Extract entities from vendor-specific formats" },
-  { num: "4", stage: "Normalize", fn: "Map to canonical Spine schema — Account, Contact, Deal, Ticket, Invoice, Project" },
-  { num: "5", stage: "Deduplicate", fn: "Merge logic, conflict resolution, golden record creation" },
-  { num: "6", stage: "Enrich", fn: "Add metadata, relationships, temporal markers" },
-  { num: "7", stage: "Persist", fn: "Write to Spine SSOT with full versioning — point-in-time reconstruction" },
-  { num: "8", stage: "Emit", fn: "Trigger downstream events, update Workspace views, notify Cognitive Layer" },
-];
-
-const dimensions = [
+const aiChain = [
   {
-    num: "01",
-    where: "Store stage",
-    title: "Spine Equivalent — Vendor-Neutral SSOT",
-    body: "Unlike iPaaS tools that only move data or CRMs that lock truth in proprietary schemas, the Spine maintains a normalized, vendor-independent canonical layer. Canonical entities — Account, Contact, Deal, Ticket, Invoice, Project — exist as neutral objects, not Salesforce rows or HubSpot records. Continuous bidirectional sync with conflict resolution, not batch ETL. Automatic drift detection when upstream APIs change.",
+    id: "session-summaries",
+    label: "AI Session Summaries",
+    desc: "Every customer call, email thread, and meeting auto-summarized, linked to entity records, and persisted in Spine as structured knowledge — not lost in inbox history.",
   },
   {
-    num: "02",
-    where: "Rendered from Store, queried during Think",
-    title: "Entity 360 — Live Cross-System View",
-    body: "Not a dashboard. Not a report. A queryable, living object assembled in real-time from the Spine. CRM status + billing health + open tickets + product usage + recent stakeholder emails + renewal timeline in one view. When two systems disagree, the Spine flags it; AI suggests resolution based on source-of-record rules you define.",
+    id: "triage-bot",
+    label: "Triage Bot",
+    desc: "Monitors the Spine for risk signals, renewal flags, and anomalies across every account. Surfaces prioritized actions with confidence scores and evidence chains.",
   },
   {
-    num: "03",
-    where: "Think stage",
-    title: "Proactive Signal Detection",
-    body: "AI monitors the Spine continuously, not on-demand. Cross-system patterns: 'Usage dropped 30% AND champion left AND ticket volume spiked' = churn risk before the CRM shows it. Every signal carries a confidence score (0–100) based on data freshness and source reliability. Low-confidence or stale signals are quarantined, not surfaced.",
+    id: "knowledge-ui",
+    label: "Knowledge UI",
+    desc: "The Workspace surface where approved insights, session memory, and entity context live side-by-side. No context-switching — everything your team needs is one view.",
   },
   {
-    num: "04",
-    where: "Think stage → feeds Approve",
-    title: "Reasoning with Evidence",
-    body: "A dedicated cognitive layer that shows its work. Chain-of-thought: AI explains why it flagged an account as 'At Risk,' with hyperlinks to source records across systems. Every recommendation explicitly states impact on both vendor goals and client business goals. No insight without goal_refs linking back to canonical Spine entities.",
+    id: "entity-360-ai",
+    label: "Entity 360",
+    desc: "AI and human context converge at the Entity 360 — the live account, contact, or deal view that combines system data with session intelligence.",
   },
   {
-    num: "05",
-    where: "Approve stage — the gate between Think and Act",
-    title: "Non-Bypassable HITL — Human-in-the-Loop",
-    body: "Human approval is an architectural gate, not a workflow add-on. All AI-generated actions route through TruthLayer — a governance membrane that requires human authorization before any write operation. Every approval, rejection, and edit is append-only, signed, and timestamped in the Spine's decision log. Even admin force actions create traceable exceptions, never silent executions.",
+    id: "twin-ai",
+    label: "Twin",
+    desc: "Your AI counterpart that learns from every approved session, compounds cross-account insights, and gets sharper with every approval and rejection.",
   },
 ];
 
-const specs = [
-  { label: "Infrastructure", value: "Cloudflare (Workers, D1, R2, Queues) + Supabase (PostgreSQL, Auth, Realtime)" },
-  { label: "Protocol", value: "Event-driven with idempotency keys, dead-letter queues for failed webhooks, circuit breakers for API rate limits" },
-  { label: "Security", value: "End-to-end encryption at rest (AES-256) and in transit (TLS 1.3), SOC 2 Type II audit trail, immutable decision log" },
-  { label: "Scale", value: "Sub-100ms query latency for Entity 360 assembly; 99.9% uptime SLA on Spine availability" },
-];
+const loop = ["Truth", "Context", "AI Sessions", "Entity 360", "Repeat"];
 
 export function PlatformContent() {
   return (
@@ -139,176 +93,119 @@ export function PlatformContent() {
           </motion.div>
 
           <motion.h1
-            {...heroFade(0.25)}
-            className="text-[44px] font-semibold leading-[1.08] tracking-[-0.05em] text-white sm:text-[64px]"
+            {...heroFade(0.2)}
+            className="text-[52px] font-semibold leading-[1.05] tracking-[-0.055em] text-white sm:text-[72px]"
           >
-            The Adaptive{" "}
-            <span className="text-primary">Spine Architecture</span>
+            Truth. Context.{" "}
+            <span className="text-primary">AI Sessions.</span>
+            <br />
+            Entity 360. Repeat.
           </motion.h1>
 
           <motion.p
-            {...heroFade(0.4)}
-            className="mx-auto mt-7 max-w-2xl text-[17px] font-medium leading-[1.55] tracking-[-0.02em] text-white/55"
+            {...heroFade(0.38)}
+            className="mx-auto mt-8 max-w-xl text-[17px] font-medium leading-[1.55] tracking-[-0.02em] text-white/50"
           >
-            Two convergent loops — one human-governed, one system-governed —
-            unifying at the Spine. AI thinks in context, but cannot act without
-            explicit human approval.
+            Every tool you use generates data. The Platform turns that data into
+            truth, wraps it in context, surfaces it as actionable AI sessions,
+            and delivers it as a unified Entity 360.{" "}
+            <span className="text-white/80">Then repeats.</span>
           </motion.p>
 
-          <motion.div {...heroFade(0.52)} className="mt-9 flex flex-wrap items-center justify-center gap-3">
-            <Link
-              href="/contact?intent=demo"
-              className="inline-flex h-11 items-center rounded-full bg-primary px-6 text-[14px] font-semibold tracking-[-0.02em] text-white transition-opacity hover:opacity-90"
-            >
-              Explore the architecture →
-            </Link>
-            <Link
-              href="/integrations"
-              className="inline-flex h-11 items-center rounded-full border border-white/15 px-6 text-[14px] font-semibold tracking-[-0.02em] text-white/70 transition-colors hover:border-white/30 hover:text-white"
-            >
-              View integrations →
-            </Link>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ── The Operational Loop ─────────────────────────────────── */}
-      <section className="arvio-section">
-        <div className="mx-auto max-w-[1100px]">
-          <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center">
-            <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">
-              The Operational Loop
-            </p>
-            <h2 className="section-heading">
-              The 7-stage cycle that governs{" "}
-              <span className="text-primary">how work actually flows</span>
-            </h2>
-            <p className="mt-4 text-[16px] font-medium leading-[1.55] text-muted-foreground">
-              This is the loop users experience — the rhythm of governed
-              intelligence. Between Think and Act sits the non-bypassable{" "}
-              <strong className="text-foreground">Approve</strong> gate.
-              Architectural law, not configuration.
-            </p>
-          </motion.div>
-
-          {/* Loop flow label */}
-          <motion.div {...fade(0.1)} className="mt-10 flex flex-wrap items-center justify-center gap-1.5 text-[13px] font-semibold">
-            {["Load", "Store", "Think", "Approve", "Act", "Adjust", "Repeat"].map((s, i, arr) => (
-              <span key={s} className="flex items-center gap-1.5">
+          {/* Loop pills */}
+          <motion.div
+            {...heroFade(0.5)}
+            className="mt-10 flex flex-wrap items-center justify-center gap-2 text-[13px] font-semibold"
+          >
+            {loop.map((item, i) => (
+              <span key={item} className="flex items-center gap-2">
                 <span
-                  className={`rounded-lg px-3 py-1 ${
-                    s === "Approve"
+                  className={`rounded-xl px-4 py-1.5 ${
+                    item === "Entity 360"
                       ? "bg-primary text-white"
-                      : "bg-muted text-foreground/70 border border-border/60"
+                      : "border border-white/10 bg-white/5 text-white/60"
                   }`}
                 >
-                  {s}
+                  {item}
                 </span>
-                {i < arr.length - 1 && (
-                  <span className="text-muted-foreground/50">→</span>
+                {i < loop.length - 1 && (
+                  <ArrowRight className="h-3.5 w-3.5 text-white/20" />
                 )}
               </span>
             ))}
           </motion.div>
 
-          <motion.div {...fade(0.15)} className="mt-8 overflow-hidden rounded-2xl border border-border bg-background">
-            <table className="w-full">
-              <thead>
-                <tr className="border-b border-border">
-                  <th className="px-5 py-3.5 text-left text-[11px] font-bold uppercase tracking-[0.1em] text-primary w-[12%]">
-                    #
-                  </th>
-                  <th className="px-5 py-3.5 text-left text-[11px] font-bold uppercase tracking-[0.1em] text-primary w-[15%]">
-                    Stage
-                  </th>
-                  <th className="px-5 py-3.5 text-left text-[11px] font-bold uppercase tracking-[0.1em] text-primary">
-                    What happens
-                  </th>
-                  <th className="px-5 py-3.5 text-left text-[11px] font-bold uppercase tracking-[0.1em] text-primary hidden lg:table-cell">
-                    Human role
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {operationalLoop.map(({ num, stage, action, layer, human, highlight }, i) => (
-                  <tr
-                    key={stage}
-                    className={[
-                      i < operationalLoop.length - 1 ? "border-b border-border/50" : "",
-                      highlight ? "bg-primary/5" : "",
-                    ].join(" ")}
-                  >
-                    <td className="px-5 py-4 text-[13px] font-bold text-primary/60">
-                      {num}
-                    </td>
-                    <td className="px-5 py-4">
-                      <span className={`text-[14px] font-bold tracking-[-0.02em] ${highlight ? "text-primary" : "text-foreground"}`}>
-                        {stage}
-                      </span>
-                      {highlight && (
-                        <span className="ml-2 rounded-full bg-primary/15 px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.08em] text-primary">
-                          Gate
-                        </span>
-                      )}
-                    </td>
-                    <td className="px-5 py-4">
-                      <p className="text-[13px] font-medium text-foreground">{action}</p>
-                      <p className="mt-0.5 text-[11px] text-muted-foreground/70">{layer}</p>
-                    </td>
-                    <td className="px-5 py-4 text-[13px] font-medium text-muted-foreground hidden lg:table-cell">
-                      {human}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          <motion.div
+            {...heroFade(0.6)}
+            className="mt-9 flex flex-wrap items-center justify-center gap-3"
+          >
+            <Link
+              href="/contact?intent=demo"
+              className="inline-flex h-11 items-center rounded-full bg-primary px-6 text-[14px] font-semibold tracking-[-0.02em] text-white transition-opacity hover:opacity-90"
+            >
+              See it in action →
+            </Link>
+            <Link
+              href="/integrations"
+              className="inline-flex h-11 items-center rounded-full border border-white/15 px-6 text-[14px] font-semibold tracking-[-0.02em] text-white/60 transition-colors hover:border-white/30 hover:text-white"
+            >
+              View connectors →
+            </Link>
           </motion.div>
         </div>
       </section>
 
-      {/* ── 8-Stage Normalization Pipeline ───────────────────────── */}
-      <section className="arvio-section bg-muted">
+      {/* ── Data Chain: Loader → Normalizer → Spine + Context → Entity 360 → Twin ── */}
+      <section className="arvio-section">
         <div className="mx-auto max-w-[1100px]">
           <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center">
             <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">
-              L3 Universal Backend
+              The Data Pipeline
             </p>
             <h2 className="section-heading">
-              The 8-stage normalization pipeline —{" "}
-              <span className="text-primary">how raw data becomes Spine truth</span>
+              Loader → Normalizer → Spine + Context →{" "}
+              <span className="text-primary">Entity 360 → Twin</span>
             </h2>
             <p className="mt-4 text-[16px] font-medium leading-[1.55] text-muted-foreground">
-              This pipeline executes the <strong className="text-foreground">Load</strong> and{" "}
-              <strong className="text-foreground">Store</strong> phases of the operational loop.
-              By stage 8, scattered tool data has become queryable canonical truth.
+              How raw, fragmented tool data becomes unified canonical truth —
+              available to every AI session and every user in real time.
             </p>
           </motion.div>
 
-          <motion.div {...fade(0.12)} className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            {normalizationPipeline.map(({ num, stage, fn }, i) => (
+          <div className="mt-12 grid gap-0 lg:grid-cols-5">
+            {dataChain.map(({ id, label, desc }, i) => (
               <motion.div
-                key={stage}
-                {...fade(i * 0.04)}
-                className="arvio-card p-5"
+                key={id}
+                {...fade(i * 0.07)}
+                className="relative flex flex-col"
               >
-                <div className="mb-3 flex items-center gap-2.5">
-                  <span className="flex h-7 w-7 items-center justify-center rounded-lg text-[12px] font-bold text-white" style={{ background: "var(--gradient-primary-icon)" }}>
-                    {num}
-                  </span>
-                  <span className="text-[14px] font-bold tracking-[-0.02em] text-foreground">
-                    {stage}
-                  </span>
+                {/* Connector line */}
+                {i < dataChain.length - 1 && (
+                  <div className="absolute right-0 top-[28px] hidden h-px w-full translate-x-1/2 bg-border/60 lg:block" style={{ width: "50%", right: "-25%" }} />
+                )}
+                <div className={`arvio-card mx-2 flex flex-1 flex-col p-5 ${label === "Entity 360" ? "border-primary/30 bg-primary/5" : ""}`}>
+                  <div className="mb-3 flex items-center gap-2">
+                    <span
+                      className={`flex h-7 w-7 items-center justify-center rounded-lg text-[11px] font-bold text-white shrink-0 ${label === "Entity 360" ? "bg-primary" : ""}`}
+                      style={label === "Entity 360" ? {} : { background: "var(--gradient-primary-icon)" }}
+                    >
+                      {i + 1}
+                    </span>
+                    <span className={`text-[14px] font-bold tracking-[-0.03em] ${label === "Entity 360" ? "text-primary" : "text-foreground"}`}>
+                      {label}
+                    </span>
+                  </div>
+                  <p className="text-[12px] font-medium leading-[1.6] text-muted-foreground">
+                    {desc}
+                  </p>
                 </div>
-                <p className="text-[12px] font-medium leading-[1.55] text-muted-foreground">
-                  {fn}
-                </p>
               </motion.div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* ── Two Core Loops ───────────────────────────────────────── */}
+      {/* ── AI Chain: AI Sessions → Triage Bot → Knowledge UI → Entity 360 → Twin ── */}
       <section
         className="arvio-section"
         style={{ backgroundColor: "rgb(8, 7, 14)" }}
@@ -316,255 +213,176 @@ export function PlatformContent() {
         <div className="mx-auto max-w-[1100px]">
           <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center">
             <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">
-              Dual Loop Architecture
+              The Intelligence Layer
             </p>
             <h2 className="text-[40px] font-semibold leading-[1.15] tracking-[-0.05em] text-white sm:text-[48px]">
-              Two loops.{" "}
-              <span className="text-primary">One Spine.</span>
+              AI Session Summaries → Triage Bot →{" "}
+              <span className="text-primary">Knowledge UI → Entity 360 → Twin</span>
             </h2>
             <p className="mt-4 text-[16px] font-medium leading-[1.55] text-white/45">
-              Both loops converge at the Spine SSOT — the universal truth layer
-              that feeds the Workspace and the Cognitive Layer.
+              How your team&apos;s interactions become structured knowledge — and
+              how the Twin compounds that knowledge into sharper intelligence
+              with every approved session.
             </p>
           </motion.div>
 
-          <div className="mt-12 grid gap-6 lg:grid-cols-2">
-            {/* Loop A */}
-            <motion.div
-              {...fade(0.08)}
-              className="rounded-2xl border border-white/10 bg-white/[0.03] p-7"
-            >
-              <div className="mb-5 flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl" style={{ background: "var(--gradient-primary-icon)" }}>
-                  <Brain className="h-5 w-5 text-white" />
-                </div>
-                <div>
-                  <p className="text-[11px] font-bold uppercase tracking-[0.1em] text-primary">Loop A</p>
-                  <p className="text-[16px] font-bold tracking-[-0.03em] text-white">Context → Truth</p>
-                </div>
-                <span className="ml-auto rounded-full border border-white/10 px-3 py-1 text-[11px] font-semibold text-white/50">
-                  Human-Governed
-                </span>
-              </div>
-              <p className="text-[13px] font-medium leading-[1.6] text-white/50 mb-5">
-                The <em>slow</em> loop — strategic decisions, customer-facing actions, knowledge creation.
-              </p>
-              <div className="mb-5 rounded-xl border border-white/10 bg-white/[0.04] p-4">
-                <p className="text-[12px] font-mono text-white/40 leading-[1.8]">
-                  Context → Load → Store → Think →{" "}
-                  <span className="font-bold text-primary">Approve</span> → Act → Adjust → Repeat
-                </p>
-              </div>
-              <ul className="space-y-2">
-                {[
-                  "High-stakes customer interactions",
-                  "Write operations to CRM, billing, support",
-                  "Knowledge memory formation from approved insights",
-                  "Mandatory HITL gate — cannot be bypassed",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-2 text-[13px] font-medium text-white/55">
-                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-
-            {/* Loop B */}
-            <motion.div
-              {...fade(0.12)}
-              className="rounded-2xl border border-white/10 bg-white/[0.03] p-7"
-            >
-              <div className="mb-5 flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl" style={{ background: "rgba(255,255,255,0.06)" }}>
-                  <RefreshCw className="h-5 w-5 text-white/60" />
-                </div>
-                <div>
-                  <p className="text-[11px] font-bold uppercase tracking-[0.1em] text-white/40">Loop B</p>
-                  <p className="text-[16px] font-bold tracking-[-0.03em] text-white">Tool → Truth</p>
-                </div>
-                <span className="ml-auto rounded-full border border-white/10 px-3 py-1 text-[11px] font-semibold text-white/50">
-                  System-Governed
-                </span>
-              </div>
-              <p className="text-[13px] font-medium leading-[1.6] text-white/50 mb-5">
-                The <em>fast</em> loop — data hygiene, synchronization, passive monitoring. No human bottleneck.
-              </p>
-              <div className="mb-5 rounded-xl border border-white/10 bg-white/[0.04] p-4">
-                <p className="text-[12px] font-mono text-white/40 leading-[1.8]">
-                  Tool APIs → 8-stage pipeline → Store → Spine updates → Adjust → Repeat
-                </p>
-              </div>
-              <ul className="space-y-2">
-                {[
-                  "Read-only synchronization and normalization",
-                  "Data quality maintenance and drift detection",
-                  "Background entity resolution and field mapping",
-                  "High-frequency, system-governed — never executes customer-facing Acts",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-2 text-[13px] font-medium text-white/55">
-                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-white/20" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          </div>
-
-          {/* Convergence note */}
-          <motion.div {...fade(0.18)} className="mt-6 rounded-2xl border border-primary/20 bg-primary/[0.06] p-5 text-center">
-            <div className="flex items-center justify-center gap-2.5">
-              <Database className="h-4 w-4 text-primary" />
-              <p className="text-[14px] font-semibold text-white">
-                Both loops write to the{" "}
-                <span className="text-primary">Spine SSOT</span> — the single
-                source of truth that feeds every Workspace view and every AI
-                reasoning session.
-              </p>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ── Five Architectural Dimensions ────────────────────────── */}
-      <section className="arvio-section">
-        <div className="mx-auto max-w-[1100px]">
-          <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center">
-            <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">
-              The Five Dimensions
-            </p>
-            <h2 className="section-heading">
-              Architectural differentiators —{" "}
-              <span className="text-primary">mapped to the loop</span>
-            </h2>
-          </motion.div>
-
-          <div className="mt-14 space-y-4">
-            {dimensions.map(({ num, where, title, body }, i) => (
+          <div className="mt-12 grid gap-0 lg:grid-cols-5">
+            {aiChain.map(({ id, label, desc }, i) => (
               <motion.div
-                key={num}
-                {...fade(i * 0.06)}
-                className="arvio-card p-7"
+                key={id}
+                {...fade(i * 0.07)}
+                className="relative flex flex-col"
               >
-                <div className="flex items-start gap-6">
-                  <div className="shrink-0 text-[13px] font-bold tracking-[0.06em] text-primary/60">
-                    {num}
+                <div className={`mx-2 flex flex-1 flex-col rounded-2xl border p-5 ${
+                  label === "Entity 360"
+                    ? "border-primary/30 bg-primary/[0.08]"
+                    : "border-white/[0.06] bg-white/[0.03]"
+                }`}>
+                  <div className="mb-3 flex items-center gap-2">
+                    <span
+                      className={`flex h-7 w-7 items-center justify-center rounded-lg text-[11px] font-bold text-white shrink-0 ${label === "Entity 360" ? "bg-primary" : ""}`}
+                      style={label === "Entity 360" ? {} : { background: "rgba(255,255,255,0.08)" }}
+                    >
+                      {i + 1}
+                    </span>
+                    <span className={`text-[13px] font-bold tracking-[-0.03em] leading-tight ${
+                      label === "Entity 360" ? "text-primary" : "text-white/80"
+                    }`}>
+                      {label}
+                    </span>
                   </div>
-                  <div className="min-w-0 flex-1">
-                    <div className="mb-2 inline-flex items-center rounded-full border border-border/50 bg-muted px-2.5 py-0.5 text-[11px] font-semibold text-muted-foreground">
-                      {where}
-                    </div>
-                    <h3 className="text-[16px] font-semibold tracking-[-0.03em] text-foreground">
-                      {title}
-                    </h3>
-                    <p className="mt-2 text-[14px] font-medium leading-[1.7] text-muted-foreground">
-                      {body}
-                    </p>
-                  </div>
+                  <p className="text-[12px] font-medium leading-[1.6] text-white/40">
+                    {desc}
+                  </p>
                 </div>
               </motion.div>
             ))}
           </div>
+
+          {/* Twin callout */}
+          <motion.div
+            {...fade(0.3)}
+            className="mt-8 rounded-2xl border border-primary/20 bg-primary/[0.06] p-6 text-center"
+          >
+            <Brain className="mx-auto mb-3 h-5 w-5 text-primary" />
+            <p className="text-[15px] font-semibold text-white">
+              The Twin learns from every approved session.
+            </p>
+            <p className="mt-1.5 text-[13px] font-medium text-white/40">
+              Every approval, rejection, and edit feeds back into the reasoning
+              layer. The more your team uses it, the sharper it gets — across
+              all accounts, not just the one in view.
+            </p>
+            <Link
+              href="/ai"
+              className="mt-4 inline-flex items-center gap-1.5 text-[13px] font-semibold text-primary hover:opacity-80"
+            >
+              Learn about the Twin <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
+          </motion.div>
         </div>
       </section>
 
-      {/* ── Governance Architecture ───────────────────────────────── */}
+      {/* ── Foundation: Services, Connectors, Security ───────────── */}
       <section className="arvio-section bg-muted">
         <div className="mx-auto max-w-[1100px]">
           <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center">
             <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">
-              Governance Architecture
+              Platform Foundation
             </p>
             <h2 className="section-heading">
-              TruthLayer sits between Think and Approve.{" "}
-              <span className="text-primary">Always.</span>
+              Everything the loop runs on
             </h2>
           </motion.div>
 
           <div className="mt-12 grid gap-6 lg:grid-cols-3">
             {[
               {
+                icon: Wrench,
+                label: "Services",
+                href: "/services",
+                headline: "Implementation & Managed Ops",
+                body: "Onboarding, connector configuration, schema mapping, and ongoing managed data operations. We get you to truth faster — and keep you there.",
+                cta: "Explore services →",
+              },
+              {
+                icon: Plug,
+                label: "Connectors",
+                href: "/integrations",
+                headline: "70+ pre-built connectors",
+                body: "Salesforce, HubSpot, Stripe, Jira, Zendesk, Slack, and 65+ more. All normalized through the same 5-stage data chain into a single canonical Spine.",
+                cta: "View all connectors →",
+              },
+              {
                 icon: ShieldCheck,
-                title: "TruthLayer position",
-                body: "Sits between Think and Approve, scoring confidence, tracing evidence, checking freshness before presenting to humans. Every signal has provenance back to a Spine entity.",
+                label: "Security",
+                href: "/security",
+                headline: "Enterprise-grade governance",
+                body: "AES-256 at rest, TLS 1.3 in transit, SOC 2 Type II audit trail, RBAC with field-level permissions, and an immutable decision log for every approved action.",
+                cta: "Review security →",
               },
-              {
-                icon: Brain,
-                title: "Approval topology",
-                body: "Loop A (Context → Truth) always stops at Approve. Human must authorize before Act. Loop B (Tool → Truth) auto-completes Load → Store → Adjust for data sync — but never executes customer-facing Acts.",
-              },
-              {
-                icon: Database,
-                title: "Audit immutability",
-                body: "Every Approve, Act, and Adjust creates an append-only log in the Spine's decision graph — traceable back through the 8-stage pipeline to the original Load source. No silent executions. No gaps.",
-              },
-            ].map(({ icon: Icon, title, body }, i) => (
+            ].map(({ icon: Icon, label, href, headline, body, cta }, i) => (
               <motion.div
-                key={title}
+                key={label}
                 {...fade(i * 0.08)}
-                className="arvio-card p-6"
+                className="arvio-card flex flex-col p-7"
               >
-                <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl" style={{ background: "var(--gradient-primary-icon)" }}>
+                <div className="mb-5 flex h-10 w-10 items-center justify-center rounded-xl" style={{ background: "var(--gradient-primary-icon)" }}>
                   <Icon className="h-5 w-5 text-white" />
                 </div>
-                <h3 className="text-[15px] font-semibold tracking-[-0.03em] text-foreground">
-                  {title}
+                <div className="mb-1.5 text-[11px] font-bold uppercase tracking-[0.1em] text-primary">
+                  {label}
+                </div>
+                <h3 className="text-[16px] font-semibold tracking-[-0.03em] text-foreground">
+                  {headline}
                 </h3>
-                <p className="mt-2 text-[13px] font-medium leading-[1.65] text-muted-foreground">
+                <p className="mt-2 flex-1 text-[13px] font-medium leading-[1.65] text-muted-foreground">
                   {body}
                 </p>
+                <Link
+                  href={href}
+                  className="mt-5 inline-flex items-center gap-1.5 text-[13px] font-semibold text-primary hover:opacity-80"
+                >
+                  {cta}
+                </Link>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── Technical Specs ──────────────────────────────────────── */}
+      {/* ── Dark CTA ─────────────────────────────────────────────── */}
       <section
         className="arvio-section"
         style={{ backgroundColor: "rgb(8, 7, 14)" }}
       >
-        <div className="mx-auto max-w-[1100px]">
-          <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center">
-            <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">
-              Technical Specifications
-            </p>
-            <h2 className="text-[40px] font-semibold leading-[1.15] tracking-[-0.05em] text-white sm:text-[48px]">
-              Built for{" "}
-              <span className="text-primary">production scale</span>
+        <div className="mx-auto max-w-[680px] px-4 text-center">
+          <motion.div {...fade(0)}>
+            <Database className="mx-auto mb-5 h-8 w-8 text-primary" />
+            <h2 className="text-[36px] font-semibold leading-[1.12] tracking-[-0.05em] text-white sm:text-[44px]">
+              Truth. Context. AI Sessions.
+              <br />
+              <span className="text-primary">Entity 360. Repeat.</span>
             </h2>
-          </motion.div>
-
-          <div className="mt-12 grid gap-4 sm:grid-cols-2">
-            {specs.map(({ label, value }, i) => (
-              <motion.div
-                key={label}
-                {...fade(i * 0.07)}
-                className="rounded-2xl border border-white/[0.06] bg-white/[0.03] p-6"
+            <p className="mx-auto mt-5 max-w-md text-[15px] font-medium leading-[1.6] text-white/45">
+              The loop compounds. Every session sharpens the Twin. Every
+              approval enriches the Spine. Every Entity 360 is more complete
+              than the last.
+            </p>
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+              <Link
+                href="/contact?intent=demo"
+                className="inline-flex h-11 items-center rounded-full bg-primary px-6 text-[14px] font-semibold tracking-[-0.02em] text-white transition-opacity hover:opacity-90"
               >
-                <div className="text-[12px] font-bold uppercase tracking-[0.1em] text-primary mb-2">
-                  {label}
-                </div>
-                <p className="text-[14px] font-medium leading-[1.65] text-white/55">
-                  {value}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-
-          <motion.div {...fade(0.2)} className="mt-8 flex flex-wrap gap-3 justify-center">
-            <Link
-              href="/contact?intent=demo"
-              className="inline-flex h-10 items-center rounded-full bg-primary px-5 text-[13px] font-semibold text-white transition-opacity hover:opacity-90"
-            >
-              Request architecture walkthrough →
-            </Link>
-            <Link
-              href="/integrations"
-              className="inline-flex h-10 items-center rounded-full border border-white/15 px-5 text-[13px] font-semibold text-white/60 transition-colors hover:border-white/30 hover:text-white"
-            >
-              View integrations →
-            </Link>
+                Book a walkthrough →
+              </Link>
+              <Link
+                href="/product"
+                className="inline-flex h-11 items-center rounded-full border border-white/15 px-6 text-[14px] font-semibold tracking-[-0.02em] text-white/60 transition-colors hover:border-white/30 hover:text-white"
+              >
+                See the Workspace →
+              </Link>
+            </div>
           </motion.div>
         </div>
       </section>
