@@ -4,10 +4,26 @@ import { motion } from "framer-motion"
 import { ShieldCheck, Brain, UserCheck, BookOpen } from "lucide-react"
 
 const steps = [
-  { icon: Brain, label: "The Twin reasons", desc: "Combines system truth, live context, and approved AI memory" },
-  { icon: ShieldCheck, label: "TruthLayer governs", desc: "Scores confidence, traces evidence, checks freshness, and guards writeback" },
-  { icon: UserCheck, label: "You decide", desc: "Approve, edit, or reject what becomes action and lasting knowledge" },
-  { icon: BookOpen, label: "Knowledge compounds", desc: "Confirmed insights stay reusable, so future sessions do not start from zero" },
+  {
+    icon: Brain,
+    label: "The Twin reasons",
+    desc: "Combines structured data, human context, and approved memory into one working view",
+  },
+  {
+    icon: ShieldCheck,
+    label: "TruthLayer scores",
+    desc: "Measures freshness, evidence strength, cross-reference match, context coverage, and overall confidence",
+  },
+  {
+    icon: UserCheck,
+    label: "You decide",
+    desc: "Approve, edit, or reject actions and knowledge updates with the reasoning fully visible",
+  },
+  {
+    icon: BookOpen,
+    label: "Knowledge compounds",
+    desc: "Approved decisions and accepted summaries become reusable memory for future work",
+  },
 ]
 
 export function TruthLayerSection() {
@@ -19,17 +35,23 @@ export function TruthLayerSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-          className="mx-auto max-w-2xl text-center"
+          className="mx-auto max-w-3xl text-center"
         >
           <div className="mb-4 inline-flex items-center gap-2 rounded-[40px] border border-primary/20 bg-primary/5 px-4 py-1.5">
             <ShieldCheck className="h-4 w-4 text-primary" />
             <span className="text-[14px] font-semibold tracking-[-0.03em] text-primary">TruthLayer</span>
           </div>
           <h2 className="text-[40px] font-semibold tracking-[-0.05em] leading-[1.15] text-white sm:text-[48px]">
-            AI proposes with evidence. <span className="text-primary">You govern what becomes truth.</span>
+            See why the AI is recommending it.
           </h2>
-          <p className="mt-6 text-[15px] font-medium leading-[1.5] text-white/40">
-            IntegrateWise does not just approve actions. It governs what AI learns, what gets retained as reusable knowledge, and what is safe enough to write back into your workflow.
+          <p className="mt-6 text-[15px] font-medium leading-[1.6] text-white/45">
+            IntegrateWise does not ask your team to trust a black box. Every recommendation is grounded in three layers — your system data, your live context, and your approved knowledge memory.
+          </p>
+          <p className="mt-4 text-[15px] font-medium leading-[1.6] text-white/45">
+            TruthLayer makes that reasoning visible before anything happens. It shows how current the sources are, how well records match across systems, how complete the surrounding context is, and how confident the system is overall.
+          </p>
+          <p className="mt-4 text-[15px] font-medium leading-[1.6] text-white/45">
+            So instead of getting a vague AI suggestion, you can see what it used, how strong the evidence is, and where approval is required.
           </p>
         </motion.div>
 
@@ -60,9 +82,9 @@ export function TruthLayerSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ type: "spring", bounce: 0.2, duration: 0.6, delay: 0.3 }}
-          className="mx-auto mt-10 max-w-xl text-center text-[13px] font-medium leading-[1.6] text-white/25"
+          className="mx-auto mt-10 max-w-2xl text-center text-[13px] font-medium leading-[1.6] text-white/25"
         >
-          Rejected edits, approved actions, and accepted summaries all strengthen the system without turning it into an ungoverned black box.
+          TruthLayer makes AI reasoning inspectable, governable, and safe to use in real operations.
         </motion.p>
       </div>
     </section>
