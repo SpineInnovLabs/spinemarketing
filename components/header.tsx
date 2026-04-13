@@ -55,12 +55,11 @@ type NavItem = {
 };
 
 const navigation: NavItem[] = [
-  { label: "Why", href: "/why" },
   {
-    label: "Product",
+    label: "How It Works",
     href: "/platform",
     items: [
-      { name: "How It Works", href: "/platform", icon: Layers, desc: "Five steps, one Canonical Loop, you in control" },
+      { name: "Platform Overview", href: "/platform", icon: Layers, desc: "Five steps, one Canonical Loop, you in control" },
       { name: "Spine & Intelligence", href: "/spine", icon: GitMerge, desc: "The adaptive layer that unifies every app" },
       { name: "The Twin", href: "/ai", icon: Brain, desc: "AI that reads everything — acts only with your OK" },
       { name: "Integrations", href: "/integrations", icon: Plug, desc: "70+ apps connected over the Spine" },
