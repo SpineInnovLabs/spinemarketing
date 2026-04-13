@@ -554,28 +554,16 @@ export function PlatformContent() {
 
           <motion.div {...fade(0.2)} className="mt-8 flex flex-wrap gap-3 justify-center">
             <Link
-              href="/platform/architecture"
-              className="inline-flex h-10 items-center rounded-full border border-white/15 px-5 text-[13px] font-semibold text-white/60 transition-colors hover:border-white/30 hover:text-white"
+              href="/contact?intent=demo"
+              className="inline-flex h-10 items-center rounded-full bg-primary px-5 text-[13px] font-semibold text-white transition-opacity hover:opacity-90"
             >
-              Deep dive: Architecture →
-            </Link>
-            <Link
-              href="/platform/the-spine"
-              className="inline-flex h-10 items-center rounded-full border border-white/15 px-5 text-[13px] font-semibold text-white/60 transition-colors hover:border-white/30 hover:text-white"
-            >
-              The Spine →
-            </Link>
-            <Link
-              href="/platform/truthlayer"
-              className="inline-flex h-10 items-center rounded-full border border-white/15 px-5 text-[13px] font-semibold text-white/60 transition-colors hover:border-white/30 hover:text-white"
-            >
-              TruthLayer →
+              Request architecture walkthrough →
             </Link>
             <Link
               href="/integrations"
               className="inline-flex h-10 items-center rounded-full border border-white/15 px-5 text-[13px] font-semibold text-white/60 transition-colors hover:border-white/30 hover:text-white"
             >
-              Integrations →
+              View integrations →
             </Link>
           </motion.div>
         </div>
