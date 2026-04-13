@@ -7,7 +7,7 @@ import { ProductContent } from "./content";
 export const metadata: Metadata = {
   title: "Product | IntegrateWise",
   description:
-    "Stop switching tabs. Arvio connects your CRM, billing, support, and project tools into one live workspace. AI surfaces what needs attention and waits for your approval before acting.",
+    "Stop switching tabs. IntegrateWise connects your CRM, billing, support, and project tools into one live workspace. AI surfaces what needs attention and waits for your approval before acting.",
 };
 
 export default function ProductPage() {

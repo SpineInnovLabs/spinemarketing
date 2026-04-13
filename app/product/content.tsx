@@ -191,7 +191,7 @@ export function ProductContent() {
             {...heroFade(0.4)}
             className="mx-auto mt-7 max-w-2xl text-[17px] font-medium leading-[1.55] tracking-[-0.02em] text-white/55"
           >
-            Arvio connects your CRM, billing, support, and project tools into
+            IntegrateWise connects your CRM, billing, support, and project tools into
             one live workspace. AI surfaces what needs attention, drafts the next
             action, and waits for your approval — before touching anything.
           </motion.p>
@@ -274,7 +274,7 @@ export function ProductContent() {
               <span className="text-primary">one clear action</span>
             </h2>
             <p className="mt-4 text-[15px] font-medium leading-[1.6] text-muted-foreground">
-              Arvio reads your tools, reasons across all of them, and presents
+              IntegrateWise reads your tools, reasons across all of them, and presents
               the next move — ready for your approval.
             </p>
           </motion.div>
@@ -308,7 +308,7 @@ export function ProductContent() {
                 </p>
                 <p className="text-[13px] font-medium leading-[1.6] text-muted-foreground">
                   Salesforce, HubSpot, Jira, Stripe, Zendesk — connect once,
-                  Arvio reads everything in real time.
+                  IntegrateWise reads everything in real time.
                 </p>
                 <div className="mt-auto flex flex-wrap gap-1.5 pt-2">
                   {["CRM", "Billing", "Support", "Projects"].map((tag) => (
@@ -371,7 +371,7 @@ export function ProductContent() {
                   Act
                 </p>
                 <p className="text-[14px] font-semibold tracking-[-0.02em]">
-                  You approve, Arvio executes
+                  You approve, IntegrateWise executes
                 </p>
                 <div className="mt-1 rounded-xl border border-primary/20 bg-primary/5 p-4">
                   <p className="text-[12px] font-semibold text-primary mb-1">
