@@ -1,0 +1,163 @@
+Here are **only the key content blocks** you need for each main page in this sitemap.
+
+***
+
+## Home
+
+- What IntegrateWise is  
+  - “IntegrateWise is a Knowledge Workspace over the Spine, empowered by AI.”  
+- Core value  
+  - One workspace above all your apps.  
+  - AI thinks in context and waits for approval.  
+- Three pillars  
+  - Spine (unified truth).  
+  - L1 Workspace (where users work).  
+  - L2 Intelligence (AI summaries and suggested actions).  
+- Primary CTAs  
+  - See it in action.  
+  - Book a demo. [ppl-ai-file-upload.s3.amazonaws](https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/collection_b96f066b-28e5-4bae-b33e-ebb97f40ebfd/9539369b-f2e7-4f09-ac4b-520b6c8c2e2e/pasted-text.txt)
+
+***
+
+## Why IntegrateWise
+
+- Problem  
+  - Apps and data are fragmented.  
+  - AI acts without full context or governance.  
+- What breaks  
+  - Missed signals.  
+  - Shadow automation.  
+  - Audit and trust risk.  
+- Why existing products fail  
+  - CRM‑centric views.  
+  - Dashboards only.  
+  - Isolated copilots.  
+- IntegrateWise answer  
+  - One Spine, one workspace, governed AI. [ppl-ai-file-upload.s3.amazonaws](https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/130797605/8c393b7e-2933-432e-bdd6-4a3023e9867c/paste.txt)
+
+***
+
+## Product
+
+- One‑line definition  
+  - “An intelligent workspace where your apps and AI work together, and you stay in control.”  
+- Inside the workspace  
+  - Adaptive Spine (truth + context).  
+  - Knowledge Workspace (L1 screens).  
+  - Cognitive Layer (L2 AI, HITL).  
+- How it works (5 steps)  
+  - Connect apps.  
+  - Spine unifies data.  
+  - Intelligence analyses.  
+  - Workspace surfaces signals.  
+  - Human approves actions. [ppl-ai-file-upload.s3.amazonaws](https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/collection_b96f066b-28e5-4bae-b33e-ebb97f40ebfd/9539369b-f2e7-4f09-ac4b-520b6c8c2e2e/pasted-text.txt)
+
+***
+
+## Solutions overview
+
+- Explain model  
+  - Same Spine and L1/L2 model.  
+  - Split views by Function, Industry, Role.  
+- Short summary tiles  
+  - Account Success.  
+  - Business Ops.  
+  - Personal Ops. [ppl-ai-file-upload.s3.amazonaws](https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/130797605/8c393b7e-2933-432e-bdd6-4a3023e9867c/paste.txt)
+
+***
+
+## Solutions by Function
+
+### Account Success
+
+- Definition  
+  - L1 workspace for customer‑facing teams.  
+- What you see  
+  - Account 360: revenue, usage, tickets, invoices, people, health.  
+- 3–4 use cases  
+  - Early churn detection.  
+  - Guided renewal save.  
+  - QBR in minutes.  
+  - Expansion surfacing. [ppl-ai-file-upload.s3.amazonaws](https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/130797605/8c393b7e-2933-432e-bdd6-4a3023e9867c/paste.txt)
+
+### Business Ops
+
+- Definition  
+  - L1 operating workspace for founders and leaders.  
+- What you see  
+  - Revenue, pipeline, churn, cash, support, projects.  
+- 3–4 use cases  
+  - Monday brief.  
+  - Revenue movement analysis.  
+  - Cross‑system risk radar.  
+  - Board / exec pack. [ppl-ai-file-upload.s3.amazonaws](https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/130797605/8c393b7e-2933-432e-bdd6-4a3023e9867c/paste.txt)
+
+### Personal Ops
+
+- Definition  
+  - L1 workspace for individuals.  
+- What you see  
+  - Today’s meetings, emails, tasks, threads.  
+- 3–4 use cases  
+  - Morning briefing.  
+  - Project memory (session summaries).  
+  - Promise / follow‑up tracker.  
+  - Weekly planning. [ppl-ai-file-upload.s3.amazonaws](https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/collection_b96f066b-28e5-4bae-b33e-ebb97f40ebfd/9539369b-f2e7-4f09-ac4b-520b6c8c2e2e/pasted-text.txt)
+
+***
+
+## Solutions by Industry
+
+For each industry (SaaS, Services, Manufacturing & Trade, Retail & Ecommerce, Professional Services, Finance):
+
+- One line  
+  - “Same Spine and workspace, tuned to your reality.”  
+- What matters here  
+  - SaaS: renewals, expansion, product adoption.  
+  - Manufacturing & Trade: orders, shipments, payments, exceptions.  
+  - Services: projects, utilisation, invoices.  
+  - Retail & Ecommerce: stock, orders, returns, support.  
+  - Finance: revenue, risk, collections.  
+- 2–3 example signals per industry. [ppl-ai-file-upload.s3.amazonaws](https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/130797605/8c393b7e-2933-432e-bdd6-4a3023e9867c/paste.txt)
+
+***
+
+## Solutions by Role
+
+For each role (CSM, Founder, RevOps, Ops, Finance, Individual):
+
+- What this workspace shows them.  
+- 2–3 key benefits for that role.  
+- 1–2 example use cases (e.g., “Save an at‑risk account” for CSM, “Monday brief” for founder). [ppl-ai-file-upload.s3.amazonaws](https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/130797605/8c393b7e-2933-432e-bdd6-4a3023e9867c/paste.txt)
+
+***
+
+## Spine & Intelligence
+
+- What the Spine is  
+  - Adaptive, vendor‑neutral intelligence layer.  
+- What it does  
+  - Unifies structured and unstructured data.  
+  - Maintains entity‑level context.  
+- Intelligence + HITL  
+  - AI reasons with evidence.  
+  - Non‑bypassable human approval before any execution. [ppl-ai-file-upload.s3.amazonaws](https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/130797605/8c393b7e-2933-432e-bdd6-4a3023e9867c/paste.txt)
+
+***
+
+## Pricing
+
+- Simple model (high‑level)  
+  - Per workspace / per account / per usage (your choice later).  
+- Always included  
+  - Spine, L1 workspaces, L2 intelligence, HITL governance. [ppl-ai-file-upload.s3.amazonaws](https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/130797605/8c393b7e-2933-432e-bdd6-4a3023e9867c/paste.txt)
+
+***
+
+## Resources / Company
+
+- Resources  
+  - Blog, guides, playbooks, case study (the 8M account story).  
+- Company  
+  - Vision: governed, context‑aware AI.  
+  - Team, careers, contact. [ppl-ai-file-upload.s3.amazonaws](https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/collection_b96f066b-28e5-4bae-b33e-ebb97f40ebfd/9539369b-f2e7-4f09-ac4b-520b6c8c2e2e/pasted-text.txt)
