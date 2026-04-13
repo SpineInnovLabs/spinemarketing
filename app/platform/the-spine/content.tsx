@@ -84,7 +84,7 @@ export function TheSpineContent() {
         </div>
       </section>
 
-      <section className="arvio-section">
+      <section className="arvio-section dark-section">
         <div className="mx-auto max-w-[1100px]">
           <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center mb-12">
             <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">Core Architectural Functions</p>
@@ -104,7 +104,7 @@ export function TheSpineContent() {
         </div>
       </section>
 
-      <section className="arvio-section bg-muted">
+      <section className="arvio-section dark-section">
         <div className="mx-auto max-w-[1100px]">
           <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center mb-10">
             <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">8-Stage Normalization</p>
@@ -138,7 +138,7 @@ export function TheSpineContent() {
         </div>
       </section>
 
-      <section className="arvio-section" style={{ backgroundColor: "rgb(8, 7, 14)" }}>
+      <section className="arvio-section dark-section" style={{ backgroundColor: "rgb(8, 7, 14)" }}>
         <div className="mx-auto max-w-[680px] px-4 text-center">
           <motion.div {...fade(0)}>
             <Database className="mx-auto mb-4 h-7 w-7 text-primary" />

@@ -120,7 +120,7 @@ export function WhyContent() {
       </section>
 
       {/* The problem */}
-      <section className="arvio-section">
+      <section className="arvio-section dark-section">
         <div className="mx-auto max-w-[1100px]">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -167,7 +167,7 @@ export function WhyContent() {
       </section>
 
       {/* What breaks */}
-      <section className="arvio-section bg-muted">
+      <section className="arvio-section dark-section">
         <div className="mx-auto max-w-[1100px]">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -204,7 +204,7 @@ export function WhyContent() {
       </section>
 
       {/* Why existing products fail */}
-      <section className="arvio-section">
+      <section className="arvio-section dark-section">
         <div className="mx-auto max-w-[1100px]">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -252,7 +252,7 @@ export function WhyContent() {
 
       {/* The IntegrateWise answer */}
       <section
-        className="arvio-section"
+        className="arvio-section dark-section"
         style={{ backgroundColor: "rgb(8, 7, 14)" }}
       >
         <div className="mx-auto max-w-[1100px]">
@@ -323,7 +323,7 @@ export function WhyContent() {
       </section>
 
       {/* Proof stat */}
-      <section className="arvio-section bg-muted">
+      <section className="arvio-section dark-section">
         <div className="mx-auto max-w-[700px] text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

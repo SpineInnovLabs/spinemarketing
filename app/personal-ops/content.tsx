@@ -160,7 +160,7 @@ export function PersonalOpsContent() {
       </section>
 
       {/* Problem */}
-      <section className="arvio-section">
+      <section className="arvio-section dark-section">
         <div className="mx-auto max-w-[1100px]">
           <div className="mx-auto max-w-3xl">
             <motion.div
@@ -192,7 +192,7 @@ export function PersonalOpsContent() {
       </section>
 
       {/* What Changes */}
-      <section className="arvio-section bg-muted">
+      <section className="arvio-section dark-section">
         <div className="mx-auto max-w-[1100px]">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -240,7 +240,7 @@ export function PersonalOpsContent() {
       </section>
 
       {/* How It Works */}
-      <section className="arvio-section">
+      <section className="arvio-section dark-section">
         <div className="mx-auto max-w-[1100px]">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -286,7 +286,7 @@ export function PersonalOpsContent() {
       </section>
 
       {/* 4 Use Cases */}
-      <section className="arvio-section bg-muted">
+      <section className="arvio-section dark-section">
         <div className="mx-auto max-w-[1100px]">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -355,7 +355,7 @@ export function PersonalOpsContent() {
       </section>
 
       {/* CTA */}
-      <section className="arvio-section">
+      <section className="arvio-section dark-section">
         <div className="mx-auto max-w-[1100px]">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -387,7 +387,7 @@ export function PersonalOpsContent() {
               <Button
                 size="lg"
                 variant="outline"
-                className="h-[42px] rounded-xl border-2 border-border/75 bg-white px-6 text-[15px] font-semibold text-foreground"
+                className="h-[42px] rounded-xl border-2 border-white/20 bg-transparent px-6 text-[15px] font-semibold text-white hover:bg-white/10"
                 asChild
               >
                 <Link href="/contact?intent=demo">Book a demo</Link>

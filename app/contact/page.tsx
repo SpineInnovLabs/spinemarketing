@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-[rgb(8,7,14)]">
       <Header />
       <main id="main">
         <ContactContent defaultIntent="contact" />

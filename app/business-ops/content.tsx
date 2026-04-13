@@ -770,7 +770,7 @@ export function BusinessOpsContent() {
       </section>
 
       {/* ── THE PROBLEM ──────────────────────────────────── */}
-      <section className="arvio-section">
+      <section className="arvio-section dark-section">
         <div className="mx-auto max-w-[1100px]">
           <div className="mx-auto max-w-3xl">
             <motion.div
@@ -801,7 +801,7 @@ export function BusinessOpsContent() {
       </section>
 
       {/* ── L1/L2 SOLUTION FRAMING ────────────────────────── */}
-      <section className="arvio-section bg-muted">
+      <section className="arvio-section dark-section">
         <div className="mx-auto max-w-[1100px]">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -846,7 +846,7 @@ export function BusinessOpsContent() {
 
       {/* ── THE SHIFT — Before vs After ──────────────────── */}
       <section
-        className="arvio-section"
+        className="arvio-section dark-section"
         style={{ backgroundColor: "rgb(8, 7, 14)" }}
       >
         <div className="mx-auto max-w-[1100px]">
@@ -901,7 +901,7 @@ export function BusinessOpsContent() {
       </section>
 
       {/* ── FOUR VIEWS — Role-specific Lenses ────────────── */}
-      <section className="arvio-section bg-muted">
+      <section className="arvio-section dark-section">
         <div className="mx-auto max-w-[1100px]">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -968,7 +968,7 @@ export function BusinessOpsContent() {
       )}
 
       {/* ── WHAT YOU GET — Day One + Stats ────────────────── */}
-      <section className="arvio-section">
+      <section className="arvio-section dark-section">
         <div className="mx-auto max-w-[1100px]">
           <div className="mx-auto max-w-4xl">
             <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:items-start">
@@ -1056,7 +1056,7 @@ export function BusinessOpsContent() {
       </section>
 
       {/* ── 4 USE CASES ───────────────────────────────────── */}
-      <section className="arvio-section">
+      <section className="arvio-section dark-section">
         <div className="mx-auto max-w-[1100px]">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -1125,7 +1125,7 @@ export function BusinessOpsContent() {
       </section>
 
       {/* ── CTA ──────────────────────────────────────────── */}
-      <section className="arvio-section bg-muted">
+      <section className="arvio-section dark-section">
         <div className="mx-auto max-w-[1100px]">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -1158,7 +1158,7 @@ export function BusinessOpsContent() {
               <Button
                 size="lg"
                 variant="outline"
-                className="h-[42px] rounded-xl border-2 border-border/75 bg-white px-6 text-[15px] font-semibold text-foreground"
+                className="h-[42px] rounded-xl border-2 border-white/20 bg-transparent px-6 text-[15px] font-semibold text-white hover:bg-white/10"
                 asChild
               >
                 <Link href="/pricing">See pricing</Link>

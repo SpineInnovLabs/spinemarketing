@@ -147,7 +147,7 @@ export function Entity360Content() {
       </section>
 
       {/* ── Entity Types ─────────────────────────────────────────── */}
-      <section className="arvio-section">
+      <section className="arvio-section dark-section">
         <div className="mx-auto max-w-[1100px]">
           <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center">
             <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">
@@ -210,7 +210,7 @@ export function Entity360Content() {
 
       {/* ── Interface Components ─────────────────────────────────── */}
       <section
-        className="arvio-section"
+        className="arvio-section dark-section"
         style={{ backgroundColor: "rgb(8, 7, 14)" }}
       >
         <div className="mx-auto max-w-[1100px]">
@@ -257,7 +257,7 @@ export function Entity360Content() {
       </section>
 
       {/* ── Relation Graph ────────────────────────────────────────── */}
-      <section className="arvio-section bg-muted">
+      <section className="arvio-section dark-section">
         <div className="mx-auto max-w-[1100px]">
           <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center">
             <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">
@@ -320,7 +320,7 @@ export function Entity360Content() {
       </section>
 
       {/* ── Conflict Resolution ───────────────────────────────────── */}
-      <section className="arvio-section">
+      <section className="arvio-section dark-section">
         <div className="mx-auto max-w-[1100px]">
           <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center">
             <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">
@@ -407,7 +407,7 @@ export function Entity360Content() {
 
       {/* ── Freshness ────────────────────────────────────────────── */}
       <section
-        className="arvio-section"
+        className="arvio-section dark-section"
         style={{ backgroundColor: "rgb(8, 7, 14)" }}
       >
         <div className="mx-auto max-w-[1100px]">

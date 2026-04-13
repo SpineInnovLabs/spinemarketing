@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function BlogPage() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-[rgb(8,7,14)]">
       <Header />
       <main id="main">
         <section className="relative overflow-hidden" style={{ backgroundColor: "rgb(8, 7, 14)" }}>

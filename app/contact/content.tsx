@@ -77,7 +77,7 @@ export function ContactContent({
       </section>
 
       {/* Contact Options */}
-      <section className="arvio-section">
+      <section className="arvio-section dark-section">
         <div className="mx-auto max-w-[1100px]">
           <div className="mx-auto grid max-w-4xl gap-6 sm:grid-cols-3">
             {[
@@ -162,7 +162,7 @@ export function ContactContent({
       </section>
 
       {/* FAQ-style section */}
-      <section className="arvio-section bg-muted">
+      <section className="arvio-section dark-section">
         <div className="mx-auto max-w-[1100px]">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

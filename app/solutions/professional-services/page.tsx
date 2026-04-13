@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function ProfessionalServicesPage() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-[rgb(8,7,14)]">
       <Header />
       <main id="main">
         <ProfessionalServicesContent />

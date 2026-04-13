@@ -156,7 +156,7 @@ export function PlatformContent() {
       </section>
 
       {/* ── Data Chain: Loader → Normalizer → Spine + Context → Entity 360 → Twin ── */}
-      <section className="arvio-section">
+      <section className="arvio-section dark-section">
         <div className="mx-auto max-w-[1100px]">
           <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center">
             <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">
@@ -207,7 +207,7 @@ export function PlatformContent() {
 
       {/* ── AI Chain: AI Sessions → Triage Bot → Knowledge UI → Entity 360 → Twin ── */}
       <section
-        className="arvio-section"
+        className="arvio-section dark-section"
         style={{ backgroundColor: "rgb(8, 7, 14)" }}
       >
         <div className="mx-auto max-w-[1100px]">
@@ -284,7 +284,7 @@ export function PlatformContent() {
       </section>
 
       {/* ── Foundation: Services, Connectors, Security ───────────── */}
-      <section className="arvio-section bg-muted">
+      <section className="arvio-section dark-section">
         <div className="mx-auto max-w-[1100px]">
           <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center">
             <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">
@@ -353,7 +353,7 @@ export function PlatformContent() {
 
       {/* ── Dark CTA ─────────────────────────────────────────────── */}
       <section
-        className="arvio-section"
+        className="arvio-section dark-section"
         style={{ backgroundColor: "rgb(8, 7, 14)" }}
       >
         <div className="mx-auto max-w-[680px] px-4 text-center">

@@ -226,6 +226,110 @@
   }
 }
 
+/* ─── Dark Section Cascade Utility ─────────────────────────────────────────
+   Add `dark-section` to any section element to get full dark theme cascade.
+   Handles backgrounds, text, cards, borders, and Tailwind opacity modifiers.
+────────────────────────────────────────────────────────────────────────── */
+.dark-section {
+  background-color: rgb(8, 7, 14) !important;
+}
+
+/* Headings */
+.dark-section .section-heading,
+.dark-section .section-heading-sm {
+  color: rgb(255, 255, 255);
+}
+.dark-section h2,
+.dark-section h3,
+.dark-section h4,
+.dark-section h5 {
+  color: rgb(255, 255, 255);
+}
+
+/* Card dark variant — overrides white arvio-card */
+.dark-section .arvio-card {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: none !important;
+  color: rgb(255, 255, 255);
+}
+.dark-section .arvio-card:hover {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-color: rgba(255, 255, 255, 0.14) !important;
+  box-shadow: none !important;
+}
+
+/* Tailwind text color overrides */
+.dark-section .text-foreground {
+  color: rgb(255, 255, 255) !important;
+}
+.dark-section .text-muted-foreground {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+.dark-section .text-foreground\/80 {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+.dark-section .text-foreground\/75 {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+.dark-section .text-foreground\/70 {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+.dark-section .text-foreground\/60 {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+.dark-section .text-foreground\/50 {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+.dark-section .text-foreground\/40 {
+  color: rgba(255, 255, 255, 0.4) !important;
+}
+
+/* Destructive / risk signal overrides */
+.dark-section .text-destructive {
+  color: rgb(252, 129, 129) !important;
+}
+.dark-section .text-destructive\/60 {
+  color: rgba(252, 129, 129, 0.6) !important;
+}
+.dark-section .border-destructive\/20 {
+  border-color: rgba(239, 68, 68, 0.3) !important;
+}
+.dark-section .bg-destructive\/5 {
+  background-color: rgba(239, 68, 68, 0.08) !important;
+}
+
+/* Background overrides */
+.dark-section .bg-muted {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+}
+.dark-section .bg-background {
+  background-color: rgba(255, 255, 255, 0.03) !important;
+}
+
+/* Border overrides */
+.dark-section .border-border {
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+.dark-section .border-border\/75 {
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+.dark-section .border-border\/50 {
+  border-color: rgba(255, 255, 255, 0.07) !important;
+}
+.dark-section .border-border\/30 {
+  border-color: rgba(255, 255, 255, 0.05) !important;
+}
+.dark-section .border-border\/20 {
+  border-color: rgba(255, 255, 255, 0.04) !important;
+}
+
+/* Blockquote in dark sections */
+.dark-section blockquote {
+  color: rgba(255, 255, 255, 0.75);
+  border-left-color: rgba(45, 212, 191, 0.4);
+}
+
 /* Responsive overrides for Arvio spacing */
 @media (max-width: 1199px) {
   .arvio-section {

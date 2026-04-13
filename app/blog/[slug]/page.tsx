@@ -66,7 +66,7 @@ export default async function BlogPostPage({
   if (!post) notFound();
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-[rgb(8,7,14)]">
       <Header />
       <main id="main">
         <section

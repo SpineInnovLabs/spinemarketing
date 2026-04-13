@@ -146,7 +146,7 @@ export function SecurityContent() {
       </section>
 
       {/* Security Features Grid */}
-      <section className="arvio-section">
+      <section className="arvio-section dark-section">
         <div className="mx-auto max-w-[1100px]">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -195,7 +195,7 @@ export function SecurityContent() {
       </section>
 
       {/* Security Principles */}
-      <section className="arvio-section bg-muted">
+      <section className="arvio-section dark-section">
         <div className="mx-auto max-w-[1100px]">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -238,7 +238,7 @@ export function SecurityContent() {
 
       {/* Security CTA */}
       <section
-        className="arvio-section"
+        className="arvio-section dark-section"
         style={{ backgroundColor: "rgb(8, 7, 14)" }}
       >
         <div className="mx-auto max-w-[800px] text-center">

@@ -114,7 +114,7 @@ export function AboutContent() {
       </section>
 
       {/* Chapter 1 */}
-      <section className="arvio-section">
+      <section className="arvio-section dark-section">
         <div className="mx-auto max-w-[800px]">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -152,7 +152,7 @@ export function AboutContent() {
       </section>
 
       {/* Chapter 2 */}
-      <section className="arvio-section bg-muted">
+      <section className="arvio-section dark-section">
         <div className="mx-auto max-w-[800px]">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -249,7 +249,7 @@ export function AboutContent() {
       </section>
 
       {/* Chapter 3 */}
-      <section className="arvio-section">
+      <section className="arvio-section dark-section">
         <div className="mx-auto max-w-[800px]">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -291,7 +291,7 @@ export function AboutContent() {
       </section>
 
       {/* Chapter 4 */}
-      <section className="arvio-section bg-muted">
+      <section className="arvio-section dark-section">
         <div className="mx-auto max-w-[800px]">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -377,7 +377,7 @@ export function AboutContent() {
       </section>
 
       {/* Timeline */}
-      <section className="arvio-section">
+      <section className="arvio-section dark-section">
         <div className="mx-auto max-w-[800px]">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -421,7 +421,7 @@ export function AboutContent() {
       </section>
 
       {/* Proof stats */}
-      <section className="arvio-section">
+      <section className="arvio-section dark-section">
         <div className="mx-auto max-w-[800px]">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -450,7 +450,7 @@ export function AboutContent() {
 
       {/* Closing quote + CTA */}
       <section
-        className="arvio-section"
+        className="arvio-section dark-section"
         style={{ backgroundColor: "rgb(8, 7, 14)" }}
       >
         <div className="mx-auto max-w-[800px] text-center">

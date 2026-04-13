@@ -56,7 +56,7 @@ export function IntelligenceLayerContent() {
       </section>
 
       {/* Digital Twin */}
-      <section className="arvio-section">
+      <section className="arvio-section dark-section">
         <div className="mx-auto max-w-[1100px]">
           <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center mb-12">
             <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">The Digital Twin</p>
@@ -84,7 +84,7 @@ export function IntelligenceLayerContent() {
       </section>
 
       {/* Knowledge Memory */}
-      <section className="arvio-section bg-muted">
+      <section className="arvio-section dark-section">
         <div className="mx-auto max-w-[1100px]">
           <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center mb-12">
             <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">Knowledge Memory</p>
@@ -107,7 +107,7 @@ export function IntelligenceLayerContent() {
       </section>
 
       {/* Twin Trigger Scoring */}
-      <section className="arvio-section" style={{ backgroundColor: "rgb(8, 7, 14)" }}>
+      <section className="arvio-section dark-section" style={{ backgroundColor: "rgb(8, 7, 14)" }}>
         <div className="mx-auto max-w-[1100px]">
           <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center">
             <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">Twin Trigger Scoring</p>

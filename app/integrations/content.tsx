@@ -71,7 +71,7 @@ export function IntegrationsContent() {
       </section>
 
       {/* Every app becomes part of the picture */}
-      <section className="arvio-section bg-muted">
+      <section className="arvio-section dark-section">
         <div className="mx-auto max-w-[900px]">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ type: "spring", bounce: 0.2, duration: 0.6 }} className="mx-auto max-w-2xl text-center">
             <h2 className="section-heading">Every app becomes <span className="text-primary">part of the picture</span></h2>
@@ -98,7 +98,7 @@ export function IntegrationsContent() {
       </section>
 
       {/* Catalog */}
-      <section className="arvio-section">
+      <section className="arvio-section dark-section">
         <div className="mx-auto max-w-[1100px]">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ type: "spring", bounce: 0.2, duration: 0.6 }} className="mx-auto max-w-2xl text-center">
             <h2 className="section-heading">Full{" "}<span className="text-primary">catalog</span></h2>
@@ -114,7 +114,7 @@ export function IntegrationsContent() {
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {connectors.map((name) => (
-                    <span key={name} className="rounded-lg border border-border/50 bg-white px-3 py-1.5 text-[13px] font-semibold tracking-[-0.02em] text-foreground/70 shadow-sm">
+                    <span key={name} className="rounded-lg border border-white/10 bg-white/5 px-3 py-1.5 text-[13px] font-semibold tracking-[-0.02em] text-white/60">
                       {name}
                     </span>
                   ))}

@@ -161,7 +161,7 @@ export function ProductConnectorsContent() {
       </section>
 
       {/* ── Input Types ──────────────────────────────────────────── */}
-      <section className="arvio-section">
+      <section className="arvio-section dark-section">
         <div className="mx-auto max-w-[1100px]">
           <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center">
             <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">
@@ -217,7 +217,7 @@ export function ProductConnectorsContent() {
 
       {/* ── Management Features ───────────────────────────────────── */}
       <section
-        className="arvio-section"
+        className="arvio-section dark-section"
         style={{ backgroundColor: "rgb(8, 7, 14)" }}
       >
         <div className="mx-auto max-w-[1100px]">
@@ -272,7 +272,7 @@ export function ProductConnectorsContent() {
       </section>
 
       {/* ── Connector Directory ───────────────────────────────────── */}
-      <section className="arvio-section bg-muted">
+      <section className="arvio-section dark-section">
         <div className="mx-auto max-w-[1100px]">
           <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center">
             <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">
@@ -314,7 +314,7 @@ export function ProductConnectorsContent() {
       </section>
 
       {/* ── Auto-Upgrade callout ──────────────────────────────────── */}
-      <section className="arvio-section">
+      <section className="arvio-section dark-section">
         <div className="mx-auto max-w-[1100px]">
           <motion.div
             {...fade(0)}

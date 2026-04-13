@@ -123,7 +123,7 @@ export function ServicesContent() {
       </section>
 
       {/* ── Services Grid ─────────────────────────────────────────── */}
-      <section className="arvio-section">
+      <section className="arvio-section dark-section">
         <div className="mx-auto max-w-[1100px]">
           <div className="grid gap-6 lg:grid-cols-2">
             {services.map(({ icon: Icon, label, headline, body, bullets }, i) => (
@@ -170,7 +170,7 @@ export function ServicesContent() {
 
       {/* ── How it works ─────────────────────────────────────────── */}
       <section
-        className="arvio-section"
+        className="arvio-section dark-section"
         style={{ backgroundColor: "rgb(8, 7, 14)" }}
       >
         <div className="mx-auto max-w-[1100px]">
@@ -232,7 +232,7 @@ export function ServicesContent() {
       </section>
 
       {/* ── Resources link ────────────────────────────────────────── */}
-      <section className="arvio-section bg-muted">
+      <section className="arvio-section dark-section">
         <div className="mx-auto max-w-[1100px]">
           <motion.div
             {...fade(0)}

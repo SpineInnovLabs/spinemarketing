@@ -203,7 +203,7 @@ export function SolutionsContent() {
       </section>
 
       {/* Model strip */}
-      <section className="border-b border-border bg-muted py-6">
+      <section className="dark-section border-b py-6" style={{ borderColor: "rgba(255,255,255,0.08)" }}>
         <div className="mx-auto max-w-[1100px] px-4">
           <motion.div
             initial={{ opacity: 0, y: 8 }}
@@ -231,7 +231,7 @@ export function SolutionsContent() {
       </section>
 
       {/* By Function */}
-      <section className="arvio-section bg-muted">
+      <section className="arvio-section dark-section">
         <div className="mx-auto max-w-[1100px]">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -256,7 +256,7 @@ export function SolutionsContent() {
       </section>
 
       {/* By Industry */}
-      <section className="arvio-section">
+      <section className="arvio-section dark-section">
         <div className="mx-auto max-w-[1100px]">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -281,7 +281,7 @@ export function SolutionsContent() {
       </section>
 
       {/* By Role */}
-      <section className="arvio-section bg-muted">
+      <section className="arvio-section dark-section">
         <div className="mx-auto max-w-[1100px]">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
