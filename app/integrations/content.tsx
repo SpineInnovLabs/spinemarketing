@@ -50,10 +50,10 @@ export function IntegrationsContent() {
               <span className="text-[14px] font-semibold tracking-[-0.03em] text-[#0a0b10]">Integrations</span>
             </motion.div>
             <motion.h1 initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ type: "spring", damping: 16, mass: 1, stiffness: 52, delay: 0.4 }} className="text-[48px] font-semibold leading-[1em] tracking-[-0.05em] text-white sm:text-[54px] lg:text-[64px]">
-              70+ integrations.{" "}<span className="text-primary">13 categories.</span>
+              70+ integrations. 13 categories.{" "}<span className="text-primary">One Spine.</span>
             </motion.h1>
             <motion.p initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ type: "spring", damping: 16, mass: 1, stiffness: 52, delay: 0.6 }} className="mx-auto mt-8 max-w-2xl text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-white/55">
-              Connect via OAuth in minutes. No data migration. No engineering team. Your tools keep working as they do today.
+              Every app becomes part of the picture. Connect via OAuth in minutes — no data migration, no engineering team. Your apps keep running exactly as they do today. The Spine reads them and builds context automatically.
             </motion.p>
           </div>
 

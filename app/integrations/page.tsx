@@ -7,7 +7,7 @@ import { IntegrationsContent } from "./content"
 export const metadata: Metadata = {
   title: "Integrations | IntegrateWise",
   description:
-    "Connect 70+ tools across 13 categories including Salesforce, HubSpot, Slack, Jira, Stripe, Zendesk, and more. See the full integration catalog.",
+    "Connect 70+ apps across 13 categories into one Spine. Salesforce, HubSpot, Slack, Jira, Stripe, Zendesk, and more — all feeding a single Knowledge Workspace.",
 }
 
 export default function IntegrationsPage() {

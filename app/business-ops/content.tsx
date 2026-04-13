@@ -562,30 +562,30 @@ function OpsGovernVisual() {
 const howItWorksSteps: StickyScrollStep[] = [
   {
     label: "Step 01 \u2014 Connect",
-    title: "Plug in your business stack",
+    title: "Plug in the apps your business runs on",
     description:
-      "Salesforce, Stripe, QuickBooks, Jira, Slack, HubSpot, Asana, Gmail \u2014 plug in the tools your business runs on. One-time OAuth setup. No engineering team required.",
+      "Salesforce, Stripe, QuickBooks, Jira, Slack, HubSpot, Asana, Gmail \u2014 connect via OAuth in minutes. Your apps keep working exactly as they do today. The Spine starts reading them immediately. No engineering team required.",
     visual: <OpsConnectVisual />,
   },
   {
-    label: "Step 02 \u2014 Unify",
-    title: "Every system speaks the same language",
+    label: "Step 02 \u2014 Build the Spine",
+    title: "Three data flows. One complete picture.",
     description:
-      "Revenue from Stripe, pipeline from Salesforce, costs from QuickBooks, velocity from Jira \u2014 all unified into one intelligence layer. Duplicates merge. Relationships are preserved.",
+      "Revenue, pipeline, and costs sync into the Spine as Truth. Emails and conversations enrich entities as Context. AI session outputs become Session Summaries after TruthLayer review. All three converge in L1 — your Daily Workbench.",
     visual: <OpsNormalizeVisual />,
   },
   {
-    label: "Step 03 \u2014 Operating View",
-    title: "See your business completely",
+    label: "Step 03 \u2014 L1 Daily Workbench",
+    title: "Your operating view — always current.",
     description:
-      "MRR, pipeline health, support costs, team velocity, and cash flow converge into a live operating dashboard. Same truth, four role-specific lenses. No more assembling context from twelve tabs.",
+      "MRR, pipeline health, support costs, team velocity, and cash flow converge into a live workspace. Manage accounts, run tasks, and review renewals — all in L1. Same truth, four role-specific lenses. No more assembling context from twelve tabs.",
     visual: <OpsViewVisual />,
   },
   {
-    label: "Step 04 \u2014 Govern",
-    title: "AI proposes. You decide.",
+    label: "Step 04 \u2014 L2 Intelligence Layer",
+    title: "AI proposes in L2. You decide in L1.",
     description:
-      "AI generates board decks, reconciles revenue, flags cash flow risks, and surfaces ops anomalies \u2014 but nothing fires without your approval. Evidence on every insight. You always have the final say.",
+      "The Twin surfaces anomalies, generates board decks, flags cash flow risks, and recommends actions \u2014 all in the Intelligence Layer (L2). Nothing moves to L1 or writes to connected apps without your approval. Evidence on every insight. Full audit trail.",
     visual: <OpsGovernVisual />,
   },
 ];
@@ -746,7 +746,7 @@ export function BusinessOpsContent() {
       <section className="py-12">
         <div className="mx-auto max-w-[1200px] px-6 md:px-16">
           <p className="text-center text-[16px] font-semibold tracking-[-0.03em] text-muted-foreground">
-            Connect the tools your business already runs on
+            Connect the apps your business already runs on
           </p>
         </div>
         <div className="relative mt-6">

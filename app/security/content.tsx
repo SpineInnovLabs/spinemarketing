@@ -45,8 +45,8 @@ const securityFeatures = [
   },
   {
     icon: FileCheck,
-    title: "You approve every action",
-    desc: "No AI action runs without your explicit approval. No exceptions.",
+    title: "Govern Gate on every L2 action",
+    desc: "Every action proposed in the Intelligence Layer (L2) passes through the Govern Gate before executing. Nothing in your Spine or connected apps changes without your approval.",
   },
   {
     icon: ClipboardCheck,

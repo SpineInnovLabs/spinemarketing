@@ -44,7 +44,7 @@ const comparisons = [
     after: "Health computed from real data across every system",
   },
   {
-    before: "Churn signals hiding in different tools",
+    before: "Churn signals hiding across different apps",
     after: "Risks flagged 90 days out — with evidence attached",
   },
   {
@@ -565,7 +565,7 @@ const howItWorksSteps: StickyScrollStep[] = [
     label: "Step 01 \u2014 Connect",
     title: "Plug in your CS stack",
     description:
-      "Salesforce, HubSpot, Zendesk, Intercom, Stripe, Slack, Gmail \u2014 plug in the tools your CS team uses every day. One-time OAuth setup. No engineering team required.",
+      "Salesforce, HubSpot, Zendesk, Intercom, Stripe, Slack, Gmail \u2014 plug in the apps your CS team uses every day. One-time OAuth setup. No engineering team required.",
     visual: <CSConnectVisual />,
   },
   {
@@ -579,7 +579,7 @@ const howItWorksSteps: StickyScrollStep[] = [
     label: "Step 03 \u2014 Entity 360",
     title: "See every account completely",
     description:
-      "Every interaction, payment, ticket, and conversation converges into a live Entity 360 view. Truth, Context, and Knowledge Memory in one place. No more digging through tools to prep for a call.",
+      "Every interaction, payment, ticket, and conversation converges into a live Entity 360 view. Truth, Context, and Session Summaries in one place. No more digging through apps to prep for a call.",
     visual: <CSEntity360Visual />,
   },
   {
@@ -750,7 +750,7 @@ export function AccountSuccessContent() {
       <section className="py-12">
         <div className="mx-auto max-w-[1200px] px-6 md:px-16">
           <p className="text-center text-[16px] font-semibold tracking-[-0.03em] text-muted-foreground">
-            Connect the tools your CS team already uses
+            Connect the apps your CS team already uses
           </p>
         </div>
         <div className="relative mt-6">
@@ -979,7 +979,7 @@ export function AccountSuccessContent() {
           >
             <h2 className="section-heading">
               Stop being the human bridge{" "}
-              <span className="text-primary">between your account tools.</span>
+              <span className="text-primary">between your account apps.</span>
             </h2>
             <p className="mt-6 text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">
               See every account completely. Spot risks before they become

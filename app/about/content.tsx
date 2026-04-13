@@ -40,6 +40,11 @@ const timeline = [
     title: "Founded IntegrateWise LLP",
     desc: "Built in Bengaluru to automate everything done manually during that save.",
   },
+  {
+    year: "2026",
+    title: "Knowledge Workspace over the Spine",
+    desc: "The architecture evolves: Truth + Context + Session Summaries. L1 (Daily Workbench) and L2 (Intelligence Layer). Three data flows. One Canonical Loop. The Twin proposes. You stay in control.",
+  },
 ];
 
 export function AboutContent() {
@@ -323,11 +328,11 @@ export function AboutContent() {
             </h3>
             <div className="mt-6 space-y-3">
               {[
-                "Connect every data source into a single truth store.",
-                "Normalize and enrich data so signals from different tools can be read together.",
-                "Surface hidden context automatically — the unsigned contract, the buried conflict.",
-                "Recommend action with full context — never in isolation.",
-                "Wait for human approval on every action.",
+                "Connect every app into the Spine — one canonical source of truth.",
+                "Build three data flows automatically: Truth (records), Context (conversations), Session Summaries (governed AI outputs).",
+                "Surface hidden signals automatically in L2 — the unsigned contract, the buried conflict, the churn risk no dashboard shows.",
+                "Let The Twin propose actions with full evidence — in the Intelligence Layer, never directly in your data.",
+                "Require human approval through the Govern Gate before anything executes.",
               ].map((item, i) => (
                 <motion.div
                   key={i}

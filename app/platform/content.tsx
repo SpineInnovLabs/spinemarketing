@@ -68,7 +68,7 @@ function WorkspaceVisual() {
     {
       icon: Database,
       label: "Truth",
-      desc: "Your data from connected tools",
+      desc: "Your data from connected apps",
       color: "rgb(27,167,132)",
     },
     {
@@ -181,24 +181,38 @@ function TwinVisual() {
 
 const stickySteps: StickyScrollStep[] = [
   {
-    label: "Step 01",
-    title: "Connect. 70+ integrations, one-time setup.",
+    label: "Step 01 — Connect",
+    title: "Connect the apps you already use.",
     description:
-      "CRM, billing, support, email, chat, docs, analytics — plug in via OAuth in minutes. No migration, no engineering team required.",
+      "CRM, billing, support, project management, docs, email, and chat — all flowing into the Spine through one-time OAuth setup. No data migration. No engineering team needed. 70+ integrations across 13 categories.",
     visual: <ConnectVisual />,
   },
   {
-    label: "Step 02",
-    title: "Work. Everything in one workspace.",
+    label: "Step 02 — Three data paths",
+    title: "Three data paths. One complete picture.",
     description:
-      "Your data gets cleaned automatically. Three data flows — Truth, Context, and Session Summaries — converge into a live Entity 360 view per customer, project, or account.",
+      "Structured records from your apps sync into the Spine as Truth. Emails, chats, and documents enrich entities as Context. AI session outputs go through TruthLayer first and become Session Summaries — they never write to the Spine directly. All three converge into Entity 360.",
     visual: <WorkspaceVisual />,
   },
   {
-    label: "Step 03",
-    title: "The Twin proposes. You decide.",
+    label: "Step 03 — Two layers",
+    title: "Two layers. One workspace.",
     description:
-      "The Twin reads all three layers before reasoning. It spots patterns no single tool can see, surfaces insights with evidence, and proposes actions.",
+      "L1 (Daily Workbench) is where you manage accounts, run tasks, review renewals, and approve actions — your operating surface. L2 (Intelligence Layer) is where AI surfaces signals, proposes actions, and lets you chat with the Twin. You review in L2, approve, and the action flows to L1.",
+    visual: <WorkspaceVisual />,
+  },
+  {
+    label: "Step 04 — The Twin proposes",
+    title: "The Twin reads everything. Proposes what matters. Waits for you.",
+    description:
+      "The Twin reads Truth, Context, and Session Summaries through the Spine. It surfaces insights with evidence, proposes actions, and learns from your approvals and edits. Maximum 3 insights per entity per day — quality over noise.",
+    visual: <TwinVisual />,
+  },
+  {
+    label: "Step 05 — You approve",
+    title: "Every action waits for your approval.",
+    description:
+      "Nothing executes without review. The Twin proposes in L2. You approve, edit, or reject. Approved actions create real tasks, update real records, send real emails, write back to connected apps — then are added to the Spine's memory. Full audit trail of who approved what, when, and why.",
     visual: <TwinVisual />,
   },
 ];
@@ -221,7 +235,7 @@ const outerIcons = [
 ];
 
 /* ── Backend loop steps ── */
-const loopSteps = ["Load", "Store", "Think", "Act", "Adjust", "Loop"];
+const loopSteps = ["Load", "Normalize", "Store", "Think", "Govern", "Act", "Adjust", "Loop"];
 
 export function PlatformContent() {
   return (
@@ -281,8 +295,9 @@ export function PlatformContent() {
               }}
               className="mx-auto mt-8 max-w-2xl text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-white/55"
             >
-              Plug in your tools. Work in one workspace. The Twin reads
-              everything and proposes actions — you approve.
+              Plug in your apps. Work in one workspace. The Twin reads
+              everything through the Spine and proposes actions — you approve
+              what actually happens. Nothing updates without you.
             </motion.p>
           </div>
 
@@ -415,12 +430,13 @@ export function PlatformContent() {
               Behind the scenes
             </p>
             <h2 className="mt-3 text-[32px] font-semibold tracking-[-0.04em] leading-[1.2] text-white sm:text-[40px]">
-              The engine that powers your workspace
+              The Canonical Loop
             </h2>
             <p className="mt-4 text-[15px] font-medium leading-[1.5] tracking-[-0.02em] text-white/40">
-              A continuous loop runs in the background — loading data, reasoning
-              across Truth, Context, and Session Summaries, acting on approvals,
-              and learning from your decisions.
+              Every signal follows the same path through the system, every day.
+              The loop runs in the background — you never interact with it
+              directly. It powers the workspace, keeps your views current, and
+              makes the Twin smarter with every cycle.
             </p>
           </motion.div>
 

@@ -20,7 +20,7 @@ const threeLayers = [
   {
     icon: Database,
     label: "Truth",
-    desc: "Structured data from 70+ connected tools",
+    desc: "Structured data from 70+ connected apps",
     color: "rgb(27,167,132)",
   },
   {
@@ -69,7 +69,7 @@ const approvalSteps = [
   {
     num: "01",
     title: "The Twin generates",
-    desc: "Reads all three layers, connects dots across tools, produces insight with evidence.",
+    desc: "Reads all three layers through the Spine, connects dots across apps, produces insight with evidence.",
   },
   {
     num: "02",
@@ -146,9 +146,10 @@ export function AIContent() {
               }}
               className="mx-auto mt-8 max-w-2xl text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-white/55"
             >
-              The Twin reads your data, conversations, and accumulated knowledge
-              before it says anything. It reasons across the full picture — and
-              never acts without your approval.
+              The Twin reads your data, your conversations, and your session
+              history through the Spine. It thinks in full context, surfaces
+              signals in L2, and waits for your approval before anything
+              changes.
             </motion.p>
           </div>
         </div>
@@ -313,6 +314,11 @@ export function AIContent() {
             <p className="mt-6 text-[15px] font-medium leading-[1.5] text-white/40">
               TruthLayer can&apos;t be bypassed, overridden, or turned off.
               It&apos;s how the product is built.
+            </p>
+            <p className="mt-3 text-[14px] font-medium leading-[1.5] text-white/25 italic">
+              AI session summaries are the only path into Knowledge. They never
+              enter the Spine directly. This keeps your source of truth clean
+              and your AI&apos;s memory governed.
             </p>
           </motion.div>
 

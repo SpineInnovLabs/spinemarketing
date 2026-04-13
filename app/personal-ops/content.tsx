@@ -9,7 +9,7 @@ const whatChanges = [
   {
     icon: Inbox,
     title: "Morning briefing, already waiting",
-    desc: "Emails, tasks, Slack threads, and meetings — pulled from your connected tools into one view. No manual assembly.",
+    desc: "Emails, tasks, Slack threads, and meetings — pulled from your connected apps into one view in L1. No manual assembly.",
   },
   {
     icon: Brain,
@@ -36,23 +36,23 @@ const whatChanges = [
 const steps = [
   {
     num: "01",
-    title: "Connect the tools you already use",
-    desc: "Gmail, Slack, Calendar, Notion, ChatGPT, Claude — plug them in once. Your data stays yours.",
+    title: "Connect the apps you already use",
+    desc: "Gmail, Slack, Calendar, Notion, ChatGPT, Claude — plug them in once via OAuth. Your data stays yours. The Spine starts reading immediately.",
   },
   {
     num: "02",
-    title: "Your workspace assembles itself",
-    desc: "Tasks, emails, messages, and AI conversations flow into one clean view. Relationships preserved automatically.",
+    title: "L1 — Your Daily Workbench",
+    desc: "Tasks, emails, messages, and AI conversations flow into one clean workspace (L1). Manage everything from one surface — no switching between tabs.",
   },
   {
     num: "03",
-    title: "AI works with your full context",
-    desc: "Ask a question, get an answer grounded in your calendar, tasks, conversations, and goals. No copy-pasting context.",
+    title: "L2 — The Twin works with your full context",
+    desc: "In the Intelligence Layer (L2), the Twin reads your calendar, tasks, conversations, and session history. Ask a question, get an answer grounded in everything. No copy-pasting context.",
   },
   {
     num: "04",
-    title: "Nothing happens without your approval",
-    desc: "AI suggests actions — you see the reasoning and decide. You stay in control.",
+    title: "Approve in L1. Nothing happens without you.",
+    desc: "The Twin proposes actions in L2. You review the evidence and approve. Approved actions flow to L1 and execute. Session summaries go through TruthLayer before entering your knowledge.",
   },
 ];
 
@@ -114,7 +114,7 @@ export function PersonalOpsContent() {
               }}
               className="mx-auto mt-8 max-w-2xl text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-white/55"
             >
-              Email, Slack, calendar, project tools, notes, AI chats — by the
+              Email, Slack, calendar, project apps, notes, AI chats — by the
               time you&apos;ve assembled enough context to start working, 45
               minutes have passed. IntegrateWise pulls them into one view so you
               start the day clear, not overwhelmed.
@@ -295,7 +295,7 @@ export function PersonalOpsContent() {
             className="mx-auto max-w-2xl text-center"
           >
             <h2 className="section-heading">
-              Your tools should work for you.{" "}
+              Your apps should work for you.{" "}
               <span className="text-primary">Not the other way around.</span>
             </h2>
             <p className="mt-6 text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">

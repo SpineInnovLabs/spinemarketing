@@ -13,26 +13,26 @@ export const metadata: Metadata = {
     canonical: "/",
     types: { "application/rss+xml": "/rss.xml" },
   },
-  title: "IntegrateWise — Stop being the human API between your tools.",
+  title: "IntegrateWise — Stop being the human API between your apps.",
   description:
-    "IntegrateWise connects your tools into one knowledge workspace, gives you the complete picture of every account, and lets AI help — but nothing happens without your OK.",
+    "IntegrateWise connects your apps into a Knowledge Workspace over the Spine. Truth, Context, and Session Summaries in one place — the Twin proposes, you approve, nothing happens without you.",
   icons: {
     icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
     apple: "/apple-icon.png",
   },
   openGraph: {
-    title: "IntegrateWise — Stop being the human API between your tools.",
+    title: "IntegrateWise — Stop being the human API between your apps.",
     description:
-      "IntegrateWise connects your tools into one knowledge workspace, gives you the complete picture of every account, and lets AI help — but nothing happens without your OK.",
+      "IntegrateWise connects your apps into a Knowledge Workspace over the Spine. Truth, Context, and Session Summaries in one place — the Twin proposes, you approve, nothing happens without you.",
     siteName: "IntegrateWise",
     type: "website",
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "IntegrateWise" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "IntegrateWise — Stop being the human API between your tools.",
+    title: "IntegrateWise — Stop being the human API between your apps.",
     description:
-      "IntegrateWise connects your tools into one knowledge workspace, gives you the complete picture of every account, and lets AI help — but nothing happens without your OK.",
+      "IntegrateWise connects your apps into a Knowledge Workspace over the Spine. Truth, Context, and Session Summaries in one place — the Twin proposes, you approve, nothing happens without you.",
     images: ["/og.png"],
   },
 }
