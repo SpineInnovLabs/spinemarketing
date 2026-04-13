@@ -1,0 +1,135 @@
+PLATFORM /platform
+1. Spine /platform/spine
+The central nervous system and System of Record for Intent.
+Core Function: Vendor-neutral canonical layer that converts disparate SaaS outputs into unified, actionable context. Not a pipeline (iPaaS) or analytics warehouse (Snowflake), but an ontological filter that standardizes data streams into a universal schema.
+Key Capabilities:
+SpineVault: Maintains Knowledge Memory in constant readiness; zero-shot context maintenance without retraining
+Canonical Entities: Account, Contact, Deal, Ticket, Invoice exist as neutral objects (survive CRM migrations)
+Temporal Truth: Append-only versioning; point-in-time reconstruction of any entity state
+Schema Drift Immunity: Upstream API changes handled in mapping layer; Spine schema remains constant
+8-Stage Normalization Feed:
+Ingest → APIs, webhooks, streaming, files
+Validate → Schema/auth checks
+Parse → Extract from vendor formats
+Normalize → Map to canonical schema
+Deduplicate → Golden record creation
+Enrich → Metadata, timestamps, relations
+Persist → D1/PostgreSQL with versioning
+Emit → Trigger downstream views
+2. Identities /platform/identities
+Structured, Unstructured, and AI Chats
+Structured Identities:
+Entity 360: CRM records, billing objects, support tickets, product usage metrics
+Canonical Schema: Normalized fields across Salesforce, HubSpot, Stripe, Zendesk
+Relation Graphs: Network mappings (Account → Contacts → Deals → Tickets → Invoices)
+Unstructured Identities:
+Document Context: PDFs, contracts, proposals ingested via MCP or upload
+Communication Threads: Email bodies, Slack conversations, meeting transcripts
+Semantic Extraction: NLP parsing of unstructured text into Spine entities (e.g., extracting "renewal date" from email body into Account entity)
+AI Chat Identities:
+Session Persistence: Chat histories grounded in Entity 360 (not floating contexts)
+Session Summaries: Extracted decisions and context from human-AI interactions
+Knowledge Extraction: Structured insights derived from conversational context, routed through Flow C Triage before entering SpineVault
+Identity Resolution & Entity Dedup:
+Cross-tool entity matching (e.g., "John Smith" in Salesforce = "john@company.com" in Stripe)
+Confidence scoring for merges
+Manual resolution interface for low-confidence matches
+3. Execution Path /platform/execution-path
+Load - Store - Think - Act - Adjust - Repeat
+The Operational Loop:
+Load → Data ingestion from connectors (APIs, webhooks, MCP, files)
+Connector abstraction layer
+Event-driven ingestion with idempotency keys
+Store → Persistence in SpineVault
+8-stage normalization execution
+Conflict resolution when sources disagree
+Temporal versioning applied
+Think → Cognitive processing layer
+Twin Trigger Scoring: Algorithmic evaluation of Entity 360 changes
+Signal Detection: Pattern recognition across structured/unstructured data
+Evidence Generation: Chain-of-thought with goal_refs linking to Spine data
+Act → Write-back execution (governed)
+Idempotent API operations
+Batch or single-transaction writes
+Rollback capability within 24-hour window
+Adjust → Feedback integration
+Outcome validation (success/failure of executed actions)
+Preference learning from approved/rejected suggestions
+Confidence threshold tuning based on historical accuracy
+Repeat → Continuous cycle
+New data triggers fresh Load cycle
+Enriched by prior approved Knowledge Memory
+Self-improving loop without model retraining
+Flow C Triage: The decision gate between Store and Think determining whether data updates Knowledge Memory passively or triggers Twin Activation for immediate action.
+4. Connectors EcoSystem /platform/connectors
+Universal Integration Layer
+Connector Philosophy: "Every input is a connector"—SaaS tools, AI services, webhooks, and MCP protocols treated as sensory inputs to the Human API.
+Supported Protocols:
+SaaS APIs: RESTful connections to Salesforce, HubSpot, Stripe, Zendesk, etc.
+MCP (Model Context Protocol): Bridge for AI-native communication; standardized way for models to access local/remote data
+Webhooks: Event-driven real-time ingestion
+File Ingestion: CSV, PDF, XLSX drops
+Auto-Upgrade Capability:
+Native protocol adaptation as external APIs evolve
+Schema drift detection and automatic mapping adjustment
+Zero-downtime connector updates
+Version rollback if upstream changes break integration
+Connector Services:
+Loader Service: High-velocity ingestion with DLQ (Dead Letter Queue) management
+Adapter Pattern: Standardized interface per category (CRM, Billing, Support)
+Schema Registry: Versioned field mappings per connector
+5. Knowledge Base /platform/knowledge-base
+Persistent Intelligence Layer
+Knowledge Memory:
+Zero-Shot Context: Accumulated organizational intelligence growing daily without model retraining
+Contrast with RAG: Unlike Retrieval-Augmented Generation (stale snippets), Knowledge Memory provides persistent, evolving narrative of organizational state
+Entity-Anchored: All knowledge linked to canonical Spine entities (Account 360, Contact 360)
+TruthLayer:
+Governance membrane enforcing the absolute Truth Boundary
+Approval Topology: Routing logic for human verification (who approves what based on impact)
+Audit Immutability: Append-only logs of every decision and data change
+Confidence Scoring: 0-100 scoring on insights before human presentation
+Knowledge Accumulation:
+Flow C Triage: Determines if AI Session Summaries enter Knowledge Base
+Human Validation: Knowledge UI for approving extracted insights before persistence
+Cross-Contamination Prevention: Contextual firewalling prevents Sales knowledge leaking to Engineering contexts
+6. Security /platform/security
+Governance Foundation and Truth Boundary
+Data Protection:
+Encryption: AES-256 at rest (SpineVault, D1, R2), TLS 1.3 in transit
+Field-Level Encryption: PII and sensitive financial data encrypted separately
+Regional Residency: Data sovereignty options (India, EU, US regions)
+Access Control:
+RBAC: Role-based access control with field-level permissions
+SSO/SAML: Enterprise identity provider integration
+Contextual Firewalling: Department/industry filters preventing unauthorized data access
+Compliance & Audit:
+SOC 2 Type II: Security and availability controls
+GDPR Alignment: Right to erasure, data portability, consent management
+Immutable Logs: Every Spine write, Entity 360 access, and Twin recommendation logged with evidence hashes
+Data Sovereignty: "Your data, your rules"—total organizational ownership of ontological models
+Truth Boundary Enforcement:
+Hard-Coded Constraint: Not a policy setting—architectural mandate that AI cannot write to systems without human approval
+Emergency Overrides: Traceable exception handling with mandatory audit trails
+Session Isolation: AI chat contexts sandboxed from production data unless explicitly approved
+7. Infrastructure /platform/infrastructure
+Backend Architecture and Services
+Firebase Architecture Spec:
+Realtime Database: High-velocity synchronization for live Workbench views
+State Persistence: Current state of every entity, signal, and Twin activation maintained across sessions
+Eventing: Cloud Functions triggering on SpineVault updates
+Data Access Patterns:
+Realtime Listeners: Domain-specific views update instantly as Spine processes data (sub-100ms latency)
+Entity 360 Assembly: Graph queries joining Account→Contacts→Deals→Tickets
+Temporal Queries: Point-in-time reconstruction via versioned Spine records
+Service Architecture:
+Spine Service: Core SSOT, entity resolution, schema governance
+Context Service: Real-time view assembly, conflict detection
+Twin Service: AI reasoning engine, signal detection
+Approval Service: TruthLayer governance, routing logic
+Action Service: Write-back execution, idempotency, rollback
+Notification Service: Alert routing, digest generation
+Scalability:
+Cloudflare Edge: Workers for low-latency global access
+D1/R2 Storage: Distributed storage for SpineVault and blob data
+Queue Management: Cloudflare Queues for async processing and DLQ handling
