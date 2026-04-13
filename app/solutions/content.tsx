@@ -196,9 +196,10 @@ export function SolutionsContent() {
             transition={{ type: "spring", damping: 16, stiffness: 52, delay: 0.35 }}
             className="mx-auto mt-8 max-w-2xl text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-white/55"
           >
-            IntegrateWise runs on one Spine and one L1/L2 model. But the
-            workspace is shaped to your function, your industry, and your role.
-            Every view starts from the same unified truth.
+            IntegrateWise runs on one Spine, one Workbench, and one
+            Intelligence layer. But the workspace is shaped to your function,
+            your industry, and your role. Every view starts from the same
+            unified truth.
           </motion.p>
         </div>
       </section>
