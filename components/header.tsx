@@ -95,7 +95,7 @@ const navigation: NavItem[] = [
         items: [
           { name: "Customer Success & TAMs", href: "/solutions/customer-success", icon: UserCheck, desc: "Save accounts, accelerate renewals" },
           { name: "Founders & CXOs", href: "/solutions/founders", icon: Telescope, desc: "Monday brief, board pack, full view" },
-          { name: "RevOps & Business Ops", href: "/solutions/revops", icon: Settings2, desc: "Pipeline, headcount, risk — connected" },
+          { name: "Rev / Business Ops", href: "/solutions/revops", icon: Settings2, desc: "Pipeline, headcount, risk — connected" },
           { name: "Operations & Delivery", href: "/solutions/operations", icon: Truck, desc: "Projects, utilisation, exceptions" },
           { name: "Finance Leaders", href: "/solutions/finance-leaders", icon: DollarSign, desc: "Cash, collections, runway" },
           { name: "Individual Professionals", href: "/solutions/individual", icon: User, desc: "Morning brief, session memory" },

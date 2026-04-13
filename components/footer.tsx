@@ -31,7 +31,7 @@ const footerColumns: {
     links: [
       { name: "Customer Success & TAMs", href: "/solutions/customer-success" },
       { name: "Founders & CXOs", href: "/solutions/founders" },
-      { name: "RevOps & Business Ops", href: "/solutions/revops" },
+      { name: "Rev / Business Ops", href: "/solutions/revops" },
       { name: "Operations & Delivery", href: "/solutions/operations" },
       { name: "Finance Leaders", href: "/solutions/finance-leaders" },
       { name: "Individual Professionals", href: "/solutions/individual" },
