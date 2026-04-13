@@ -29,7 +29,7 @@ const footerColumns: {
   {
     heading: "By Role",
     links: [
-      { name: "Customer Success & AMs", href: "/solutions/customer-success" },
+      { name: "Customer Success & TAMs", href: "/solutions/customer-success" },
       { name: "Founders & CXOs", href: "/solutions/founders" },
       { name: "RevOps & Business Ops", href: "/solutions/revops" },
       { name: "Operations & Delivery", href: "/solutions/operations" },
