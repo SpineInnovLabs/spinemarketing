@@ -567,6 +567,24 @@ export function HeroSection() {
             ))}
           </h1>
 
+          <motion.p
+            initial={{ opacity: 0, y: 12 }}
+            animate={
+              phase === "reveal" ? { opacity: 1, y: 0 } : { opacity: 0, y: 12 }
+            }
+            transition={{
+              type: "spring",
+              damping: 16,
+              mass: 1,
+              stiffness: 52,
+              delay: phase === "reveal" ? 1 : 0,
+            }}
+            className="mx-auto mt-8 max-w-2xl text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-white/55"
+          >
+            IntegrateWise turns tool data, live context, and AI session memory
+            into one knowledge workspace — so AI works with full context and
+            every action stays under your control.
+          </motion.p>
 
           {/* CTAs */}
           <motion.div
