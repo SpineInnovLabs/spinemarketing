@@ -1,46 +1,54 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { FileText, Users2, TrendingDown } from "lucide-react";
 import { IndustrySolutionLayout } from "../_shared/IndustrySolutionLayout";
-
-const signals = [
-  {
-    icon: TrendingDown,
-    title: "Engagement scope creep going untracked",
-    desc: "A client project is 30% over the original scope estimate. Billing hasn't been updated. The relationship owner doesn't know. The Spine connects project, billing, and CRM — the signal surfaces before the conversation becomes a dispute.",
-  },
-  {
-    icon: Users2,
-    title: "Key relationship at risk",
-    desc: "The senior contact at a $400K account has gone quiet for 6 weeks. Emails unread. No meeting booked. Usage of the deliverable portal is down. The Twin flags the risk and recommends reengagement — you approve the outreach.",
-  },
-  {
-    icon: FileText,
-    title: "Deliverable overdue, client unaware",
-    desc: "A milestone deliverable slipped by 2 weeks. The client hasn't been informed. The billing milestone is linked to the deliverable. The Spine surfaces the chain of consequences. You act before the client escalates.",
-  },
-];
-
-const whatMatters = [
-  { title: "Engagements", desc: "Track every active client engagement — scope, timeline, team, deliverables — connected to billing and relationship history." },
-  { title: "Deliverables", desc: "Know what's been delivered, what's overdue, and what's at risk — before it becomes a client conversation." },
-  { title: "Billing", desc: "Connect engagement milestones to invoicing. See billing status alongside project health and relationship activity." },
-  { title: "Relationships", desc: "Track stakeholder engagement, communication cadence, and relationship health across every active account." },
-];
 
 export function ProfessionalServicesContent() {
   return (
     <IndustrySolutionLayout
       category="Professional Services"
-      headline="Engagements, billing, relationships — one workspace."
-      subheadline="Professional services teams manage client work across project tools, CRM, billing, and communication platforms. The Spine connects them all into one account view."
-      whatMatters={whatMatters}
-      signals={signals}
-      l1Title="Client workspace for professional services teams"
-      l1Desc="Open any client engagement and see the full picture: project status, deliverables, billing, stakeholder activity, and relationship history — live from every connected app. Manage work, track billing, and protect relationships from one workspace."
-      l2Title="Intelligence Layer for professional services"
-      l2Desc="The Twin reads project data, billing, CRM, and communication through the Spine. It surfaces scope drift, billing risk, and relationship health drops — with evidence. Every recommended action waits for your approval."
+      headline="Every engagement, fully visible."
+      subheadline="Law firms, consultancies, and advisory practices unified — matters, time, billing, and client relationships in one governed workspace."
+      ctaLabel="Explore the workspace →"
+      problem={{
+        intro: "Matters live in practice management software. Time is captured separately. Client relationships are in partners' inboxes. You lose revenue to unbilled time and scope creep because the full engagement picture is fragmented.",
+        bullets: [
+          "Unbilled time sits in WIP for 30+ days because time entries and billing are disconnected.",
+          "Matters approaching scope limits aren't flagged until the partner reviews the file.",
+          "Key client stakeholders disengage and no one notices until the relationship is damaged.",
+          "Realization rate drops are invisible until year-end billing analysis.",
+        ],
+      }}
+      solution={{
+        paragraph: "Engagement 360 connects practice management (Clio, LeanLaw, Actionstep), time tracking, billing, and email into one client view. AI flags \"Matters approaching scope limits,\" \"Unbilled time exceeding 30 days,\" and \"Key client stakeholder disengaged\" — all waiting for your approval before any action.",
+        workspaceName: "Engagement 360",
+      }}
+      capabilities={[
+        {
+          title: "Matter Margin Tracking",
+          desc: "Real-time view of billed vs. WIP vs. original estimate per matter. Know which engagements are profitable before you close them.",
+        },
+        {
+          title: "Client Relationship Monitoring",
+          desc: "Track communication frequency with key decision-makers. Alert when engagement goes silent — before the client shops elsewhere.",
+        },
+        {
+          title: "Billing Hygiene",
+          desc: "Auto-flag time entries missing narratives or matters approaching billing caps. Recover revenue before it's written off.",
+        },
+        {
+          title: "Scope Limit Alerts",
+          desc: "AI surfaces matters approaching agreed scope or fee caps — giving partners time to have the conversation before the overage becomes a dispute.",
+        },
+      ]}
+      governance="Every billing adjustment, scope change communication, and relationship flag routes through the approval gate. Partners maintain control over client-facing actions. Full audit trail of every governance decision with source data attached."
+      connectors={[
+        "Clio", "LeanLaw", "Actionstep",
+        "QuickBooks", "Xero", "Outlook", "Gmail",
+      ]}
+      metrics={[
+        "Realization Rate", "Collection Rate",
+        "Matter Profitability", "Client Concentration Risk",
+      ]}
     />
   );
 }

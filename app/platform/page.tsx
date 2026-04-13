@@ -5,9 +5,9 @@ import { FinalCTA } from "@/components/final-cta"
 import { PlatformContent } from "./content"
 
 export const metadata: Metadata = {
-  title: "How It Works | IntegrateWise",
+  title: "Platform | IntegrateWise",
   description:
-    "Connect 70+ apps into a Knowledge Workspace over the Spine. Work in L1, let The Twin propose in L2, and approve what actually happens. See how IntegrateWise works.",
+    "The Adaptive Spine Architecture — a vendor-neutral intelligence layer that normalizes truth across your systems, governs every AI action through non-bypassable human approval, and writes nothing back without explicit consent.",
 }
 
 export default function PlatformPage() {

@@ -6,41 +6,35 @@ export function FinanceLeadersContent() {
   return (
     <RoleSolutionLayout
       role="Finance Leaders"
-      headline="The financial workspace that connects the whole business."
-      subheadline="Finance leaders manage cash, revenue, collections, and risk across accounting, billing, CRM, and banking. IntegrateWise connects them all over the Spine — one live financial picture."
-      whatYouSee={[
-        "Revenue actuals versus contracted — with the gap explained",
-        "Invoice status and collections pipeline by account and age",
-        "Cash position, burn rate, and runway estimate",
-        "Overdue invoices with full account context — relationship, order history",
-        "Revenue by segment, cohort, and product with movement analysis",
-        "Risk concentration by customer, sector, and payment terms",
-        "Spend versus budget by team, project, and function",
-        "Twin-recommended actions on collections and risk, waiting for your approval",
-      ]}
-      benefits={[
+      headline="The Financial Intelligence Layer"
+      subheadline="Collections and cash flow management connected to customer reality — not just invoice aging."
+      ctaLabel="Explore the workspace →"
+      focus={[
         {
-          title: "Revenue without the reconciliation",
-          desc: "CRM bookings, billing actuals, and collections status are connected by the Spine. You see the full revenue picture — contracted, invoiced, and collected — in one view.",
+          title: "Revenue Protection",
+          desc: "Link billing to delivery and customer health. Know which customers are at churn risk before issuing the next invoice — and act accordingly.",
         },
         {
-          title: "Collections with full context",
-          desc: "Every overdue invoice is shown alongside the account's relationship health, order history, and recent communication. You act on collections with the full picture, not just the billing system.",
+          title: "Smart Collections",
+          desc: "Prioritize by cash impact and customer health, not just days overdue. Draft tone-appropriate dunning based on relationship status — reviewed by you before it sends.",
         },
         {
-          title: "Cash and risk in one workspace",
-          desc: "Banking, billing, CRM, and project data feed the Spine. The Twin surfaces cash position changes, concentration risk, and collections risk — with evidence — before you're in a board meeting.",
+          title: "Audit Readiness",
+          desc: "Immutable logs of all revenue-impacting decisions with source evidence. Who approved which adjustment, when, and based on which Spine data point.",
+        },
+        {
+          title: "Cash Flow Forecasting",
+          desc: "AI-weighted projections based on customer health scores and payment history — not just invoice aging. Accurate runway estimates with source evidence attached.",
         },
       ]}
-      useCases={[
-        {
-          title: "Month-end close with full context",
-          desc: "The Spine has already assembled revenue movement, invoice status, and collections pipeline from every connected system. The Twin drafts the variance commentary and flags the anomalies. You review, adjust, and close.",
-        },
-        {
-          title: "Collections intervention",
-          desc: "Three invoices are 45 days overdue on a key account. CRM shows the relationship is strong and a new deal is in negotiation. The Spine surfaces the tension. The Twin recommends the collections path that protects the relationship — you approve before anyone calls.",
-        },
+      governanceNote="Every dunning message, write-off recommendation, and revenue recognition adjustment requires Finance approval with full audit trail. AI provides the analysis; humans control the cash. No automated customer-facing financial communication without explicit click-to-approve."
+      connects={[
+        "QuickBooks", "NetSuite", "Sage", "Stripe",
+        "Salesforce", "HubSpot", "Zendesk",
+      ]}
+      metrics={[
+        "Days Sales Outstanding (DSO)", "Bad Debt Rate",
+        "Cash Forecast Accuracy", "Collection Efficiency",
       ]}
     />
   );

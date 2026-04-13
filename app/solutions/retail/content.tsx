@@ -1,46 +1,54 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { ShoppingCart, RotateCcw, AlertCircle } from "lucide-react";
 import { IndustrySolutionLayout } from "../_shared/IndustrySolutionLayout";
-
-const signals = [
-  {
-    icon: AlertCircle,
-    title: "Stock running out, reorder not triggered",
-    desc: "Inventory shows 3 days of stock left. The reorder threshold hasn't been updated since last season. Two customer orders are pending. The Spine surfaces the shortfall before the first stockout.",
-  },
-  {
-    icon: RotateCcw,
-    title: "Return rate spiking on one SKU",
-    desc: "Returns data shows a 40% rate on a product launched 3 weeks ago. Support has 12 complaints about the same issue. CRM shows 3 enterprise buyers who ordered in bulk. The Twin drafts the alert and outreach plan — you approve.",
-  },
-  {
-    icon: ShoppingCart,
-    title: "Abandoned cart + support ticket open",
-    desc: "A customer abandoned a high-value order 2 hours ago and has a support ticket still open from last week. The Spine connects ecommerce and support. The Twin recommends the right intervention at the right moment.",
-  },
-];
-
-const whatMatters = [
-  { title: "Stock", desc: "Connect inventory systems to sales forecasts and reorder workflows. Know what's running low before the customer order fails." },
-  { title: "Orders", desc: "Track every order from placement to delivery, across fulfilment, logistics, and customer support — in one workspace." },
-  { title: "Returns", desc: "Surface return patterns by SKU, supplier, or customer segment. Spot quality and fulfilment issues before they compound." },
-  { title: "Support", desc: "Connect customer support to order history, product data, and account value. Every support interaction is in context." },
-];
 
 export function RetailContent() {
   return (
     <IndustrySolutionLayout
       category="Retail & Ecommerce"
-      headline="Stock, orders, returns, support — one connected workspace."
-      subheadline="Retail and ecommerce teams manage operations across inventory, ecommerce, logistics, and support platforms. The Spine connects them all. Act before the complaint arrives."
-      whatMatters={whatMatters}
-      signals={signals}
-      l1Title="Operating workspace for retail teams"
-      l1Desc="See inventory levels, order status, return rates, and open support tickets in one workspace — live from every connected platform. Manage exceptions, coordinate across teams, and act on signals before customers are affected."
-      l2Title="Intelligence Layer for retail signals"
-      l2Desc="The Twin reads stock, orders, returns, and support through the Spine. It surfaces shortfalls, spikes, and at-risk customers — with evidence from every connected app. You approve before any action executes."
+      headline="Unified commerce operations."
+      subheadline="See stock, orders, returns, and customer support as one operational picture — not isolated channels."
+      ctaLabel="Explore the workspace →"
+      problem={{
+        intro: "Your ecommerce platform (Shopify), inventory (DEAR), support (Zendesk), and returns (Loop) don't talk. High-value customers return products and complain on Twitter before your team knows they had a problem.",
+        bullets: [
+          "Stock-outs happen because reorder thresholds live in a different system from actual sales velocity.",
+          "Return spikes on a SKU go undetected until operations reconciles the data — too late to act.",
+          "High-value customers with open complaints get standard queue treatment instead of priority routing.",
+          "Abandoned carts with active support tickets go unconnected — the best retention moment is missed.",
+        ],
+      }}
+      solution={{
+        paragraph: "The Spine unifies commerce data into a Customer Operations Workspace. AI detects patterns like \"VIP customer + return initiated + negative sentiment in support\" and flags for immediate retention action — waiting for your approval before sending recovery offers.",
+        workspaceName: "Customer Operations Workspace",
+      }}
+      capabilities={[
+        {
+          title: "Inventory-Aware Support",
+          desc: "Support agents see stock levels when handling complaints. Reserve replacement inventory or offer alternatives — in the same workspace.",
+        },
+        {
+          title: "Returns Intelligence",
+          desc: "AI correlates return reasons with product batches or descriptions to flag quality issues before they compound across a wider customer base.",
+        },
+        {
+          title: "VIP Customer Routing",
+          desc: "High-value customers with open orders or complaints get priority support queue placement — automatically, based on Spine data.",
+        },
+        {
+          title: "Stockout Prevention",
+          desc: "Connect sales velocity to inventory levels. AI surfaces reorder alerts before stockouts affect orders, not after.",
+        },
+      ]}
+      governance="Recovery offers, VIP routing decisions, and outbound communications all require approval before they execute. AI drafts the intervention; your team approves the action. Full audit trail linking every action to the Spine signal that triggered it."
+      connectors={[
+        "Shopify", "WooCommerce", "NetSuite", "Zendesk",
+        "Loop", "Gorgias", "Klaviyo", "Stripe",
+      ]}
+      metrics={[
+        "Customer Lifetime Value (CLV)", "Return Rate",
+        "Support Resolution Time", "Stock-Out Frequency",
+      ]}
     />
   );
 }

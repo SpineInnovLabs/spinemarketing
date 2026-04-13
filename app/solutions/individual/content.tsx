@@ -6,41 +6,37 @@ export function IndividualContent() {
   return (
     <RoleSolutionLayout
       role="Individual Professionals"
-      headline="Your personal workspace. Context that carries."
-      subheadline="You work across email, calendar, tasks, projects, and notes — and lose context every time you switch. IntegrateWise connects everything over the Spine and gives you one workspace that remembers."
-      whatYouSee={[
-        "Today's meetings with context — who's attending, what was discussed last time",
-        "Open emails and threads grouped by project and person",
-        "Tasks and commitments from every connected app in one list",
-        "Session Summaries from every AI-assisted work session, logged and searchable",
-        "Promises and follow-ups you've made — tracked automatically",
-        "Projects and their current status across all connected tools",
-        "Weekly view of what's due, what's overdue, what's coming",
-        "Twin-drafted responses, plans, and summaries — waiting for your approval",
-      ]}
-      benefits={[
+      headline="Your Personal Command Center"
+      subheadline="All your work, one calm view. AI remembers context across sessions — you approve every action."
+      ctaLabel="Try Personal Ops →"
+      ctaHref="/solutions/personal-ops"
+      focus={[
         {
-          title: "Never lose the thread",
-          desc: "Session Summaries capture the context from every work session — what you discussed, what you decided, what you committed to. Pick up exactly where you left off.",
+          title: "Cross-Tool Task Aggregation",
+          desc: "See today's priorities from Jira, Asana, email, and Slack in one queue — ranked by deadline, stakeholder seniority, and business impact.",
         },
         {
-          title: "Start the day with full context",
-          desc: "Your morning briefing is assembled from every connected app: meetings, emails, tasks, open items, and signals from the people you work with — in two minutes.",
+          title: "Session Memory",
+          desc: "AI recalls what you were working on yesterday and suggests where to pick up. No more re-assembling context at the start of every session.",
         },
         {
-          title: "AI that drafts, you decide",
-          desc: "The Twin drafts emails, plans, and summaries from the full context in the Spine. Nothing sends until you approve. Every output is logged as a Session Summary.",
+          title: "Smart Drafting",
+          desc: "Emails, updates, and notes drafted with full cross-tool context — your edit and approval required before anything sends. Nothing executes in your name without a click.",
+        },
+        {
+          title: "Focus Protection",
+          desc: "AI filters noise, surfaces only what matches your role and priorities. Your morning briefing in 2 minutes — not 45.",
         },
       ]}
-      useCases={[
-        {
-          title: "Morning briefing",
-          desc: "You open IntegrateWise at 8am. Your workspace shows today's meetings with context from the last session, open email threads ranked by urgency, tasks due today, and three signals the Twin flagged overnight. You're oriented in 2 minutes.",
-        },
-        {
-          title: "Promise and follow-up tracker",
-          desc: "You told a client you'd send something by Thursday. You told your team you'd review a doc by end of week. The Spine tracks both. The Twin reminds you before the deadline. You never drop a commitment again.",
-        },
+      governanceNote="Personal but safe. AI cannot send communications or update records on your behalf without explicit click-to-approve. Your context stays private. Organizational data respects RBAC — you only see what the Spine's access controls allow."
+      connects={[
+        "Gmail", "Outlook", "Slack", "Salesforce",
+        "HubSpot", "Notion", "Asana", "Jira",
+        "Google Calendar", "Zoom",
+      ]}
+      metrics={[
+        "Response Time", "Task Completion Velocity",
+        "Meeting Preparation Quality", "Context-Switching Reduction",
       ]}
     />
   );

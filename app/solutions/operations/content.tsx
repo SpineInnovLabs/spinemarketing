@@ -5,42 +5,36 @@ import { RoleSolutionLayout } from "../_shared/RoleSolutionLayout";
 export function OperationsContent() {
   return (
     <RoleSolutionLayout
-      role="Operations & Delivery Leaders"
-      headline="The workspace that keeps delivery on track."
-      subheadline="Operations and delivery teams manage projects, people, and client commitments across project tools, CRM, support, and billing. IntegrateWise connects them all over the Spine — one live view of every engagement."
-      whatYouSee={[
-        "Project status across every active engagement — timeline, scope, budget",
-        "Team utilisation and capacity by person, team, and function",
-        "Delivery milestones and at-risk items surfaced before they slip",
-        "Client escalations and support tickets in context",
-        "Billing milestones connected to delivery status",
-        "Dependencies and blockers across projects",
-        "Resource allocation gaps and over-runs flagged in real time",
-        "Twin-recommended actions on delivery risk, waiting for your approval",
-      ]}
-      benefits={[
+      role="Operations & Delivery"
+      headline="The Delivery Control Room"
+      subheadline="Project status, resource utilization, and client communication unified. AI flags exceptions — you approve the fix."
+      ctaLabel="Explore the workspace →"
+      focus={[
         {
-          title: "See the risk before the client does",
-          desc: "Delivery slippage, scope creep, and resource constraints are surfaced by the Spine before they become client escalations — giving you time to act.",
+          title: "Project Health 360",
+          desc: "Timeline, budget, utilization, and client sentiment in one view per engagement — live from project tools, time tracking, and CRM.",
         },
         {
-          title: "One view across every engagement",
-          desc: "Stop switching between project tools, spreadsheets, and CRM. Every active engagement is in one workspace with the full picture from every connected app.",
+          title: "Exception Management",
+          desc: "Auto-escalate projects at risk of missing milestones or margins. Surface the cascade of dependencies before the client knows there's a problem.",
         },
         {
-          title: "AI that flags what matters",
-          desc: "The Twin reads project data, billing, and client sentiment through the Spine. It surfaces delivery risk and drafts recommended actions — you approve before anything changes.",
+          title: "Resource Optimization",
+          desc: "AI suggests rebalancing based on skills, availability, and project priority. You approve reallocation — no surprise team moves without PM sign-off.",
+        },
+        {
+          title: "Client Communication Governance",
+          desc: "Draft project updates with full context — timeline, budget, risk — and approve before sending. No client-facing communication without Operations lead review.",
         },
       ]}
-      useCases={[
-        {
-          title: "Catch delivery risk early",
-          desc: "A project is 3 days behind. The billing milestone is in 5 days. The client has an open support ticket. The Spine surfaces the combined risk. The Twin recommends the escalation path and drafts the client update — you approve before it sends.",
-        },
-        {
-          title: "Manage utilisation across the team",
-          desc: "Two engineers are over-allocated. Three projects are under-resourced. One team member is finishing an engagement in a week. The Spine shows the full capacity picture. The Twin suggests the reallocation. You approve.",
-        },
+      governanceNote="Project status changes, resource reassignments, and client communications queue for PM and Operations lead approval. No surprise scope changes or team moves execute without explicit sign-off. Full audit trail of every delivery decision."
+      connects={[
+        "Asana", "Monday.com", "Jira", "Harvest",
+        "Toggl", "Salesforce", "QuickBooks", "Slack", "Gmail",
+      ]}
+      metrics={[
+        "Project Margin", "Utilization Rate",
+        "On-Time Delivery %", "Client Satisfaction",
       ]}
     />
   );

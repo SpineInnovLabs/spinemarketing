@@ -57,20 +57,20 @@ type NavItem = {
 const navigation: NavItem[] = [
   {
     label: "Platform",
-    href: "/spine",
+    href: "/platform",
     items: [
-      { name: "Spine & Intelligence", href: "/spine", icon: GitMerge, desc: "The orchestration layer that unifies every app" },
+      { name: "Adaptive Spine Architecture", href: "/platform", icon: GitMerge, desc: "The orchestration layer that unifies every app" },
       { name: "Integrations", href: "/integrations", icon: Plug, desc: "70+ apps connected over the Spine" },
       { name: "Security", href: "/security", icon: ShieldCheck, desc: "Govern Gate, audit trails, enterprise-grade" },
     ],
   },
   {
     label: "Product",
-    href: "/platform",
+    href: "/product",
     items: [
-      { name: "How It Works", href: "/platform", icon: Layers, desc: "Five steps, one Canonical Loop, you in control" },
-      { name: "Workbench", href: "/platform#workbench", icon: Sparkles, desc: "Your live workspace, always in context" },
-      { name: "Intelligence Layer", href: "/platform#intelligence", icon: Brain, desc: "AI thinks in context, waits for your approval" },
+      { name: "Knowledge Workspace", href: "/product", icon: Layers, desc: "The workspace layer over the Spine" },
+      { name: "Workbench", href: "/product#workbench", icon: Sparkles, desc: "Your live workspace, always in context" },
+      { name: "Intelligence Layer", href: "/product#intelligence", icon: Brain, desc: "AI thinks in context, waits for your approval" },
       { name: "The Twin", href: "/ai", icon: Brain, desc: "Your AI counterpart across every workflow" },
     ],
   },

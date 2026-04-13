@@ -5,42 +5,37 @@ import { RoleSolutionLayout } from "../_shared/RoleSolutionLayout";
 export function RevOpsContent() {
   return (
     <RoleSolutionLayout
-      role="RevOps & Business Operations"
-      headline="One operating workspace for the revenue and ops layer."
-      subheadline="RevOps teams sit at the intersection of sales, success, finance, and systems. IntegrateWise connects every app over the Spine and gives you one workspace to see — and fix — the full operating picture."
-      whatYouSee={[
-        "Pipeline health and forecast accuracy across the full funnel",
-        "Revenue by segment, cohort, and product with movement analysis",
-        "Churn signals from support, usage, and CRM combined",
-        "Headcount, capacity, and utilisation by team and function",
-        "System health and integration status across the stack",
-        "Process exceptions and data quality issues across apps",
-        "Open cross-functional initiatives with status and owners",
-        "Twin-recommended actions with evidence, waiting for your approval",
-      ]}
-      benefits={[
+      role="Rev / Business Ops"
+      headline="The Revenue Operating System"
+      subheadline="Connect pipeline, bookings, billings, and churn into one truth layer. Detect process leaks and fix them with governed AI."
+      ctaLabel="Explore Business Ops →"
+      ctaHref="/solutions/business-ops"
+      focus={[
         {
-          title: "See the full operating picture",
-          desc: "Every metric your board cares about — revenue, churn, pipeline, capacity, cash — pulled from every source and assembled in one workspace.",
+          title: "Process Health Monitoring",
+          desc: "Quote-to-Cash velocity, SLA adherence, and bottleneck detection across the full revenue cycle — surfaced automatically from connected systems.",
         },
         {
-          title: "Fix the gaps before they cost revenue",
-          desc: "Process exceptions, data quality issues, and cross-system inconsistencies are surfaced by the Spine before they distort decisions.",
+          title: "Data Hygiene Automation",
+          desc: "AI detects duplicate records, stale opportunities, and missing fields — then proposes fixes for your approval. You define what clean looks like; the Spine enforces it.",
         },
         {
-          title: "AI that works across the stack",
-          desc: "The Twin reads every system through the Spine. It surfaces cross-system anomalies, drafts recommendations, and waits for your approval before anything changes.",
+          title: "Forecast Governance",
+          desc: "Rolling forecast based on pipeline + historical conversion + account health — not just rep guesses. Every number traceable to a source entity in the Spine.",
+        },
+        {
+          title: "Cross-Tool Workflow Orchestration",
+          desc: "Route actions between Sales, CS, and Finance with approval gates at each handoff. No process change propagates without the right person signing off.",
         },
       ]}
-      useCases={[
-        {
-          title: "Cross-system risk radar",
-          desc: "Three accounts have usage drops, delayed invoices, and open support escalations — but no individual app would surface the combined signal. The Spine connects the dots. The Twin ranks the risk and drafts the intervention plan. You approve.",
-        },
-        {
-          title: "Quarterly board pack",
-          desc: "Revenue by segment, pipeline coverage, churn breakdown, headcount, and cash position — assembled from every connected system by the Spine. The Twin drafts the narrative and commentary. You review and publish.",
-        },
+      governanceNote="You define the rules — what constitutes an 'At-Risk' opportunity, what triggers a collections alert. AI enforces them with suggestions, not automation. You approve process changes before they propagate. Full audit trail of every governance decision."
+      connects={[
+        "Salesforce", "HubSpot", "Stripe", "QuickBooks",
+        "Zendesk", "Asana", "Monday.com", "Slack",
+      ]}
+      metrics={[
+        "Cash Conversion Cycle", "Pipeline Coverage",
+        "Forecast Accuracy", "Collection Efficiency",
       ]}
     />
   );

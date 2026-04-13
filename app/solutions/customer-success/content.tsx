@@ -5,42 +5,37 @@ import { RoleSolutionLayout } from "../_shared/RoleSolutionLayout";
 export function CustomerSuccessRoleContent() {
   return (
     <RoleSolutionLayout
-      role="Customer Success & Account Managers"
-      headline="The workspace that reads every account signal."
-      subheadline="Your accounts live across CRM, support, billing, product, and email. IntegrateWise connects them all over the Spine so you see the full picture — and The Twin surfaces the signals before they become problems."
-      whatYouSee={[
-        "Account 360: revenue, product usage, support tickets, invoices, stakeholders",
-        "Health score built from real data across every connected app",
-        "Champion and contact changes tracked across email and CRM",
-        "Renewal timeline with risk signals attached",
-        "Open support tickets with sentiment and urgency",
-        "Billing status and outstanding invoices",
-        "Session Summaries from every AI-assisted interaction, logged and attributed",
-        "Twin-recommended actions with evidence, waiting for your approval",
-      ]}
-      benefits={[
+      role="Customer Success & TAMs"
+      headline="The CSM Command Center"
+      subheadline="One Account 360 where AI surfaces exactly which accounts need attention today — and drafts the save play for your approval."
+      ctaLabel="See Account Success workspace →"
+      ctaHref="/solutions/account-success"
+      focus={[
         {
-          title: "Know before the customer does",
-          desc: "Usage drops, champion changes, billing delays, and support spikes are surfaced together — before any single app would flag a problem.",
+          title: "Renewal Risk Prediction",
+          desc: "90-day lookahead across CRM, product usage, billing, and support. Know which accounts are at risk before the renewal conversation starts.",
         },
         {
-          title: "Act with the full context",
-          desc: "Every intervention is backed by real evidence from the Spine. You don't guess. You see what happened, what the Twin recommends, and why.",
+          title: "Expansion Signal Detection",
+          desc: "AI surfaces usage spikes, team growth, and license limit approaches as expansion moments — with a drafted upgrade conversation ready for your review.",
         },
         {
-          title: "AI that waits for you",
-          desc: "The Twin drafts emails, renewal strategies, and escalation plans. Nothing sends until you approve. Every action is logged with a Session Summary.",
+          title: "QBR Preparation Automation",
+          desc: "AI assembles account review decks from real adoption data, outcome metrics, and relationship history. You finalize and present — no manual assembly.",
+        },
+        {
+          title: "Escalation Management",
+          desc: "Cross-system pattern detection — usage drop + champion left + P1 tickets — surfaces as one combined risk signal with full context attached.",
         },
       ]}
-      useCases={[
-        {
-          title: "Save an at-risk account",
-          desc: "Usage down 40%. Champion resigned 3 weeks ago. Two support tickets unresolved. The Spine surfaces the combined signal. The Twin drafts the save plan — stakeholder map, outreach sequence, risk summary. You approve before anything sends.",
-        },
-        {
-          title: "Build a QBR in minutes",
-          desc: "Open the account. The Spine has already assembled revenue history, product adoption, support summary, open items, and relationship health from all connected apps. The Twin drafts the QBR narrative. You review and present.",
-        },
+      governanceNote="AI suggests health score changes — you approve them. AI drafts EBR decks — you finalize before sending. AI queues outreach — you review the evidence and approve. No customer-facing action executes without CSM review. Every approval is logged with source data and a timestamp."
+      connects={[
+        "Salesforce", "HubSpot", "Zendesk", "Intercom",
+        "Stripe", "Chargebee", "Segment", "Amplitude", "Slack", "Gmail",
+      ]}
+      metrics={[
+        "NRR", "GRR", "Time-to-Intervention",
+        "Expansion Rate", "Renewal Forecast Accuracy",
       ]}
     />
   );
