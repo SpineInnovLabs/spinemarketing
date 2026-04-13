@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Settings2, Mail, Database, FileText, GitBranch, BarChart3 } from "lucide-react";
-import Header from "@/components/header";
+import { Header } from "@/components/header-client";
 import { Footer } from "@/components/footer";
 
 const actionLibrary = [

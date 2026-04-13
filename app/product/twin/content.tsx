@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Cpu, RefreshCw, Clock, Brain } from "lucide-react";
-import Header from "@/components/header";
+import { Header } from "@/components/header-client";
 import { Footer } from "@/components/footer";
 
 const virtualState = [

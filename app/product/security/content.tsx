@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ShieldCheck, Eye, Users, FileText, AlertTriangle, RotateCcw } from "lucide-react";
-import Header from "@/components/header";
+import { Header } from "@/components/header-client";
 import { Footer } from "@/components/footer";
 
 const trustDashboard = [
