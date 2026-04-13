@@ -2,7 +2,10 @@ import Link from "next/link";
 import { Linkedin, Twitter } from "lucide-react";
 import { SpineLogo } from "@/components/spine-logo";
 
-const footerLinks = {
+const footerLinks: Record<
+  string,
+  { name: string; href: string; external?: boolean }[]
+> = {
   Solutions: [
     { name: "Account Success", href: "/account-success" },
     { name: "Business Ops", href: "/business-ops" },
@@ -16,8 +19,16 @@ const footerLinks = {
   ],
   Resources: [
     { name: "Blog", href: "/blog" },
-    { name: "Documentation", href: "/docs" },
-    { name: "Changelog", href: "/changelog" },
+    {
+      name: "Documentation",
+      href: "https://docs.integratewise.ai",
+      external: true,
+    },
+    {
+      name: "Changelog",
+      href: "https://changelog.integratewise.ai",
+      external: true,
+    },
   ],
   Company: [
     { name: "About", href: "/about" },
@@ -87,12 +98,23 @@ export function Footer() {
               <ul className="mt-4 space-y-3">
                 {links.map((link) => (
                   <li key={link.name}>
-                    <Link
-                      href={link.href}
-                      className="text-[14px] font-medium text-white/40 transition-colors hover:text-white"
-                    >
-                      {link.name}
-                    </Link>
+                    {link.external ? (
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[14px] font-medium text-white/40 transition-colors hover:text-white"
+                      >
+                        {link.name}
+                      </a>
+                    ) : (
+                      <Link
+                        href={link.href}
+                        className="text-[14px] font-medium text-white/40 transition-colors hover:text-white"
+                      >
+                        {link.name}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>
