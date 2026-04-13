@@ -472,8 +472,8 @@ const sectionHeading = (
       Three ways to <span className="text-primary">take control</span>
     </h2>
     <p className="mt-4 text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">
-      Whether you&apos;re managing a portfolio, running operations, or staying
-      on top of your own work — IntegrateWise adapts.
+      One Knowledge Workspace. Different views for individuals, account teams,
+      and operations leaders — all powered by the same Spine and AI Twin.
     </p>
   </motion.div>
 );

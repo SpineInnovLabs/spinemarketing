@@ -4,10 +4,10 @@ import { motion } from "framer-motion"
 import { ShieldCheck, Brain, UserCheck, BookOpen } from "lucide-react"
 
 const steps = [
-  { icon: Brain, label: "The Twin reasons", desc: "Reads your data, conversations, and accumulated knowledge" },
-  { icon: ShieldCheck, label: "TruthLayer governs", desc: "Scores confidence, traces evidence, checks freshness" },
-  { icon: UserCheck, label: "You decide", desc: "Approve, edit, or reject — full reasoning visible" },
-  { icon: BookOpen, label: "Knowledge compounds", desc: "Confirmed insights enter memory. Every AI reads from it." },
+  { icon: Brain, label: "The Twin reasons", desc: "Reads your data, conversations, and accumulated knowledge through the Spine." },
+  { icon: ShieldCheck, label: "TruthLayer governs", desc: "Scores confidence, traces evidence, checks freshness." },
+  { icon: UserCheck, label: "You decide", desc: "Approve, edit, or reject with full reasoning visible." },
+  { icon: BookOpen, label: "Knowledge compounds", desc: "Only confirmed insights enter memory. Every AI in your Workspace reads from this, so recommendations get sharper over time." },
 ]
 
 export function TruthLayerSection() {
@@ -30,7 +30,7 @@ export function TruthLayerSection() {
             <span className="text-primary">You decide what becomes knowledge.</span>
           </h2>
           <p className="mt-6 text-[15px] font-medium leading-[1.5] text-white/40">
-            TruthLayer governs what enters Knowledge Memory. Not your data. Not your conversations. Just what AI learns — and only after you approve.
+            Session summaries pass through TruthLayer before they become knowledge. Not your data. Not your conversations. Just what AI learns — and only after you approve.
           </p>
         </motion.div>
 
@@ -63,7 +63,7 @@ export function TruthLayerSection() {
           transition={{ type: "spring", bounce: 0.2, duration: 0.6, delay: 0.3 }}
           className="mx-auto mt-10 max-w-xl text-center text-[13px] font-medium leading-[1.6] text-white/25"
         >
-          Rejected and edited actions teach the system. Proposals get sharper over time.
+          AI session summaries are the only path into Knowledge. They never enter the Spine directly. This keeps your source of truth clean and your AI&apos;s memory governed.
         </motion.p>
       </div>
     </section>

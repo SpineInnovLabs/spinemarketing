@@ -450,8 +450,8 @@ export function HeroSection() {
           transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
         >
           <p className="text-gray-300 text-sm md:text-base tracking-wide max-w-lg font-semibold">
-            Your tools don&apos;t talk to each other. Your AI doesn&apos;t know
-            context.
+            Your apps don&apos;t share the full picture. Your AI doesn&apos;t
+            see it either.
           </p>
           <p className="text-xs md:text-sm max-w-sm text-white/90 font-normal">
             You are the bridge. The Human API.
@@ -517,7 +517,7 @@ export function HeroSection() {
               style={{ background: "var(--gradient-primary-icon)" }}
             />
             <span className="text-[14px] font-semibold tracking-[-0.03em] text-[#0a0b10]">
-              The Knowledge Workspace
+              The Knowledge Workspace over the Spine
             </span>
           </motion.div>
 
@@ -544,7 +544,7 @@ export function HeroSection() {
                 {word}
               </motion.span>
             ))}{" "}
-            {["between", "your", "tools."].map((word, i) => (
+            {["between", "your", "apps."].map((word, i) => (
               <motion.span
                 key={`g-${i}`}
                 initial={{ opacity: 0, y: 18, filter: "blur(4px)" }}
@@ -582,9 +582,12 @@ export function HeroSection() {
             }}
             className="mx-auto mt-8 max-w-2xl text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-white/55"
           >
-            IntegrateWise turns tool data, live context, and AI session memory
-            into one knowledge workspace — so AI works with full context and
-            every action stays under your control.
+            IntegrateWise gives you a Knowledge Workspace over the Spine, where
+            Salesforce, HubSpot, Stripe, Jira, Notion, Slack, Zendesk, Gmail,
+            Shopify, QuickBooks, Intercom, GitHub, Airtable, Asana, and Google
+            Drive all come together into one clear view. AI watches what&apos;s
+            happening, surfaces what matters, and prepares actions — and you
+            approve what actually happens.
           </motion.p>
 
           {/* CTAs */}

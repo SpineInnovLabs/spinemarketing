@@ -19,12 +19,13 @@ const plans = [
     name: "Starter",
     prices: { india: "₹999", international: "$49", enterprise: "Custom" },
     period: "/mo",
-    description: "Connect your tools. See everything in one place.",
+    description: "Connect your apps. See everything in one workspace over the Spine.",
     features: [
       "Up to 5 connectors",
-      "One workspace for all your tools",
-      "Complete view of every account",
+      "L1: Full Daily Workbench — accounts, tasks, workflows, calendar",
+      "Complete view of every account via Entity 360",
       "Basic signals and alerts",
+      "Truth + Context data flows",
       "Email support",
     ],
     cta: "Book a demo",
@@ -35,11 +36,13 @@ const plans = [
     name: "Growth",
     prices: { india: "₹2,999", international: "$99", enterprise: "Custom" },
     period: "/mo",
-    description: "AI that watches your business and tells you what matters.",
+    description: "AI that watches your business through the Spine and tells you what matters, with evidence.",
     features: [
       "Up to 15 connectors",
       "Everything in Starter",
-      "AI insights with evidence",
+      "L2: Full Intelligence Layer — Twin Chat, action buttons, draft previews",
+      "AI insights with evidence from the Spine",
+      "Session Summaries + TruthLayer governance",
       "Knowledge that compounds over time",
       "Custom playbooks and workflows",
       "Priority support",
@@ -53,7 +56,7 @@ const plans = [
     prices: { india: "₹7,999", international: "$199", enterprise: "Custom" },
     period: "/mo",
     description:
-      "Full intelligence. Full governance. Nothing happens without your say.",
+      "Full intelligence and full governance. Every AI action passes through TruthLayer and your approval.",
     features: [
       "Unlimited connectors",
       "Everything in Growth",
@@ -86,7 +89,7 @@ export function PricingSection() {
             <span className="text-primary">Scale as you grow.</span>
           </h2>
           <p className="mt-4 text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">
-            Start small, add more tools and intelligence as your team needs it.
+            Start small, add more apps and intelligence as your team needs it.
             No hidden costs.
           </p>
 

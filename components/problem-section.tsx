@@ -4,10 +4,10 @@ import { AlertTriangle, Eye, GitBranch, ShieldOff } from "lucide-react"
 import { motion } from "framer-motion"
 
 const problems = [
-  { icon: GitBranch, text: "Tools are disconnected" },
-  { icon: Eye, text: "Knowledge is scattered across docs, tickets, and conversations" },
-  { icon: AlertTriangle, text: "AI works blind, without full context" },
-  { icon: ShieldOff, text: "AI tools act on their own — no way to review, approve, or track what happened" },
+  { icon: GitBranch, text: "Apps are disconnected across teams and functions." },
+  { icon: Eye, text: "Knowledge is scattered across docs, tickets, chats, and email." },
+  { icon: AlertTriangle, text: "AI works blind, without the full business context." },
+  { icon: ShieldOff, text: "Actions happen without clear approval, evidence, or audit trail." },
 ]
 
 export function ProblemSection() {
@@ -26,7 +26,7 @@ export function ProblemSection() {
             <span className="text-primary">The plumbing is.</span>
           </h2>
           <p className="mt-6 text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">
-            Copy-paste. Tab-switch. Repeat. Your tools don&apos;t talk. Your AI doesn&apos;t know. You&apos;re the bridge.
+            Copy-paste. Tab-switch. Repeat. Your apps don&apos;t agree. Your AI doesn&apos;t know. You&apos;re the bridge.
           </p>
         </motion.div>
 

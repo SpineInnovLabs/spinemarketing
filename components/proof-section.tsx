@@ -90,7 +90,7 @@ export function ProofSection() {
                   flows
                 </div>
                 <div className="mt-1 text-[14px] font-medium tracking-[-0.03em] text-muted-foreground">
-                  Truth · Context · Memory
+                  Truth · Context · Session Summaries
                 </div>
               </div>
             </div>

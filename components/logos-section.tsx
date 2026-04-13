@@ -37,7 +37,10 @@ export function LogosSection() {
     <section className="py-16 md:pt-16 md:pb-8">
       <div className="mx-auto max-w-[1200px] px-6 md:px-16">
         <p className="text-center text-[18px] font-semibold tracking-[-0.03em] leading-[1.3] text-foreground">
-          Connect the tools you already use
+          Connect the apps you already use
+        </p>
+        <p className="mt-3 text-center text-[15px] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">
+          All your key apps plug into the Spine and show up in one Knowledge Workspace — no migration, no engineering team needed.
         </p>
       </div>
       {/* Magic UI Marquee with fade edges */}

@@ -344,30 +344,30 @@ function GovernVisual() {
 const steps: StickyScrollStep[] = [
   {
     label: "Step 01 — Connect",
-    title: "Plug in your tools",
+    title: "Plug in your apps",
     description:
-      "CRM, billing, support, project management, docs, email, chat — all flowing into one place. No data migration. No engineering team.",
+      "CRM, billing, support, project management, docs, email, and chat all flow into the Spine and show up in one workspace. No data migration. No engineering team needed.",
     visual: <ConnectVisual />,
   },
   {
-    label: "Step 02 — Clean",
-    title: "Your data gets organized automatically",
+    label: "Step 02 — The Spine",
+    title: "The Spine keeps truth aligned",
     description:
-      "Messy, duplicated, scattered data gets cleaned behind the scenes. Duplicates merge. Conflicts resolve. One reliable record for everything.",
+      "The Spine turns scattered records into one consistent operational picture for each account, project, invoice, or ticket. Duplicates merge. Conflicts resolve. One truth per entity.",
     visual: <NormalizeVisual />,
   },
   {
-    label: "Step 03 — Entity 360",
-    title: "Everything about a customer, in one place",
+    label: "Step 03 — AI in context",
+    title: "AI thinks in context",
     description:
-      "Every interaction, payment, ticket, and conversation converges into a live Entity 360 view — where Truth, Context, and Knowledge Memory meet. No more digging through 5 tools to prep for a call.",
+      "AI scans the connected picture through the Spine, finds risks and opportunities, and prepares recommendations with evidence. Truth + Context + Session Summaries = Entity 360.",
     visual: <Entity360Visual />,
   },
   {
-    label: "Step 04 — AI that asks first",
-    title: "AI suggests. You decide.",
+    label: "Step 04 — You approve",
+    title: "You approve what happens",
     description:
-      "AI spots patterns and drafts next steps — but nothing happens until you approve. You see the reasoning and always have the final say.",
+      "Suggested actions appear in L1 for review. Nothing updates in any app until a human approves. Approved actions write back to connected apps and are added to the Spine's memory.",
     visual: <GovernVisual />,
   },
 ];
@@ -382,7 +382,7 @@ const sectionHeading = (
       className="mx-auto max-w-2xl text-center"
     >
       <h2 className="section-heading">
-        From scattered tools to{" "}
+        From scattered apps to{" "}
         <span className="text-primary">one clear picture</span>
       </h2>
       <p className="mt-4 text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">

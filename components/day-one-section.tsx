@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const outcomes = [
   "Your workspace arrives ready, not empty.",
-  "You stop searching across tools for basic context.",
+  "You stop searching across apps for basic context.",
   "AI has your full picture before you ask.",
   "AI conversations become useful — linked to real data, not lost in chat.",
   "Risks surface before they become crises, with proof attached.",

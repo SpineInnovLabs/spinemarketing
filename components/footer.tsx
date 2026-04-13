@@ -56,9 +56,10 @@ export function Footer() {
               </span>
             </Link>
             <p className="mt-4 max-w-xs text-[15px] font-medium leading-[1.5] tracking-[-0.02em] text-white/50">
-              The knowledge workspace that turns system truth, live context, and
-              AI session memory into operational knowledge — so AI reasons with
-              continuity and humans stay in control.
+              The Knowledge Workspace over the Spine that connects your apps,
+              cleans your data, and gives AI the full picture — so nothing
+              important falls through the cracks, and nothing happens without
+              your approval.
             </p>
             <p className="mt-3">
               <a

@@ -8,23 +8,23 @@ const pillars = [
   {
     num: "01",
     icon: Database,
-    title: "Your workspace",
+    title: "L1: Your Daily Workbench",
     description:
-      "Manage accounts, track tasks, run workflows, review renewals — all in one place. Replaces the 12 tabs.",
+      "Accounts, tasks, workflows, renewals, approvals, calendar, and engagement logs — all in one place. This is where you work every day. Every action that matters happens here. It replaces the 12–15 tabs you keep open just to see the full story.",
   },
   {
     num: "02",
     icon: Brain,
-    title: "The Twin accelerates you",
+    title: "L2: The Intelligence Layer",
     description:
-      "AI reads your data, conversations, and accumulated knowledge. It surfaces what matters, proposes actions, and learns from your decisions.",
+      "AI reads your data through the Spine, spots patterns, and surfaces signals with evidence. Twin Chat, action buttons, and draft previews live here. L2 proposes; L1 executes. Every recommendation is backed by evidence from the Spine, and every action waits for explicit approval before any app is updated.",
   },
   {
     num: "03",
     icon: ShieldCheck,
     title: "Nothing happens without you",
     description:
-      "Every insight has evidence. Every action waits for your approval. Approved actions create real tasks, update real records, and flow back into the system.",
+      "Every insight has evidence from your apps. Every action waits for your approval. Approved actions execute in L1, write back to connected apps, and are added to the Spine's memory.",
   },
 ];
 
@@ -41,11 +41,12 @@ export function SolutionSection() {
         >
           <h2 className="section-heading">
             Your workspace.{" "}
-            <span className="text-primary">AI that makes you faster.</span>
+            <span className="text-primary">AI that thinks in context.</span>
           </h2>
           <p className="mt-6 text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">
-            Manage accounts, track tasks, run workflows. The Twin watches
-            everything and proposes what&apos;s next.
+            Manage accounts, track tasks, and run workflows in one place. The
+            Twin reads your data, conversations, and knowledge through the Spine
+            and proposes what&apos;s next — you decide what actually happens.
           </p>
         </motion.div>
 
@@ -65,7 +66,12 @@ export function SolutionSection() {
           <DashboardMockup />
         </motion.div>
 
-        <div className="mx-auto mt-16 grid max-w-5xl gap-6 sm:grid-cols-3">
+        <p className="mt-16 text-center text-[20px] font-semibold tracking-[-0.04em] text-foreground">
+          Two layers.{" "}
+          <span className="text-primary">One workspace.</span>
+        </p>
+
+        <div className="mx-auto mt-8 grid max-w-5xl gap-6 sm:grid-cols-3">
           {pillars.map(({ num, icon: Icon, title, description }, i) => (
             <motion.div
               key={i}
