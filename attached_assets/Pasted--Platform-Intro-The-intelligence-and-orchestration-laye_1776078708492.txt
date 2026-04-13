@@ -1,0 +1,134 @@
+## Platform
+
+**Intro**
+The intelligence and orchestration layer underneath IntegrateWise.
+
+**Purpose**
+Platform explains how IntegrateWise processes truth, context, and session summaries behind the scenes so the product can work with continuity, confidence, and governance.
+
+**What to cover**
+
+* Connectors and ingestion
+* Truth from systems
+* Context processing from conversations and activity
+* Session summaries and reusable memory
+* TruthLayer confidence scoring
+* Evidence and freshness
+* Governance and approvals
+* Security and controls
+
+**Core message**
+IntegrateWise does not just connect tools. The platform turns fragmented data, human context, and approved AI outputs into a governed intelligence layer.
+
+**Suggested page headline**
+Built on truth, context, and governed memory.
+
+**Suggested subheadline**
+The IntegrateWise platform ingests records from your systems, context from your conversations, and approved session summaries — then turns them into a reliable layer for reasoning, scoring, and approvals.
+
+---
+
+## Product
+
+**Intro**
+The user experience layer where daily work happens.
+
+**Purpose**
+Product explains the frontend experience: the daily workspaces, the operational views, and the intelligence surfaces users interact with every day.
+
+**What to cover**
+
+* L1 Workspace
+* L2 Intelligence Layer
+* Daily account and operations views
+* Timelines and unified records
+* Approvals interface
+* Recommended actions
+* Workspace-specific experiences
+* Human-in-control interaction model
+
+**Core message**
+IntegrateWise gives users a clean daily workspace for execution, while the intelligence layer works underneath to support decisions and actions.
+
+**Suggested page headline**
+A workspace for daily work. Intelligence underneath.
+
+**Suggested subheadline**
+Users work in L1. IntegrateWise supports them through L2 with reasoning, confidence, and approval-based recommendations powered by truth, context, and session summaries.
+
+---
+
+## Solutions
+
+**Intro**
+Role-based outcomes delivered through Product and Platform together.
+
+**Purpose**
+Solutions explains how IntegrateWise solves real operating problems for specific types of users and teams.
+
+**What to cover**
+
+* Account Success
+* Business Ops
+* Personal Ops
+* Role-specific workflows
+* Real outcomes and day-to-day improvements
+
+**Core message**
+The same platform and product model can be adapted to different operating needs, depending on who is using the workspace and what they need to accomplish.
+
+**Suggested page headline**
+Workspaces built around real operating use cases.
+
+**Suggested subheadline**
+Whether you are managing accounts, running operations, or organizing personal execution, IntegrateWise combines truth, context, and approved summaries into a workspace that helps you move faster without losing control.
+
+---
+
+## Pricing
+
+**Intro**
+Plans, onboarding, and expansion path.
+
+**Purpose**
+Pricing explains what customers get at each tier and how the platform scales with usage, connectors, users, governance, and support needs.
+
+**What to cover**
+
+* Plans and limits
+* Connectors
+* Workspaces
+* Governance features
+* Services and onboarding
+* Enterprise controls
+
+**Suggested page headline**
+Pricing that scales with your workspace and stack.
+
+**Suggested subheadline**
+Start small, expand your connectors and workspaces over time, and add governance, memory, and control as your team grows.
+
+---
+
+## Company
+
+**Intro**
+Who you are, what you believe, and how the product was shaped.
+
+**Purpose**
+Company explains the story, the point of view, the mission, and the ways people can learn more or get in touch.
+
+**What to cover**
+
+* About
+* Story
+* Contact
+* Blog
+* Documentation
+* Changelog
+
+**Suggested page headline**
+Built for teams tired of working between tools.
+
+**Suggested subheadline**
+IntegrateWise was created to solve the gap between fragmented systems, missing context, and stateless AI — with a model that keeps humans in control.

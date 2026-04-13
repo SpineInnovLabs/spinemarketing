@@ -69,8 +69,8 @@ const navigation: NavItem[] = [
     href: "/platform",
     items: [
       { name: "How It Works", href: "/platform", icon: Layers, desc: "Five steps, one Canonical Loop, you in control" },
-      { name: "Daily Workbench", href: "/platform#workbench", icon: Sparkles, desc: "L1 — your live workspace, always in context" },
-      { name: "Intelligence Layer", href: "/platform#intelligence", icon: Brain, desc: "L2 — AI thinks in context, waits for your approval" },
+      { name: "Workbench", href: "/platform#workbench", icon: Sparkles, desc: "Your live workspace, always in context" },
+      { name: "Intelligence Layer", href: "/platform#intelligence", icon: Brain, desc: "AI thinks in context, waits for your approval" },
       { name: "The Twin", href: "/ai", icon: Brain, desc: "Your AI counterpart across every workflow" },
     ],
   },
