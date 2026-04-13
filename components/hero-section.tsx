@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import Link from "next/link"
-import { ArrowRight, MousePointerClick } from "lucide-react"
-import { motion, useReducedMotion } from "framer-motion"
-import { useEffect, useState, useCallback, useMemo } from "react"
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { ArrowRight, MousePointerClick } from "lucide-react";
+import { motion, useReducedMotion } from "framer-motion";
+import { useEffect, useState, useCallback, useMemo } from "react";
 
 /* ─── Tool data — uses local SVGs from /public/logos/ ─── */
 const TOOLS = [
@@ -31,7 +31,7 @@ const TOOLS = [
   { name: "Grok", logo: "/logos/grok.svg" },
   { name: "Twilio", logo: "/logos/twilio.svg" },
   { name: "Postgres", logo: "/logos/postgres.svg" },
-]
+];
 
 /* Alert badges — renewal & payment alerts included per user request */
 const ALERTS = [
@@ -49,56 +49,44 @@ const ALERTS = [
   "invoice pending",
   "renewal at risk",
   "overlap!",
-]
+];
 
 /* AI hallucination text — barely visible, scrolling in background */
 const HALLUCINATION_LINES = [
-  "The customer's order #4829 was delivered on March 32nd, 2025",
   "According to your CRM, John Smith has 3 active accounts... or was it 2?",
-  "Revenue for Q3 is approximately $4.2M (confidence: 43%)",
-  "I found 7 duplicate contacts. Merging automatically...",
-  "The invoice was sent to john@company.com — wait, that email bounced last week",
-  "Based on Slack messages, the deal is 'probably' closing this quarter",
-  "Syncing HubSpot → Salesforce... 12 field conflicts detected",
-  "Customer sentiment: Positive (based on 1 of 47 interactions analyzed)",
   "The API key expired 3 days ago. Using cached data from last Tuesday.",
+  "Revenue for Q3 is approximately $4.2M (confidence: 43%)",
+  "Customer sentiment: Positive (based on 1 of 47 interactions analyzed)",
   "Ticket #8912 was auto-closed. The customer replied 4 hours later.",
-  "Forecasting next quarter: $2.8M ± $1.4M (I'm not really sure)",
   "I merged the duplicate records. Turns out they were different people.",
-  "Your Stripe webhook failed silently for the last 72 hours",
-  "Generating report... using data from 3 of your 12 connected sources",
+  "The invoice was sent to john@company.com — wait, that email bounced last week",
   "The approval was auto-granted because the approver was on PTO",
-  "I summarized the 200-message thread. Key context may have been omitted.",
-  "The lead score is 85. Or 42. Depends on which model you ask.",
-  "Your AI assistant replied to the customer. The customer is now confused.",
-  "Pipeline stage updated: 'Negotiation' → 'Closed Won' (no human verified this)",
-  "Data enrichment complete. 30% of fields filled with 'best guesses'.",
-]
+];
 
 /* ─── Position generators ─── */
 function chaosCenterPositions(count: number) {
-  const positions: { x: number; y: number; rot: number; scale: number }[] = []
-  const cols = Math.ceil(Math.sqrt(count * 1.6))
-  const rows = Math.ceil(count / cols)
-  let idx = 0
+  const positions: { x: number; y: number; rot: number; scale: number }[] = [];
+  const cols = Math.ceil(Math.sqrt(count * 1.6));
+  const rows = Math.ceil(count / cols);
+  let idx = 0;
   for (let r = 0; r < rows && idx < count; r++) {
     for (let c = 0; c < cols && idx < count; c++) {
-      const cellW = 92 / cols
-      const cellH = 80 / rows
+      const cellW = 92 / cols;
+      const cellH = 80 / rows;
       positions.push({
         x: 4 + c * cellW + (Math.random() - 0.5) * cellW * 0.7,
         y: 10 + r * cellH + (Math.random() - 0.5) * cellH * 0.6,
         rot: -20 + Math.random() * 40,
         scale: 0.8 + Math.random() * 0.4,
-      })
-      idx++
+      });
+      idx++;
     }
   }
-  return positions
+  return positions;
 }
 
 function scatterEdgePositions(count: number) {
-  const positions: { x: number; y: number; rot: number; scale: number }[] = []
+  const positions: { x: number; y: number; rot: number; scale: number }[] = [];
   const edges = [
     ...Array.from({ length: 7 }, (_, i) => ({
       x: 1 + i * 15,
@@ -116,12 +104,12 @@ function scatterEdgePositions(count: number) {
       x: 93 + Math.random() * 5,
       y: 12 + i * 16,
     })),
-  ]
+  ];
   for (let i = 0; i < count; i++) {
-    const e = edges[i % edges.length]
-    positions.push({ x: e.x, y: e.y, rot: 0, scale: 0.75 })
+    const e = edges[i % edges.length];
+    positions.push({ x: e.x, y: e.y, rot: 0, scale: 0.75 });
   }
-  return positions
+  return positions;
 }
 
 /* ─── Hallucination text row ─── */
@@ -131,13 +119,12 @@ function HallucinationRow({
   top,
   dimmed,
 }: {
-  lines: string[]
-  speed: number
-  top: string
-  dimmed: boolean
+  lines: string[];
+  speed: number;
+  top: string;
+  dimmed: boolean;
 }) {
-  const text =
-    lines.join("   •   ") + "   •   " + lines.join("   •   ")
+  const text = lines.join("   •   ") + "   •   " + lines.join("   •   ");
   return (
     <div
       className="absolute left-0 w-[200%] whitespace-nowrap pointer-events-none overflow-hidden transition-opacity duration-1000"
@@ -152,99 +139,101 @@ function HallucinationRow({
         {text}
       </motion.div>
     </div>
-  )
+  );
 }
 
 /* ═══════════════════════════════════════════════════════════ */
 export function HeroSection() {
-  const prefersReducedMotion = useReducedMotion()
-  const [phase, setPhase] = useState<"chaos" | "reveal">("chaos")
-  const [logosReady, setLogosReady] = useState(false)
-  const [visibleCount, setVisibleCount] = useState(0)
-  const [alertMap, setAlertMap] = useState<Record<number, string>>({})
-  const [isMobile, setIsMobile] = useState(false)
+  const prefersReducedMotion = useReducedMotion();
+  const [phase, setPhase] = useState<"chaos" | "reveal">("chaos");
+  const [logosReady, setLogosReady] = useState(false);
+  const [visibleCount, setVisibleCount] = useState(0);
+  const [alertMap, setAlertMap] = useState<Record<number, string>>({});
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    setIsMobile(window.innerWidth < 768)
-  }, [])
+    setIsMobile(window.innerWidth < 768);
+  }, []);
 
-  const maxLogos = isMobile ? 10 : TOOLS.length
-  const chaosPos = useMemo(() => chaosCenterPositions(maxLogos), [maxLogos])
-  const scatterPos = useMemo(() => scatterEdgePositions(maxLogos), [maxLogos])
+  const maxLogos = isMobile ? 10 : TOOLS.length;
+  const chaosPos = useMemo(() => chaosCenterPositions(maxLogos), [maxLogos]);
+  const scatterPos = useMemo(() => scatterEdgePositions(maxLogos), [maxLogos]);
 
   useEffect(() => {
-    if (!prefersReducedMotion) return
-    setPhase("reveal")
-    setLogosReady(true)
-    setVisibleCount(maxLogos)
-  }, [prefersReducedMotion, maxLogos])
+    if (!prefersReducedMotion) return;
+    setPhase("reveal");
+    setLogosReady(true);
+    setVisibleCount(maxLogos);
+  }, [prefersReducedMotion, maxLogos]);
 
   /* Stagger logo entrance — 60ms per logo */
   useEffect(() => {
-    if (prefersReducedMotion) return
-    let i = 0
+    if (prefersReducedMotion) return;
+    let i = 0;
     const id = setInterval(() => {
-      i++
-      setVisibleCount(i)
+      i++;
+      setVisibleCount(i);
       if (i >= maxLogos) {
-        clearInterval(id)
-        setTimeout(() => setLogosReady(true), 300)
+        clearInterval(id);
+        setTimeout(() => setLogosReady(true), 300);
       }
-    }, 60)
-    return () => clearInterval(id)
-  }, [prefersReducedMotion, maxLogos])
+    }, 60);
+    return () => clearInterval(id);
+  }, [prefersReducedMotion, maxLogos]);
 
   /* Auto-transition: chaos → reveal after 2.5s once logos are ready */
   useEffect(() => {
-    if (prefersReducedMotion) return
+    if (prefersReducedMotion) return;
     if (logosReady && phase === "chaos") {
-      const timer = setTimeout(() => setPhase("reveal"), 2500)
-      return () => clearTimeout(timer)
+      const timer = setTimeout(() => setPhase("reveal"), 2500);
+      return () => clearTimeout(timer);
     }
-  }, [logosReady, phase, prefersReducedMotion])
+  }, [logosReady, phase, prefersReducedMotion]);
 
   /* Notify header (and any listener) when hero reveals */
   useEffect(() => {
     if (phase === "reveal") {
-      window.dispatchEvent(new CustomEvent("heroPhaseChange", { detail: "reveal" }))
+      window.dispatchEvent(
+        new CustomEvent("heroPhaseChange", { detail: "reveal" }),
+      );
     }
-  }, [phase])
+  }, [phase]);
 
   /* Flash random alert badges on logos during chaos */
   useEffect(() => {
-    if (prefersReducedMotion) return
-    if (phase !== "chaos") return
+    if (prefersReducedMotion) return;
+    if (phase !== "chaos") return;
     const id = setInterval(() => {
-      const toolIdx = Math.floor(Math.random() * maxLogos)
-      const alertText = ALERTS[Math.floor(Math.random() * ALERTS.length)]
-      setAlertMap((prev) => ({ ...prev, [toolIdx]: alertText }))
+      const toolIdx = Math.floor(Math.random() * maxLogos);
+      const alertText = ALERTS[Math.floor(Math.random() * ALERTS.length)];
+      setAlertMap((prev) => ({ ...prev, [toolIdx]: alertText }));
       setTimeout(() => {
         setAlertMap((prev) => {
-          const copy = { ...prev }
-          delete copy[toolIdx]
-          return copy
-        })
-      }, 1800)
-    }, 400)
-    return () => clearInterval(id)
-  }, [phase, prefersReducedMotion])
+          const copy = { ...prev };
+          delete copy[toolIdx];
+          return copy;
+        });
+      }, 1800);
+    }, 400);
+    return () => clearInterval(id);
+  }, [phase, prefersReducedMotion]);
 
   /* Click to skip chaos phase */
   const handleSkip = useCallback(() => {
-    if (phase === "chaos") setPhase("reveal")
-  }, [phase])
+    if (phase === "chaos") setPhase("reveal");
+  }, [phase]);
 
-  const currentPositions = phase === "chaos" ? chaosPos : scatterPos
-  const isChaos = phase === "chaos"
+  const currentPositions = phase === "chaos" ? chaosPos : scatterPos;
+  const isChaos = phase === "chaos";
 
   /* Split hallucination lines into rows */
   const hallucinationRows = useMemo(() => {
-    const rows: string[][] = [[], [], [], [], [], []]
+    const rows: string[][] = [[], [], [], [], [], []];
     HALLUCINATION_LINES.forEach((line, i) => {
-      rows[i % rows.length].push(line)
-    })
-    return rows
-  }, [])
+      rows[i % rows.length].push(line);
+    });
+    return rows;
+  }, []);
 
   return (
     <section
@@ -301,8 +290,8 @@ export function HeroSection() {
       {/* ── Floating Tool Logos ── */}
       <div className="absolute inset-0 z-10 pointer-events-none">
         {TOOLS.slice(0, maxLogos).map((tool, idx) => {
-          if (idx >= visibleCount) return null
-          const pos = currentPositions[idx]
+          if (idx >= visibleCount) return null;
+          const pos = currentPositions[idx];
           return (
             <motion.div
               key={tool.name}
@@ -324,13 +313,7 @@ export function HeroSection() {
                   ? [0, -5 + Math.random() * 10, 0, 3 - Math.random() * 6, 0]
                   : [0, -2 + Math.random() * 4, 0],
                 y: isChaos
-                  ? [
-                      0,
-                      -6 + Math.random() * 12,
-                      0,
-                      4 - Math.random() * 8,
-                      0,
-                    ]
+                  ? [0, -6 + Math.random() * 12, 0, 4 - Math.random() * 8, 0]
                   : [0, -3 + Math.random() * 6, 0],
               }}
               transition={{
@@ -428,7 +411,7 @@ export function HeroSection() {
                 {tool.name}
               </motion.span>
             </motion.div>
-          )
+          );
         })}
       </div>
 
@@ -571,9 +554,7 @@ export function HeroSection() {
           <motion.p
             initial={{ opacity: 0, y: 12 }}
             animate={
-              phase === "reveal"
-                ? { opacity: 1, y: 0 }
-                : { opacity: 0, y: 12 }
+              phase === "reveal" ? { opacity: 1, y: 0 } : { opacity: 0, y: 12 }
             }
             transition={{
               type: "spring",
@@ -584,18 +565,16 @@ export function HeroSection() {
             }}
             className="mx-auto mt-8 max-w-2xl text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-white/55"
           >
-            IntegrateWise connects your tools into one workspace, gives you a
-            complete picture of every customer and project, and lets AI handle
-            the busywork — with you approving every action.
+            IntegrateWise turns tool data, live context, and AI session memory
+            into one knowledge workspace — so AI works with full context and
+            every action stays under your control.
           </motion.p>
 
           {/* CTAs */}
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={
-              phase === "reveal"
-                ? { opacity: 1, y: 0 }
-                : { opacity: 0, y: 12 }
+              phase === "reveal" ? { opacity: 1, y: 0 } : { opacity: 0, y: 12 }
             }
             transition={{
               type: "spring",
@@ -633,5 +612,5 @@ export function HeroSection() {
         </div>
       </motion.div>
     </section>
-  )
+  );
 }

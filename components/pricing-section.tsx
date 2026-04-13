@@ -1,18 +1,18 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Check } from "lucide-react"
-import Link from "next/link"
-import { motion } from "framer-motion"
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Check } from "lucide-react";
+import Link from "next/link";
+import { motion } from "framer-motion";
 
-type Region = "india" | "international" | "enterprise"
+type Region = "india" | "international" | "enterprise";
 
 const regions: { key: Region; label: string }[] = [
   { key: "india", label: "India" },
   { key: "international", label: "International" },
   { key: "enterprise", label: "Enterprise" },
-]
+];
 
 const plans = [
   {
@@ -52,7 +52,8 @@ const plans = [
     name: "Command",
     prices: { india: "₹7,999", international: "$199", enterprise: "Custom" },
     period: "/mo",
-    description: "Full intelligence. Full governance. Nothing happens without your say.",
+    description:
+      "Full intelligence. Full governance. Nothing happens without your say.",
     features: [
       "Unlimited connectors",
       "Everything in Growth",
@@ -65,10 +66,10 @@ const plans = [
     href: "/contact?intent=pricing",
     highlighted: false,
   },
-]
+];
 
 export function PricingSection() {
-  const [region, setRegion] = useState<Region>("international")
+  const [region, setRegion] = useState<Region>("international");
 
   return (
     <section id="pricing" className="arvio-section bg-muted">
@@ -85,11 +86,15 @@ export function PricingSection() {
             <span className="text-primary">Scale as you grow.</span>
           </h2>
           <p className="mt-4 text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">
-            Start small, add more tools and intelligence as your team needs it. No hidden costs.
+            Start small, add more tools and intelligence as your team needs it.
+            No hidden costs.
           </p>
 
           {/* Geo Toggle */}
-          <div className="mt-8 inline-flex items-center rounded-full border border-border/50 bg-white p-1" style={{ boxShadow: "var(--shadow-card)" }}>
+          <div
+            className="mt-8 inline-flex items-center rounded-full border border-border/50 bg-white p-1"
+            style={{ boxShadow: "var(--shadow-card)" }}
+          >
             {regions.map((r) => (
               <button
                 key={r.key}
@@ -121,7 +126,12 @@ export function PricingSection() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ type: "spring", bounce: 0.2, duration: 0.6, delay: i * 0.1 }}
+              transition={{
+                type: "spring",
+                bounce: 0.2,
+                duration: 0.6,
+                delay: i * 0.1,
+              }}
               className={`relative flex flex-col rounded-[20px] p-8 ${
                 plan.highlighted ? "text-white" : "bg-white"
               }`}
@@ -150,8 +160,12 @@ export function PricingSection() {
                 </div>
               )}
               <div>
-                <h3 className="text-[18px] font-semibold tracking-[-0.03em]">{plan.name}</h3>
-                <p className={`mt-1 text-[15px] font-medium ${plan.highlighted ? "text-white/70" : "text-muted-foreground"}`}>
+                <h3 className="text-[18px] font-semibold tracking-[-0.03em]">
+                  {plan.name}
+                </h3>
+                <p
+                  className={`mt-1 text-[15px] font-medium ${plan.highlighted ? "text-white/70" : "text-muted-foreground"}`}
+                >
                   {plan.description}
                 </p>
                 <div className="mt-4">
@@ -165,7 +179,11 @@ export function PricingSection() {
                     {plan.prices[region]}
                   </motion.span>
                   {region !== "enterprise" && (
-                    <span className={`text-[15px] ${plan.highlighted ? "text-white/60" : "text-muted-foreground"}`}>{plan.period}</span>
+                    <span
+                      className={`text-[15px] ${plan.highlighted ? "text-white/60" : "text-muted-foreground"}`}
+                    >
+                      {plan.period}
+                    </span>
                   )}
                 </div>
               </div>
@@ -175,12 +193,18 @@ export function PricingSection() {
                     <div
                       className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full"
                       style={{
-                        background: plan.highlighted ? "rgba(255,255,255,0.2)" : "var(--gradient-primary-icon)",
+                        background: plan.highlighted
+                          ? "rgba(255,255,255,0.2)"
+                          : "var(--gradient-primary-icon)",
                       }}
                     >
                       <Check className="h-3 w-3 text-white" />
                     </div>
-                    <span className={`text-[15px] font-medium leading-[1.5] ${plan.highlighted ? "text-white/90" : ""}`}>{feature}</span>
+                    <span
+                      className={`text-[15px] font-medium leading-[1.5] ${plan.highlighted ? "text-white/90" : ""}`}
+                    >
+                      {feature}
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -204,23 +228,35 @@ export function PricingSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ type: "spring", bounce: 0.2, duration: 0.6, delay: 0.3 }}
+          transition={{
+            type: "spring",
+            bounce: 0.2,
+            duration: 0.6,
+            delay: 0.3,
+          }}
           className="mx-auto mt-12 max-w-3xl"
         >
           <div className="arvio-card p-6">
-            <p className="text-[17px] font-semibold tracking-[-0.03em] text-foreground">Implementation &amp; services</p>
+            <p className="text-[17px] font-semibold tracking-[-0.03em] text-foreground">
+              Implementation &amp; services
+            </p>
             <p className="mt-2 text-[15px] font-medium leading-[1.5] text-muted-foreground">
-              Optional onboarding packages to get you live faster. Available for all tiers.
+              Optional onboarding packages to get you live faster. Available for
+              all tiers.
             </p>
             <div className="mt-4 grid gap-3 sm:grid-cols-3">
               {[
-                { name: "Platform setup", price: "From $3K" },
+                { name: "Workspace setup", price: "From $3K" },
                 { name: "Connector workshop", price: "From $2K" },
                 { name: "Custom add-ons", price: "Custom" },
               ].map((item, i) => (
                 <div key={i} className="rounded-xl bg-muted p-4">
-                  <div className="text-[15px] font-semibold tracking-[-0.03em]">{item.name}</div>
-                  <div className="mt-1 text-[15px] font-semibold text-primary">{item.price}</div>
+                  <div className="text-[15px] font-semibold tracking-[-0.03em]">
+                    {item.name}
+                  </div>
+                  <div className="mt-1 text-[15px] font-semibold text-primary">
+                    {item.price}
+                  </div>
                 </div>
               ))}
             </div>
@@ -228,5 +264,5 @@ export function PricingSection() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

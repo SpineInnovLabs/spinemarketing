@@ -1,30 +1,78 @@
-"use client"
+"use client";
 
-import { useState, useRef, useCallback, useEffect } from "react"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { SpineLogo } from "@/components/spine-logo"
-import { Menu, X, ChevronDown, Users, BarChart3, Sparkles, Layers, Plug, Brain, ShieldCheck, Building2, Mail } from "lucide-react"
-import { motion, useScroll, useSpring } from "framer-motion"
+import { useState, useRef, useCallback, useEffect } from "react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { SpineLogo } from "@/components/spine-logo";
+import {
+  Menu,
+  X,
+  ChevronDown,
+  Users,
+  BarChart3,
+  Sparkles,
+  Layers,
+  Plug,
+  Brain,
+  ShieldCheck,
+  Building2,
+  Mail,
+} from "lucide-react";
+import { motion, useScroll, useSpring } from "framer-motion";
 
 const navigation = [
   {
     label: "Solutions",
     href: "/account-success",
     items: [
-      { name: "Account Success", href: "/account-success", icon: Users, desc: "Complete view of every account and customer" },
-      { name: "Business Ops", href: "/business-ops", icon: BarChart3, desc: "Automate operations and streamline workflows" },
-      { name: "Personal Ops", href: "/personal-ops", icon: Sparkles, desc: "Your personal AI workspace for daily work" },
+      {
+        name: "Account Success",
+        href: "/account-success",
+        icon: Users,
+        desc: "Complete view of every account and customer",
+      },
+      {
+        name: "Business Ops",
+        href: "/business-ops",
+        icon: BarChart3,
+        desc: "Automate operations and streamline workflows",
+      },
+      {
+        name: "Personal Ops",
+        href: "/personal-ops",
+        icon: Sparkles,
+        desc: "Your personal AI workspace for daily work",
+      },
     ],
   },
   {
-    label: "Platform",
+    label: "Product",
     href: "/platform",
     items: [
-      { name: "How It Works", href: "/platform", icon: Layers, desc: "Connect, work, and let The Twin propose" },
-      { name: "Integrations", href: "/integrations", icon: Plug, desc: "70+ integrations for the tools you use" },
-      { name: "The Twin", href: "/ai", icon: Brain, desc: "One AI that reads everything — acts only with your OK" },
-      { name: "Security", href: "/security", icon: ShieldCheck, desc: "Enterprise-grade security and compliance" },
+      {
+        name: "How It Works",
+        href: "/platform",
+        icon: Layers,
+        desc: "Connect, work, and let The Twin propose",
+      },
+      {
+        name: "Integrations",
+        href: "/integrations",
+        icon: Plug,
+        desc: "70+ integrations for the tools you use",
+      },
+      {
+        name: "The Twin",
+        href: "/ai",
+        icon: Brain,
+        desc: "One AI that reads everything — acts only with your OK",
+      },
+      {
+        name: "Security",
+        href: "/security",
+        icon: ShieldCheck,
+        desc: "Enterprise-grade security and compliance",
+      },
     ],
   },
   { label: "Pricing", href: "/pricing" },
@@ -32,16 +80,26 @@ const navigation = [
     label: "Company",
     href: "/about",
     items: [
-      { name: "About", href: "/about", icon: Building2, desc: "Our story and what we stand for" },
-      { name: "Contact", href: "/contact", icon: Mail, desc: "Get in touch with our team" },
+      {
+        name: "About",
+        href: "/about",
+        icon: Building2,
+        desc: "Our story and what we stand for",
+      },
+      {
+        name: "Contact",
+        href: "/contact",
+        icon: Mail,
+        desc: "Get in touch with our team",
+      },
     ],
   },
-]
+];
 
-type NavItem = (typeof navigation)[number]
+type NavItem = (typeof navigation)[number];
 
-const ENTER_DELAY = 150
-const LEAVE_DELAY = 300
+const ENTER_DELAY = 150;
+const LEAVE_DELAY = 300;
 
 const dropdownVariants = {
   hidden: { opacity: 0, y: 8, scale: 0.97 },
@@ -57,7 +115,7 @@ const dropdownVariants = {
     scale: 0.98,
     transition: { duration: 0.15, ease: "easeIn" },
   },
-}
+};
 
 function MegaDropdown({
   nav,
@@ -65,12 +123,12 @@ function MegaDropdown({
   onMouseEnter,
   onMouseLeave,
 }: {
-  nav: NavItem
-  menuId: string
-  onMouseEnter: () => void
-  onMouseLeave: () => void
+  nav: NavItem;
+  menuId: string;
+  onMouseEnter: () => void;
+  onMouseLeave: () => void;
 }) {
-  if (!nav.items) return null
+  if (!nav.items) return null;
 
   return (
     <motion.div
@@ -89,12 +147,19 @@ function MegaDropdown({
       <div
         className="overflow-hidden rounded-2xl border border-border/40 bg-white/95 p-2 backdrop-blur-xl"
         style={{
-          boxShadow: "0 20px 60px -15px rgba(0,0,0,0.12), 0 0px 0px 1px rgba(0,0,0,0.04)",
+          boxShadow:
+            "0 20px 60px -15px rgba(0,0,0,0.12), 0 0px 0px 1px rgba(0,0,0,0.04)",
         }}
       >
-        <div className={nav.items.length > 3 ? "grid grid-cols-2 gap-0.5" : "flex flex-col gap-0.5"}>
+        <div
+          className={
+            nav.items.length > 3
+              ? "grid grid-cols-2 gap-0.5"
+              : "flex flex-col gap-0.5"
+          }
+        >
           {nav.items.map((item) => {
-            const Icon = item.icon
+            const Icon = item.icon;
             return (
               <Link
                 key={item.name}
@@ -116,12 +181,12 @@ function MegaDropdown({
                   </span>
                 </div>
               </Link>
-            )
+            );
           })}
         </div>
       </div>
     </motion.div>
-  )
+  );
 }
 
 function NavTrigger({
@@ -130,13 +195,13 @@ function NavTrigger({
   onEnter,
   onLeave,
 }: {
-  nav: NavItem
-  activeMenu: string | null
-  onEnter: (label: string) => void
-  onLeave: () => void
+  nav: NavItem;
+  activeMenu: string | null;
+  onEnter: (label: string) => void;
+  onLeave: () => void;
 }) {
-  const isOpen = activeMenu === nav.label
-  const menuId = `mega-${nav.label.replace(/\s+/g, "-").toLowerCase()}`
+  const isOpen = activeMenu === nav.label;
+  const menuId = `mega-${nav.label.replace(/\s+/g, "-").toLowerCase()}`;
 
   if (!nav.items) {
     return (
@@ -147,7 +212,7 @@ function NavTrigger({
       >
         {nav.label}
       </Link>
-    )
+    );
   }
 
   return (
@@ -163,7 +228,9 @@ function NavTrigger({
         aria-controls={isOpen ? menuId : undefined}
         id={`${menuId}-trigger`}
         className={`flex items-center gap-1 rounded-md px-2 py-2 text-[16px] font-medium tracking-[-0.03em] leading-[1.4] transition-colors focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 ${
-          isOpen ? "text-foreground" : "text-foreground/50 hover:text-foreground"
+          isOpen
+            ? "text-foreground"
+            : "text-foreground/50 hover:text-foreground"
         }`}
       >
         {nav.label}
@@ -181,109 +248,120 @@ function NavTrigger({
         />
       )}
     </div>
-  )
+  );
 }
 
-export function Header({ initiallyHidden = false }: { initiallyHidden?: boolean }) {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [activeMenu, setActiveMenu] = useState<string | null>(null)
-  const [heroRevealed, setHeroRevealed] = useState(!initiallyHidden)
-  const enterTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
-  const leaveTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
-  const mobilePanelRef = useRef<HTMLDivElement>(null)
-  const menuButtonRef = useRef<HTMLButtonElement>(null)
+export function Header({
+  initiallyHidden = false,
+}: {
+  initiallyHidden?: boolean;
+}) {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeMenu, setActiveMenu] = useState<string | null>(null);
+  const [heroRevealed, setHeroRevealed] = useState(!initiallyHidden);
+  const enterTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const leaveTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const mobilePanelRef = useRef<HTMLDivElement>(null);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
 
   /* Listen for hero phase change event (dispatched by HeroSection) */
   useEffect(() => {
-    if (!initiallyHidden) return
-    const handler = () => setHeroRevealed(true)
-    window.addEventListener("heroPhaseChange", handler)
-    return () => window.removeEventListener("heroPhaseChange", handler)
-  }, [initiallyHidden])
+    if (!initiallyHidden) return;
+    const handler = () => setHeroRevealed(true);
+    window.addEventListener("heroPhaseChange", handler);
+    return () => window.removeEventListener("heroPhaseChange", handler);
+  }, [initiallyHidden]);
 
   const clearTimers = useCallback(() => {
     if (enterTimer.current) {
-      clearTimeout(enterTimer.current)
-      enterTimer.current = null
+      clearTimeout(enterTimer.current);
+      enterTimer.current = null;
     }
     if (leaveTimer.current) {
-      clearTimeout(leaveTimer.current)
-      leaveTimer.current = null
+      clearTimeout(leaveTimer.current);
+      leaveTimer.current = null;
     }
-  }, [])
+  }, []);
 
   const handleEnter = useCallback(
     (label: string) => {
-      clearTimers()
+      clearTimers();
       // If already open on a different menu, switch instantly
       if (activeMenu && activeMenu !== label) {
-        setActiveMenu(label)
-        return
+        setActiveMenu(label);
+        return;
       }
       enterTimer.current = setTimeout(() => {
-        setActiveMenu(label)
-      }, ENTER_DELAY)
+        setActiveMenu(label);
+      }, ENTER_DELAY);
     },
-    [activeMenu, clearTimers]
-  )
+    [activeMenu, clearTimers],
+  );
 
   const handleLeave = useCallback(() => {
-    clearTimers()
+    clearTimers();
     leaveTimer.current = setTimeout(() => {
-      setActiveMenu(null)
-    }, LEAVE_DELAY)
-  }, [clearTimers])
+      setActiveMenu(null);
+    }, LEAVE_DELAY);
+  }, [clearTimers]);
 
   // Cleanup on unmount
   useEffect(() => {
-    return () => clearTimers()
-  }, [clearTimers])
+    return () => clearTimers();
+  }, [clearTimers]);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (e.key !== "Escape") return
-      setActiveMenu(null)
-      setMobileMenuOpen(false)
-    }
-    window.addEventListener("keydown", onKey)
-    return () => window.removeEventListener("keydown", onKey)
-  }, [])
+      if (e.key !== "Escape") return;
+      setActiveMenu(null);
+      setMobileMenuOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
 
   useEffect(() => {
-    if (!mobileMenuOpen) return
+    if (!mobileMenuOpen) return;
     const id = requestAnimationFrame(() => {
-      const first = mobilePanelRef.current?.querySelector<HTMLElement>("a[href], button")
-      first?.focus()
-    })
-    return () => cancelAnimationFrame(id)
-  }, [mobileMenuOpen])
+      const first =
+        mobilePanelRef.current?.querySelector<HTMLElement>("a[href], button");
+      first?.focus();
+    });
+    return () => cancelAnimationFrame(id);
+  }, [mobileMenuOpen]);
 
   useEffect(() => {
-    if (!mobileMenuOpen) return
-    const panel = mobilePanelRef.current
-    if (!panel) return
+    if (!mobileMenuOpen) return;
+    const panel = mobilePanelRef.current;
+    if (!panel) return;
     const handler = (e: KeyboardEvent) => {
-      if (e.key !== "Tab") return
+      if (e.key !== "Tab") return;
       const focusables = [
-        ...panel.querySelectorAll<HTMLElement>("a[href], button:not([disabled])"),
-      ].filter((el) => !el.closest("[aria-hidden='true']"))
-      if (focusables.length === 0) return
-      const first = focusables[0]
-      const last = focusables[focusables.length - 1]
+        ...panel.querySelectorAll<HTMLElement>(
+          "a[href], button:not([disabled])",
+        ),
+      ].filter((el) => !el.closest("[aria-hidden='true']"));
+      if (focusables.length === 0) return;
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
       if (e.shiftKey && document.activeElement === first) {
-        e.preventDefault()
-        menuButtonRef.current?.focus()
+        e.preventDefault();
+        menuButtonRef.current?.focus();
       } else if (!e.shiftKey && document.activeElement === last) {
-        e.preventDefault()
-        menuButtonRef.current?.focus()
+        e.preventDefault();
+        menuButtonRef.current?.focus();
       }
-    }
-    panel.addEventListener("keydown", handler)
-    return () => panel.removeEventListener("keydown", handler)
-  }, [mobileMenuOpen])
+    };
+    panel.addEventListener("keydown", handler);
+    return () => panel.removeEventListener("keydown", handler);
+  }, [mobileMenuOpen]);
 
-  const { scrollYProgress } = useScroll()
-  const scaleX = useSpring(scrollYProgress, { stiffness: 300, damping: 30, restDelta: 0.001 })
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 300,
+    damping: 30,
+    restDelta: 0.001,
+  });
 
   return (
     <>
@@ -300,8 +378,12 @@ export function Header({ initiallyHidden = false }: { initiallyHidden?: boolean 
 
       <motion.header
         className="fixed top-0 left-0 right-0 z-50 bg-white"
-        initial={initiallyHidden ? { y: "-100%", opacity: 0 } : { y: 0, opacity: 1 }}
-        animate={heroRevealed ? { y: 0, opacity: 1 } : { y: "-100%", opacity: 0 }}
+        initial={
+          initiallyHidden ? { y: "-100%", opacity: 0 } : { y: 0, opacity: 1 }
+        }
+        animate={
+          heroRevealed ? { y: 0, opacity: 1 } : { y: "-100%", opacity: 0 }
+        }
         transition={{ type: "spring", damping: 22, stiffness: 200, mass: 0.8 }}
         style={{
           borderBottom: "5px solid rgb(248, 248, 250)",
@@ -322,7 +404,10 @@ export function Header({ initiallyHidden = false }: { initiallyHidden?: boolean 
             href="/"
             className="flex items-center gap-2.5 rounded-lg focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50"
           >
-            <SpineLogo className="h-8 w-8 shrink-0 md:h-9 md:w-9" variant="on-light" />
+            <SpineLogo
+              className="h-8 w-8 shrink-0 md:h-9 md:w-9"
+              variant="on-light"
+            />
             <span className="text-[17px] font-semibold tracking-[-0.04em] text-foreground">
               Integrate<span className="text-primary">Wise</span>
             </span>
@@ -373,7 +458,11 @@ export function Header({ initiallyHidden = false }: { initiallyHidden?: boolean 
             aria-expanded={mobileMenuOpen}
             aria-controls="mobile-nav-panel"
           >
-            {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            {mobileMenuOpen ? (
+              <X className="h-5 w-5" />
+            ) : (
+              <Menu className="h-5 w-5" />
+            )}
           </button>
         </nav>
 
@@ -390,60 +479,66 @@ export function Header({ initiallyHidden = false }: { initiallyHidden?: boolean 
             aria-modal="true"
             aria-label="Site navigation"
           >
-              <div className="flex flex-col gap-1 px-6 py-4">
-                {navigation.map((nav) => (
-                  <div key={nav.label} className="py-2">
-                    <Link
-                      href={nav.href}
-                      className="block text-[16px] font-semibold tracking-[-0.03em] text-foreground"
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      {nav.label}
-                    </Link>
-                    {nav.items && (
-                      <div className="mt-2 flex flex-col gap-1 pl-4">
-                        {nav.items.map((item) => (
-                          <Link
-                            key={item.name}
-                            href={item.href}
-                            className="flex items-center gap-2.5 rounded-md py-1.5 text-[15px] font-medium text-muted-foreground hover:text-foreground"
-                            onClick={() => setMobileMenuOpen(false)}
-                          >
-                            <item.icon className="h-4 w-4" />
-                            {item.name}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                ))}
-                <div className="mt-4 flex flex-col gap-2.5 border-t border-border/40 pt-4">
-                  <Button
-                    variant="outline"
-                    className="w-full rounded-xl border-2 border-border/75 bg-white text-foreground"
-                    asChild
+            <div className="flex flex-col gap-1 px-6 py-4">
+              {navigation.map((nav) => (
+                <div key={nav.label} className="py-2">
+                  <Link
+                    href={nav.href}
+                    className="block text-[16px] font-semibold tracking-[-0.03em] text-foreground"
+                    onClick={() => setMobileMenuOpen(false)}
                   >
-                    <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>
-                      Contact
-                    </Link>
-                  </Button>
-                  <Button
-                    className="w-full rounded-xl"
-                    style={{
-                      background: "var(--gradient-primary)",
-                      boxShadow: "var(--shadow-button)",
-                    }}
-                    asChild
-                  >
-                    <Link href="/contact?intent=demo" onClick={() => setMobileMenuOpen(false)}>
-                      Book a demo
-                    </Link>
-                  </Button>
+                    {nav.label}
+                  </Link>
+                  {nav.items && (
+                    <div className="mt-2 flex flex-col gap-1 pl-4">
+                      {nav.items.map((item) => (
+                        <Link
+                          key={item.name}
+                          href={item.href}
+                          className="flex items-center gap-2.5 rounded-md py-1.5 text-[15px] font-medium text-muted-foreground hover:text-foreground"
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
+                          <item.icon className="h-4 w-4" />
+                          {item.name}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
                 </div>
+              ))}
+              <div className="mt-4 flex flex-col gap-2.5 border-t border-border/40 pt-4">
+                <Button
+                  variant="outline"
+                  className="w-full rounded-xl border-2 border-border/75 bg-white text-foreground"
+                  asChild
+                >
+                  <Link
+                    href="/contact"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Contact
+                  </Link>
+                </Button>
+                <Button
+                  className="w-full rounded-xl"
+                  style={{
+                    background: "var(--gradient-primary)",
+                    boxShadow: "var(--shadow-button)",
+                  }}
+                  asChild
+                >
+                  <Link
+                    href="/contact?intent=demo"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Book a demo
+                  </Link>
+                </Button>
               </div>
-            </motion.div>
+            </div>
+          </motion.div>
         )}
       </motion.header>
     </>
-  )
+  );
 }

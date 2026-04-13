@@ -1,14 +1,14 @@
-import { Metadata } from "next"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
-import { FinalCTA } from "@/components/final-cta"
-import { PricingSection } from "@/components/pricing-section"
+import { Metadata } from "next";
+import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
+import { FinalCTA } from "@/components/final-cta";
+import { PricingSection } from "@/components/pricing-section";
 
 export const metadata: Metadata = {
   title: "Pricing | IntegrateWise",
   description:
     "Simple, transparent pricing. Start with Starter at ₹999/$49/mo and scale to Command for full enterprise governance.",
-}
+};
 
 export default function PricingPage() {
   return (
@@ -27,7 +27,8 @@ export default function PricingPage() {
                 <span className="text-primary">pricing</span>
               </h1>
               <p className="mx-auto mt-8 max-w-2xl text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-white/55">
-                Start with a platform fee that scales with your team. No hidden fees, no surprise overages.
+                Start with a base fee that scales with your team. No hidden
+                fees, no surprise overages.
               </p>
             </div>
           </div>
@@ -37,5 +38,5 @@ export default function PricingPage() {
       </main>
       <Footer />
     </div>
-  )
+  );
 }

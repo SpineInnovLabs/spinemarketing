@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import Link from "next/link"
-import { motion } from "framer-motion"
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { motion } from "framer-motion";
 
 export function FinalCTA() {
   return (
@@ -15,7 +15,8 @@ export function FinalCTA() {
         <div
           className="pointer-events-none absolute inset-0 rounded-[50px]"
           style={{
-            background: "radial-gradient(50% 50% at 50% 50%, rgba(27,167,132,0.08) 0%, transparent 100%)",
+            background:
+              "radial-gradient(50% 50% at 50% 50%, rgba(27,167,132,0.08) 0%, transparent 100%)",
           }}
         />
 
@@ -31,7 +32,8 @@ export function FinalCTA() {
             <span className="text-primary">in one place?</span>
           </h2>
           <p className="mt-6 text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-white/55">
-            See a live demo of how IntegrateWise connects your tools, gives you the full picture, and keeps you in control of what AI does.
+            See how IntegrateWise turns tool data, live context, and AI session
+            memory into one workspace — with humans in control.
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-2.5 sm:flex-row">
             <Button
@@ -58,5 +60,5 @@ export function FinalCTA() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

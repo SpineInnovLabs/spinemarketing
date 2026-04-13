@@ -1,39 +1,46 @@
-"use client"
+"use client";
 
-import React, { useEffect, useState } from "react"
-import { motion, useReducedMotion } from "framer-motion"
-import { SpineLogo } from "@/components/spine-logo"
+import React, { useEffect, useState } from "react";
+import { motion, useReducedMotion } from "framer-motion";
+import { SpineLogo } from "@/components/spine-logo";
 
 /* ─── Source tools (left side) ─── */
 const SOURCES = [
-  { name: "Salesforce", logo: "/logos/salesforce.svg", color: "#00A1E0", y: 12 },
+  {
+    name: "Salesforce",
+    logo: "/logos/salesforce.svg",
+    color: "#00A1E0",
+    y: 12,
+  },
   { name: "HubSpot", logo: "/logos/hubspot.svg", color: "#FF7A59", y: 28 },
   { name: "Zendesk", logo: "/logos/zendesk.svg", color: "#03363D", y: 44 },
   { name: "Stripe", logo: "/logos/stripe.svg", color: "#635BFF", y: 60 },
   { name: "Jira", logo: "/logos/jira.svg", color: "#0052CC", y: 76 },
   { name: "Slack", logo: "/logos/slack.svg", color: "#4A154B", y: 92 },
-]
+];
 
 /* ─── Output workspace views (right side) ─── */
 const OUTPUTS = [
   { name: "Account Success", color: "rgb(27,167,132)", y: 25 },
   { name: "Business Ops", color: "rgb(52,211,153)", y: 50 },
   { name: "Personal Ops", color: "rgb(110,231,183)", y: 75 },
-]
+];
 
 export function DataFlowAnimation() {
-  const [mounted, setMounted] = useState(false)
-  const prefersReducedMotion = useReducedMotion()
+  const [mounted, setMounted] = useState(false);
+  const prefersReducedMotion = useReducedMotion();
 
   useEffect(() => {
-    setMounted(true)
-  }, [])
+    setMounted(true);
+  }, []);
 
   return (
-    <div className="w-full max-w-5xl mx-auto h-[360px] md:h-[440px] rounded-2xl border border-white/10 relative overflow-hidden flex items-center justify-center"
+    <div
+      className="w-full max-w-5xl mx-auto h-[360px] md:h-[440px] rounded-2xl border border-white/10 relative overflow-hidden flex items-center justify-center"
       style={{
         background: "rgb(8,7,14)",
-        boxShadow: "0 0 60px rgba(27,167,132,0.08), 0 0 0px 1px rgba(255,255,255,0.05)",
+        boxShadow:
+          "0 0 60px rgba(27,167,132,0.08), 0 0 0px 1px rgba(255,255,255,0.05)",
       }}
     >
       {/* Background grid */}
@@ -43,7 +50,8 @@ export function DataFlowAnimation() {
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: "radial-gradient(ellipse 50% 60% at 50% 50%, rgba(27,167,132,0.06) 0%, transparent 70%)",
+          background:
+            "radial-gradient(ellipse 50% 60% at 50% 50%, rgba(27,167,132,0.06) 0%, transparent 70%)",
         }}
       />
 
@@ -69,7 +77,13 @@ export function DataFlowAnimation() {
             <feGaussianBlur stdDeviation="4" result="blur" />
             <feComposite in="SourceGraphic" in2="blur" operator="over" />
           </filter>
-          <filter id="dfa-glow-out" x="-50%" y="-50%" width="200%" height="200%">
+          <filter
+            id="dfa-glow-out"
+            x="-50%"
+            y="-50%"
+            width="200%"
+            height="200%"
+          >
             <feGaussianBlur stdDeviation="3" result="blur" />
             <feComposite in="SourceGraphic" in2="blur" operator="over" />
           </filter>
@@ -78,11 +92,11 @@ export function DataFlowAnimation() {
         {/* Left → Center paths */}
         {mounted &&
           SOURCES.map((source, i) => {
-            const startX = 185
-            const startY = (source.y / 100) * 500
-            const endX = 410
-            const endY = 250 + (source.y - 52) * 1.2
-            const pathD = `M ${startX} ${startY} C ${startX + 110} ${startY}, ${endX - 60} ${endY}, ${endX} ${endY}`
+            const startX = 185;
+            const startY = (source.y / 100) * 500;
+            const endX = 410;
+            const endY = 250 + (source.y - 52) * 1.2;
+            const pathD = `M ${startX} ${startY} C ${startX + 110} ${startY}, ${endX - 60} ${endY}, ${endX} ${endY}`;
 
             return (
               <g key={`left-${i}`}>
@@ -97,7 +111,7 @@ export function DataFlowAnimation() {
                 />
                 {/* Animated particles flowing in */}
                 {[0, 1, 2].map((pIdx) => {
-                  const delay = i * 0.2 + pIdx * 0.9
+                  const delay = i * 0.2 + pIdx * 0.9;
                   return (
                     <circle
                       key={`pl-${i}-${pIdx}`}
@@ -121,20 +135,20 @@ export function DataFlowAnimation() {
                         begin={`${delay}s`}
                       />
                     </circle>
-                  )
+                  );
                 })}
               </g>
-            )
+            );
           })}
 
         {/* Center → Right paths */}
         {mounted &&
           OUTPUTS.map((view, i) => {
-            const startX = 590
-            const startY = 250 + (view.y - 50) * 1.5
-            const endX = 815
-            const endY = (view.y / 100) * 500
-            const pathD = `M ${startX} ${startY} C ${startX + 60} ${startY}, ${endX - 110} ${endY}, ${endX} ${endY}`
+            const startX = 590;
+            const startY = 250 + (view.y - 50) * 1.5;
+            const endX = 815;
+            const endY = (view.y / 100) * 500;
+            const pathD = `M ${startX} ${startY} C ${startX + 60} ${startY}, ${endX - 110} ${endY}, ${endX} ${endY}`;
 
             return (
               <g key={`right-${i}`}>
@@ -149,7 +163,7 @@ export function DataFlowAnimation() {
                 />
                 {/* Outbound particles */}
                 {[0, 1].map((pIdx) => {
-                  const delay = 1.2 + i * 0.35 + pIdx * 1.3
+                  const delay = 1.2 + i * 0.35 + pIdx * 1.3;
                   return (
                     <circle
                       key={`pr-${i}-${pIdx}`}
@@ -173,10 +187,10 @@ export function DataFlowAnimation() {
                         begin={`${delay}s`}
                       />
                     </circle>
-                  )
+                  );
                 })}
               </g>
-            )
+            );
           })}
       </svg>
 
@@ -218,7 +232,8 @@ export function DataFlowAnimation() {
           background:
             "linear-gradient(180deg, rgba(27,167,132,0.08) 0%, rgba(52,211,153,0.06) 50%, rgba(27,167,132,0.08) 100%)",
           border: "1px solid rgba(27,167,132,0.25)",
-          boxShadow: "0 0 60px rgba(27,167,132,0.12), inset 0 0 30px rgba(27,167,132,0.04)",
+          boxShadow:
+            "0 0 60px rgba(27,167,132,0.12), inset 0 0 30px rgba(27,167,132,0.04)",
         }}
       >
         {/* Inner ambient gradient */}
@@ -232,7 +247,9 @@ export function DataFlowAnimation() {
             boxShadow: "0 0 12px rgb(27,167,132)",
           }}
           animate={
-            prefersReducedMotion ? { top: "50%" } : { top: ["0%", "100%", "0%"] }
+            prefersReducedMotion
+              ? { top: "50%" }
+              : { top: ["0%", "100%", "0%"] }
           }
           transition={
             prefersReducedMotion
@@ -243,22 +260,45 @@ export function DataFlowAnimation() {
 
         {/* Icon */}
         <div
-          className="mb-3 relative z-10 h-8 w-16 shrink-0 md:h-10 md:w-20"
+          className="mb-2 relative z-10 h-8 w-16 shrink-0 md:h-10 md:w-20"
           style={{ filter: "drop-shadow(0 0 20px rgba(27,167,132,0.4))" }}
         >
           <SpineLogo className="h-full w-full" variant="on-dark" />
         </div>
-        <h3 className="text-[9px] md:text-[13px] font-bold text-white uppercase tracking-widest text-center leading-relaxed relative z-10">
-          Your Single
-          <br />
-          Source of Truth
+        <h3 className="text-[9px] md:text-[12px] font-bold text-white uppercase tracking-widest text-center leading-relaxed relative z-10">
+          The Spine
         </h3>
-        <p className="text-[7px] md:text-[9px] text-white/40 mt-1 relative z-10 text-center px-2">
-          One place for everything
-        </p>
+
+        {/* Three data flow labels */}
+        <div className="relative z-10 mt-2 flex flex-col gap-1 px-2 w-full">
+          {[
+            { label: "Truth", color: "rgba(27,167,132,0.9)" },
+            { label: "Context", color: "rgba(52,211,153,0.9)" },
+            { label: "Memory", color: "rgba(110,231,183,0.9)" },
+          ].map((flow, i) => (
+            <motion.div
+              key={flow.label}
+              initial={{ opacity: 0, x: -6 }}
+              animate={mounted ? { opacity: 1, x: 0 } : {}}
+              transition={{ delay: 0.8 + i * 0.15, duration: 0.4 }}
+              className="flex items-center gap-1.5"
+            >
+              <div
+                className="h-1 w-1 md:h-1.5 md:w-1.5 rounded-full shrink-0"
+                style={{ backgroundColor: flow.color }}
+              />
+              <span
+                className="text-[6px] md:text-[8px] font-semibold uppercase tracking-wider"
+                style={{ color: flow.color }}
+              >
+                {flow.label}
+              </span>
+            </motion.div>
+          ))}
+        </div>
 
         {/* Processing wave bars */}
-        <div className="absolute inset-x-0 bottom-[4%] flex justify-center gap-1 md:gap-1.5 h-[16%] items-end px-4">
+        <div className="absolute inset-x-0 bottom-[4%] flex justify-center gap-1 md:gap-1.5 h-[12%] items-end px-4">
           {[...Array(7)].map((_, i) => (
             <motion.div
               key={i}
@@ -321,6 +361,11 @@ export function DataFlowAnimation() {
           Your Workspaces
         </span>
       </div>
+      <div className="absolute bottom-3 left-1/2 -translate-x-1/2 z-30">
+        <span className="text-[7px] md:text-[9px] font-semibold text-white/20 uppercase tracking-widest">
+          3 flows converge at Entity 360
+        </span>
+      </div>
     </div>
-  )
+  );
 }

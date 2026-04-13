@@ -1,7 +1,16 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { ShieldCheck, Lock, Eye, FileCheck, Server, KeyRound, Users, ClipboardCheck } from "lucide-react"
+import { motion } from "framer-motion";
+import {
+  ShieldCheck,
+  Lock,
+  Eye,
+  FileCheck,
+  Server,
+  KeyRound,
+  Users,
+  ClipboardCheck,
+} from "lucide-react";
 
 const securityFeatures = [
   {
@@ -44,7 +53,7 @@ const securityFeatures = [
     title: "Compliance packages",
     desc: "Pre-built compliance configurations for GDPR and industry-specific regulatory requirements. SOC 2 aligned.",
   },
-]
+];
 
 const principles = [
   {
@@ -63,30 +72,50 @@ const principles = [
     title: "You stay in control, always",
     desc: "The approval layer can't be bypassed. There is no admin override, no API backdoor, no way to skip approval.",
   },
-]
+];
 
 export function SecurityContent() {
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden" style={{ backgroundColor: "rgb(8, 7, 14)" }}>
+      <section
+        className="relative overflow-hidden"
+        style={{ backgroundColor: "rgb(8, 7, 14)" }}
+      >
         <div className="mx-auto max-w-[1200px] px-6 pt-[160px] pb-[100px] md:px-16">
           <div className="mx-auto max-w-3xl text-center">
             <motion.div
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ type: "spring", damping: 16, mass: 1, stiffness: 52, delay: 0.2 }}
+              transition={{
+                type: "spring",
+                damping: 16,
+                mass: 1,
+                stiffness: 52,
+                delay: 0.2,
+              }}
               className="mb-6 inline-flex items-center gap-2.5 rounded-[40px] bg-white px-4 py-1.5"
               style={{ boxShadow: "0px 0px 0px 3px rgb(248 248 250)" }}
             >
-              <span className="h-2 w-2 rounded-full" style={{ background: "var(--gradient-primary-icon)" }} />
-              <span className="text-[14px] font-semibold tracking-[-0.03em] text-[#0a0b10]">Platform</span>
+              <span
+                className="h-2 w-2 rounded-full"
+                style={{ background: "var(--gradient-primary-icon)" }}
+              />
+              <span className="text-[14px] font-semibold tracking-[-0.03em] text-[#0a0b10]">
+                Security
+              </span>
             </motion.div>
 
             <motion.h1
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ type: "spring", damping: 16, mass: 1, stiffness: 52, delay: 0.4 }}
+              transition={{
+                type: "spring",
+                damping: 16,
+                mass: 1,
+                stiffness: 52,
+                delay: 0.4,
+              }}
               className="text-[48px] font-semibold leading-[1em] tracking-[-0.05em] text-white sm:text-[54px] lg:text-[64px]"
             >
               Security isn&apos;t a feature.{" "}
@@ -96,11 +125,17 @@ export function SecurityContent() {
             <motion.p
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ type: "spring", damping: 16, mass: 1, stiffness: 52, delay: 0.6 }}
+              transition={{
+                type: "spring",
+                damping: 16,
+                mass: 1,
+                stiffness: 52,
+                delay: 0.6,
+              }}
               className="mx-auto mt-8 max-w-2xl text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-white/55"
             >
-              Controls, encryption, audit trails, and human approval are built into every layer
-              of IntegrateWise. Not bolted on. Not optional.
+              Controls, encryption, audit trails, and human approval are built
+              into every layer of IntegrateWise. Not bolted on. Not optional.
             </motion.p>
           </div>
         </div>
@@ -129,14 +164,26 @@ export function SecurityContent() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ type: "spring", bounce: 0.2, duration: 0.6, delay: i * 0.06 }}
+                transition={{
+                  type: "spring",
+                  bounce: 0.2,
+                  duration: 0.6,
+                  delay: i * 0.06,
+                }}
                 className="arvio-card flex flex-col items-start p-6"
               >
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg" style={{ background: "var(--gradient-primary-icon)" }}>
+                <div
+                  className="flex h-10 w-10 items-center justify-center rounded-lg"
+                  style={{ background: "var(--gradient-primary-icon)" }}
+                >
                   <Icon className="h-5 w-5 text-white" />
                 </div>
-                <h3 className="mt-4 text-[16px] font-semibold tracking-[-0.03em] leading-[1.3]">{title}</h3>
-                <p className="mt-2 text-[14px] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">{desc}</p>
+                <h3 className="mt-4 text-[16px] font-semibold tracking-[-0.03em] leading-[1.3]">
+                  {title}
+                </h3>
+                <p className="mt-2 text-[14px] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">
+                  {desc}
+                </p>
               </motion.div>
             ))}
           </div>
@@ -154,8 +201,7 @@ export function SecurityContent() {
             className="mx-auto max-w-2xl text-center"
           >
             <h2 className="section-heading">
-              Our security{" "}
-              <span className="text-primary">principles</span>
+              Our security <span className="text-primary">principles</span>
             </h2>
           </motion.div>
 
@@ -166,16 +212,25 @@ export function SecurityContent() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ type: "spring", bounce: 0.2, duration: 0.6, delay: i * 0.1 }}
+                transition={{
+                  type: "spring",
+                  bounce: 0.2,
+                  duration: 0.6,
+                  delay: i * 0.1,
+                }}
                 className="arvio-card p-8"
               >
-                <h3 className="text-[18px] font-semibold tracking-[-0.03em]">{p.title}</h3>
-                <p className="mt-3 text-[15px] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">{p.desc}</p>
+                <h3 className="text-[18px] font-semibold tracking-[-0.03em]">
+                  {p.title}
+                </h3>
+                <p className="mt-3 text-[15px] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">
+                  {p.desc}
+                </p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
     </>
-  )
+  );
 }

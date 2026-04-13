@@ -1,16 +1,16 @@
-"use client"
+"use client";
 
-import { Check } from "lucide-react"
-import { motion } from "framer-motion"
+import { Check } from "lucide-react";
+import { motion } from "framer-motion";
 
 const outcomes = [
   "Your workspace arrives ready, not empty.",
   "You stop searching across tools for basic context.",
-  "AI has your full picture before you even ask.",
-  "AI conversations become useful — linked to real data, not lost in chat history.",
-  "Risks surface before they become crises, with the proof attached.",
-  "Nothing happens without your approval — that's how it's built, not an add-on.",
-]
+  "AI has your full picture before you ask.",
+  "AI conversations become useful — linked to real data, not lost in chat.",
+  "Risks surface before they become crises, with proof attached.",
+  "Nothing happens without your approval — that's the architecture, not an add-on.",
+];
 
 export function DayOneSection() {
   return (
@@ -25,8 +25,7 @@ export function DayOneSection() {
               transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
             >
               <h2 className="section-heading-sm">
-                What changes{" "}
-                <span className="text-primary">on day one</span>
+                What changes <span className="text-primary">on day one</span>
               </h2>
               <p className="mt-6 text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">
                 Value from day one. Not months.
@@ -39,7 +38,12 @@ export function DayOneSection() {
                   initial={{ opacity: 0, x: 20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
-                  transition={{ type: "spring", bounce: 0.2, duration: 0.6, delay: i * 0.08 }}
+                  transition={{
+                    type: "spring",
+                    bounce: 0.2,
+                    duration: 0.6,
+                    delay: i * 0.08,
+                  }}
                   className="arvio-card flex items-start gap-3 p-4"
                 >
                   <div
@@ -48,7 +52,9 @@ export function DayOneSection() {
                   >
                     <Check className="h-3 w-3 text-white" />
                   </div>
-                  <span className="text-[15px] font-medium leading-[1.5] tracking-[-0.02em] text-foreground">{outcome}</span>
+                  <span className="text-[15px] font-medium leading-[1.5] tracking-[-0.02em] text-foreground">
+                    {outcome}
+                  </span>
                 </motion.li>
               ))}
             </ul>
@@ -56,5 +62,5 @@ export function DayOneSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
