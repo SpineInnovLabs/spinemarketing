@@ -41,7 +41,7 @@ export default function FBFeed() {
         
         <div className="flex gap-[2vw] items-center mt-[3vw] mb-[2vw]">
           {['hubspot.com', 'slack.com', 'atlassian.com', 'zendesk.com', 'salesforce.com'].map((d) => (
-            <img key={d} src={`https://logo.clearbit.com/${d}`} alt=""
+            <img key={d} src={`/__mockup/images/logos/${d}`} alt=""
               className="w-[3.5vw] h-[3.5vw] rounded-[4px] object-contain" />
           ))}
           <span className="font-['Inter'] font-normal text-[rgba(255,255,255,0.3)] text-[2vw]">+65 more</span>

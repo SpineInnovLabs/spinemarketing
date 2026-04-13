@@ -54,7 +54,7 @@ export function PostC() {
             zIndex: 10,
             overflow: 'hidden',
           }}>
-            <img src={`https://logo.clearbit.com/${t.domain}`} alt={t.name}
+            <img src={`/__mockup/images/logos/${t.domain}`} alt={t.name}
               style={{ width: '3.5vw', height: '3.5vw', objectFit: 'contain', borderRadius: '4px' }} />
           </div>
         ))}

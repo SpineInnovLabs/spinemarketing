@@ -98,7 +98,7 @@ export function PainV2() {
               }}
             >
               <img
-                src={`https://logo.clearbit.com/${tab.domain}`}
+                src={`/__mockup/images/logos/${tab.domain}`}
                 alt=""
                 style={{ width: "1.4vw", height: "1.4vw", borderRadius: "2px", flexShrink: 0 }}
               />

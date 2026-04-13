@@ -30,7 +30,7 @@ export function PostA() {
           { domain: 'salesforce.com', name: 'Salesforce' },
         ].map((t) => (
           <div key={t.name} style={{ display: 'flex', alignItems: 'center', gap: '0.8vw', background: '#111827', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '8px', padding: '1.2vw 2vw' }}>
-            <img src={`https://logo.clearbit.com/${t.domain}`} alt={t.name}
+            <img src={`/__mockup/images/logos/${t.domain}`} alt={t.name}
               style={{ width: '2.5vw', height: '2.5vw', borderRadius: '4px', objectFit: 'contain' }} />
             <span style={{ fontFamily: 'Inter, sans-serif', color: 'rgba(255,255,255,0.6)', fontSize: '1.8vw', fontWeight: 500 }}>{t.name}</span>
           </div>

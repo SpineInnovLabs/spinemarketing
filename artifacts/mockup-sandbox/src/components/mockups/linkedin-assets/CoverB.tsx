@@ -36,7 +36,7 @@ export function CoverB() {
         </div>
         <div style={{ display: 'flex', gap: '1vw', marginTop: '1.5vh', justifyContent: 'flex-end', alignItems: 'center' }}>
           {['hubspot.com', 'slack.com', 'atlassian.com', 'zendesk.com', 'salesforce.com', 'intercom.com'].map((d) => (
-            <img key={d} src={`https://logo.clearbit.com/${d}`} alt=""
+            <img key={d} src={`/__mockup/images/logos/${d}`} alt=""
               style={{ width: '2.2vh', height: '2.2vh', borderRadius: '3px', objectFit: 'contain', opacity: 0.6 }} />
           ))}
           <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400, color: 'rgba(255,255,255,0.3)', fontSize: '2vh' }}>+64 more</span>

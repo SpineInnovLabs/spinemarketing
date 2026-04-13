@@ -98,7 +98,7 @@ export function PainPoint() {
           {['HubSpot', 'Jira', 'Slack', 'Zendesk'].map((name) => (
             <img
               key={name}
-              src={`https://logo.clearbit.com/${name === 'Jira' ? 'atlassian' : name.toLowerCase()}.com`}
+              src={`/__mockup/images/logos/${name === 'Jira' ? 'atlassian' : name.toLowerCase()}.com`}
               alt={name}
               style={{ width: "2.8vw", height: "2.8vw", borderRadius: "6px", objectFit: "contain" }}
             />

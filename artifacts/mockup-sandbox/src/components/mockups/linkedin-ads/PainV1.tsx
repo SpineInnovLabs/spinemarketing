@@ -119,7 +119,7 @@ export function PainV1() {
         >
           <div style={{ display: "flex", alignItems: "center", gap: "1vw", marginBottom: "0.6vw" }}>
             <img
-              src={`https://logo.clearbit.com/${n.tool}`}
+              src={`/__mockup/images/logos/${n.tool}`}
               alt={n.label}
               style={{ width: "2.2vw", height: "2.2vw", borderRadius: "0.4vw" }}
             />

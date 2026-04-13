@@ -65,7 +65,7 @@ export const Slide3 = () => {
         }}>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "1vw" }}>
-              <img src="https://logo.clearbit.com/hubspot.com" alt=""
+              <img src="/__mockup/images/logos/hubspot.com" alt=""
                 style={{ width: "2.5vw", height: "2.5vw", borderRadius: "4px", objectFit: "contain" }} />
               <span style={{ fontSize: "2.8vw", fontWeight: 600, color: "white" }}>Acme Corp — At Risk</span>
             </div>

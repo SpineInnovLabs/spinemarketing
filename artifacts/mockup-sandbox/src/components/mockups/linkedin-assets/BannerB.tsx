@@ -56,7 +56,7 @@ export const BannerB = () => {
         }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.8vw' }}>
-              <img src="https://logo.clearbit.com/hubspot.com" alt="HubSpot"
+              <img src="/__mockup/images/logos/hubspot.com" alt="HubSpot"
                 style={{ width: '2.5vh', height: '2.5vh', borderRadius: '3px', objectFit: 'contain' }} />
               <div style={{ fontFamily: 'Sora, sans-serif', fontWeight: 500, color: 'white', fontSize: '2.5vh' }}>
                 Acme Corp — Churn Risk

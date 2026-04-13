@@ -15,7 +15,7 @@ export function PostB() {
         <div style={{ background: '#111827', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '10px', padding: '3vw', textAlign: 'center', width: '25vw' }}>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '0.5vw', marginBottom: '1.5vw' }}>
             {['hubspot.com', 'slack.com', 'atlassian.com'].map((d) => (
-              <img key={d} src={`https://logo.clearbit.com/${d}`} alt=""
+              <img key={d} src={`/__mockup/images/logos/${d}`} alt=""
                 style={{ width: '2.5vw', height: '2.5vw', borderRadius: '4px', objectFit: 'contain' }} />
             ))}
           </div>

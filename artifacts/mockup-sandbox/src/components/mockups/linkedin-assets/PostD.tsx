@@ -21,7 +21,7 @@ export function PostD() {
 
       <div style={{ display: 'flex', justifyContent: 'center', gap: '2vw', marginTop: '8vw', zIndex: 10 }}>
         {['hubspot.com', 'slack.com', 'atlassian.com', 'zendesk.com', 'salesforce.com', 'intercom.com'].map((d) => (
-          <img key={d} src={`https://logo.clearbit.com/${d}`} alt=""
+          <img key={d} src={`/__mockup/images/logos/${d}`} alt=""
             style={{ width: '3.5vw', height: '3.5vw', borderRadius: '6px', objectFit: 'contain' }} />
         ))}
       </div>

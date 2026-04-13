@@ -18,7 +18,7 @@ export function GoogleSquare() {
         <div style={{ fontFamily: 'Sora, sans-serif', fontWeight: 800, color: 'white', fontSize: '8vw', lineHeight: 1.1, textShadow: '0 4px 12px rgba(0,0,0,0.5)' }}>human API.</div>
         <div style={{ display: 'flex', gap: '1.5vw', alignItems: 'center', margin: '2vw 0' }}>
           {['hubspot.com', 'slack.com', 'atlassian.com', 'zendesk.com', 'salesforce.com'].map((d) => (
-            <img key={d} src={`https://logo.clearbit.com/${d}`} alt=""
+            <img key={d} src={`/__mockup/images/logos/${d}`} alt=""
               style={{ width: '3vw', height: '3vw', borderRadius: '4px', objectFit: 'contain' }} />
           ))}
           <span style={{ color: 'rgba(255,255,255,0.3)', fontSize: '2vw' }}>+65</span>

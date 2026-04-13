@@ -31,7 +31,7 @@ export function OutcomeV2() {
         </div>
         <div style={{ display: 'flex', gap: '0.8vw', alignItems: 'center' }}>
           {['hubspot.com', 'slack.com', 'atlassian.com', 'zendesk.com'].map((d) => (
-            <img key={d} src={`https://logo.clearbit.com/${d}`} alt=""
+            <img key={d} src={`/__mockup/images/logos/${d}`} alt=""
               style={{ width: '2.2vw', height: '2.2vw', borderRadius: '4px', objectFit: 'contain' }} />
           ))}
           <span style={{ color: 'rgba(255,255,255,0.3)', fontSize: '1.3vw', fontWeight: 500, marginLeft: '0.3vw' }}>+66</span>

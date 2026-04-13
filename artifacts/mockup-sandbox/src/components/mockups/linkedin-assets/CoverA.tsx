@@ -34,7 +34,7 @@ export function CoverA() {
         <div style={{ width: '12vw', height: '1px', background: '#2EE5A8', margin: '1.5vh auto' }} />
         <div style={{ display: 'flex', justifyContent: 'center', gap: '1.5vw', alignItems: 'center' }}>
           {['hubspot.com', 'slack.com', 'atlassian.com', 'zendesk.com', 'salesforce.com'].map((d) => (
-            <img key={d} src={`https://logo.clearbit.com/${d}`} alt=""
+            <img key={d} src={`/__mockup/images/logos/${d}`} alt=""
               style={{ width: '2.5vh', height: '2.5vh', borderRadius: '3px', objectFit: 'contain' }} />
           ))}
           <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400, color: 'rgba(255,255,255,0.4)', fontSize: '2.5vh' }}>

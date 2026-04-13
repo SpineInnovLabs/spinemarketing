@@ -35,7 +35,7 @@ export default function FBStories() {
         </span>
         <div className="flex gap-[3vw] items-center mt-[4vw]">
           {['hubspot.com', 'slack.com', 'atlassian.com', 'zendesk.com', 'salesforce.com'].map((d) => (
-            <img key={d} src={`https://logo.clearbit.com/${d}`} alt=""
+            <img key={d} src={`/__mockup/images/logos/${d}`} alt=""
               className="w-[5vw] h-[5vw] rounded-[6px] object-contain opacity-60" />
           ))}
         </div>

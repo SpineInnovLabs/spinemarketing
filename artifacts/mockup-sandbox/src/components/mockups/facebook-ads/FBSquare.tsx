@@ -34,7 +34,7 @@ export default function FBSquare() {
         
         <div className="flex gap-[1.5vw] items-center mt-[2vw] mb-[1vw]">
           {['hubspot.com', 'slack.com', 'atlassian.com', 'zendesk.com', 'salesforce.com', 'intercom.com'].map((d) => (
-            <img key={d} src={`https://logo.clearbit.com/${d}`} alt=""
+            <img key={d} src={`/__mockup/images/logos/${d}`} alt=""
               className="w-[2.8vw] h-[2.8vw] rounded-[4px] object-contain" />
           ))}
         </div>

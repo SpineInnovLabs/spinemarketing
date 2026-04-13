@@ -102,7 +102,7 @@ export const WAShare: React.FC = () => {
         
         <div style={{ display: 'flex', justifyContent: 'center', gap: '1.5vw', alignItems: 'center', marginBottom: '1.5vw' }}>
           {['hubspot.com', 'slack.com', 'atlassian.com', 'zendesk.com', 'salesforce.com', 'intercom.com'].map((d) => (
-            <img key={d} src={`https://logo.clearbit.com/${d}`} alt=""
+            <img key={d} src={`/__mockup/images/logos/${d}`} alt=""
               style={{ width: '3vw', height: '3vw', borderRadius: '4px', objectFit: 'contain' }} />
           ))}
         </div>

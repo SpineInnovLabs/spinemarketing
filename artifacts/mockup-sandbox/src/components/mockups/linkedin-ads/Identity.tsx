@@ -91,7 +91,7 @@ export function Identity() {
             { name: 'Salesforce', domain: 'salesforce.com' },
             { name: 'Intercom', domain: 'intercom.com' },
           ].map((t) => (
-            <img key={t.name} src={`https://logo.clearbit.com/${t.domain}`} alt={t.name}
+            <img key={t.name} src={`/__mockup/images/logos/${t.domain}`} alt={t.name}
               style={{ width: '2.8vw', height: '2.8vw', borderRadius: '6px', objectFit: 'contain' }} />
           ))}
           <span style={{ color: 'rgba(255,255,255,0.3)', fontSize: '1.4vw', fontWeight: 500, alignSelf: 'center', marginLeft: '0.5vw' }}>

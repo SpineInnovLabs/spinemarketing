@@ -81,7 +81,7 @@ export function OutcomeV1() {
       }}>
         <div style={{ display: 'flex', justifyContent: 'center', gap: '1.2vw', marginBottom: '2vw' }}>
           {['hubspot.com', 'slack.com', 'atlassian.com', 'zendesk.com', 'salesforce.com'].map((d) => (
-            <img key={d} src={`https://logo.clearbit.com/${d}`} alt=""
+            <img key={d} src={`/__mockup/images/logos/${d}`} alt=""
               style={{ width: '2.5vw', height: '2.5vw', borderRadius: '5px', objectFit: 'contain' }} />
           ))}
         </div>

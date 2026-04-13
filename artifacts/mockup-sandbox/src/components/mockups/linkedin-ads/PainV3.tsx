@@ -125,7 +125,7 @@ export function PainV3() {
             }}
           >
             <img
-              src={`https://logo.clearbit.com/${tool.domain}`}
+              src={`/__mockup/images/logos/${tool.domain}`}
               alt={tool.name}
               style={{
                 width: `${tool.size * 0.55}vw`,

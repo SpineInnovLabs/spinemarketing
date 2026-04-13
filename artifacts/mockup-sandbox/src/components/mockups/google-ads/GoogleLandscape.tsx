@@ -13,7 +13,7 @@ export function GoogleLandscape() {
         <div style={{ width: '4vw', height: '2px', backgroundColor: '#2EE5A8', margin: '1.5vw 0' }} />
         <div style={{ display: 'flex', gap: '0.8vw', alignItems: 'center', marginBottom: '1vw' }}>
           {['hubspot.com', 'slack.com', 'atlassian.com', 'zendesk.com', 'salesforce.com'].map((d) => (
-            <img key={d} src={`https://logo.clearbit.com/${d}`} alt=""
+            <img key={d} src={`/__mockup/images/logos/${d}`} alt=""
               style={{ width: '2.5vw', height: '2.5vw', borderRadius: '4px', objectFit: 'contain' }} />
           ))}
           <span style={{ color: 'rgba(255,255,255,0.3)', fontSize: '1.8vw' }}>+65 more</span>

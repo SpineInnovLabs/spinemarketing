@@ -2,10 +2,10 @@ import React from 'react';
 
 export const BannerA = () => {
   const tools = [
-    { name: 'HubSpot', color: '#FF7A59', logo: 'https://logo.clearbit.com/hubspot.com' },
-    { name: 'Jira', color: '#0052CC', logo: 'https://logo.clearbit.com/atlassian.com' },
-    { name: 'Slack', color: '#E01E5A', logo: 'https://logo.clearbit.com/slack.com' },
-    { name: 'Zendesk', color: '#03363D', logo: 'https://logo.clearbit.com/zendesk.com' },
+    { name: 'HubSpot', color: '#FF7A59', logo: '/__mockup/images/logos/hubspot.com' },
+    { name: 'Jira', color: '#0052CC', logo: '/__mockup/images/logos/atlassian.com' },
+    { name: 'Slack', color: '#E01E5A', logo: '/__mockup/images/logos/slack.com' },
+    { name: 'Zendesk', color: '#03363D', logo: '/__mockup/images/logos/zendesk.com' },
   ];
 
   return (
@@ -87,10 +87,10 @@ export const BannerA = () => {
             </div>
 
             {[
-              { source: 'HubSpot', data: 'Deal: $48K — Negotiation stage', logo: 'https://logo.clearbit.com/hubspot.com' },
-              { source: 'Jira', data: '3 open tickets, 1 critical', logo: 'https://logo.clearbit.com/atlassian.com' },
-              { source: 'Slack', data: '12 threads this week, sentiment: positive', logo: 'https://logo.clearbit.com/slack.com' },
-              { source: 'Zendesk', data: '0 open, avg resolution: 4h', logo: 'https://logo.clearbit.com/zendesk.com' },
+              { source: 'HubSpot', data: 'Deal: $48K — Negotiation stage', logo: '/__mockup/images/logos/hubspot.com' },
+              { source: 'Jira', data: '3 open tickets, 1 critical', logo: '/__mockup/images/logos/atlassian.com' },
+              { source: 'Slack', data: '12 threads this week, sentiment: positive', logo: '/__mockup/images/logos/slack.com' },
+              { source: 'Zendesk', data: '0 open, avg resolution: 4h', logo: '/__mockup/images/logos/zendesk.com' },
             ].map((row) => (
               <div key={row.source} style={{
                 display: 'flex',

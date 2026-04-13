@@ -44,7 +44,7 @@ export const Slide4 = () => {
 
         <div style={{ display: 'flex', justifyContent: 'center', gap: '1.5vw', marginTop: '3vw' }}>
           {['hubspot.com', 'slack.com', 'atlassian.com', 'zendesk.com', 'salesforce.com'].map((d) => (
-            <img key={d} src={`https://logo.clearbit.com/${d}`} alt=""
+            <img key={d} src={`/__mockup/images/logos/${d}`} alt=""
               style={{ width: '3vw', height: '3vw', borderRadius: '5px', objectFit: 'contain' }} />
           ))}
         </div>

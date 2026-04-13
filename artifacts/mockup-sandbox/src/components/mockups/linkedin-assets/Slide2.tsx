@@ -118,7 +118,7 @@ export const Slide2 = () => {
                     overflow: "hidden",
                   }}
                 >
-                  <img src={`https://logo.clearbit.com/${icon.domain}`} alt=""
+                  <img src={`/__mockup/images/logos/${icon.domain}`} alt=""
                     style={{ width: "3vw", height: "3vw", objectFit: "contain", borderRadius: "4px" }} />
                 </div>
               </React.Fragment>
