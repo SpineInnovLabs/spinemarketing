@@ -56,6 +56,8 @@ const footerColumns: {
       { name: "Resources", href: "/resources" },
       { name: "Blog", href: "/blog" },
       { name: "Contact", href: "/contact" },
+      { name: "Documentation", href: "https://docs.integratewise.ai/", external: true },
+      { name: "Changelog", href: "https://changelog.integratewise.ai/", external: true },
     ],
   },
 ];
