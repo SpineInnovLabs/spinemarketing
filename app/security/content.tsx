@@ -16,17 +16,17 @@ const securityFeatures = [
   {
     icon: Lock,
     title: "Encryption everywhere",
-    desc: "AES-256 encryption at rest, TLS 1.3 in transit. Your data is encrypted at every stage of the pipeline.",
+    desc: "AES-256 at rest, TLS 1.3 in transit. Encrypted at every stage.",
   },
   {
     icon: ShieldCheck,
     title: "SOC 2 aligned",
-    desc: "Our infrastructure and processes are aligned with SOC 2 Type II requirements for security, availability, and confidentiality.",
+    desc: "Aligned with SOC 2 Type II requirements for security, availability, and confidentiality.",
   },
   {
     icon: Eye,
     title: "Complete audit trails",
-    desc: "Every data access, AI recommendation, approval decision, and executed action is logged with full context.",
+    desc: "Every access, recommendation, approval, and action is logged with full context.",
   },
   {
     icon: KeyRound,
@@ -36,33 +36,33 @@ const securityFeatures = [
   {
     icon: Users,
     title: "SSO & identity management",
-    desc: "Enterprise SSO via SAML 2.0 and OIDC. Integrate with Okta, Azure AD, Google Workspace, and more.",
+    desc: "Enterprise SSO via SAML 2.0 and OIDC. Works with Okta, Azure AD, Google Workspace.",
   },
   {
     icon: Server,
     title: "Data residency",
-    desc: "Your data is stored securely. Multi-region deployment options coming soon for compliance with local data regulations.",
+    desc: "Multi-region deployment options coming soon for local data regulation compliance.",
   },
   {
     icon: FileCheck,
     title: "You approve every action",
-    desc: "Nothing happens without your OK. No AI action runs without your explicit approval — no exceptions.",
+    desc: "No AI action runs without your explicit approval. No exceptions.",
   },
   {
     icon: ClipboardCheck,
     title: "Compliance packages",
-    desc: "Pre-built compliance configurations for GDPR and industry-specific regulatory requirements. SOC 2 aligned.",
+    desc: "Pre-built compliance configurations for GDPR and industry-specific requirements.",
   },
 ];
 
 const principles = [
   {
     title: "Read-first architecture",
-    desc: "IntegrateWise reads from your systems to bring everything together. We don't require data migration or take ownership of your data.",
+    desc: "IntegrateWise reads from your systems. No data migration, no data ownership transfer.",
   },
   {
     title: "Minimal data footprint",
-    desc: "We organize and connect the signals we need. Raw data stays in your source systems. You control what flows into your workspace.",
+    desc: "We connect the signals we need. Raw data stays in your source systems.",
   },
   {
     title: "Zero-trust by default",
@@ -70,7 +70,7 @@ const principles = [
   },
   {
     title: "You stay in control, always",
-    desc: "The approval layer can't be bypassed. There is no admin override, no API backdoor, no way to skip approval.",
+    desc: "The approval layer can't be bypassed. No admin override, no API backdoor.",
   },
 ];
 

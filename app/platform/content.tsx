@@ -184,7 +184,7 @@ const stickySteps: StickyScrollStep[] = [
     label: "Step 01",
     title: "Connect. 70+ integrations, one-time setup.",
     description:
-      "CRM, billing, support, email, chat, docs, analytics — plug in via OAuth in minutes. No data migration. No engineering team. Your tools keep working as they do today.",
+      "CRM, billing, support, email, chat, docs, analytics — plug in via OAuth in minutes. No migration, no engineering team required.",
     visual: <ConnectVisual />,
   },
   {
@@ -198,7 +198,7 @@ const stickySteps: StickyScrollStep[] = [
     label: "Step 03",
     title: "The Twin proposes. You decide.",
     description:
-      "The Twin reads all three layers before reasoning. It spots patterns no single tool can see, surfaces insights with evidence, and proposes actions. Nothing happens without your approval.",
+      "The Twin reads all three layers before reasoning. It spots patterns no single tool can see, surfaces insights with evidence, and proposes actions.",
     visual: <TwinVisual />,
   },
 ];
@@ -418,9 +418,9 @@ export function PlatformContent() {
               The engine that powers your workspace
             </h2>
             <p className="mt-4 text-[15px] font-medium leading-[1.5] tracking-[-0.02em] text-white/40">
-              A continuous loop runs in the background — loading data, thinking
-              across all three flows, acting on approvals, learning from your
-              decisions, and repeating.
+              A continuous loop runs in the background — loading data, reasoning
+              across all three flows, acting on approvals, and learning from
+              your decisions.
             </p>
           </motion.div>
 

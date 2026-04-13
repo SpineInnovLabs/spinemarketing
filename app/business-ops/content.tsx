@@ -141,10 +141,8 @@ export function BusinessOpsContent() {
               }}
               className="mx-auto mt-8 max-w-2xl text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-white/55"
             >
-              You&apos;re making decisions every day about revenue, operations,
-              team performance, and risk — but the data you need lives in
-              different tools, owned by different teams, updated at different
-              times.
+              You make decisions every day about revenue, operations, and risk —
+              but the data lives in different tools, owned by different teams.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 12 }}

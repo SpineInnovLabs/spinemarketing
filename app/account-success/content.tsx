@@ -51,17 +51,17 @@ const steps = [
   {
     num: "02",
     title: "The Spine builds the full picture",
-    desc: "Your account data, support tickets, billing records, conversations, and documents flow into a single intelligence layer. Relationships between records are preserved — not flattened into a spreadsheet.",
+    desc: "Account data, support tickets, billing, conversations, and documents flow into one intelligence layer. Relationships preserved — not flattened.",
   },
   {
     num: "03",
     title: "AI surfaces what matters",
-    desc: "Churn risks, renewal threats, champion changes, escalation patterns. Evidence-backed, not hallucinated. You see what needs attention and why.",
+    desc: "Churn risks, renewal threats, champion changes, escalation patterns — evidence-backed, not hallucinated.",
   },
   {
     num: "04",
     title: "You review and act",
-    desc: "Every proposed action — a renewal email, an escalation, an internal alert — comes with evidence. You approve, adjust, or dismiss. Nothing happens without your say.",
+    desc: "Every proposed action comes with evidence. You approve, adjust, or dismiss.",
   },
 ];
 
@@ -126,9 +126,8 @@ export function AccountSuccessContent() {
               className="mx-auto mt-8 max-w-2xl text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-white/55"
             >
               You manage dozens of accounts across CRMs, support desks, billing
-              systems, inboxes, and Slack channels. The information you need is
-              always there — just scattered across eight different tools.
-              IntegrateWise brings it all into one view.
+              systems, and inboxes. The information is always there — just
+              scattered across eight tools.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 12 }}
@@ -315,13 +314,11 @@ export function AccountSuccessContent() {
               </h2>
               <p className="mt-6 text-[17px] font-medium leading-[1.7] tracking-[-0.02em] text-muted-foreground">
                 In a live deployment, IntegrateWise spotted early warning signs
-                that a major customer account was at risk. Support tickets were
-                climbing. Product usage was dropping. The champion had gone
-                silent. Payments had failed twice.
+                on a major account: support tickets climbing, usage dropping,
+                champion silent, payments failing.
               </p>
               <p className="mt-4 text-[17px] font-medium leading-[1.7] tracking-[-0.02em] text-muted-foreground">
-                No single tool saw the full picture. The Spine did — because it
-                connected all of them. The team intervened at the right time and
+                The Spine connected all the signals. The team intervened and
                 saved an{" "}
                 <span className="text-foreground font-semibold">
                   $8M account
