@@ -567,28 +567,6 @@ export function HeroSection() {
             ))}
           </h1>
 
-          {/* Subheadline */}
-          <motion.p
-            initial={{ opacity: 0, y: 12 }}
-            animate={
-              phase === "reveal" ? { opacity: 1, y: 0 } : { opacity: 0, y: 12 }
-            }
-            transition={{
-              type: "spring",
-              damping: 16,
-              mass: 1,
-              stiffness: 52,
-              delay: phase === "reveal" ? 1 : 0,
-            }}
-            className="mx-auto mt-8 max-w-2xl text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-white/55"
-          >
-            IntegrateWise gives you a Knowledge Workspace over the Spine, where
-            Salesforce, HubSpot, Stripe, Jira, Notion, Slack, Zendesk, Gmail,
-            Shopify, QuickBooks, Intercom, GitHub, Airtable, Asana, and Google
-            Drive all come together into one clear view. AI watches what&apos;s
-            happening, surfaces what matters, and prepares actions — and you
-            approve what actually happens.
-          </motion.p>
 
           {/* CTAs */}
           <motion.div
