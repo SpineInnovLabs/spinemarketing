@@ -11,6 +11,13 @@ export function GoogleLandscape() {
         <div style={{ fontFamily: 'Sora, sans-serif', fontWeight: 700, color: 'white', fontSize: '5vw', lineHeight: 1.1 }}>Every customer.</div>
         <div style={{ fontFamily: 'Sora, sans-serif', fontWeight: 700, color: '#2EE5A8', fontSize: '5vw', lineHeight: 1.1 }}>One screen.</div>
         <div style={{ width: '4vw', height: '2px', backgroundColor: '#2EE5A8', margin: '1.5vw 0' }} />
+        <div style={{ display: 'flex', gap: '0.8vw', alignItems: 'center', marginBottom: '1vw' }}>
+          {['hubspot.com', 'slack.com', 'atlassian.com', 'zendesk.com', 'salesforce.com'].map((d) => (
+            <img key={d} src={`https://logo.clearbit.com/${d}`} alt=""
+              style={{ width: '2.5vw', height: '2.5vw', borderRadius: '4px', objectFit: 'contain' }} />
+          ))}
+          <span style={{ color: 'rgba(255,255,255,0.3)', fontSize: '1.8vw' }}>+65 more</span>
+        </div>
         <div style={{ color: 'rgba(255,255,255,0.6)', fontSize: '2.2vw', lineHeight: 1.4 }}>Deals, tickets, and conversations from 70+ apps — one view per account.</div>
         <div style={{ backgroundColor: '#2EE5A8', color: '#0B0F17', fontFamily: 'Sora, sans-serif', fontWeight: 700, fontSize: '2.2vw', padding: '1.2vw 3vw', borderRadius: '8px', marginTop: '2vw', display: 'inline-block', width: 'fit-content' }}>Book a Demo &rarr;</div>
       </div>

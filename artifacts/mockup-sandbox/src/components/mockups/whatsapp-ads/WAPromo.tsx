@@ -87,16 +87,14 @@ export const WAPromo: React.FC = () => {
           fontSize: '3vw',
           lineHeight: 1.4
         }}>
-          Nothing executes until
+          Nothing executes until you say so. Ever.
         </div>
-        <div style={{
-          fontFamily: "'Inter', sans-serif",
-          fontWeight: 500,
-          color: 'rgba(255,255,255,0.5)',
-          fontSize: '3vw',
-          lineHeight: 1.4
-        }}>
-          you say so. Ever.
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '2vw', marginTop: '3vw', alignItems: 'center' }}>
+          {['hubspot.com', 'slack.com', 'atlassian.com', 'zendesk.com', 'salesforce.com'].map((d) => (
+            <img key={d} src={`https://logo.clearbit.com/${d}`} alt=""
+              style={{ width: '3.5vw', height: '3.5vw', borderRadius: '4px', objectFit: 'contain', opacity: 0.5 }} />
+          ))}
+          <span style={{ fontFamily: "'Inter', sans-serif", color: 'rgba(255,255,255,0.25)', fontSize: '2.5vw' }}>+65 more</span>
         </div>
       </div>
 

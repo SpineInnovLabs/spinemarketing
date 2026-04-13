@@ -32,7 +32,13 @@ export default function FBSquare() {
           One screen.
         </h1>
         
-        <p className="font-['Inter'] font-medium text-[rgba(255,255,255,0.55)] text-[2.5vw] mt-[2vw]">
+        <div className="flex gap-[1.5vw] items-center mt-[2vw] mb-[1vw]">
+          {['hubspot.com', 'slack.com', 'atlassian.com', 'zendesk.com', 'salesforce.com', 'intercom.com'].map((d) => (
+            <img key={d} src={`https://logo.clearbit.com/${d}`} alt=""
+              className="w-[2.8vw] h-[2.8vw] rounded-[4px] object-contain" />
+          ))}
+        </div>
+        <p className="font-['Inter'] font-medium text-[rgba(255,255,255,0.55)] text-[2.5vw]">
           Deals, tickets, and conversations from 70+ apps — on one screen per account.
         </p>
         

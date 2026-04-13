@@ -39,8 +39,15 @@ export default function FBFeed() {
           between your tools.
         </h2>
         
-        {/* CTA Row */}
-        <div className="mt-[4vw] flex items-center gap-[3vw]">
+        <div className="flex gap-[2vw] items-center mt-[3vw] mb-[2vw]">
+          {['hubspot.com', 'slack.com', 'atlassian.com', 'zendesk.com', 'salesforce.com'].map((d) => (
+            <img key={d} src={`https://logo.clearbit.com/${d}`} alt=""
+              className="w-[3.5vw] h-[3.5vw] rounded-[4px] object-contain" />
+          ))}
+          <span className="font-['Inter'] font-normal text-[rgba(255,255,255,0.3)] text-[2vw]">+65 more</span>
+        </div>
+        
+        <div className="flex items-center gap-[3vw]">
           <button className="bg-[#2EE5A8] text-[#0B0F17] font-['Sora'] font-bold text-[3vw] py-[1.5vw] px-[4vw] rounded-[10px] shadow-lg shadow-black/20">
             Book a Demo →
           </button>

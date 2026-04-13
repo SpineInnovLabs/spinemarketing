@@ -33,6 +33,12 @@ export default function FBStories() {
         <span className="font-['Sora'] font-bold text-[#2EE5A8] text-[9vw] leading-[1.1]">
           IntegrateWise.
         </span>
+        <div className="flex gap-[3vw] items-center mt-[4vw]">
+          {['hubspot.com', 'slack.com', 'atlassian.com', 'zendesk.com', 'salesforce.com'].map((d) => (
+            <img key={d} src={`https://logo.clearbit.com/${d}`} alt=""
+              className="w-[5vw] h-[5vw] rounded-[6px] object-contain opacity-60" />
+          ))}
+        </div>
       </div>
       
       <div className="absolute bottom-[6vh] left-0 w-full z-20 flex flex-col items-center">

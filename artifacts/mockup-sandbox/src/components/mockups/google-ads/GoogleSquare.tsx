@@ -16,7 +16,13 @@ export function GoogleSquare() {
       <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '4vw' }}>
         <div style={{ fontFamily: 'Sora, sans-serif', fontWeight: 500, color: 'rgba(255,255,255,0.6)', fontSize: '3vw', lineHeight: 1.2 }}>Stop being the</div>
         <div style={{ fontFamily: 'Sora, sans-serif', fontWeight: 800, color: 'white', fontSize: '8vw', lineHeight: 1.1, textShadow: '0 4px 12px rgba(0,0,0,0.5)' }}>human API.</div>
-        <div style={{ width: '5vw', height: '2px', backgroundColor: '#2EE5A8', margin: '2vw 0' }} />
+        <div style={{ display: 'flex', gap: '1.5vw', alignItems: 'center', margin: '2vw 0' }}>
+          {['hubspot.com', 'slack.com', 'atlassian.com', 'zendesk.com', 'salesforce.com'].map((d) => (
+            <img key={d} src={`https://logo.clearbit.com/${d}`} alt=""
+              style={{ width: '3vw', height: '3vw', borderRadius: '4px', objectFit: 'contain' }} />
+          ))}
+          <span style={{ color: 'rgba(255,255,255,0.3)', fontSize: '2vw' }}>+65</span>
+        </div>
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <div style={{ backgroundColor: '#2EE5A8', color: '#0B0F17', fontFamily: 'Sora, sans-serif', fontWeight: 700, fontSize: '2.5vw', padding: '1.5vw 4vw', borderRadius: '10px' }}>Book a Demo &rarr;</div>
           <div style={{ color: 'rgba(255,255,255,0.35)', fontSize: '2vw', marginLeft: '2vw' }}>integratewise.ai</div>

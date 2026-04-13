@@ -34,6 +34,13 @@ export function CoverB() {
         <div style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500, color: '#2EE5A8', fontSize: '2.5vh', marginTop: '1vh' }}>
           We built one screen to replace all of them.
         </div>
+        <div style={{ display: 'flex', gap: '1vw', marginTop: '1.5vh', justifyContent: 'flex-end', alignItems: 'center' }}>
+          {['hubspot.com', 'slack.com', 'atlassian.com', 'zendesk.com', 'salesforce.com', 'intercom.com'].map((d) => (
+            <img key={d} src={`https://logo.clearbit.com/${d}`} alt=""
+              style={{ width: '2.2vh', height: '2.2vh', borderRadius: '3px', objectFit: 'contain', opacity: 0.6 }} />
+          ))}
+          <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400, color: 'rgba(255,255,255,0.3)', fontSize: '2vh' }}>+64 more</span>
+        </div>
       </div>
     </div>
   );

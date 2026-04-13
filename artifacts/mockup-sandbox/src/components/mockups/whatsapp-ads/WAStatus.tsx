@@ -98,6 +98,13 @@ export const WAStatus: React.FC = () => {
         
         <div style={{ height: '2vw' }} />
         
+        <div style={{ display: 'flex', gap: '2vw', alignItems: 'center', marginBottom: '2vw' }}>
+          {['hubspot.com', 'slack.com', 'atlassian.com', 'zendesk.com', 'salesforce.com'].map((d) => (
+            <img key={d} src={`https://logo.clearbit.com/${d}`} alt=""
+              style={{ width: '4vw', height: '4vw', borderRadius: '4px', objectFit: 'contain' }} />
+          ))}
+          <span style={{ fontFamily: "'Inter', sans-serif", fontWeight: 400, color: 'rgba(255,255,255,0.35)', fontSize: '3vw' }}>+65 more</span>
+        </div>
         <div style={{
           fontFamily: "'Inter', sans-serif",
           fontWeight: 500,
