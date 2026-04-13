@@ -144,6 +144,7 @@ function HallucinationRow({
 
 /* ═══════════════════════════════════════════════════════════ */
 export function HeroSection() {
+  const [mounted, setMounted] = useState(false);
   const prefersReducedMotion = useReducedMotion();
   const [phase, setPhase] = useState<"chaos" | "reveal">("chaos");
   const [logosReady, setLogosReady] = useState(false);
@@ -152,6 +153,7 @@ export function HeroSection() {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     setIsMobile(window.innerWidth < 768);
   }, []);
 
@@ -239,6 +241,15 @@ export function HeroSection() {
     });
     return rows;
   }, []);
+
+  if (!mounted) {
+    return (
+      <section
+        className="relative w-full min-h-screen overflow-hidden"
+        style={{ backgroundColor: "rgb(8, 7, 14)" }}
+      />
+    );
+  }
 
   return (
     <section

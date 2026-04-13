@@ -397,6 +397,7 @@ export function Header({
             scaleX,
             background: "var(--gradient-primary)",
           }}
+          suppressHydrationWarning
         />
         <nav className="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-6 md:px-16">
           {/* Logo */}
