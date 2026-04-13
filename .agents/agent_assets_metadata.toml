@@ -1,0 +1,20 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "wEWEzmsVGxWQIdgAtpgdV"
+uri = "file://artifacts/mockup-sandbox/public/images/ad-pain.png"
+type = "image"
+title = "dark office pain point"
+
+[[generated]]
+id = "uHePuYCNYH3DvMyW7C_5x"
+uri = "file://artifacts/mockup-sandbox/public/images/ad-outcome.png"
+type = "image"
+title = "executive outcome ad"
+
+[[generated]]
+id = "zSIM5mnfwL_4oGZ1l0OlQ"
+uri = "file://artifacts/mockup-sandbox/public/images/ad-identity.png"
+type = "image"
+title = "data streams identity ad"
