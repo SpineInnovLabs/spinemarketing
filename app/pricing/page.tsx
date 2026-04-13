@@ -23,12 +23,12 @@ export default function PricingPage() {
           <div className="mx-auto max-w-[1200px] px-6 pt-[160px] pb-[60px] md:px-16">
             <div className="mx-auto max-w-3xl text-center">
               <h1 className="text-[48px] font-semibold leading-[1em] tracking-[-0.05em] text-white sm:text-[54px] lg:text-[64px]">
-                Simple, transparent{" "}
-                <span className="text-primary">pricing</span>
+                Simple pricing.{" "}
+                <span className="text-primary">Scale as you grow.</span>
               </h1>
               <p className="mx-auto mt-8 max-w-2xl text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-white/55">
-                Start with a base fee that scales with your team. No hidden
-                fees, no surprise overages.
+                Start small, add more apps and intelligence as your team needs
+                it. No hidden costs.
               </p>
             </div>
           </div>

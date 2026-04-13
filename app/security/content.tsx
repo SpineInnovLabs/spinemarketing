@@ -70,7 +70,7 @@ const principles = [
   },
   {
     title: "You stay in control, always",
-    desc: "The approval layer can't be bypassed. No admin override, no API backdoor.",
+    desc: "AI session summaries go through TruthLayer before entering knowledge. Actions go through the Govern Gate before executing. Your data, your approval, your control.",
   },
 ];
 
@@ -134,8 +134,10 @@ export function SecurityContent() {
               }}
               className="mx-auto mt-8 max-w-2xl text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-white/55"
             >
-              Controls, encryption, audit trails, and human approval are built
-              into every layer of IntegrateWise. Not bolted on. Not optional.
+              IntegrateWise is built so that AI never acts without approval,
+              data never moves without encryption, and every action has an audit
+              trail. Security isn&apos;t something we added. It&apos;s how the
+              system works.
             </motion.p>
           </div>
         </div>

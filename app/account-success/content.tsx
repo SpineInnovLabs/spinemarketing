@@ -36,8 +36,8 @@ const csLogos = [
 
 const comparisons = [
   {
-    before: "Check 8 tools every morning",
-    after: "One live profile per account — assembled automatically",
+    before: "Check 8 apps every morning",
+    after: "One live profile per account in L1 — assembled automatically",
   },
   {
     before: "Health scores in a spreadsheet someone updates weekly",
@@ -53,7 +53,7 @@ const comparisons = [
   },
   {
     before: "AI with zero context on your accounts",
-    after: "AI reads truth, context, and memory — then asks permission",
+    after: "AI reads Truth, Context, and Session Summaries — then asks permission",
   },
 ];
 
@@ -692,7 +692,9 @@ export function AccountSuccessContent() {
               >
                 You manage dozens of accounts across CRMs, support desks,
                 billing systems, and inboxes. The information is always there
-                &mdash; just scattered across eight tools.
+                &mdash; just scattered across eight apps. IntegrateWise brings
+                it into one workspace so you see the full story, and AI surfaces
+                what matters before it&apos;s too late.
               </motion.p>
               <motion.div
                 initial={{ opacity: 0, y: 12 }}
@@ -781,7 +783,7 @@ export function AccountSuccessContent() {
               transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
             >
               <h2 className="section-heading">
-                You check 8 tools every morning{" "}
+                You check 8 apps every morning{" "}
                 <span className="text-primary">
                   just to understand one account.
                 </span>
@@ -789,8 +791,9 @@ export function AccountSuccessContent() {
               <div className="mt-8 space-y-4 text-[17px] font-medium leading-[1.7] tracking-[-0.02em] text-muted-foreground">
                 <p>
                   CRM says healthy. Support has 3 P1 tickets. Billing shows a
-                  failed payment. Champion silent for 2 weeks. No single tool
-                  tells you what&apos;s actually happening.
+                  failed payment. Champion silent for 2 weeks. You&apos;re the
+                  one connecting the dots manually. No single tool tells you
+                  what&apos;s actually happening.
                 </p>
                 <p className="text-foreground font-semibold">
                   That&apos;s not Customer Success. That&apos;s data plumbing.

@@ -310,7 +310,7 @@ export function AboutContent() {
                 Nirmal didn&apos;t set out to build another CRM or analytics
                 tool. He set out to automate what he had done by hand: the
                 cross-referencing, the signal discovery, the context building
-                across disconnected systems.
+                across disconnected apps.
               </p>
               <p className="text-foreground font-semibold">
                 He had spent 13 years building the plumbing. Now he was going to
@@ -360,7 +360,8 @@ export function AboutContent() {
               style={{ background: "var(--gradient-primary)" }}
             >
               <p className="text-[17px] font-semibold leading-[1.5] text-white">
-                AI that thinks in context. Actions that wait for humans.
+                A Knowledge Workspace over the Spine — where teams work in L1,
+                AI proposes in L2, and humans stay in control.
               </p>
               <p className="mt-1 text-[15px] font-medium text-white/70">
                 This is IntegrateWise.

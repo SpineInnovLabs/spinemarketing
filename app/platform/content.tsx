@@ -79,8 +79,8 @@ function WorkspaceVisual() {
     },
     {
       icon: BookOpen,
-      label: "Knowledge Memory",
-      desc: "AI sessions that compound over time",
+      label: "Session Summaries",
+      desc: "AI session outputs governed by TruthLayer",
       color: "rgb(110,231,183)",
     },
   ];
@@ -191,7 +191,7 @@ const stickySteps: StickyScrollStep[] = [
     label: "Step 02",
     title: "Work. Everything in one workspace.",
     description:
-      "Your data gets cleaned automatically. Three data flows — Truth, Context, and Knowledge Memory — converge into a live Entity 360 view per customer, project, or account.",
+      "Your data gets cleaned automatically. Three data flows — Truth, Context, and Session Summaries — converge into a live Entity 360 view per customer, project, or account.",
     visual: <WorkspaceVisual />,
   },
   {
@@ -419,8 +419,8 @@ export function PlatformContent() {
             </h2>
             <p className="mt-4 text-[15px] font-medium leading-[1.5] tracking-[-0.02em] text-white/40">
               A continuous loop runs in the background — loading data, reasoning
-              across all three flows, acting on approvals, and learning from
-              your decisions.
+              across Truth, Context, and Session Summaries, acting on approvals,
+              and learning from your decisions.
             </p>
           </motion.div>
 

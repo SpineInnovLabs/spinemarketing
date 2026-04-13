@@ -31,8 +31,8 @@ const threeLayers = [
   },
   {
     icon: BookOpen,
-    label: "Knowledge Memory",
-    desc: "AI session summaries that compound over time",
+    label: "Session Summaries",
+    desc: "What AI learned, governed by TruthLayer before entering knowledge",
     color: "rgb(110,231,183)",
   },
 ];
@@ -84,7 +84,7 @@ const approvalSteps = [
   {
     num: "04",
     title: "Becomes knowledge",
-    desc: "Approved insights enter Knowledge Memory. Every AI reads from it. Intelligence compounds.",
+    desc: "Approved session summaries enter knowledge. Every AI in your workspace reads from it. Intelligence compounds over time.",
   },
 ];
 
@@ -221,7 +221,7 @@ export function AIContent() {
               + budget freeze in email{" "}
               <span className="text-muted-foreground">(Context)</span> + your
               decision to escalate &gt;30% drops{" "}
-              <span className="text-muted-foreground">(Knowledge Memory)</span>{" "}
+              <span className="text-muted-foreground">(Session Summaries)</span>{" "}
               ={" "}
               <span className="text-primary">
                 churn risk signal with full evidence

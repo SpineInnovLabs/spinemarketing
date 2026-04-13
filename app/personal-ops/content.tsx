@@ -14,7 +14,7 @@ const whatChanges = [
   {
     icon: Brain,
     title: "AI conversations that compound",
-    desc: "Every AI conversation gets summarized. You approve what matters. Approved summaries become Knowledge Memory — searchable, governed, and linked to real work.",
+    desc: "Session summaries from your AI chats are governed by TruthLayer. Approved summaries become knowledge the Twin can reference later. Your thinking builds on itself.",
   },
   {
     icon: CalendarCheck,
@@ -114,9 +114,10 @@ export function PersonalOpsContent() {
               }}
               className="mx-auto mt-8 max-w-2xl text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-white/55"
             >
-              Email, Slack, calendar, project tools, notes, AI — by the time
-              you&apos;ve assembled enough context to start working, 45 minutes
-              have passed.
+              Email, Slack, calendar, project tools, notes, AI chats — by the
+              time you&apos;ve assembled enough context to start working, 45
+              minutes have passed. IntegrateWise pulls them into one view so you
+              start the day clear, not overwhelmed.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 12 }}
@@ -173,13 +174,15 @@ export function PersonalOpsContent() {
               </h2>
               <div className="mt-8 space-y-6 text-[17px] font-medium leading-[1.7] tracking-[-0.02em] text-muted-foreground">
                 <p>
-                  Nothing connects. AI conversations disappear when the chat
-                  ends. Tasks live in one tool, context in another. Your best
-                  thinking is scattered across five apps.
+                  Every morning you open email, calendar, Slack, your project
+                  tool, your notes app, and maybe an AI chat. You spend the
+                  first hour just figuring out what matters. By the time you
+                  start real work, the day is already moving.
                 </p>
                 <p className="text-foreground font-semibold">
-                  You don&apos;t need another tool. You need one place that
-                  brings them together.
+                  The problem isn&apos;t you. The problem is that your apps
+                  don&apos;t talk to each other, and your AI doesn&apos;t
+                  remember yesterday.
                 </p>
               </div>
             </motion.div>

@@ -688,8 +688,9 @@ export function BusinessOpsContent() {
                 className="mx-auto mt-8 max-w-2xl text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-white/55 lg:mx-0"
               >
                 You make decisions every day about revenue, operations, and risk
-                &mdash; but the data lives in different tools, owned by
-                different teams. Nobody has the full picture.
+                &mdash; but the data lives in different apps, owned by
+                different teams. IntegrateWise pulls it into one operating view
+                so you see what changed and what needs attention today.
               </motion.p>
               <motion.div
                 initial={{ opacity: 0, y: 12 }}
@@ -783,10 +784,10 @@ export function BusinessOpsContent() {
               </h2>
               <div className="mt-8 space-y-4 text-[17px] font-medium leading-[1.7] tracking-[-0.02em] text-muted-foreground">
                 <p>
-                  Revenue in one tool. Pipeline in another. Support in a third.
-                  Costs in a spreadsheet. Half of it updated weekly &mdash;
-                  maybe. You spend more time assembling context than acting on
-                  it.
+                  Revenue is in Salesforce. Invoices are in QuickBooks. Tickets
+                  are in Zendesk. Projects are in Jira. Plans are in Notion.
+                  Communication is in Slack and Gmail. You&apos;re the one
+                  connecting these into a picture of the business.
                 </p>
                 <p className="text-foreground font-semibold">
                   That&apos;s not running a business. That&apos;s running a data
@@ -1022,8 +1023,9 @@ export function BusinessOpsContent() {
               <span className="text-primary">one source of truth.</span>
             </h2>
             <p className="mt-6 text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">
-              Stop assembling context from twelve tabs. Start making decisions
-              from one.
+              See how one workspace shows how the business is really doing, why
+              it moved, and what to do next &mdash; with AI that thinks in full
+              context and waits for your approval.
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-2.5 sm:flex-row">
               <Button

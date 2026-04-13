@@ -69,8 +69,8 @@ export function ContactContent({
               }}
               className="mx-auto mt-8 max-w-2xl text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-white/55"
             >
-              Whether you want a demo, have questions about IntegrateWise, or
-              need a custom connector — we&apos;d love to hear from you.
+              Whether you want a demo, have a question, or want to explore how
+              IntegrateWise fits your apps — we&apos;re here.
             </motion.p>
           </div>
         </div>
@@ -180,23 +180,27 @@ export function ContactContent({
             {[
               {
                 q: "How long does setup take?",
-                a: "Most teams are live within a week. Connect your tools and your complete account views start building immediately.",
+                a: "Most teams connect their first apps and see Entity 360 within a day. Full workspace setup with all integrations typically takes 1–2 weeks with our guided onboarding.",
               },
               {
-                q: "Do I need a data engineering team?",
-                a: "No. Our connectors clean and organize your data automatically. If it has an API, we can connect it without any engineering work.",
+                q: "Do I need an engineering team?",
+                a: "No. Every integration uses one-time OAuth setup. No code, no data migration, no engineering resources required.",
               },
               {
-                q: "Is there a free trial?",
-                a: "We offer guided proof-of-concept deployments. Book a demo and we'll set up a trial tailored to your stack.",
+                q: "Can I try it before committing?",
+                a: "Yes. We run a guided POC where you connect your real apps and see your real data in the workspace — including L1 (your Daily Workbench), L2 (the Intelligence Layer), and the Twin working with your actual context.",
               },
               {
-                q: "What if my tool isn't in the catalog?",
-                a: "We support custom API connectors, webhooks, and database connections. Request a connector and we'll scope it.",
+                q: "What if I need a connector you don't have?",
+                a: "We build custom connectors. Our Spine architecture supports REST API, GraphQL, webhooks, and direct database connections. Request a connector and we'll scope it.",
               },
               {
                 q: "How does billing work?",
-                a: "Base fee + usage-based scaling. See our pricing page for details, or contact us for enterprise terms.",
+                a: "Monthly or annual billing. No hidden costs. You can upgrade or downgrade anytime. Implementation services are billed separately as one-time packages.",
+              },
+              {
+                q: "Is my data secure?",
+                a: "Yes. AES-256 encryption at rest, TLS 1.3 in transit, SOC 2 aligned practices, full audit trails, and non-bypassable human approval on every AI action. See our Security page for details.",
               },
             ].map((faq, i) => (
               <motion.div
