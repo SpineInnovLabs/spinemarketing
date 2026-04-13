@@ -1,0 +1,26 @@
+The Problem
+Every company runs on 10-30+ SaaS tools — Salesforce, Slack, Jira, Stripe, HubSpot, Zendesk, etc. None of them talk to each other natively. So people become the glue. They copy-paste data between tools, reconcile conflicting information, and spend hours just figuring out what's actually happening with a customer or a project.
+The person doing this is effectively a "human API" — manually routing data between systems. It's slow, error-prone, and it doesn't scale.
+What IntegrateWise Is
+IntegrateWise is a Knowledge Workspace over the Spine, empowered by AI.
+That breaks down into two layers:
+Layer 1 — The Knowledge Workspace
+12 domain-specific views (Account Success, BizOps, RevOps, etc.) that give each team a single, schema-filtered view of their world. One workspace, not 15 browser tabs.
+Layer 2 — The Cognitive Overlay (Digital Twin)
+An AI intelligence layer that sits on top. It reads signals, detects risks (like churn), generates morning briefs, and recommends actions — but never acts without human approval.
+The Spine is what connects everything underneath. It's the adaptive intelligence layer that normalizes data from all connected tools into a single source of truth. Not a pipeline. Not an ETL job. A living, canonical nervous system.
+The Key Differentiator
+Human-in-the-loop governance is architectural, not configurable. AI cannot write to any system without explicit human approval. Every recommended action comes with evidence, confidence scores, and impact previews. The user decides. This isn't a toggle you can turn off — it's baked into the execution path.
+Where It Stands
+- Live in production (Cloudflare Workers)
+- Founder-led sales only ("Book a Demo")
+- No self-serve signup
+- Targeting Account Success, BizOps, and eventually Personal Ops
+- 7 industry verticals with tailored content (SaaS, Finance, Retail, Manufacturing, Professional Services, etc.)
+The Messaging Angles for LinkedIn
+Angle	Core Message	Who It Speaks To
+Problem	"Stop being the human API between your tools"	ICs and ops people drowning in tool-switching
+Product	"One workspace. Every tool. AI that waits for you."	Buyers evaluating solutions
+Trust	"No AI writes without human approval — architectural law"	Security-conscious leaders, regulated industries
+Vision	"From integration to intelligence"	Executives, investors, ecosystem
+That's the foundation. The banner content I gave above maps to these four angles. Want me to adjust any of the banners now that the context is laid out, or move to implementation?

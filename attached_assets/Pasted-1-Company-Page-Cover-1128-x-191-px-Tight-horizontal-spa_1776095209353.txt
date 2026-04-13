@@ -1,0 +1,124 @@
+1. Company Page Cover (1128 x 191 px)
+Tight horizontal space — keep it minimal.
+Option A — Core Positioning
+Layout: Logo (left) | Tagline (center) | CTA (right)
+Logo:        IntegrateWise brain mark + wordmark (white variant)
+Tagline:     "The Knowledge Workspace over the Spine"
+Sub:         "One workspace. Every tool. AI that waits for you."
+CTA badge:   "Book a Demo →"
+Background:  #0B0F17 with subtle animated-grid texture from section-background.svg
+Accent:      Mint #2EE5A8 thin line or glow under tagline
+Option B — Problem Statement
+Logo (left) | Copy (center-right)
+Copy:        "Stop being the human API between your tools."
+Sub:         "integratewise.ai"
+Background:  #0B0F17, faint radial glow (#4154A3 blue + #EB4379 pink) from center
+---
+2. Personal Profile Banner (1584 x 396 px)
+More vertical space — can be richer.
+Option A — Founder / Builder
+Layout: Left 60% text | Right 40% visual
+Left side:
+  Line 1:    "Building IntegrateWise"          (Sora 600, white)
+  Line 2:    "The Knowledge Workspace           (Sora 400, #2EE5A8 mint)
+              over the Spine"
+  Line 3:    "AI that connects your tools.      (Inter 400, white/60%)
+              Governed by you."
+  Badge:     "Founder & CEO" or "Early Access Open"
+Right side:
+  Simplified spine diagram — 3 tool icons converging
+  into the brain logomark, with mint glow
+Background:  #0B0F17, subtle grid
+Accent line: Mint #2EE5A8 horizontal rule between lines 2 and 3
+Option B — HITL Differentiator
+Left side:
+  Line 1:    "No AI writes without              (Sora 600, white)
+              human approval."
+  Line 2:    "Architectural law,                 (Sora 400, #2EE5A8)
+              not a feature flag."
+  Line 3:    "integratewise.ai"                  (Inter 400, white/40%)
+Right side:
+  Approval UI mockup (simplified) — from approval-ui.png
+  with confidence score badge "92/100"
+Background:  #0B0F17 with blue radial glow on right
+Option C — Problem Statement
+Center-aligned:
+  Line 1:    "Stop being the human API"          (Sora 700, white, large)
+  Line 2:    "between your tools."               (Sora 700, #2EE5A8, large)
+  Line 3:    "IntegrateWise — Book a Demo"       (Inter 400, white/60%, small)
+Background:  #0B0F17, dual radial glow (blue left, pink right)
+Logo:        Small brain mark bottom-right corner
+---
+3. Post Images
+A. Square (1080 x 1080 px) — Core Positioning
+Top:         IntegrateWise logo (white, small)
+Center:
+  Line 1:    "One Workspace."                    (Sora 700, white, 64px)
+  Line 2:    "Every Tool."                       (Sora 700, #2EE5A8, 64px)
+  Line 3:    "AI That Waits for You."            (Sora 700, white, 64px)
+Bottom:      "integratewise.ai  |  Book a Demo"  (Inter 400, white/60%)
+Background:  #0B0F17 with centered radial mint glow (subtle)
+B. Square (1080 x 1080 px) — HITL Differentiator
+Top:         Small badge: "How IntegrateWise Works" (mint border pill)
+Center:      Visual showing 3-step flow:
+             [AI Recommends] → [Human Approves] → [Action Executes]
+             Each step as a rounded card with icon
+Below flow:
+  Quote:     "Every AI action waits for           (Inter 500, white)
+              human approval. Evidence,
+              confidence scores, and impact
+              previews — all before anything
+              executes."
+Bottom:      Logo + "integratewise.ai"
+Background:  #0B0F17
+Cards:       #111827 with #ffffff1a border, mint accent on arrows
+C. Landscape (1200 x 627 px) — Problem Statement
+Left 55%:
+  Line 1:    "You are the"                       (Inter 400, white/60%)
+  Line 2:    "human API"                         (Sora 800, #EE4B75 pink, 72px)
+  Line 3:    "between your tools."               (Sora 600, white, 36px)
+  Line 4:    ""                                  (spacer)
+  Line 5:    "There's a better way."             (Inter 500, #2EE5A8)
+Right 45%:
+  Visual: 5-6 tool logos (Salesforce, Slack, Jira, Stripe, HubSpot, Zendesk)
+  scattered, with lines converging into the IntegrateWise brain mark
+Background:  #0B0F17
+D. Square (1080 x 1080 px) — Launch / Early Access
+Top:         Badge pill: "Early Access" (#2EE5A8 border, mint text)
+Center:
+  Line 1:    "IntegrateWise"                     (Sora 700, white, 56px)
+  Line 2:    "is live."                          (Sora 700, #2EE5A8, 56px)
+Stats row (3 columns):
+  "70+"          "360°"          "100%"
+  Integrations   Customer View   Human Control
+Bottom:
+  CTA:       "Book a Demo → integratewise.ai"    (Inter 500, white)
+Background:  #0B0F17 with mint glow behind "is live."
+E. Carousel (1080 x 1080 px, 4 slides)
+Slide 1:  "The Productivity Paradox"
+          "More tools. Less clarity."
+          (Visual: scattered tool icons, no connections)
+Slide 2:  "The Spine connects everything."
+          "One normalized truth layer."
+          (Visual: same icons, now connected through central brain mark)
+Slide 3:  "AI that acts — with your approval."
+          "Confidence scores. Impact previews. You decide."
+          (Visual: approval card mockup with 92/100 score)
+Slide 4:  "IntegrateWise"
+          "Knowledge Workspace over the Spine"
+          "Book a Demo → integratewise.ai"
+          (Logo + CTA)
+All slides: #0B0F17 bg, consistent Sora headings, Inter body
+Accent:     Mint #2EE5A8 for emphasis words
+---
+Design Specs Summary
+Element	Value
+Background	#0B0F17 (primary)
+Text	#FFFFFF (headings), rgba(255,255,255,0.6) (body)
+Mint accent	#2EE5A8
+Brand blue	#4154A3 (glow/radial only)
+Brand pink	#EB4379 (sparingly, logo dot)
+Display font	Sora (600-800 weight)
+Body font	Inter (400-500 weight)
+Logo	Use white variant (logo-iw-white.svg)
+Corner radius	10px on cards/badges
