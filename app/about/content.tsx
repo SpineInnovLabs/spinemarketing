@@ -420,6 +420,34 @@ export function AboutContent() {
         </div>
       </section>
 
+      {/* Proof stats */}
+      <section className="arvio-section">
+        <div className="mx-auto max-w-[800px]">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+          >
+            <blockquote className="border-l-2 border-primary pl-6 text-[18px] italic font-medium text-foreground leading-[1.7]">
+              &ldquo;The Spine connected support, product usage, billing, and relationship data across 12 systems. The team intervened early and saved an $8M customer.&rdquo;
+            </blockquote>
+            <div className="mt-10 grid grid-cols-3 gap-6 text-center">
+              {[
+                { stat: "$8M", label: "Customer protected" },
+                { stat: "70+", label: "Systems connected" },
+                { stat: "3 flows", label: "Truth, Context, Session Summaries" },
+              ].map(({ stat, label }) => (
+                <div key={label} className="arvio-card p-6">
+                  <div className="text-[28px] font-bold tracking-[-0.04em] text-primary">{stat}</div>
+                  <div className="mt-1 text-[13px] font-medium text-muted-foreground">{label}</div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Closing quote + CTA */}
       <section
         className="arvio-section"

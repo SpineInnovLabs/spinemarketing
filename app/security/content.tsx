@@ -1,6 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 import {
   ShieldCheck,
   Lock,
@@ -231,6 +233,53 @@ export function SecurityContent() {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Security CTA */}
+      <section
+        className="arvio-section"
+        style={{ backgroundColor: "rgb(8, 7, 14)" }}
+      >
+        <div className="mx-auto max-w-[800px] text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+          >
+            <h2 className="text-[32px] font-semibold tracking-[-0.04em] leading-[1.2] text-white sm:text-[40px]">
+              Security that doesn&apos;t require trust —{" "}
+              <span className="text-primary">it proves itself.</span>
+            </h2>
+            <p className="mt-6 text-[17px] font-medium leading-[1.5] text-white/40">
+              Every action logged. Every AI proposal governed. Every approval
+              traceable.
+            </p>
+            <div className="mt-10 flex flex-col items-center justify-center gap-2.5 sm:flex-row">
+              <Button
+                size="lg"
+                className="h-[42px] rounded-xl px-6 text-[15px] font-semibold"
+                style={{
+                  background: "var(--gradient-primary)",
+                  boxShadow: "var(--shadow-button)",
+                }}
+                asChild
+              >
+                <Link href="/contact?intent=security">
+                  Talk to us about security
+                </Link>
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="h-[42px] rounded-xl border-2 border-white/15 bg-transparent px-6 text-[15px] font-semibold text-white hover:bg-white/10"
+                asChild
+              >
+                <Link href="/contact?intent=demo">Book a demo</Link>
+              </Button>
+            </div>
+          </motion.div>
         </div>
       </section>
     </>

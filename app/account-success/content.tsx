@@ -804,6 +804,50 @@ export function AccountSuccessContent() {
         </div>
       </section>
 
+      {/* ── L1/L2 SOLUTION FRAMING ────────────────────────── */}
+      <section className="arvio-section bg-muted">
+        <div className="mx-auto max-w-[1100px]">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+            className="mx-auto max-w-2xl text-center"
+          >
+            <h2 className="section-heading">
+              One workspace. Two layers.{" "}
+              <span className="text-primary">Full account intelligence.</span>
+            </h2>
+          </motion.div>
+          <div className="mx-auto mt-12 grid max-w-3xl gap-6 sm:grid-cols-2">
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ type: "spring", bounce: 0.2, duration: 0.6, delay: 0 }}
+              className="arvio-card p-6"
+            >
+              <h3 className="text-[14px] font-bold uppercase tracking-[0.1em] text-primary mb-3">L1 — Your Daily Workbench for accounts</h3>
+              <p className="text-[14px] font-medium leading-[1.7] text-muted-foreground">
+                Open any account and see the full story: revenue, product usage, support tickets, emails, conversations, stakeholders, and renewal timeline. Track tasks, manage renewals, run playbooks, and log engagement. This is where you work every day.
+              </p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ type: "spring", bounce: 0.2, duration: 0.6, delay: 0.1 }}
+              className="arvio-card p-6"
+            >
+              <h3 className="text-[14px] font-bold uppercase tracking-[0.1em] text-primary mb-3">L2 — The Intelligence Layer for account teams</h3>
+              <p className="text-[14px] font-medium leading-[1.7] text-muted-foreground">
+                The Twin reads the complete picture through the Spine. It highlights health drops, churn risk, expansion signals, and champion changes. Recommended actions appear with evidence. You review in L2, approve, and the action executes in L1.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* ── THE SHIFT — Before vs After ──────────────────── */}
       <section
         className="arvio-section"
