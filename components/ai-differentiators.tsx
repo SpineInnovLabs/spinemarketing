@@ -20,9 +20,9 @@ const layers = [
   },
   {
     icon: BookOpen,
-    label: "Knowledge",
-    title: "Accumulated AI memory",
-    desc: "Approved session summaries, synthesized insights, reusable operational memory — retained and governed over time.",
+    label: "Session Summaries",
+    title: "What AI learned, governed by you",
+    desc: "What AI learns during your conversations and analysis sessions. Session summaries pass through TruthLayer before they become knowledge. Nothing AI generates enters the Spine directly.",
     color: "rgb(110,231,183)",
   },
 ];
@@ -104,7 +104,7 @@ export function AIDifferentiators() {
           }}
           className="mx-auto mt-10 flex max-w-2xl items-center justify-center gap-2 sm:gap-3"
         >
-          {["Truth", "Context", "Knowledge"].map((flow, i) => (
+          {["Truth", "Context", "Session Summaries"].map((flow, i) => (
             <div key={flow} className="flex items-center gap-2 sm:gap-3">
               <span className="rounded-md border border-white/10 bg-white/[0.04] px-3 py-1.5 text-[11px] font-semibold text-white/60 sm:text-[12px]">
                 {flow}

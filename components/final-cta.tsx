@@ -32,8 +32,8 @@ export function FinalCTA() {
             <span className="text-primary">in one place?</span>
           </h2>
           <p className="mt-6 text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-white/55">
-            See how IntegrateWise turns tool data, live context, and AI session
-            memory into one workspace — with humans in control.
+            Bring your existing apps into a Knowledge Workspace over the Spine
+            and see how AI can think in context while you stay in control.
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-2.5 sm:flex-row">
             <Button
