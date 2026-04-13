@@ -32,6 +32,11 @@ import {
   BookOpen,
   GitMerge,
   HelpCircle,
+  Database,
+  Cpu,
+  GitBranch,
+  Eye,
+  Globe,
 } from "lucide-react";
 import { motion, useScroll, useSpring } from "framer-motion";
 
@@ -59,19 +64,24 @@ const navigation: NavItem[] = [
     label: "Platform",
     href: "/platform",
     items: [
-      { name: "Adaptive Spine Architecture", href: "/platform", icon: GitMerge, desc: "The orchestration layer that unifies every app" },
-      { name: "Integrations", href: "/integrations", icon: Plug, desc: "70+ apps connected over the Spine" },
-      { name: "Security", href: "/security", icon: ShieldCheck, desc: "Govern Gate, audit trails, enterprise-grade" },
+      { name: "Architecture", href: "/platform/architecture", icon: GitMerge, desc: "Four pillars — Cognitive, Memory, Governance, Workspace" },
+      { name: "The Spine", href: "/platform/the-spine", icon: Database, desc: "SpineVault, 8-stage normalization, canonical entities" },
+      { name: "Flows", href: "/platform/flows", icon: GitBranch, desc: "Flow C Triage, Twin Activation, Tool→Truth loops" },
+      { name: "Services", href: "/services", icon: Wrench, desc: "Implementation, managed ops, custom connectors" },
+      { name: "Connectors", href: "/platform/connectors", icon: Plug, desc: "MCP protocol, auto-upgrade, integration infrastructure" },
+      { name: "Security", href: "/platform/security", icon: ShieldCheck, desc: "Truth Boundary, encryption, compliance, audit trail" },
     ],
   },
   {
     label: "Product",
     href: "/product",
     items: [
-      { name: "Knowledge Workspace", href: "/product", icon: Layers, desc: "The workspace layer over the Spine" },
-      { name: "Workbench", href: "/product#workbench", icon: Sparkles, desc: "Your live workspace, always in context" },
-      { name: "Intelligence Layer", href: "/product#intelligence", icon: Brain, desc: "AI thinks in context, waits for your approval" },
-      { name: "The Twin", href: "/ai", icon: Brain, desc: "Your AI counterpart across every workflow" },
+      { name: "Overview", href: "/product", icon: Layers, desc: "Dual-layer intelligence — Workbench + Cognitive Layer" },
+      { name: "Workbench", href: "/product/workbench", icon: Cpu, desc: "12 domain-specific views, schema-driven UI" },
+      { name: "Intelligence Layer", href: "/product/intelligence-layer", icon: Brain, desc: "Digital Twin, Knowledge Memory, Twin Trigger Scoring" },
+      { name: "Truth Boundary", href: "/product/truth-boundary", icon: ShieldCheck, desc: "Approval-driven execution, HITL governance" },
+      { name: "Entity 360", href: "/product/entity-360", icon: Eye, desc: "Universal data object — relations, conflicts, freshness" },
+      { name: "Connectors", href: "/product/connectors", icon: Plug, desc: "Connector directory, auto-upgrade status, firewalling" },
     ],
   },
   {
