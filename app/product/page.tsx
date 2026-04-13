@@ -7,7 +7,7 @@ import { ProductContent } from "./content";
 export const metadata: Metadata = {
   title: "Product | IntegrateWise",
   description:
-    "The Knowledge Workspace over the Spine. One interface for accounts, projects, and workflows — AI reads everything, suggests the next move, and waits for your approval before touching any system.",
+    "Stop switching tabs. Arvio connects your CRM, billing, support, and project tools into one live workspace. AI surfaces what needs attention and waits for your approval before acting.",
 };
 
 export default function ProductPage() {
