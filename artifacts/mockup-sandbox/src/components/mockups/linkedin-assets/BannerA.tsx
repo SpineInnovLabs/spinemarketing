@@ -17,7 +17,7 @@ export const BannerA = () => {
       <style dangerouslySetInnerHTML={{ __html: "@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap');" }} />
 
       <div style={{
-        width: '58%',
+        width: '55%',
         height: '100%',
         paddingLeft: '5vw',
         display: 'flex',
@@ -31,7 +31,7 @@ export const BannerA = () => {
         </div>
         <div style={{ width: '6vw', height: '2px', backgroundColor: '#2EE5A8', margin: '1.8vh 0' }} />
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.8vw', marginTop: '0.5vh' }}>
-          {['Entity 360s', 'Morning Briefs', 'Churn Detection', 'Confidence Scores', 'Govern Gate'].map((f) => (
+          {['See every customer in one place', 'Know what needs attention today', 'Catch at-risk accounts early', 'AI suggests — you decide'].map((f) => (
             <span key={f} style={{
               fontFamily: 'Inter, sans-serif',
               fontWeight: 500,
@@ -57,26 +57,26 @@ export const BannerA = () => {
             Book a Demo →
           </div>
           <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400, color: 'rgba(255,255,255,0.35)', fontSize: '2.4vh' }}>
-            70+ connectors · SOC 2 · No code
+            70+ apps connected · No code needed
           </span>
         </div>
       </div>
 
       <div style={{
-        width: '42%',
+        width: '45%',
         height: '100%',
         position: 'relative',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
       }}>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5vh', width: '80%' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5vh', width: '82%' }}>
           {[
-            { label: 'Entity 360', desc: 'Full customer view across every tool', color: '#2EE5A8' },
-            { label: 'Morning Brief', desc: 'AI-generated daily priorities + risks', color: '#4EAAFF' },
-            { label: 'Govern Gate', desc: 'Nothing executes without your approval', color: '#EB4379' },
+            { outcome: 'See every customer interaction in one place', detail: 'No more switching between 12 tabs', color: '#2EE5A8' },
+            { outcome: 'Start your day knowing exactly what to do', detail: 'AI reads your tools overnight, surfaces priorities by morning', color: '#4EAAFF' },
+            { outcome: 'Nothing happens without your say-so', detail: 'AI recommends actions — you approve or reject, always', color: '#EB4379' },
           ].map((item) => (
-            <div key={item.label} style={{
+            <div key={item.outcome} style={{
               background: '#111827',
               border: '1px solid rgba(255,255,255,0.08)',
               borderRadius: '8px',
@@ -86,7 +86,7 @@ export const BannerA = () => {
               gap: '1.2vw',
             }}>
               <div style={{
-                width: '1vw',
+                width: '0.8vw',
                 height: '4vh',
                 borderRadius: '3px',
                 backgroundColor: item.color,
@@ -94,11 +94,11 @@ export const BannerA = () => {
                 opacity: 0.8,
               }} />
               <div>
-                <div style={{ fontFamily: 'Sora, sans-serif', fontWeight: 600, color: 'white', fontSize: '2.5vh', lineHeight: 1.2 }}>
-                  {item.label}
+                <div style={{ fontFamily: 'Sora, sans-serif', fontWeight: 600, color: 'white', fontSize: '2.3vh', lineHeight: 1.2 }}>
+                  {item.outcome}
                 </div>
-                <div style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400, color: 'rgba(255,255,255,0.45)', fontSize: '2vh', lineHeight: 1.3 }}>
-                  {item.desc}
+                <div style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400, color: 'rgba(255,255,255,0.4)', fontSize: '1.8vh', lineHeight: 1.3, marginTop: '0.3vh' }}>
+                  {item.detail}
                 </div>
               </div>
             </div>
