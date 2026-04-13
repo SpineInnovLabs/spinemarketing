@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { ArrowRight, MousePointerClick } from "lucide-react";
+import { MousePointerClick } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
 import { useEffect, useState, useCallback, useMemo } from "react";
 
@@ -616,17 +616,6 @@ export function HeroSection() {
               asChild
             >
               <Link href="/contact?intent=demo">Book a demo</Link>
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="h-[42px] rounded-xl border-2 border-white/15 bg-transparent px-4 text-[15px] font-semibold tracking-[-0.3px] text-white hover:bg-white/10 hover:text-white"
-              asChild
-            >
-              <Link href="#how-it-works" className="flex items-center gap-2">
-                See how it works
-                <ArrowRight className="h-4 w-4" />
-              </Link>
             </Button>
           </motion.div>
         </div>
