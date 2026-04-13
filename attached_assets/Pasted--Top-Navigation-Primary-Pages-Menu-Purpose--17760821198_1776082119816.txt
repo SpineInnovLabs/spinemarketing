@@ -1,0 +1,118 @@
+## Top Navigation / Primary Pages
+
+| Menu          | Purpose                                                        | One-line promise                                       |
+| ------------- | -------------------------------------------------------------- | ------------------------------------------------------ |
+| **Platform**  | How IntegrateWise ingests data, builds context, and governs AI | “Built on truth + context + approved memory.”          |
+| **Product**   | The user-facing experience (Workbench + Intelligence)          | “A daily workbench, with intelligence under the hood.” |
+| **Solutions** | Role-based outcomes delivered by Product + Platform            | “Workspaces that solve real operating problems.”       |
+| **Pricing**   | Plans, limits, onboarding, services                            | “Scales with connectors, governance, and users.”       |
+| **Company**   | Story, vision, team, careers, contact                          | “Created so humans don’t have to be the API.”          |
+
+---
+
+## Platform — Landing Copy
+
+**Headline**
+Built on truth, context, and governed memory.
+
+**Sub-headline**
+The IntegrateWise Platform ingests records from your systems, context from your conversations, and approved session summaries—then turns them into a reliable intelligence layer that scores confidence and never writes back without human approval.
+
+**Core sections**
+
+1. **Connectors & Ingestion** – pull structured data from CRM, billing, support, docs, chat, and more.
+2. **Context Engine** – attach conversations, notes, and decisions where they belong.
+3. **Session Summaries** – reuse only what humans approve.
+4. **TruthLayer** – score freshness, cross-reference, context coverage, and overall confidence.
+5. **Governance & Approvals** – every action and memory update waits for explicit sign-off.
+6. **Security** – SSO, RBAC, audit trail, encryption-at-rest.
+
+---
+
+## Product — Landing Copy
+
+**Headline**
+A workbench for daily work. Intelligence underneath.
+
+**Sub-headline**
+Users work in the **Workbench**—tasks, accounts, projects, and execution. **Intelligence** reads truth, context, and approved summaries, scores confidence with TruthLayer, and waits for approval before anything happens.
+
+**Key components**
+
+1. **Workbench** – dashboards, timelines, workflows, tasks.
+2. **Intelligence** – reasoning, suggestions, summaries.
+3. **Approvals Interface** – evidence, confidence, approve / edit / reject.
+4. **Unified Timeline** – system events + human context side by side.
+5. **Reusable Memory** – approved summaries compound over time.
+
+---
+
+## Solutions — Landing Copy
+
+**Headline**
+Workspaces built around real operating use cases.
+
+**Sub-headline**
+Whether you manage customers, run operations, or organize personal execution, IntegrateWise combines truth, context, and approved summaries into a workbench that helps you move faster without losing control.
+
+### Account Success
+
+* **Workbench** shows health, usage, billing, support, and stakeholder signals in one place.
+* **Intelligence** surfaces churn risk, expansion opportunity, and drafts follow-ups—with evidence and confidence scores.
+* **Outcome**: less context-hunting, earlier risk detection, faster renewals.
+
+### Business Ops
+
+* **Workbench** tracks workflows, hand-offs, metrics, and exceptions across teams.
+* **Intelligence** spots gaps, conflicting records, and stale processes; proposes fixes; waits for approval.
+* **Outcome**: cleaner data, smoother operations, fewer fire-drills.
+
+### Personal Ops
+
+* **Workbench** unifies tasks, notes, calendar, goals.
+* **Intelligence** remembers decisions, summarizes sessions, suggests next actions with continuity.
+* **Outcome**: one place for personal execution, powered by context-aware AI.
+
+(Industry-specific and role-specific pages can live one level deeper.)
+
+---
+
+## Pricing — Tier Overview
+
+| Plan                         | Ideal for                            | Connectors | Intelligence         | Governance                     |
+| ---------------------------- | ------------------------------------ | ---------- | -------------------- | ------------------------------ |
+| **Starter** (Free)           | small teams getting organized        | up to 3    | basic suggestions    | manual approvals               |
+| **Growth** ($49 / user / mo) | teams that need AI-powered workflows | up to 10   | full Intelligence    | TruthLayer scoring + approvals |
+| **Enterprise** (Contact)     | orgs with advanced security & scale  | unlimited  | full + custom models | SSO, RBAC, audit trail         |
+
+*Onboarding packages: Platform setup (from $3k), Connector workshop (from $2k), Custom add-ons (quote).*
+
+---
+
+## Company — Story Excerpt
+
+> **Built so humans don’t have to be the API.**
+> We watched teams spend hours stitching data across tools while stateless AI agents missed the full picture.
+> IntegrateWise was created to give work a governed intelligence layer—so people stay in control and nothing falls through the cracks.
+
+Call-to-actions: Careers • Blog • Changelog • Press • Contact.
+
+---
+
+### Canonical Vocabulary (use consistently)
+
+| Concept                     | Public term                           |
+| --------------------------- | ------------------------------------- |
+| Normalized backend engine   | **Platform**                          |
+| Daily work surface          | **Workbench**                         |
+| Reasoning + approvals layer | **Intelligence**                      |
+| Confidence membrane         | **TruthLayer**                        |
+| Approved session output     | **Session summary / Approved memory** |
+
+Use **these terms only**—avoid introducing new ones in public copy.
+
+---
+
+### One-sentence positioning summary
+
+**IntegrateWise gives teams a daily workbench for execution and an intelligence layer that reasons on truth, context, and approved memory—with evidence and human approval every step of the way.**

@@ -22,7 +22,7 @@ const plans = [
     description: "Connect your apps. See everything in one workspace over the Spine.",
     features: [
       "Up to 5 connectors",
-      "L1: Full Daily Workbench — accounts, tasks, workflows, calendar",
+      "Workbench — accounts, tasks, workflows, calendar",
       "Complete view of every account via Entity 360",
       "Basic signals and alerts",
       "Truth + Context data flows",
@@ -40,7 +40,7 @@ const plans = [
     features: [
       "Up to 15 connectors",
       "Everything in Starter",
-      "L2: Full Intelligence Layer — Twin Chat, action buttons, draft previews",
+      "Intelligence Layer — Twin Chat, action buttons, draft previews",
       "AI insights with evidence from the Spine",
       "Session Summaries + TruthLayer governance",
       "Knowledge that compounds over time",

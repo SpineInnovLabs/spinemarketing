@@ -1,0 +1,158 @@
+1. PLATFORM /platform
+
+Hero Section
+
+Headline: The Adaptive Spine Architecture
+Subheadline: A vendor-neutral intelligence layer that normalizes truth across your systems, governs every AI action through non-bypassable human approval, and writes nothing back without explicit consent.
+
+Visual: 3-layer diagram (Spine base → Workspace middle → Twin overlay with approval gate)
+CTA: Explore the architecture →PLATFORM /platform
+
+Hero Section
+
+Headline: The Adaptive Spine Architecture  
+
+Subheadline: A vendor-neutral intelligence layer that normalizes truth across your systems, governs every AI action through non-bypassable human approval, and writes nothing back without explicit consent.
+
+Visual: 3-layer diagram (Spine base → Workspace middle → Twin overlay with approval gate)  
+
+CTA: Explore the architecture →  
+
+Secondary: View integration docs →
+
+Section: The Five Dimensions
+
+The architectural differentiators that create the whitespace IntegrateWise occupies.
+
+1. Spine Equivalent (Vendor-Neutral SSOT)
+
+Unlike iPaaS tools that only move data or CRMs that lock truth in proprietary schemas, the Spine maintains a normalized, vendor-independent canonical layer.
+
+* Canonical Entities: Account, Contact, Deal, Ticket, Invoice, Project exist as neutral objects, not Salesforce rows or HubSpot records.
+* Live Alignment: Continuous bidirectional sync with conflict resolution, not batch ETL.
+* Schema Evolution: Automatic drift detection when upstream APIs change; field mapping versioned and governed.
+
+Result: Your data has a home independent of any vendor’s roadmap or pricing change.
+
+2. Entity 360 (Live Cross-System View)
+
+Not a dashboard. Not a report. A queryable, living object that assembles in real-time.
+
+* Account 360: CRM status + billing health + open tickets + product usage + recent stakeholder emails + renewal timeline.
+* Conflict Resolution: When two systems disagree (e.g., Salesforce vs. QuickBooks revenue), the Spine flags it; AI suggests resolution based on source-of-record rules you define.
+* Temporal Truth: Point-in-time reconstruction—see exactly what was known on any historical date.
+
+3. Proactive Signal Detection
+
+AI monitors the Spine continuously, not on-demand.
+
+* Cross-System Patterns: “Usage dropped 30% AND champion left AND ticket volume spiked” = Churn risk before the CRM shows it.
+* Confidence Scoring: Every signal carries a confidence score (0-100) based on data freshness and source reliability.
+* Noise Suppression: Low-confidence or stale signals are quarantined, not surfaced.
+
+4. Reasoning with Evidence (The Think Layer)
+
+A dedicated cognitive layer that shows its work.
+
+* Chain-of-Thought: AI explains why it flagged an account as “At Risk,” with hyperlinks to source records across systems.
+* Dual Context Mapping: Every recommendation explicitly states impact on both vendor goals (e.g., Salesforce data quality) and client business goals (e.g., renewal probability).
+* Evidence Anchoring: No insight without goal_refs linking back to canonical Spine entities.
+
+5. Non-Bypassable HITL (Human-in-the-Loop)
+
+Human approval is an architectural gate, not a workflow add-on.
+
+* Approval Topology: All AI-generated actions route through the TruthLayer—a governance membrane that requires human authorization before any write operation.
+* Audit Immutability: Every approval/rejection/edit is append-only, signed, and timestamped in the Spine’s decision log.
+* Emergency Overrides: Even admin “force” actions create traceable exceptions, never silent executions.
+
+Section: The 8-Stage Pipeline
+
+How data flows from chaos to governed intelligence.
+
+Stage	Function	Human Touchpoint
+1. Ingest	Webhooks, APIs, email ingestion, file drops	Connector configuration approval
+1. Normalize	Schema mapping, deduplication, canonicalization	Schema drift review
+1. Store	Spine SSOT, versioned entities, relation graphs	Data retention governance
+1. Render	Workspace views, Entity 360 assembly	View customization
+1. Think	AI signal detection, pattern analysis, reasoning	Confidence threshold tuning
+1. Govern (HITL)	TruthLayer scoring, approval routing, evidence display	Mandatory approval gate
+1. Act	Write-backs to connected systems, task creation	Execute or reschedule
+1. Re-ingest	Action outcomes flow back to Spine as new truth	Outcome validation
+
+
+Section: Technical Specifications
+
+Infrastructure: Cloudflare (Workers, D1, R2, Queues) + Supabase (PostgreSQL, Auth, Realtime)  
+
+Protocol: Event-driven with idempotency keys, DLQ for failed webhooks, circuit breakers for API limits  
+
+Security: End-to-end encryption at rest (AES-256) and in transit (TLS 1.3), SOC 2 Type II audit trail  
+
+Scale: Sub-100ms query latency for Entity 360 assembly; 99.9% uptime SLA on Spine availability
+Secondary: View integration docs →
+
+---
+
+Section: The Five Dimensions
+
+The architectural differentiators that create the whitespace IntegrateWise occupies.
+
+1. Spine Equivalent (Vendor-Neutral SSOT)
+
+Unlike iPaaS tools that only move data or CRMs that lock truth in proprietary schemas, the Spine maintains a normalized, vendor-independent canonical layer.
+
+* Canonical Entities: Account, Contact, Deal, Ticket, Invoice, Project exist as neutral objects, not Salesforce rows or HubSpot records.
+* Live Alignment: Continuous bidirectional sync with conflict resolution, not batch ETL.
+* Schema Evolution: Automatic drift detection when upstream APIs change; field mapping versioned and governed.
+
+Result: Your data has a home independent of any vendor’s roadmap or pricing change.
+
+2. Entity 360 (Live Cross-System View)
+
+Not a dashboard. Not a report. A queryable, living object that assembles in real-time.
+
+* Account 360: CRM status + billing health + open tickets + product usage + recent stakeholder emails + renewal timeline.
+* Conflict Resolution: When two systems disagree (e.g., Salesforce vs. QuickBooks revenue), the Spine flags it; AI suggests resolution based on source-of-record rules you define.
+* Temporal Truth: Point-in-time reconstruction—see exactly what was known on any historical date.
+
+3. Proactive Signal Detection
+
+AI monitors the Spine continuously, not on-demand.
+
+* Cross-System Patterns: “Usage dropped 30% AND champion left AND ticket volume spiked” = Churn risk before the CRM shows it.
+* Confidence Scoring: Every signal carries a confidence score (0-100) based on data freshness and source reliability.
+* Noise Suppression: Low-confidence or stale signals are quarantined, not surfaced.
+
+4. Reasoning with Evidence (The Think Layer)
+
+A dedicated cognitive layer that shows its work.
+
+* Chain-of-Thought: AI explains why it flagged an account as “At Risk,” with hyperlinks to source records across systems.
+* Dual Context Mapping: Every recommendation explicitly states impact on both vendor goals (e.g., Salesforce data quality) and client business goals (e.g., renewal probability).
+* Evidence Anchoring: No insight without goal_refs linking back to canonical Spine entities.
+
+5. Non-Bypassable HITL (Human-in-the-Loop)
+
+Human approval is an architectural gate, not a workflow add-on.
+
+* Approval Topology: All AI-generated actions route through the TruthLayer—a governance membrane that requires human authorization before any write operation.
+* Audit Immutability: Every approval/rejection/edit is append-only, signed, and timestamped in the Spine’s decision log.
+* Emergency Overrides: Even admin “force” actions create traceable exceptions, never silent executions.
+
+---
+
+Section: The 8-Stage Pipeline
+
+How data flows from chaos to governed intelligence.
+
+Column 1	Column 2	Column 3
+Stage	Function	Human Touchpoint
+1. Ingest	Webhooks, APIs, email ingestion, file drops	Connector configuration approval
+2. Normalize	Schema mapping, deduplication, canonicalization	Schema drift review
+3. Store	Spine SSOT, versioned entities, relation graphs	Data retention governance
+4. Render	Workspace views, Entity 360 assembly	View customization
+5. Think	AI signal detection, pattern analysis, reasoning	Confidence threshold tuning
+6. Govern (HITL)	TruthLayer scoring, approval routing, evidence display	Mandatory approval gate
+7. Act	Write-backs to connected systems, task creation	Execute or reschedule
+8. Re-ingest	Action outcomes flow back to Spine as new truth	Outcome validation

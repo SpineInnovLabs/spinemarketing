@@ -312,7 +312,7 @@ export function AIContent() {
           <div className="mx-auto mt-12 grid max-w-3xl gap-4 sm:grid-cols-3">
             {[
               {
-                label: "L2 — The Twin proposes",
+                label: "Intelligence Layer — The Twin proposes",
                 desc: "Signals surface with evidence. Chat, action buttons, and draft previews live here. You decide.",
               },
               {
@@ -320,7 +320,7 @@ export function AIContent() {
                 desc: "Full reasoning visible. Approve, edit, or reject. Nothing moves without your say.",
               },
               {
-                label: "L1 — Executes",
+                label: "Workbench — Executes",
                 desc: "Approved actions create tasks, update records, send emails, and write back to connected apps.",
               },
             ].map(({ label, desc }, i) => (

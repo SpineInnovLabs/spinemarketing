@@ -8,8 +8,8 @@ import {
   useMotionValue,
   useSpring,
   useTransform,
-} from "motion/react"
-import type { MotionProps } from "motion/react"
+  type MotionProps,
+} from "framer-motion"
 
 import { cn } from "@/lib/utils"
 

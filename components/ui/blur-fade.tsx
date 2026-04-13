@@ -6,9 +6,9 @@ import {
   motion,
   useInView,
   type MotionProps,
-  type UseInViewOptions,
   type Variants,
-} from "motion/react"
+} from "framer-motion"
+import type { UseInViewOptions } from "framer-motion"
 
 type MarginType = UseInViewOptions["margin"]
 

@@ -186,7 +186,7 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="mt-8 flex flex-col items-center justify-between gap-4 border-t border-white/[0.07] pt-8 sm:flex-row">
           <p className="text-[13px] font-medium text-white/30">
-            &copy; {new Date().getFullYear()} IntegrateWise LLP. All rights reserved.
+            &copy; 2026 IntegrateWise LLP. All rights reserved.
           </p>
           <div className="flex gap-6 text-[13px] font-medium text-white/30">
             <Link href="/privacy" className="transition-colors hover:text-white">

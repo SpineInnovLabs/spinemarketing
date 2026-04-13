@@ -72,11 +72,11 @@ const answer = [
   },
   {
     title: "One workspace",
-    desc: "L1 is your Daily Workbench. Every team sees the right view — accounts, business, or personal — built from the full truth across all connected apps. One place to work every day.",
+    desc: "The Workbench is your Daily workspace. Every team sees the right view — accounts, business, or personal — built from the full truth across all connected apps. One place to work every day.",
   },
   {
     title: "Governed AI",
-    desc: "L2 is the Intelligence Layer. The Twin reads everything, reasons with evidence, and surfaces signals and recommended actions. Nothing executes until you approve. Every output is a Session Summary — logged, attributed, and traceable.",
+    desc: "The Intelligence Layer watches everything, reasons with evidence, and surfaces signals and recommended actions. Nothing executes until you approve. Every output is a Session Summary — logged, attributed, and traceable.",
   },
 ];
 

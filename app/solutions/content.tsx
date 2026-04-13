@@ -25,19 +25,19 @@ const byFunction = [
     icon: Users,
     name: "Account Success",
     href: "/account-success",
-    desc: "L1 workspace for customer-facing teams. Account 360: revenue, usage, support, invoices, people, health — all connected.",
+    desc: "Workbench for customer-facing teams. Account 360: revenue, usage, support, invoices, people, health — all connected.",
   },
   {
     icon: BarChart3,
     name: "Business Ops",
     href: "/business-ops",
-    desc: "L1 operating workspace for founders and leaders. Revenue, pipeline, churn, cash, projects — one live picture of the business.",
+    desc: "Operating workspace for founders and leaders. Revenue, pipeline, churn, cash, projects — one live picture of the business.",
   },
   {
     icon: Sparkles,
     name: "Personal Ops",
     href: "/personal-ops",
-    desc: "L1 workspace for individuals. Today's meetings, emails, tasks, threads — and a memory that carries context between sessions.",
+    desc: "Workbench for individuals. Today's meetings, emails, tasks, threads — and a memory that carries context between sessions.",
   },
 ];
 
@@ -232,12 +232,12 @@ export function SolutionsContent() {
                 color: "bg-primary/10 border-primary/20",
               },
               {
-                label: "L1 — Daily Workbench",
+                label: "Daily Workbench",
                 desc: "Your workspace. Shaped to your function or role. This is where you work, act, and manage every day.",
                 color: "bg-muted border-border",
               },
               {
-                label: "L2 — Intelligence Layer",
+                label: "Intelligence Layer",
                 desc: "The Twin reads the Spine. Surfaces signals. Proposes actions with evidence. Waits for your approval.",
                 color: "bg-muted border-border",
               },

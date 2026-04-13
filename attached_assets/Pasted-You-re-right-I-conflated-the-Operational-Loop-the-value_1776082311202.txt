@@ -1,0 +1,127 @@
+You're right. I conflated the **Operational Loop** (the value cycle users experience) with the **8-Stage Normalization Pipeline** (the backend data architecture).
+
+Here is the **corrected Platform page** structure:
+
+---
+
+# **PLATFORM** `/platform`
+
+## **Hero Section**
+**Headline:** The Adaptive Spine Architecture  
+**Subheadline:** Two convergent loops—one human-governed, one system-governed—unifying at the Spine. Where AI thinks in context, but cannot act without explicit human approval.
+
+**Visual:** Diagram showing Loop A (Context → Truth) and Loop B (Tool → Truth) converging at Spine SSOT, with the governance gate clearly marked.
+
+---
+
+## **Section: The Operational Loop** 
+*The 7-stage cycle that governs how work actually flows through IntegrateWise*
+
+This is the loop users experience—the rhythm of governed intelligence:
+
+| Stage | Action | System Layer | Human Role |
+|-------|--------|--------------|------------|
+| **1. Load** | Data ingests from connected tools (APIs, webhooks, files, email) | L3 Backend (8-stage pipeline) | Configure connections |
+| **2. Store** | Normalized into Spine SSOT as canonical entities | L0/L3 Spine | Review schema alignment |
+| **3. Think** | AI reasoning on unified context (L2 Cognitive Layer) | L2 Twin | Set confidence thresholds |
+| **4. Approve** | **HITL Gate** — TruthLayer governance checkpoint | L2 Governance | **Mandatory approval** |
+| **5. Act** | Execute approved actions back to source systems | L3 Backend | Trigger or schedule execution |
+| **6. Adjust** | Outcomes feed back; AI learns from approved/rejected actions | L2 Learning | Validate outcomes |
+| **7. Repeat** | Continuous loop—new data loads, enriched by prior approved knowledge | Full Stack | Monitor and govern |
+
+**Core Principle:** Between *Think* and *Act* sits the non-bypassable **Approve** gate. This is architectural law, not configuration.
+
+---
+
+## **Section: The 8-Stage Normalization Pipeline** 
+*L3 Universal Backend — How raw data becomes Spine truth*
+
+The technical pipeline that executes the **Load** and **Store** phases:
+
+1. **Ingest** — API polling, webhooks, streaming events, file drops
+2. **Validate** — Schema checking, auth verification, payload integrity
+3. **Parse** — Extract entities from vendor-specific formats
+4. **Normalize** — Map to canonical Spine schema (Account, Contact, Deal, etc.)
+5. **Deduplicate** — Merge logic, conflict resolution, golden record creation
+6. **Enrich** — Add metadata, relationships, temporal markers
+7. **Persist** — Write to Spine SSOT (D1/PostgreSQL) with versioning
+8. **Emit** — Trigger downstream events, update L1 Workspace views, notify L2 Cognitive Layer
+
+*Result:* By stage 8, scattered tool data has become **queryable canonical truth** in the Spine.
+
+---
+
+## **Section: The Two Core Loops**
+
+### **Loop A: Context → Truth** (Human-Governed)
+*The "Slow" Loop — Strategic decisions, customer-facing actions, knowledge creation*
+
+**Flow:**  
+Context (emails, calls, meetings, decisions) → Loads into Spine → Think layer analyzes → **Human approves** → Act executes → Adjust based on outcome → Repeat
+
+**Characteristics:**
+- High-stakes customer interactions
+- Write operations to CRM, billing, support systems
+- Knowledge memory formation (approved insights compound)
+- Mandatory HITL gate at the Approve stage
+
+### **Loop B: Tool → Truth** (System-Governed)
+*The "Fast" Loop — Data hygiene, synchronization, passive monitoring*
+
+**Flow:**  
+Tool data (APIs, webhooks) → 8-stage pipeline → Spine updates → Real-time sync → Adjust (auto-conflict resolution) → Repeat
+
+**Characteristics:**
+- Read-only synchronization and normalization
+- Data quality maintenance (drift detection, field mapping)
+- Background entity resolution
+- System-governed, high-frequency, no human bottleneck
+
+**Convergence:** Both loops write to the **Spine SSOT**—the universal truth layer that feeds the L1 Workspace and L2 Cognitive Layer.
+
+---
+
+## **Section: The 5 Architectural Dimensions**
+
+Mapped correctly to the operational loop:
+
+### **1. Spine Equivalent (Vendor-Neutral SSOT)**
+**Where it lives:** Store stage (Loop A & B converge here)  
+The normalized, versioned, canonical data layer that survives vendor changes. Not a cache—it's the system of record for operational truth.
+
+### **2. Entity 360 (Live Cross-System View)**
+**Where it lives:** Rendered from Store, queried during Think  
+Assembled in real-time from the Spine, not static ETL. Shows the "Load → Store" result as a living object.
+
+### **3. Proactive Signal Detection**
+**Where it lives:** Think stage  
+AI monitors the Spine continuously (between Store and Approve), detecting cross-system patterns that indicate risk/opportunity.
+
+### **4. Reasoning with Evidence**
+**Where it lives:** Think stage → feeds into Approve  
+Chain-of-thought generated here, with `goal_refs` linking back to Spine entities. Evidence package created for human review at the Approve gate.
+
+### **5. Non-Bypassable HITL**
+**Where it lives:** **Approve stage** — The architectural gate between Think and Act  
+The membrane that prevents Loop A from completing without human authorization. TruthLayer scores confidence here; humans grant the final Act permission.
+
+---
+
+## **Section: Governance Architecture**
+
+**TruthLayer Position:** Sits between **Think** and **Approve**, scoring confidence, tracing evidence, checking freshness before presenting to humans.
+
+**Approval Topology:** 
+- **Loop A (Context → Truth):** Always stops at Approve. Human must click "Approve" to reach Act.
+- **Loop B (Tool → Truth):** Auto-completes Load → Store → Adjust for data sync, but never executes customer-facing Acts.
+
+**Audit Immutability:** Every Approve/Act/Adjust creates an append-only log in the Spine's decision graph—traceable back through the 8-stage pipeline to the original Load source.
+
+---
+
+**Corrected Technical Stack Reference:**
+- **L3 (Backend):** 8-stage normalization pipeline + Cloudflare Queues/D1/R2
+- **L0/L1 (Workspace):** Render from Spine, user interaction layer
+- **L2 (Cognitive):** Think → Approve → Act loop governance
+
+Does this correctly reflect the **Load-Store-Think-Approve-Act-Adjust-Repeat** operational rhythm and the **8-stage normalization** as the backend pipeline?

@@ -62,7 +62,7 @@ export function StickyScrollReveal({
       <div
         ref={containerRef}
         className="relative"
-        style={{ height: `${steps.length * 100}vh` }}
+        style={{ height: `${steps.length * 100}vh`, position: "relative" }}
       >
         {/* Sticky viewport */}
         <div className="sticky top-0 flex h-screen items-center overflow-hidden">

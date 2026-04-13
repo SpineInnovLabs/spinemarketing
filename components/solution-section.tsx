@@ -8,23 +8,23 @@ const pillars = [
   {
     num: "01",
     icon: Database,
-    title: "L1: Your Daily Workbench",
+    title: "Your Daily Workbench",
     description:
       "Accounts, tasks, workflows, renewals, approvals, calendar, and engagement logs — all in one place. This is where you work every day. Every action that matters happens here. It replaces the 12–15 tabs you keep open just to see the full story.",
   },
   {
     num: "02",
     icon: Brain,
-    title: "L2: The Intelligence Layer",
+    title: "The Intelligence Layer",
     description:
-      "AI reads your data through the Spine, spots patterns, and surfaces signals with evidence. Twin Chat, action buttons, and draft previews live here. L2 proposes; L1 executes. Every recommendation is backed by evidence from the Spine, and every action waits for explicit approval before any app is updated.",
+      "AI reads your data through the Spine, spots patterns, and surfaces signals with evidence. Twin Chat, action buttons, and draft previews live here. The Intelligence Layer proposes; the Workbench executes. Every recommendation is backed by evidence from the Spine, and every action waits for explicit approval before any app is updated.",
   },
   {
     num: "03",
     icon: ShieldCheck,
     title: "Nothing happens without you",
     description:
-      "Every insight has evidence from your apps. Every action waits for your approval. Approved actions execute in L1, write back to connected apps, and are added to the Spine's memory.",
+      "Every insight has evidence from your apps. Every action waits for your approval. Approved actions write back to connected apps and are added to the Spine's memory.",
   },
 ];
 

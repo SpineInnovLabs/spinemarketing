@@ -1,0 +1,73 @@
+Based on the **Load-Store-Think-Approve-Act-Adjust-Repeat** operational loop and **8-stage normalization** backend, here is the correct Platform sub-page architecture:
+
+---
+
+## **Platform Sub-Pages**
+
+### **1. Architecture** `/platform/architecture`
+**The complete system blueprint**
+- **The 7-Stage Operational Loop:** Load → Store → Think → **Approve** → Act → Adjust → Repeat
+- **The 8-Stage Normalization Pipeline:** Ingest → Validate → Parse → Normalize → Deduplicate → Enrich → Persist → Emit
+- **Dual Loop Convergence:** How Loop A (Context→Truth, human-governed) and Loop B (Tool→Truth, system-governed) converge at the Spine
+- **Layer Interaction:** L3 Backend → L0 Spine → L1 Workspace → L2 Cognitive → back to L3
+
+### **2. The Spine** `/platform/the-spine`
+**The vendor-neutral Single Source of Truth**
+- **Canonical Entity Model:** Account, Contact, Deal, Ticket normalization
+- **8-Stage Normalization** details (the technical pipeline)
+- **Entity 360:** Live cross-system view assembly from stored canonical data
+- **Schema Drift Detection:** Auto-handling of upstream API changes
+- **Versioning & Temporal Truth:** Point-in-time reconstruction
+
+### **3. The Twin** `/platform/the-twin`
+**The Cognitive Intelligence Layer (Think stage)**
+- **Proactive Signal Detection:** How AI monitors the Spine between Store and Approve
+- **Reasoning with Evidence:** Chain-of-thought generation with `goal_refs`
+- **Dual Context Mapping:** Vendor impact + Client goal impact analysis
+- **Session Memory:** Conversations grounded in Spine entities
+- **Learning Loop:** How Adjust feeds back into Think
+
+### **4. TruthLayer** `/platform/truthlayer`
+**The Governance Membrane (Approve stage)**
+- **Non-Bypassable HITL:** The architectural gate between Think and Act
+- **Confidence Scoring:** 0-100 scoring before human presentation
+- **Approval Topology:** Routing logic (who approves what based on impact)
+- **Audit Immutability:** Append-only decision logs from the Act stage
+- **Emergency Overrides:** Traceable exception handling
+
+### **5. Integrations** `/platform/integrations`
+**The Load stage infrastructure**
+- **Connector Ecosystem:** 70+ pre-built connectors (Salesforce, HubSpot, Stripe, etc.)
+- **Ingestion Methods:** APIs, webhooks, streaming, email ingestion, file drops
+- **8-Stage Pipeline** deep dive for technical buyers
+- **Idempotency & DLQ:** Event-driven reliability (circuit breakers, retry logic)
+- **Custom Connector SDK:** Build-your-own for legacy systems
+
+### **6. Security & Governance** `/platform/security`
+**The foundation of trust**
+- **Data Protection:** Encryption at rest (AES-256) / in transit (TLS 1.3)
+- **Access Control:** SSO/SAML, RBAC with field-level permissions
+- **Audit Architecture:** How every Act creates immutable logs in the Spine
+- **Compliance:** SOC 2 Type II, data residency options
+- **Write-Back Safety:** Idempotent APIs, rollback capabilities in the Act stage
+
+---
+
+## **Recommended URL Structure**
+```
+/platform
+├── /architecture      (The loops & pipeline overview)
+├── /the-spine         (SSOT & normalization)
+├── /the-twin          (AI reasoning layer)
+├── /truthlayer        (HITL governance)
+├── /integrations      (Load stage & connectors)
+└── /security          (Trust & compliance)
+```
+
+**Navigation Logic:**
+- **Architecture** is the overview (for technical evaluators)
+- **The Spine, The Twin, TruthLayer** map to your 3 architectural pillars
+- **Integrations** handles the "Load" stage entry points
+- **Security** addresses the governance foundation required for the "Approve" stage
+
+Each page references the **Load-Store-Think-Approve-Act-Adjust-Repeat** flow in context, with Architecture being the only page that explains both loops and the 8-stage pipeline together.
