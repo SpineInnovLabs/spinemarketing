@@ -3,7 +3,7 @@ import { HeroSection } from "@/components/hero-section"
 import { SolutionSection } from "@/components/solution-section-client"
 import { SolutionsDoorsSection } from "@/components/solutions-doors-section-client"
 import { HowItWorksSection } from "@/components/how-it-works-section-client"
-import { HomeSections } from "@/components/home-sections-client"
+import { HomeSections, HomeBottomSections } from "@/components/home-sections-client"
 import { Footer } from "@/components/footer"
 
 export default function Home() {
@@ -14,8 +14,9 @@ export default function Home() {
         <HeroSection />
         <HomeSections />
         <SolutionSection />
-        <SolutionsDoorsSection />
         <HowItWorksSection />
+        <SolutionsDoorsSection />
+        <HomeBottomSections />
       </main>
       <Footer />
     </div>

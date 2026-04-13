@@ -2,8 +2,6 @@
 
 import { LogosSection } from "@/components/logos-section"
 import { ProblemSection } from "@/components/problem-section"
-import { AIDifferentiators } from "@/components/ai-differentiators"
-import { TruthLayerSection } from "@/components/truthlayer-section"
 import { DayOneSection } from "@/components/day-one-section"
 import { ProofSection } from "@/components/proof-section"
 import { PricingSection } from "@/components/pricing-section"
@@ -14,10 +12,15 @@ export function HomeSections() {
     <>
       <LogosSection />
       <ProblemSection />
-      <AIDifferentiators />
-      <TruthLayerSection />
-      <DayOneSection />
+    </>
+  )
+}
+
+export function HomeBottomSections() {
+  return (
+    <>
       <ProofSection />
+      <DayOneSection />
       <PricingSection />
       <FinalCTA />
     </>
