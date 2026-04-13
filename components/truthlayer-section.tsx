@@ -30,9 +30,7 @@ export function TruthLayerSection() {
             <span className="text-primary">You decide what becomes knowledge.</span>
           </h2>
           <p className="mt-6 text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-white/50">
-            Every insight draws from three layers — your data, your conversations, and your accumulated knowledge.
-            When AI learns something new, it proposes it first. You review the evidence. You approve, reject, or edit.
-            Nothing enters knowledge without your say.
+            When AI learns something new, it proposes it first. You approve. Nothing enters knowledge without your say.
           </p>
         </motion.div>
 

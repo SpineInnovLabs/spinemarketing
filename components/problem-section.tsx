@@ -26,12 +26,7 @@ export function ProblemSection() {
             <span className="text-primary">The plumbing is.</span>
           </h2>
           <p className="mt-6 text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">
-            Work lives across CRMs, support tools, billing, docs, and AI chats. People spend their days copy-pasting
-            context between systems, restarting every time they open a new tab.
-          </p>
-          <p className="mt-4 text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">
-            Information is trapped in silos, AI answers lack full context, and there&apos;s no way to review what AI
-            does before it does it. Even the best teams quietly lose hours and miss risks.
+            Copy-paste. Tab-switch. Repeat. Your tools don&apos;t talk. Your AI doesn&apos;t know. You&apos;re the bridge.
           </p>
         </motion.div>
 

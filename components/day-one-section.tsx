@@ -29,8 +29,7 @@ export function DayOneSection() {
                 <span className="text-primary">on day one</span>
               </h2>
               <p className="mt-6 text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">
-                IntegrateWise isn&apos;t a project that takes months to show value. From the moment your workspace goes live,
-                the way your team works changes.
+                Value from day one. Not months.
               </p>
             </motion.div>
             <ul className="space-y-3">

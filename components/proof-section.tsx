@@ -36,9 +36,8 @@ export function ProofSection() {
             </svg>
 
             <blockquote className="text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-foreground">
-              &ldquo;In a live deployment, IntegrateWise spotted early warning signs that a major account was at risk.
-              By pulling together support, product usage, billing, and relationship data, the team stepped in early
-              and saved an $8M customer.&rdquo;
+              &ldquo;The Spine connected support, product usage, billing, and relationship data across 12 systems.
+              The team intervened early and saved an $8M customer.&rdquo;
             </blockquote>
 
             {/* Stats row with Number Ticker */}

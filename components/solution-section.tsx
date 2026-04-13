@@ -44,7 +44,7 @@ export function SolutionSection() {
             <span className="text-primary">AI that makes you faster.</span>
           </h2>
           <p className="mt-6 text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">
-            This is where you work — accounts, tasks, renewals, workflows. The Twin reads everything and surfaces what matters. You stay in control.
+            Manage accounts, track tasks, run workflows. The Twin watches everything and proposes what&apos;s next.
           </p>
         </motion.div>
 

@@ -9,27 +9,27 @@ const whatChanges = [
   {
     icon: Eye,
     title: "One complete view of every account",
-    desc: "Connect your CRM, support desk, billing, email, messaging, and project tools. IntegrateWise assembles a complete profile for every account — interactions, contracts, health signals, and context — so you never have to tab-switch again.",
+    desc: "CRM, support, billing, email, messaging, project tools — assembled into one profile automatically.",
   },
   {
     icon: AlertTriangle,
     title: "AI that spots problems before you do",
-    desc: "IntegrateWise watches your accounts for risk signals across every connected tool. A champion going silent. Support tickets climbing. Payments failing. Usage dropping. It surfaces these signals with evidence — not guesses.",
+    desc: "Champion going silent. Tickets climbing. Payments failing. Surfaced with evidence, not guesses.",
   },
   {
     icon: Heart,
     title: "Health scores that reflect reality",
-    desc: "Health scores built from actual data across every system — not a single CRM field someone forgot to update. Support volume, product usage, billing status, relationship activity, and sentiment — updated continuously.",
+    desc: "Built from actual data across every system — not a CRM field someone forgot to update.",
   },
   {
     icon: CalendarCheck,
     title: "Renewal tracking with full context",
-    desc: "Know exactly where every renewal stands. See the timeline, the stakeholders, the risks, and the history — pulled from every tool, not just your CRM. Identify at-risk renewals 90 days out, with evidence.",
+    desc: "Timeline, stakeholders, risks, history — from every tool. At-risk renewals flagged 90 days out.",
   },
   {
     icon: Zap,
-    title: "Playbooks that run on real data",
-    desc: "Build repeatable workflows for onboarding, QBR prep, renewals, and escalations. Each playbook pulls live data from your connected tools — so your next QBR deck is built from what's actually happening.",
+    title: "Playbooks on real data",
+    desc: "Onboarding, QBR prep, renewals, escalations — each pulling live data, not stale CRM fields.",
   },
 ]
 
@@ -100,9 +100,8 @@ export function AccountSuccessContent() {
           <div className="mx-auto max-w-3xl">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}>
               <h2 className="section-heading">You check 8 tools every morning{" "}<span className="text-primary">just to understand one account.</span></h2>
-              <div className="mt-8 space-y-6 text-[17px] font-medium leading-[1.7] tracking-[-0.02em] text-muted-foreground">
-                <p>Your CRM says the account is healthy. Your support desk has three open P1 tickets. Billing shows a failed payment. The champion hasn&apos;t replied to email in two weeks. Slack has a thread where someone flagged a risk — but nobody saw it.</p>
-                <p>No single tool tells you what&apos;s actually happening. So you become the bridge. You open tabs, cross-reference data, copy notes between systems, and try to hold the full picture in your head.</p>
+              <div className="mt-8 space-y-4 text-[17px] font-medium leading-[1.7] tracking-[-0.02em] text-muted-foreground">
+                <p>CRM says healthy. Support has 3 P1 tickets. Billing shows a failed payment. Champion silent for 2 weeks. No single tool tells you what&apos;s actually happening.</p>
                 <p className="text-foreground font-semibold">That&apos;s not Customer Success. That&apos;s data plumbing.</p>
               </div>
             </motion.div>

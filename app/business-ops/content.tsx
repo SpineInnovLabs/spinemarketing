@@ -6,24 +6,24 @@ import { motion } from "framer-motion"
 import { TrendingUp, BarChart3, AlertTriangle, FileText, User, Building2, Settings, Monitor } from "lucide-react"
 
 const fourViews = [
-  { icon: User, role: "For Founders", desc: "Your daily command center. ARR, growth trajectory, cash signals, and risk indicators — pulled from CRM, billing, support, and product usage in real time. Stop asking \"how are we doing?\" and start seeing it." },
-  { icon: Building2, role: "For CEOs", desc: "Strategic visibility across the entire business. Revenue health, customer retention, team performance, and pipeline quality — unified from every system. Board prep that takes minutes, not days." },
-  { icon: Settings, role: "For COOs", desc: "Operational clarity. Who's blocked, what's at risk, where handoffs are breaking down. SLA tracking, process bottlenecks, and cross-team dependencies — surfaced automatically, with evidence." },
-  { icon: Monitor, role: "For CTO/CIOs", desc: "System health in one landscape. Integration status, data quality, sync reliability, and infrastructure signals. Know what's connected, what's drifting, and what needs attention." },
+  { icon: User, role: "For Founders", desc: "ARR, growth, cash signals, risk — one screen, real time." },
+  { icon: Building2, role: "For CEOs", desc: "Revenue, retention, pipeline, performance — board prep in minutes." },
+  { icon: Settings, role: "For COOs", desc: "Who's blocked, what's at risk, where handoffs break — with evidence." },
+  { icon: Monitor, role: "For CTO/CIOs", desc: "Integration health, data quality, sync status — one landscape." },
 ]
 
 const whatChanges = [
-  { icon: BarChart3, title: "One source of truth for the entire business", desc: "Connect your CRM, billing, support, project management, communication, and finance tools. IntegrateWise normalizes data from every source into a single intelligence layer — so everyone sees the same numbers, the same context, and the same truth." },
-  { icon: TrendingUp, title: "Forecasts built from real data, not guesses", desc: "Revenue, pipeline, and operational forecasts grounded in actual data from every connected system. No more reconciling three different spreadsheets. Numbers you can trust because they come from the source." },
-  { icon: AlertTriangle, title: "Risks surfaced before they become fires", desc: "AI watches for operational signals across your entire stack: revenue drops, support spikes, payment failures, SLA breaches, pipeline drift. It connects dots that no single tool can see and alerts you with evidence." },
-  { icon: FileText, title: "Reports that build themselves", desc: "Weekly metrics, board decks, department reviews — assembled from live data across every tool. Stop spending Friday afternoons copying numbers between dashboards. Let the data come to you." },
+  { icon: BarChart3, title: "One source of truth", desc: "Every tool, every team, same numbers. No more reconciling spreadsheets." },
+  { icon: TrendingUp, title: "Forecasts from real data", desc: "Revenue and pipeline grounded in actual data, not guesses." },
+  { icon: AlertTriangle, title: "Risks before they're fires", desc: "Revenue drops, support spikes, payment failures — connected and surfaced." },
+  { icon: FileText, title: "Reports that build themselves", desc: "Board decks and reviews assembled from live data. No Friday copy-paste." },
 ]
 
 const steps = [
-  { num: "01", title: "Connect your business stack", desc: "CRM, billing, support, project tools, communication platforms, finance systems — plug them in once, securely." },
-  { num: "02", title: "The Spine unifies everything", desc: "Data from every source flows into a single intelligence layer. Relationships between records are preserved. Your sales data knows about your support data knows about your billing data." },
-  { num: "03", title: "AI builds your operating view", desc: "Role-specific dashboards surface the metrics and signals that matter to you. Founder view. CEO view. COO view. CTO view. Same truth, different lenses." },
-  { num: "04", title: "You stay in control", desc: "Every AI-generated insight comes with evidence. Every proposed action waits for approval. The system learns from your decisions and gets smarter over time." },
+  { num: "01", title: "Connect your tools", desc: "CRM, billing, support, finance — plug in once, securely." },
+  { num: "02", title: "Everything unifies", desc: "One intelligence layer. Relationships preserved across tools." },
+  { num: "03", title: "Your operating view", desc: "Role-specific dashboards. Same truth, different lenses." },
+  { num: "04", title: "You stay in control", desc: "Evidence on every insight. Approval on every action." },
 ]
 
 export function BusinessOpsContent() {
@@ -58,9 +58,8 @@ export function BusinessOpsContent() {
           <div className="mx-auto max-w-3xl">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}>
               <h2 className="section-heading">Your business runs on Slack, Sheets, and WhatsApp.{" "}<span className="text-primary">Nothing talks to anything.</span></h2>
-              <div className="mt-8 space-y-6 text-[17px] font-medium leading-[1.7] tracking-[-0.02em] text-muted-foreground">
-                <p>Revenue numbers come from one tool. Pipeline data from another. Support metrics from a third. Finance from a fourth. And half of it lives in spreadsheets that someone updates weekly — maybe.</p>
-                <p>You spend your mornings assembling context instead of making decisions. Every standup has a &quot;the numbers don&apos;t match&quot; moment. Every board prep is a scramble across systems.</p>
+              <div className="mt-8 space-y-4 text-[17px] font-medium leading-[1.7] tracking-[-0.02em] text-muted-foreground">
+                <p>Revenue in one tool. Pipeline in another. Support in a third. Half of it in spreadsheets updated weekly — maybe.</p>
               </div>
             </motion.div>
           </div>
