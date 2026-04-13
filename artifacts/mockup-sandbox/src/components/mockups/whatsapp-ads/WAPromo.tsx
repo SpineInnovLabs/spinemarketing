@@ -19,7 +19,6 @@ export const WAPromo: React.FC = () => {
     >
       <style dangerouslySetInnerHTML={{ __html: "@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800;900&display=swap');" }} />
       
-      {/* Top Right Small Logo */}
       <img 
         src="/__mockup/images/iw-brain-logo.png" 
         alt="" 
@@ -34,7 +33,6 @@ export const WAPromo: React.FC = () => {
         }}
       />
 
-      {/* Center Brain Watermark */}
       <img 
         src="/__mockup/images/iw-brain-logo.png" 
         alt="" 
@@ -51,7 +49,6 @@ export const WAPromo: React.FC = () => {
         }}
       />
 
-      {/* Center Content */}
       <div style={{ zIndex: 10, textAlign: 'center' }}>
         <div style={{
           fontFamily: "'Sora', sans-serif",
@@ -60,7 +57,7 @@ export const WAPromo: React.FC = () => {
           fontSize: '7vw',
           lineHeight: 1.1
         }}>
-          No AI writes
+          AI finds the risk.
         </div>
         <div style={{
           fontFamily: "'Sora', sans-serif",
@@ -69,7 +66,7 @@ export const WAPromo: React.FC = () => {
           fontSize: '7vw',
           lineHeight: 1.1
         }}>
-          without human
+          You make
         </div>
         <div style={{
           fontFamily: "'Sora', sans-serif",
@@ -78,7 +75,7 @@ export const WAPromo: React.FC = () => {
           fontSize: '7vw',
           lineHeight: 1.1
         }}>
-          approval.
+          the call.
         </div>
         
         <div style={{ height: '3vw' }} />
@@ -90,7 +87,7 @@ export const WAPromo: React.FC = () => {
           fontSize: '3vw',
           lineHeight: 1.4
         }}>
-          Architectural law,
+          Nothing executes until
         </div>
         <div style={{
           fontFamily: "'Inter', sans-serif",
@@ -99,11 +96,10 @@ export const WAPromo: React.FC = () => {
           fontSize: '3vw',
           lineHeight: 1.4
         }}>
-          not a feature flag.
+          you say so. Ever.
         </div>
       </div>
 
-      {/* Bottom Row */}
       <div style={{
         position: 'absolute',
         bottom: '5vw',
@@ -127,12 +123,7 @@ export const WAPromo: React.FC = () => {
         }}>
           IntegrateWise
         </span>
-        <span style={{
-          color: 'rgba(255,255,255,0.3)',
-          fontSize: '2vw'
-        }}>
-          |
-        </span>
+        <span style={{ color: 'rgba(255,255,255,0.3)', fontSize: '2vw' }}>|</span>
         <span style={{
           fontFamily: "'Inter', sans-serif",
           fontWeight: 500,

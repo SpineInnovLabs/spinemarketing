@@ -94,17 +94,18 @@ export function PainPoint() {
           zIndex: 2,
         }}
       >
-        <div
-          style={{
-            textTransform: "uppercase",
-            fontSize: "1.5vw",
-            color: "#1ba784",
-            letterSpacing: "0.14em",
-            fontWeight: 700,
-            marginBottom: "2vw",
-          }}
-        >
-          Adaptive Spine Architecture
+        <div style={{ display: "flex", gap: "1vw", marginBottom: "2vw" }}>
+          {['HubSpot', 'Jira', 'Slack', 'Zendesk'].map((name) => (
+            <img
+              key={name}
+              src={`https://logo.clearbit.com/${name === 'Jira' ? 'atlassian' : name.toLowerCase()}.com`}
+              alt={name}
+              style={{ width: "2.8vw", height: "2.8vw", borderRadius: "6px", objectFit: "contain" }}
+            />
+          ))}
+          <span style={{ color: "rgba(255,255,255,0.3)", fontSize: "1.4vw", fontWeight: 500, alignSelf: "center", marginLeft: "0.5vw" }}>
+            +66 more
+          </span>
         </div>
         <div
           style={{
@@ -130,7 +131,7 @@ export function PainPoint() {
             maxWidth: "75%",
           }}
         >
-          One workspace. Every signal. Every account.
+          See every deal, ticket, and conversation for every account — in one place.
         </div>
         <div style={{ marginTop: "3vw", display: "flex", alignItems: "center", gap: "2.5vw" }}>
           <div
@@ -150,7 +151,7 @@ export function PainPoint() {
             See it live <span style={{ fontSize: "1.1em" }}>→</span>
           </div>
           <span style={{ color: "rgba(255,255,255,0.3)", fontSize: "1.4vw", fontWeight: 500 }}>
-            70+ connectors · SOC 2 · No code
+            70+ apps connected · No code needed
           </span>
         </div>
       </div>

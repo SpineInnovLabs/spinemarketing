@@ -23,17 +23,13 @@ export const Slide4 = () => {
         }}
       />
       
-      {/* Top Left Slide Number */}
       <div style={{ position: "absolute", top: "4vw", left: "5vw", color: "rgba(255,255,255,0.25)", fontSize: "2vw", fontWeight: 400 }}>
         04/04
       </div>
 
-      {/* Bottom Accent */}
       <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "0.4vw", backgroundColor: "#2EE5A8" }} />
 
-      {/* Center Content */}
       <div style={{ textAlign: "center", zIndex: 10, display: "flex", flexDirection: "column", alignItems: "center" }}>
-        {/* Large Logo */}
         <svg viewBox="0 0 32 32" fill="none" style={{ width: "10vw", height: "10vw" }}>
           <circle cx="16" cy="16" r="16" fill="#2EE5A8" />
           <path d="M8 16 Q16 8 24 16 Q16 24 8 16Z" fill="white" opacity="0.9" />
@@ -43,10 +39,17 @@ export const Slide4 = () => {
           IntegrateWise
         </h1>
         <h2 style={{ margin: "1.5vw 0 0", fontSize: "3.5vw", fontWeight: 400, color: "#2EE5A8", lineHeight: 1.2 }}>
-          Knowledge Workspace over the Spine
+          Every customer. Every tool. One screen.
         </h2>
+
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '1.5vw', marginTop: '3vw' }}>
+          {['hubspot.com', 'slack.com', 'atlassian.com', 'zendesk.com', 'salesforce.com'].map((d) => (
+            <img key={d} src={`https://logo.clearbit.com/${d}`} alt=""
+              style={{ width: '3vw', height: '3vw', borderRadius: '5px', objectFit: 'contain' }} />
+          ))}
+        </div>
         
-        <div style={{ height: "5vw" }} />
+        <div style={{ height: "3vw" }} />
         
         <button style={{
           backgroundColor: "#2EE5A8",

@@ -15,7 +15,6 @@ export const BannerB = () => {
     }}>
       <style dangerouslySetInnerHTML={{ __html: "@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap');" }} />
       
-      {/* Left Side */}
       <div style={{
         width: '55%',
         height: '100%',
@@ -26,17 +25,20 @@ export const BannerB = () => {
         boxSizing: 'border-box'
       }}>
         <div style={{ fontFamily: 'Sora, sans-serif', fontWeight: 600, color: 'white', fontSize: '5.5vh', lineHeight: 1.1 }}>
-          No AI writes without human approval.
+          AI finds the risk.
         </div>
-        <div style={{ fontFamily: 'Sora, sans-serif', fontWeight: 400, color: '#2EE5A8', fontSize: '4vh', marginTop: '1.5vh', lineHeight: 1.2 }}>
-          Architectural law, not a feature flag.
+        <div style={{ fontFamily: 'Sora, sans-serif', fontWeight: 600, color: 'white', fontSize: '5.5vh', lineHeight: 1.1 }}>
+          You make the call.
         </div>
-        <div style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400, color: 'rgba(255,255,255,0.4)', fontSize: '3vh', marginTop: '2vh' }}>
+        <div style={{ width: '5vw', height: '2px', backgroundColor: '#2EE5A8', margin: '2vh 0' }} />
+        <div style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400, color: 'rgba(255,255,255,0.5)', fontSize: '3vh', lineHeight: 1.4 }}>
+          IntegrateWise spots at-risk accounts across your<br/>tools and recommends next steps. Nothing happens<br/>until you approve.
+        </div>
+        <div style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400, color: 'rgba(255,255,255,0.3)', fontSize: '2.5vh', marginTop: '2vh' }}>
           integratewise.ai
         </div>
       </div>
 
-      {/* Right Side */}
       <div style={{
         width: '45%',
         height: '100%',
@@ -53,23 +55,28 @@ export const BannerB = () => {
           boxShadow: '0 20px 40px rgba(0,0,0,0.4)'
         }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <div style={{ fontFamily: 'Sora, sans-serif', fontWeight: 500, color: 'white', fontSize: '2.8vh' }}>
-              AI Recommendation
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.8vw' }}>
+              <img src="https://logo.clearbit.com/hubspot.com" alt="HubSpot"
+                style={{ width: '2.5vh', height: '2.5vh', borderRadius: '3px', objectFit: 'contain' }} />
+              <div style={{ fontFamily: 'Sora, sans-serif', fontWeight: 500, color: 'white', fontSize: '2.5vh' }}>
+                Acme Corp — Churn Risk
+              </div>
             </div>
             <div style={{
-              backgroundColor: '#2EE5A8',
-              color: '#0B0F17',
+              backgroundColor: '#EB4379',
+              color: 'white',
               fontWeight: 700,
               padding: '0.5vh 1vw',
               borderRadius: '6px',
-              fontSize: '2.5vh',
+              fontSize: '2vh',
               fontFamily: 'Sora, sans-serif'
             }}>
-              92/100
+              High
             </div>
           </div>
-          <div style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400, color: 'rgba(255,255,255,0.6)', fontSize: '2.2vh', marginTop: '1.5vh', lineHeight: 1.4 }}>
-            Update account health score and notify CSM
+          <div style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400, color: 'rgba(255,255,255,0.6)', fontSize: '2vh', marginTop: '1.5vh', lineHeight: 1.4 }}>
+            3 missed meetings · 2 open tickets unresolved · NPS dropped to 6.
+            <br/>AI recommends: Schedule exec check-in this week.
           </div>
           <div style={{ marginTop: '2vh', display: 'flex', gap: '1vw' }}>
             <button style={{
@@ -79,7 +86,7 @@ export const BannerB = () => {
               fontWeight: 600,
               padding: '1vh 2vw',
               borderRadius: '8px',
-              fontSize: '2.5vh',
+              fontSize: '2.2vh',
               border: 'none',
               cursor: 'pointer'
             }}>
@@ -93,7 +100,7 @@ export const BannerB = () => {
               fontWeight: 500,
               padding: '1vh 2vw',
               borderRadius: '8px',
-              fontSize: '2.5vh',
+              fontSize: '2.2vh',
               cursor: 'pointer'
             }}>
               Reject

@@ -59,7 +59,7 @@ export function OutcomeV1() {
           borderRadius: '2vw',
           background: 'rgba(27,167,132,0.08)',
         }}>
-          AI Workspace
+          70+ Apps Connected
         </div>
       </div>
 
@@ -79,14 +79,11 @@ export function OutcomeV1() {
         boxSizing: 'border-box',
         zIndex: 2,
       }}>
-        <div style={{
-          textTransform: 'uppercase',
-          color: '#1ba784',
-          fontSize: '1.4vw',
-          letterSpacing: '0.14em',
-          fontWeight: 700,
-        }}>
-          Adaptive Spine Architecture
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '1.2vw', marginBottom: '2vw' }}>
+          {['hubspot.com', 'slack.com', 'atlassian.com', 'zendesk.com', 'salesforce.com'].map((d) => (
+            <img key={d} src={`https://logo.clearbit.com/${d}`} alt=""
+              style={{ width: '2.5vw', height: '2.5vw', borderRadius: '5px', objectFit: 'contain' }} />
+          ))}
         </div>
         <div style={{
           fontSize: '6.5vw',
@@ -94,7 +91,7 @@ export function OutcomeV1() {
           color: 'white',
           lineHeight: 1.0,
           letterSpacing: '-0.04em',
-          marginTop: '1.8vw',
+          marginTop: '1vw',
           textShadow: '0 2px 30px rgba(0,0,0,0.5)',
         }}>
           Your apps,<br />finally united.
@@ -111,7 +108,7 @@ export function OutcomeV1() {
           fontWeight: 500,
           lineHeight: 1.5,
         }}>
-          The Adaptive Spine connects every tool.<br />Your AI reads everything and tells you what to do next.
+          Deals, tickets, conversations, and account health<br />from every tool — on one screen.
         </div>
         <div style={{
           marginTop: '3vw',
@@ -134,7 +131,7 @@ export function OutcomeV1() {
           fontSize: '1.4vw',
           fontWeight: 500,
         }}>
-          70+ connectors · SOC 2 certified · No code
+          No code · SOC 2 certified · Works with your stack
         </div>
       </div>
     </div>

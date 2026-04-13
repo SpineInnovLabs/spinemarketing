@@ -33,31 +33,26 @@ export const Slide3 = () => {
         }}
       />
       
-      {/* Top Left Slide Number */}
       <div style={{ position: "absolute", top: "4vw", left: "5vw", color: "rgba(255,255,255,0.25)", fontSize: "2vw", fontWeight: 400 }}>
         03/04
       </div>
 
-      {/* Top Right Logo */}
       <div style={{ position: "absolute", top: "4vw", right: "5vw" }}>
         <Logo />
       </div>
 
-      {/* Bottom Accent */}
       <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "0.4vw", backgroundColor: "#2EE5A8" }} />
 
-      {/* Center Content */}
       <div style={{ textAlign: "center", zIndex: 10, width: "100%" }}>
-        <h1 style={{ margin: 0, fontSize: "6vw", fontWeight: 700, color: "#FFFFFF", lineHeight: 1.1 }}>AI that acts —</h1>
-        <h1 style={{ margin: 0, fontSize: "6vw", fontWeight: 700, color: "#2EE5A8", lineHeight: 1.1 }}>with your approval.</h1>
+        <h1 style={{ margin: 0, fontSize: "6vw", fontWeight: 700, color: "#FFFFFF", lineHeight: 1.1 }}>AI spots the risk.</h1>
+        <h1 style={{ margin: 0, fontSize: "6vw", fontWeight: 700, color: "#2EE5A8", lineHeight: 1.1 }}>You make the call.</h1>
         
         <div style={{ height: "3vw" }} />
         
         <p style={{ margin: 0, fontSize: "3vw", fontWeight: 500, color: "rgba(255,255,255,0.6)", fontFamily: "'Inter', sans-serif" }}>
-          Confidence scores. Impact previews. You decide.
+          Nothing happens until you approve. Ever.
         </p>
 
-        {/* Approval Card Mockup */}
         <div style={{ 
           marginTop: "4vw", 
           backgroundColor: "#111827", 
@@ -68,27 +63,29 @@ export const Slide3 = () => {
           margin: "4vw auto 0",
           textAlign: "left"
         }}>
-          {/* Row 1 */}
-          <div style={{ display: "flex", alignItems: "center", gap: "1.5vw" }}>
-            <span style={{ fontSize: "2.8vw", fontWeight: 600, color: "white" }}>Churn Risk Detected</span>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "1vw" }}>
+              <img src="https://logo.clearbit.com/hubspot.com" alt=""
+                style={{ width: "2.5vw", height: "2.5vw", borderRadius: "4px", objectFit: "contain" }} />
+              <span style={{ fontSize: "2.8vw", fontWeight: 600, color: "white" }}>Acme Corp — At Risk</span>
+            </div>
             <span style={{ 
-              backgroundColor: "#2EE5A8", 
-              color: "#0B0F17", 
+              backgroundColor: "#EB4379", 
+              color: "white", 
               fontWeight: 700, 
               padding: "0.6vw 1.5vw", 
               borderRadius: "6px", 
-              fontSize: "2.2vw" 
+              fontSize: "2vw" 
             }}>
-              92/100
+              High
             </span>
           </div>
 
-          {/* Row 2 */}
           <div style={{ marginTop: "1.5vw", fontSize: "2.2vw", fontWeight: 400, color: "rgba(255,255,255,0.6)", fontFamily: "'Inter', sans-serif" }}>
-            Recommend: Schedule executive check-in with Acme Corp
+            3 missed meetings · 2 unresolved tickets · NPS dropped to 6.<br/>
+            AI recommends: Schedule exec check-in this week.
           </div>
 
-          {/* Row 3 - Buttons */}
           <div style={{ marginTop: "2vw", display: "flex", gap: "1.5vw" }}>
             <button style={{ 
               backgroundColor: "#2EE5A8", 

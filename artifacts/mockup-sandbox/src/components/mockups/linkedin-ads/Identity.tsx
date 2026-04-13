@@ -71,7 +71,7 @@ export function Identity() {
           borderRadius: '2vw',
           background: 'rgba(27,167,132,0.08)',
         }}>
-          AI Workspace
+          For CS, Ops & Revenue Teams
         </div>
       </div>
 
@@ -84,15 +84,19 @@ export function Identity() {
         boxSizing: 'border-box',
         zIndex: 2,
       }}>
-        <div style={{
-          textTransform: 'uppercase',
-          fontSize: '1.5vw',
-          color: '#1ba784',
-          letterSpacing: '0.14em',
-          fontWeight: 700,
-          marginBottom: '2vw',
-        }}>
-          Built for Revenue Teams
+        <div style={{ display: 'flex', gap: '1vw', marginBottom: '2vw' }}>
+          {[
+            { name: 'HubSpot', domain: 'hubspot.com' },
+            { name: 'Slack', domain: 'slack.com' },
+            { name: 'Salesforce', domain: 'salesforce.com' },
+            { name: 'Intercom', domain: 'intercom.com' },
+          ].map((t) => (
+            <img key={t.name} src={`https://logo.clearbit.com/${t.domain}`} alt={t.name}
+              style={{ width: '2.8vw', height: '2.8vw', borderRadius: '6px', objectFit: 'contain' }} />
+          ))}
+          <span style={{ color: 'rgba(255,255,255,0.3)', fontSize: '1.4vw', fontWeight: 500, alignSelf: 'center', marginLeft: '0.5vw' }}>
+            +66 more
+          </span>
         </div>
         <div style={{
           fontSize: '8.5vw',
@@ -102,7 +106,7 @@ export function Identity() {
           letterSpacing: '-0.045em',
           textShadow: '0 4px 60px rgba(0,0,0,0.6)',
         }}>
-          Every app.<br />One<br />intelligence.
+          Every app.<br />One<br />customer view.
         </div>
         <div style={{
           fontSize: '2.4vw',
@@ -112,7 +116,7 @@ export function Identity() {
           lineHeight: 1.4,
           maxWidth: '75%',
         }}>
-          70+ connectors. One Spine. AI that proposes. You approve.
+          Morning briefs. Account health scores. Churn alerts. All from tools you already use.
         </div>
         <div style={{ marginTop: '3vw', display: 'flex', alignItems: 'center', gap: '2.5vw' }}>
           <div style={{
@@ -130,7 +134,7 @@ export function Identity() {
             See how it works <span style={{ fontSize: '1.1em' }}>→</span>
           </div>
           <span style={{ color: 'rgba(255,255,255,0.3)', fontSize: '1.4vw', fontWeight: 500 }}>
-            SOC 2 certified · Enterprise ready
+            SOC 2 · Enterprise ready
           </span>
         </div>
       </div>

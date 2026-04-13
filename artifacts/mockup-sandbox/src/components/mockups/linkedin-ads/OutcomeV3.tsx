@@ -67,16 +67,12 @@ export function OutcomeV3() {
             IntegrateWise
           </span>
         </div>
-        <div style={{
-          color: '#1ba784',
-          fontSize: '1.4vw',
-          fontWeight: 600,
-          border: '1px solid rgba(27,167,132,0.3)',
-          padding: '0.4vw 1.2vw',
-          borderRadius: '2vw',
-          background: 'rgba(27,167,132,0.08)',
-        }}>
-          AI Workspace
+        <div style={{ display: 'flex', gap: '0.8vw', alignItems: 'center' }}>
+          {['hubspot.com', 'slack.com', 'atlassian.com', 'salesforce.com'].map((d) => (
+            <img key={d} src={`https://logo.clearbit.com/${d}`} alt=""
+              style={{ width: '2.2vw', height: '2.2vw', borderRadius: '4px', objectFit: 'contain' }} />
+          ))}
+          <span style={{ color: 'rgba(255,255,255,0.3)', fontSize: '1.3vw', fontWeight: 500, marginLeft: '0.3vw' }}>+66</span>
         </div>
       </div>
 
@@ -96,16 +92,6 @@ export function OutcomeV3() {
         zIndex: 2,
       }}>
         <div>
-          <div style={{
-            textTransform: 'uppercase',
-            color: '#1ba784',
-            fontSize: '1.2vw',
-            letterSpacing: '0.1em',
-            fontWeight: 700,
-            marginBottom: '0.5vh',
-          }}>
-            Adaptive Spine Architecture
-          </div>
           <div style={{
             fontSize: '4.5vw',
             fontWeight: 900,

@@ -29,10 +29,10 @@ export function CoverB() {
 
       <div style={{ flex: 1, textAlign: 'right', paddingLeft: '5vw' }}>
         <div style={{ fontFamily: 'Sora, sans-serif', fontWeight: 600, color: 'white', fontSize: '4vh' }}>
-          Stop being the human API between your tools.
+          You check 8 tools before one customer call.
         </div>
-        <div style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400, color: 'rgba(255,255,255,0.4)', fontSize: '2.5vh', marginTop: '1vh' }}>
-          integratewise.ai
+        <div style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500, color: '#2EE5A8', fontSize: '2.5vh', marginTop: '1vh' }}>
+          We built one screen to replace all of them.
         </div>
       </div>
     </div>

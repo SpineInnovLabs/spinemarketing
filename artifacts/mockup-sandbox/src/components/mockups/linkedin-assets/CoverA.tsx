@@ -29,11 +29,17 @@ export function CoverA() {
 
       <div style={{ textAlign: 'center', flex: 1, padding: '0 3vw' }}>
         <div style={{ fontFamily: 'Sora, sans-serif', fontWeight: 600, color: 'white', fontSize: '4.5vh', whiteSpace: 'nowrap' }}>
-          The Knowledge Workspace over the Spine
+          Every customer. Every tool. One screen.
         </div>
         <div style={{ width: '12vw', height: '1px', background: '#2EE5A8', margin: '1.5vh auto' }} />
-        <div style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400, color: 'rgba(255,255,255,0.6)', fontSize: '2.8vh' }}>
-          One workspace. Every tool. AI that waits for you.
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '1.5vw', alignItems: 'center' }}>
+          {['hubspot.com', 'slack.com', 'atlassian.com', 'zendesk.com', 'salesforce.com'].map((d) => (
+            <img key={d} src={`https://logo.clearbit.com/${d}`} alt=""
+              style={{ width: '2.5vh', height: '2.5vh', borderRadius: '3px', objectFit: 'contain' }} />
+          ))}
+          <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400, color: 'rgba(255,255,255,0.4)', fontSize: '2.5vh' }}>
+            +66 more apps
+          </span>
         </div>
       </div>
 

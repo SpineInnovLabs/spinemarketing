@@ -29,16 +29,12 @@ export function OutcomeV2() {
             IntegrateWise
           </span>
         </div>
-        <div style={{
-          color: '#1ba784',
-          fontSize: '1.4vw',
-          fontWeight: 600,
-          border: '1px solid rgba(27,167,132,0.3)',
-          padding: '0.4vw 1.2vw',
-          borderRadius: '2vw',
-          background: 'rgba(27,167,132,0.08)',
-        }}>
-          AI Workspace
+        <div style={{ display: 'flex', gap: '0.8vw', alignItems: 'center' }}>
+          {['hubspot.com', 'slack.com', 'atlassian.com', 'zendesk.com'].map((d) => (
+            <img key={d} src={`https://logo.clearbit.com/${d}`} alt=""
+              style={{ width: '2.2vw', height: '2.2vw', borderRadius: '4px', objectFit: 'contain' }} />
+          ))}
+          <span style={{ color: 'rgba(255,255,255,0.3)', fontSize: '1.3vw', fontWeight: 500, marginLeft: '0.3vw' }}>+66</span>
         </div>
       </div>
 
@@ -83,28 +79,15 @@ export function OutcomeV2() {
         flexDirection: 'column',
         justifyContent: 'space-between',
       }}>
-        <div style={{ display: 'flex', alignItems: 'flex-start', gap: '3vw' }}>
-          <div style={{ width: '30%', paddingTop: '0.8vw' }}>
-            <div style={{
-              textTransform: 'uppercase',
-              color: '#1ba784',
-              fontSize: '1.4vw',
-              letterSpacing: '0.12em',
-              fontWeight: 700,
-            }}>
-              Adaptive Spine Architecture
-            </div>
-          </div>
-          <div style={{ width: '70%' }}>
-            <div style={{
-              fontSize: '5.5vw',
-              fontWeight: 900,
-              color: 'white',
-              lineHeight: 1.0,
-              letterSpacing: '-0.045em',
-            }}>
-              Your apps,<br />finally united.
-            </div>
+        <div>
+          <div style={{
+            fontSize: '5.5vw',
+            fontWeight: 900,
+            color: 'white',
+            lineHeight: 1.0,
+            letterSpacing: '-0.045em',
+          }}>
+            Your apps,<br />finally united.
           </div>
         </div>
 
@@ -115,7 +98,7 @@ export function OutcomeV2() {
           lineHeight: 1.45,
           marginTop: '2vw',
         }}>
-          The Adaptive Spine connects every tool. Your AI reads everything and tells you what to do next.
+          See every deal, ticket, and conversation for every account — pulled live from your tools. AI reads it all and tells you what needs attention.
         </div>
 
         <div style={{
@@ -139,7 +122,7 @@ export function OutcomeV2() {
             Book a demo <span style={{ fontSize: '1.1em' }}>→</span>
           </div>
           <span style={{ color: 'rgba(255,255,255,0.3)', fontSize: '1.4vw', fontWeight: 500, textAlign: 'right' }}>
-            70+ connectors · SOC 2 · No code
+            No code · SOC 2 · Works with your stack
           </span>
         </div>
       </div>

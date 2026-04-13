@@ -11,6 +11,15 @@ const Logo = () => (
 );
 
 export const Slide1 = () => {
+  const tools = [
+    { domain: 'slack.com', top: '2vw', left: '5vw' },
+    { domain: 'salesforce.com', top: '15vw', left: '12vw' },
+    { domain: 'atlassian.com', top: '6vw', left: '22vw' },
+    { domain: 'stripe.com', top: '18vw', left: '28vw' },
+    { domain: 'hubspot.com', top: '4vw', left: '38vw' },
+    { domain: 'zendesk.com', top: '12vw', left: '45vw' },
+  ];
+
   return (
     <div
       style={{
@@ -33,61 +42,48 @@ export const Slide1 = () => {
         }}
       />
       
-      {/* Top Left Slide Number */}
       <div style={{ position: "absolute", top: "4vw", left: "5vw", color: "rgba(255,255,255,0.25)", fontSize: "2vw", fontWeight: 400 }}>
         01/04
       </div>
 
-      {/* Top Right Logo */}
       <div style={{ position: "absolute", top: "4vw", right: "5vw" }}>
         <Logo />
       </div>
 
-      {/* Bottom Accent */}
       <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "0.4vw", backgroundColor: "#2EE5A8" }} />
 
-      {/* Center Content */}
       <div style={{ textAlign: "center", zIndex: 10 }}>
-        <h1 style={{ margin: 0, fontSize: "7vw", fontWeight: 700, color: "#FFFFFF", lineHeight: 1.1 }}>The Productivity</h1>
-        <h1 style={{ margin: 0, fontSize: "7vw", fontWeight: 700, color: "#2EE5A8", lineHeight: 1.1 }}>Paradox</h1>
+        <h1 style={{ margin: 0, fontSize: "7vw", fontWeight: 700, color: "#FFFFFF", lineHeight: 1.1 }}>You use 8+ tools.</h1>
+        <h1 style={{ margin: 0, fontSize: "7vw", fontWeight: 700, color: "#2EE5A8", lineHeight: 1.1 }}>None of them talk.</h1>
         
         <div style={{ height: "4vw" }} />
         
         <p style={{ margin: 0, fontSize: "3.5vw", fontWeight: 500, color: "rgba(255,255,255,0.6)", fontFamily: "'Inter', sans-serif" }}>
-          More tools. Less clarity.
+          So you copy-paste between tabs. Every. Single. Day.
         </p>
 
-        {/* Scattered Tool Icons */}
         <div style={{ position: "relative", width: "50vw", height: "25vw", margin: "6vw auto 0" }}>
-          {[
-            { letter: "S", top: "2vw", left: "5vw", color: "#36C5F0" },
-            { letter: "S", top: "15vw", left: "12vw", color: "#00A1E0" },
-            { letter: "J", top: "6vw", left: "22vw", color: "#2684FF" },
-            { letter: "$", top: "18vw", left: "28vw", color: "#00D632" },
-            { letter: "H", top: "4vw", left: "38vw", color: "#FF7A59" },
-            { letter: "Z", top: "12vw", left: "45vw", color: "#D93F1C" },
-          ].map((icon, i) => (
+          {tools.map((icon, i) => (
             <div
               key={i}
               style={{
                 position: "absolute",
                 top: icon.top,
                 left: icon.left,
-                width: "4vw",
-                height: "4vw",
+                width: "5vw",
+                height: "5vw",
                 backgroundColor: "#111827",
                 border: "1px solid rgba(255,255,255,0.08)",
                 borderRadius: "50%",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                color: icon.color,
-                fontSize: "2vw",
-                fontWeight: 700,
-                boxShadow: "0 4px 20px rgba(0,0,0,0.5)"
+                boxShadow: "0 4px 20px rgba(0,0,0,0.5)",
+                overflow: "hidden",
               }}
             >
-              {icon.letter}
+              <img src={`https://logo.clearbit.com/${icon.domain}`} alt=""
+                style={{ width: "3vw", height: "3vw", objectFit: "contain", borderRadius: "4px" }} />
             </div>
           ))}
         </div>

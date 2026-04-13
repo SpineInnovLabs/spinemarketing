@@ -71,7 +71,7 @@ export function Outcome() {
           borderRadius: '2vw',
           background: 'rgba(27,167,132,0.08)',
         }}>
-          AI Workspace
+          70+ Apps Connected
         </div>
       </div>
 
@@ -84,15 +84,17 @@ export function Outcome() {
         boxSizing: 'border-box',
         zIndex: 2,
       }}>
-        <div style={{
-          textTransform: 'uppercase',
-          fontSize: '1.5vw',
-          color: '#1ba784',
-          letterSpacing: '0.14em',
-          fontWeight: 700,
-          marginBottom: '2vw',
-        }}>
-          Adaptive Spine Architecture
+        <div style={{ display: 'flex', gap: '1vw', marginBottom: '2vw' }}>
+          {[
+            { name: 'HubSpot', domain: 'hubspot.com' },
+            { name: 'Slack', domain: 'slack.com' },
+            { name: 'Jira', domain: 'atlassian.com' },
+            { name: 'Zendesk', domain: 'zendesk.com' },
+            { name: 'Salesforce', domain: 'salesforce.com' },
+          ].map((t) => (
+            <img key={t.name} src={`https://logo.clearbit.com/${t.domain}`} alt={t.name}
+              style={{ width: '2.8vw', height: '2.8vw', borderRadius: '6px', objectFit: 'contain' }} />
+          ))}
         </div>
         <div style={{
           fontSize: '9vw',
@@ -112,7 +114,7 @@ export function Outcome() {
           lineHeight: 1.4,
           maxWidth: '75%',
         }}>
-          The Adaptive Spine connects every tool. Your AI reads everything and tells you what to do next.
+          HubSpot deals + Jira tickets + Slack threads + Zendesk cases — all on one screen per customer.
         </div>
         <div style={{ marginTop: '3vw', display: 'flex', alignItems: 'center', gap: '2.5vw' }}>
           <div style={{
@@ -130,7 +132,7 @@ export function Outcome() {
             Book a demo <span style={{ fontSize: '1.1em' }}>→</span>
           </div>
           <span style={{ color: 'rgba(255,255,255,0.3)', fontSize: '1.4vw', fontWeight: 500 }}>
-            70+ connectors · SOC 2 · No code
+            No code · SOC 2 · Works with your stack
           </span>
         </div>
       </div>

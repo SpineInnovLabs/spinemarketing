@@ -14,7 +14,6 @@ export const WAShare: React.FC = () => {
     >
       <style dangerouslySetInnerHTML={{ __html: "@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800;900&display=swap');" }} />
       
-      {/* Hero Image */}
       <img 
         src="/__mockup/images/hero-fb-product.png" 
         alt="Workspace Dashboard" 
@@ -28,7 +27,6 @@ export const WAShare: React.FC = () => {
         }}
       />
 
-      {/* Radial Vignette */}
       <div style={{
         position: 'absolute',
         inset: 0,
@@ -36,7 +34,6 @@ export const WAShare: React.FC = () => {
         zIndex: 2
       }} />
 
-      {/* Top Left Logo */}
       <div style={{
         position: 'absolute',
         top: '5vw',
@@ -62,7 +59,6 @@ export const WAShare: React.FC = () => {
         </span>
       </div>
 
-      {/* Center Frosted Glass Card */}
       <div style={{
         position: 'absolute',
         top: '50%',
@@ -85,7 +81,7 @@ export const WAShare: React.FC = () => {
           fontSize: '6vw',
           lineHeight: 1.2
         }}>
-          One Workspace.
+          Every customer.
         </div>
         <div style={{
           fontFamily: "'Sora', sans-serif",
@@ -94,7 +90,7 @@ export const WAShare: React.FC = () => {
           fontSize: '6vw',
           lineHeight: 1.2
         }}>
-          Every Tool.
+          One screen.
         </div>
         
         <div style={{
@@ -110,7 +106,7 @@ export const WAShare: React.FC = () => {
           color: 'rgba(255,255,255,0.6)',
           fontSize: '2.5vw'
         }}>
-          AI that waits for you.
+          Deals, tickets, and conversations from 70+ apps.
         </div>
         
         <button style={{
@@ -129,7 +125,6 @@ export const WAShare: React.FC = () => {
         </button>
       </div>
 
-      {/* Bottom Right text */}
       <div style={{
         position: 'absolute',
         bottom: '3vw',
