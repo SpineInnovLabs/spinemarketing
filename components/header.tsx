@@ -66,7 +66,7 @@ const navigation: NavItem[] = [
     items: [
       { name: "Architecture", href: "/platform/architecture", icon: GitMerge, desc: "Four pillars — Cognitive, Memory, Governance, Workspace" },
       { name: "The Spine", href: "/platform/the-spine", icon: Database, desc: "SpineVault, 8-stage normalization, canonical entities" },
-      { name: "Core Loop", href: "/platform/flows", icon: GitBranch, desc: "Flow C Triage, Twin Activation, Tool→Truth loops" },
+      { name: "Core Loop", href: "/platform/flows", icon: GitBranch, desc: "Structured, UnStructured and AI Chats" },
       { name: "Services", href: "/services", icon: Wrench, desc: "Implementation, managed ops, custom connectors" },
       { name: "Connectors", href: "/platform/connectors", icon: Plug, desc: "MCP protocol, auto-upgrade, integration infrastructure" },
       { name: "Security", href: "/platform/security", icon: ShieldCheck, desc: "Truth Boundary, encryption, compliance, audit trail" },
