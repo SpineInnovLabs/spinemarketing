@@ -7,7 +7,7 @@ export function Identity() {
       height: '100vh',
       overflow: 'hidden',
       position: 'relative',
-      background: '#0A1228',
+      background: '#08070E',
       fontFamily: 'Inter, system-ui, sans-serif'
     }}>
       <img
@@ -29,7 +29,7 @@ export function Identity() {
         left: 0,
         right: 0,
         height: '70%',
-        background: 'linear-gradient(to top, rgba(8,14,30,0.97) 0%, rgba(8,14,30,0.88) 35%, rgba(8,14,30,0.45) 65%, transparent 100%)',
+        background: 'linear-gradient(to top, rgba(8,7,14,0.97) 0%, rgba(8,7,14,0.88) 35%, rgba(8,7,14,0.45) 65%, transparent 100%)',
       }} />
 
       <div style={{
@@ -38,7 +38,7 @@ export function Identity() {
         left: 0,
         right: 0,
         height: '30%',
-        background: 'linear-gradient(to bottom, rgba(8,14,30,0.5) 0%, transparent 100%)',
+        background: 'linear-gradient(to bottom, rgba(8,7,14,0.5) 0%, transparent 100%)',
       }} />
 
       <div style={{

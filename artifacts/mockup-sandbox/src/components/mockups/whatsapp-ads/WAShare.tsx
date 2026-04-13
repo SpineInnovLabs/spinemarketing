@@ -1,146 +1,79 @@
 import React from 'react';
 
+const Logo = () => (
+  <div style={{ display: 'flex', alignItems: 'center', gap: '2vw' }}>
+    <svg viewBox="0 0 32 32" fill="none" style={{ width: '5vw', height: '5vw' }}>
+      <circle cx="16" cy="16" r="16" fill="#34D399" />
+      <path d="M8 16 Q16 8 24 16 Q16 24 8 16Z" fill="white" opacity="0.9" />
+    </svg>
+    <span style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700, color: 'white', fontSize: '3vw', letterSpacing: '-0.02em' }}>
+      IntegrateWise
+    </span>
+  </div>
+);
+
 export const WAShare: React.FC = () => {
   return (
-    <div 
+    <div
       style={{
         width: '100vw',
         height: '100vh',
         overflow: 'hidden',
-        backgroundColor: '#0B0F17',
+        backgroundColor: '#08070E',
+        backgroundImage: 'radial-gradient(circle at 50% 50%, rgba(52,211,153,0.06) 0%, transparent 60%)',
         position: 'relative',
-        fontFamily: "'Inter', sans-serif"
+        fontFamily: "'Inter', sans-serif",
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
       }}
     >
-      <style dangerouslySetInnerHTML={{ __html: "@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800;900&display=swap');" }} />
-      
-      <img 
-        src="/__mockup/images/hero-fb-product.png" 
-        alt="Workspace Dashboard" 
-        style={{
-          position: 'absolute',
-          inset: 0,
-          objectFit: 'cover',
-          width: '100%',
-          height: '100%',
-          zIndex: 1
-        }}
-      />
+      <style dangerouslySetInnerHTML={{ __html: "@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');" }} />
 
-      <div style={{
-        position: 'absolute',
-        inset: 0,
-        background: 'radial-gradient(ellipse at center, transparent 20%, rgba(11,15,23,0.6) 100%)',
-        zIndex: 2
-      }} />
-
-      <div style={{
-        position: 'absolute',
-        top: '5vw',
-        left: '5vw',
-        zIndex: 10,
-        display: 'flex',
-        alignItems: 'center',
-        gap: '2vw'
-      }}>
-        <img 
-          src="/__mockup/images/iw-brain-logo.png" 
-          alt="Brain Logo" 
-          style={{ width: '6vw', height: '6vw', objectFit: 'contain' }} 
-        />
-        <span style={{
-          fontFamily: "'Sora', sans-serif",
-          fontWeight: 700,
-          color: 'white',
-          fontSize: '3vw',
-          letterSpacing: '-0.02em'
-        }}>
-          IntegrateWise
-        </span>
+      <div style={{ position: 'absolute', top: '5vw', left: '5vw', zIndex: 10 }}>
+        <Logo />
       </div>
 
-      <div style={{
-        position: 'absolute',
-        top: '50%',
-        left: '50%',
-        transform: 'translate(-50%, -50%)',
-        width: '75%',
-        padding: '5vw',
-        textAlign: 'center',
-        backdropFilter: 'blur(10px)',
-        background: 'rgba(11,15,23,0.7)',
-        border: '1px solid rgba(46,229,168,0.2)',
-        borderRadius: '2vw',
-        zIndex: 10,
-        boxSizing: 'border-box'
-      }}>
-        <div style={{
-          fontFamily: "'Sora', sans-serif",
-          fontWeight: 700,
-          color: 'white',
-          fontSize: '6vw',
-          lineHeight: 1.2
-        }}>
+      <div style={{ textAlign: 'center', zIndex: 10, padding: '0 5vw', marginTop: '8vw' }}>
+        <div style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700, color: 'white', fontSize: '6vw', lineHeight: 1.2 }}>
           Every customer.
         </div>
-        <div style={{
-          fontFamily: "'Sora', sans-serif",
-          fontWeight: 700,
-          color: '#2EE5A8',
-          fontSize: '6vw',
-          lineHeight: 1.2
-        }}>
+        <div style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700, color: '#34D399', fontSize: '6vw', lineHeight: 1.2 }}>
           One screen.
         </div>
-        
-        <div style={{
-          width: '5vw',
-          height: '2px',
-          backgroundColor: '#2EE5A8',
-          margin: '2vw auto'
-        }} />
-        
-        <div style={{ display: 'flex', justifyContent: 'center', gap: '1.5vw', alignItems: 'center', marginBottom: '1.5vw' }}>
+
+        <div style={{ width: '5vw', height: '2px', backgroundColor: '#34D399', margin: '3vw auto' }} />
+
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '2vw', alignItems: 'center', marginBottom: '2vw' }}>
           {['hubspot.com', 'slack.com', 'atlassian.com', 'zendesk.com', 'salesforce.com', 'intercom.com'].map((d) => (
             <img key={d} src={`/__mockup/images/logos/${d}`} alt=""
-              style={{ width: '3vw', height: '3vw', borderRadius: '4px', objectFit: 'contain' }} />
+              style={{ width: '3.5vw', height: '3.5vw', borderRadius: '4px', objectFit: 'contain' }} />
           ))}
         </div>
-        <div style={{
-          fontFamily: "'Inter', sans-serif",
-          fontWeight: 500,
-          color: 'rgba(255,255,255,0.6)',
-          fontSize: '2.5vw'
-        }}>
+
+        <div style={{ fontFamily: "'Inter', sans-serif", fontWeight: 500, color: 'rgba(255,255,255,0.5)', fontSize: '2.8vw' }}>
           Deals, tickets, and conversations from 70+ apps.
         </div>
-        
+
         <button style={{
-          backgroundColor: '#2EE5A8',
-          color: '#0B0F17',
-          fontFamily: "'Sora', sans-serif",
+          backgroundColor: '#34D399',
+          color: '#08070E',
+          fontFamily: "'Inter', sans-serif",
           fontWeight: 700,
-          fontSize: '2.5vw',
-          padding: '1.5vw 4vw',
+          fontSize: '3vw',
+          padding: '1.8vw 5vw',
           borderRadius: '10px',
-          marginTop: '3vw',
+          marginTop: '4vw',
           border: 'none',
-          cursor: 'pointer'
+          boxShadow: '0 0 30px rgba(52,211,153,0.3)',
+          cursor: 'pointer',
         }}>
           Book a Demo &rarr;
         </button>
       </div>
 
-      <div style={{
-        position: 'absolute',
-        bottom: '3vw',
-        right: '4vw',
-        fontFamily: "'Inter', sans-serif",
-        fontWeight: 400,
-        color: 'rgba(255,255,255,0.4)',
-        fontSize: '2vw',
-        zIndex: 10
-      }}>
+      <div style={{ position: 'absolute', bottom: '4vw', left: 0, right: 0, textAlign: 'center', fontFamily: "'Inter', sans-serif", color: 'rgba(255,255,255,0.3)', fontSize: '2vw' }}>
         integratewise.ai
       </div>
     </div>

@@ -7,7 +7,7 @@ export function OutcomeV3() {
       height: '100vh',
       overflow: 'hidden',
       position: 'relative',
-      background: '#0A1228',
+      background: '#08070E',
       fontFamily: 'Inter, system-ui, sans-serif'
     }}>
       <img
@@ -32,7 +32,7 @@ export function OutcomeV3() {
         left: 0,
         width: '50%',
         height: '30%',
-        background: 'linear-gradient(135deg, rgba(10,18,40,0.85) 0%, transparent 100%)',
+        background: 'linear-gradient(135deg, rgba(8,7,14,0.85) 0%, transparent 100%)',
         zIndex: 1,
       }} />
 
@@ -42,7 +42,7 @@ export function OutcomeV3() {
         left: 0,
         right: 0,
         height: '20vh',
-        background: 'linear-gradient(transparent, #0A1228)',
+        background: 'linear-gradient(transparent, #08070E)',
         zIndex: 1,
       }} />
 
@@ -82,7 +82,7 @@ export function OutcomeV3() {
         left: 0,
         right: 0,
         height: '12vh',
-        background: '#0A1228',
+        background: '#08070E',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',

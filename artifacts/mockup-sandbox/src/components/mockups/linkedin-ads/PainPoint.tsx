@@ -8,7 +8,7 @@ export function PainPoint() {
         height: "100vh",
         overflow: "hidden",
         position: "relative",
-        background: "#0A1228",
+        background: "#08070E",
         fontFamily: "'Inter', system-ui, sans-serif",
       }}
     >
@@ -33,7 +33,7 @@ export function PainPoint() {
           right: 0,
           height: "65%",
           background:
-            "linear-gradient(to top, rgba(8,14,30,0.95) 0%, rgba(8,14,30,0.85) 35%, rgba(8,14,30,0.4) 70%, transparent 100%)",
+            "linear-gradient(to top, rgba(8,7,14,0.95) 0%, rgba(8,7,14,0.85) 35%, rgba(8,7,14,0.4) 70%, transparent 100%)",
         }}
       />
 
@@ -45,7 +45,7 @@ export function PainPoint() {
           right: 0,
           height: "25%",
           background:
-            "linear-gradient(to bottom, rgba(8,14,30,0.6) 0%, transparent 100%)",
+            "linear-gradient(to bottom, rgba(8,7,14,0.6) 0%, transparent 100%)",
         }}
       />
 

@@ -3,10 +3,10 @@ import React from "react";
 const Logo = () => (
   <div style={{ display: "flex", alignItems: "center", gap: "1vw" }}>
     <svg viewBox="0 0 32 32" fill="none" style={{ width: "3vw", height: "3vw" }}>
-      <circle cx="16" cy="16" r="16" fill="#2EE5A8" />
+      <circle cx="16" cy="16" r="16" fill="#34D399" />
       <path d="M8 16 Q16 8 24 16 Q16 24 8 16Z" fill="white" opacity="0.9" />
     </svg>
-    <span style={{ color: "white", fontSize: "2.5vw", fontWeight: 600, fontFamily: "Sora, sans-serif" }}>IntegrateWise</span>
+    <span style={{ color: "white", fontSize: "2.5vw", fontWeight: 600, fontFamily: "Inter, sans-serif" }}>IntegrateWise</span>
   </div>
 );
 
@@ -26,9 +26,9 @@ export const Slide2 = () => {
         width: "100vw",
         height: "100vh",
         overflow: "hidden",
-        backgroundColor: "#0B0F17",
+        backgroundColor: "#08070E",
         position: "relative",
-        fontFamily: "'Sora', 'Inter', sans-serif",
+        fontFamily: "'Inter', sans-serif",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
@@ -38,7 +38,7 @@ export const Slide2 = () => {
       <style
         dangerouslySetInnerHTML={{
           __html:
-            "@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@400;500;600;700;800&display=swap');",
+            "@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');",
         }}
       />
       
@@ -50,11 +50,11 @@ export const Slide2 = () => {
         <Logo />
       </div>
 
-      <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "0.4vw", backgroundColor: "#2EE5A8" }} />
+      <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "0.4vw", backgroundColor: "#34D399" }} />
 
       <div style={{ textAlign: "center", zIndex: 10 }}>
-        <h1 style={{ margin: 0, fontSize: "6.5vw", fontWeight: 700, color: "#FFFFFF", lineHeight: 1.1 }}>We connect them.</h1>
-        <h1 style={{ margin: 0, fontSize: "6.5vw", fontWeight: 700, color: "#2EE5A8", lineHeight: 1.1 }}>You see one screen.</h1>
+        <h1 style={{ margin: 0, fontSize: "5.5vw", fontWeight: 700, color: "#FFFFFF", lineHeight: 1.15 }}>We connect them.</h1>
+        <h1 style={{ margin: 0, fontSize: "5.5vw", fontWeight: 700, color: "#34D399", lineHeight: 1.15 }}>You see one screen.</h1>
         
         <div style={{ height: "3vw" }} />
         
@@ -70,12 +70,12 @@ export const Slide2 = () => {
             transform: "translate(-50%, -50%)",
             width: "6vw",
             height: "6vw",
-            boxShadow: "0 0 40px rgba(46,229,168,0.3)",
+            boxShadow: "0 0 40px rgba(52,211,153,0.3)",
             borderRadius: "50%",
             zIndex: 5
           }}>
             <svg viewBox="0 0 32 32" fill="none" style={{ width: "100%", height: "100%" }}>
-              <circle cx="16" cy="16" r="16" fill="#2EE5A8" />
+              <circle cx="16" cy="16" r="16" fill="#34D399" />
               <path d="M8 16 Q16 8 24 16 Q16 24 8 16Z" fill="white" opacity="0.9" />
             </svg>
           </div>
@@ -94,7 +94,7 @@ export const Slide2 = () => {
                   left: "50%",
                   width: `${radius}vw`,
                   height: "1px",
-                  backgroundColor: "rgba(46,229,168,0.3)",
+                  backgroundColor: "rgba(52,211,153,0.3)",
                   transformOrigin: "0 0",
                   transform: `rotate(${icon.angle}deg)`,
                   zIndex: 1
@@ -107,7 +107,7 @@ export const Slide2 = () => {
                     left: `calc(50% + ${x}vw - 2.5vw)`,
                     width: "5vw",
                     height: "5vw",
-                    backgroundColor: "#111827",
+                    backgroundColor: "#121118",
                     border: "1px solid rgba(255,255,255,0.08)",
                     borderRadius: "50%",
                     display: "flex",

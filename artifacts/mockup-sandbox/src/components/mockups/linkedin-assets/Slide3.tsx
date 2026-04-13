@@ -3,10 +3,10 @@ import React from "react";
 const Logo = () => (
   <div style={{ display: "flex", alignItems: "center", gap: "1vw" }}>
     <svg viewBox="0 0 32 32" fill="none" style={{ width: "3vw", height: "3vw" }}>
-      <circle cx="16" cy="16" r="16" fill="#2EE5A8" />
+      <circle cx="16" cy="16" r="16" fill="#34D399" />
       <path d="M8 16 Q16 8 24 16 Q16 24 8 16Z" fill="white" opacity="0.9" />
     </svg>
-    <span style={{ color: "white", fontSize: "2.5vw", fontWeight: 600, fontFamily: "Sora, sans-serif" }}>IntegrateWise</span>
+    <span style={{ color: "white", fontSize: "2.5vw", fontWeight: 600, fontFamily: "Inter, sans-serif" }}>IntegrateWise</span>
   </div>
 );
 
@@ -17,9 +17,9 @@ export const Slide3 = () => {
         width: "100vw",
         height: "100vh",
         overflow: "hidden",
-        backgroundColor: "#0B0F17",
+        backgroundColor: "#08070E",
         position: "relative",
-        fontFamily: "'Sora', 'Inter', sans-serif",
+        fontFamily: "'Inter', sans-serif",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
@@ -29,7 +29,7 @@ export const Slide3 = () => {
       <style
         dangerouslySetInnerHTML={{
           __html:
-            "@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@400;500;600;700;800&display=swap');",
+            "@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');",
         }}
       />
       
@@ -41,11 +41,11 @@ export const Slide3 = () => {
         <Logo />
       </div>
 
-      <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "0.4vw", backgroundColor: "#2EE5A8" }} />
+      <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "0.4vw", backgroundColor: "#34D399" }} />
 
       <div style={{ textAlign: "center", zIndex: 10, width: "100%" }}>
-        <h1 style={{ margin: 0, fontSize: "6vw", fontWeight: 700, color: "#FFFFFF", lineHeight: 1.1 }}>AI spots the risk.</h1>
-        <h1 style={{ margin: 0, fontSize: "6vw", fontWeight: 700, color: "#2EE5A8", lineHeight: 1.1 }}>You make the call.</h1>
+        <h1 style={{ margin: 0, fontSize: "5.5vw", fontWeight: 700, color: "#FFFFFF", lineHeight: 1.15 }}>AI spots the risk.</h1>
+        <h1 style={{ margin: 0, fontSize: "5.5vw", fontWeight: 700, color: "#34D399", lineHeight: 1.15 }}>You make the call.</h1>
         
         <div style={{ height: "3vw" }} />
         
@@ -55,7 +55,7 @@ export const Slide3 = () => {
 
         <div style={{ 
           marginTop: "4vw", 
-          backgroundColor: "#111827", 
+          backgroundColor: "#121118", 
           border: "1px solid rgba(255,255,255,0.1)", 
           borderRadius: "10px", 
           padding: "3vw 4vw", 
@@ -88,9 +88,9 @@ export const Slide3 = () => {
 
           <div style={{ marginTop: "2vw", display: "flex", gap: "1.5vw" }}>
             <button style={{ 
-              backgroundColor: "#2EE5A8", 
-              color: "#0B0F17", 
-              fontFamily: "'Sora', sans-serif",
+              backgroundColor: "#34D399", 
+              color: "#08070E", 
+              fontFamily: "'Inter', sans-serif",
               fontWeight: 600, 
               fontSize: "2.2vw", 
               padding: "1vw 2.5vw", 
@@ -104,7 +104,7 @@ export const Slide3 = () => {
               backgroundColor: "transparent", 
               border: "1px solid rgba(255,255,255,0.2)", 
               color: "rgba(255,255,255,0.6)", 
-              fontFamily: "'Sora', sans-serif",
+              fontFamily: "'Inter', sans-serif",
               fontWeight: 600, 
               fontSize: "2.2vw", 
               padding: "1vw 2.5vw", 
@@ -117,7 +117,7 @@ export const Slide3 = () => {
               backgroundColor: "transparent", 
               border: "1px solid rgba(235,67,121,0.3)", 
               color: "#EB4379", 
-              fontFamily: "'Sora', sans-serif",
+              fontFamily: "'Inter', sans-serif",
               fontWeight: 600, 
               fontSize: "2.2vw", 
               padding: "1vw 2.5vw", 

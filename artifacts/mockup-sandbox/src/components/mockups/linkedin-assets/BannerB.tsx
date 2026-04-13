@@ -7,13 +7,13 @@ export const BannerB = () => {
       height: '100vh',
       overflow: 'hidden',
       position: 'relative',
-      backgroundColor: '#0B0F17',
-      background: 'radial-gradient(ellipse at 80% 50%, rgba(65,84,163,0.15) 0%, transparent 60%), #0B0F17',
+      backgroundColor: '#08070E',
+      background: 'radial-gradient(ellipse at 80% 50%, rgba(65,84,163,0.15) 0%, transparent 60%), #08070E',
       margin: 0,
       padding: 0,
       display: 'flex'
     }}>
-      <style dangerouslySetInnerHTML={{ __html: "@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap');" }} />
+      <style dangerouslySetInnerHTML={{ __html: "@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');" }} />
       
       <div style={{
         width: '55%',
@@ -24,13 +24,13 @@ export const BannerB = () => {
         justifyContent: 'center',
         boxSizing: 'border-box'
       }}>
-        <div style={{ fontFamily: 'Sora, sans-serif', fontWeight: 600, color: 'white', fontSize: '5.5vh', lineHeight: 1.1 }}>
+        <div style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600, color: 'white', fontSize: '5.5vh', lineHeight: 1.1 }}>
           AI finds the risk.
         </div>
-        <div style={{ fontFamily: 'Sora, sans-serif', fontWeight: 600, color: 'white', fontSize: '5.5vh', lineHeight: 1.1 }}>
+        <div style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600, color: 'white', fontSize: '5.5vh', lineHeight: 1.1 }}>
           You make the call.
         </div>
-        <div style={{ width: '5vw', height: '2px', backgroundColor: '#2EE5A8', margin: '2vh 0' }} />
+        <div style={{ width: '5vw', height: '2px', backgroundColor: '#34D399', margin: '2vh 0' }} />
         <div style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400, color: 'rgba(255,255,255,0.5)', fontSize: '3vh', lineHeight: 1.4 }}>
           IntegrateWise spots at-risk accounts across your<br/>tools and recommends next steps. Nothing happens<br/>until you approve.
         </div>
@@ -47,7 +47,7 @@ export const BannerB = () => {
         justifyContent: 'center'
       }}>
         <div style={{
-          backgroundColor: '#111827',
+          backgroundColor: '#121118',
           border: '1px solid rgba(255,255,255,0.1)',
           borderRadius: '10px',
           padding: '3vh 2vw',
@@ -58,7 +58,7 @@ export const BannerB = () => {
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.8vw' }}>
               <img src="/__mockup/images/logos/hubspot.com" alt="HubSpot"
                 style={{ width: '2.5vh', height: '2.5vh', borderRadius: '3px', objectFit: 'contain' }} />
-              <div style={{ fontFamily: 'Sora, sans-serif', fontWeight: 500, color: 'white', fontSize: '2.5vh' }}>
+              <div style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500, color: 'white', fontSize: '2.5vh' }}>
                 Acme Corp — Churn Risk
               </div>
             </div>
@@ -69,7 +69,7 @@ export const BannerB = () => {
               padding: '0.5vh 1vw',
               borderRadius: '6px',
               fontSize: '2vh',
-              fontFamily: 'Sora, sans-serif'
+              fontFamily: 'Inter, sans-serif'
             }}>
               High
             </div>
@@ -80,9 +80,9 @@ export const BannerB = () => {
           </div>
           <div style={{ marginTop: '2vh', display: 'flex', gap: '1vw' }}>
             <button style={{
-              backgroundColor: '#2EE5A8',
-              color: '#0B0F17',
-              fontFamily: 'Sora, sans-serif',
+              backgroundColor: '#34D399',
+              color: '#08070E',
+              fontFamily: 'Inter, sans-serif',
               fontWeight: 600,
               padding: '1vh 2vw',
               borderRadius: '8px',
@@ -96,7 +96,7 @@ export const BannerB = () => {
               backgroundColor: 'transparent',
               border: '1px solid rgba(255,255,255,0.2)',
               color: 'rgba(255,255,255,0.6)',
-              fontFamily: 'Sora, sans-serif',
+              fontFamily: 'Inter, sans-serif',
               fontWeight: 500,
               padding: '1vh 2vw',
               borderRadius: '8px',

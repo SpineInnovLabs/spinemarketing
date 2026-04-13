@@ -96,6 +96,31 @@ The entire site uses a **fully dark design** with the following conventions:
 - `app/solutions/_shared/IndustrySolutionLayout.tsx` — shared layout for all 6 industry pages
 - `app/solutions/_shared/RoleSolutionLayout.tsx` — shared layout for all 6 role pages
 
+## Ad Creative System (Mockup Sandbox)
+
+31 ad creative components for LinkedIn, WhatsApp, Facebook, and Google, served via the mockup sandbox at port 23636 (proxied via `/__mockup/*` rewrite in `next.config.mjs`).
+
+### Brand Tokens (applied across all 31 components)
+| Token | Value |
+|-------|-------|
+| Background | `#08070E` / `rgb(8,7,14)` |
+| Dark card | `#121118` / `rgb(18,17,24)` |
+| Primary accent | `#1BA784` / `#34D399` |
+| Font | Inter only (no Sora) |
+| Border (dark) | `rgb(38,38,44)` |
+| Gradient | `radial-gradient(88% 75% at 50% 50%, rgb(27,167,132) 37.4%, rgb(52,211,153) 100%)` |
+| Pain accent | `#EB4379` (pink — pain-point ads only) |
+
+### Component Locations
+- `artifacts/mockup-sandbox/src/components/mockups/linkedin-ads/` — PainPoint, Outcome, Identity, V1-V3 variants
+- `artifacts/mockup-sandbox/src/components/mockups/linkedin-assets/` — BannerA/B/C, CoverA/B, PostA/B/C/D, Slide1-4
+- `artifacts/mockup-sandbox/src/components/mockups/whatsapp-ads/` — WAStatus, WAShare, WAPromo
+- `artifacts/mockup-sandbox/src/components/mockups/facebook-ads/` — FBFeed, FBSquare, FBStories
+- `artifacts/mockup-sandbox/src/components/mockups/google-ads/` — GoogleLandscape, GoogleSquare, GoogleRect
+
+### Logo Assets
+Local tool logos in `artifacts/mockup-sandbox/public/images/logos/` — named by domain (e.g., `hubspot.com`, `slack.com`). Never use Clearbit CDN URLs.
+
 ## Project Structure
 
 - `app/` — Next.js App Router pages and layouts
@@ -103,6 +128,7 @@ The entire site uses a **fully dark design** with the following conventions:
 - `lib/` — Utility modules (Firebase config, etc.)
 - `content/` — Static content/copy
 - `public/` — Static assets
+- `artifacts/mockup-sandbox/` — Ad creative preview system
 
 ## Running the App
 

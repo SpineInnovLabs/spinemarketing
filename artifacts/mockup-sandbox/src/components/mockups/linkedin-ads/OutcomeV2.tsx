@@ -8,7 +8,7 @@ export function OutcomeV2() {
       overflow: 'hidden',
       display: 'flex',
       flexDirection: 'column',
-      background: '#0A1228',
+      background: '#08070E',
       fontFamily: 'Inter, system-ui, sans-serif'
     }}>
       <div style={{
@@ -60,7 +60,7 @@ export function OutcomeV2() {
           left: 0,
           right: 0,
           height: '50%',
-          background: 'linear-gradient(transparent, #0A1228)',
+          background: 'linear-gradient(transparent, #08070E)',
         }} />
         <div style={{
           position: 'absolute',

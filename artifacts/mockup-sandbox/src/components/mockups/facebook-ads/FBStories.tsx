@@ -2,57 +2,70 @@ import React from 'react';
 
 export default function FBStories() {
   return (
-    <div className="relative w-screen h-screen overflow-hidden bg-[#0B0F17] font-sans">
-      <style dangerouslySetInnerHTML={{ __html: "@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap');" }} />
-      
-      <img 
-        src="/__mockup/images/hero-google-trust.png" 
-        alt="Shield/Vault" 
-        className="absolute inset-0 w-full h-full object-cover"
-      />
-      
-      <div 
-        className="absolute inset-0 z-10"
-        style={{ background: 'linear-gradient(rgba(11,15,23,0.3) 0%, rgba(11,15,23,0.7) 50%, rgba(11,15,23,0.95) 100%)' }}
-      ></div>
-      
-      <div className="absolute top-[8vh] left-0 w-full z-20 flex justify-center">
-        <img src="/__mockup/images/iw-brain-logo.png" alt="Brain Logo" className="w-[12vw] h-[12vw] object-contain" />
-      </div>
-      
-      <div className="absolute top-[50%] left-0 w-full z-20 transform -translate-y-1/2 text-center px-[5vw] flex flex-col items-center justify-center">
-        <span className="font-['Sora'] font-normal text-[rgba(255,255,255,0.5)] text-[5vw] mb-[1vw]">
+    <div style={{
+      width: '100vw',
+      height: '100vh',
+      overflow: 'hidden',
+      backgroundColor: '#08070E',
+      backgroundImage: 'radial-gradient(circle at 50% 30%, rgba(52,211,153,0.08) 0%, transparent 50%)',
+      position: 'relative',
+      fontFamily: "'Inter', sans-serif",
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      padding: '8vw 5vw 6vw',
+      boxSizing: 'border-box',
+    }}>
+      <style dangerouslySetInnerHTML={{ __html: "@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');" }} />
+
+      <svg viewBox="0 0 32 32" fill="none" style={{ width: '8vw', height: '8vw' }}>
+        <circle cx="16" cy="16" r="16" fill="#34D399" />
+        <path d="M8 16 Q16 8 24 16 Q16 24 8 16Z" fill="white" opacity="0.9" />
+      </svg>
+
+      <div style={{ textAlign: 'center', zIndex: 10 }}>
+        <div style={{ fontWeight: 500, color: 'rgba(255,255,255,0.5)', fontSize: '4vw', marginBottom: '1vw' }}>
           8 tools.
-        </span>
-        <span className="font-['Sora'] font-bold text-white text-[9vw] leading-[1.1] mb-[1vw]">
+        </div>
+        <div style={{ fontWeight: 700, color: 'white', fontSize: '8vw', lineHeight: 1.15 }}>
           One screen.
-        </span>
-        <span className="font-['Sora'] font-normal text-[rgba(255,255,255,0.5)] text-[5vw] mb-[1vw]">
+        </div>
+        <div style={{ fontWeight: 500, color: 'rgba(255,255,255,0.5)', fontSize: '4vw', marginTop: '1vw' }}>
           Zero copy-paste.
-        </span>
-        <span className="font-['Sora'] font-bold text-[#2EE5A8] text-[9vw] leading-[1.1]">
-          IntegrateWise.
-        </span>
-        <div className="flex gap-[3vw] items-center mt-[4vw]">
+        </div>
+
+        <div style={{ marginTop: '4vw' }}>
+          <div style={{ fontWeight: 700, color: '#34D399', fontSize: '6vw', lineHeight: 1.15 }}>
+            IntegrateWise.
+          </div>
+        </div>
+
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '2.5vw', alignItems: 'center', marginTop: '4vw' }}>
           {['hubspot.com', 'slack.com', 'atlassian.com', 'zendesk.com', 'salesforce.com'].map((d) => (
             <img key={d} src={`/__mockup/images/logos/${d}`} alt=""
-              className="w-[5vw] h-[5vw] rounded-[6px] object-contain opacity-60" />
+              style={{ width: '4.5vw', height: '4.5vw', borderRadius: '6px', objectFit: 'contain', opacity: 0.6 }} />
           ))}
         </div>
       </div>
-      
-      <div className="absolute bottom-[6vh] left-0 w-full z-20 flex flex-col items-center">
-        <button 
-          className="bg-[#2EE5A8] text-[#0B0F17] font-['Sora'] font-bold text-[4.5vw] py-[2.5vw] px-[8vw] rounded-[100vw]"
-          style={{ boxShadow: '0 0 40px rgba(46,229,168,0.35)' }}
-        >
-          Learn More
+
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', zIndex: 10 }}>
+        <button style={{
+          backgroundColor: '#34D399',
+          color: '#08070E',
+          fontFamily: "'Inter', sans-serif",
+          fontWeight: 700,
+          fontSize: '3.5vw',
+          padding: '2vw 6vw',
+          borderRadius: '10px',
+          border: 'none',
+          boxShadow: '0 0 40px rgba(52,211,153,0.3)',
+          cursor: 'pointer',
+        }}>
+          Book a Demo &rarr;
         </button>
-        <div className="font-['Inter'] font-normal text-[rgba(255,255,255,0.3)] text-[3vw] mt-[2vw] flex flex-col items-center gap-[0.5vw]">
-          <span>Swipe Up</span>
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="w-[4vw] h-[4vw] opacity-50 stroke-current">
-            <path d="M5 15L12 8L19 15" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
+        <div style={{ color: 'rgba(255,255,255,0.3)', fontSize: '2.5vw', marginTop: '2vw' }}>
+          integratewise.ai
         </div>
       </div>
     </div>

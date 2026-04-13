@@ -14,14 +14,14 @@ export const BannerA = () => {
       height: '100vh',
       overflow: 'hidden',
       position: 'relative',
-      backgroundColor: '#0B0F17',
+      backgroundColor: '#08070E',
       backgroundImage: 'linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)',
       backgroundSize: '40px 40px',
       margin: 0,
       padding: 0,
       display: 'flex',
     }}>
-      <style dangerouslySetInnerHTML={{ __html: "@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap');" }} />
+      <style dangerouslySetInnerHTML={{ __html: "@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');" }} />
 
       <div style={{
         width: '50%',
@@ -33,21 +33,21 @@ export const BannerA = () => {
         boxSizing: 'border-box',
         zIndex: 2,
       }}>
-        <div style={{ fontFamily: 'Sora, sans-serif', fontWeight: 700, color: 'white', fontSize: '4.8vh', lineHeight: 1.15 }}>
+        <div style={{ fontFamily: 'Inter, sans-serif', fontWeight: 700, color: 'white', fontSize: '4.8vh', lineHeight: 1.15 }}>
           Building IntegrateWise
         </div>
         <div style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400, color: 'rgba(255,255,255,0.55)', fontSize: '3vh', marginTop: '1.5vh', lineHeight: 1.3 }}>
           One place to see deals, tickets, conversations,<br/>and account health — pulled live from your tools.
         </div>
-        <div style={{ width: '5vw', height: '2px', backgroundColor: '#2EE5A8', margin: '2vh 0' }} />
+        <div style={{ width: '5vw', height: '2px', backgroundColor: '#34D399', margin: '2vh 0' }} />
         <div style={{ display: 'flex', gap: '1.2vw', alignItems: 'center' }}>
           <div style={{
-            backgroundColor: '#2EE5A8',
-            color: '#0B0F17',
+            backgroundColor: '#34D399',
+            color: '#08070E',
             padding: '1vh 2vw',
             borderRadius: '8px',
             fontSize: '2.5vh',
-            fontFamily: 'Sora, sans-serif',
+            fontFamily: 'Inter, sans-serif',
             fontWeight: 700,
           }}>
             Book a Demo →
@@ -72,14 +72,14 @@ export const BannerA = () => {
             right: '2vw',
             top: '50%',
             transform: 'translateY(-50%)',
-            background: '#111827',
+            background: '#121118',
             border: '1px solid rgba(255,255,255,0.1)',
             borderRadius: '10px',
             padding: '2vh 1.5vw',
             width: '22vw',
             boxShadow: '0 10px 30px rgba(0,0,0,0.4)',
           }}>
-            <div style={{ fontFamily: 'Sora, sans-serif', fontWeight: 600, color: 'white', fontSize: '2.2vh', marginBottom: '0.5vh' }}>
+            <div style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600, color: 'white', fontSize: '2.2vh', marginBottom: '0.5vh' }}>
               Acme Corp
             </div>
             <div style={{ fontFamily: 'Inter, sans-serif', color: 'rgba(255,255,255,0.4)', fontSize: '1.7vh', marginBottom: '1.5vh' }}>
@@ -111,7 +111,7 @@ export const BannerA = () => {
                   }}
                 />
                 <div>
-                  <div style={{ fontFamily: 'Sora, sans-serif', fontWeight: 600, color: 'rgba(255,255,255,0.8)', fontSize: '1.8vh' }}>
+                  <div style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600, color: 'rgba(255,255,255,0.8)', fontSize: '1.8vh' }}>
                     {row.source}
                   </div>
                   <div style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400, color: 'rgba(255,255,255,0.4)', fontSize: '1.6vh', lineHeight: 1.3 }}>
@@ -127,12 +127,12 @@ export const BannerA = () => {
               alignItems: 'center',
               gap: '0.5vw',
               padding: '0.8vh 1vw',
-              background: 'rgba(46,229,168,0.08)',
+              background: 'rgba(52,211,153,0.08)',
               borderRadius: '6px',
-              border: '1px solid rgba(46,229,168,0.2)',
+              border: '1px solid rgba(52,211,153,0.2)',
             }}>
-              <div style={{ width: '0.7vw', height: '0.7vw', borderRadius: '50%', backgroundColor: '#2EE5A8' }} />
-              <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500, color: '#2EE5A8', fontSize: '1.7vh' }}>
+              <div style={{ width: '0.7vw', height: '0.7vw', borderRadius: '50%', backgroundColor: '#34D399' }} />
+              <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500, color: '#34D399', fontSize: '1.7vh' }}>
                 Health: 87 — Healthy
               </span>
             </div>
@@ -152,7 +152,7 @@ export const BannerA = () => {
                 width: '5vh',
                 height: '5vh',
                 borderRadius: '50%',
-                backgroundColor: '#1A1F2E',
+                backgroundColor: '#121118',
                 border: `2px solid ${t.color}`,
                 display: 'flex',
                 alignItems: 'center',

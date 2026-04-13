@@ -7,7 +7,7 @@ export function OutcomeV1() {
       height: '100vh',
       overflow: 'hidden',
       position: 'relative',
-      background: '#0A1228',
+      background: '#08070E',
       fontFamily: 'Inter, system-ui, sans-serif'
     }}>
       <img
@@ -26,7 +26,7 @@ export function OutcomeV1() {
       <div style={{
         position: 'absolute',
         inset: 0,
-        background: 'radial-gradient(ellipse at center, transparent 15%, rgba(8,14,30,0.55) 100%)',
+        background: 'radial-gradient(ellipse at center, transparent 15%, rgba(8,7,14,0.55) 100%)',
       }} />
 
       <div style={{
@@ -73,7 +73,7 @@ export function OutcomeV1() {
         textAlign: 'center',
         backdropFilter: 'blur(12px)',
         WebkitBackdropFilter: 'blur(12px)',
-        background: 'rgba(10,18,40,0.72)',
+        background: 'rgba(8,7,14,0.72)',
         border: '1px solid rgba(27,167,132,0.2)',
         borderRadius: '2vw',
         boxSizing: 'border-box',

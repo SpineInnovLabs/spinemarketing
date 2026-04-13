@@ -25,7 +25,7 @@ export function PainV2() {
         height: "100vh",
         overflow: "hidden",
         position: "relative",
-        background: "#0A1228",
+        background: "#08070E",
         fontFamily: "'Inter', system-ui, sans-serif",
       }}
     >
@@ -158,7 +158,7 @@ export function PainV2() {
 
         <div
           style={{
-            background: "rgba(10,18,40,0.95)",
+            background: "rgba(8,7,14,0.95)",
             height: "48vh",
             position: "relative",
             overflow: "hidden",
@@ -200,7 +200,7 @@ export function PainV2() {
               left: 0,
               right: 0,
               height: "60%",
-              background: "linear-gradient(to top, rgba(10,18,40,0.98), transparent)",
+              background: "linear-gradient(to top, rgba(8,7,14,0.98), transparent)",
             }}
           />
 
@@ -250,7 +250,7 @@ export function PainV2() {
           left: 0,
           right: 0,
           height: "38%",
-          background: "linear-gradient(to top, #0A1228 0%, #0A1228 30%, transparent 100%)",
+          background: "linear-gradient(to top, #08070E 0%, #08070E 30%, transparent 100%)",
           zIndex: 10,
         }}
       />
