@@ -337,7 +337,7 @@ export function PlatformContent() {
         </div>
       </section>
 
-      {/* ── Step 4: Twin + Approval ────────────────────────────────── */}
+      {/* ── Step 4: The Twin proposes ─────────────────────────────── */}
       <section
         className="arvio-section dark-section"
         style={{ backgroundColor: "rgb(8, 7, 14)" }}
@@ -345,17 +345,17 @@ export function PlatformContent() {
         <div className="mx-auto max-w-[1100px]">
           <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center">
             <p className="mb-3 text-[12px] font-bold uppercase tracking-[0.12em] text-primary">
-              Step 4 — The Twin + Govern Gate
+              Step 4 — The Twin proposes
             </p>
             <h2 className="text-[40px] font-semibold leading-[1.15] tracking-[-0.05em] text-white sm:text-[52px]">
-              The Twin proposes.{" "}
-              <span className="text-primary">You approve. Nothing bypasses that.</span>
+              The Twin reads the Spine.{" "}
+              <span className="text-primary">Then it tells you what matters — with evidence.</span>
             </h2>
             <p className="mt-5 text-[16px] font-medium leading-[1.6] text-white/45">
-              The Twin reads Truth, Context, and AI Sessions through the Spine.
-              It reasons in full context — across all your accounts, all your
-              apps, and every approved session. Then it surfaces proposals in L2.
-              You decide.
+              The Twin reads Truth, Context, and AI Sessions through the Spine
+              continuously. It reasons across all your accounts and apps — not
+              just the one in view — and surfaces proposals in L2 with confidence
+              scores and full evidence chains. You see the reasoning. You decide.
             </p>
           </motion.div>
 
@@ -370,12 +370,12 @@ export function PlatformContent() {
                 desc: "Twin builds evidence chains, confidence scores, and cross-account reasoning — grounded in canonical data.",
               },
               {
-                step: "Propose",
+                step: "Surface",
                 desc: "Signals, draft emails, tasks, and actions appear in L2 with full evidence. Nothing is sent. Nothing executes. Yet.",
               },
               {
-                step: "Govern",
-                desc: "Every proposal passes through the Govern Gate. You approve, reject, or edit. Only then does anything happen in L1 or your apps.",
+                step: "Propose",
+                desc: "Each proposal comes with a confidence score, a source trail, and an explanation. You see the full reasoning in L2 before deciding anything.",
               },
             ].map(({ step, desc }, i) => (
               <motion.div
@@ -407,12 +407,12 @@ export function PlatformContent() {
           >
             <Brain className="mx-auto mb-3 h-5 w-5 text-primary" />
             <p className="text-[15px] font-semibold text-white">
-              The Twin gets sharper with every approval and rejection.
+              The Twin gets sharper with every session.
             </p>
             <p className="mt-1.5 text-[13px] font-medium text-white/40">
-              Every edit you make, every action you approve or reject, every
-              session summary — all feed back into the Twin&apos;s reasoning layer.
-              The intelligence compounds across accounts, not just the one in view.
+              Every AI Session Summary — from calls, emails, and interactions — feeds back into the
+              Twin&apos;s reasoning layer via the Spine. The intelligence compounds
+              across all accounts with every cycle.
             </p>
             <Link
               href="/ai"
@@ -424,8 +424,60 @@ export function PlatformContent() {
         </div>
       </section>
 
-      {/* ── Step 5: Canonical Loop + CTA ──────────────────────────── */}
+      {/* ── Step 5: You approve ────────────────────────────────────── */}
       <section className="arvio-section dark-section">
+        <div className="mx-auto max-w-[1100px]">
+          <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center">
+            <p className="mb-3 text-[12px] font-bold uppercase tracking-[0.12em] text-primary">
+              Step 5 — You approve
+            </p>
+            <h2 className="section-heading">
+              Nothing executes without{" "}
+              <span className="text-primary">your approval. Ever.</span>
+            </h2>
+            <p className="mt-5 text-[16px] font-medium leading-[1.6] text-white/50">
+              The Govern Gate is non-bypassable. Every action the Twin proposes
+              — every email draft, every task, every status update — sits in L2
+              until you approve it. No AI acts autonomously in any of your apps.
+            </p>
+          </motion.div>
+
+          <div className="mt-14 grid gap-5 sm:grid-cols-3">
+            {[
+              {
+                title: "Govern Gate",
+                desc: "Every AI-proposed action must pass through the Govern Gate before anything executes in L1 or any connected app. It cannot be bypassed.",
+              },
+              {
+                title: "Full audit trail",
+                desc: "Every approval, rejection, and edit is logged with timestamp, context, and outcome. SOC 2 Type II compliant. AES-256 encrypted at rest.",
+              },
+              {
+                title: "You stay in control",
+                desc: "You approve in L2. The action executes in L1. You can reject, edit, or postpone any proposal. The Twin learns from every decision.",
+              },
+            ].map(({ title, desc }, i) => (
+              <motion.div
+                key={title}
+                {...fade(i * 0.09)}
+                className="arvio-card flex flex-col p-6"
+              >
+                <div
+                  className="flex h-10 w-10 items-center justify-center rounded-xl mb-4"
+                  style={{ background: "var(--gradient-primary-icon)" }}
+                >
+                  <ShieldCheck className="h-5 w-5 text-white" />
+                </div>
+                <h3 className="text-[15px] font-semibold tracking-[-0.03em]">{title}</h3>
+                <p className="mt-2 flex-1 text-[13px] font-medium leading-[1.65] text-muted-foreground">{desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Canonical Loop + CTA ──────────────────────────────────── */}
+      <section className="arvio-section dark-section" style={{ backgroundColor: "rgb(8, 7, 14)" }}>
         <div className="mx-auto max-w-[820px] px-4 text-center">
           <motion.div {...fade(0)}>
             <p className="mb-3 text-[12px] font-bold uppercase tracking-[0.12em] text-primary">
