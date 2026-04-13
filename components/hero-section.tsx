@@ -156,8 +156,13 @@ export function HeroSection() {
   }, []);
 
   const maxLogos = isMobile ? 10 : TOOLS.length;
-  const chaosPos = useMemo(() => chaosCenterPositions(maxLogos), [maxLogos]);
-  const scatterPos = useMemo(() => scatterEdgePositions(maxLogos), [maxLogos]);
+  const [chaosPos, setChaosPos] = useState<{ x: number; y: number; rot: number; scale: number }[]>([]);
+  const [scatterPos, setScatterPos] = useState<{ x: number; y: number; rot: number; scale: number }[]>([]);
+
+  useEffect(() => {
+    setChaosPos(chaosCenterPositions(maxLogos));
+    setScatterPos(scatterEdgePositions(maxLogos));
+  }, [maxLogos]);
 
   useEffect(() => {
     if (!prefersReducedMotion) return;
@@ -292,6 +297,7 @@ export function HeroSection() {
         {TOOLS.slice(0, maxLogos).map((tool, idx) => {
           if (idx >= visibleCount) return null;
           const pos = currentPositions[idx];
+          if (!pos || !chaosPos[idx]) return null;
           return (
             <motion.div
               key={tool.name}
