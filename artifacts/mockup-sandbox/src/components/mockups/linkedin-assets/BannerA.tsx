@@ -1,6 +1,13 @@
 import React from 'react';
 
 export const BannerA = () => {
+  const tools = [
+    { letter: 'H', name: 'HubSpot', color: '#FF7A59' },
+    { letter: 'J', name: 'Jira', color: '#0052CC' },
+    { letter: 'S', name: 'Slack', color: '#E01E5A' },
+    { letter: 'Z', name: 'Zendesk', color: '#03363D' },
+  ];
+
   return (
     <div style={{
       width: '100vw',
@@ -17,7 +24,7 @@ export const BannerA = () => {
       <style dangerouslySetInnerHTML={{ __html: "@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap');" }} />
 
       <div style={{
-        width: '55%',
+        width: '50%',
         height: '100%',
         paddingLeft: '5vw',
         display: 'flex',
@@ -26,83 +33,153 @@ export const BannerA = () => {
         boxSizing: 'border-box',
         zIndex: 2,
       }}>
-        <div style={{ fontFamily: 'Sora, sans-serif', fontWeight: 700, color: 'white', fontSize: '5vh', lineHeight: 1.1 }}>
+        <div style={{ fontFamily: 'Sora, sans-serif', fontWeight: 700, color: 'white', fontSize: '4.8vh', lineHeight: 1.15 }}>
           Building IntegrateWise
         </div>
-        <div style={{ width: '6vw', height: '2px', backgroundColor: '#2EE5A8', margin: '1.8vh 0' }} />
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.8vw', marginTop: '0.5vh' }}>
-          {['See every customer in one place', 'Know what needs attention today', 'Catch at-risk accounts early', 'AI suggests — you decide'].map((f) => (
-            <span key={f} style={{
-              fontFamily: 'Inter, sans-serif',
-              fontWeight: 500,
-              color: 'rgba(255,255,255,0.7)',
-              fontSize: '2.6vh',
-              backgroundColor: 'rgba(255,255,255,0.05)',
-              border: '1px solid rgba(255,255,255,0.08)',
-              padding: '0.6vh 1.2vw',
-              borderRadius: '6px',
-            }}>{f}</span>
-          ))}
+        <div style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400, color: 'rgba(255,255,255,0.55)', fontSize: '3vh', marginTop: '1.5vh', lineHeight: 1.3 }}>
+          One place to see deals, tickets, conversations,<br/>and account health — pulled live from your tools.
         </div>
-        <div style={{ display: 'flex', gap: '1.5vw', marginTop: '2vh', alignItems: 'center' }}>
+        <div style={{ width: '5vw', height: '2px', backgroundColor: '#2EE5A8', margin: '2vh 0' }} />
+        <div style={{ display: 'flex', gap: '1.2vw', alignItems: 'center' }}>
           <div style={{
             backgroundColor: '#2EE5A8',
             color: '#0B0F17',
             padding: '1vh 2vw',
             borderRadius: '8px',
-            fontSize: '2.6vh',
+            fontSize: '2.5vh',
             fontFamily: 'Sora, sans-serif',
             fontWeight: 700,
           }}>
             Book a Demo →
           </div>
-          <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400, color: 'rgba(255,255,255,0.35)', fontSize: '2.4vh' }}>
-            70+ apps connected · No code needed
+          <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400, color: 'rgba(255,255,255,0.3)', fontSize: '2.2vh' }}>
+            Founder & CEO
           </span>
         </div>
       </div>
 
       <div style={{
-        width: '45%',
+        width: '50%',
         height: '100%',
         position: 'relative',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
       }}>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5vh', width: '82%' }}>
-          {[
-            { outcome: 'See every customer interaction in one place', detail: 'No more switching between 12 tabs', color: '#2EE5A8' },
-            { outcome: 'Start your day knowing exactly what to do', detail: 'AI reads your tools overnight, surfaces priorities by morning', color: '#4EAAFF' },
-            { outcome: 'Nothing happens without your say-so', detail: 'AI recommends actions — you approve or reject, always', color: '#EB4379' },
-          ].map((item) => (
-            <div key={item.outcome} style={{
-              background: '#111827',
-              border: '1px solid rgba(255,255,255,0.08)',
-              borderRadius: '8px',
-              padding: '1.5vh 1.5vw',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '1.2vw',
-            }}>
-              <div style={{
-                width: '0.8vw',
-                height: '4vh',
-                borderRadius: '3px',
-                backgroundColor: item.color,
-                flexShrink: 0,
-                opacity: 0.8,
-              }} />
-              <div>
-                <div style={{ fontFamily: 'Sora, sans-serif', fontWeight: 600, color: 'white', fontSize: '2.3vh', lineHeight: 1.2 }}>
-                  {item.outcome}
-                </div>
-                <div style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400, color: 'rgba(255,255,255,0.4)', fontSize: '1.8vh', lineHeight: 1.3, marginTop: '0.3vh' }}>
-                  {item.detail}
+        <div style={{ position: 'relative', width: '90%', height: '85%' }}>
+          <div style={{
+            position: 'absolute',
+            right: '2vw',
+            top: '50%',
+            transform: 'translateY(-50%)',
+            background: '#111827',
+            border: '1px solid rgba(255,255,255,0.1)',
+            borderRadius: '10px',
+            padding: '2vh 1.5vw',
+            width: '22vw',
+            boxShadow: '0 10px 30px rgba(0,0,0,0.4)',
+          }}>
+            <div style={{ fontFamily: 'Sora, sans-serif', fontWeight: 600, color: 'white', fontSize: '2.2vh', marginBottom: '0.5vh' }}>
+              Acme Corp
+            </div>
+            <div style={{ fontFamily: 'Inter, sans-serif', color: 'rgba(255,255,255,0.4)', fontSize: '1.7vh', marginBottom: '1.5vh' }}>
+              Last activity: 2 hours ago
+            </div>
+
+            {[
+              { source: 'HubSpot', data: 'Deal: $48K — Negotiation stage', dot: '#FF7A59' },
+              { source: 'Jira', data: '3 open tickets, 1 critical', dot: '#0052CC' },
+              { source: 'Slack', data: '12 threads this week, sentiment: positive', dot: '#E01E5A' },
+              { source: 'Zendesk', data: '0 open, avg resolution: 4h', dot: '#03363D' },
+            ].map((row) => (
+              <div key={row.source} style={{
+                display: 'flex',
+                alignItems: 'flex-start',
+                gap: '0.6vw',
+                marginBottom: '1vh',
+              }}>
+                <div style={{
+                  width: '0.6vw',
+                  height: '0.6vw',
+                  borderRadius: '50%',
+                  backgroundColor: row.dot,
+                  marginTop: '1vh',
+                  flexShrink: 0,
+                }} />
+                <div>
+                  <div style={{ fontFamily: 'Sora, sans-serif', fontWeight: 600, color: 'rgba(255,255,255,0.8)', fontSize: '1.8vh' }}>
+                    {row.source}
+                  </div>
+                  <div style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400, color: 'rgba(255,255,255,0.4)', fontSize: '1.6vh', lineHeight: 1.3 }}>
+                    {row.data}
+                  </div>
                 </div>
               </div>
+            ))}
+
+            <div style={{
+              marginTop: '0.5vh',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.5vw',
+              padding: '0.8vh 1vw',
+              background: 'rgba(46,229,168,0.08)',
+              borderRadius: '6px',
+              border: '1px solid rgba(46,229,168,0.2)',
+            }}>
+              <div style={{ width: '0.7vw', height: '0.7vw', borderRadius: '50%', backgroundColor: '#2EE5A8' }} />
+              <span style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500, color: '#2EE5A8', fontSize: '1.7vh' }}>
+                Health: 87 — Healthy
+              </span>
             </div>
-          ))}
+          </div>
+
+          <div style={{
+            position: 'absolute',
+            left: '0',
+            top: '50%',
+            transform: 'translateY(-50%)',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '1.8vh',
+          }}>
+            {tools.map((t) => (
+              <div key={t.letter} style={{
+                width: '4.5vh',
+                height: '4.5vh',
+                borderRadius: '50%',
+                backgroundColor: '#1A1F2E',
+                border: `2px solid ${t.color}`,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontFamily: 'Sora, sans-serif',
+                fontWeight: 700,
+                color: 'white',
+                fontSize: '2vh',
+              }}>
+                {t.letter}
+              </div>
+            ))}
+          </div>
+
+          {tools.map((t, i) => {
+            const startY = 50 - ((tools.length - 1) * 12) / 2 + i * 12;
+            return (
+              <svg key={t.letter} style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', pointerEvents: 'none' }}>
+                <line
+                  x1="6%"
+                  y1={`${startY}%`}
+                  x2="42%"
+                  y2="50%"
+                  stroke={t.color}
+                  strokeWidth="1"
+                  strokeOpacity="0.3"
+                  strokeDasharray="4 3"
+                />
+              </svg>
+            );
+          })}
         </div>
       </div>
     </div>
