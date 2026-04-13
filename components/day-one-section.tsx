@@ -24,7 +24,7 @@ const fadeRight = {
 
 export function DayOneSection() {
   return (
-    <section className="relative overflow-hidden py-24" style={{ backgroundColor: "rgb(8, 7, 14)" }}>
+    <section className="relative overflow-hidden py-32 md:py-40" style={{ backgroundColor: "rgb(8, 7, 14)" }}>
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute right-[15%] top-[25%] h-[400px] w-[500px] rounded-full opacity-15 blur-[120px]" style={{ background: "radial-gradient(circle, rgba(45,212,191,0.25), transparent 70%)" }} />
       </div>
@@ -41,7 +41,7 @@ export function DayOneSection() {
               <h2 className="text-[36px] font-semibold leading-[1.15] tracking-[-0.04em] text-white sm:text-[44px]">
                 What changes <span className="text-primary">on day one</span>
               </h2>
-              <p className="mt-5 text-[16px] font-medium leading-[1.6] text-white/45">
+              <p className="mt-6 text-[16px] font-medium leading-[1.7] text-white/45">
                 Value from day one. Not months.
               </p>
             </motion.div>
@@ -50,13 +50,13 @@ export function DayOneSection() {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true, margin: "-60px" }}
-              className="space-y-3"
+              className="space-y-4"
             >
               {outcomes.map((outcome, i) => (
                 <motion.li
                   key={i}
                   variants={fadeRight}
-                  className="flex items-start gap-3 rounded-xl border border-white/[0.08] bg-white/[0.03] p-4 transition-colors hover:border-primary/20"
+                  className="flex items-start gap-4 rounded-xl border border-white/[0.08] bg-white/[0.03] p-5 transition-colors hover:border-primary/20"
                 >
                   <div className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/15">
                     <Check className="h-3.5 w-3.5 text-primary" />

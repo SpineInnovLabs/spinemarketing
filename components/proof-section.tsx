@@ -40,7 +40,7 @@ function AnimatedCounter({ value, suffix = "" }: { value: number; suffix?: strin
 
 export function ProofSection() {
   return (
-    <section className="relative overflow-hidden py-24" style={{ backgroundColor: "rgb(8, 7, 14)" }}>
+    <section className="relative overflow-hidden py-32 md:py-40" style={{ backgroundColor: "rgb(8, 7, 14)" }}>
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute left-1/2 top-[30%] h-[500px] w-[600px] -translate-x-1/2 rounded-full opacity-20 blur-[120px]" style={{ background: "radial-gradient(circle, rgba(45,212,191,0.25), transparent 70%)" }} />
       </div>
@@ -63,9 +63,9 @@ export function ProofSection() {
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ type: "spring", damping: 18, stiffness: 60, delay: 0.15 }}
-          className="mx-auto mt-14 max-w-3xl"
+          className="mx-auto mt-16 md:mt-20 max-w-3xl"
         >
-          <div className="overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.03] p-10">
+          <div className="overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.03] p-10 md:p-14">
             <svg width="48" height="48" viewBox="0 0 48 48" fill="none" className="mb-4">
               <path
                 d="M18 28H10V20C10 14.48 14.48 10 20 10V14C16.69 14 14 16.69 14 20H18V28ZM34 28H26V20C26 14.48 30.48 10 36 10V14C32.69 14 30 16.69 30 20H34V28Z"

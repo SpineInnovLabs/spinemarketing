@@ -43,7 +43,7 @@ const fadeUp = {
 
 export function SolutionSection() {
   return (
-    <section className="relative overflow-hidden py-24" style={{ backgroundColor: "rgb(8, 7, 14)" }}>
+    <section className="relative overflow-hidden py-32 md:py-40" style={{ backgroundColor: "rgb(8, 7, 14)" }}>
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute left-[20%] top-[15%] h-[400px] w-[500px] rounded-full opacity-15 blur-[120px]" style={{ background: "radial-gradient(circle, rgba(45,212,191,0.2), transparent 70%)" }} />
         <div className="absolute right-[15%] bottom-[20%] h-[350px] w-[450px] rounded-full opacity-15 blur-[100px]" style={{ background: "radial-gradient(circle, rgba(139,92,246,0.15), transparent 70%)" }} />
@@ -61,7 +61,7 @@ export function SolutionSection() {
             Your workspace.{" "}
             <span className="text-primary">AI that thinks in context.</span>
           </h2>
-          <p className="mt-5 text-[16px] font-medium leading-[1.6] text-white/45">
+          <p className="mt-6 text-[16px] font-medium leading-[1.7] text-white/45">
             Manage accounts, track tasks, and run workflows in one place. The Twin reads your data and proposes what&apos;s next — you decide what actually happens.
           </p>
         </motion.div>
@@ -71,7 +71,7 @@ export function SolutionSection() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ type: "spring", damping: 18, stiffness: 60, delay: 0.15 }}
-          className="mx-auto mt-12 max-w-[900px]"
+          className="mx-auto mt-16 md:mt-20 max-w-[900px]"
         >
           <DashboardMockup />
         </motion.div>
@@ -81,7 +81,7 @@ export function SolutionSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ type: "spring", damping: 18, stiffness: 70, delay: 0.2 }}
-          className="mt-16 text-center text-[20px] font-semibold tracking-[-0.04em] text-white"
+          className="mt-20 md:mt-24 text-center text-[20px] font-semibold tracking-[-0.04em] text-white"
         >
           Two layers.{" "}
           <span className="text-primary">One workspace.</span>
@@ -92,13 +92,13 @@ export function SolutionSection() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-60px" }}
-          className="mx-auto mt-8 grid max-w-5xl gap-5 sm:grid-cols-3"
+          className="mx-auto mt-10 grid max-w-5xl gap-6 sm:grid-cols-3"
         >
           {pillars.map(({ num, icon: Icon, title, description, color }, i) => (
             <motion.div
               key={i}
               variants={fadeUp}
-              className="flex flex-col items-start rounded-2xl border border-white/[0.08] bg-white/[0.03] p-8 transition-colors hover:border-white/[0.15]"
+              className="flex flex-col items-start rounded-2xl border border-white/[0.08] bg-white/[0.03] p-8 md:p-10 transition-colors hover:border-white/[0.15]"
             >
               <div className="flex items-center gap-3">
                 <div

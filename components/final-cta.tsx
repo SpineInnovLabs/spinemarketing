@@ -10,7 +10,7 @@ export function FinalCTA() {
       className="relative overflow-hidden"
       style={{ backgroundColor: "rgb(8, 7, 14)" }}
     >
-      <div className="mx-auto max-w-[1100px] px-6 py-[100px] md:px-16">
+      <div className="mx-auto max-w-[1100px] px-6 py-[120px] md:py-[160px] md:px-16">
         {/* Subtle radial overlay */}
         <div
           className="pointer-events-none absolute inset-0 rounded-[50px]"

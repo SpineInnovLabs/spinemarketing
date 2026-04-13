@@ -75,7 +75,7 @@ export function PricingSection({ hideHeading = false }: { hideHeading?: boolean 
   const [region, setRegion] = useState<Region>("international");
 
   return (
-    <section id="pricing" className="relative overflow-hidden py-20 px-6 md:px-16" style={{ backgroundColor: "rgb(8, 7, 14)" }}>
+    <section id="pricing" className="relative overflow-hidden py-32 px-6 md:py-40 md:px-16" style={{ backgroundColor: "rgb(8, 7, 14)" }}>
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute left-1/2 top-[20%] h-[500px] w-[600px] -translate-x-1/2 rounded-full opacity-15 blur-[120px]" style={{ background: "radial-gradient(circle, rgba(45,212,191,0.2), transparent 70%)" }} />
       </div>
@@ -126,7 +126,7 @@ export function PricingSection({ hideHeading = false }: { hideHeading?: boolean 
           </div>
         </motion.div>
 
-        <div className="mx-auto mt-16 grid max-w-5xl gap-6 lg:grid-cols-3">
+        <div className="mx-auto mt-16 md:mt-20 grid max-w-5xl gap-6 lg:gap-8 lg:grid-cols-3">
           {plans.map((plan, i) => (
             <motion.div
               key={i}
@@ -139,7 +139,7 @@ export function PricingSection({ hideHeading = false }: { hideHeading?: boolean 
                 stiffness: 70,
                 delay: i * 0.1,
               }}
-              className={`relative flex flex-col rounded-2xl p-8 ${
+              className={`relative flex flex-col rounded-2xl p-8 md:p-10 ${
                 plan.highlighted
                   ? "border-2 border-primary/40 bg-white/[0.06] text-white"
                   : "border border-white/[0.08] bg-white/[0.03] text-white"

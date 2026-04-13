@@ -22,7 +22,7 @@ const fadeUp = {
 
 export function ProblemSection() {
   return (
-    <section className="relative overflow-hidden py-24" style={{ backgroundColor: "rgb(8, 7, 14)" }}>
+    <section className="relative overflow-hidden py-32 md:py-40" style={{ backgroundColor: "rgb(8, 7, 14)" }}>
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute left-[30%] top-[20%] h-[400px] w-[500px] rounded-full opacity-20 blur-[120px]" style={{ background: "radial-gradient(circle, rgba(239,68,68,0.2), transparent 70%)" }} />
         <div className="absolute right-[20%] bottom-[20%] h-[300px] w-[400px] rounded-full opacity-15 blur-[100px]" style={{ background: "radial-gradient(circle, rgba(251,146,60,0.2), transparent 70%)" }} />
@@ -40,7 +40,7 @@ export function ProblemSection() {
             Modern work isn&apos;t hard.{" "}
             <span className="text-primary">The plumbing is.</span>
           </h2>
-          <p className="mt-5 text-[16px] font-medium leading-[1.6] text-white/45">
+          <p className="mt-6 text-[16px] font-medium leading-[1.7] text-white/45">
             Copy-paste. Tab-switch. Repeat. Your apps don&apos;t agree. Your AI doesn&apos;t know. You&apos;re the bridge.
           </p>
         </motion.div>
@@ -50,7 +50,7 @@ export function ProblemSection() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-60px" }}
-          className="mx-auto mt-14 grid max-w-3xl gap-4 sm:grid-cols-2"
+          className="mx-auto mt-16 md:mt-20 grid max-w-3xl gap-5 sm:grid-cols-2"
         >
           {problems.map(({ icon: Icon, text, color, glow }, i) => (
             <motion.div

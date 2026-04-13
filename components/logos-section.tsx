@@ -35,7 +35,7 @@ function LogoCard({ name, src }: { name: string; src: string }) {
 
 export function LogosSection() {
   return (
-    <section className="py-16 md:pt-16 md:pb-8" style={{ backgroundColor: "rgb(8, 7, 14)" }}>
+    <section className="py-24 md:py-28" style={{ backgroundColor: "rgb(8, 7, 14)" }}>
       <div className="mx-auto max-w-[1200px] px-6 md:px-16">
         <motion.p
           initial={{ opacity: 0, y: 12 }}
