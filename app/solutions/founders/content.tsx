@@ -7,27 +7,27 @@ export function FoundersContent() {
     <RoleSolutionLayout
       role="Founders & CXOs"
       headline="The Executive Operating Console"
-      subheadline="Exception-based management for leaders. See only what requires your judgment — with the full context attached."
+      subheadline="Exception-based management for leaders — see only what requires your judgment, with full context attached."
       ctaLabel="See the executive view →"
       focus={[
         {
           title: "Monday Morning Brief",
-          desc: "One-page narrative of the week's changes generated from live Spine data — revenue movement, at-risk accounts, collection priorities, delivery exceptions — with evidence from source systems.",
+          desc: "One-page narrative of the week's changes — revenue movement, at-risk accounts, and exceptions — built from live Spine data.",
         },
         {
           title: "Board Pack Auto-Generation",
-          desc: "Standardized metrics (NRR, Burn, Cash, Pipeline) with drill-down evidence from every connected system. The Twin drafts the narrative; you finalize.",
+          desc: "NRR, burn, cash, and pipeline metrics with drill-down evidence — the Twin drafts the narrative, you finalize.",
         },
         {
           title: "Strategic Account Oversight",
-          desc: "Direct view into your top 20% of accounts by revenue and risk. See what the Twin flagged, what CSMs did, and what still requires executive attention.",
+          desc: "Direct view into your top 20% of accounts by revenue and risk — what the Twin flagged and what needs your attention.",
         },
         {
           title: "Governance Oversight",
-          desc: "Audit trail of all AI-approved actions across the organization. You set the threshold for what requires executive visibility — the Spine enforces it.",
+          desc: "Audit trail of all AI-approved actions across the org — you set the threshold, the Spine enforces it.",
         },
       ]}
-      governanceNote="You see what changed and why. You approve strategic actions. The system enforces that no critical customer change happens without executive visibility if you set the threshold. Every approval is logged with source data, confidence score, and timestamp."
+      governanceNote="You see what changed and why. You approve strategic actions. No critical customer change happens without executive visibility if you set the threshold."
       connects={[
         "Salesforce", "HubSpot", "Stripe", "QuickBooks",
         "Zendesk", "Jira", "Asana", "Slack",

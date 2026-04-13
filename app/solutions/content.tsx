@@ -25,19 +25,19 @@ const byFunction = [
     icon: Users,
     name: "Account Success",
     href: "/account-success",
-    desc: "Workbench for customer-facing teams. Account 360: revenue, usage, support, invoices, people, health — all connected.",
+    desc: "Every account's revenue, usage, support, and health — connected in one workspace.",
   },
   {
     icon: BarChart3,
     name: "Business Ops",
     href: "/business-ops",
-    desc: "Operating workspace for founders and leaders. Revenue, pipeline, churn, cash, projects — one live picture of the business.",
+    desc: "Revenue, pipeline, cash, and exceptions — one live picture for founders and leaders.",
   },
   {
     icon: Sparkles,
     name: "Personal Ops",
     href: "/personal-ops",
-    desc: "Workbench for individuals. Today's meetings, emails, tasks, threads — and a memory that carries context between sessions.",
+    desc: "Your meetings, tasks, and threads in one place — with memory that carries context forward.",
   },
 ];
 
@@ -46,37 +46,37 @@ const byIndustry = [
     icon: Cloud,
     name: "SaaS",
     href: "/solutions/saas",
-    desc: "Renewals, expansion, product adoption — connected across CRM, support, and product usage in one account view.",
+    desc: "Protect NRR by connecting CRM, product usage, and billing into one renewal-ready account view.",
   },
   {
     icon: Wrench,
     name: "Services & Agencies",
     href: "/solutions/services",
-    desc: "Projects, utilisation, invoices, client health — the full picture of every engagement, not just the billing system.",
+    desc: "See project margin, utilization, and billing risk before they become client problems.",
   },
   {
     icon: Package,
     name: "Manufacturing & Trade",
     href: "/solutions/manufacturing",
-    desc: "Orders, shipments, payments, exceptions — live across ERP, CRM, and logistics in one operating workspace.",
+    desc: "Flag delayed orders and payment exceptions before customers call to complain.",
   },
   {
     icon: ShoppingCart,
     name: "Retail & Ecommerce",
     href: "/solutions/retail",
-    desc: "Stock, orders, returns, support — every signal connected so teams act before problems become complaints.",
+    desc: "Connect stock, returns, and support so teams act on signals — not complaints.",
   },
   {
     icon: Briefcase,
     name: "Professional Services",
     href: "/solutions/professional-services",
-    desc: "Engagements, deliverables, billing, relationships — the full account view that professional service teams need.",
+    desc: "Surface unbilled time, scope creep, and disengaged clients before revenue leaks.",
   },
   {
     icon: TrendingUp,
     name: "Finance",
     href: "/solutions/finance",
-    desc: "Revenue, risk, collections, cash — the financial picture that finance leaders actually need to run the business.",
+    desc: "Prioritize collections by customer health, not just invoice aging.",
   },
 ];
 
@@ -85,37 +85,37 @@ const byRole = [
     icon: UserCheck,
     name: "Customer Success & Account Managers",
     href: "/solutions/customer-success",
-    desc: "Save at-risk accounts. Accelerate renewals. Surface expansion. All from one workspace that reads every signal.",
+    desc: "AI-surfaced risk and expansion signals — save accounts before the conversation starts.",
   },
   {
     icon: Telescope,
     name: "Founders & CXOs",
     href: "/solutions/founders",
-    desc: "Your Monday brief. Revenue movement. Board pack. The business view that takes 30 minutes to build — in seconds.",
+    desc: "Monday brief, board pack, and top-account oversight — built in seconds, not hours.",
   },
   {
     icon: Settings2,
     name: "RevOps & Business Operations",
     href: "/solutions/revops",
-    desc: "One workspace for the operating layer. Pipelines, headcount, projects, exceptions — connected and actionable.",
+    desc: "Pipeline, forecasts, and process hygiene — governed and traceable across every tool.",
   },
   {
     icon: Truck,
     name: "Operations & Delivery Leaders",
     href: "/solutions/operations",
-    desc: "Utilisation, delivery, exceptions, escalations — the live view that keeps projects on track and clients happy.",
+    desc: "Catch delivery exceptions and utilization gaps before they reach the client.",
   },
   {
     icon: DollarSign,
     name: "Finance Leaders",
     href: "/solutions/finance-leaders",
-    desc: "Cash, collections, runway, burn — the financial workspace that connects accounting, billing, and CRM into one picture.",
+    desc: "Collections and cash flow connected to customer health — not just invoice dates.",
   },
   {
     icon: User,
     name: "Individual Professionals",
     href: "/solutions/individual",
-    desc: "Your personal workspace. Morning briefing, session memory, promise tracker, weekly planning — all in one place.",
+    desc: "Morning briefing, session memory, and task queue — your day, already organised.",
   },
 ];
 
@@ -196,69 +196,37 @@ export function SolutionsContent() {
             transition={{ type: "spring", damping: 16, stiffness: 52, delay: 0.35 }}
             className="mx-auto mt-8 max-w-2xl text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-white/55"
           >
-            IntegrateWise runs on one Spine, one Workbench, and one
-            Intelligence layer. But the workspace is shaped to your function,
-            your industry, and your role. Every view starts from the same
-            unified truth.
+            One Spine. One Workbench. One Intelligence layer — shaped to your
+            function, your industry, and your role.
           </motion.p>
         </div>
       </section>
 
-      {/* The model explainer */}
-      <section className="arvio-section">
-        <div className="mx-auto max-w-[900px] text-center">
+      {/* Model strip */}
+      <section className="border-b border-border bg-muted py-6">
+        <div className="mx-auto max-w-[1100px] px-4">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 8 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+            viewport={{ once: true }}
+            transition={{ type: "spring", bounce: 0.2, duration: 0.5 }}
+            className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-8"
           >
-            <h2 className="section-heading">
-              The model behind{" "}
-              <span className="text-primary">every solution</span>
-            </h2>
-            <p className="section-subheading mx-auto mt-4 max-w-2xl">
-              Every IntegrateWise solution — regardless of function, industry,
-              or role — runs on the same architecture. Connect your apps to the
-              Spine. Work in L1. Let L2 surface signals. Approve before anything
-              changes.
-            </p>
+            <span className="text-[12px] font-bold uppercase tracking-[0.1em] text-primary shrink-0">
+              The model
+            </span>
+            <div className="flex flex-wrap gap-x-6 gap-y-2">
+              {[
+                { label: "Spine", note: "Connects every app into unified truth." },
+                { label: "Daily Workbench", note: "Shaped to your function or role." },
+                { label: "Intelligence Layer", note: "Surfaces signals. Proposes actions. Waits for your approval." },
+              ].map(({ label, note }) => (
+                <span key={label} className="text-[13px] font-medium text-muted-foreground">
+                  <span className="font-semibold text-foreground">{label}</span> — {note}
+                </span>
+              ))}
+            </div>
           </motion.div>
-          <div className="mt-12 grid gap-4 sm:grid-cols-3">
-            {[
-              {
-                label: "Spine",
-                desc: "Connects every app. Unifies Truth, Context, and Session Summaries into one entity-level intelligence layer.",
-                color: "bg-primary/10 border-primary/20",
-              },
-              {
-                label: "Daily Workbench",
-                desc: "Your workspace. Shaped to your function or role. This is where you work, act, and manage every day.",
-                color: "bg-muted border-border",
-              },
-              {
-                label: "Intelligence Layer",
-                desc: "The Twin reads the Spine. Surfaces signals. Proposes actions with evidence. Waits for your approval.",
-                color: "bg-muted border-border",
-              },
-            ].map(({ label, desc, color }, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ type: "spring", bounce: 0.2, duration: 0.6, delay: i * 0.1 }}
-                className={`rounded-xl border p-6 text-left ${color}`}
-              >
-                <div className="text-[13px] font-bold uppercase tracking-[0.1em] text-primary">
-                  {label}
-                </div>
-                <p className="mt-2 text-[14px] font-medium leading-[1.6] text-muted-foreground">
-                  {desc}
-                </p>
-              </motion.div>
-            ))}
-          </div>
         </div>
       </section>
 

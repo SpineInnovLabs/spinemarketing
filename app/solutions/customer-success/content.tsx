@@ -7,28 +7,28 @@ export function CustomerSuccessRoleContent() {
     <RoleSolutionLayout
       role="Customer Success & TAMs"
       headline="The CSM Command Center"
-      subheadline="One Account 360 where AI surfaces exactly which accounts need attention today — and drafts the save play for your approval."
+      subheadline="AI surfaces which accounts need attention today — and drafts the save play for your approval."
       ctaLabel="See Account Success workspace →"
       ctaHref="/account-success"
       focus={[
         {
           title: "Renewal Risk Prediction",
-          desc: "90-day lookahead across CRM, product usage, billing, and support. Know which accounts are at risk before the renewal conversation starts.",
+          desc: "90-day lookahead across CRM, usage, billing, and support — know which accounts are at risk before the conversation starts.",
         },
         {
           title: "Expansion Signal Detection",
-          desc: "AI surfaces usage spikes, team growth, and license limit approaches as expansion moments — with a drafted upgrade conversation ready for your review.",
+          desc: "AI surfaces usage spikes and license limit approaches as expansion moments with a drafted upgrade conversation ready.",
         },
         {
           title: "QBR Preparation Automation",
-          desc: "AI assembles account review decks from real adoption data, outcome metrics, and relationship history. You finalize and present — no manual assembly.",
+          desc: "AI assembles account review decks from real adoption data and relationship history — you finalize and present.",
         },
         {
           title: "Escalation Management",
-          desc: "Cross-system pattern detection — usage drop + champion left + P1 tickets — surfaces as one combined risk signal with full context attached.",
+          desc: "Usage drop, champion left, and P1 tickets surfaced as one combined risk signal with full context attached.",
         },
       ]}
-      governanceNote="AI suggests health score changes — you approve them. AI drafts EBR decks — you finalize before sending. AI queues outreach — you review the evidence and approve. No customer-facing action executes without CSM review. Every approval is logged with source data and a timestamp."
+      governanceNote="AI suggests health score changes — you approve them. AI drafts outreach — you review before it sends. No customer-facing action executes without CSM sign-off."
       connects={[
         "Salesforce", "HubSpot", "Zendesk", "Intercom",
         "Stripe", "Chargebee", "Segment", "Amplitude", "Slack", "Gmail",

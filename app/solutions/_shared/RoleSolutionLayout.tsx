@@ -87,7 +87,7 @@ export function RoleSolutionLayout({
       </section>
 
       {/* ── Focus Areas ──────────────────────────────────────────── */}
-      <section className="arvio-section">
+      <section className="arvio-section bg-muted">
         <div className="mx-auto max-w-[1100px]">
           <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center">
             <h2 className="section-heading">
@@ -111,43 +111,30 @@ export function RoleSolutionLayout({
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* ── Governance ───────────────────────────────────────────── */}
-      <section
-        className="arvio-section"
-        style={{ backgroundColor: "rgb(8, 7, 14)" }}
-      >
-        <div className="mx-auto max-w-[1100px]">
-          <div className="grid gap-10 lg:grid-cols-2 items-center">
-            <motion.div {...fade(0)}>
-              <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">
-                Governance note
-              </p>
-              <h2 className="text-[36px] font-semibold leading-[1.15] tracking-[-0.05em] text-white sm:text-[44px]">
-                AI assists.{" "}
-                <span className="text-primary">You control.</span>
-              </h2>
-            </motion.div>
-            <motion.p
-              {...fade(0.12)}
-              className="text-[15px] font-medium leading-[1.75] text-white/55"
-            >
+          {/* ── Governance inline note ────────────────────────────── */}
+          <motion.div
+            {...fade(0.1)}
+            className="mt-8 rounded-xl border border-primary/20 bg-primary/5 px-6 py-4"
+          >
+            <span className="text-[12px] font-bold uppercase tracking-[0.1em] text-primary">
+              AI assists. You control —{" "}
+            </span>
+            <span className="text-[14px] font-medium text-muted-foreground">
               {governanceNote}
-            </motion.p>
-          </div>
+            </span>
+          </motion.div>
         </div>
       </section>
 
-      {/* ── Connects + Metrics ───────────────────────────────────── */}
+      {/* ── Connects + Metrics strip ─────────────────────────────── */}
       {(connects?.length || metrics?.length) ? (
-        <section className="arvio-section">
+        <section className="arvio-section border-t border-border">
           <div className="mx-auto max-w-[1100px]">
-            <div className="grid gap-12 sm:grid-cols-2">
+            <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:gap-16">
               {connects?.length ? (
-                <motion.div {...fade(0)}>
-                  <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-4">
+                <motion.div {...fade(0)} className="flex-1">
+                  <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">
                     Connects with
                   </p>
                   <div className="flex flex-wrap gap-2">
@@ -163,8 +150,8 @@ export function RoleSolutionLayout({
                 </motion.div>
               ) : null}
               {metrics?.length ? (
-                <motion.div {...fade(0.1)}>
-                  <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-4">
+                <motion.div {...fade(0.08)} className="flex-1">
+                  <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">
                     KPIs tracked
                   </p>
                   <div className="flex flex-wrap gap-2">

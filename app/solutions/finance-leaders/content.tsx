@@ -7,27 +7,27 @@ export function FinanceLeadersContent() {
     <RoleSolutionLayout
       role="Finance Leaders"
       headline="The Financial Intelligence Layer"
-      subheadline="Collections and cash flow management connected to customer reality — not just invoice aging."
+      subheadline="Collections and cash flow connected to customer reality — not just invoice aging."
       ctaLabel="Explore the workspace →"
       focus={[
         {
           title: "Revenue Protection",
-          desc: "Link billing to delivery and customer health. Know which customers are at churn risk before issuing the next invoice — and act accordingly.",
+          desc: "Link billing to delivery and customer health — know churn risk before issuing the next invoice.",
         },
         {
           title: "Smart Collections",
-          desc: "Prioritize by cash impact and customer health, not just days overdue. Draft tone-appropriate dunning based on relationship status — reviewed by you before it sends.",
+          desc: "Prioritize by cash impact and customer health — tone-appropriate dunning reviewed by you before it sends.",
         },
         {
           title: "Audit Readiness",
-          desc: "Immutable logs of all revenue-impacting decisions with source evidence. Who approved which adjustment, when, and based on which Spine data point.",
+          desc: "Immutable logs of all revenue-impacting decisions with source evidence and timestamps.",
         },
         {
           title: "Cash Flow Forecasting",
-          desc: "AI-weighted projections based on customer health scores and payment history — not just invoice aging. Accurate runway estimates with source evidence attached.",
+          desc: "AI-weighted projections based on customer health and payment history — accurate runway estimates with source evidence.",
         },
       ]}
-      governanceNote="Every dunning message, write-off recommendation, and revenue recognition adjustment requires Finance approval with full audit trail. AI provides the analysis; humans control the cash. No automated customer-facing financial communication without explicit click-to-approve."
+      governanceNote="Every dunning message and write-off recommendation requires Finance approval — AI provides analysis, humans control the cash."
       connects={[
         "QuickBooks", "NetSuite", "Sage", "Stripe",
         "Salesforce", "HubSpot", "Zendesk",
