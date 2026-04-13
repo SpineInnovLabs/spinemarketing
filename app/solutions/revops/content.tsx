@@ -9,7 +9,7 @@ export function RevOpsContent() {
       headline="The Revenue Operating System"
       subheadline="Connect pipeline, bookings, billings, and churn into one truth layer. Detect process leaks and fix them with governed AI."
       ctaLabel="Explore Business Ops →"
-      ctaHref="/solutions/business-ops"
+      ctaHref="/business-ops"
       focus={[
         {
           title: "Process Health Monitoring",

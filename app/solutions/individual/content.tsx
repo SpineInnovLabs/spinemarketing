@@ -9,7 +9,7 @@ export function IndividualContent() {
       headline="Your Personal Command Center"
       subheadline="All your work, one calm view. AI remembers context across sessions — you approve every action."
       ctaLabel="Try Personal Ops →"
-      ctaHref="/solutions/personal-ops"
+      ctaHref="/personal-ops"
       focus={[
         {
           title: "Cross-Tool Task Aggregation",

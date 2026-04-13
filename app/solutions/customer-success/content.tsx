@@ -9,7 +9,7 @@ export function CustomerSuccessRoleContent() {
       headline="The CSM Command Center"
       subheadline="One Account 360 where AI surfaces exactly which accounts need attention today — and drafts the save play for your approval."
       ctaLabel="See Account Success workspace →"
-      ctaHref="/solutions/account-success"
+      ctaHref="/account-success"
       focus={[
         {
           title: "Renewal Risk Prediction",
