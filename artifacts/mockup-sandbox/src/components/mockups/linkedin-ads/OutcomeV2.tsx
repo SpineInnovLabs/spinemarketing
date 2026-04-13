@@ -1,89 +1,148 @@
-import React from "react";
+import React from 'react';
 
 export function OutcomeV2() {
   return (
-    <div className="flex flex-col w-[100vw] h-[100vh] bg-[#0A1228] overflow-hidden font-sans">
-      {/* Nav Strip */}
-      <nav className="flex items-center justify-between h-[8vh] shrink-0 px-[3.5vw] border-b border-[#1ba784]/10">
-        <div className="flex items-center gap-[0.8vw]">
-          <div className="w-[2vw] h-[2vw] rounded-full bg-[#1ba784] flex items-center justify-center">
-            <svg viewBox="0 0 24 24" fill="none" className="w-[1.2vw] h-[1.2vw] text-white">
-              <path
-                d="M4 12c0-4.418 3.582-8 8-8s8 3.582 8 8-3.582 8-8 8-8-3.582-8-8z"
-                stroke="currentColor"
-                strokeWidth="2"
-              />
-              <path
-                d="M8 12c1.5-1.5 2.5-1.5 4 0s2.5 1.5 4 0"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </div>
-          <span className="text-white font-bold text-[1.2vw] tracking-tight">IntegrateWise</span>
+    <div style={{
+      width: '100vw',
+      height: '100vh',
+      overflow: 'hidden',
+      display: 'flex',
+      flexDirection: 'column',
+      background: '#0A1228',
+      fontFamily: 'Inter, system-ui, sans-serif'
+    }}>
+      <div style={{
+        height: '8vh',
+        flexShrink: 0,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        padding: '0 3.5vw',
+        borderBottom: '1px solid rgba(27,167,132,0.12)',
+      }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '1.2vw' }}>
+          <svg width="3vw" height="3vw" viewBox="0 0 32 32" fill="none">
+            <circle cx="16" cy="16" r="16" fill="#1ba784"/>
+            <path d="M8 16 Q16 8 24 16 Q16 24 8 16Z" fill="white" opacity="0.9"/>
+          </svg>
+          <span style={{ color: 'white', fontWeight: 700, fontSize: '2.8vw', letterSpacing: '-0.02em' }}>
+            IntegrateWise
+          </span>
         </div>
-        <div className="text-white/50 text-[1vw] font-medium tracking-wide">
-          PLATFORM OVERVIEW
+        <div style={{
+          color: '#1ba784',
+          fontSize: '1.4vw',
+          fontWeight: 600,
+          border: '1px solid rgba(27,167,132,0.3)',
+          padding: '0.4vw 1.2vw',
+          borderRadius: '2vw',
+          background: 'rgba(27,167,132,0.08)',
+        }}>
+          AI Workspace
         </div>
-      </nav>
-
-      {/* Illustration Zone */}
-      <div className="relative flex-1 overflow-hidden min-h-[40vh]">
-        <img
-          src="/__mockup/images/ref-homepage-hero.png"
-          alt="Adaptive Spine Architecture"
-          className="w-full h-full object-cover object-top block"
-        />
-        {/* Bottom Fade */}
-        <div 
-          className="absolute bottom-0 left-0 right-0 h-[40%]" 
-          style={{ background: "linear-gradient(to bottom, transparent, #0A1228)" }}
-        />
-        {/* Bottom Accent Line */}
-        <div 
-          className="absolute bottom-0 left-0 right-0 h-[0.25vw]"
-          style={{ background: "linear-gradient(to right, transparent, #1ba784, transparent)" }}
-        />
       </div>
 
-      {/* Bottom Text Zone */}
-      <div className="shrink-0 flex flex-col justify-between pt-[3vw] px-[5vw] pb-[3.5vw] bg-[#0A1228]">
-        <div className="flex items-start gap-[3vw]">
-          {/* Eyebrow */}
-          <div className="w-[30%] pt-[0.8vw]">
-            <h2 className="text-[#1ba784] text-[1.5vw] tracking-[0.12em] font-bold uppercase m-0 leading-tight">
+      <div style={{
+        flex: '1 1 52%',
+        position: 'relative',
+        overflow: 'hidden',
+      }}>
+        <img
+          src="/__mockup/images/hero-outcome.png"
+          alt=""
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            objectPosition: 'center top',
+            display: 'block',
+          }}
+        />
+        <div style={{
+          position: 'absolute',
+          bottom: 0,
+          left: 0,
+          right: 0,
+          height: '50%',
+          background: 'linear-gradient(transparent, #0A1228)',
+        }} />
+        <div style={{
+          position: 'absolute',
+          bottom: 0,
+          left: 0,
+          right: 0,
+          height: '0.2vw',
+          background: 'linear-gradient(to right, transparent, #1ba784, transparent)',
+        }} />
+      </div>
+
+      <div style={{
+        flex: '0 0 40%',
+        padding: '3vw 5vw 3.5vw',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+      }}>
+        <div style={{ display: 'flex', alignItems: 'flex-start', gap: '3vw' }}>
+          <div style={{ width: '30%', paddingTop: '0.8vw' }}>
+            <div style={{
+              textTransform: 'uppercase',
+              color: '#1ba784',
+              fontSize: '1.4vw',
+              letterSpacing: '0.12em',
+              fontWeight: 700,
+            }}>
               Adaptive Spine Architecture
-            </h2>
+            </div>
           </div>
-          
-          {/* Headline */}
-          <div className="w-[70%]">
-            <h1 className="text-white text-[5.5vw] font-black leading-[1.0] tracking-[-0.045em] m-0">
-              Your apps, finally united.
-            </h1>
+          <div style={{ width: '70%' }}>
+            <div style={{
+              fontSize: '5.5vw',
+              fontWeight: 900,
+              color: 'white',
+              lineHeight: 1.0,
+              letterSpacing: '-0.045em',
+            }}>
+              Your apps,<br />finally united.
+            </div>
           </div>
         </div>
 
-        {/* Subtext */}
-        <p className="mt-[2.5vw] text-[2vw] text-white/50 font-medium leading-[1.45] max-w-[80%] line-clamp-2">
+        <div style={{
+          fontSize: '2vw',
+          color: 'rgba(255,255,255,0.5)',
+          fontWeight: 500,
+          lineHeight: 1.45,
+          marginTop: '2vw',
+        }}>
           The Adaptive Spine connects every tool. Your AI reads everything and tells you what to do next.
-        </p>
+        </div>
 
-        {/* Bottom Row */}
-        <div className="mt-[3vw] flex items-center justify-between">
-          <button className="bg-[#1ba784] hover:bg-[#158f71] transition-colors text-white rounded-[0.7vw] px-[3.5vw] py-[1.2vw] text-[2.2vw] font-bold flex items-center gap-[1vw]">
-            Book a demo 
-            <span className="text-[2.2vw] font-normal leading-none transform translate-y-[-0.1vw]">→</span>
-          </button>
-          <div className="text-white/35 text-[1.4vw] text-right font-medium">
-            70+ connectors · SOC 2 certified · No code
+        <div style={{
+          marginTop: '2vw',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+        }}>
+          <div style={{
+            background: '#1ba784',
+            color: 'white',
+            borderRadius: '0.7vw',
+            padding: '1.2vw 3.5vw',
+            fontSize: '2.2vw',
+            fontWeight: 700,
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '0.8vw',
+            boxShadow: '0 0 30px rgba(27,167,132,0.3)',
+          }}>
+            Book a demo <span style={{ fontSize: '1.1em' }}>→</span>
           </div>
+          <span style={{ color: 'rgba(255,255,255,0.3)', fontSize: '1.4vw', fontWeight: 500, textAlign: 'right' }}>
+            70+ connectors · SOC 2 · No code
+          </span>
         </div>
       </div>
     </div>
   );
 }
-
-export default OutcomeV2;

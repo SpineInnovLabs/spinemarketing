@@ -1,171 +1,142 @@
-import React from "react";
+import React from 'react';
 
 export function OutcomeV1() {
   return (
-    <div
-      style={{
-        width: "100vw",
-        height: "100vh",
-        position: "relative",
-        overflow: "hidden",
-        backgroundColor: "#0A1228",
-        fontFamily: "Inter, sans-serif",
-      }}
-    >
-      {/* Background Image */}
+    <div style={{
+      width: '100vw',
+      height: '100vh',
+      overflow: 'hidden',
+      position: 'relative',
+      background: '#0A1228',
+      fontFamily: 'Inter, system-ui, sans-serif'
+    }}>
       <img
-        src="/__mockup/images/ref-homepage-hero.png"
-        alt="Adaptive Spine Architecture"
+        src="/__mockup/images/hero-outcome.png"
+        alt=""
         style={{
-          position: "absolute",
+          position: 'absolute',
           inset: 0,
-          objectFit: "cover",
-          width: "100%",
-          height: "100%",
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+          objectPosition: 'center',
         }}
       />
 
-      {/* Vignette Overlay */}
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          background:
-            "radial-gradient(ellipse at center, transparent 20%, rgba(8,14,30,0.65) 100%)",
-        }}
-      />
+      <div style={{
+        position: 'absolute',
+        inset: 0,
+        background: 'radial-gradient(ellipse at center, transparent 15%, rgba(8,14,30,0.55) 100%)',
+      }} />
 
-      {/* Logo Strip */}
-      <div
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          right: 0,
-          padding: "3vw",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}
-      >
-        <div style={{ display: "flex", alignItems: "center", gap: "1vw" }}>
-          <svg
-            width="2.5vw"
-            height="2.5vw"
-            viewBox="0 0 32 32"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle cx="16" cy="16" r="16" fill="#1ba784" />
-            <path
-              d="M8 16c2.667-2.667 5.333-2.667 8 0s5.333 2.667 8 0"
-              stroke="#fff"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
+      <div style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        padding: '3vw 3.5vw',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        boxSizing: 'border-box',
+        zIndex: 3,
+      }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '1.2vw' }}>
+          <svg width="3vw" height="3vw" viewBox="0 0 32 32" fill="none">
+            <circle cx="16" cy="16" r="16" fill="#1ba784"/>
+            <path d="M8 16 Q16 8 24 16 Q16 24 8 16Z" fill="white" opacity="0.9"/>
           </svg>
-          <span
-            style={{
-              color: "#fff",
-              fontSize: "1.8vw",
-              fontWeight: 700,
-              letterSpacing: "-0.02em",
-            }}
-          >
+          <span style={{ color: 'white', fontWeight: 700, fontSize: '2.8vw', letterSpacing: '-0.02em' }}>
             IntegrateWise
           </span>
         </div>
+        <div style={{
+          color: '#1ba784',
+          fontSize: '1.4vw',
+          fontWeight: 600,
+          border: '1px solid rgba(27,167,132,0.3)',
+          padding: '0.4vw 1.2vw',
+          borderRadius: '2vw',
+          background: 'rgba(27,167,132,0.08)',
+        }}>
+          AI Workspace
+        </div>
       </div>
 
-      {/* Center Card */}
-      <div
-        style={{
-          position: "absolute",
-          top: "50%",
-          left: "50%",
-          transform: "translate(-50%, -50%)",
-          width: "70%",
-          padding: "5vw",
-          textAlign: "center",
-          backdropFilter: "blur(8px)",
-          WebkitBackdropFilter: "blur(8px)",
-          background: "rgba(10,18,40,0.72)",
-          border: "1px solid rgba(27,167,132,0.25)",
-          borderRadius: "2vw",
-        }}
-      >
-        <div
-          style={{
-            textTransform: "uppercase",
-            color: "#1ba784",
-            fontSize: "1.4vw",
-            letterSpacing: "0.14em",
-            fontWeight: 700,
-          }}
-        >
-          ADAPTIVE SPINE ARCHITECTURE
+      <div style={{
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        width: '72%',
+        padding: '5vw',
+        textAlign: 'center',
+        backdropFilter: 'blur(12px)',
+        WebkitBackdropFilter: 'blur(12px)',
+        background: 'rgba(10,18,40,0.72)',
+        border: '1px solid rgba(27,167,132,0.2)',
+        borderRadius: '2vw',
+        boxSizing: 'border-box',
+        zIndex: 2,
+      }}>
+        <div style={{
+          textTransform: 'uppercase',
+          color: '#1ba784',
+          fontSize: '1.4vw',
+          letterSpacing: '0.14em',
+          fontWeight: 700,
+        }}>
+          Adaptive Spine Architecture
         </div>
-        <h1
-          style={{
-            fontSize: "6.5vw",
-            fontWeight: 900,
-            color: "#fff",
-            lineHeight: 1.05,
-            letterSpacing: "-0.04em",
-            marginTop: "1.5vw",
-            marginBottom: 0,
-          }}
-        >
-          Your apps, finally united.
-        </h1>
-        <div
-          style={{
-            margin: "2.5vw auto",
-            width: "5vw",
-            height: "0.25vw",
-            background: "#1ba784",
-          }}
-        />
-        <p
-          style={{
-            fontSize: "2vw",
-            color: "rgba(255,255,255,0.55)",
-            fontWeight: 500,
-            lineHeight: 1.5,
-            marginTop: 0,
-            marginBottom: 0,
-          }}
-        >
-          The Adaptive Spine connects every tool. Your AI reads everything and
-          tells you what to do next.
-        </p>
-        <div
-          style={{
-            marginTop: "3vw",
-            display: "inline-block",
-            background: "#1ba784",
-            color: "#fff",
-            borderRadius: "0.8vw",
-            padding: "1.4vw 4vw",
-            fontSize: "2.2vw",
-            fontWeight: 700,
-          }}
-        >
-          Book a demo &rarr;
+        <div style={{
+          fontSize: '6.5vw',
+          fontWeight: 900,
+          color: 'white',
+          lineHeight: 1.0,
+          letterSpacing: '-0.04em',
+          marginTop: '1.8vw',
+          textShadow: '0 2px 30px rgba(0,0,0,0.5)',
+        }}>
+          Your apps,<br />finally united.
         </div>
-        <div
-          style={{
-            marginTop: "1.8vw",
-            fontSize: "1.4vw",
-            color: "rgba(255,255,255,0.35)",
-          }}
-        >
-          70+ connectors &middot; SOC 2 certified &middot; No code
+        <div style={{
+          margin: '2.5vw auto',
+          width: '5vw',
+          height: '0.25vw',
+          background: '#1ba784',
+        }} />
+        <div style={{
+          fontSize: '2vw',
+          color: 'rgba(255,255,255,0.55)',
+          fontWeight: 500,
+          lineHeight: 1.5,
+        }}>
+          The Adaptive Spine connects every tool.<br />Your AI reads everything and tells you what to do next.
+        </div>
+        <div style={{
+          marginTop: '3vw',
+          display: 'inline-flex',
+          background: '#1ba784',
+          color: 'white',
+          borderRadius: '0.8vw',
+          padding: '1.4vw 4vw',
+          fontSize: '2.2vw',
+          fontWeight: 700,
+          alignItems: 'center',
+          gap: '0.8vw',
+          boxShadow: '0 0 40px rgba(27,167,132,0.3)',
+        }}>
+          Book a demo <span style={{ fontSize: '1.1em' }}>→</span>
+        </div>
+        <div style={{
+          marginTop: '1.8vw',
+          color: 'rgba(255,255,255,0.3)',
+          fontSize: '1.4vw',
+          fontWeight: 500,
+        }}>
+          70+ connectors · SOC 2 certified · No code
         </div>
       </div>
     </div>
   );
 }
-
-export default OutcomeV1;

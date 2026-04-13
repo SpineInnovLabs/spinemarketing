@@ -18,3 +18,21 @@ id = "zSIM5mnfwL_4oGZ1l0OlQ"
 uri = "file://artifacts/mockup-sandbox/public/images/ad-identity.png"
 type = "image"
 title = "data streams identity ad"
+
+[[generated]]
+id = "AQ0PSsvop6hc32j1Bz-HT"
+uri = "file://artifacts/mockup-sandbox/public/images/hero-pain.png"
+type = "image"
+title = "dark city neural data flow"
+
+[[generated]]
+id = "T9AdcmgXVKA-BqPy7MrI4"
+uri = "file://artifacts/mockup-sandbox/public/images/hero-outcome.png"
+type = "image"
+title = "glass sphere unified data core"
+
+[[generated]]
+id = "JQPcD-rRGTxgJL7Q-2oxq"
+uri = "file://artifacts/mockup-sandbox/public/images/hero-identity.png"
+type = "image"
+title = "executive at holographic command center"

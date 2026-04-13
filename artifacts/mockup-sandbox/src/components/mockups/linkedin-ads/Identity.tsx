@@ -7,148 +7,131 @@ export function Identity() {
       height: '100vh',
       overflow: 'hidden',
       position: 'relative',
-      backgroundColor: '#081020',
-      fontFamily: 'system-ui, -apple-system, sans-serif'
+      background: '#0A1228',
+      fontFamily: 'Inter, system-ui, sans-serif'
     }}>
-      {/* Hero Image FULL BLEED */}
-      <img 
-        src="/__mockup/images/ref-data-hub.png" 
-        alt="Data Hub"
+      <img
+        src="/__mockup/images/hero-identity.png"
+        alt=""
         style={{
-          position: 'absolute', 
-          inset: 0, 
-          width: '100%', 
-          height: '100%', 
-          objectFit: 'cover', 
-          objectPosition: 'center'
-        }} 
+          position: 'absolute',
+          inset: 0,
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+          objectPosition: 'center top',
+        }}
       />
 
-      {/* Top overlay gradient */}
-      <div style={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        right: 0,
-        height: '50%',
-        background: 'linear-gradient(to bottom, rgba(8,16,32,0.92) 0%, rgba(8,16,32,0.7) 60%, transparent 100%)'
-      }} />
-
-      {/* Bottom overlay strip */}
       <div style={{
         position: 'absolute',
         bottom: 0,
         left: 0,
         right: 0,
-        height: '15%',
-        background: 'linear-gradient(to top, rgba(8,16,32,0.95), transparent)'
+        height: '70%',
+        background: 'linear-gradient(to top, rgba(8,14,30,0.97) 0%, rgba(8,14,30,0.88) 35%, rgba(8,14,30,0.45) 65%, transparent 100%)',
       }} />
 
-      {/* Top content */}
       <div style={{
         position: 'absolute',
         top: 0,
         left: 0,
-        padding: '3.5vw',
-        width: '100%',
-        boxSizing: 'border-box'
-      }}>
-        {/* Logo row */}
-        <div style={{
-          display: 'flex',
-          gap: '1.5vw',
-          alignItems: 'center'
-        }}>
-          <svg width="3.5vw" height="3.5vw" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="20" cy="20" r="20" fill="#1ba784"/>
-            <path d="M10 20C15 20 15 12 20 12C25 12 25 28 30 28C35 28 35 20 40 20" stroke="white" strokeWidth="3" strokeLinecap="round"/>
-          </svg>
-          <span style={{
-            color: 'white',
-            fontSize: '3vw',
-            fontWeight: 700
-          }}>IntegrateWise</span>
-        </div>
+        right: 0,
+        height: '30%',
+        background: 'linear-gradient(to bottom, rgba(8,14,30,0.5) 0%, transparent 100%)',
+      }} />
 
-        {/* Eyebrow */}
-        <div style={{
-          marginTop: '3vw',
-          textTransform: 'uppercase',
-          color: '#1ba784',
-          fontSize: '1.6vw',
-          letterSpacing: '0.14em',
-          fontWeight: 700
-        }}>
-          Adaptive Spine Architecture
-        </div>
-
-        {/* Headline */}
-        <div style={{
-          marginTop: '1.5vw',
-          fontSize: '8.5vw',
-          fontWeight: 900,
-          color: 'white',
-          lineHeight: 1.0,
-          letterSpacing: '-0.05em',
-          textShadow: '0 2px 40px rgba(0,0,0,0.8)',
-          whiteSpace: 'pre-line'
-        }}>
-          {"Every app.\nOne intelligence."}
-        </div>
-
-        {/* Subtext */}
-        <div style={{
-          marginTop: '2vw',
-          fontSize: '2.4vw',
-          color: 'rgba(255,255,255,0.65)',
-          fontWeight: 600,
-          maxWidth: '60%',
-          lineHeight: 1.4
-        }}>
-          70+ connectors. One Spine. AI that proposes. You that approves.
-        </div>
-      </div>
-
-      {/* Bottom strip */}
       <div style={{
         position: 'absolute',
-        bottom: 0,
+        top: 0,
         left: 0,
         right: 0,
-        padding: '2.5vw 3.5vw',
+        padding: '3vw 3.5vw',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
-        boxSizing: 'border-box'
+        boxSizing: 'border-box',
+        zIndex: 2,
       }}>
-        {/* LEFT: CTA button */}
-        <div style={{
-          background: '#1ba784',
-          color: 'white',
-          borderRadius: '100vw',
-          padding: '1.5vw 4vw',
-          fontSize: '2.4vw',
-          fontWeight: 700,
-          boxShadow: '0 0 30px rgba(27,167,132,0.45)',
-          display: 'flex',
-          alignItems: 'center',
-          gap: '1vw'
-        }}>
-          See how it works
-          <span style={{ fontSize: '1.2em', lineHeight: 1 }}>→</span>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '1.2vw' }}>
+          <svg width="3vw" height="3vw" viewBox="0 0 32 32" fill="none">
+            <circle cx="16" cy="16" r="16" fill="#1ba784"/>
+            <path d="M8 16 Q16 8 24 16 Q16 24 8 16Z" fill="white" opacity="0.9"/>
+          </svg>
+          <span style={{ color: 'white', fontWeight: 700, fontSize: '2.8vw', letterSpacing: '-0.02em' }}>
+            IntegrateWise
+          </span>
         </div>
-
-        {/* RIGHT: stat badge */}
         <div style={{
-          background: 'rgba(255,255,255,0.2)',
-          color: 'rgba(255,255,255,0.6)',
-          borderRadius: '100vw',
-          padding: '0.8vw 2vw',
-          fontSize: '1.8vw',
+          color: '#1ba784',
+          fontSize: '1.4vw',
           fontWeight: 600,
-          border: '1px solid rgba(255,255,255,0.1)'
+          border: '1px solid rgba(27,167,132,0.3)',
+          padding: '0.4vw 1.2vw',
+          borderRadius: '2vw',
+          background: 'rgba(27,167,132,0.08)',
         }}>
-          70+ integrations
+          AI Workspace
+        </div>
+      </div>
+
+      <div style={{
+        position: 'absolute',
+        bottom: 0,
+        left: 0,
+        right: 0,
+        padding: '4vw',
+        boxSizing: 'border-box',
+        zIndex: 2,
+      }}>
+        <div style={{
+          textTransform: 'uppercase',
+          fontSize: '1.5vw',
+          color: '#1ba784',
+          letterSpacing: '0.14em',
+          fontWeight: 700,
+          marginBottom: '2vw',
+        }}>
+          Built for Revenue Teams
+        </div>
+        <div style={{
+          fontSize: '8.5vw',
+          fontWeight: 900,
+          color: 'white',
+          lineHeight: 0.95,
+          letterSpacing: '-0.045em',
+          textShadow: '0 4px 60px rgba(0,0,0,0.6)',
+        }}>
+          Every app.<br />One<br />intelligence.
+        </div>
+        <div style={{
+          fontSize: '2.4vw',
+          color: 'rgba(255,255,255,0.55)',
+          fontWeight: 500,
+          marginTop: '2.5vw',
+          lineHeight: 1.4,
+          maxWidth: '75%',
+        }}>
+          70+ connectors. One Spine. AI that proposes. You approve.
+        </div>
+        <div style={{ marginTop: '3vw', display: 'flex', alignItems: 'center', gap: '2.5vw' }}>
+          <div style={{
+            background: '#1ba784',
+            color: 'white',
+            borderRadius: '100vw',
+            padding: '1.4vw 3.8vw',
+            fontSize: '2.4vw',
+            fontWeight: 700,
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '0.8vw',
+            boxShadow: '0 0 40px rgba(27,167,132,0.35)',
+          }}>
+            See how it works <span style={{ fontSize: '1.1em' }}>→</span>
+          </div>
+          <span style={{ color: 'rgba(255,255,255,0.3)', fontSize: '1.4vw', fontWeight: 500 }}>
+            SOC 2 certified · Enterprise ready
+          </span>
         </div>
       </div>
     </div>
