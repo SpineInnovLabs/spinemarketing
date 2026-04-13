@@ -1,13 +1,13 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ShieldCheck, Search, UserCheck, BookOpen } from "lucide-react"
+import { ShieldCheck, Brain, UserCheck, BookOpen } from "lucide-react"
 
 const steps = [
-  { icon: Search, label: "AI generates", desc: "Using truth + context + session memory" },
-  { icon: ShieldCheck, label: "TruthLayer scores", desc: "Confidence level, evidence chain, source freshness" },
-  { icon: UserCheck, label: "You review", desc: "Approve, edit, or reject — with full reasoning visible" },
-  { icon: BookOpen, label: "Becomes knowledge", desc: "Verified facts enter the system. Every AI reads from it." },
+  { icon: Brain, label: "The Twin reasons", desc: "Reads your data, conversations, and accumulated knowledge" },
+  { icon: ShieldCheck, label: "TruthLayer governs", desc: "Scores confidence, traces evidence, checks freshness" },
+  { icon: UserCheck, label: "You decide", desc: "Approve, edit, or reject — full reasoning visible" },
+  { icon: BookOpen, label: "Knowledge compounds", desc: "Confirmed insights enter memory. Every AI reads from it." },
 ]
 
 export function TruthLayerSection() {
@@ -26,11 +26,11 @@ export function TruthLayerSection() {
             <span className="text-[14px] font-semibold tracking-[-0.03em] text-primary">TruthLayer</span>
           </div>
           <h2 className="text-[40px] font-semibold tracking-[-0.05em] leading-[1.15] text-white sm:text-[48px]">
-            AI thinks in context.{" "}
+            The Twin proposes.{" "}
             <span className="text-primary">You decide what becomes knowledge.</span>
           </h2>
-          <p className="mt-6 text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-white/50">
-            When AI learns something new, it proposes it first. You approve. Nothing enters knowledge without your say.
+          <p className="mt-6 text-[15px] font-medium leading-[1.5] text-white/40">
+            TruthLayer governs what enters Knowledge Memory. Not your data. Not your conversations. Just what AI learns — and only after you approve.
           </p>
         </motion.div>
 
@@ -61,9 +61,9 @@ export function TruthLayerSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ type: "spring", bounce: 0.2, duration: 0.6, delay: 0.3 }}
-          className="mx-auto mt-10 max-w-xl text-center text-[14px] font-medium leading-[1.6] text-white/30"
+          className="mx-auto mt-10 max-w-xl text-center text-[13px] font-medium leading-[1.6] text-white/25"
         >
-          Denied or edited actions update decision memory. The system learns from your corrections and gets sharper over time.
+          Rejected and edited actions teach the system. Proposals get sharper over time.
         </motion.p>
       </div>
     </section>
