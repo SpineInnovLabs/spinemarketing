@@ -71,32 +71,37 @@ const plans = [
   },
 ];
 
-export function PricingSection() {
+export function PricingSection({ hideHeading = false }: { hideHeading?: boolean }) {
   const [region, setRegion] = useState<Region>("international");
 
   return (
-    <section id="pricing" className="arvio-section bg-muted">
-      <div className="mx-auto max-w-[1100px]">
+    <section id="pricing" className="relative overflow-hidden py-20 px-6 md:px-16" style={{ backgroundColor: "rgb(8, 7, 14)" }}>
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute left-1/2 top-[20%] h-[500px] w-[600px] -translate-x-1/2 rounded-full opacity-15 blur-[120px]" style={{ background: "radial-gradient(circle, rgba(45,212,191,0.2), transparent 70%)" }} />
+      </div>
+      <div className="relative mx-auto max-w-[1100px]">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+          transition={{ type: "spring", damping: 18, stiffness: 70 }}
           className="mx-auto max-w-2xl text-center"
         >
-          <h2 className="section-heading">
-            Simple pricing.{" "}
-            <span className="text-primary">Scale as you grow.</span>
-          </h2>
-          <p className="mt-4 text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">
-            Start small, add more apps and intelligence as your team needs it.
-            No hidden costs.
-          </p>
+          {!hideHeading && (
+            <>
+              <h2 className="text-[36px] font-semibold leading-[1.15] tracking-[-0.04em] text-white sm:text-[44px]">
+                Simple pricing.{" "}
+                <span className="text-primary">Scale as you grow.</span>
+              </h2>
+              <p className="mt-4 text-[16px] font-medium leading-[1.6] text-white/45">
+                Start small, add more apps and intelligence as your team needs it.
+                No hidden costs.
+              </p>
+            </>
+          )}
 
-          {/* Geo Toggle */}
           <div
-            className="mt-8 inline-flex items-center rounded-full border border-border/50 bg-white p-1"
-            style={{ boxShadow: "var(--shadow-card)" }}
+            className="mt-8 inline-flex items-center rounded-full border border-white/[0.08] bg-white/[0.04] p-1"
           >
             {regions.map((r) => (
               <button
@@ -105,14 +110,13 @@ export function PricingSection() {
                 className={`relative rounded-full px-5 py-2 text-[14px] font-semibold tracking-[-0.02em] transition-all ${
                   region === r.key
                     ? "text-white"
-                    : "text-muted-foreground hover:text-foreground"
+                    : "text-white/40 hover:text-white/60"
                 }`}
               >
                 {region === r.key && (
                   <motion.div
                     layoutId="region-pill"
-                    className="absolute inset-0 rounded-full"
-                    style={{ background: "var(--gradient-primary)" }}
+                    className="absolute inset-0 rounded-full bg-primary"
                     transition={{ type: "spring", bounce: 0.2, duration: 0.4 }}
                   />
                 )}
@@ -131,44 +135,33 @@ export function PricingSection() {
               viewport={{ once: true, margin: "-50px" }}
               transition={{
                 type: "spring",
-                bounce: 0.2,
-                duration: 0.6,
+                damping: 18,
+                stiffness: 70,
                 delay: i * 0.1,
               }}
-              className={`relative flex flex-col rounded-[20px] p-8 ${
-                plan.highlighted ? "text-white" : "bg-white"
+              className={`relative flex flex-col rounded-2xl p-8 ${
+                plan.highlighted
+                  ? "border-2 border-primary/40 bg-white/[0.06] text-white"
+                  : "border border-white/[0.08] bg-white/[0.03] text-white"
               }`}
               style={
                 plan.highlighted
-                  ? {
-                      background: "var(--gradient-primary)",
-                      boxShadow: "var(--shadow-card-elevated)",
-                    }
-                  : {
-                      boxShadow: "var(--shadow-card)",
-                    }
+                  ? { boxShadow: "0 0 60px rgba(45,212,191,0.12)" }
+                  : undefined
               }
             >
               {plan.highlighted && (
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                  <span
-                    className="rounded-full px-3 py-1 text-[12px] font-semibold text-white"
-                    style={{
-                      background: "rgba(255,255,255,0.2)",
-                      backdropFilter: "blur(8px)",
-                    }}
-                  >
+                  <span className="rounded-full bg-primary px-3 py-1 text-[12px] font-semibold text-white">
                     Most popular
                   </span>
                 </div>
               )}
               <div>
-                <h3 className="text-[18px] font-semibold tracking-[-0.03em]">
+                <h3 className="text-[18px] font-semibold tracking-[-0.03em] text-white">
                   {plan.name}
                 </h3>
-                <p
-                  className={`mt-1 text-[15px] font-medium ${plan.highlighted ? "text-white/70" : "text-muted-foreground"}`}
-                >
+                <p className="mt-1 text-[15px] font-medium text-white/40">
                   {plan.description}
                 </p>
                 <div className="mt-4">
@@ -177,14 +170,12 @@ export function PricingSection() {
                     initial={{ opacity: 0, y: 8 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.2 }}
-                    className="text-[34px] font-semibold tracking-[-0.05em]"
+                    className="text-[34px] font-semibold tracking-[-0.05em] text-white"
                   >
                     {plan.prices[region]}
                   </motion.span>
                   {region !== "enterprise" && (
-                    <span
-                      className={`text-[15px] ${plan.highlighted ? "text-white/60" : "text-muted-foreground"}`}
-                    >
+                    <span className="text-[15px] text-white/40">
                       {plan.period}
                     </span>
                   )}
@@ -193,19 +184,10 @@ export function PricingSection() {
               <ul className="mt-8 flex-1 space-y-3">
                 {plan.features.map((feature, j) => (
                   <li key={j} className="flex items-start gap-3">
-                    <div
-                      className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full"
-                      style={{
-                        background: plan.highlighted
-                          ? "rgba(255,255,255,0.2)"
-                          : "var(--gradient-primary-icon)",
-                      }}
-                    >
-                      <Check className="h-3 w-3 text-white" />
+                    <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/20">
+                      <Check className="h-3 w-3 text-primary" />
                     </div>
-                    <span
-                      className={`text-[15px] font-medium leading-[1.5] ${plan.highlighted ? "text-white/90" : ""}`}
-                    >
+                    <span className="text-[15px] font-medium leading-[1.5] text-white/60">
                       {feature}
                     </span>
                   </li>
@@ -214,10 +196,10 @@ export function PricingSection() {
               <Button
                 className={`mt-8 h-[42px] w-full rounded-xl text-[15px] font-semibold tracking-[-0.3px] ${
                   plan.highlighted
-                    ? "border-2 border-white/20 bg-white text-foreground hover:bg-white/90"
-                    : "border-2 border-border/75 bg-white text-foreground"
+                    ? "bg-primary text-white hover:bg-primary/90"
+                    : "border border-white/15 bg-transparent text-white hover:bg-white/10"
                 }`}
-                variant={plan.highlighted ? "secondary" : "outline"}
+                variant={plan.highlighted ? "default" : "outline"}
                 asChild
               >
                 <Link href={plan.href}>{plan.cta}</Link>
@@ -226,24 +208,18 @@ export function PricingSection() {
           ))}
         </div>
 
-        {/* Implementation services */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{
-            type: "spring",
-            bounce: 0.2,
-            duration: 0.6,
-            delay: 0.3,
-          }}
+          transition={{ type: "spring", damping: 18, stiffness: 70, delay: 0.3 }}
           className="mx-auto mt-12 max-w-3xl"
         >
-          <div className="arvio-card p-6">
-            <p className="text-[17px] font-semibold tracking-[-0.03em] text-foreground">
+          <div className="rounded-2xl border border-white/[0.08] bg-white/[0.03] p-6">
+            <p className="text-[17px] font-semibold tracking-[-0.03em] text-white">
               Implementation &amp; services
             </p>
-            <p className="mt-2 text-[15px] font-medium leading-[1.5] text-muted-foreground">
+            <p className="mt-2 text-[15px] font-medium leading-[1.5] text-white/40">
               Optional onboarding packages to get you live faster. Available for
               all tiers.
             </p>
@@ -253,8 +229,8 @@ export function PricingSection() {
                 { name: "Connector workshop", price: "From $2K" },
                 { name: "Custom add-ons", price: "Custom" },
               ].map((item, i) => (
-                <div key={i} className="rounded-xl bg-muted p-4">
-                  <div className="text-[15px] font-semibold tracking-[-0.03em]">
+                <div key={i} className="rounded-xl border border-white/[0.06] bg-white/[0.04] p-4">
+                  <div className="text-[15px] font-semibold tracking-[-0.03em] text-white/70">
                     {item.name}
                   </div>
                   <div className="mt-1 text-[15px] font-semibold text-primary">

@@ -6,7 +6,7 @@ export function FinanceLeadersContent() {
   return (
     <RoleSolutionLayout
       role="Finance Leaders"
-      headline="The Financial Intelligence Layer"
+      headline="Financial clarity. Before the board asks."
       subheadline="Collections and cash flow connected to customer reality — not just invoice aging."
       ctaLabel="Explore the workspace →"
       focus={[

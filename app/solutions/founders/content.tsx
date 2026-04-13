@@ -6,7 +6,7 @@ export function FoundersContent() {
   return (
     <RoleSolutionLayout
       role="Founders & CXOs"
-      headline="The Executive Operating Console"
+      headline="See only what matters. With full context attached."
       subheadline="Exception-based management for leaders — see only what requires your judgment, with full context attached."
       ctaLabel="See the executive view →"
       focus={[

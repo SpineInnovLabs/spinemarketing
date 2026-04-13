@@ -6,7 +6,7 @@ export function RetailContent() {
   return (
     <IndustrySolutionLayout
       category="Retail & Ecommerce"
-      headline="Unified commerce operations."
+      headline="One operational picture. Not isolated channels."
       subheadline="See stock, orders, returns, and support as one operational picture — not isolated channels."
       ctaLabel="Explore the workspace →"
       problem={{

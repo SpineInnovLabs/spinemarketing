@@ -6,7 +6,7 @@ export function CustomerSuccessRoleContent() {
   return (
     <RoleSolutionLayout
       role="Customer Success & TAMs"
-      headline="The CSM Command Center"
+      headline="Save accounts. Before the conversation starts."
       subheadline="AI surfaces which accounts need attention today — and drafts the save play for your approval."
       ctaLabel="See Account Success workspace →"
       ctaHref="/account-success"

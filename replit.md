@@ -79,6 +79,18 @@ The header (`components/header.tsx`) uses a grouped mega-dropdown for Solutions:
 - **Resources** → `/resources` (direct link)
 - **Company** → dropdown: About, Contact
 
+## Design System
+
+The entire site uses a **fully dark design** with the following conventions:
+- **Section backgrounds**: `rgb(8, 7, 14)` (near-black)
+- **Text**: `text-white` (headings), `text-white/45` (body), `text-white/40` (muted)
+- **Cards**: `border-white/[0.08] bg-white/[0.03]`, hover `border-white/[0.15]`
+- **Accent**: `text-primary` (teal) for highlighted text, badges, icons
+- **Ambient glows**: Radial gradients with teal/purple/red at low opacity + blur
+- **Headline pattern**: Two-part split on `. ` — white `headText` + teal `accentText`
+- **Animations**: Framer Motion `whileInView` with spring transitions, stagger variants, `useScroll`/`useTransform` parallax, `AnimatedCounter` (intersection observer + rAF), `FloatingParticles` (seeded random positions)
+- **Product UI mockups** (inside how-it-works/solutions-doors sections) intentionally use light backgrounds to demo the actual product interface
+
 ## Shared Layout Components
 
 - `app/solutions/_shared/IndustrySolutionLayout.tsx` — shared layout for all 6 industry pages

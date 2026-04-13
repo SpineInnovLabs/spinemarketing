@@ -6,7 +6,7 @@ export function SaasContent() {
   return (
     <IndustrySolutionLayout
       category="SaaS & Subscription"
-      headline="The SaaS Intelligence Workspace."
+      headline="Protect NRR. Catch churn before it starts."
       subheadline="Unify product usage, billing, support, and CRM to protect NRR and catch churn before it happens."
       ctaLabel="See Account Success workspace →"
       ctaHref="/contact"

@@ -6,7 +6,7 @@ export function ManufacturingContent() {
   return (
     <IndustrySolutionLayout
       category="Manufacturing & Trade"
-      headline="From chaos to clarity."
+      headline="Catch exceptions. Before your customers do."
       subheadline="Connect orders, shipments, and payments into one exception workspace — AI flags what's stuck before it reaches the customer."
       ctaLabel="Explore the workspace →"
       problem={{

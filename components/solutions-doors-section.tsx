@@ -468,10 +468,10 @@ const sectionHeading = (
     transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
     className="mx-auto max-w-2xl text-center"
   >
-    <h2 className="section-heading">
+    <h2 className="text-[36px] font-semibold leading-[1.15] tracking-[-0.04em] text-white sm:text-[44px]">
       Three ways to <span className="text-primary">take control</span>
     </h2>
-    <p className="mt-4 text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">
+    <p className="mt-4 text-[16px] font-medium leading-[1.6] text-white/45">
       One Knowledge Workspace. Different views for individuals, account teams,
       and operations leaders — all powered by the same Spine and AI Twin.
     </p>
@@ -513,18 +513,17 @@ function SolutionLinks() {
           >
             <Link
               href={link.href}
-              className="group flex items-center justify-between rounded-2xl border border-border/50 bg-white px-6 py-4 transition-all hover:shadow-lg"
-              style={{ boxShadow: "var(--shadow-card)" }}
+              className="group flex items-center justify-between rounded-2xl border border-white/[0.08] bg-white/[0.03] px-6 py-4 transition-all hover:border-white/[0.15]"
             >
               <div>
-                <div className="text-[15px] font-semibold tracking-[-0.02em]">
+                <div className="text-[15px] font-semibold tracking-[-0.02em] text-white">
                   {link.label}
                 </div>
-                <div className="text-[13px] text-muted-foreground">
+                <div className="text-[13px] text-white/40">
                   {link.desc}
                 </div>
               </div>
-              <ArrowRight className="h-4 w-4 text-muted-foreground transition-transform group-hover:translate-x-1 group-hover:text-primary" />
+              <ArrowRight className="h-4 w-4 text-white/30 transition-transform group-hover:translate-x-1 group-hover:text-primary" />
             </Link>
           </motion.div>
         ))}
@@ -552,15 +551,19 @@ export function SolutionsDoorsSection() {
           id="solutions"
           steps={steps}
           heading={sectionHeading}
+          style={{ backgroundColor: "rgb(8, 7, 14)" }}
         />
       ) : (
         <StickyScrollReveal
           id="solutions"
           steps={steps}
           heading={sectionHeading}
+          style={{ backgroundColor: "rgb(8, 7, 14)" }}
         />
       )}
-      <SolutionLinks />
+      <div style={{ backgroundColor: "rgb(8, 7, 14)" }}>
+        <SolutionLinks />
+      </div>
     </>
   );
 }

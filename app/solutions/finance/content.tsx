@@ -6,7 +6,7 @@ export function FinanceIndustryContent() {
   return (
     <IndustrySolutionLayout
       category="Finance & Revenue Operations"
-      headline="Financial operations with full context."
+      headline="Collections with context. Not just invoice dates."
       subheadline="Collections, revenue recognition, and cash flow connected to customer health — not just invoice dates."
       ctaLabel="Explore the workspace →"
       problem={{

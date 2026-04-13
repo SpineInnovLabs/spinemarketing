@@ -33,7 +33,7 @@ export default function PricingPage() {
             </div>
           </div>
         </section>
-        <PricingSection />
+        <PricingSection hideHeading />
         <FinalCTA />
       </main>
       <Footer />

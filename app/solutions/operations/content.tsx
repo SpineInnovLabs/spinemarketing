@@ -6,7 +6,7 @@ export function OperationsContent() {
   return (
     <RoleSolutionLayout
       role="Operations & Delivery"
-      headline="The Delivery Control Room"
+      headline="Catch delivery risks. Before they reach the client."
       subheadline="Project status, resource utilization, and client communication unified — AI flags exceptions, you approve the fix."
       ctaLabel="Explore the workspace →"
       focus={[

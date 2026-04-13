@@ -6,7 +6,7 @@ export function IndividualContent() {
   return (
     <RoleSolutionLayout
       role="Individual Professionals"
-      headline="Your Personal Command Center"
+      headline="Your day, organised. Your context, remembered."
       subheadline="All your work, one calm view — AI remembers context across sessions, you approve every action."
       ctaLabel="Try Personal Ops →"
       ctaHref="/personal-ops"

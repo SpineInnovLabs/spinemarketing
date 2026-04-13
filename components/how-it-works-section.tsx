@@ -381,11 +381,11 @@ const sectionHeading = (
       transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
       className="mx-auto max-w-2xl text-center"
     >
-      <h2 className="section-heading">
+      <h2 className="text-[36px] font-semibold leading-[1.15] tracking-[-0.04em] text-white sm:text-[44px]">
         From scattered apps to{" "}
         <span className="text-primary">one clear picture</span>
       </h2>
-      <p className="mt-4 text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">
+      <p className="mt-4 text-[16px] font-medium leading-[1.6] text-white/45">
         Four steps. One workspace. You stay in control.
       </p>
     </motion.div>
@@ -421,7 +421,8 @@ export function HowItWorksSection() {
         id="how-it-works"
         steps={steps}
         heading={sectionHeading}
-        className="bg-muted"
+        className=""
+        style={{ backgroundColor: "rgb(8, 7, 14)" }}
       />
     );
   }
@@ -431,7 +432,8 @@ export function HowItWorksSection() {
       id="how-it-works"
       steps={steps}
       heading={sectionHeading}
-      className="bg-muted"
+      className=""
+      style={{ backgroundColor: "rgb(8, 7, 14)" }}
     />
   );
 }

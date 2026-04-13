@@ -6,7 +6,7 @@ export function ProfessionalServicesContent() {
   return (
     <IndustrySolutionLayout
       category="Professional Services"
-      headline="Every engagement, fully visible."
+      headline="Stop revenue leaks. See every engagement clearly."
       subheadline="Matters, time, billing, and client relationships in one governed workspace — no more revenue lost to unbilled time."
       ctaLabel="Explore the workspace →"
       problem={{

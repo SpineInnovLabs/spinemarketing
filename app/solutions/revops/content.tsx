@@ -6,7 +6,7 @@ export function RevOpsContent() {
   return (
     <RoleSolutionLayout
       role="Rev / Business Ops"
-      headline="The Revenue Operating System"
+      headline="Revenue intelligence. Fully traceable."
       subheadline="Pipeline, bookings, billings, and churn in one truth layer — detect process leaks and fix them."
       ctaLabel="Explore Business Ops →"
       ctaHref="/business-ops"

@@ -23,6 +23,7 @@ interface StickyScrollRevealProps {
   className?: string
   /** ID for anchor linking */
   id?: string
+  style?: React.CSSProperties
 }
 
 export function StickyScrollReveal({
@@ -30,6 +31,7 @@ export function StickyScrollReveal({
   heading,
   className,
   id,
+  style,
 }: StickyScrollRevealProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const [activeIndex, setActiveIndex] = useState(0)
@@ -50,7 +52,7 @@ export function StickyScrollReveal({
   })
 
   return (
-    <section id={id} className={cn("relative", className)}>
+    <section id={id} className={cn("relative", className)} style={style}>
       {/* Section heading (outside sticky area) */}
       {heading && (
         <div className="mx-auto max-w-[1100px] px-6 pt-[100px] pb-8 md:px-16">
@@ -78,7 +80,7 @@ export function StickyScrollReveal({
                         "flex h-9 w-9 items-center justify-center rounded-lg text-[13px] font-bold transition-colors duration-300",
                         i <= activeIndex
                           ? "text-white"
-                          : "bg-border/40 text-muted-foreground"
+                          : "bg-white/[0.08] text-white/40"
                       )}
                       style={
                         i <= activeIndex
@@ -89,7 +91,7 @@ export function StickyScrollReveal({
                       {String(i + 1).padStart(2, "0")}
                     </motion.div>
                     {i < steps.length - 1 && (
-                      <div className="relative h-[3px] flex-1 rounded-full bg-border/30">
+                      <div className="relative h-[3px] flex-1 rounded-full bg-white/[0.08]">
                         <motion.div
                           className="absolute inset-y-0 left-0 rounded-full"
                           style={{ background: "var(--gradient-primary)" }}
@@ -121,7 +123,7 @@ export function StickyScrollReveal({
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.35, delay: 0.05 }}
-                className="text-[34px] font-semibold tracking-[-0.04em] leading-[1.15] text-foreground sm:text-[40px]"
+                className="text-[34px] font-semibold tracking-[-0.04em] leading-[1.15] text-white sm:text-[40px]"
               >
                 {steps[activeIndex].title}
               </motion.h3>
@@ -132,7 +134,7 @@ export function StickyScrollReveal({
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.35, delay: 0.1 }}
-                className="mt-4 max-w-md text-[16px] font-medium leading-[1.6] tracking-[-0.02em] text-muted-foreground"
+                className="mt-4 max-w-md text-[16px] font-medium leading-[1.6] tracking-[-0.02em] text-white/45"
               >
                 {steps[activeIndex].description}
               </motion.p>
@@ -176,9 +178,10 @@ export function StickyScrollFallback({
   heading,
   className,
   id,
+  style,
 }: StickyScrollRevealProps) {
   return (
-    <section id={id} className={cn("arvio-section", className)}>
+    <section id={id} className={cn("arvio-section", className)} style={style}>
       <div className="mx-auto max-w-[1100px]">
         {heading}
         <div className="mt-16 space-y-12">
@@ -208,10 +211,10 @@ export function StickyScrollFallback({
                     {step.label}
                   </span>
                 )}
-                <h3 className="text-[28px] font-semibold tracking-[-0.04em] leading-[1.15]">
+                <h3 className="text-[28px] font-semibold tracking-[-0.04em] leading-[1.15] text-white">
                   {step.title}
                 </h3>
-                <p className="mt-3 text-[15px] font-medium leading-[1.6] text-muted-foreground">
+                <p className="mt-3 text-[15px] font-medium leading-[1.6] text-white/45">
                   {step.description}
                 </p>
               </div>
