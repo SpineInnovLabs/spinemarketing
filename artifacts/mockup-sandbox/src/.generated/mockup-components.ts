@@ -3,5 +3,8 @@ type ModuleMap = Record<string, () => Promise<Record<string, unknown>>>;
 export const modules: ModuleMap = {
   "./components/mockups/linkedin-ads/Identity.tsx": () => import("../components/mockups/linkedin-ads/Identity.tsx"),
   "./components/mockups/linkedin-ads/Outcome.tsx": () => import("../components/mockups/linkedin-ads/Outcome.tsx"),
+  "./components/mockups/linkedin-ads/OutcomeV1.tsx": () => import("../components/mockups/linkedin-ads/OutcomeV1.tsx"),
+  "./components/mockups/linkedin-ads/OutcomeV2.tsx": () => import("../components/mockups/linkedin-ads/OutcomeV2.tsx"),
+  "./components/mockups/linkedin-ads/OutcomeV3.tsx": () => import("../components/mockups/linkedin-ads/OutcomeV3.tsx"),
   "./components/mockups/linkedin-ads/PainPoint.tsx": () => import("../components/mockups/linkedin-ads/PainPoint.tsx")
 };
