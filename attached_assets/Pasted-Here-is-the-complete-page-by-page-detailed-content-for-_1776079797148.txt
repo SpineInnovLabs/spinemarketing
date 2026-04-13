@@ -1,0 +1,345 @@
+Here is the complete, page-by-page detailed content for your expanded navigation architecture—ready for Webflow, Next.js, or your CMS.
+
+---
+
+# **SOLUTIONS ARCHITECTURE**
+
+## **By Function**
+
+### **1. Account Success** `/solutions/account-success`
+*For CSMs, Account Managers, and Growth teams managing B2B relationships*
+
+**Hero**  
+**Headline:** Save accounts. Accelerate renewals. Never miss a signal.  
+**Subheadline:** One Account 360 that unifies CRM, product usage, billing, and support—where AI surfaces churn risk and expansion opportunity with evidence, and every save play waits for your approval.  
+**CTA:** See Account Success workspace →
+
+**The Problem**  
+You manage 50-100 accounts. To prepare for a QBR, you open Salesforce, Zendesk, Stripe, your product analytics tool, Gmail, and Slack. By the time you’ve assembled context, the meeting started—or the renewal already slipped.  
+- Risk hides in the gaps between usage drop and support tickets.  
+- Expansion opportunity is invisible when billing lives in QuickBooks and activity lives in Salesforce.  
+- You write the same "checking in" emails because you don't have the full health picture.
+
+**The Solution**  
+IntegrateWise gives CSMs a **Account Command Center**—a single workspace where the Spine assembles the complete customer story from every connected system. The Twin reads this unified picture, detects patterns that indicate risk or growth potential, and prepares recommended actions. But nothing sends until you approve it.
+
+**Core Capabilities**  
+- **Renewal Command Center:** 90/60/30-day pipeline with health indicators drawn from cross-system signals (usage + billing + sentiment).  
+- **Champion Lifecycle Tracking:** Automatic stakeholder mapping with departure alerts; when your champion leaves, AI flags the account for immediate attention.  
+- **QBR Auto-Prep:** One-click generation of business review decks using real product adoption data, outcome metrics, and relationship history—not CRM guesses.  
+- **Save Play Workspace:** AI suggests specific interventions based on risk patterns (e.g., "Usage down + Sponsor gone + Payment late = High churn risk"), drafts the outreach, and queues it for your edit and approval.
+
+**Governance**  
+Every health score change, every escalation suggestion, every renewal forecast displays its source data and confidence score. You approve or edit before any customer communication sends. Full audit trail: "CSM approved risk escalation on [Date] based on Spine confidence score 87/100."
+
+**Connects:** Salesforce, HubSpot, Zendesk, Intercom, Stripe, Chargebee, product analytics (Segment, Amplitude), Slack, Gmail.  
+**KPIs:** Net Revenue Retention (NRR), Gross Revenue Retention (GRR), Time-to-Intervention, Expansion Rate, Renewal Forecast Accuracy.
+
+---
+
+### **2. Business Ops** `/solutions/business-ops`
+*For COOs, RevOps, and Operations leaders who need the live operating picture*
+
+**Hero**  
+**Headline:** The live operating picture. Governed.  
+**Subheadline:** Revenue, risk, and operations unified in one executive workspace. AI explains what changed across your systems this week and proposes actions—waiting for your approval before any system updates.  
+**CTA:** Explore Business Ops →
+
+**The Problem**  
+Your business truth is fragmented across 12+ tools. Your Monday morning involves logging into Salesforce, Stripe, Zendesk, Asana, and three different spreadsheets to understand if you're on track. By Wednesday, the picture is outdated.  
+- Revenue leaks appear first in billing, last in CRM.  
+- Escalations start in support but don't reach leadership until they're fires.  
+- Board decks require 6 hours of manual data stitching—and you still don't trust the numbers.
+
+**The Solution**  
+Business Ops is a **command center** connecting pipeline, bookings, billings, collections, delivery status, and customer health into one governed view. The Spine normalizes data from CRM, finance, support, and project systems. The Twin detects operational patterns (process blocks, margin leaks, cash flow risks) and prepares executive briefs and suggested interventions. TruthLayer ensures every proposed change—whether a process fix or a data correction—waits for human approval.
+
+**Core Capabilities**  
+- **Weekly Operating Brief:** AI-generated one-page narrative of business changes (revenue movement, at-risk accounts, collection priorities, delivery exceptions) with evidence from source systems.  
+- **Revenue & Cash Cockpit:** Real-time view of ARR, MRR, collections, and churn risk with drill-down to account-level context.  
+- **Exception-Based Management:** Surface only what requires human judgment—AI suppresses noise, highlights true anomalies (e.g., "Deal stalled in 'Negotiation' for 45 days with no stakeholder activity").  
+- **Cross-Functional Alignment:** Shared definitions across Sales, CS, and Finance. One definition of "At-Risk," sourced from the same Spine data.
+
+**Governance**  
+Process changes, health score adjustments, and automated workflows all route through approval gates. RevOps maintains control over definitions; executives maintain control over actions. Immutable logs show who approved what operational change and when.
+
+**Connects:** Salesforce, HubSpot, QuickBooks, Stripe, Zendesk, Jira, Asana, Monday.com, NetSuite, Slack.  
+**KPIs:** Cash Conversion Cycle, Pipeline Coverage, Forecast Accuracy, Collection Efficiency, Gross Margin per Project.
+
+---
+
+### **3. Personal Ops** `/solutions/personal-ops`
+*For individual operators, managers, and knowledge workers*
+
+**Hero**  
+**Headline:** Your workspace. Your context. Total control.  
+**Subheadline:** Tasks, follow-ups, emails, and threads from all your apps unified in one calm view. AI prepares your morning brief and suggests next actions—never executing without your explicit approval.  
+**CTA:** Try Personal Ops →
+
+**The Problem**  
+You live across Gmail, Slack, Salesforce, Notion, Jira, and Calendar. You spend 40% of your day just figuring out what you should be doing—hunting for context, scrolling through threads, checking five apps before a meeting.  
+- Follow-ups fall through cracks because they live in different tools.  
+- You miss critical context in meetings because you can't assemble the full story fast enough.  
+- AI assistants act without your knowledge, sending messages or creating tasks you didn't authorize.
+
+**The Solution**  
+Personal Ops is your **individual command center**—a L1 workspace aggregating your specific tasks, commitments, and priorities from across the organization's tools. The Twin reads your Spine-connected data and provides a morning brief, session memory, and cross-tool search. But unlike "agent" tools, it cannot send emails, update tickets, or move deals without your explicit click.
+
+**Core Capabilities**  
+- **Morning Brief:** 2-minute AI-generated digest of what changed overnight in your accounts, projects, and priorities—pulled from email, Slack, CRM, and task tools.  
+- **Follow-Up Memory:** "You promised to check on this 4 days ago across three different threads. Here's the current status and suggested next step."  
+- **Meeting Prep:** Instant pre-meeting briefs with recent emails, ticket updates, deal changes, and stakeholder notes for the specific attendees.  
+- **Focus Mode:** AI-suggested priority queue based on deadlines, stakeholder seniority, and business impact—not just due dates.
+
+**Governance**  
+Personal but governed. AI can draft your responses, but cannot send them. It can suggest tasks, but cannot create them in your name until you approve. Your personal workspace respects organizational data permissions—you only see what the Spine's RBAC allows.
+
+**Connects:** Gmail, Outlook, Slack, Salesforce, HubSpot, Notion, Asana, Jira, Google Calendar, Zoom.  
+**KPIs:** Response Time, Task Completion Velocity, Meeting Preparation Quality, Context-Switching Reduction.
+
+---
+
+## **By Industry**
+
+### **4. SaaS** `/solutions/industries/saas`
+**Focus:** Renewals, expansion, adoption
+
+**Hero**  
+**Headline:** The SaaS Intelligence Workspace  
+**Subheadline:** Unify product usage, subscription billing, support health, and CRM data to protect NRR and catch churn before it happens.
+
+**Problem**  
+Renewal risk is invisible in CRM. A customer can show "Healthy" in Salesforce while their product usage cliff-dropped and their champion just quit—information trapped in three different tools.
+
+**Solution**  
+IntegrateWise connects your product analytics (Segment, Amplitude, Mixpanel), billing (Stripe, Chargebee), support (Zendesk), and CRM (Salesforce) into one Account 360. AI correlates usage patterns with renewal dates, flagging "Product-Qualified Risk" and "Product-Qualified Expansion" for CSMs to act on—with approval gates ensuring no automated emails damage relationships.
+
+**Specific Capabilities:**  
+- **Adoption-to-Renewal Tracking:** Health scores weighted by login frequency, feature adoption, and license utilization, not just gut feel.  
+- **Churn Early Warning:** Pattern detection across support ticket sentiment, payment delays, and usage drops.  
+- **Expansion Playbooks:** AI identifies "Power Users" approaching license limits and drafts upgrade conversations.
+
+**Connectors:** Salesforce, HubSpot, Stripe, Chargebee, Zendesk, Segment, Amplitude, Slack, GitHub (for dev-facing products).  
+**Metrics:** NRR, Logo Retention, Time-to-Value, Expansion ARR.
+
+---
+
+### **5. Services & Agencies** `/solutions/industries/services`
+**Focus:** Projects, utilisation, billing
+
+**Hero**  
+**Headline:** Protect margin. Deliver certainty.  
+**Subheadline:** One view of project health, team utilization, client billing, and delivery risk—where AI flags scope creep before it erodes your margin.
+
+**Problem**  
+Projects live in Asana or Jira. Time tracking is in Harvest or Toggl. Invoices are in QuickBooks. Client emails are in Gmail. You discover a project is bleeding margin only when you reconcile the books—too late to fix it.
+
+**Solution**  
+Unify project management, time tracking, billing, and client communication into one **Project 360**. The Spine links tasks to invoices to emails, showing real-time project margin. AI detects utilization drops, scope creep signals (tickets outside SOW), and billing delays, proposing actions for project managers to approve.
+
+**Specific Capabilities:**  
+- **Margin Protection:** Real-time project P&L showing billed vs. burned vs. scope.  
+- **Utilization Balancing:** AI suggests resource reallocation when team members are under/over-booked across projects.  
+- **Client Health Scoring:** Support ticket volume + payment history + stakeholder sentiment analysis.
+
+**Connectors:** Asana, Monday.com, Jira, Harvest, Toggl, QuickBooks, Xero, Slack, Gmail.  
+**Metrics:** Project Margin, Utilization Rate, Days Sales Outstanding (DSO), Client Satisfaction.
+
+---
+
+### **6. Manufacturing & Trade** `/solutions/industries/manufacturing`
+**Focus:** Orders, shipments, exceptions
+
+**Hero**  
+**Headline:** From chaos to clarity.  
+**Subheadline:** Connect orders, production, shipments, and payments into one exception-management workspace. AI flags what's stuck before it becomes a customer problem.
+
+**Problem**  
+Orders live in ERP. Shipments are tracked in spreadsheets. Customer communication is in email. You find out about a delayed shipment when the customer calls angry—not when it happened.
+
+**Solution**  
+IntegrateWise creates an **Order 360** connecting ERP (NetSuite, SAP), shipping trackers (FedEx, DHL APIs), inventory systems, and customer communication. AI monitors for exceptions—delayed shipments, inventory shortages, payment holds—and surfaces them with full customer context for operations teams to resolve.
+
+**Specific Capabilities:**  
+- **Exception Triage:** Auto-prioritize delayed orders by customer value and contract penalties.  
+- **Cash Flow Protection:** Link shipment confirmation to invoice release; flag orders shipped-but-not-billed.  
+- **Supplier Risk:** Track inbound delays that affect your outbound commitments.
+
+**Connectors:** NetSuite, SAP, Shopify, Salesforce, logistics APIs, QuickBooks.  
+**Metrics:** On-Time Delivery %, Cash Conversion Cycle, Exception Resolution Time.
+
+---
+
+### **7. Retail & Ecommerce** `/solutions/industries/retail`
+**Focus:** Stock, orders, returns, support
+
+**Hero**  
+**Headline:** Unified commerce operations.  
+**Subheadline:** See stock, orders, returns, and customer support as one operational picture—not isolated channels.
+
+**Problem**  
+Your ecommerce platform (Shopify), inventory (DEAR), support (Zendesk), and returns (Loop) don't talk. High-value customers return products and complain on Twitter before your team knows they had a problem.
+
+**Solution**  
+The Spine unifies commerce data into a **Customer Operations Workspace**. AI detects patterns like "VIP customer + return initiated + negative sentiment in support" and flags for immediate retention action—waiting for your approval before sending recovery offers.
+
+**Specific Capabilities:**  
+- **Inventory-Aware Support:** Support agents see stock levels when handling complaints; can reserve replacement inventory immediately.  
+- **Returns Intelligence:** AI correlates return reasons with product batches or descriptions to flag quality issues.  
+- **VIP Routing:** High-value customers with open orders get priority support queue placement.
+
+**Connectors:** Shopify, WooCommerce, NetSuite, Zendesk, Loop, Gorgias, Klaviyo, Stripe.  
+**Metrics:** Customer Lifetime Value (CLV), Return Rate, Support Resolution Time, Stock-Out Frequency.
+
+---
+
+### **8. Professional Services** `/solutions/industries/professional-services`
+**Focus:** Engagements, billing, relationships
+
+**Hero**  
+**Headline:** Every engagement, fully visible.  
+**Subheadline:** Law firms, consultancies, and advisory practices unified—matters, time, billing, and client relationships in one governed workspace.
+
+**Problem**  
+Matters live in practice management software. Time is captured separately. Client relationships are in partners' inboxes. You lose revenue to unbilled time and scope creep because the full engagement picture is fragmented.
+
+**Solution**  
+**Engagement 360** connects practice management (Clio, LeanLaw, Actionstep), time tracking, billing, and email into one client view. AI flags "Matters approaching scope limits," "Unbilled time exceeding 30 days," and "Key client stakeholder disengaged."
+
+**Specific Capabilities:**  
+- **Matter Margin Tracking:** Real-time view of billed vs. WIP vs. original estimate.  
+- **Client Relationship Monitoring:** Track communication frequency with key decision-makers; alert when engagement goes silent.  
+- **Billing Hygiene:** Auto-flag time entries missing narratives or matters approaching billing caps.
+
+**Connectors:** Clio, LeanLaw, Actionstep, QuickBooks, Xero, Outlook, Gmail.  
+**Metrics:** Realization Rate, Collection Rate, Matter Profitability, Client Concentration Risk.
+
+---
+
+### **9. Finance** `/solutions/industries/finance`
+**Focus:** Revenue, risk, collections, cash
+
+**Hero**  
+**Headline:** Financial operations with full context.  
+**Subheadline:** Collections, revenue recognition, and cash flow management connected to customer health—not just invoice dates.
+
+**Problem**  
+Finance teams collect cash without knowing if the customer is about to churn (information in CS tools). Revenue is recognized without seeing delivery risk (information in project tools). Bad debt surprises happen because credit risk and customer success don't share data.
+
+**Solution**  
+IntegrateWise gives Finance a **Revenue Risk Workspace** connecting accounting (QuickBooks, NetSuite), CRM, billing, and customer health data. AI prioritizes collections not just by "days overdue" but by "ability to pay + strategic importance + churn risk."
+
+**Specific Capabilities:**  
+- **Smart Collections:** Prioritize dunning by customer health score and payment history; draft tone-appropriate follow-ups (friendly for healthy accounts, urgent for at-risk).  
+- **Revenue Leak Detection:** Identify "billed but not delivered" or "delivered but not billed" discrepancies across systems.  
+- **Cash Flow Forecasting:** AI predicts cash collection probability based on customer health, not just invoice aging.
+
+**Connectors:** QuickBooks, NetSuite, Sage, Stripe, Salesforce, HubSpot, Zendesk.  
+**Metrics:** Days Sales Outstanding (DSO), Bad Debt Rate, Cash Forecast Accuracy, Collection Efficiency.
+
+---
+
+## **By Role**
+
+### **10. Customer Success & TAMs** `/solutions/roles/customer-success`
+*Save accounts, accelerate renewals*
+
+**Hero:** The CSM Command Center  
+**Subheadline:** One Account 360 where AI surfaces exactly which accounts need attention today—and drafts the save play for your approval.
+
+**Focus:**  
+- Renewal risk prediction (90-day lookahead)  
+- Expansion signal detection (usage up, new stakeholders)  
+- QBR preparation automation  
+- Escalation management with full context
+
+**Governance Note:** AI suggests health score changes; you approve them. AI drafts EBR decks; you finalize before sending. No customer-facing action executes without CSM review.
+
+---
+
+### **11. Founders & CXOs** `/solutions/roles/executives`
+*Monday brief, board pack, full view*
+
+**Hero:** The Executive Operating Console  
+**Subheadline:** Exception-based management for leaders. See only what requires your judgment, with the full context attached.
+
+**Focus:**  
+- **Monday Morning Brief:** One-page narrative of week's changes generated from live Spine data.  
+- **Board Pack Auto-Generation:** Standardized metrics (NRR, Burn, Cash, Pipeline) with drill-down evidence.  
+- **Strategic Account Oversight:** Direct view into top 20% of accounts by revenue/risk.  
+- **Governance Oversight:** Audit trail of all AI-approved actions across the org.
+
+**Governance Note:** You see what changed and why. You approve strategic actions. The system enforces that no critical customer change happens without executive visibility if you set the threshold.
+
+---
+
+### **12. Rev / Business Ops** `/solutions/roles/revops`
+*Pipeline, headcount, risk — connected*
+
+**Hero:** The Revenue Operating System  
+**Subheadline:** Connect pipeline, bookings, billings, and churn into one truth layer. Detect process leaks and fix them with governed AI.
+
+**Focus:**  
+- **Process Health Monitoring:** Quote-to-Cash velocity, SLA adherence, bottleneck detection.  
+- **Data Hygiene Automation:** AI detects duplicate records, stale opportunities, missing fields—proposes fixes for approval.  
+- **Forecast Governance:** Rolling forecast based on pipeline + historical conversion + account health, not just rep guesses.  
+- **Cross-Tool Workflow Orchestration:** Route actions between Sales, CS, and Finance with approval gates at each handoff.
+
+**Governance Note:** You define the rules (what constitutes an "At-Risk" opportunity). AI enforces them with suggestions, not automation. You approve process changes before they propagate.
+
+---
+
+### **13. Operations & Delivery** `/solutions/roles/operations`
+*Projects, utilisation, exceptions*
+
+**Hero:** The Delivery Control Room  
+**Subheadline:** Project status, resource utilization, and client communication unified. AI flags exceptions; you approve the fix.
+
+**Focus:**  
+- **Project Health 360:** Timeline, budget, utilization, and client sentiment in one view.  
+- **Exception Management:** Auto-escalate projects at risk of missing milestones or margins.  
+- **Resource Optimization:** AI suggests rebalancing based on skills, availability, and project priority.  
+- **Client Communication Governance:** Draft project updates with full context; approve before sending.
+
+**Governance Note:** Project status changes, resource reassignments, and client communications queue for PM/Operations lead approval. No surprise scope changes or team moves.
+
+---
+
+### **14. Finance Leaders** `/solutions/roles/finance`
+*Cash, collections, runway*
+
+**Hero:** The Financial Intelligence Layer  
+**Subheadline:** Collections and cash flow management connected to customer reality—not just invoice aging.
+
+**Focus:**  
+- **Revenue Protection:** Link billing to delivery and customer health; don't bill customers about to churn.  
+- **Smart Collections:** Prioritize by cash impact and customer health, not just days overdue.  
+- **Audit Readiness:** Immutable logs of all revenue-impacting decisions with source evidence.  
+- **Cash Forecasting:** AI-weighted projections based on customer health scores and payment history.
+
+**Governance Note:** Every dunning message, every write-off recommendation, every revenue recognition adjustment requires Finance approval with full audit trail. AI provides the analysis; humans control the cash.
+
+---
+
+### **15. Individual Professionals** `/solutions/roles/individuals`
+*Morning brief, session memory*
+
+**Hero:** Your Personal Command Center  
+**Subheadline:** All your work, one calm view. AI remembers context across sessions; you approve every action.
+
+**Focus:**  
+- **Cross-Tool Task Aggregation:** See today's priorities from Jira, Asana, Email, and Slack in one queue.  
+- **Session Memory:** AI recalls what you were working on yesterday and suggests where to pick up.  
+- **Smart Drafting:** Emails, updates, and notes drafted with full cross-tool context—your edit and approval required before sending.  
+- **Focus Protection:** AI filters noise, surfaces only what matches your role and priorities.
+
+**Governance Note:** Personal but safe. AI cannot send communications or update records on your behalf without explicit click-to-approve. Your context stays private; organizational data respects RBAC.
+
+---
+
+**Navigation Implementation Notes:**
+- **By Function** links target specific team outcomes (what the team achieves).
+- **By Industry** links adapt the language to sector-specific entities (e.g., "Orders" vs. "Deals").
+- **By Role** links speak to daily workflows and personal productivity concerns.
+
+All paths converge on the same architecture: **Spine normalization → Workspace rendering → Twin reasoning → TruthLayer approval.**
