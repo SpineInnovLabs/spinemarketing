@@ -1,0 +1,152 @@
+Skip to main content
+Platform | IntegrateWise
+IntegrateWise
+
+Platform
+Truth. Context. AI Sessions.
+Entity 360. Repeat.
+Every tool you use generates data. The Platform turns that data into truth, wraps it in context, surfaces it as actionable AI sessions, and delivers it as a unified Entity 360. Then repeats.
+
+Truth
+Context
+AI Sessions
+Entity 360
+Repeat
+See it in action →
+View connectors →
+The Data Pipeline
+
+Loader → Normalizer → Spine + Context → Entity 360 → Twin
+How raw, fragmented tool data becomes unified canonical truth — available to every AI session and every user in real time.
+
+1
+Loader
+Pulls raw data from every connected tool via APIs, webhooks, streaming events, and file drops. Idempotent ingestion with dead-letter queuing.
+
+2
+Normalizer
+Validates, parses, deduplicates, and maps vendor-specific payloads to canonical Spine schema. Golden record creation with conflict resolution.
+
+3
+Spine + Context
+Normalized entities (Account, Contact, Deal, Ticket) persist in the SSOT with full versioning. Relationship graphs and temporal markers enrich every record.
+
+4
+Entity 360
+A queryable, living object assembled in real-time from Spine — CRM health, billing, tickets, usage, and stakeholder signals unified in one view.
+
+5
+Twin
+The Cognitive Layer reads from Spine continuously, detecting cross-system signals and building reasoning chains grounded in canonical entity data.
+
+The Intelligence Layer
+
+AI Session Summaries → Triage Bot → Knowledge UI → Entity 360 → Twin
+How your team's interactions become structured knowledge — and how the Twin compounds that knowledge into sharper intelligence with every approved session.
+
+1
+AI Session Summaries
+Every customer call, email thread, and meeting auto-summarized, linked to entity records, and persisted in Spine as structured knowledge — not lost in inbox history.
+
+2
+Triage Bot
+Monitors the Spine for risk signals, renewal flags, and anomalies across every account. Surfaces prioritized actions with confidence scores and evidence chains.
+
+3
+Knowledge UI
+The Workspace surface where approved insights, session memory, and entity context live side-by-side. No context-switching — everything your team needs is one view.
+
+4
+Entity 360
+AI and human context converge at the Entity 360 — the live account, contact, or deal view that combines system data with session intelligence.
+
+5
+Twin
+Your AI counterpart that learns from every approved session, compounds cross-account insights, and gets sharper with every approval and rejection.
+
+The Twin learns from every approved session.
+
+Every approval, rejection, and edit feeds back into the reasoning layer. The more your team uses it, the sharper it gets — across all accounts, not just the one in view.
+
+Learn about the Twin
+Platform Foundation
+
+Everything the loop runs on
+Services
+Implementation & Managed Ops
+Onboarding, connector configuration, schema mapping, and ongoing managed data operations. We get you to truth faster — and keep you there.
+
+Explore services →
+Connectors
+70+ pre-built connectors
+Salesforce, HubSpot, Stripe, Jira, Zendesk, Slack, and 65+ more. All normalized through the same 5-stage data chain into a single canonical Spine.
+
+View all connectors →
+Security
+Enterprise-grade governance
+AES-256 at rest, TLS 1.3 in transit, SOC 2 Type II audit trail, RBAC with field-level permissions, and an immutable decision log for every approved action.
+
+Review security →
+Truth. Context. AI Sessions.
+Entity 360. Repeat.
+The loop compounds. Every session sharpens the Twin. Every approval enriches the Spine. Every Entity 360 is more complete than the last.
+
+Book a walkthrough →
+See the Workspace →
+Ready to see everything in one place?
+Bring your existing apps into a Knowledge Workspace over the Spine and see how AI can think in context while you stay in control.
+
+Book a demo
+Talk to us
+IntegrateWise
+The Knowledge Workspace over the Spine and empowered by AI.
+
+
+AI Think in Context and Waits for your Approval.
+
+connect@integratewise.ai
+Solutions
+Account Success
+Business Ops
+Personal Ops
+View all solutions →
+By Industry
+SaaS
+Services & Agencies
+Manufacturing & Trade
+Retail & Ecommerce
+Professional Services
+Finance
+By Role
+Customer Success & TAMs
+Founders & CXOs
+Rev / Business Ops
+Operations & Delivery
+Finance Leaders
+Individual Professionals
+Product
+How It Works
+Spine & Intelligence
+The Twin
+Integrations
+Security
+Pricing
+Company
+Why IntegrateWise
+About
+Resources
+Blog
+Contact
+Documentation
+Changelog
+Stay in the loop
+
+Product updates, new connectors, and insights. No spam.
+
+you@company.com
+Subscribe
+© 2026 IntegrateWise LLP. All rights reserved.
+
+Privacy
+Terms
+Security
