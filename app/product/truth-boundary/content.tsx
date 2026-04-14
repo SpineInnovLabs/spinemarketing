@@ -91,7 +91,7 @@ export function TruthBoundaryContent() {
           <div className="grid gap-5 sm:grid-cols-3 max-w-3xl mx-auto">
             {[
               { title: "Mandatory Human Verification", desc: "Every AI action requires explicit human OK. No exceptions." },
-              { title: "Absolute Truth Boundary", desc: "AI restricted to validated SpineVault data only." },
+              { title: "Absolute Truth Boundary", desc: "AI restricted to validated Spine data only." },
               { title: "Data Sovereignty", desc: "You define what AI can access — not the platform." },
             ].map(({ title, desc }, i) => (
               <motion.div key={title} {...fade(i * 0.07)} className="arvio-card p-6">

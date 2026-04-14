@@ -9,7 +9,7 @@ import Link from "next/link";
 const capabilities = [
   {
     icon: Database,
-    title: "SpineVault",
+    title: "Spine",
     desc: "Knowledge Memory in constant readiness — zero retraining needed.",
     stat: "Zero retraining",
   },

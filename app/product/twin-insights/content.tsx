@@ -26,7 +26,7 @@ const exceptionItems = [
 const evidenceItems = [
   { icon: Brain, color: "text-purple-400", title: "Chain-of-Thought Visualization", desc: "Step-by-step AI reasoning traced to Spine records." },
   { icon: GitMerge, color: "text-cyan-400", title: "Dual Context Mapping", desc: "System impact alongside business impact, side by side." },
-  { icon: Zap, color: "text-emerald-400", title: "Source Attribution", desc: "Every insight links back to canonical SpineVault records." },
+  { icon: Zap, color: "text-emerald-400", title: "Source Attribution", desc: "Every insight links back to canonical Spine records." },
 ];
 
 export function TwinInsightsContent() {

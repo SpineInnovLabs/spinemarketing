@@ -97,14 +97,14 @@ export function PlatformFlowsContent() {
               {
                 id: "A",
                 name: "Flow A: Tool → Truth",
-                chain: "SaaS data → Connectors → SpineVault → Entity 360 → Twin monitoring",
+                chain: "SaaS data → Connectors → Spine → Entity 360 → Twin monitoring",
                 desc: "Raw tool data normalized and stored as canonical entities.",
                 governed: "System-governed",
               },
               {
                 id: "B",
                 name: "Flow B: Context → Truth",
-                chain: "AI Session Summaries → Flow C Triage → Knowledge UI validation → SpineVault update → Refined Twin reasoning",
+                chain: "AI Session Summaries → Flow C Triage → Knowledge UI validation → Spine update → Refined Twin reasoning",
                 desc: "Human interactions validated and stored as structured knowledge.",
                 governed: "Human-governed",
               },

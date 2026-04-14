@@ -18,7 +18,7 @@ const scoringLevels = [
 ];
 
 const sessionItems = [
-  { icon: Brain, color: "text-violet-400", title: "Zero-Shot Operation", desc: "Operates immediately on current SpineVault state." },
+  { icon: Brain, color: "text-violet-400", title: "Zero-Shot Operation", desc: "Operates immediately on current Spine state." },
   { icon: RefreshCw, color: "text-blue-400", title: "Context Grounding", desc: "All reasoning linked to specific Entity 360 objects." },
   { icon: Clock, color: "text-emerald-400", title: "Memory Continuity", desc: "Context accumulates across sessions automatically." },
 ];

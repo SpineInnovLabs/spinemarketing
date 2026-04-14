@@ -31,7 +31,7 @@ const rbacItems = [
 const emergencyItems = [
   { icon: AlertTriangle, color: "text-red-400", title: "Kill Switch", desc: "Immediate halt of all Twin operations. One click." },
   { icon: Eye, color: "text-violet-400", title: "Breach Response", desc: "Automated access logs for forensic analysis." },
-  { icon: RotateCcw, color: "text-cyan-400", title: "Recovery Interface", desc: "Point-in-time SpineVault restoration from backups." },
+  { icon: RotateCcw, color: "text-cyan-400", title: "Recovery Interface", desc: "Point-in-time Spine restoration from backups." },
 ];
 
 export function ProductSecurityContent() {

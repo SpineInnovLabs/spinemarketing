@@ -69,7 +69,7 @@ export function TheSpineContent() {
             {...heroFade(0.22)}
             className="text-[44px] font-semibold leading-[1.08] tracking-[-0.05em] text-white sm:text-[64px]"
           >
-            SpineVault —{" "}
+            The Spine —{" "}
             <span className="text-primary">the truth layer</span>
           </motion.h1>
           <motion.p

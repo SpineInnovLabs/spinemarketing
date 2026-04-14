@@ -7,7 +7,7 @@ import { TheSpineContent } from "./content"
 export const metadata: Metadata = {
   title: "The Spine | IntegrateWise Platform",
   description:
-    "SpineVault — the truth layer and adaptive infrastructure. Canonical entities, 8-stage normalization, Entity 360 assembly, and contextual firewalling.",
+    "The Spine — truth layer and adaptive infrastructure. Canonical entities and Entity 360 assembly.",
 }
 
 export default function TheSpinePage() {

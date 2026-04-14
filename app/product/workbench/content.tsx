@@ -82,7 +82,7 @@ const coreComponents = [
     bgColor: "bg-violet-400/10",
     borderColor: "border-violet-400/20",
     name: "Temporal Slider",
-    desc: "Point-in-time reconstruction from versioned SpineVault records.",
+    desc: "Point-in-time reconstruction from versioned Spine records.",
   },
   {
     icon: Map,
