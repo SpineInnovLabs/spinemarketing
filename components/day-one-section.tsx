@@ -2,6 +2,8 @@
 
 import { Check } from "lucide-react";
 import { motion } from "framer-motion";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 
 const outcomes = [
   "Your workspace arrives ready, not empty.",
@@ -24,9 +26,9 @@ const fadeRight = {
 
 export function DayOneSection() {
   return (
-    <section className="relative overflow-hidden py-32 md:py-40" style={{ backgroundColor: "rgb(8, 7, 14)" }}>
+    <section className="relative overflow-hidden bg-dark-section py-32 md:py-40">
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute right-[15%] top-[25%] h-[400px] w-[500px] rounded-full opacity-15 blur-[120px]" style={{ background: "radial-gradient(circle, rgba(45,212,191,0.25), transparent 70%)" }} />
+        <div className="absolute right-[15%] top-[25%] h-[400px] w-[500px] rounded-full opacity-15 blur-[120px]" style={{ background: "radial-gradient(circle, rgba(52,211,153,0.25), transparent 70%)" }} />
       </div>
       <div className="relative mx-auto max-w-[1100px] px-6">
         <div className="mx-auto max-w-4xl">
@@ -37,11 +39,13 @@ export function DayOneSection() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ type: "spring", damping: 18, stiffness: 70 }}
             >
-              <p className="mb-3 text-[12px] font-bold uppercase tracking-[0.14em] text-primary">Day one value</p>
-              <h2 className="text-[36px] font-semibold leading-[1.15] tracking-[-0.04em] text-white sm:text-[44px]">
+              <Badge variant="outline" className="mb-4 rounded-full border-primary/30 px-3 py-1 text-xs font-bold uppercase tracking-widest text-primary">
+                Day one value
+              </Badge>
+              <h2 className="text-4xl font-semibold leading-tight tracking-tight text-white sm:text-5xl">
                 What changes <span className="text-primary">on day one</span>
               </h2>
-              <p className="mt-6 text-[16px] font-medium leading-[1.7] text-white/45">
+              <p className="mt-6 text-base font-medium leading-relaxed text-white/45">
                 Value from day one. Not months.
               </p>
             </motion.div>
@@ -53,17 +57,17 @@ export function DayOneSection() {
               className="space-y-4"
             >
               {outcomes.map((outcome, i) => (
-                <motion.li
-                  key={i}
-                  variants={fadeRight}
-                  className="flex items-start gap-4 rounded-xl border border-white/[0.08] bg-white/[0.03] p-5 transition-colors hover:border-primary/20"
-                >
-                  <div className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/15">
-                    <Check className="h-3.5 w-3.5 text-primary" />
-                  </div>
-                  <span className="text-[15px] font-medium leading-[1.55] tracking-[-0.02em] text-white/60">
-                    {outcome}
-                  </span>
+                <motion.li key={i} variants={fadeRight}>
+                  <Card className="flex items-start gap-4 border-border bg-white/[0.03] p-5 transition-colors hover:border-primary/20">
+                    <CardContent className="flex items-start gap-4 p-0">
+                      <div className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/15">
+                        <Check className="h-3.5 w-3.5 text-primary" />
+                      </div>
+                      <span className="text-sm font-medium leading-relaxed text-white/60">
+                        {outcome}
+                      </span>
+                    </CardContent>
+                  </Card>
                 </motion.li>
               ))}
             </motion.ul>

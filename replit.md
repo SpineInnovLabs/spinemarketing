@@ -81,15 +81,32 @@ The header (`components/header.tsx`) uses a grouped mega-dropdown for Solutions:
 
 ## Design System
 
-The entire site uses a **fully dark design** with the following conventions:
-- **Section backgrounds**: `rgb(8, 7, 14)` (near-black)
+The entire site uses a **fully dark design** with shadcn/ui components and Tailwind CSS tokens:
+
+### UI Components (shadcn/ui)
+- `Card`, `CardHeader`, `CardTitle`, `CardDescription`, `CardContent`, `CardFooter`
+- `Badge` (variants: default, secondary, destructive, outline)
+- `Button` (variants: default, destructive, outline, secondary, ghost, link)
+- `Separator`
+- `Tabs`, `TabsList`, `TabsTrigger`, `TabsContent`
+- `Accordion`, `AccordionItem`, `AccordionTrigger`, `AccordionContent`
+- `Input`, `Textarea`
+- `Avatar`, `DropdownMenu`
+
+### Tailwind Tokens
+- **Section backgrounds**: `bg-dark-section` (maps to `rgb(8, 7, 14)` via CSS variable)
 - **Text**: `text-white` (headings), `text-white/45` (body), `text-white/40` (muted)
 - **Cards**: `border-white/[0.08] bg-white/[0.03]`, hover `border-white/[0.15]`
-- **Accent**: `text-primary` (teal) for highlighted text, badges, icons
+- **Accent**: `text-primary` (teal `#1BA784`) for highlighted text, badges, icons
+- **CSS Variables**: `--gradient-primary`, `--gradient-primary-icon`, `--shadow-button`, `--shadow-card` in `app/globals.css`
+- **Font**: Inter only
+
+### Patterns
 - **Ambient glows**: Radial gradients with teal/purple/red at low opacity + blur
 - **Headline pattern**: Two-part split on `. ` — white `headText` + teal `accentText`
-- **Animations**: Framer Motion `whileInView` with spring transitions, stagger variants, `useScroll`/`useTransform` parallax, `AnimatedCounter` (intersection observer + rAF), `FloatingParticles` (seeded random positions)
+- **Animations**: Framer Motion `whileInView` with spring transitions, stagger variants, `useScroll`/`useTransform` parallax
 - **Product UI mockups** (inside how-it-works/solutions-doors sections) intentionally use light backgrounds to demo the actual product interface
+- **FAQ sections**: Reusable `FAQSection` component with Accordion; used on `/pricing` and `/platform`
 
 ## Shared Layout Components
 

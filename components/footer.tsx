@@ -64,7 +64,7 @@ const footerColumns: {
 
 export function Footer() {
   return (
-    <footer style={{ backgroundColor: "rgb(8, 7, 14)" }}>
+    <footer className="bg-dark-section">
       <div className="mx-auto max-w-[1200px] px-6 pt-16 pb-10 md:px-10">
 
         {/* Top row: brand + columns */}

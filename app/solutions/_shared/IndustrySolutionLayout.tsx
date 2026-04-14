@@ -72,7 +72,7 @@ export function IndustrySolutionLayout({
 
   return (
     <>
-      <section className="relative overflow-hidden" style={{ backgroundColor: "rgb(8, 7, 14)" }}>
+      <section className="relative overflow-hidden bg-dark-section">
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute left-1/2 top-[20%] h-[500px] w-[700px] -translate-x-1/2 rounded-full opacity-30 blur-[120px]" style={{ background: "radial-gradient(circle, rgba(45,212,191,0.25), transparent 70%)" }} />
           <div className="absolute right-[10%] top-[60%] h-[300px] w-[400px] rounded-full opacity-20 blur-[100px]" style={{ background: "radial-gradient(circle, rgba(139,92,246,0.2), transparent 70%)" }} />
@@ -120,7 +120,7 @@ export function IndustrySolutionLayout({
         </div>
       </section>
 
-      <section style={{ backgroundColor: "rgb(8, 7, 14)" }} className="border-t border-white/[0.06] pb-20">
+      <section className="bg-dark-section border-t border-white/[0.06] pb-20">
         <div className="mx-auto max-w-[1100px] px-6">
           <motion.div
             {...fade(0)}
@@ -138,7 +138,7 @@ export function IndustrySolutionLayout({
         </div>
       </section>
 
-      <section className="relative overflow-hidden py-24" style={{ backgroundColor: "rgb(8, 7, 14)" }}>
+      <section className="relative overflow-hidden py-24 bg-dark-section">
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute left-[20%] top-[30%] h-[400px] w-[500px] rounded-full opacity-15 blur-[100px]" style={{ background: "radial-gradient(circle, rgba(45,212,191,0.3), transparent 70%)" }} />
         </div>
@@ -178,7 +178,7 @@ export function IndustrySolutionLayout({
         </div>
       </section>
 
-      <section style={{ backgroundColor: "rgb(8, 7, 14)" }} className="border-t border-white/[0.06] py-20">
+      <section className="bg-dark-section border-t border-white/[0.06] py-20">
         <div className="mx-auto max-w-[900px] px-6">
           <motion.div
             {...fade(0)}
@@ -202,7 +202,7 @@ export function IndustrySolutionLayout({
         </div>
       </section>
 
-      <section style={{ backgroundColor: "rgb(8, 7, 14)" }} className="border-t border-white/[0.06] pb-28 pt-20">
+      <section className="bg-dark-section border-t border-white/[0.06] pb-28 pt-20">
         <div className="mx-auto max-w-[1100px] px-6">
           <div className="grid gap-12 sm:grid-cols-2">
             <motion.div {...fade(0)}>
@@ -240,8 +240,7 @@ export function IndustrySolutionLayout({
       </section>
 
       <section
-        className="relative overflow-hidden py-24"
-        style={{ backgroundColor: "rgb(8, 7, 14)" }}
+        className="relative overflow-hidden py-24 bg-dark-section"
       >
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute left-1/2 top-1/2 h-[400px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-20 blur-[100px]" style={{ background: "radial-gradient(circle, rgba(45,212,191,0.3), transparent 70%)" }} />

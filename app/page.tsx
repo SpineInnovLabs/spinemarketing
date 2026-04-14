@@ -8,7 +8,7 @@ import { Footer } from "@/components/footer"
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[rgb(8,7,14)]">
+    <div className="min-h-screen bg-dark-section">
       <Header initiallyHidden />
       <main id="main">
         <HeroSection />

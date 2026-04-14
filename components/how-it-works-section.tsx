@@ -422,7 +422,7 @@ export function HowItWorksSection() {
         steps={steps}
         heading={sectionHeading}
         className=""
-        style={{ backgroundColor: "rgb(8, 7, 14)" }}
+        className="bg-dark-section"
       />
     );
   }
@@ -433,7 +433,7 @@ export function HowItWorksSection() {
       steps={steps}
       heading={sectionHeading}
       className=""
-      style={{ backgroundColor: "rgb(8, 7, 14)" }}
+      className="bg-dark-section"
     />
   );
 }

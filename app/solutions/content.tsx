@@ -168,8 +168,7 @@ export function SolutionsContent() {
     <>
       {/* Hero */}
       <section
-        className="relative overflow-hidden pb-24 pt-40"
-        style={{ backgroundColor: "rgb(8, 7, 14)" }}
+        className="relative overflow-hidden pb-24 pt-40 bg-dark-section"
       >
         <div className="mx-auto max-w-[800px] px-4 text-center">
           <motion.div

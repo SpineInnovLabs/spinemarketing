@@ -48,8 +48,7 @@ export function PlatformConnectorsContent() {
   return (
     <>
       <section
-        className="relative overflow-hidden pb-28 pt-40"
-        style={{ backgroundColor: "rgb(8, 7, 14)" }}
+        className="relative overflow-hidden pb-28 pt-40 bg-dark-section"
       >
         <div className="mx-auto max-w-[820px] px-4 text-center">
           <motion.div

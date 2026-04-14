@@ -2,6 +2,8 @@
 
 import { AlertTriangle, Eye, GitBranch, ShieldOff } from "lucide-react"
 import { motion } from "framer-motion"
+import { Card, CardContent } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
 
 const problems = [
   { icon: GitBranch, text: "Apps are disconnected across teams and functions.", color: "rgba(239,68,68,0.15)", glow: "rgba(239,68,68,0.25)" },
@@ -22,7 +24,7 @@ const fadeUp = {
 
 export function ProblemSection() {
   return (
-    <section className="relative overflow-hidden py-32 md:py-40" style={{ backgroundColor: "rgb(8, 7, 14)" }}>
+    <section className="relative overflow-hidden bg-dark-section py-32 md:py-40">
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute left-[30%] top-[20%] h-[400px] w-[500px] rounded-full opacity-20 blur-[120px]" style={{ background: "radial-gradient(circle, rgba(239,68,68,0.2), transparent 70%)" }} />
         <div className="absolute right-[20%] bottom-[20%] h-[300px] w-[400px] rounded-full opacity-15 blur-[100px]" style={{ background: "radial-gradient(circle, rgba(251,146,60,0.2), transparent 70%)" }} />
@@ -35,12 +37,14 @@ export function ProblemSection() {
           transition={{ type: "spring", damping: 18, stiffness: 70 }}
           className="mx-auto max-w-2xl text-center"
         >
-          <p className="mb-3 text-[12px] font-bold uppercase tracking-[0.14em] text-red-400/80">The problem</p>
-          <h2 className="text-[36px] font-semibold leading-[1.15] tracking-[-0.04em] text-white sm:text-[44px]">
+          <Badge variant="outline" className="mb-4 rounded-full border-red-400/30 px-3 py-1 text-xs font-bold uppercase tracking-widest text-red-400/80">
+            The problem
+          </Badge>
+          <h2 className="text-4xl font-semibold leading-tight tracking-tight text-white sm:text-5xl">
             Modern work isn&apos;t hard.{" "}
             <span className="text-primary">The plumbing is.</span>
           </h2>
-          <p className="mt-6 text-[16px] font-medium leading-[1.7] text-white/45">
+          <p className="mt-6 text-base font-medium leading-relaxed text-white/45">
             Copy-paste. Tab-switch. Repeat. Your apps don&apos;t agree. Your AI doesn&apos;t know. You&apos;re the bridge.
           </p>
         </motion.div>
@@ -53,18 +57,18 @@ export function ProblemSection() {
           className="mx-auto mt-16 md:mt-20 grid max-w-3xl gap-5 sm:grid-cols-2"
         >
           {problems.map(({ icon: Icon, text, color, glow }, i) => (
-            <motion.div
-              key={i}
-              variants={fadeUp}
-              className="flex items-start gap-4 rounded-2xl border border-white/[0.08] bg-white/[0.03] p-6 transition-colors hover:border-white/[0.15]"
-            >
-              <div
-                className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl"
-                style={{ background: color, boxShadow: `0 0 24px ${glow}` }}
-              >
-                <Icon className="h-5 w-5 text-red-400" />
-              </div>
-              <p className="text-[15px] font-medium leading-[1.55] tracking-[-0.02em] text-white/60">{text}</p>
+            <motion.div key={i} variants={fadeUp}>
+              <Card className="flex h-full items-start gap-4 border-border bg-white/[0.03] p-6 transition-colors hover:border-white/[0.15]">
+                <CardContent className="flex items-start gap-4 p-0">
+                  <div
+                    className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl"
+                    style={{ background: color, boxShadow: `0 0 24px ${glow}` }}
+                  >
+                    <Icon className="h-5 w-5 text-red-400" />
+                  </div>
+                  <p className="text-sm font-medium leading-relaxed text-white/60">{text}</p>
+                </CardContent>
+              </Card>
             </motion.div>
           ))}
         </motion.div>

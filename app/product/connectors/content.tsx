@@ -111,8 +111,7 @@ export function ProductConnectorsContent() {
     <>
       {/* ── Hero ─────────────────────────────────────────────────── */}
       <section
-        className="relative overflow-hidden pb-28 pt-40"
-        style={{ backgroundColor: "rgb(8, 7, 14)" }}
+        className="relative overflow-hidden pb-28 pt-40 bg-dark-section"
       >
         <div className="mx-auto max-w-[820px] px-4 text-center">
           <motion.div
@@ -217,8 +216,7 @@ export function ProductConnectorsContent() {
 
       {/* ── Management Features ───────────────────────────────────── */}
       <section
-        className="arvio-section dark-section"
-        style={{ backgroundColor: "rgb(8, 7, 14)" }}
+        className="arvio-section dark-section bg-dark-section"
       >
         <div className="mx-auto max-w-[1100px]">
           <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center">

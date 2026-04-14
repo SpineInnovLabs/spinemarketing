@@ -3,6 +3,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { FinalCTA } from "@/components/final-cta"
 import { PlatformContent } from "./content"
+import { PlatformFAQ } from "./faq"
 
 export const metadata: Metadata = {
   title: "Platform | IntegrateWise",
@@ -12,10 +13,11 @@ export const metadata: Metadata = {
 
 export default function PlatformPage() {
   return (
-    <div className="min-h-screen bg-[rgb(8,7,14)]">
+    <div className="min-h-screen bg-dark-section">
       <Header />
       <main id="main">
         <PlatformContent />
+        <PlatformFAQ />
         <FinalCTA />
       </main>
       <Footer />

@@ -246,7 +246,7 @@ export function HeroSection() {
     return (
       <section
         className="relative w-full min-h-screen overflow-hidden"
-        style={{ backgroundColor: "rgb(8, 7, 14)" }}
+        className="bg-dark-section"
       />
     );
   }
@@ -254,7 +254,7 @@ export function HeroSection() {
   return (
     <section
       className={`relative w-full min-h-screen overflow-hidden ${isChaos ? "cursor-pointer" : ""}`}
-      style={{ backgroundColor: "rgb(8, 7, 14)" }}
+      className="bg-dark-section"
       onClick={handleSkip}
     >
       {/* ── Background ambient glows ── */}

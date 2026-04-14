@@ -12,7 +12,7 @@ const steps = [
 
 export function TruthLayerSection() {
   return (
-    <section className="arvio-section" style={{ backgroundColor: "rgb(8, 7, 14)" }}>
+    <section className="arvio-section bg-dark-section">
       <div className="mx-auto max-w-[1100px]">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

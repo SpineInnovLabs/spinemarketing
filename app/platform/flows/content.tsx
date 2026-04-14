@@ -21,8 +21,7 @@ export function PlatformFlowsContent() {
   return (
     <>
       <section
-        className="relative overflow-hidden pb-28 pt-40"
-        style={{ backgroundColor: "rgb(8, 7, 14)" }}
+        className="relative overflow-hidden pb-28 pt-40 bg-dark-section"
       >
         <div className="mx-auto max-w-[820px] px-4 text-center">
           <motion.div
@@ -129,7 +128,7 @@ export function PlatformFlowsContent() {
       </section>
 
       {/* Twin Trigger Scoring */}
-      <section className="arvio-section dark-section" style={{ backgroundColor: "rgb(8, 7, 14)" }}>
+      <section className="arvio-section dark-section bg-dark-section">
         <div className="mx-auto max-w-[1100px]">
           <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center">
             <Brain className="mx-auto mb-4 h-7 w-7 text-primary" />

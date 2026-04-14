@@ -22,8 +22,7 @@ export function PlatformContent() {
     <>
       {/* ── Hero ─────────────────────────────────────────────────── */}
       <section
-        className="relative overflow-hidden pb-28 pt-40"
-        style={{ backgroundColor: "rgb(8, 7, 14)" }}
+        className="relative overflow-hidden pb-28 pt-40 bg-dark-section"
       >
         <div className="mx-auto max-w-[820px] px-4 text-center">
           <motion.div
@@ -165,8 +164,7 @@ export function PlatformContent() {
 
       {/* ── Step 2: Three Data Paths ──────────────────────────────── */}
       <section
-        className="arvio-section dark-section"
-        style={{ backgroundColor: "rgb(8, 7, 14)" }}
+        className="arvio-section dark-section bg-dark-section"
       >
         <div className="mx-auto max-w-[1100px]">
           <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center">
@@ -339,8 +337,7 @@ export function PlatformContent() {
 
       {/* ── Step 4: The Twin proposes ─────────────────────────────── */}
       <section
-        className="arvio-section dark-section"
-        style={{ backgroundColor: "rgb(8, 7, 14)" }}
+        className="arvio-section dark-section bg-dark-section"
       >
         <div className="mx-auto max-w-[1100px]">
           <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center">
@@ -477,7 +474,7 @@ export function PlatformContent() {
       </section>
 
       {/* ── Canonical Loop + CTA ──────────────────────────────────── */}
-      <section className="arvio-section dark-section" style={{ backgroundColor: "rgb(8, 7, 14)" }}>
+      <section className="arvio-section dark-section bg-dark-section">
         <div className="mx-auto max-w-[820px] px-4 text-center">
           <motion.div {...fade(0)}>
             <p className="mb-3 text-[12px] font-bold uppercase tracking-[0.12em] text-primary">

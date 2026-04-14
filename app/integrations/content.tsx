@@ -42,7 +42,7 @@ export function IntegrationsContent() {
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden" style={{ backgroundColor: "rgb(8, 7, 14)" }}>
+      <section className="relative overflow-hidden bg-dark-section">
         <div className="mx-auto max-w-[1200px] px-6 pt-[160px] pb-[100px] md:px-16">
           <div className="mx-auto max-w-3xl text-center">
             <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ type: "spring", damping: 16, mass: 1, stiffness: 52, delay: 0.2 }} className="mb-6 inline-flex items-center gap-2.5 rounded-[40px] bg-white px-4 py-1.5" style={{ boxShadow: "0px 0px 0px 3px rgb(248 248 250)" }}>

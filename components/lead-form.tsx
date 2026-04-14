@@ -2,6 +2,10 @@
 
 import { useCallback, useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
 
 export type LeadIntent = "contact" | "demo" | "pricing"
 
@@ -11,6 +15,14 @@ function intentLabel(intent: LeadIntent): string {
   if (intent === "demo") return "Book a demo"
   if (intent === "pricing") return "Pricing / plan question"
   return "General contact"
+}
+
+function Label({ htmlFor, children }: { htmlFor: string; children: React.ReactNode }) {
+  return (
+    <label htmlFor={htmlFor} className="text-sm font-semibold tracking-tight">
+      {children}
+    </label>
+  )
 }
 
 export function LeadForm({ defaultIntent = "contact" }: { defaultIntent?: LeadIntent }) {
@@ -82,123 +94,114 @@ export function LeadForm({ defaultIntent = "contact" }: { defaultIntent?: LeadIn
   }
 
   return (
-    <div className="arvio-card-elevated mx-auto max-w-lg p-8">
-      <h2 className="text-[22px] font-semibold tracking-[-0.04em]">Send a message</h2>
-      <p className="mt-2 text-[15px] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">
-        Tell us what you need — we&apos;ll get back within one business day.
-      </p>
+    <Card className="mx-auto max-w-lg border-border shadow-lg">
+      <CardHeader>
+        <CardTitle className="text-xl">Send a message</CardTitle>
+        <CardDescription>
+          Tell us what you need — we&apos;ll get back within one business day.
+        </CardDescription>
+      </CardHeader>
 
-      {status === "success" && (
-        <p className="mt-4 rounded-xl border border-primary/30 bg-primary/5 px-4 py-3 text-[14px] font-medium text-foreground">
-          {endpoint ? "Thanks — we received your message." : "Your email client should open with your message ready to send."}
-        </p>
-      )}
+      <CardContent>
+        {status === "success" && (
+          <div className="mb-4 rounded-lg border border-primary/30 bg-primary/5 px-4 py-3 text-sm font-medium text-foreground">
+            {endpoint ? "Thanks — we received your message." : "Your email client should open with your message ready to send."}
+          </div>
+        )}
 
-      {status === "error" && errorMessage && (
-        <p className="mt-4 rounded-xl border border-destructive/30 bg-destructive/5 px-4 py-3 text-[14px] font-medium text-destructive">
-          {errorMessage}
-        </p>
-      )}
+        {status === "error" && errorMessage && (
+          <div className="mb-4 rounded-lg border border-destructive/30 bg-destructive/5 px-4 py-3 text-sm font-medium text-destructive">
+            {errorMessage}
+          </div>
+        )}
 
-      <form onSubmit={handleSubmit} className="mt-6 space-y-4">
-        <div className="space-y-2">
-          <label htmlFor="lead-intent" className="text-[13px] font-semibold tracking-[-0.02em]">
-            I&apos;m interested in
-          </label>
-          <select
-            id="lead-intent"
-            value={intent}
-            onChange={(e) => setIntent(e.target.value as LeadIntent)}
-            className="h-11 w-full rounded-xl border border-border bg-white px-3 text-[15px] font-medium outline-none ring-ring/50 focus-visible:ring-[3px]"
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div className="space-y-2">
+            <Label htmlFor="lead-intent">I&apos;m interested in</Label>
+            <select
+              id="lead-intent"
+              value={intent}
+              onChange={(e) => setIntent(e.target.value as LeadIntent)}
+              className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+            >
+              <option value="contact">General contact</option>
+              <option value="demo">Book a demo</option>
+              <option value="pricing">Pricing / plans</option>
+            </select>
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="lead-name">Name</Label>
+            <Input
+              id="lead-name"
+              name="name"
+              required
+              autoComplete="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="lead-email">Work email</Label>
+            <Input
+              id="lead-email"
+              name="email"
+              type="email"
+              required
+              autoComplete="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="lead-company">
+              Company <span className="font-normal text-muted-foreground">(optional)</span>
+            </Label>
+            <Input
+              id="lead-company"
+              name="company"
+              autoComplete="organization"
+              value={company}
+              onChange={(e) => setCompany(e.target.value)}
+            />
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="lead-message">Message</Label>
+            <Textarea
+              id="lead-message"
+              name="message"
+              rows={4}
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+            />
+          </div>
+
+          <input
+            type="text"
+            name="_gotcha"
+            tabIndex={-1}
+            autoComplete="off"
+            className="absolute h-px w-px overflow-hidden opacity-0"
+            aria-hidden
+          />
+
+          <Button
+            type="submit"
+            disabled={status === "sending"}
+            className="h-11 w-full rounded-xl text-sm font-semibold"
+            style={{
+              background: "var(--gradient-primary)",
+              border: "2px solid rgba(248,248,250,0.12)",
+              boxShadow: "var(--shadow-button)",
+            }}
           >
-            <option value="contact">General contact</option>
-            <option value="demo">Book a demo</option>
-            <option value="pricing">Pricing / plans</option>
-          </select>
-        </div>
-
-        <div className="space-y-2">
-          <label htmlFor="lead-name" className="text-[13px] font-semibold tracking-[-0.02em]">
-            Name
-          </label>
-          <input
-            id="lead-name"
-            name="name"
-            required
-            autoComplete="name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            className="h-11 w-full rounded-xl border border-border bg-white px-3 text-[15px] font-medium outline-none ring-ring/50 focus-visible:ring-[3px]"
-          />
-        </div>
-
-        <div className="space-y-2">
-          <label htmlFor="lead-email" className="text-[13px] font-semibold tracking-[-0.02em]">
-            Work email
-          </label>
-          <input
-            id="lead-email"
-            name="email"
-            type="email"
-            required
-            autoComplete="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="h-11 w-full rounded-xl border border-border bg-white px-3 text-[15px] font-medium outline-none ring-ring/50 focus-visible:ring-[3px]"
-          />
-        </div>
-
-        <div className="space-y-2">
-          <label htmlFor="lead-company" className="text-[13px] font-semibold tracking-[-0.02em]">
-            Company <span className="font-normal text-muted-foreground">(optional)</span>
-          </label>
-          <input
-            id="lead-company"
-            name="company"
-            autoComplete="organization"
-            value={company}
-            onChange={(e) => setCompany(e.target.value)}
-            className="h-11 w-full rounded-xl border border-border bg-white px-3 text-[15px] font-medium outline-none ring-ring/50 focus-visible:ring-[3px]"
-          />
-        </div>
-
-        <div className="space-y-2">
-          <label htmlFor="lead-message" className="text-[13px] font-semibold tracking-[-0.02em]">
-            Message
-          </label>
-          <textarea
-            id="lead-message"
-            name="message"
-            rows={4}
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            className="w-full resize-y rounded-xl border border-border bg-white px-3 py-2.5 text-[15px] font-medium outline-none ring-ring/50 focus-visible:ring-[3px]"
-          />
-        </div>
-
-        {/* Honeypot */}
-        <input
-          type="text"
-          name="_gotcha"
-          tabIndex={-1}
-          autoComplete="off"
-          className="absolute h-px w-px overflow-hidden opacity-0"
-          aria-hidden
-        />
-
-        <Button
-          type="submit"
-          disabled={status === "sending"}
-          className="h-11 w-full rounded-xl text-[15px] font-semibold"
-          style={{
-            background: "var(--gradient-primary)",
-            border: "2px solid rgba(248,248,250,0.12)",
-            boxShadow: "var(--shadow-button)",
-          }}
-        >
-          {status === "sending" ? "Sending…" : "Send message"}
-        </Button>
-      </form>
-    </div>
+            {status === "sending" ? "Sending…" : "Send message"}
+          </Button>
+        </form>
+      </CardContent>
+    </Card>
   )
 }

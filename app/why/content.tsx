@@ -85,8 +85,7 @@ export function WhyContent() {
     <>
       {/* Hero */}
       <section
-        className="relative overflow-hidden pb-24 pt-40"
-        style={{ backgroundColor: "rgb(8, 7, 14)" }}
+        className="relative overflow-hidden pb-24 pt-40 bg-dark-section"
       >
         <div className="mx-auto max-w-[800px] px-4 text-center">
           <motion.div
@@ -252,8 +251,7 @@ export function WhyContent() {
 
       {/* The IntegrateWise answer */}
       <section
-        className="arvio-section dark-section"
-        style={{ backgroundColor: "rgb(8, 7, 14)" }}
+        className="arvio-section dark-section bg-dark-section"
       >
         <div className="mx-auto max-w-[1100px]">
           <motion.div

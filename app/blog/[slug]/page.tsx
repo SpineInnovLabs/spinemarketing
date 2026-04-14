@@ -66,12 +66,11 @@ export default async function BlogPostPage({
   if (!post) notFound();
 
   return (
-    <div className="min-h-screen bg-[rgb(8,7,14)]">
+    <div className="min-h-screen bg-dark-section">
       <Header />
       <main id="main">
         <section
-          className="relative overflow-hidden"
-          style={{ backgroundColor: "rgb(8, 7, 14)" }}
+          className="relative overflow-hidden bg-dark-section"
         >
           <div className="mx-auto max-w-[800px] px-6 pt-[160px] pb-[80px] md:px-16">
             <Link

@@ -2,6 +2,9 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
 import { Check } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -17,9 +20,10 @@ const regions: { key: Region; label: string }[] = [
 const plans = [
   {
     name: "Starter",
+    tier: "L1",
     prices: { india: "₹999", international: "$49", enterprise: "Custom" },
     period: "/mo",
-    description: "L1 — your Workbench. Connect your apps. See every account, task, and workflow in one unified view over the Spine.",
+    description: "Your Workbench. Connect your apps. See every account, task, and workflow in one unified view over the Spine.",
     features: [
       "Up to 5 connectors via OAuth",
       "L1 Workbench — accounts, tasks, workflows, calendar",
@@ -34,9 +38,10 @@ const plans = [
   },
   {
     name: "Growth",
+    tier: "L1 + L2",
     prices: { india: "₹2,999", international: "$99", enterprise: "Custom" },
     period: "/mo",
-    description: "L1 + L2 — activate the Intelligence Layer. The Twin watches through the Spine, surfaces signals with evidence, and proposes actions for your approval.",
+    description: "Activate the Intelligence Layer. The Twin watches through the Spine, surfaces signals with evidence, and proposes actions for your approval.",
     features: [
       "Up to 15 connectors",
       "Everything in Starter",
@@ -53,6 +58,7 @@ const plans = [
   },
   {
     name: "Command",
+    tier: "Enterprise",
     prices: { india: "₹7,999", international: "$199", enterprise: "Custom" },
     period: "/mo",
     description: "Full L1 + L2 with enterprise governance. Every AI proposal passes through the Govern Gate — non-bypassable, auditable, and traceable.",
@@ -74,9 +80,9 @@ export function PricingSection({ hideHeading = false }: { hideHeading?: boolean 
   const [region, setRegion] = useState<Region>("international");
 
   return (
-    <section id="pricing" className="relative overflow-hidden py-32 px-6 md:py-40 md:px-16" style={{ backgroundColor: "rgb(8, 7, 14)" }}>
+    <section id="pricing" className="relative overflow-hidden bg-dark-section py-32 px-6 md:py-40 md:px-16">
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-1/2 top-[20%] h-[500px] w-[600px] -translate-x-1/2 rounded-full opacity-15 blur-[120px]" style={{ background: "radial-gradient(circle, rgba(45,212,191,0.2), transparent 70%)" }} />
+        <div className="absolute left-1/2 top-[20%] h-[500px] w-[600px] -translate-x-1/2 rounded-full opacity-15 blur-[120px]" style={{ background: "radial-gradient(circle, rgba(52,211,153,0.2), transparent 70%)" }} />
       </div>
       <div className="relative mx-auto max-w-[1100px]">
         <motion.div
@@ -88,25 +94,22 @@ export function PricingSection({ hideHeading = false }: { hideHeading?: boolean 
         >
           {!hideHeading && (
             <>
-              <h2 className="text-[36px] font-semibold leading-[1.15] tracking-[-0.04em] text-white sm:text-[44px]">
+              <h2 className="text-4xl font-semibold leading-tight tracking-tight text-white sm:text-5xl">
                 Simple pricing.{" "}
                 <span className="text-primary">Scale as you grow.</span>
               </h2>
-              <p className="mt-4 text-[16px] font-medium leading-[1.6] text-white/45">
-                Start small, add more apps and intelligence as your team needs it.
-                No hidden costs.
+              <p className="mt-4 text-base font-medium leading-relaxed text-white/45">
+                Start small, add more apps and intelligence as your team needs it. No hidden costs.
               </p>
             </>
           )}
 
-          <div
-            className="mt-8 inline-flex items-center rounded-full border border-white/[0.08] bg-white/[0.04] p-1"
-          >
+          <div className="mt-8 inline-flex items-center rounded-full border border-border bg-white/[0.04] p-1">
             {regions.map((r) => (
               <button
                 key={r.key}
                 onClick={() => setRegion(r.key)}
-                className={`relative rounded-full px-5 py-2 text-[14px] font-semibold tracking-[-0.02em] transition-all ${
+                className={`relative rounded-full px-5 py-2 text-sm font-semibold tracking-tight transition-all ${
                   region === r.key
                     ? "text-white"
                     : "text-white/40 hover:text-white/60"
@@ -138,71 +141,75 @@ export function PricingSection({ hideHeading = false }: { hideHeading?: boolean 
                 stiffness: 70,
                 delay: i * 0.1,
               }}
-              className={`relative flex flex-col rounded-2xl p-8 md:p-10 ${
-                plan.highlighted
-                  ? "border-2 border-primary/40 bg-white/[0.06] text-white"
-                  : "border border-white/[0.08] bg-white/[0.03] text-white"
-              }`}
-              style={
-                plan.highlighted
-                  ? { boxShadow: "0 0 60px rgba(45,212,191,0.12)" }
-                  : undefined
-              }
             >
-              {plan.highlighted && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                  <span className="rounded-full bg-primary px-3 py-1 text-[12px] font-semibold text-white">
-                    Most popular
-                  </span>
-                </div>
-              )}
-              <div>
-                <h3 className="text-[18px] font-semibold tracking-[-0.03em] text-white">
-                  {plan.name}
-                </h3>
-                <p className="mt-1 text-[15px] font-medium text-white/40">
-                  {plan.description}
-                </p>
-                <div className="mt-4">
-                  <motion.span
-                    key={region}
-                    initial={{ opacity: 0, y: 8 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.2 }}
-                    className="text-[34px] font-semibold tracking-[-0.05em] text-white"
-                  >
-                    {plan.prices[region]}
-                  </motion.span>
-                  {region !== "enterprise" && (
-                    <span className="text-[15px] text-white/40">
-                      {plan.period}
-                    </span>
-                  )}
-                </div>
-              </div>
-              <ul className="mt-8 flex-1 space-y-3">
-                {plan.features.map((feature, j) => (
-                  <li key={j} className="flex items-start gap-3">
-                    <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/20">
-                      <Check className="h-3 w-3 text-primary" />
-                    </div>
-                    <span className="text-[15px] font-medium leading-[1.5] text-white/60">
-                      {feature}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-              <Button
-                className={`mt-8 h-[42px] w-full rounded-xl text-[15px] font-semibold tracking-[-0.3px] ${
+              <Card
+                className={`relative flex h-full flex-col border ${
                   plan.highlighted
-                    ? "bg-primary text-white hover:bg-primary/90"
-                    : "border border-white/15 bg-transparent text-white hover:bg-white/10"
+                    ? "border-primary/40 bg-white/[0.06] shadow-[0_0_60px_rgba(52,211,153,0.12)]"
+                    : "border-border bg-white/[0.03]"
                 }`}
-                variant={plan.highlighted ? "default" : "outline"}
-                asChild
               >
-                <Link href={plan.href}>{plan.cta}</Link>
-              </Button>
+                {plan.highlighted && (
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                    <Badge className="rounded-full bg-primary px-3 py-1 text-xs font-semibold text-white">
+                      Most popular
+                    </Badge>
+                  </div>
+                )}
+                <CardHeader>
+                  <div className="flex items-center gap-2">
+                    <CardTitle className="text-lg text-white">{plan.name}</CardTitle>
+                    <Badge variant="outline" className="rounded-full border-white/20 text-white/60 text-[11px]">
+                      {plan.tier}
+                    </Badge>
+                  </div>
+                  <CardDescription className="text-white/40 text-[15px] leading-relaxed">
+                    {plan.description}
+                  </CardDescription>
+                  <div className="mt-2">
+                    <motion.span
+                      key={region}
+                      initial={{ opacity: 0, y: 8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.2 }}
+                      className="text-[34px] font-semibold tracking-tight text-white"
+                    >
+                      {plan.prices[region]}
+                    </motion.span>
+                    {region !== "enterprise" && (
+                      <span className="text-sm text-white/40">{plan.period}</span>
+                    )}
+                  </div>
+                </CardHeader>
+                <Separator className="bg-white/[0.08]" />
+                <CardContent className="flex-1">
+                  <ul className="space-y-3 pt-2">
+                    {plan.features.map((feature, j) => (
+                      <li key={j} className="flex items-start gap-3">
+                        <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/20">
+                          <Check className="h-3 w-3 text-primary" />
+                        </div>
+                        <span className="text-sm font-medium leading-relaxed text-white/60">
+                          {feature}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+                <CardFooter>
+                  <Button
+                    className={`h-11 w-full rounded-xl text-sm font-semibold ${
+                      plan.highlighted
+                        ? "bg-primary text-white hover:bg-primary/90"
+                        : "border border-white/15 bg-transparent text-white hover:bg-white/10"
+                    }`}
+                    variant={plan.highlighted ? "default" : "outline"}
+                    asChild
+                  >
+                    <Link href={plan.href}>{plan.cta}</Link>
+                  </Button>
+                </CardFooter>
+              </Card>
             </motion.div>
           ))}
         </div>
@@ -214,31 +221,30 @@ export function PricingSection({ hideHeading = false }: { hideHeading?: boolean 
           transition={{ type: "spring", damping: 18, stiffness: 70, delay: 0.3 }}
           className="mx-auto mt-12 max-w-3xl"
         >
-          <div className="rounded-2xl border border-white/[0.08] bg-white/[0.03] p-6">
-            <p className="text-[17px] font-semibold tracking-[-0.03em] text-white">
-              Implementation &amp; services
-            </p>
-            <p className="mt-2 text-[15px] font-medium leading-[1.5] text-white/40">
-              Optional onboarding packages to get you live faster. Available for
-              all tiers.
-            </p>
-            <div className="mt-4 grid gap-3 sm:grid-cols-3">
-              {[
-                { name: "Workspace setup", price: "From $3K" },
-                { name: "Connector workshop", price: "From $2K" },
-                { name: "Custom add-ons", price: "Custom" },
-              ].map((item, i) => (
-                <div key={i} className="rounded-xl border border-white/[0.06] bg-white/[0.04] p-4">
-                  <div className="text-[15px] font-semibold tracking-[-0.03em] text-white/70">
-                    {item.name}
-                  </div>
-                  <div className="mt-1 text-[15px] font-semibold text-primary">
-                    {item.price}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+          <Card className="border-border bg-white/[0.03]">
+            <CardHeader>
+              <CardTitle className="text-lg text-white">Implementation &amp; services</CardTitle>
+              <CardDescription className="text-white/40">
+                Optional onboarding packages to get you live faster. Available for all tiers.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="grid gap-3 sm:grid-cols-3">
+                {[
+                  { name: "Workspace setup", price: "From $3K" },
+                  { name: "Connector workshop", price: "From $2K" },
+                  { name: "Custom add-ons", price: "Custom" },
+                ].map((item, i) => (
+                  <Card key={i} className="border-border bg-white/[0.04] py-4">
+                    <CardContent className="py-0">
+                      <div className="text-sm font-semibold text-white/70">{item.name}</div>
+                      <div className="mt-1 text-sm font-semibold text-primary">{item.price}</div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
         </motion.div>
       </div>
     </section>

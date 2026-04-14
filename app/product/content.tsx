@@ -179,7 +179,7 @@ export function ProductContent() {
 
   return (
     <>
-      <section ref={heroRef} className="relative overflow-hidden" style={{ backgroundColor: "rgb(8, 7, 14)" }}>
+      <section ref={heroRef} className="relative overflow-hidden bg-dark-section">
         <FloatingParticles count={25} />
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute left-1/2 top-[15%] h-[600px] w-[800px] -translate-x-1/2 rounded-full opacity-30 blur-[140px]" style={{ background: "radial-gradient(circle, rgba(45,212,191,0.25), transparent 70%)" }} />
@@ -233,7 +233,7 @@ export function ProductContent() {
         </motion.div>
       </section>
 
-      <section style={{ backgroundColor: "rgb(8, 7, 14)" }} className="border-t border-white/[0.06] pb-20">
+      <section className="bg-dark-section border-t border-white/[0.06] pb-20">
         <div className="mx-auto max-w-[1100px] px-6">
           <motion.div
             variants={stagger}
@@ -260,7 +260,7 @@ export function ProductContent() {
         </div>
       </section>
 
-      <section ref={mockupRef} className="relative overflow-hidden py-24" style={{ backgroundColor: "rgb(8, 7, 14)" }}>
+      <section ref={mockupRef} className="relative overflow-hidden py-24 bg-dark-section">
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute left-[15%] top-[20%] h-[400px] w-[500px] rounded-full opacity-15 blur-[100px]" style={{ background: "radial-gradient(circle, rgba(45,212,191,0.3), transparent 70%)" }} />
         </div>
@@ -347,7 +347,7 @@ export function ProductContent() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden py-28" style={{ backgroundColor: "rgb(8, 7, 14)" }}>
+      <section className="relative overflow-hidden py-28 bg-dark-section">
         <FloatingParticles count={15} />
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute right-[20%] top-[40%] h-[500px] w-[600px] rounded-full opacity-15 blur-[120px]" style={{ background: "radial-gradient(circle, rgba(139,92,246,0.2), transparent 70%)" }} />
@@ -413,7 +413,7 @@ export function ProductContent() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden py-28" style={{ backgroundColor: "rgb(8, 7, 14)" }}>
+      <section className="relative overflow-hidden py-28 bg-dark-section">
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute left-[25%] top-[30%] h-[400px] w-[500px] rounded-full opacity-15 blur-[100px]" style={{ background: "radial-gradient(circle, rgba(45,212,191,0.25), transparent 70%)" }} />
         </div>
@@ -498,7 +498,7 @@ export function ProductContent() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden py-24" style={{ backgroundColor: "rgb(8, 7, 14)" }}>
+      <section className="relative overflow-hidden py-24 bg-dark-section">
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute left-1/2 top-1/2 h-[400px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-20 blur-[100px]" style={{ background: "radial-gradient(circle, rgba(45,212,191,0.3), transparent 70%)" }} />
         </div>

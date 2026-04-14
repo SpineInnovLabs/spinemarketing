@@ -52,8 +52,7 @@ export function AboutContent() {
     <>
       {/* Hero */}
       <section
-        className="relative overflow-hidden"
-        style={{ backgroundColor: "rgb(8, 7, 14)" }}
+        className="relative overflow-hidden bg-dark-section"
       >
         <div className="mx-auto max-w-[1200px] px-6 pt-[160px] pb-[100px] md:px-16">
           <div className="mx-auto max-w-3xl text-center">
@@ -450,8 +449,7 @@ export function AboutContent() {
 
       {/* Closing quote + CTA */}
       <section
-        className="arvio-section dark-section"
-        style={{ backgroundColor: "rgb(8, 7, 14)" }}
+        className="arvio-section dark-section bg-dark-section"
       >
         <div className="mx-auto max-w-[800px] text-center">
           <motion.div

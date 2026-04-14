@@ -551,17 +551,17 @@ export function SolutionsDoorsSection() {
           id="solutions"
           steps={steps}
           heading={sectionHeading}
-          style={{ backgroundColor: "rgb(8, 7, 14)" }}
+          className="bg-dark-section"
         />
       ) : (
         <StickyScrollReveal
           id="solutions"
           steps={steps}
           heading={sectionHeading}
-          style={{ backgroundColor: "rgb(8, 7, 14)" }}
+          className="bg-dark-section"
         />
       )}
-      <div style={{ backgroundColor: "rgb(8, 7, 14)" }}>
+      <div className="bg-dark-section">
         <SolutionLinks />
       </div>
     </>

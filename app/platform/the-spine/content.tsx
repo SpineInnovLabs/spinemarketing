@@ -55,8 +55,7 @@ export function TheSpineContent() {
   return (
     <>
       <section
-        className="relative overflow-hidden pb-28 pt-40"
-        style={{ backgroundColor: "rgb(8, 7, 14)" }}
+        className="relative overflow-hidden pb-28 pt-40 bg-dark-section"
       >
         <div className="mx-auto max-w-[820px] px-4 text-center">
           <motion.div
@@ -138,7 +137,7 @@ export function TheSpineContent() {
         </div>
       </section>
 
-      <section className="arvio-section dark-section" style={{ backgroundColor: "rgb(8, 7, 14)" }}>
+      <section className="arvio-section dark-section bg-dark-section">
         <div className="mx-auto max-w-[680px] px-4 text-center">
           <motion.div {...fade(0)}>
             <Database className="mx-auto mb-4 h-7 w-7 text-primary" />

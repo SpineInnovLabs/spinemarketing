@@ -625,8 +625,7 @@ export function BusinessOpsContent() {
     <>
       {/* ── HERO ─────────────────────────────────────────── */}
       <section
-        className="relative overflow-hidden"
-        style={{ backgroundColor: "rgb(8, 7, 14)" }}
+        className="relative overflow-hidden bg-dark-section"
       >
         <div
           className="pointer-events-none absolute inset-0"
@@ -846,8 +845,7 @@ export function BusinessOpsContent() {
 
       {/* ── THE SHIFT — Before vs After ──────────────────── */}
       <section
-        className="arvio-section dark-section"
-        style={{ backgroundColor: "rgb(8, 7, 14)" }}
+        className="arvio-section dark-section bg-dark-section"
       >
         <div className="mx-auto max-w-[1100px]">
           <motion.div

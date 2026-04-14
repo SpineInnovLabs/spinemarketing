@@ -93,8 +93,7 @@ export function AIContent() {
     <>
       {/* Hero */}
       <section
-        className="relative overflow-hidden"
-        style={{ backgroundColor: "rgb(8, 7, 14)" }}
+        className="relative overflow-hidden bg-dark-section"
       >
         <div className="mx-auto max-w-[1200px] px-6 pt-[160px] pb-[100px] md:px-16">
           <div className="mx-auto max-w-3xl text-center">
@@ -438,8 +437,7 @@ export function AIContent() {
 
       {/* TruthLayer — Approval Flow */}
       <section
-        className="arvio-section dark-section"
-        style={{ backgroundColor: "rgb(8, 7, 14)" }}
+        className="arvio-section dark-section bg-dark-section"
       >
         <div className="mx-auto max-w-[1100px]">
           <motion.div
