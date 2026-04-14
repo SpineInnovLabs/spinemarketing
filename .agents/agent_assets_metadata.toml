@@ -1,5 +1,4 @@
 uploads = []
-outputs = []
 
 [[generated]]
 id = "wEWEzmsVGxWQIdgAtpgdV"
@@ -96,3 +95,9 @@ id = "UAmnEFl0PHAjOYEA_1xn3"
 uri = "file://artifacts/mockup-sandbox/public/images/campaign-curiosity.png"
 type = "image"
 title = "Curiosity discovery campaign image"
+
+[[outputs]]
+id = "2XjmXKa_jzyjxdYq12Jdt"
+uri = "file://.local/research/audit-gap-analysis.md"
+type = "text"
+title = "8.3→9.5 Audit Gap Analysis Report"

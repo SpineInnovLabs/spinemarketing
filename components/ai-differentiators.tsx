@@ -22,7 +22,7 @@ const layers = [
     icon: BookOpen,
     label: "Session Summaries",
     title: "What AI learned, governed by you",
-    desc: "What AI learns during your conversations. Session summaries pass through TruthLayer before they become knowledge.",
+    desc: "What AI learns during your conversations. Session summaries pass through the Approval Gate before they become knowledge.",
     color: { bg: "rgba(110,231,183,0.12)", glow: "rgba(110,231,183,0.25)", text: "#6ee7b7" },
   },
 ];

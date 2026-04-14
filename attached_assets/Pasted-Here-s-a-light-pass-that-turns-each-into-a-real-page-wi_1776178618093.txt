@@ -1,0 +1,89 @@
+Here’s a light pass that turns each into a real page without bloating it.
+
+Product
+
+The Product layer is how your teams see, review, and act on the Spine’s canonical truth.
+
+The Workspace, Cognitive Layer, Twin, and Approval Gate work together: the Spine cleans and unifies data; the Product turns that into a daily surface, an always‑on detection engine, and a governed execution path that never bypasses human judgment.
+
+The Workspace
+
+The Workspace is your daily operating surface on top of the Spine.
+
+It pulls Spine entities into domain‑specific views—Account 360s, task queues, workflows, and calendar—so Customer Success, RevOps, and BizOps work from the same underlying reality instead of stitching together ten tools.
+
+You don’t swivel between Salesforce, Zendesk, Stripe, and Slack to understand an account. You open one canonical record, with activity, risk, and next steps already organized.
+
+Cognitive Layer
+
+The Cognitive Layer is the continuous detection engine bound to Spine events.
+
+It watches normalized streams from CRM, support, billing, email, and product, runs pattern detection, and converts them into scored signals. Because it reads canonical entities with temporal history, it can see trends and combinations that single‑tool copilots never notice.
+
+Instead of “AI per app,” you get one detection layer over your entire stack.
+
+The Twin
+
+The Twin is your AI copilot attached to that detection layer.
+
+It assembles evidence, explains why a signal exists, and proposes concrete actions: who to escalate to, what to include in a QBR, which deals to downgrade, which workflows to trigger. It operates on the Spine’s truth, not screen‑scraped guesses, and it always shows its reasoning before asking for approval.
+
+Approval Gate
+
+The Approval Gate is the hard boundary between the Twin and execution.
+
+Every action flows through human‑in‑the‑loop review, with:
+
+- Evidence links back to Spine entities and raw events
+
+- Confidence scores you can tune by team and signal type
+
+- Impact previews that show which records and tools will change
+
+Only after approval does the action execute back into systems like Salesforce, Stripe, Zendesk, or Jira, with a full audit trail preserved at the Spine.
+
+Pricing
+
+Pricing reflects value per connected truth, not seat sprawl.
+
+Plans scale with entity volume and connected tools, so teams can start by wiring a few high‑leverage systems into the Spine and expand coverage over time. The same Product stack—Workspace, Cognitive Layer, Twin, and Approval Gate—stays consistent as you grow from a single team pilot to organization‑wide rollout.
+
+Platform
+
+The Platform layer is where your data becomes canonical, resilient, and queryable.
+
+The Adaptive Spine ingests fragmented SaaS data, runs it through a governed normalization pipeline, and persists versioned canonical entities that survive vendor changes, API deprecations, and internal re‑architectures.
+
+The Adaptive Spine
+
+The Adaptive Spine is a vendor‑neutral data layer.
+
+Every tool—Salesforce, HubSpot, Stripe, Zendesk, Slack, Jira, Notion, Google Workspace—feeds one adaptive normalization layer. The Spine deduplicates records, resolves conflicts, and assembles Entity 360 views with temporal truth, so you can reconstruct any account, contact, or subscription as it looked at a specific point in time.
+
+Architectural guarantees like schema‑stable entities and drift immunity mean your truth layer stays intact even as upstream systems evolve.
+
+How it Works
+
+Under the hood, every record follows the same 8‑stage normalization pipeline:
+
+Ingest → Validate → Parse → Normalize → Deduplicate → Enrich → Persist → Emit.
+
+Schema checks, auth validation, deterministic and fuzzy matching, enrichment, and versioned storage all happen before data is emitted back to Product surfaces or downstream consumers. That’s how you get queryable canonical truth to the UI in under 100ms.
+
+Integrations
+
+Integrations are protocol‑aware, not one‑off scripts.
+
+OAuth‑based SaaS connectors, Model Context Protocol for AI‑native tools, webhooks, and file drops all converge into the same canonical schema. Whether data arrives via streaming, batch, or API, it’s normalized into Spine entities so every connector becomes a first‑class citizen with the same guarantees.
+
+Security
+
+Security is enforced at the Spine and workspace layers.
+
+Contextual firewalling filters data by department and permission before it reaches users. Governance policies and scoped connector permissions ensure least‑privilege access to Spine entities, with every access and change logged for later review. SOC 2–grade controls, encryption, and regional hosting options support enterprise requirements from day one.
+
+Infrastructure
+
+Infrastructure is edge‑first and version‑aware.
+
+The Spine runs normalization close to your users, keeping p95 under 100ms from data arrival to UI. Underneath, D1/PostgreSQL with versioning and a schema registry maintain a durable history of every entity and every shape change. That backing store is what lets you freeze a point‑in‑time view, replay changes, and keep your canonical truth stable while the rest of your stack keeps moving.

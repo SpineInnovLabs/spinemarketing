@@ -253,15 +253,15 @@ export function PlatformContent() {
             {...heroFade(0.2)}
             className="text-[48px] font-semibold leading-[1.05] tracking-[-0.05em] text-white sm:text-[60px] lg:text-[72px]"
           >
-            Where your data{" "}
-            <span className="text-primary">accumulates and processes.</span>
+            Where your data becomes{" "}
+            <span className="text-primary">canonical, resilient, and queryable.</span>
           </motion.h1>
 
           <motion.p
             {...heroFade(0.38)}
             className="mx-auto mt-7 max-w-2xl text-[17px] font-medium leading-[1.6] tracking-[-0.02em] text-white/45"
           >
-            The Spine runs continuously — connecting your apps, unifying your data, and powering the cognitive loop: Think. Act. Govern. Repeat. Adjust.
+            The Adaptive Spine ingests fragmented SaaS data, runs it through a governed normalization pipeline, and emits schema-stable entities that the Product layer consumes. Connect once. Never re-plumb.
           </motion.p>
 
           <motion.div
@@ -594,7 +594,7 @@ export function PlatformContent() {
               href="/product"
               className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-primary hover:opacity-80"
             >
-              Explore the Knowledge Workspace <ArrowRight className="h-3.5 w-3.5" />
+              Explore the Product <ArrowRight className="h-3.5 w-3.5" />
             </Link>
           </motion.div>
         </div>
@@ -665,7 +665,7 @@ export function PlatformContent() {
                 <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/15 mb-4">
                   <Lock className="h-5 w-5 text-primary" />
                 </div>
-                <p className="mb-1 text-[12px] font-bold uppercase tracking-[0.12em] text-primary">The TruthBoundary</p>
+                <p className="mb-1 text-[12px] font-bold uppercase tracking-[0.12em] text-primary">Governance Layer</p>
                 <h3 className="text-[20px] font-semibold tracking-[-0.04em] text-white leading-tight">
                   Hard-coded human approval. Immutable audit.
                 </h3>

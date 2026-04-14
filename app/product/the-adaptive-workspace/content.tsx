@@ -100,14 +100,14 @@ export function TheAdaptiveWorkspaceContent() {
             {...heroFade(0.22)}
             className="text-[44px] font-semibold leading-[1.08] tracking-[-0.05em] text-white sm:text-[64px]"
           >
-            One screen.{" "}
-            <span className="text-primary">Every signal.</span>
+            Your daily surface{" "}
+            <span className="text-primary">on top of the Spine.</span>
           </motion.h1>
           <motion.p
             {...heroFade(0.38)}
             className="mx-auto mt-7 max-w-xl text-[17px] font-medium leading-[1.55] tracking-[-0.02em] text-white/50"
           >
-            Role-based views built on Entity 360. Every department sees what they need — nothing more.
+            Pulls Spine entities into domain-specific views. Customer Success, RevOps, and BizOps share the same underlying reality — each team sees what they need, nothing more.
           </motion.p>
           <motion.div {...heroFade(0.5)} className="mt-9 flex flex-wrap items-center justify-center gap-3">
             <Link href="/contact?intent=demo" className="inline-flex h-11 items-center rounded-full bg-primary px-6 text-[14px] font-semibold tracking-[-0.02em] text-white transition-opacity hover:opacity-90">

@@ -49,7 +49,7 @@ const services = [
     accent: "#f59e0b",
     bg: "rgba(245,158,11,0.12)",
     name: "Approval Service",
-    desc: "TruthLayer governance and HITL routing logic.",
+    desc: "Governance enforcement and human-in-the-loop routing logic.",
   },
   {
     icon: BarChart3,

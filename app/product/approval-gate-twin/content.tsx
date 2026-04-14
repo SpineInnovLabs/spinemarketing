@@ -24,22 +24,22 @@ const governanceFeatures = [
   {
     icon: Eye,
     title: "Proposed Action Queue",
-    desc: "AI suggestions await approval with full Entity 360 context.",
+    desc: "AI suggestions await approval with full Entity 360 context and evidence links.",
   },
   {
     icon: AlertTriangle,
     title: "Impact Preview",
-    desc: "See exactly which systems will be affected before approving.",
+    desc: "See which records and tools will change before you approve.",
   },
   {
     icon: ShieldCheck,
     title: "Confidence Scoring",
-    desc: "Low-confidence signals quarantined. You only see high-certainty items.",
+    desc: "Tunable by team and signal type — you control the threshold.",
   },
   {
     icon: Edit3,
     title: "Edit Before Execute",
-    desc: "Modify AI drafts before the Truth Boundary allows execution.",
+    desc: "Modify AI drafts before the Approval Gate allows execution.",
   },
 ];
 
@@ -50,14 +50,14 @@ const approvalTiers = [
 ];
 
 const safetyMechanisms = [
-  { label: "Cross-Contamination Prevention", desc: "AI cannot access unauthorized departments. Enforced at the Spine level." },
+  { label: "Department-Scoped Access", desc: "AI cannot access unauthorized departments. Enforced before any action surfaces." },
   { label: "Immutable Audit Trail", desc: "Append-only log of every approval decision. Timestamped and traceable." },
   { label: "Emergency Override", desc: "Traceable exception handling with mandatory governance logging." },
 ];
 
 const virtualState = [
-  { title: "Entity 360 Mirroring", desc: "Real-time representation of your entire work context." },
-  { title: "Live Synchronization", desc: "Sub-100ms sync from normalization to UI update." },
+  { title: "Always-Current Context", desc: "Real-time representation of your entire work context from one screen." },
+  { title: "Live Synchronization", desc: "Updates appear as they happen — no manual refresh needed." },
   { title: "Context Persistence", desc: "Survives refreshes and device switches. Never starts from scratch." },
 ];
 
@@ -131,7 +131,7 @@ export function ApprovalGateTwinContent() {
       <section className="arvio-section dark-section">
         <div className="mx-auto max-w-[1100px]">
           <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center mb-12">
-            <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">Truth Boundary</p>
+            <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">Approval Gate</p>
             <h2 className="section-heading">Governed <span className="text-primary">by design</span></h2>
           </motion.div>
           <div className="grid gap-5 sm:grid-cols-2">
@@ -205,7 +205,7 @@ export function ApprovalGateTwinContent() {
         <div className="mx-auto max-w-[1100px]">
           <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center mb-12">
             <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">Twin in Action</p>
-            <h2 className="section-heading">Virtual state machine. <span className="text-primary">Always current.</span></h2>
+            <h2 className="section-heading">Your AI copilot. <span className="text-primary">Always current.</span></h2>
           </motion.div>
           <div className="grid gap-5 sm:grid-cols-3">
             {virtualState.map((v, i) => (

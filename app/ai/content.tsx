@@ -73,7 +73,7 @@ const approvalSteps = [
   },
   {
     num: "02",
-    title: "TruthLayer scores",
+    title: "Approval Gate scores",
     desc: "Confidence, evidence chain, source freshness — all visible.",
   },
   {
@@ -130,8 +130,8 @@ export function AIContent() {
               }}
               className="text-[48px] font-semibold leading-[1em] tracking-[-0.05em] text-white sm:text-[54px] lg:text-[64px]"
             >
-              One AI that reads{" "}
-              <span className="text-primary">everything.</span>
+              Your AI copilot{" "}
+              <span className="text-primary">attached to the detection layer.</span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 12 }}
@@ -145,7 +145,7 @@ export function AIContent() {
               }}
               className="mx-auto mt-8 max-w-2xl text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-white/55"
             >
-              Full-context AI that surfaces signals and waits for your approval before anything changes.
+              Assembles evidence, explains why a signal exists, proposes concrete actions. Operates on the Spine&apos;s truth, not screen-scraped guesses. Always shows its reasoning before asking for approval.
             </motion.p>
           </div>
         </div>
@@ -384,7 +384,7 @@ export function AIContent() {
               {
                 num: "04",
                 title: "Learns without polluting",
-                desc: "Session summaries go through TruthLayer.",
+                desc: "Session summaries go through the Approval Gate.",
               },
               {
                 num: "05",
@@ -440,7 +440,7 @@ export function AIContent() {
             <div className="mb-4 inline-flex items-center gap-2 rounded-[40px] border border-primary/20 bg-primary/5 px-4 py-1.5">
               <ShieldCheck className="h-4 w-4 text-primary" />
               <span className="text-[14px] font-semibold tracking-[-0.03em] text-primary">
-                TruthLayer
+                Approval Gate
               </span>
             </div>
             <h2 className="text-[40px] font-semibold tracking-[-0.05em] leading-[1.15] text-white sm:text-[48px]">
@@ -450,7 +450,7 @@ export function AIContent() {
               </span>
             </h2>
             <p className="mt-6 text-[15px] font-medium leading-[1.5] text-white/40">
-              TruthLayer can&apos;t be bypassed or turned off. It&apos;s how the product is built.
+              The Approval Gate can&apos;t be bypassed or turned off. It&apos;s how the product is built.
             </p>
           </motion.div>
 
@@ -511,7 +511,7 @@ export function AIContent() {
               }}
               asChild
             >
-              <Link href="/contact?intent=demo">See TruthLayer in action</Link>
+              <Link href="/contact?intent=demo">See the Approval Gate in action</Link>
             </Button>
           </motion.div>
         </div>

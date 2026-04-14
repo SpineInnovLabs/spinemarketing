@@ -14,6 +14,8 @@ import {
   ArrowRight,
   Gauge,
   Fingerprint,
+  UserCheck,
+  Brain,
 } from "lucide-react";
 import { DashboardMockup } from "@/components/dashboard-mockup";
 
@@ -109,50 +111,47 @@ const layers = [
   {
     tag: "Workspace",
     icon: LayoutDashboard,
-    title: "Where your team works every day",
+    title: "Your daily operating surface on top of the Spine",
     color: { bg: "rgba(45,212,191,0.12)", glow: "rgba(45,212,191,0.25)", text: "#2dd4bf" },
     items: [
-      { name: "Account Command Center", desc: "Unified timeline. AI-drafted follow-ups." },
-      { name: "Portfolio Views", desc: "Health, renewals, expansion — all live." },
-      { name: "Knowledge Memory", desc: "Approved insights compound over time." },
+      { name: "Account 360s", desc: "Unified canonical record with activity, risk, and next steps." },
+      { name: "Task Queues & Workflows", desc: "Work from one screen instead of stitching together ten tools." },
+      { name: "Domain-Specific Views", desc: "Customer Success, RevOps, and BizOps share the same underlying reality." },
     ],
   },
   {
     tag: "Cognitive Layer",
     icon: Sparkles,
-    title: "AI that understands your business context",
+    title: "Continuous detection engine bound to Spine events",
     color: { bg: "rgba(139,92,246,0.12)", glow: "rgba(139,92,246,0.25)", text: "#8b5cf6" },
     items: [
-      { name: "Morning Brief", desc: "What changed overnight, ranked by impact." },
-      { name: "Proactive Signals", desc: "Linked, scored, surfaced before you ask." },
-      { name: "Session Continuity", desc: "Ask anything. AI answers from real data." },
+      { name: "Cross-Stack Pattern Detection", desc: "Reads CRM, support, billing, email, and product — sees trends single-tool copilots miss." },
+      { name: "Scored Signals", desc: "Converts normalized streams into scored signals, ranked by impact." },
+      { name: "One Detection Layer", desc: "Instead of AI per app, one detection layer over your entire stack." },
     ],
   },
   {
-    tag: "Spine Foundation",
-    icon: ShieldCheck,
-    title: "Invisible infrastructure you can trust",
+    tag: "The Twin",
+    icon: Brain,
+    title: "Your AI copilot attached to that detection layer",
     color: { bg: "rgba(251,191,36,0.12)", glow: "rgba(251,191,36,0.25)", text: "#fbbf24" },
     items: [
-      { name: "Evidence-First Governance", desc: "Source data and confidence on every suggestion." },
-      { name: "Configurable Approval Flows", desc: "Route by impact. CSM, Manager, or Finance." },
-      { name: "Write-Back Safety", desc: "Idempotent APIs. Automatic retry and rollback." },
+      { name: "Evidence Assembly", desc: "Explains why a signal exists and proposes concrete actions." },
+      { name: "Spine-Grounded", desc: "Operates on the Spine's truth, not screen-scraped guesses." },
+      { name: "Reasoning First", desc: "Always shows its reasoning before asking for approval." },
     ],
   },
-];
-
-const modules = [
-  { title: "Account Intelligence", desc: "Health scoring with 90-day renewal lookahead.", icon: Gauge },
-  { title: "Revenue & Collections", desc: "AI-drafted reminders tuned to relationship.", icon: Coins },
-  { title: "Escalation & Risk", desc: "Detect product risk before it becomes churn.", icon: ScanSearch },
-  { title: "Executive Console", desc: "Board-ready briefs from live data.", icon: Fingerprint },
-];
-
-const governancePrinciples = [
-  { icon: CheckCircle2, title: "Approval Required", desc: "Human gate is mandatory for critical actions." },
-  { icon: ScanSearch, title: "Evidence Visibility", desc: "Every suggestion links to its source data." },
-  { icon: Clock, title: "Full Audit Log", desc: "Who, what, when — immutable and append-only." },
-  { icon: Fingerprint, title: "Reversibility", desc: "Roll back any action within 24 hours." },
+  {
+    tag: "Approval Gate",
+    icon: ShieldCheck,
+    title: "The hard boundary between the Twin and execution",
+    color: { bg: "rgba(239,68,68,0.08)", glow: "rgba(239,68,68,0.15)", text: "#f87171" },
+    items: [
+      { name: "Evidence Links", desc: "Links back to Spine entities and raw events on every action." },
+      { name: "Confidence Scores", desc: "Tunable by team and signal type — you control the threshold." },
+      { name: "Impact Previews", desc: "See which records and tools will change before you approve." },
+    ],
+  },
 ];
 
 const socialProofMetrics = [
@@ -197,23 +196,23 @@ export function ProductContent() {
             className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.06] px-4 py-1.5 text-[13px] font-semibold text-white/60"
           >
             <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-            Product — Your Frontend
+            Product
           </motion.div>
 
           <motion.h1
             {...heroFade(0.22)}
             className="text-[48px] font-semibold leading-[1.05] tracking-[-0.05em] text-white sm:text-[60px] lg:text-[72px]"
           >
-            Where you work.
+            See, review, and act
             <br />
-            <span className="text-primary">Where AI serves you.</span>
+            <span className="text-primary">on canonical truth.</span>
           </motion.h1>
 
           <motion.p
             {...heroFade(0.4)}
             className="mx-auto mt-7 max-w-2xl text-[17px] font-medium leading-[1.6] tracking-[-0.02em] text-white/45"
           >
-            The Workspace is your daily surface. The Cognitive Layer renders insights and actions. You approve. Knowledge compounds.
+            The Product layer is how your teams see, review, and act on the Spine&apos;s canonical truth. The Workspace, Cognitive Layer, Twin, and Approval Gate work together — the Spine cleans and unifies data; the Product turns that into a daily surface, an always-on detection engine, and a governed execution path that never bypasses human judgment.
           </motion.p>
 
           <motion.div {...heroFade(0.52)} className="mt-9 flex flex-wrap items-center justify-center gap-3">
@@ -274,11 +273,11 @@ export function ProductContent() {
           >
             <p className="mb-3 text-[12px] font-bold uppercase tracking-[0.14em] text-primary">How it works</p>
             <h2 className="text-[36px] font-semibold leading-[1.15] tracking-[-0.04em] text-white sm:text-[44px]">
-              Connect. Work. Approve.{" "}
-              <span className="text-primary">See your Twin working.</span>
+              Connect. Detect. Propose.{" "}
+              <span className="text-primary">You approve.</span>
             </h2>
             <p className="mt-4 text-[15px] font-medium leading-[1.6] text-white/50">
-              Four steps to a workspace that thinks with you.
+              The Spine cleans data. The Cognitive Layer detects patterns. The Twin proposes actions. You decide what executes.
             </p>
           </motion.div>
 
@@ -296,9 +295,9 @@ export function ProductContent() {
             <div className="grid gap-px bg-white/[0.04] sm:grid-cols-2 lg:grid-cols-4">
               {[
                 { num: "1", color: "#2dd4bf", label: "Connect", title: "Your tools stay where they are", desc: "CRM, billing, support, projects — connect once via OAuth.", tags: ["CRM", "Billing", "Support", "Projects"] },
-                { num: "2", color: "#8b5cf6", label: "Work", title: "One workspace for everything", desc: "Accounts, tasks, workflows, calendar — all unified.", alerts: null },
-                { num: "3", color: "#fbbf24", label: "Approve", title: "Nothing happens without you", desc: "", draft: true },
-                { num: "4", color: "#2dd4bf", label: "Twin", title: "See your Twin working", desc: "", alerts: [{ label: "Morning brief ready", severity: "High" }, { label: "3 signals surfaced", severity: "Critical" }, { label: "Draft follow-up prepared", severity: "High" }] },
+                { num: "2", color: "#8b5cf6", label: "Detect", title: "One detection layer over your stack", desc: "Cognitive Layer watches normalized streams and finds patterns.", alerts: null },
+                { num: "3", color: "#fbbf24", label: "Propose", title: "Twin assembles evidence", desc: "Explains why, proposes what to do, shows its reasoning.", draft: true },
+                { num: "4", color: "#2dd4bf", label: "Approve", title: "Nothing happens without you", desc: "", alerts: [{ label: "Evidence linked to Spine entities", severity: "High" }, { label: "Confidence score: 87", severity: "Critical" }, { label: "Impact preview ready", severity: "High" }] },
               ].map((step, i) => (
                 <motion.div
                   key={i}
@@ -333,11 +332,12 @@ export function ProductContent() {
                   )}
                   {step.draft && (
                     <div className="mt-1 rounded-xl border border-primary/20 bg-primary/[0.06] p-4">
-                      <p className="text-[12px] font-semibold text-primary mb-1">AI Draft Ready</p>
-                      <p className="text-[12px] font-medium leading-[1.6] text-white/45">&quot;Hi Sarah — wanted to check in given recent activity on FinanceFlow&apos;s account. Would tomorrow work for a quick call?&quot;</p>
+                      <p className="text-[12px] font-semibold text-primary mb-1">Twin Proposed Action</p>
+                      <p className="text-[12px] font-medium leading-[1.6] text-white/45">&quot;Escalate FinanceFlow — usage dropped 30%, champion left, renewal in 45 days. Recommend exec-level outreach.&quot;</p>
                       <div className="mt-3 flex gap-2">
-                        <span className="rounded-lg bg-primary px-3 py-1.5 text-[11px] font-bold text-white">Approve & Send</span>
+                        <span className="rounded-lg bg-primary px-3 py-1.5 text-[11px] font-bold text-white">Approve</span>
                         <span className="rounded-lg border border-white/[0.1] px-3 py-1.5 text-[11px] font-bold text-white/40">Edit</span>
+                        <span className="rounded-lg border border-white/[0.1] px-3 py-1.5 text-[11px] font-bold text-white/40">Reject</span>
                       </div>
                     </div>
                   )}
@@ -366,7 +366,7 @@ export function ProductContent() {
               <span className="text-primary">in action.</span>
             </h2>
             <p className="mt-4 text-[15px] font-medium leading-[1.6] text-white/50">
-              The Workspace shows your accounts. The Cognitive Layer slides up with signals and proposed actions. You approve what happens next.
+              Open one canonical record with activity, risk, and next steps already organized. No swiveling between Salesforce, Zendesk, Stripe, and Slack.
             </p>
           </motion.div>
 
@@ -395,10 +395,10 @@ export function ProductContent() {
             transition={{ type: "spring", damping: 18, stiffness: 70 }}
             className="mx-auto mb-16 max-w-2xl text-center"
           >
-            <p className="mb-3 text-[12px] font-bold uppercase tracking-[0.14em] text-primary">Two layers of product</p>
+            <p className="mb-3 text-[12px] font-bold uppercase tracking-[0.14em] text-primary">Four components</p>
             <h2 className="text-[40px] font-semibold leading-[1.1] tracking-[-0.04em] text-white sm:text-[52px]">
-              Workspace + Cognitive Layer.{" "}
-              <span className="text-primary">Powered by the Spine.</span>
+              Workspace. Cognitive Layer. Twin.{" "}
+              <span className="text-primary">Approval Gate.</span>
             </h2>
           </motion.div>
 
@@ -449,127 +449,30 @@ export function ProductContent() {
       </section>
 
       <section className="relative overflow-hidden py-28 bg-dark-section">
-        <div className="pointer-events-none absolute inset-0">
-          <div className="absolute left-[25%] top-[30%] h-[400px] w-[500px] rounded-full opacity-15 blur-[100px]" style={{ background: "radial-gradient(circle, rgba(45,212,191,0.25), transparent 70%)" }} />
-        </div>
-        <div className="relative mx-auto max-w-[1100px] px-6">
-          <div className="grid gap-16 lg:grid-cols-2">
-            <div>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-80px" }}
-                transition={{ type: "spring", damping: 18, stiffness: 70 }}
-              >
-                <p className="mb-3 text-[12px] font-bold uppercase tracking-[0.14em] text-primary">Core modules</p>
-                <h2 className="text-[32px] font-semibold leading-[1.15] tracking-[-0.04em] text-white">
-                  Built for every{" "}
-                  <span className="text-primary">operating context</span>
-                </h2>
-              </motion.div>
-              <motion.div
-                variants={stagger}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true }}
-                className="mt-8 space-y-3"
-              >
-                {modules.map(({ title, desc, icon: ModIcon }, i) => (
-                  <motion.div
-                    key={i}
-                    variants={fadeUp}
-                    className="flex items-start gap-4 rounded-xl border border-white/[0.08] bg-white/[0.03] p-5 transition-colors hover:border-primary/30 hover:bg-primary/[0.04]"
-                  >
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/[0.12]" style={{ boxShadow: "0 0 20px rgba(45,212,191,0.15)" }}>
-                      <ModIcon className="h-5 w-5 text-primary" />
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <span className="text-[15px] font-semibold tracking-[-0.02em] text-white">{title}</span>
-                      <p className="mt-1 text-[13px] font-medium leading-[1.6] text-white/45">{desc}</p>
-                    </div>
-                  </motion.div>
-                ))}
-              </motion.div>
-            </div>
-
-            <div>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-80px" }}
-                transition={{ type: "spring", damping: 18, stiffness: 70, delay: 0.05 }}
-              >
-                <p className="mb-3 text-[12px] font-bold uppercase tracking-[0.14em] text-primary">Governance by design</p>
-                <h2 className="text-[32px] font-semibold leading-[1.15] tracking-[-0.04em] text-white">
-                  Control is not{" "}
-                  <span className="text-primary">optional</span>
-                </h2>
-              </motion.div>
-              <motion.div
-                variants={stagger}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true }}
-                className="mt-8 space-y-3"
-              >
-                {governancePrinciples.map(({ icon: GovIcon, title, desc }, i) => (
-                  <motion.div
-                    key={i}
-                    variants={fadeUp}
-                    className="flex items-start gap-4 rounded-xl border border-white/[0.08] bg-white/[0.03] p-5"
-                  >
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/[0.12]" style={{ boxShadow: "0 0 20px rgba(45,212,191,0.15)" }}>
-                      <GovIcon className="h-5 w-5 text-primary" />
-                    </div>
-                    <div>
-                      <div className="text-[15px] font-semibold tracking-[-0.02em] text-white mb-1">{title}</div>
-                      <p className="text-[13px] font-medium leading-[1.6] text-white/45">{desc}</p>
-                    </div>
-                  </motion.div>
-                ))}
-              </motion.div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="relative overflow-hidden py-24 bg-dark-section">
-        <div className="pointer-events-none absolute inset-0">
-          <div className="absolute left-1/2 top-1/2 h-[400px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-20 blur-[100px]" style={{ background: "radial-gradient(circle, rgba(45,212,191,0.3), transparent 70%)" }} />
-        </div>
-        <div className="relative mx-auto max-w-[700px] px-6 text-center">
-          <motion.h2
+        <div className="relative mx-auto max-w-[680px] px-4 text-center">
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-80px" }}
             transition={{ type: "spring", damping: 18, stiffness: 70 }}
-            className="text-[36px] font-semibold leading-[1.1] tracking-[-0.04em] text-white sm:text-[48px]"
           >
-            See it working{" "}
-            <span className="text-primary">in 20 minutes</span>
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ type: "spring", damping: 18, stiffness: 70, delay: 0.08 }}
-            className="mx-auto mt-5 max-w-lg text-[16px] font-medium leading-[1.6] text-white/50"
-          >
-            We&apos;ll connect your tools live. See it in 20 minutes.
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ type: "spring", damping: 18, stiffness: 70, delay: 0.16 }}
-            className="mt-8"
-          >
-            <Link
-              href="/contact?intent=demo"
-              className="inline-flex h-12 items-center gap-2 rounded-full bg-primary px-8 text-[15px] font-semibold text-white transition-opacity hover:opacity-90"
-            >
-              Book a demo <ArrowRight className="h-4 w-4" />
-            </Link>
+            <Coins className="mx-auto mb-4 h-7 w-7 text-primary" />
+            <p className="mb-3 text-[12px] font-bold uppercase tracking-[0.14em] text-primary">Pricing</p>
+            <h2 className="text-[32px] font-semibold leading-[1.15] tracking-[-0.04em] text-white">
+              Value per connected truth,{" "}
+              <span className="text-primary">not seat sprawl.</span>
+            </h2>
+            <p className="mt-4 text-[15px] font-medium leading-[1.6] text-white/40">
+              Plans scale with entity volume and connected tools. Start by wiring a few high-leverage systems into the Spine and expand coverage over time. The same Product stack stays consistent as you grow from a single team pilot to organization-wide rollout.
+            </p>
+            <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
+              <Link href="/pricing" className="inline-flex h-10 items-center rounded-full bg-primary px-5 text-[13px] font-semibold text-white hover:opacity-90 transition-opacity">
+                View pricing →
+              </Link>
+              <Link href="/contact?intent=demo" className="inline-flex h-10 items-center rounded-full border border-white/15 px-5 text-[13px] font-semibold text-white/60 hover:border-white/30 hover:text-white transition-colors">
+                Book a demo →
+              </Link>
+            </div>
           </motion.div>
         </div>
       </section>

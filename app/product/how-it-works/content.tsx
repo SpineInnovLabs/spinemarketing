@@ -46,23 +46,23 @@ const evidenceItems = [
 const intelligenceFeatures = [
   {
     icon: Eye,
-    title: "Proactive Signals",
-    desc: "Alerts when trigger scoring thresholds are met.",
+    title: "Cross-Stack Pattern Detection",
+    desc: "Reads CRM, support, billing, email, and product — sees trends single-tool copilots miss.",
   },
   {
     icon: Zap,
-    title: "Proposed Actions",
-    desc: "AI-generated next steps with evidence and confidence scores.",
+    title: "Scored Signals",
+    desc: "Converts normalized streams into scored signals, ranked by impact and confidence.",
   },
   {
     icon: Database,
-    title: "Spine-Grounded",
-    desc: "All reasoning tied to canonical Entity 360 records.",
+    title: "One Detection Layer",
+    desc: "Instead of AI per app, one detection layer over your entire stack.",
   },
   {
     icon: TrendingUp,
     title: "Continuous Monitoring",
-    desc: "Pattern detection across every connected data source.",
+    desc: "Bound to Spine events — watches every normalized stream in real time.",
   },
 ];
 
@@ -89,11 +89,11 @@ export function ProductHowItWorksContent() {
             {...heroFade(0.38)}
             className="mx-auto mt-7 max-w-xl text-[17px] font-medium leading-[1.55] tracking-[-0.02em] text-white/50"
           >
-            The Twin monitors continuously and proposes actions — you decide what executes.
+            The continuous detection engine bound to Spine events. Watches normalized streams, runs pattern detection, and converts them into scored signals ranked by impact.
           </motion.p>
           <motion.div {...heroFade(0.5)} className="mt-9 flex flex-wrap items-center justify-center gap-3">
             <Link href="/contact?intent=demo" className="inline-flex h-11 items-center rounded-full bg-primary px-6 text-[14px] font-semibold tracking-[-0.02em] text-white transition-opacity hover:opacity-90">
-              See the Twin in action →
+              See the Cognitive Layer →
             </Link>
           </motion.div>
         </div>
@@ -103,7 +103,7 @@ export function ProductHowItWorksContent() {
         <div className="mx-auto max-w-[1100px]">
           <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center mb-12">
             <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">Cognitive Layer</p>
-            <h2 className="section-heading">Four pillars of <span className="text-primary">proactive intelligence</span></h2>
+            <h2 className="section-heading">The continuous <span className="text-primary">detection engine</span></h2>
           </motion.div>
           <div className="grid gap-5 sm:grid-cols-2">
             {intelligenceFeatures.map(({ icon: Icon, title, desc }, i) => (

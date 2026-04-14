@@ -50,7 +50,7 @@ const platformFAQs: FAQItem[] = [
   },
   {
     question: "What are Session Summaries?",
-    answer: "When you interact with the Twin in the Cognitive Layer, each conversation generates a Session Summary — a structured record of what was discussed, what was proposed, and what was approved. These summaries pass through TruthLayer governance before entering the Spine's knowledge, ensuring your system's memory is always accurate and human-verified.",
+    answer: "When you interact with the Twin in the Cognitive Layer, each conversation generates a Session Summary — a structured record of what was discussed, what was proposed, and what was approved. These summaries pass through the Approval Gate before entering the Spine's knowledge, ensuring your system's memory is always accurate and human-verified.",
   },
 ];
 

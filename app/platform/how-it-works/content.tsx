@@ -97,7 +97,7 @@ const truthLayerCards = [
     desc: "0–100 scoring before human presentation.",
   },
   {
-    title: "Governance Membrane",
+    title: "Governance Enforcement",
     desc: "AI cannot write without human approval. Architectural mandate.",
   },
 ];

@@ -203,7 +203,7 @@ export function PlatformSecurityContent() {
               <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: "rgba(245,158,11,0.12)" }}>
                 <ShieldCheck className="w-5 h-5" style={{ color: "#f59e0b" }} />
               </div>
-              <h2 className="text-2xl font-bold">Truth Boundary Enforcement</h2>
+              <h2 className="text-2xl font-bold">Governance Enforcement</h2>
             </div>
             <p className="text-white/50 mb-8 ml-[52px] text-sm leading-relaxed">
               An architectural constraint — AI cannot modify systems without human approval.
