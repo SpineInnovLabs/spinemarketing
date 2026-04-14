@@ -30,45 +30,49 @@ export function AdCuriosity() {
       </div>
 
       <div style={{
-        position: 'absolute', bottom: '5vw', left: '4vw', right: '4vw', zIndex: 2
+        position: 'absolute', top: '10vw', left: '4vw', right: '4vw', zIndex: 2
       }}>
-        <div style={{ fontFamily: 'Inter, sans-serif', fontWeight: 800, color: 'white', fontSize: '5vw', lineHeight: 1.1, marginBottom: '2vw' }}>
+        <div style={{ fontFamily: 'Inter, sans-serif', fontWeight: 800, color: 'white', fontSize: '4.5vw', lineHeight: 1.1, marginBottom: '1.5vw' }}>
           The hidden signal<br/>
           that saved an<br/>
           <span style={{ color: '#34D399' }}>$8M account</span>.
         </div>
 
-        <div style={{ fontFamily: 'Inter, sans-serif', color: 'rgba(255,255,255,0.6)', fontSize: '2vw', lineHeight: 1.5, marginBottom: '2.5vw', maxWidth: '90%' }}>
-          Buried across Salesforce, Zendesk, and Slack — a churn signal no single tool could see. The Intelligence Layer found it. The CSM saved the deal.
+        <div style={{ fontFamily: 'Inter, sans-serif', color: 'rgba(255,255,255,0.6)', fontSize: '1.8vw', lineHeight: 1.5, maxWidth: '90%' }}>
+          Buried across Salesforce, Zendesk, and Slack — a churn signal no single tool could see.
         </div>
+      </div>
 
+      <div style={{
+        position: 'absolute', bottom: '4vw', left: '4vw', right: '4vw', zIndex: 2
+      }}>
         <div style={{
           background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)',
-          borderRadius: '10px', padding: '2vw 2.5vw', marginBottom: '3vw'
+          borderRadius: '10px', padding: '1.8vw 2.5vw', marginBottom: '2vw'
         }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1.5vw', marginBottom: '1.2vw' }}>
-            <div style={{ width: '0.8vw', height: '0.8vw', borderRadius: '50%', background: '#ef4444' }} />
-            <span style={{ color: 'rgba(255,255,255,0.5)', fontSize: '1.6vw', fontFamily: 'Inter, sans-serif', textDecoration: 'line-through' }}>Ticket escalation in Zendesk</span>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1.2vw', marginBottom: '1vw' }}>
+            <div style={{ width: '0.7vw', height: '0.7vw', borderRadius: '50%', background: '#ef4444' }} />
+            <span style={{ color: 'rgba(255,255,255,0.5)', fontSize: '1.4vw', fontFamily: 'Inter, sans-serif', textDecoration: 'line-through' }}>Ticket escalation in Zendesk</span>
           </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1.5vw', marginBottom: '1.2vw' }}>
-            <div style={{ width: '0.8vw', height: '0.8vw', borderRadius: '50%', background: '#f59e0b' }} />
-            <span style={{ color: 'rgba(255,255,255,0.5)', fontSize: '1.6vw', fontFamily: 'Inter, sans-serif', textDecoration: 'line-through' }}>Usage drop in product analytics</span>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1.2vw', marginBottom: '1vw' }}>
+            <div style={{ width: '0.7vw', height: '0.7vw', borderRadius: '50%', background: '#f59e0b' }} />
+            <span style={{ color: 'rgba(255,255,255,0.5)', fontSize: '1.4vw', fontFamily: 'Inter, sans-serif', textDecoration: 'line-through' }}>Usage drop in product analytics</span>
           </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1.5vw', marginBottom: '1.2vw' }}>
-            <div style={{ width: '0.8vw', height: '0.8vw', borderRadius: '50%', background: '#f59e0b' }} />
-            <span style={{ color: 'rgba(255,255,255,0.5)', fontSize: '1.6vw', fontFamily: 'Inter, sans-serif', textDecoration: 'line-through' }}>Quiet in Slack channel</span>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1.2vw', marginBottom: '1vw' }}>
+            <div style={{ width: '0.7vw', height: '0.7vw', borderRadius: '50%', background: '#f59e0b' }} />
+            <span style={{ color: 'rgba(255,255,255,0.5)', fontSize: '1.4vw', fontFamily: 'Inter, sans-serif', textDecoration: 'line-through' }}>Quiet in Slack channel</span>
           </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1.5vw' }}>
-            <div style={{ width: '0.8vw', height: '0.8vw', borderRadius: '50%', background: '#34D399' }} />
-            <span style={{ color: '#34D399', fontSize: '1.6vw', fontWeight: 600, fontFamily: 'Inter, sans-serif' }}>IntegrateWise: ⚠️ Churn risk — HIGH (87% confidence)</span>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1.2vw' }}>
+            <div style={{ width: '0.7vw', height: '0.7vw', borderRadius: '50%', background: '#34D399' }} />
+            <span style={{ color: '#34D399', fontSize: '1.4vw', fontWeight: 600, fontFamily: 'Inter, sans-serif' }}>Churn risk — HIGH (87% confidence)</span>
           </div>
         </div>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '2vw' }}>
-          <div style={{ display: 'inline-flex', background: '#1BA784', borderRadius: '8px', padding: '1.2vw 3vw' }}>
-            <span style={{ color: 'white', fontSize: '2vw', fontWeight: 600, fontFamily: 'Inter, sans-serif' }}>See How It Works →</span>
+          <div style={{ display: 'inline-flex', background: '#1BA784', borderRadius: '8px', padding: '1vw 2.5vw' }}>
+            <span style={{ color: 'white', fontSize: '1.8vw', fontWeight: 600, fontFamily: 'Inter, sans-serif' }}>See How It Works →</span>
           </div>
-          <span style={{ color: 'rgba(255,255,255,0.35)', fontSize: '1.4vw', fontFamily: 'Inter, sans-serif' }}>integratewise.ai</span>
+          <span style={{ color: 'rgba(255,255,255,0.35)', fontSize: '1.3vw', fontFamily: 'Inter, sans-serif' }}>integratewise.ai</span>
         </div>
       </div>
     </div>

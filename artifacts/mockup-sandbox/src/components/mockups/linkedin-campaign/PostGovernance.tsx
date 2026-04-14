@@ -19,63 +19,63 @@ export function PostGovernance() {
         <span style={{ color: 'white', fontSize: '3vw', fontWeight: 600 }}>IntegrateWise</span>
       </div>
 
-      <div style={{ position: 'absolute', top: '14vw', left: '5vw', right: '5vw', zIndex: 10 }}>
-        <div style={{ fontWeight: 800, color: 'white', fontSize: '5.5vw', lineHeight: 1.12, marginBottom: '3vw' }}>
+      <div style={{ position: 'absolute', top: '12vw', left: '5vw', right: '5vw', zIndex: 10 }}>
+        <div style={{ fontWeight: 800, color: 'white', fontSize: '4.8vw', lineHeight: 1.12, marginBottom: '1.5vw' }}>
           AI should <span style={{ color: '#34D399' }}>recommend</span>.<br/>
           Humans should <span style={{ color: '#34D399' }}>decide</span>.
         </div>
 
-        <div style={{ color: 'rgba(255,255,255,0.55)', fontSize: '2.2vw', lineHeight: 1.6, marginBottom: '4vw', maxWidth: '85%' }}>
-          In IntegrateWise, human-in-the-loop governance isn't a feature — it's architectural law. No AI action happens without explicit approval.
+        <div style={{ color: 'rgba(255,255,255,0.55)', fontSize: '1.8vw', lineHeight: 1.5, maxWidth: '85%' }}>
+          Human-in-the-loop governance isn't a feature — it's architectural law.
         </div>
       </div>
 
       <div style={{
-        position: 'absolute', bottom: '5vw', left: '5vw', right: '5vw', zIndex: 10
+        position: 'absolute', bottom: '4vw', left: '5vw', right: '5vw', zIndex: 10
       }}>
         <div style={{
           background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)',
-          borderRadius: '12px', padding: '3vw', marginBottom: '2vw'
+          borderRadius: '12px', padding: '2.5vw'
         }}>
-          <div style={{ display: 'flex', alignItems: 'flex-start', gap: '2vw', marginBottom: '2.5vw' }}>
+          <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1.5vw', marginBottom: '2vw' }}>
             <div style={{
-              width: '5vw', height: '5vw', borderRadius: '50%', background: 'rgba(27,167,132,0.15)',
+              width: '4vw', height: '4vw', borderRadius: '50%', background: 'rgba(27,167,132,0.15)',
               display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0
             }}>
-              <span style={{ fontSize: '2.5vw' }}>🧠</span>
+              <span style={{ fontSize: '2vw' }}>🧠</span>
             </div>
             <div>
-              <div style={{ color: 'white', fontSize: '2vw', fontWeight: 700, marginBottom: '0.5vw' }}>Intelligence Layer</div>
-              <div style={{ color: 'rgba(255,255,255,0.5)', fontSize: '1.7vw', lineHeight: 1.5 }}>
-                "3 signals detected on Acme Corp: support ticket escalation, 40% usage decline, and renewal in 28 days."
+              <div style={{ color: 'white', fontSize: '1.6vw', fontWeight: 700, marginBottom: '0.3vw' }}>Intelligence Layer</div>
+              <div style={{ color: 'rgba(255,255,255,0.5)', fontSize: '1.4vw', lineHeight: 1.4 }}>
+                "3 signals on Acme Corp: ticket escalation, 40% usage decline, renewal in 28 days."
               </div>
             </div>
           </div>
 
-          <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', margin: '0 0 2vw 0' }} />
+          <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', margin: '0 0 1.5vw 0' }} />
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: '2vw', marginBottom: '1.5vw' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1.5vw', marginBottom: '1vw' }}>
             <div style={{
               background: 'rgba(27,167,132,0.15)', border: '1px solid rgba(27,167,132,0.3)',
-              borderRadius: '8px', padding: '0.6vw 1.2vw'
+              borderRadius: '6px', padding: '0.4vw 1vw'
             }}>
-              <span style={{ color: '#34D399', fontSize: '1.4vw', fontWeight: 600 }}>Recommended Action</span>
+              <span style={{ color: '#34D399', fontSize: '1.2vw', fontWeight: 600 }}>Recommended Action</span>
             </div>
-            <span style={{ color: 'rgba(255,255,255,0.4)', fontSize: '1.4vw' }}>Confidence: 87%</span>
+            <span style={{ color: 'rgba(255,255,255,0.4)', fontSize: '1.2vw' }}>Confidence: 87%</span>
           </div>
-          <div style={{ color: 'rgba(255,255,255,0.6)', fontSize: '1.7vw', lineHeight: 1.5, marginBottom: '2vw' }}>
-            Schedule executive check-in with stakeholder. Draft prepared with risk summary and expansion opportunity.
+          <div style={{ color: 'rgba(255,255,255,0.6)', fontSize: '1.4vw', lineHeight: 1.4, marginBottom: '1.5vw' }}>
+            Schedule executive check-in. Draft prepared with risk summary and expansion opportunity.
           </div>
 
-          <div style={{ display: 'flex', gap: '1.5vw' }}>
-            <div style={{ background: '#1BA784', borderRadius: '8px', padding: '1vw 2.5vw' }}>
-              <span style={{ color: 'white', fontSize: '1.8vw', fontWeight: 600 }}>✓ Approve & Send</span>
+          <div style={{ display: 'flex', gap: '1.2vw' }}>
+            <div style={{ background: '#1BA784', borderRadius: '6px', padding: '0.8vw 2vw' }}>
+              <span style={{ color: 'white', fontSize: '1.5vw', fontWeight: 600 }}>Approve & Send</span>
             </div>
-            <div style={{ background: 'rgba(255,255,255,0.06)', borderRadius: '8px', padding: '1vw 2.5vw' }}>
-              <span style={{ color: 'rgba(255,255,255,0.5)', fontSize: '1.8vw', fontWeight: 500 }}>Edit Draft</span>
+            <div style={{ background: 'rgba(255,255,255,0.06)', borderRadius: '6px', padding: '0.8vw 2vw' }}>
+              <span style={{ color: 'rgba(255,255,255,0.5)', fontSize: '1.5vw', fontWeight: 500 }}>Edit Draft</span>
             </div>
-            <div style={{ background: 'rgba(255,255,255,0.06)', borderRadius: '8px', padding: '1vw 2.5vw' }}>
-              <span style={{ color: 'rgba(255,255,255,0.5)', fontSize: '1.8vw', fontWeight: 500 }}>Dismiss</span>
+            <div style={{ background: 'rgba(255,255,255,0.06)', borderRadius: '6px', padding: '0.8vw 2vw' }}>
+              <span style={{ color: 'rgba(255,255,255,0.5)', fontSize: '1.5vw', fontWeight: 500 }}>Dismiss</span>
             </div>
           </div>
         </div>
