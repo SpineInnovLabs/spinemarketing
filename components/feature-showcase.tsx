@@ -95,7 +95,7 @@ const defaultShowcases: ShowcaseItem[] = [
       "AI sessions linked to entities",
     ],
     visual: "spine",
-    cta: { label: "Explore the Spine", href: "/platform/spine" },
+    cta: { label: "Explore the Spine", href: "/platform/the-adaptive-spine" },
   },
   {
     tag: "Workbench",
@@ -107,7 +107,7 @@ const defaultShowcases: ShowcaseItem[] = [
       "Workflow automation engine",
     ],
     visual: "workbench",
-    cta: { label: "See the Workbench", href: "/product/workbench" },
+    cta: { label: "See the Workbench", href: "/product/the-adaptive-workspace" },
   },
   {
     tag: "Intelligence Layer",
@@ -119,7 +119,7 @@ const defaultShowcases: ShowcaseItem[] = [
       "Session memory that compounds",
     ],
     visual: "intelligence",
-    cta: { label: "Meet the Twin", href: "/product/intelligence-layer" },
+    cta: { label: "Meet the Twin", href: "/product/how-it-works" },
   },
 ];
 

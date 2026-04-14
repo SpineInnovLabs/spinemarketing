@@ -2,20 +2,20 @@ import { Metadata } from "next"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { FinalCTA } from "@/components/final-cta"
-import { IntelligenceLayerContent } from "./content"
+import { ProductHowItWorksContent } from "./content"
 
 export const metadata: Metadata = {
-  title: "Intelligence Layer | IntegrateWise Product",
+  title: "How it Works | IntegrateWise Product",
   description:
-    "The Intelligence Layer. Digital Twin, Knowledge Memory, and session continuity.",
+    "The Intelligence Layer — proactive signals, morning briefs, pattern detection, and evidence-backed reasoning.",
 }
 
-export default function IntelligenceLayerPage() {
+export default function ProductHowItWorksPage() {
   return (
     <div className="min-h-screen bg-dark-section">
       <Header />
       <main id="main">
-        <IntelligenceLayerContent />
+        <ProductHowItWorksContent />
         <FinalCTA />
       </main>
       <Footer />

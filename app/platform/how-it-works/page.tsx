@@ -2,20 +2,20 @@ import { Metadata } from "next"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { FinalCTA } from "@/components/final-cta"
-import { TheSpineContent } from "./content"
+import { PlatformHowItWorksContent } from "./content"
 
 export const metadata: Metadata = {
-  title: "The Spine | IntegrateWise Platform",
+  title: "How it Works | IntegrateWise Platform",
   description:
-    "The Spine — truth layer and adaptive infrastructure. Canonical entities and Entity 360 assembly.",
+    "Data flows, identity resolution, knowledge base, and the triage mechanism that powers the Adaptive Spine.",
 }
 
-export default function TheSpinePage() {
+export default function PlatformHowItWorksPage() {
   return (
     <div className="min-h-screen bg-dark-section">
       <Header />
       <main id="main">
-        <TheSpineContent />
+        <PlatformHowItWorksContent />
         <FinalCTA />
       </main>
       <Footer />

@@ -2,20 +2,20 @@ import { Metadata } from "next"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { FinalCTA } from "@/components/final-cta"
-import { Entity360Content } from "./content"
+import { ApprovalGateTwinContent } from "./content"
 
 export const metadata: Metadata = {
-  title: "Entity 360 | IntegrateWise Product",
+  title: "Approval Gate & Twin in Action | IntegrateWise Product",
   description:
-    "Unified canonical objects. Accounts, contacts, deals — with relation graphs and conflict resolution.",
+    "AI proposes, you approve. Governed approval queues, tiered routing, Twin scoring, and 24-hour rollback.",
 }
 
-export default function Entity360Page() {
+export default function ApprovalGateTwinPage() {
   return (
     <div className="min-h-screen bg-dark-section">
       <Header />
       <main id="main">
-        <Entity360Content />
+        <ApprovalGateTwinContent />
         <FinalCTA />
       </main>
       <Footer />

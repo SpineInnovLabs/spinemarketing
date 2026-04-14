@@ -38,13 +38,22 @@ const footerColumns: {
     ],
   },
   {
+    heading: "Platform",
+    links: [
+      { name: "The Adaptive Spine", href: "/platform/the-adaptive-spine" },
+      { name: "How it Works", href: "/platform/how-it-works" },
+      { name: "Integrations", href: "/platform/integrations" },
+      { name: "Security", href: "/platform/security" },
+      { name: "Infrastructure", href: "/platform/infrastructure" },
+    ],
+  },
+  {
     heading: "Product",
     links: [
-      { name: "How It Works", href: "/platform" },
-      { name: "Spine & Intelligence", href: "/spine" },
-      { name: "The Twin", href: "/ai" },
-      { name: "Integrations", href: "/integrations" },
-      { name: "Security", href: "/security" },
+      { name: "The Adaptive Workspace", href: "/product/the-adaptive-workspace" },
+      { name: "How it Works", href: "/product/how-it-works" },
+      { name: "Approval Gate & Twin", href: "/product/approval-gate-twin" },
+      { name: "Security", href: "/product/security" },
       { name: "Pricing", href: "/pricing" },
     ],
   },
@@ -68,7 +77,7 @@ export function Footer() {
       <div className="mx-auto max-w-[1200px] px-6 pt-16 pb-10 md:px-10">
 
         {/* Top row: brand + columns */}
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[260px_repeat(5,1fr)]">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[240px_repeat(6,1fr)]">
 
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">

@@ -2,20 +2,20 @@ import { Metadata } from "next"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { FinalCTA } from "@/components/final-cta"
-import { ProductConnectorsContent } from "./content"
+import { TheAdaptiveSpineContent } from "./content"
 
 export const metadata: Metadata = {
-  title: "Connectors | IntegrateWise Product",
+  title: "The Adaptive Spine | IntegrateWise Platform",
   description:
-    "70+ pre-built connectors. MCP support. Auto-upgrade. Contextual firewalling.",
+    "The Adaptive Spine — vendor-neutral data layer converting fragmented SaaS into one versioned source of truth.",
 }
 
-export default function ProductConnectorsPage() {
+export default function TheAdaptiveSpinePage() {
   return (
     <div className="min-h-screen bg-dark-section">
       <Header />
       <main id="main">
-        <ProductConnectorsContent />
+        <TheAdaptiveSpineContent />
         <FinalCTA />
       </main>
       <Footer />

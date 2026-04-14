@@ -2,20 +2,20 @@ import { Metadata } from "next"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { FinalCTA } from "@/components/final-cta"
-import { PlatformConnectorsContent } from "./content"
+import { PlatformIntegrationsContent } from "./content"
 
 export const metadata: Metadata = {
-  title: "Connectors | IntegrateWise Platform",
+  title: "Integrations | IntegrateWise Platform",
   description:
-    "The universal integration layer — SaaS tools, AI services, MCP protocol, and webhooks. Every input is a connector feeding the Spine.",
+    "SaaS APIs, MCP, webhooks, and file drops — all through one normalization pipeline into the Spine.",
 }
 
-export default function PlatformConnectorsPage() {
+export default function PlatformIntegrationsPage() {
   return (
     <div className="min-h-screen bg-dark-section">
       <Header />
       <main id="main">
-        <PlatformConnectorsContent />
+        <PlatformIntegrationsContent />
         <FinalCTA />
       </main>
       <Footer />

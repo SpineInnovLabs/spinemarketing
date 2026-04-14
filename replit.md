@@ -83,16 +83,31 @@ IntegrateWise is a **Knowledge Workspace over the Spine** — three core concept
 | `/solutions/finance-leaders` | Finance Leaders |
 | `/solutions/individual` | Individual Professionals |
 
+### Platform Child Pages
+| Route | Page |
+|-------|------|
+| `/platform/the-adaptive-spine` | The Adaptive Spine |
+| `/platform/how-it-works` | How it Works (flows, identities, knowledge base) |
+| `/platform/integrations` | Integrations (connectors, protocols) |
+| `/platform/security` | Security |
+| `/platform/infrastructure` | Infrastructure |
+
+### Product Child Pages
+| Route | Page |
+|-------|------|
+| `/product/the-adaptive-workspace` | The Adaptive Workspace (workbench, Entity 360) |
+| `/product/how-it-works` | How it Works (Intelligence Layer, Twin insights) |
+| `/product/approval-gate-twin` | Approval Gate & Twin in Action |
+| `/product/security` | Security |
+
 ## Navigation Structure
 
-The header (`components/header.tsx`) uses a grouped mega-dropdown for Solutions:
-- **Why** → `/why` (direct link)
-- **Product** → dropdown: How It Works, Integrations, The Twin, Security
+The header (`components/header.tsx`) uses dropdowns:
+- **Platform** → dropdown: The Adaptive Spine, How it Works, Integrations, Security, Infrastructure
+- **Product** → dropdown: The Adaptive Workspace, How it Works, Approval Gate & Twin, Security
 - **Solutions** → grouped mega dropdown (By Function / By Industry / By Role)
-- **Spine & Intelligence** → `/spine` (direct link)
 - **Pricing** → `/pricing` (direct link)
-- **Resources** → `/resources` (direct link)
-- **Company** → dropdown: About, Contact
+- **Company** → dropdown: About, Contact, Why IntegrateWise
 
 ## Design System
 
@@ -126,8 +141,10 @@ The entire site uses a **fully dark design** with shadcn/ui components and Tailw
 - **Background textures**: `.bg-dot-grid` for subtle dot-grid pattern on alternating sections
 
 ### Inner Page Architecture
-- **Platform page** (`app/platform/content.tsx`): Visual storytelling with Spine diagram, Execution Path visualization, Connector tabs (SaaS/Webhooks/MCP), L1/L2 layer comparison with inline mockups, and Canonical Loop CTA
-- **Workbench page** (`app/product/workbench/content.tsx`): Product mockup, interactive accordion for 12 domain views grouped by category, Twin section, bento-style core components grid
+- **Platform page** (`app/platform/content.tsx`): Visual storytelling with Spine diagram, Execution Path visualization, Connector tabs, Workbench + Intelligence Layer mockups, and Canonical Loop CTA
+- **The Adaptive Spine** (`app/platform/the-adaptive-spine/content.tsx`): Core functions, capabilities, 8-stage normalization pipeline
+- **The Adaptive Workspace** (`app/product/the-adaptive-workspace/content.tsx`): 9 role-based views with category tabs, Entity 360 types, workspace features
+- **Approval Gate & Twin** (`app/product/approval-gate-twin/content.tsx`): Truth Boundary governance, tiered approvals, Twin Trigger Scoring, action library, safety mechanisms
 - **Pricing page** (`app/pricing/page.tsx`): Enhanced hero (`pricing-hero.tsx`), shared PricingSection component (unchanged), trust bar (`trust-bar.tsx`), FAQ, FinalCTA
 
 ## Rich Shared Components (Arvio-style)
