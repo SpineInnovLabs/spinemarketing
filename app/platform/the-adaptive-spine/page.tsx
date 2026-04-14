@@ -2,7 +2,10 @@ import { Metadata } from "next"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { FinalCTA } from "@/components/final-cta"
+import { IntegrationShowcase } from "@/components/integration-showcase"
+import { TestimonialsSection } from "@/components/testimonials-section"
 import { TheAdaptiveSpineContent } from "./content"
+import { SpineStickyScroll } from "./sticky-sections"
 
 export const metadata: Metadata = {
   title: "The Adaptive Spine | IntegrateWise Platform",
@@ -16,6 +19,12 @@ export default function TheAdaptiveSpinePage() {
       <Header />
       <main id="main">
         <TheAdaptiveSpineContent />
+        <SpineStickyScroll />
+        <IntegrationShowcase
+          tag="Works With Everything"
+          heading={<>Your tools, <span className="text-primary">unified.</span></>}
+        />
+        <TestimonialsSection heading="Why teams trust the Spine." />
         <FinalCTA />
       </main>
       <Footer />

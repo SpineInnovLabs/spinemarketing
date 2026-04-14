@@ -3,6 +3,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { FinalCTA } from "@/components/final-cta"
 import { TheAdaptiveWorkspaceContent } from "./content"
+import { WorkspaceGather } from "./sticky-sections"
 
 export const metadata: Metadata = {
   title: "The Adaptive Workspace | IntegrateWise Product",
@@ -16,6 +17,7 @@ export default function TheAdaptiveWorkspacePage() {
       <Header />
       <main id="main">
         <TheAdaptiveWorkspaceContent />
+        <WorkspaceGather />
         <FinalCTA />
       </main>
       <Footer />

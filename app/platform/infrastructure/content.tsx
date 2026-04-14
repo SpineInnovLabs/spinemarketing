@@ -5,6 +5,7 @@ import { Server, Zap, Database, Globe, BarChart3, Layers, ArrowRight } from "luc
 import { Header } from "@/components/header-client";
 import { Footer } from "@/components/footer";
 import Link from "next/link";
+import { InfrastructureStickyScroll } from "./sticky-sections";
 
 const firebaseCards = [
   {
@@ -245,6 +246,7 @@ export function InfrastructureContent() {
         </div>
       </section>
 
+      <InfrastructureStickyScroll />
       <Footer />
     </div>
   );

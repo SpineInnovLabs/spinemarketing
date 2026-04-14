@@ -7,6 +7,7 @@ import { FeatureShowcase } from "@/components/feature-showcase";
 import { BenefitsGrid } from "@/components/benefits-grid";
 import { ComparisonSection } from "@/components/comparison-section";
 import { TestimonialsSection } from "@/components/testimonials-section";
+import { ProductStickySections } from "./sticky-sections";
 
 export const metadata: Metadata = {
   title: "Product | IntegrateWise",
@@ -20,6 +21,7 @@ export default function ProductPage() {
       <Header />
       <main id="main">
         <ProductContent />
+        <ProductStickySections />
         <FeatureShowcase />
         <BenefitsGrid />
         <ComparisonSection

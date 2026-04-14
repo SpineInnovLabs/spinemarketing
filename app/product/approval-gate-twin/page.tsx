@@ -3,6 +3,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { FinalCTA } from "@/components/final-cta"
 import { ApprovalGateTwinContent } from "./content"
+import { ApprovalStickyScroll, ApprovalGather } from "./sticky-sections"
 
 export const metadata: Metadata = {
   title: "Approval Gate & Twin in Action | IntegrateWise Product",
@@ -16,6 +17,8 @@ export default function ApprovalGateTwinPage() {
       <Header />
       <main id="main">
         <ApprovalGateTwinContent />
+        <ApprovalStickyScroll />
+        <ApprovalGather />
         <FinalCTA />
       </main>
       <Footer />

@@ -5,6 +5,7 @@ import { ShieldCheck, Lock, Users, FileText, Globe, AlertTriangle, ArrowRight } 
 import { Header } from "@/components/header-client";
 import { Footer } from "@/components/footer";
 import Link from "next/link";
+import { SecurityGather } from "./sticky-sections";
 
 const dataProtection = [
   {
@@ -255,6 +256,7 @@ export function PlatformSecurityContent() {
         </div>
       </section>
 
+      <SecurityGather />
       <Footer />
     </div>
   );

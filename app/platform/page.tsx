@@ -8,6 +8,7 @@ import { StatsBar } from "@/components/stats-bar"
 import { BentoShowcase } from "@/components/bento-showcase"
 import { ComparisonSection } from "@/components/comparison-section"
 import { TestimonialsSection } from "@/components/testimonials-section"
+import { PlatformStickyScroll } from "./sticky-sections"
 
 export const metadata: Metadata = {
   title: "Platform | IntegrateWise",
@@ -22,6 +23,7 @@ export default function PlatformPage() {
       <main id="main">
         <PlatformContent />
         <StatsBar />
+        <PlatformStickyScroll />
         <BentoShowcase
           tag="The Workspace"
           heading="See it all. Act on what matters."

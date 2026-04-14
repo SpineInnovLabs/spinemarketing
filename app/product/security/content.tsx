@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { ShieldCheck, Eye, Users, FileText, AlertTriangle, RotateCcw } from "lucide-react";
 import { Header } from "@/components/header-client";
 import { Footer } from "@/components/footer";
+import { ProductSecurityStickyScroll } from "./sticky-sections";
 
 const trustDashboard = [
   { zone: "Green Zone", color: "text-emerald-400", border: "border-emerald-500/20", desc: "AI reasoning, scoring, and evidence compilation. Twin operates freely here." },
@@ -129,6 +130,7 @@ export function ProductSecurityContent() {
         </div>
       </section>
 
+      <ProductSecurityStickyScroll />
       <Footer />
     </div>
   );

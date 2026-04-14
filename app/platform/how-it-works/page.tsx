@@ -3,6 +3,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { FinalCTA } from "@/components/final-cta"
 import { PlatformHowItWorksContent } from "./content"
+import { HowItWorksGather } from "./sticky-sections"
 
 export const metadata: Metadata = {
   title: "How it Works | IntegrateWise Platform",
@@ -16,6 +17,7 @@ export default function PlatformHowItWorksPage() {
       <Header />
       <main id="main">
         <PlatformHowItWorksContent />
+        <HowItWorksGather />
         <FinalCTA />
       </main>
       <Footer />

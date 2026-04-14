@@ -139,6 +139,17 @@ The entire site uses a **fully dark design** with shadcn/ui components and Tailw
 - **FAQ sections**: Reusable `FAQSection` component with Accordion; used on `/pricing` and `/platform`
 - **Section dividers**: `.section-divider` (gradient line) and `.section-divider-subtle` between sections
 - **Background textures**: `.bg-dot-grid` for subtle dot-grid pattern on alternating sections
+- **Sticky Scroll** (`components/sticky-scroll.tsx`): Left panel stays pinned while right side scrolls through items (scroll-triggered navigation with active item highlighting, feature lists, and animated content panels)
+- **Sticky Gather** (`components/sticky-gather.tsx`): Scattered elements converge toward a center hub as user scrolls (animated gather effect with icon nodes, center label, and detail cards grid below)
+- **Parallax components** (`components/parallax-section.tsx`): ParallaxHero, ParallaxLayer, ParallaxReveal, ParallaxDivider, FloatingElement
+- **Industries Showcase** (`components/industries-showcase.tsx`): 12 industries with pain/result cards, expandable grid
+- **Use Cases Section** (`components/use-cases-section.tsx`): 12 Twin-scored use cases with expandable list
+
+### Sticky Scroll / Gather Usage
+All platform and product pages (parent + child) include either StickyScroll or StickyGather:
+- Each page has a `sticky-sections.tsx` file with page-specific data/configuration
+- Platform pages use unique Spine-focused content (data layers, governance, connectors)
+- Product pages use unique Workspace-focused content (surfaces, approval, intelligence)
 
 ### Inner Page Architecture
 - **Platform page** (`app/platform/content.tsx`): Visual storytelling with Spine diagram, Execution Path visualization, Connector tabs, Workbench + Intelligence Layer mockups, and Canonical Loop CTA
