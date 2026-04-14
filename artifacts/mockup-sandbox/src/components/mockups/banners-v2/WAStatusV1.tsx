@@ -7,7 +7,7 @@ export function WAStatusV1() {
       height: '100vh',
       overflow: 'hidden',
       backgroundColor: '#08070E',
-      backgroundImage: 'radial-gradient(circle at 50% 35%, rgba(235,67,121,0.08) 0%, transparent 55%)',
+      backgroundImage: 'radial-gradient(circle at 50% 35%, rgba(52,211,153,0.08) 0%, transparent 55%)',
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
@@ -29,10 +29,10 @@ export function WAStatusV1() {
         <div style={{ fontWeight: 500, color: 'rgba(255,255,255,0.5)', fontSize: '4vw', marginBottom: '1vw' }}>
           Stop being the
         </div>
-        <div style={{ fontWeight: 900, color: '#EB4379', fontSize: '12vw', lineHeight: 1.0, letterSpacing: '-0.03em' }}>
+        <div style={{ fontWeight: 900, color: '#34D399', fontSize: '12vw', lineHeight: 1.0, letterSpacing: '-0.03em' }}>
           human
         </div>
-        <div style={{ fontWeight: 900, color: '#EB4379', fontSize: '12vw', lineHeight: 1.0, letterSpacing: '-0.03em' }}>
+        <div style={{ fontWeight: 900, color: '#34D399', fontSize: '12vw', lineHeight: 1.0, letterSpacing: '-0.03em' }}>
           API.
         </div>
 
