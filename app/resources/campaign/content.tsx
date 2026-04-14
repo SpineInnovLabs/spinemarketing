@@ -147,7 +147,7 @@ export function CampaignGalleryContent() {
               "radial-gradient(60% 50% at 50% 30%, rgba(27,167,132,0.08) 0%, transparent 100%)",
           }}
         />
-        <div className="relative mx-auto max-w-[1200px] px-6 pt-[160px] pb-[80px] md:px-16">
+        <div className="relative mx-auto max-w-[1200px] px-6 pt-[140px] pb-[48px] md:px-16">
           <div className="mx-auto max-w-3xl text-center">
             <motion.div
               {...fade(0.1)}
@@ -175,9 +175,9 @@ export function CampaignGalleryContent() {
         </div>
       </section>
 
-      <section className="arvio-section dark-section" style={{ paddingTop: 0 }}>
+      <section className="bg-dark-section px-6 pb-24 md:px-16">
         <div className="mx-auto max-w-[1200px]">
-          <motion.div {...fade()} className="mb-10 flex flex-wrap items-center justify-center gap-2">
+          <motion.div {...fade()} className="mb-6 flex flex-wrap items-center justify-center gap-2">
             {filters.map((f) => (
               <button
                 key={f.key}
@@ -194,18 +194,26 @@ export function CampaignGalleryContent() {
             ))}
           </motion.div>
 
-          <motion.div {...fade(0.1)} className="mb-4 text-center text-[14px] font-medium text-white/30">
+          <motion.div {...fade(0.1)} className="mb-8 text-center text-[13px] font-medium text-white/25">
             {filtered.length} design{filtered.length !== 1 ? "s" : ""}
           </motion.div>
 
           {Object.entries(groups).map(([groupName, items], gi) => (
-            <div key={groupName} className="mb-12">
-              <motion.h2
+            <div key={groupName} className="mb-14">
+              {gi > 0 && (
+                <div className="mb-10 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
+              )}
+              <motion.div
                 {...fade(gi * 0.05)}
-                className="mb-6 text-[20px] font-semibold tracking-[-0.03em] text-white/80"
+                className="mb-6 flex items-center gap-3"
               >
-                {groupName}
-              </motion.h2>
+                <h2 className="text-[18px] font-semibold tracking-[-0.03em] text-white/80">
+                  {groupName}
+                </h2>
+                <span className="rounded-full bg-white/[0.06] px-2.5 py-0.5 text-[11px] font-bold text-white/30">
+                  {items.length}
+                </span>
+              </motion.div>
               <div
                 className={`grid gap-4 ${
                   items[0]?.type === "banner"
@@ -214,7 +222,9 @@ export function CampaignGalleryContent() {
                     ? "grid-cols-1"
                     : items[0]?.type === "status"
                     ? "grid-cols-2 sm:grid-cols-3 lg:grid-cols-4"
-                    : "grid-cols-2 sm:grid-cols-3 lg:grid-cols-4"
+                    : items[0]?.type === "catalog"
+                    ? "grid-cols-2 sm:grid-cols-3"
+                    : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
                 }`}
               >
                 {items.map((asset, i) => (
