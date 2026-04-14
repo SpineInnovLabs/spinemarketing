@@ -4,15 +4,15 @@ import { motion } from "framer-motion"
 import { ShieldCheck, Brain, UserCheck, BookOpen } from "lucide-react"
 
 const steps = [
-  { icon: Brain, label: "The Twin reasons", desc: "Reads your data, conversations, and accumulated knowledge through the Spine." },
-  { icon: ShieldCheck, label: "TruthLayer governs", desc: "Scores confidence, traces evidence, checks freshness." },
-  { icon: UserCheck, label: "You decide", desc: "Approve, edit, or reject with full reasoning visible." },
-  { icon: BookOpen, label: "Knowledge compounds", desc: "Only confirmed insights enter memory. Every AI in your Workspace reads from this, so recommendations get sharper over time." },
+  { icon: Brain, label: "Action pauses", desc: "Every suggestion waits in a calm approval space" },
+  { icon: ShieldCheck, label: "You see evidence", desc: "Edit tone, check reasoning, understand why" },
+  { icon: UserCheck, label: "Permit or deny", desc: "Nothing moves without your conscious yes" },
+  { icon: BookOpen, label: "System learns", desc: "Future proposals fit you better over time" },
 ]
 
 export function TruthLayerSection() {
   return (
-    <section className="arvio-section bg-dark-section">
+    <section className="arvio-section" style={{ backgroundColor: "rgb(8, 7, 14)" }}>
       <div className="mx-auto max-w-[1100px]">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -26,11 +26,11 @@ export function TruthLayerSection() {
             <span className="text-[14px] font-semibold tracking-[-0.03em] text-primary">TruthLayer</span>
           </div>
           <h2 className="text-[40px] font-semibold tracking-[-0.05em] leading-[1.15] text-white sm:text-[48px]">
-            The Twin proposes.{" "}
-            <span className="text-primary">You decide what becomes knowledge.</span>
+            You{" "}
+            <span className="text-primary">decide.</span>
           </h2>
           <p className="mt-6 text-[15px] font-medium leading-[1.5] text-white/40">
-            Session summaries pass through TruthLayer before they become knowledge. Not your data. Not your conversations. Just what AI learns — and only after you approve.
+            Intelligence suggests and drafts wait, so nothing moves without your conscious yes.
           </p>
         </motion.div>
 
@@ -63,7 +63,7 @@ export function TruthLayerSection() {
           transition={{ type: "spring", bounce: 0.2, duration: 0.6, delay: 0.3 }}
           className="mx-auto mt-10 max-w-xl text-center text-[13px] font-medium leading-[1.6] text-white/25"
         >
-          AI session summaries are the only path into Knowledge. They never enter the Spine directly. This keeps your source of truth clean and your AI&apos;s memory governed.
+          Rejected and edited actions teach the system. Proposals get sharper over time.
         </motion.p>
       </div>
     </section>
