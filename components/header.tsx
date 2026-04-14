@@ -11,7 +11,6 @@ import {
   Users,
   BarChart3,
   Sparkles,
-  Layers,
   Plug,
   Brain,
   ShieldCheck,
@@ -67,7 +66,6 @@ const navigation: NavItem[] = [
     items: [
       { name: "Spine", href: "/platform/spine", icon: Database },
       { name: "Identities", href: "/platform/identities", icon: GitBranch },
-      { name: "Execution Path", href: "/platform/execution-path", icon: Layers },
       { name: "Connectors EcoSystem", href: "/platform/connectors-ecosystem", icon: Plug },
       { name: "Knowledge Base", href: "/platform/knowledge-base", icon: BookOpen },
       { name: "Security", href: "/platform/security", icon: ShieldCheck },
