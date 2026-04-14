@@ -1,0 +1,195 @@
+Below is a **high-quality Replit AI prompt** designed to generate a *world-class version* of your IntegrateWise site (positioning, UX, copy, and structure aligned to your current content).
+
+---
+
+### World-Class Replit Prompt (for your app/site)
+
+Build a premium, production-grade SaaS website for a product called **IntegrateWise**.
+
+## Context
+
+IntegrateWise is an AI-powered **Knowledge Workspace over a unified data Spine** that connects 10–30+ SaaS tools (Salesforce, Slack, Jira, Stripe, etc.) into a single, normalized system of intelligence.
+
+It solves the “human API” problem — where operators manually move data between tools.
+
+## Core Positioning
+
+* From **integration → intelligence**
+* Not ETL, not pipelines → a **living canonical system**
+* AI is **human-in-the-loop by architecture (non-negotiable)**
+* No autonomous writes without approval
+
+---
+
+## Target Users
+
+* Account Success leaders
+* BizOps / RevOps teams
+* Enterprise operators managing multiple tools
+* Security-conscious decision makers
+
+---
+
+## UX & Visual Direction
+
+* Dark, premium, modern UI (inspired by Linear, Stripe, Vercel)
+* Subtle motion, gradients, glassmorphism accents
+* Clean typography, strong hierarchy
+* High-end SaaS feel (not template-like)
+* Responsive and fast
+
+---
+
+## Site Structure
+
+### 1. Hero Section
+
+Headline:
+**Stop being the human API between your tools**
+
+Subheadline:
+One workspace. Every tool. AI that waits for you.
+
+CTA:
+
+* Book a Demo (primary)
+* See How It Works (secondary)
+
+Visual:
+Animated data flowing into a central “Spine” or dashboard
+
+---
+
+### 2. Problem Section
+
+Explain:
+
+* 10–30+ SaaS tools
+* No native communication
+* Humans manually reconciling data
+* Slow, error-prone, non-scalable
+
+Use strong visual storytelling (before/after)
+
+---
+
+### 3. Solution Section
+
+Introduce IntegrateWise:
+
+Two Layers:
+
+1. **Knowledge Workspace**
+
+   * Domain-specific views (Account Success, RevOps, etc.)
+   * One interface instead of multiple tools
+
+2. **Cognitive Overlay (Digital Twin)**
+
+   * Detects risks (churn, delays)
+   * Generates insights
+   * Recommends actions (does NOT execute)
+
+---
+
+### 4. The Spine (Key Innovation)
+
+Explain clearly:
+
+* Adaptive data normalization layer
+* Connects all tools into a **single source of truth**
+* Not ETL, not pipelines — a **living system**
+
+Visual: central node with connected systems
+
+---
+
+### 5. Trust / Governance Section
+
+Headline:
+**AI that cannot act without you**
+
+Key points:
+
+* Human-in-the-loop is architectural
+* Every action has:
+
+  * Evidence
+  * Confidence score
+  * Impact preview
+* No autonomous system writes
+
+---
+
+### 6. Integration Services (Architecture Section)
+
+Cards:
+
+* Loader Service (dead letter queue, ingestion)
+* Adapter Pattern (vendor normalization)
+* Schema Registry (versioned mappings)
+
+---
+
+### 7. Use Cases / Personas
+
+* Account Success → churn detection
+* RevOps → pipeline clarity
+* BizOps → system-wide visibility
+
+---
+
+### 8. Social Proof / Credibility
+
+* “Built on Cloudflare Workers”
+* Enterprise-ready messaging
+* Founder-led product narrative
+
+---
+
+### 9. Final CTA
+
+**Move from integration to intelligence**
+
+CTA:
+Book a Demo
+
+---
+
+## Functional Requirements
+
+* Smooth scroll navigation
+* Component-based structure
+* Reusable UI system
+* Fast load performance
+* SEO-friendly structure
+
+---
+
+## Tone & Copy Style
+
+* Sharp, concise, executive-level
+* Avoid buzzwords
+* Clear differentiation
+* Confident but not hype-driven
+
+---
+
+## Output
+
+Generate:
+
+* Full webpage (React or HTML/CSS)
+* Clean component structure
+* Production-quality UI
+* Realistic placeholder visuals where needed
+
+Make it feel like a **$100M SaaS product landing page**, not a startup MVP.
+
+---
+
+If needed, I can also:
+
+* Convert this into **modular Replit agent tasks**
+* Break it into **component-level prompts (Hero, Spine, Governance, etc.)**
+* Or optimize specifically for **conversion vs storytelling** depending on your goal.
