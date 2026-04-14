@@ -7,7 +7,7 @@ import { AboutContent } from "./content"
 export const metadata: Metadata = {
   title: "About | IntegrateWise",
   description:
-    "IntegrateWise was born from a simple frustration: the tools meant to help teams work better were actually making work harder.",
+    "Born from a real $8M account save. One Spine. One Workspace. You stay in control.",
 }
 
 export default function AboutPage() {

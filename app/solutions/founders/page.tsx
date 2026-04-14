@@ -7,7 +7,7 @@ import { FoundersContent } from "./content"
 export const metadata: Metadata = {
   title: "Founders & CXOs | IntegrateWise",
   description:
-    "Your Monday brief. Revenue movement. Board pack. The business view that takes 30 minutes to build — available in seconds over the Spine.",
+    "Monday brief. Revenue movement. Board pack — available in seconds.",
 }
 
 export default function FoundersPage() {

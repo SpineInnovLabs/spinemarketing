@@ -6,7 +6,7 @@ import { ContactContent } from "./content"
 export const metadata: Metadata = {
   title: "Contact | IntegrateWise",
   description:
-    "Get in touch with IntegrateWise. Book a demo, request a connector, or talk to our team about your integration challenges.",
+    "Book a demo or request a connector. We connect your tools live.",
 }
 
 export default function ContactPage() {

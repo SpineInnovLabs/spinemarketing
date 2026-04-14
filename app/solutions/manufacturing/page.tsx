@@ -7,7 +7,7 @@ import { ManufacturingContent } from "./content"
 export const metadata: Metadata = {
   title: "Manufacturing & Trade | IntegrateWise Solutions",
   description:
-    "Orders, shipments, payments, exceptions — live across ERP, CRM, and logistics in one operating workspace built over the Spine.",
+    "Orders, shipments, payments — live across ERP, CRM, and logistics.",
 }
 
 export default function ManufacturingPage() {

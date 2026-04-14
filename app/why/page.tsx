@@ -7,7 +7,7 @@ import { WhyContent } from "./content"
 export const metadata: Metadata = {
   title: "Why IntegrateWise | One Spine. One Workspace. Governed AI.",
   description:
-    "Apps are fragmented. AI acts without context. IntegrateWise connects everything over one Spine, gives you one workspace, and keeps every AI action under your control.",
+    "Apps are fragmented. AI lacks context. IntegrateWise unifies everything under your control.",
 }
 
 export default function WhyPage() {

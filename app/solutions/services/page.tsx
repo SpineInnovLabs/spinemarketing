@@ -7,7 +7,7 @@ import { ServicesContent } from "./content"
 export const metadata: Metadata = {
   title: "Services & Agencies | IntegrateWise Solutions",
   description:
-    "Projects, utilisation, invoices, client health — the full picture of every engagement, not just the billing system.",
+    "Projects, utilisation, invoices, client health — the full engagement picture.",
 }
 
 export default function ServicesPage() {

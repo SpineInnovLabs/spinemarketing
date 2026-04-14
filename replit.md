@@ -15,8 +15,10 @@ A Next.js marketing website for IntegrateWise, migrated from Vercel/Firebase Hos
 
 IntegrateWise is a **Knowledge Workspace over the Spine** — three core concepts:
 - **Spine**: Adaptive, vendor-neutral intelligence layer. Unifies Truth (structured records), Context (conversations), and Session Summaries (governed AI outputs)
-- **L1 — Daily Workbench**: Where users work every day
-- **L2 — Intelligence Layer**: Where The Twin surfaces signals and proposes actions; nothing executes without human approval (Govern Gate)
+- **Workbench** (formerly L1): Where users work every day
+- **Intelligence Layer** (formerly L2): Where The Twin surfaces signals and proposes actions; nothing executes without human approval (Govern Gate)
+
+**NAMING CONVENTION**: Never use "L1" or "L2" in copy. Always use "Workbench" and "Intelligence Layer".
 
 ## Homepage Section Order (Narrative Arc)
 
@@ -24,11 +26,12 @@ IntegrateWise is a **Knowledge Workspace over the Spine** — three core concept
 2. **Logos** — "Connect the apps you already use" (marquee)
 3. **Problem** — "Modern work isn't hard. The plumbing is." (Human API pain)
 4. **Spine** — "One layer connects everything." (dedicated SpineSection with DataFlowAnimation)
-5. **Workspace** — "Your workspace. AI that thinks in context." (dashboard mockup + L1/L2/HITL pillars)
-6. **How It Works** — "How it actually works" (4-step sticky scroll walkthrough)
-7. **Proof** — testimonial + animated counters
-8. **Pricing** — 3 tiers (Starter/Growth/Command)
-9. **Final CTA** — "Ready to see everything in one place?"
+5. **Workspace** — "Your workspace. AI that thinks in context." (dashboard mockup + Workbench/Intelligence/HITL pillars)
+6. **Proof** — testimonial + animated counters
+7. **Pricing** — 3 tiers (Starter/Growth/Command)
+8. **Final CTA** — "Ready to see everything in one place?"
+
+**Note**: HowItWorksSection has been removed from the homepage (component still exists but is not rendered on homepage).
 
 ## Full Sitemap
 

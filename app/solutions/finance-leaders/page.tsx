@@ -7,7 +7,7 @@ import { FinanceLeadersContent } from "./content"
 export const metadata: Metadata = {
   title: "Finance Leaders | IntegrateWise",
   description:
-    "Cash, collections, runway, burn — the financial workspace that connects accounting, billing, and CRM into one picture.",
+    "Cash, collections, runway — accounting, billing, and CRM unified.",
 }
 
 export default function FinanceLeadersPage() {

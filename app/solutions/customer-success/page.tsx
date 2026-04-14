@@ -7,7 +7,7 @@ import { CustomerSuccessRoleContent } from "./content"
 export const metadata: Metadata = {
   title: "Customer Success & Account Managers | IntegrateWise",
   description:
-    "Save at-risk accounts. Accelerate renewals. Surface expansion. All from one workspace that reads every signal across every connected app.",
+    "Save at-risk accounts. Accelerate renewals. Surface expansion signals.",
 }
 
 export default function CustomerSuccessRolePage() {

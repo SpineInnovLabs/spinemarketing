@@ -7,7 +7,7 @@ import { IntelligenceLayerContent } from "./content"
 export const metadata: Metadata = {
   title: "Intelligence Layer | IntegrateWise Product",
   description:
-    "Layer 2: The Cognitive Overlay — Digital Twin, Knowledge Memory, Twin Trigger Scoring, and session continuity without model retraining.",
+    "The Intelligence Layer. Digital Twin, Knowledge Memory, and session continuity.",
 }
 
 export default function IntelligenceLayerPage() {

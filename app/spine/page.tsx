@@ -7,7 +7,7 @@ import { SpineContent } from "./content"
 export const metadata: Metadata = {
   title: "Spine & Intelligence | IntegrateWise",
   description:
-    "The Spine is the adaptive, vendor-neutral intelligence layer that unifies structured and unstructured data from every app. AI reasons with evidence. Every action waits for human approval.",
+    "Vendor-neutral data backbone. Unifies every app. AI reasons with evidence. You approve.",
 }
 
 export default function SpinePage() {

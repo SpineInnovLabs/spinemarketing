@@ -7,7 +7,7 @@ import { BusinessOpsContent } from "./content"
 export const metadata: Metadata = {
   title: "Business Ops | IntegrateWise",
   description:
-    "Unify your operational tools into one workspace. Get cross-system visibility, automate workflows, and let AI handle the busywork — with your approval.",
+    "Cross-system visibility. AI handles the busywork — with your approval.",
 }
 
 export default function BusinessOpsPage() {

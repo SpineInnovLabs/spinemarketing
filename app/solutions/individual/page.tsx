@@ -7,7 +7,7 @@ import { IndividualContent } from "./content"
 export const metadata: Metadata = {
   title: "Individual Professionals | IntegrateWise",
   description:
-    "Your personal workspace. Morning briefing, session memory, promise tracker, weekly planning — all in one place, built over the Spine.",
+    "Morning brief, session memory, task queue — your day, organized.",
 }
 
 export default function IndividualPage() {

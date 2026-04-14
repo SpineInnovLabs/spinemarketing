@@ -10,7 +10,7 @@ import { PricingTrustBar } from "./trust-bar";
 export const metadata: Metadata = {
   title: "Pricing | IntegrateWise",
   description:
-    "Simple, transparent pricing. Start with Starter at ₹999/$49/mo and scale to Command for full enterprise governance.",
+    "Simple pricing. Start at ₹999/$49/mo. Scale to enterprise governance.",
 };
 
 export default function PricingPage() {

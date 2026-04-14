@@ -7,7 +7,7 @@ import { SaasContent } from "./content"
 export const metadata: Metadata = {
   title: "SaaS | IntegrateWise Solutions",
   description:
-    "Renewals, expansion, product adoption — connected across CRM, support, and product usage in one account view built over the Spine.",
+    "Renewals, expansion, adoption — connected in one account view.",
 }
 
 export default function SaasPage() {

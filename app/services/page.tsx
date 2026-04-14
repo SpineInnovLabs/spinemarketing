@@ -7,7 +7,7 @@ import { ServicesContent } from "./content"
 export const metadata: Metadata = {
   title: "Services | IntegrateWise",
   description:
-    "Implementation, onboarding, connector configuration, schema mapping, and ongoing managed data operations — we get you to truth faster and keep you there.",
+    "Implementation, onboarding, and managed operations. We get you to truth faster.",
 }
 
 export default function ServicesPage() {

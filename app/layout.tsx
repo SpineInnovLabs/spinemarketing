@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   },
   title: "IntegrateWise — Stop being the human API between your apps.",
   description:
-    "IntegrateWise connects your apps into a Knowledge Workspace over the Spine. Truth, Context, and Session Summaries in one place — the Twin proposes, you approve, nothing happens without you.",
+    "One workspace. Every customer. Every tool. AI proposes, you approve.",
   icons: {
     icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
     apple: "/apple-icon.png",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "IntegrateWise — Stop being the human API between your apps.",
     description:
-      "IntegrateWise connects your apps into a Knowledge Workspace over the Spine. Truth, Context, and Session Summaries in one place — the Twin proposes, you approve, nothing happens without you.",
+      "One workspace. Every customer. Every tool. AI proposes, you approve.",
     siteName: "IntegrateWise",
     type: "website",
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "IntegrateWise" }],
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "IntegrateWise — Stop being the human API between your apps.",
     description:
-      "IntegrateWise connects your apps into a Knowledge Workspace over the Spine. Truth, Context, and Session Summaries in one place — the Twin proposes, you approve, nothing happens without you.",
+      "One workspace. Every customer. Every tool. AI proposes, you approve.",
     images: ["/og.png"],
   },
 }

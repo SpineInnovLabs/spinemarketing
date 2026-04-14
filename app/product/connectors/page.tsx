@@ -7,7 +7,7 @@ import { ProductConnectorsContent } from "./content"
 export const metadata: Metadata = {
   title: "Connectors | IntegrateWise Product",
   description:
-    "The user-facing integration management layer — 70+ pre-built connectors, MCP protocol support, auto-upgrade status, and contextual firewalling controls.",
+    "70+ pre-built connectors. MCP support. Auto-upgrade. Contextual firewalling.",
 }
 
 export default function ProductConnectorsPage() {

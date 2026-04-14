@@ -7,7 +7,7 @@ import { AccountSuccessContent } from "./content"
 export const metadata: Metadata = {
   title: "Account Success | IntegrateWise",
   description:
-    "Turn scattered account data into a living complete view. Spot risks early, act on signals, and protect revenue — AI proposes, you approve.",
+    "Complete account view. Spot risks early. AI proposes, you approve.",
 }
 
 export default function AccountSuccessPage() {

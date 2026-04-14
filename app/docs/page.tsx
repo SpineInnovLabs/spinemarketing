@@ -5,7 +5,7 @@ import { FinalCTA } from "@/components/final-cta"
 
 export const metadata: Metadata = {
   title: "Documentation | IntegrateWise",
-  description: "Learn how to set up and use IntegrateWise — connectors, workspace configuration, and AI features.",
+  description: "Set up connectors, configure your workspace, and use AI features.",
 }
 
 export default function DocsPage() {

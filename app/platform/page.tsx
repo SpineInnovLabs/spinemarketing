@@ -8,7 +8,7 @@ import { PlatformFAQ } from "./faq"
 export const metadata: Metadata = {
   title: "Platform | IntegrateWise",
   description:
-    "The Adaptive Spine Architecture — a vendor-neutral intelligence layer that normalizes truth across your systems, governs every AI action through non-bypassable human approval, and writes nothing back without explicit consent.",
+    "The Adaptive Spine. Connects every app. Governs every AI action. Nothing happens without your approval.",
 }
 
 export default function PlatformPage() {

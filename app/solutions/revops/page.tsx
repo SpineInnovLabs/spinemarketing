@@ -7,7 +7,7 @@ import { RevOpsContent } from "./content"
 export const metadata: Metadata = {
   title: "RevOps & Business Operations | IntegrateWise",
   description:
-    "One workspace for the operating layer. Pipelines, headcount, projects, exceptions — connected and actionable over the Spine.",
+    "Pipelines, headcount, projects, exceptions — connected and actionable.",
 }
 
 export default function RevOpsPage() {

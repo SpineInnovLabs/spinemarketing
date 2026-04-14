@@ -7,7 +7,7 @@ import { TruthBoundaryContent } from "./content"
 export const metadata: Metadata = {
   title: "Truth Boundary | IntegrateWise Product",
   description:
-    "Governance: The Human-in-the-Loop Control Center — approval-driven execution, proposed action queue, impact preview, and immutable audit trail.",
+    "Approval-driven execution. Every action queued, previewed, and logged.",
 }
 
 export default function TruthBoundaryPage() {

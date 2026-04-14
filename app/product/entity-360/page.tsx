@@ -7,7 +7,7 @@ import { Entity360Content } from "./content"
 export const metadata: Metadata = {
   title: "Entity 360 | IntegrateWise Product",
   description:
-    "The Universal Data Object Interface — Account, Contact, Deal, and Project as unified canonical objects with relation graphs, temporal views, and conflict resolution.",
+    "Unified canonical objects. Accounts, contacts, deals — with relation graphs and conflict resolution.",
 }
 
 export default function Entity360Page() {
