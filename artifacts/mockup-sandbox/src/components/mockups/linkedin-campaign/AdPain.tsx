@@ -1,14 +1,6 @@
 import React from 'react';
+import { Logo } from './Logo';
 
-const Logo = () => (
-  <div style={{ display: 'flex', alignItems: 'center', gap: '1.2vw' }}>
-    <svg width="3vw" height="3vw" viewBox="0 0 32 32" fill="none">
-      <circle cx="16" cy="16" r="16" fill="#1ba784"/>
-      <path d="M8 16 Q16 8 24 16 Q16 24 8 16Z" fill="white" opacity="0.9"/>
-    </svg>
-    <span style={{ color: 'white', fontSize: '2.4vw', fontWeight: 600, fontFamily: 'Inter, sans-serif' }}>IntegrateWise</span>
-  </div>
-);
 
 export function AdPain() {
   return (
@@ -25,7 +17,7 @@ export function AdPain() {
       }} />
 
       <div style={{ position: 'absolute', top: 0, left: 0, right: 0, padding: '3vw 3.5vw', zIndex: 2, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <Logo />
+        <div style={{ display: 'flex', alignItems: 'center', gap: '1.2vw' }}><Logo size="3vw" /><span style={{ color: 'white', fontSize: '2.4vw', fontWeight: 600, fontFamily: 'Inter, sans-serif' }}>IntegrateWise</span></div>
         <span style={{ color: 'rgba(255,255,255,0.4)', fontSize: '1.6vw', fontWeight: 500, fontFamily: 'Inter, sans-serif' }}>Sponsored</span>
       </div>
 

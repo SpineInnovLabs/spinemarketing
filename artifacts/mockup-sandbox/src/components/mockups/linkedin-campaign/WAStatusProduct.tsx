@@ -1,4 +1,5 @@
 import React from 'react';
+import { Logo } from './Logo';
 
 export function WAStatusProduct() {
   return (
@@ -13,10 +14,7 @@ export function WAStatusProduct() {
       }} />
 
       <div style={{ position: 'absolute', top: '5vw', left: '6vw', display: 'flex', alignItems: 'center', gap: '2vw', zIndex: 10 }}>
-        <svg viewBox="0 0 32 32" fill="none" style={{ width: '6vw', height: '6vw' }}>
-          <circle cx="16" cy="16" r="16" fill="#34D399"/>
-          <path d="M8 16 Q16 8 24 16 Q16 24 8 16Z" fill="white" opacity="0.9"/>
-        </svg>
+        <Logo size="6vw" />
         <span style={{ color: 'white', fontSize: '4vw', fontWeight: 600 }}>IntegrateWise</span>
       </div>
 

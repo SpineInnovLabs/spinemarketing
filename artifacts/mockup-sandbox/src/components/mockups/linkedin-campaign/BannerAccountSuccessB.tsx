@@ -1,4 +1,5 @@
 import React from 'react';
+import { Logo } from './Logo';
 
 export function BannerAccountSuccessB() {
   return (
@@ -11,10 +12,7 @@ export function BannerAccountSuccessB() {
       fontFamily: 'Inter, system-ui, sans-serif',
     }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: '1.2vw', flexShrink: 0 }}>
-        <svg viewBox="0 0 32 32" fill="none" style={{ width: '7vh', height: '7vh' }}>
-          <circle cx="16" cy="16" r="16" fill="#34D399"/>
-          <path d="M8 16 Q16 8 24 16 Q16 24 8 16Z" fill="white" opacity="0.9"/>
-        </svg>
+        <Logo size="7vh" />
         <span style={{ fontWeight: 700, color: 'white', fontSize: '5.5vh', letterSpacing: '-0.02em', whiteSpace: 'nowrap' }}>IntegrateWise</span>
       </div>
 
