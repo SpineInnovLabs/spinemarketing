@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -32,7 +33,11 @@ const contactFAQs = [
   },
   {
     question: "Is my data secure?",
-    answer: "Yes. AES-256 encryption at rest, TLS 1.3 in transit, SOC 2 aligned practices, full audit trails, and non-bypassable human approval on every AI action.",
+    answer: React.createElement("span", null,
+      "Yes. AES-256 encryption at rest, TLS 1.3 in transit, SOC 2 aligned practices, full audit trails, and non-bypassable human approval on every AI action. Learn more on our ",
+      React.createElement(Link, { href: "/security", className: "text-primary underline underline-offset-2 hover:text-primary/80" }, "Security page"),
+      "."
+    ),
   },
 ];
 
