@@ -421,7 +421,6 @@ export function HowItWorksSection() {
         id="how-it-works"
         steps={steps}
         heading={sectionHeading}
-        className=""
         className="bg-dark-section"
       />
     );
@@ -432,7 +431,6 @@ export function HowItWorksSection() {
       id="how-it-works"
       steps={steps}
       heading={sectionHeading}
-      className=""
       className="bg-dark-section"
     />
   );

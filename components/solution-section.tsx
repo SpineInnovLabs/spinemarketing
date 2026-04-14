@@ -1,7 +1,8 @@
 "use client";
 
-import { Database, Brain, ShieldCheck } from "lucide-react";
+import { Database, Brain, ShieldCheck, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { DashboardMockup } from "@/components/dashboard-mockup";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -139,6 +140,34 @@ export function SolutionSection() {
             The workspace is the daily driver.{" "}
             <span className="text-primary">The Twin is the accelerator.</span>
           </p>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ type: "spring", damping: 18, stiffness: 70, delay: 0.35 }}
+          className="mx-auto mt-16 grid max-w-5xl gap-4 sm:grid-cols-3"
+        >
+          {[
+            { href: "/account-success", label: "Account Success", desc: "For CS & Account teams" },
+            { href: "/business-ops", label: "Business Ops", desc: "For Operations leaders" },
+            { href: "/personal-ops", label: "Personal Ops", desc: "For individuals" },
+          ].map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="group flex items-center justify-between rounded-2xl border border-white/[0.08] bg-white/[0.03] px-6 py-4 transition-all hover:border-white/[0.15]"
+            >
+              <div>
+                <div className="text-[15px] font-semibold tracking-[-0.02em] text-white">
+                  {link.label}
+                </div>
+                <div className="text-[13px] text-white/40">{link.desc}</div>
+              </div>
+              <ArrowRight className="h-4 w-4 text-white/30 transition-transform group-hover:translate-x-1 group-hover:text-primary" />
+            </Link>
+          ))}
         </motion.div>
       </div>
     </section>
