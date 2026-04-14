@@ -1,13 +1,13 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, type MotionValue } from "framer-motion";
 import { useRef, type ReactNode } from "react";
 import { type LucideIcon } from "lucide-react";
 
 export interface GatherItem {
   icon: LucideIcon;
   label: string;
-  description: string;
+  description?: string;
   color: string;
 }
 
@@ -155,7 +155,7 @@ function GatherNode({
   scatterY: number;
   finalX: number;
   finalY: number;
-  progress: ReturnType<typeof useTransform>;
+  progress: MotionValue<number>;
 }) {
   const x = useTransform(progress, [0, 1], [scatterX, finalX]);
   const y = useTransform(progress, [0, 1], [scatterY, finalY]);

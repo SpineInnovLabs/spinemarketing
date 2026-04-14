@@ -15,9 +15,9 @@ import {
   Lock,
   Eye,
   GitBranch,
-  Activity,
   CheckCircle2,
 } from "lucide-react";
+import { DataFlowAnimation } from "@/components/data-flow-animation";
 
 const fade = (delay = 0) => ({
   initial: { opacity: 0, y: 16 },
@@ -32,187 +32,129 @@ const heroFade = (delay = 0) => ({
   transition: { type: "spring" as const, damping: 16, mass: 1, stiffness: 52, delay },
 });
 
-function SpineVisualDiagram() {
-  const tools = ["Salesforce", "Stripe", "Zendesk", "Slack", "HubSpot", "Jira"];
-
-  return (
-    <div className="relative w-full max-w-[800px] mx-auto">
-      <div className="relative rounded-2xl border border-white/[0.08] bg-white/[0.02] p-8 md:p-12 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_50%,rgba(27,167,132,0.06),transparent_70%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:24px_24px]" />
-
-        <div className="relative flex flex-col items-center gap-8">
-          <div className="flex flex-wrap justify-center gap-3">
-            {tools.map((tool, i) => (
-              <motion.div
-                key={tool}
-                initial={{ opacity: 0, y: -12 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08, duration: 0.4 }}
-                className="flex items-center gap-2 rounded-xl border border-white/[0.08] bg-white/[0.04] px-3 py-2 backdrop-blur-sm"
-              >
-                <div className="flex h-5 w-5 items-center justify-center rounded text-[9px] font-bold text-white/60 bg-white/[0.08]">
-                  {tool[0]}
-                </div>
-                <span className="text-[11px] font-semibold text-white/50">{tool}</span>
-              </motion.div>
-            ))}
-          </div>
-
-          <div className="flex flex-col items-center gap-1">
-            {[0, 1, 2].map((i) => (
-              <motion.div
-                key={i}
-                className="w-px h-4 bg-gradient-to-b from-white/20 to-primary/40"
-                initial={{ scaleY: 0 }}
-                whileInView={{ scaleY: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.5 + i * 0.1 }}
-              />
-            ))}
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.6, type: "spring" }}
-            className="relative w-full max-w-[400px] rounded-2xl border border-primary/25 p-6"
-            style={{
-              background: "linear-gradient(180deg, rgba(27,167,132,0.08) 0%, rgba(27,167,132,0.03) 100%)",
-              boxShadow: "0 0 60px rgba(27,167,132,0.1), inset 0 0 30px rgba(27,167,132,0.03)",
-            }}
-          >
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <Activity className="h-5 w-5 text-primary" />
-              <span className="text-[14px] font-bold text-white uppercase tracking-widest">The Spine</span>
-            </div>
-            <div className="grid grid-cols-3 gap-2">
-              {[
-                { label: "Truth", desc: "Canonical records" },
-                { label: "Context", desc: "Signals & patterns" },
-                { label: "Memory", desc: "AI Sessions" },
-              ].map((flow, i) => (
-                <motion.div
-                  key={flow.label}
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.8 + i * 0.1 }}
-                  className="rounded-lg border border-primary/15 bg-primary/[0.06] p-2.5 text-center"
-                >
-                  <div className="text-[11px] font-bold text-primary">{flow.label}</div>
-                  <div className="text-[9px] text-white/40 mt-0.5">{flow.desc}</div>
-                </motion.div>
-              ))}
-            </div>
-            <motion.div
-              className="absolute inset-x-0 top-0 h-[2px] rounded-full"
-              style={{ background: "linear-gradient(90deg, transparent, rgb(27,167,132), transparent)" }}
-              animate={{ opacity: [0.3, 0.8, 0.3] }}
-              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-            />
-          </motion.div>
-
-          <div className="flex flex-col items-center gap-1">
-            {[0, 1, 2].map((i) => (
-              <motion.div
-                key={i}
-                className="w-px h-4 bg-gradient-to-b from-primary/40 to-white/20"
-                initial={{ scaleY: 0 }}
-                whileInView={{ scaleY: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.9 + i * 0.1 }}
-              />
-            ))}
-          </div>
-
-          <div className="flex flex-wrap justify-center gap-3">
-            {["Entity 360", "Morning Brief", "Approval Queue"].map((view, i) => (
-              <motion.div
-                key={view}
-                initial={{ opacity: 0, y: 12 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 1 + i * 0.1 }}
-                className="rounded-xl border border-primary/20 bg-primary/[0.06] px-4 py-2"
-              >
-                <span className="text-[11px] font-bold text-primary uppercase tracking-wider">{view}</span>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
 
 function ExecutionPathVisual() {
   const steps = [
-    { icon: Database, label: "Load", desc: "Ingest from tools" },
-    { icon: Server, label: "Store", desc: "Unified in Spine" },
-    { icon: Brain, label: "Think", desc: "AI analyzes" },
-    { icon: Zap, label: "Act", desc: "You approve, it executes" },
-    { icon: RefreshCw, label: "Adjust", desc: "Learn & improve" },
-    { icon: ArrowRight, label: "Repeat", desc: "Knowledge compounds" },
+    { icon: Database, label: "Load", desc: "Ingest from every connected app", color: "rgba(45,212,191,0.5)" },
+    { icon: Server, label: "Store", desc: "Unified in the Spine", color: "rgba(52,211,153,0.5)" },
+    { icon: Brain, label: "Think", desc: "AI analyzes across full context", color: "rgba(139,92,246,0.5)" },
+    { icon: Zap, label: "Act", desc: "You approve. It executes.", color: "rgba(52,211,153,0.9)" },
   ];
 
   return (
     <div className="relative w-full max-w-[900px] mx-auto">
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
-        {steps.map((step, i) => (
-          <motion.div
-            key={step.label}
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.08, type: "spring", damping: 18, stiffness: 70 }}
-            className="relative group"
-          >
-            <div
-              className={`relative rounded-2xl border p-5 text-center transition-all duration-300 ${
-                step.label === "Act"
-                  ? "border-primary/30 bg-primary/[0.08] hover:border-primary/50"
-                  : "border-white/[0.08] bg-white/[0.03] hover:border-white/[0.15]"
-              }`}
+      <div className="relative">
+        <svg className="absolute inset-0 w-full h-full pointer-events-none hidden lg:block" viewBox="0 0 900 160" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <linearGradient id="loop-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="rgba(45,212,191,0.3)" />
+              <stop offset="50%" stopColor="rgba(52,211,153,0.5)" />
+              <stop offset="100%" stopColor="rgba(52,211,153,0.3)" />
+            </linearGradient>
+            <filter id="loop-glow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="3" result="blur" />
+              <feComposite in="SourceGraphic" in2="blur" operator="over" />
+            </filter>
+          </defs>
+          {[0, 1, 2].map((i) => {
+            const x1 = 112 + i * 225;
+            const x2 = x1 + 225;
+            const pathD = `M ${x1 + 50} 80 C ${x1 + 100} 80, ${x2 - 50} 80, ${x2 - 50} 80`;
+            return (
+              <g key={`arrow-${i}`}>
+                <path d={pathD} fill="none" stroke="url(#loop-grad)" strokeWidth="1.5" strokeDasharray="4 4" opacity="0.4" />
+                {[0, 1].map((pIdx) => (
+                  <circle key={`lp-${i}-${pIdx}`} r="3" fill="rgb(52,211,153)" filter="url(#loop-glow)" opacity="0">
+                    <animateMotion dur="2s" repeatCount="indefinite" path={pathD} begin={`${i * 0.3 + pIdx * 1}s`} />
+                    <animate attributeName="opacity" values="0;0.8;0.8;0" keyTimes="0;0.15;0.85;1" dur="2s" repeatCount="indefinite" begin={`${i * 0.3 + pIdx * 1}s`} />
+                  </circle>
+                ))}
+              </g>
+            );
+          })}
+          <path d="M 787 90 C 850 90, 870 140, 450 150 C 30 140, 50 90, 112 90" fill="none" stroke="url(#loop-grad)" strokeWidth="1" strokeDasharray="3 5" opacity="0.2" />
+          <circle r="2.5" fill="rgb(110,231,183)" filter="url(#loop-glow)" opacity="0">
+            <animateMotion dur="6s" repeatCount="indefinite" path="M 787 90 C 850 90, 870 140, 450 150 C 30 140, 50 90, 112 90" begin="0.5s" />
+            <animate attributeName="opacity" values="0;0.6;0.6;0" keyTimes="0;0.1;0.9;1" dur="6s" repeatCount="indefinite" begin="0.5s" />
+          </circle>
+        </svg>
+
+        <div className="relative grid grid-cols-2 lg:grid-cols-4 gap-4 z-10">
+          {steps.map((step, i) => (
+            <motion.div
+              key={step.label}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1, type: "spring", damping: 18, stiffness: 70 }}
+              className="relative group"
             >
               <div
-                className={`mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-xl ${
-                  step.label === "Act" ? "bg-primary/20" : "bg-white/[0.06]"
+                className={`relative rounded-2xl border p-6 text-center transition-all duration-300 ${
+                  step.label === "Act"
+                    ? "border-primary/30 hover:border-primary/50"
+                    : "border-white/[0.06] hover:border-white/[0.12]"
                 }`}
+                style={{
+                  background: step.label === "Act" ? "rgba(52,211,153,0.06)" : "rgba(255,255,255,0.02)",
+                  backdropFilter: "blur(12px)",
+                  boxShadow: step.label === "Act" ? "0 0 40px rgba(52,211,153,0.08), inset 0 1px 0 rgba(255,255,255,0.04)" : "inset 0 1px 0 rgba(255,255,255,0.04)",
+                }}
               >
-                <step.icon className={`h-5 w-5 ${step.label === "Act" ? "text-primary" : "text-white/60"}`} />
-              </div>
-              <div className="text-[13px] font-bold text-white">{step.label}</div>
-              <div className="text-[11px] text-white/40 mt-1">{step.desc}</div>
-              {step.label === "Act" && (
-                <div className="absolute -top-2 left-1/2 -translate-x-1/2 rounded-full bg-primary px-2 py-0.5 text-[9px] font-bold text-white">
-                  YOU
+                <motion.div
+                  className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                  style={{ background: `radial-gradient(circle at 50% 0%, ${step.color}, transparent 70%)`, opacity: 0.08 }}
+                />
+                <div
+                  className={`mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-xl ${
+                    step.label === "Act" ? "bg-primary/20" : "bg-white/[0.06]"
+                  }`}
+                  style={{ boxShadow: step.label === "Act" ? "0 0 25px rgba(52,211,153,0.15)" : "none" }}
+                >
+                  <step.icon className={`h-5 w-5 ${step.label === "Act" ? "text-primary" : "text-white/50"}`} />
                 </div>
-              )}
-            </div>
-            {i < steps.length - 1 && (
-              <div className="hidden lg:block absolute top-1/2 -right-2 -translate-y-1/2 z-10">
-                <ArrowRight className="h-3 w-3 text-white/20" />
+                <div className="text-[14px] font-bold text-white">{step.label}</div>
+                <div className="text-[12px] text-white/40 mt-1.5 leading-[1.5]">{step.desc}</div>
+                {step.label === "Act" && (
+                  <div className="absolute -top-2.5 left-1/2 -translate-x-1/2 rounded-full bg-primary px-2.5 py-0.5 text-[9px] font-bold text-white uppercase tracking-wider">
+                    You decide
+                  </div>
+                )}
+                <motion.div
+                  className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[2px] w-0 rounded-full"
+                  style={{ background: step.color }}
+                  whileInView={{ width: "60%" }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.5 + i * 0.15, duration: 0.8 }}
+                />
               </div>
-            )}
-          </motion.div>
-        ))}
+            </motion.div>
+          ))}
+        </div>
       </div>
+
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ delay: 0.6 }}
-        className="mt-4 hidden lg:block"
+        className="mt-8 flex items-center justify-center gap-3"
       >
-        <div className="mx-auto max-w-[700px] h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
-        <div className="flex justify-between max-w-[700px] mx-auto mt-2">
-          <span className="text-[9px] text-white/20 uppercase tracking-widest">Input</span>
-          <span className="text-[9px] text-primary/60 uppercase tracking-widest font-bold">You Decide</span>
-          <span className="text-[9px] text-white/20 uppercase tracking-widest">Output</span>
-        </div>
+        <motion.div
+          className="h-px flex-1 max-w-[80px]"
+          style={{ background: "linear-gradient(90deg, transparent, rgba(52,211,153,0.3))" }}
+          animate={{ opacity: [0.3, 0.7, 0.3] }}
+          transition={{ duration: 3, repeat: Infinity }}
+        />
+        <span className="text-[12px] font-semibold text-white/30 uppercase tracking-widest">
+          Loop repeats · Knowledge compounds
+        </span>
+        <motion.div
+          className="h-px flex-1 max-w-[80px]"
+          style={{ background: "linear-gradient(90deg, rgba(52,211,153,0.3), transparent)" }}
+          animate={{ opacity: [0.3, 0.7, 0.3] }}
+          transition={{ duration: 3, repeat: Infinity }}
+        />
       </motion.div>
     </div>
   );
@@ -293,46 +235,48 @@ function ConnectorTabs() {
 export function PlatformContent() {
   return (
     <>
-      <section className="relative overflow-hidden pb-28 pt-40 bg-dark-section">
+      <section className="relative overflow-hidden pb-28 pt-[160px]" style={{ background: "#05070A" }}>
         <div className="pointer-events-none absolute inset-0">
-          <div className="absolute left-1/2 top-[20%] h-[500px] w-[600px] -translate-x-1/2 rounded-full opacity-15 blur-[120px]" style={{ background: "radial-gradient(circle, rgba(27,167,132,0.2), transparent 70%)" }} />
+          <div className="absolute left-1/2 top-[20%] h-[600px] w-[800px] -translate-x-1/2 rounded-full opacity-[0.08] blur-[140px]" style={{ background: "radial-gradient(circle, rgba(27,167,132,0.4), transparent 70%)" }} />
         </div>
-        <div className="relative mx-auto max-w-[820px] px-4 text-center">
+        <div className="relative mx-auto max-w-[900px] px-6 text-center">
           <motion.div
             {...heroFade(0.1)}
-            className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-[13px] font-semibold text-white/60"
+            className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/[0.08] px-4 py-1.5 text-[13px] font-semibold text-white/50"
+            style={{ background: "rgba(255,255,255,0.03)", backdropFilter: "blur(12px)" }}
           >
             <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-            Adaptive Spine Architecture
+            Platform — The Backend Engine
           </motion.div>
 
           <motion.h1
             {...heroFade(0.2)}
-            className="text-[48px] font-semibold leading-[1.05] tracking-[-0.055em] text-white sm:text-[64px]"
+            className="text-[48px] font-semibold leading-[1.05] tracking-[-0.05em] text-white sm:text-[60px] lg:text-[72px]"
           >
-            The adaptive{" "}
-            <span className="text-primary">data architecture.</span>
+            Where your data{" "}
+            <span className="text-primary">accumulates and processes.</span>
           </motion.h1>
 
           <motion.p
             {...heroFade(0.38)}
-            className="mx-auto mt-6 max-w-lg text-[17px] font-medium leading-[1.55] tracking-[-0.02em] text-white/50"
+            className="mx-auto mt-7 max-w-2xl text-[17px] font-medium leading-[1.6] tracking-[-0.02em] text-white/45"
           >
-            Grows between your tools. Adapts when they change.
+            The Spine runs continuously — connecting your apps, unifying your data, and powering the cognitive loop: Think. Act. Govern. Repeat. Adjust.
           </motion.p>
 
           <motion.div
             {...heroFade(0.5)}
             className="mt-10 flex flex-wrap items-center justify-center gap-2 text-[13px] font-semibold"
           >
-            {["Connect", "Three Data Paths", "Workbench + Intelligence", "Twin", "Canonical Loop"].map((item, i, arr) => (
+            {["Think", "Act", "Govern", "Repeat", "Adjust"].map((item, i, arr) => (
               <span key={item} className="flex items-center gap-2">
                 <span
                   className={`rounded-xl px-4 py-1.5 ${
-                    item === "Workbench + Intelligence"
+                    item === "Govern"
                       ? "bg-primary text-white"
-                      : "border border-white/10 bg-white/5 text-white/60"
+                      : "border border-white/[0.08] text-white/60"
                   }`}
+                  style={item !== "Govern" ? { background: "rgba(255,255,255,0.03)" } : {}}
                 >
                   {item}
                 </span>
@@ -383,7 +327,15 @@ export function PlatformContent() {
             </p>
           </motion.div>
 
-          <SpineVisualDiagram />
+          <motion.div
+            initial={{ opacity: 0, y: 30, scale: 0.97 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ type: "spring", damping: 20, stiffness: 60 }}
+            className="mx-auto max-w-5xl"
+          >
+            <DataFlowAnimation />
+          </motion.div>
 
           <div className="mt-16 grid gap-4 sm:grid-cols-3">
             {[
@@ -413,14 +365,14 @@ export function PlatformContent() {
         <div className="relative mx-auto max-w-[1100px] px-6">
           <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center mb-14">
             <p className="mb-3 text-[12px] font-bold uppercase tracking-[0.12em] text-primary">
-              Three Data Paths
+              Three Data Ecosystems
             </p>
-            <h2 className="text-[40px] font-semibold leading-[1.15] tracking-[-0.05em] text-white sm:text-[52px]">
-              Structured. Unstructured.{" "}
+            <h2 className="text-[40px] font-semibold leading-[1.1] tracking-[-0.05em] text-white sm:text-[52px]">
+              Truth. Context.{" "}
               <span className="text-primary">AI Sessions.</span>
             </h2>
             <p className="mt-5 text-[16px] font-medium leading-[1.6] text-white/45">
-              All data becomes unified operational context.
+              Three distinct ecosystems merge into Entity 360 — one unified view.
             </p>
           </motion.div>
 
@@ -494,15 +446,14 @@ export function PlatformContent() {
         <div className="relative mx-auto max-w-[1100px] px-6">
           <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center mb-14">
             <p className="mb-3 text-[12px] font-bold uppercase tracking-[0.12em] text-primary">
-              Execution Path
+              The Cognitive Loop
             </p>
-            <h2 className="text-[36px] font-semibold leading-[1.15] tracking-[-0.05em] text-white sm:text-[48px]">
-              Load. Store. Think.{" "}
-              <span className="text-primary">Act.</span>{" "}
-              Adjust. Repeat.
+            <h2 className="text-[40px] font-semibold leading-[1.1] tracking-[-0.05em] text-white sm:text-[52px]">
+              Think. Act. Govern.{" "}
+              <span className="text-primary">Repeat. Adjust.</span>
             </h2>
             <p className="mt-5 text-[16px] font-medium leading-[1.6] text-white/45">
-              AI thinks. You act. Knowledge compounds.
+              The Spine runs this loop continuously. AI thinks. You approve or deny. AI works. Knowledge compounds.
             </p>
           </motion.div>
 
@@ -516,11 +467,11 @@ export function PlatformContent() {
         <div className="relative mx-auto max-w-[1100px] px-6">
           <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center mb-14">
             <p className="mb-3 text-[12px] font-bold uppercase tracking-[0.12em] text-primary">
-              Two Layers. One Workspace.
+              The Product — Your Frontend
             </p>
-            <h2 className="text-[40px] font-semibold leading-[1.15] tracking-[-0.05em] text-white sm:text-[52px]">
-              Everything surfaces in the Workbench.{" "}
-              <span className="text-primary">Everything intelligent happens in the Intelligence Layer.</span>
+            <h2 className="text-[40px] font-semibold leading-[1.1] tracking-[-0.05em] text-white sm:text-[52px]">
+              The Workspace is where you work.{" "}
+              <span className="text-primary">The Cognitive Layer is where AI serves you.</span>
             </h2>
           </motion.div>
 
@@ -532,10 +483,10 @@ export function PlatformContent() {
               <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
               <div className="mb-5 flex items-center gap-3">
                 <span className="rounded-lg border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.1em] text-white/50">
-                  Workbench
+                  Workspace
                 </span>
                 <span className="text-[20px] font-bold tracking-[-0.04em] text-white">
-                  The Workbench
+                  The Workspace
                 </span>
               </div>
               <p className="text-[14px] font-medium leading-[1.7] text-white/50">
@@ -591,10 +542,10 @@ export function PlatformContent() {
               <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
               <div className="mb-5 flex items-center gap-3">
                 <span className="rounded-lg border border-primary/20 bg-primary/10 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.1em] text-primary">
-                  Intelligence
+                  Cognitive
                 </span>
                 <span className="text-[20px] font-bold tracking-[-0.04em] text-white">
-                  Intelligence Layer
+                  Cognitive Layer
                 </span>
               </div>
               <p className="text-[14px] font-medium leading-[1.7] text-white/50">
@@ -746,30 +697,28 @@ export function PlatformContent() {
         <div className="mx-auto max-w-[820px] px-4 text-center">
           <motion.div {...fade(0)}>
             <p className="mb-3 text-[12px] font-bold uppercase tracking-[0.12em] text-primary">
-              The Canonical Loop
+              Three Ecosystems Converge
             </p>
-            <h2 className="text-[40px] font-semibold leading-[1.15] tracking-[-0.05em] text-white sm:text-[52px]">
-              Truth → Context → AI Sessions →{" "}
-              <span className="text-primary">Entity 360. Repeat.</span>
+            <h2 className="text-[40px] font-semibold leading-[1.1] tracking-[-0.05em] text-white sm:text-[52px]">
+              Truth + Context + AI Sessions{" "}
+              <span className="text-primary">= Entity 360.</span>
             </h2>
-            <p className="mx-auto mt-5 max-w-lg text-[16px] font-medium leading-[1.6] text-white/50">
-              Each cycle compounds. The Spine gets richer. The Twin gets sharper.
+            <p className="mx-auto mt-5 max-w-lg text-[16px] font-medium leading-[1.6] text-white/45">
+              Three distinct data ecosystems merge into one unified view. The Spine gets richer. The Twin gets sharper.
             </p>
 
             <div className="mt-10 flex flex-wrap items-center justify-center gap-2 text-[13px] font-semibold">
               {[
                 { label: "Truth", accent: false },
-                { label: "→", arrow: true },
+                { label: "+", arrow: true },
                 { label: "Context", accent: false },
-                { label: "→", arrow: true },
+                { label: "+", arrow: true },
                 { label: "AI Sessions", accent: false },
-                { label: "→", arrow: true },
+                { label: "=", arrow: true },
                 { label: "Entity 360", accent: true },
-                { label: "→", arrow: true },
-                { label: "Repeat", accent: false },
               ].map(({ label, accent, arrow }, i) =>
                 arrow ? (
-                  <ArrowRight key={i} className="h-3.5 w-3.5 text-white/20" />
+                  <span key={i} className="text-[16px] font-bold text-white/25">{label}</span>
                 ) : (
                   <span
                     key={i}

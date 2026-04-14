@@ -53,11 +53,11 @@ export function BenefitsGrid({
   tag?: string;
 }) {
   return (
-    <section className="relative overflow-hidden bg-dark-section py-28 md:py-36">
+    <section className="relative overflow-hidden py-32 md:py-40" style={{ background: "#05070A" }}>
       <div className="pointer-events-none absolute inset-0">
         <div
-          className="absolute left-[30%] bottom-[15%] h-[400px] w-[500px] rounded-full opacity-10 blur-[120px]"
-          style={{ background: "radial-gradient(circle, rgba(52,211,153,0.2), transparent 70%)" }}
+          className="absolute left-[30%] bottom-[15%] h-[500px] w-[600px] rounded-full opacity-[0.06] blur-[140px]"
+          style={{ background: "radial-gradient(circle, rgba(52,211,153,0.3), transparent 70%)" }}
         />
       </div>
       <div className="relative mx-auto max-w-[1100px] px-6">
@@ -66,12 +66,12 @@ export function BenefitsGrid({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ type: "spring", damping: 18, stiffness: 70 }}
-          className="mx-auto mb-14 max-w-2xl text-center"
+          className="mx-auto mb-16 max-w-2xl text-center"
         >
-          <p className="mb-3 text-[12px] font-bold uppercase tracking-[0.14em] text-primary">
+          <p className="mb-4 text-[12px] font-bold uppercase tracking-[0.14em] text-primary">
             {tag}
           </p>
-          <h2 className="text-[36px] font-semibold leading-[1.15] tracking-[-0.04em] text-white sm:text-[44px]">
+          <h2 className="text-[40px] font-semibold leading-[1.1] tracking-[-0.04em] text-white sm:text-[52px]">
             {heading}
           </h2>
         </motion.div>
@@ -84,17 +84,22 @@ export function BenefitsGrid({
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ type: "spring", damping: 18, stiffness: 70, delay: i * 0.06 }}
-              className="group relative overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.03] p-6 transition-all hover:border-primary/25 hover:-translate-y-0.5"
+              className="group relative overflow-hidden rounded-2xl border border-white/[0.06] p-6 transition-all hover:border-primary/20 hover:-translate-y-0.5"
+              style={{
+                background: "rgba(255,255,255,0.02)",
+                backdropFilter: "blur(12px)",
+                boxShadow: "inset 0 1px 0 rgba(255,255,255,0.04)",
+              }}
             >
-              <div className="pointer-events-none absolute -right-8 -top-8 h-24 w-24 rounded-full opacity-0 blur-[40px] transition-opacity group-hover:opacity-100" style={{ background: "rgba(52,211,153,0.15)" }} />
+              <div className="pointer-events-none absolute -right-8 -top-8 h-32 w-32 rounded-full opacity-0 blur-[50px] transition-opacity group-hover:opacity-100" style={{ background: "rgba(52,211,153,0.12)" }} />
 
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/[0.1] transition-transform group-hover:scale-105" style={{ boxShadow: "0 0 25px rgba(52,211,153,0.1)" }}>
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/[0.08] transition-transform group-hover:scale-105" style={{ boxShadow: "0 0 30px rgba(52,211,153,0.08)" }}>
                 <Icon className="h-5 w-5 text-primary" />
               </div>
-              <h3 className="text-[16px] font-semibold tracking-[-0.03em] text-white">
+              <h3 className="text-[17px] font-semibold tracking-[-0.03em] text-white">
                 {title}
               </h3>
-              <p className="mt-2 text-[14px] font-medium leading-[1.65] text-white/45">
+              <p className="mt-2 text-[14px] font-medium leading-[1.65] text-white/40">
                 {desc}
               </p>
             </motion.div>

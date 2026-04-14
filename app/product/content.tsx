@@ -15,6 +15,7 @@ import {
   Gauge,
   Fingerprint,
 } from "lucide-react";
+import { DashboardMockup } from "@/components/dashboard-mockup";
 
 function AnimatedCounter({ value, suffix = "" }: { value: number; suffix?: string }) {
   const [count, setCount] = useState(0);
@@ -106,7 +107,7 @@ const heroFade = (delay = 0) => ({
 
 const layers = [
   {
-    tag: "Workbench",
+    tag: "Workspace",
     icon: LayoutDashboard,
     title: "Where your team works every day",
     color: { bg: "rgba(45,212,191,0.12)", glow: "rgba(45,212,191,0.25)", text: "#2dd4bf" },
@@ -117,7 +118,7 @@ const layers = [
     ],
   },
   {
-    tag: "Intelligence Layer",
+    tag: "Cognitive Layer",
     icon: Sparkles,
     title: "AI that understands your business context",
     color: { bg: "rgba(139,92,246,0.12)", glow: "rgba(139,92,246,0.25)", text: "#8b5cf6" },
@@ -180,7 +181,7 @@ export function ProductContent() {
 
   return (
     <>
-      <section ref={heroRef} className="relative overflow-hidden bg-dark-section">
+      <section ref={heroRef} className="relative overflow-hidden" style={{ background: "#05070A" }}>
         <FloatingParticles count={25} />
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute left-1/2 top-[15%] h-[600px] w-[800px] -translate-x-1/2 rounded-full opacity-30 blur-[140px]" style={{ background: "radial-gradient(circle, rgba(45,212,191,0.25), transparent 70%)" }} />
@@ -196,25 +197,23 @@ export function ProductContent() {
             className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.06] px-4 py-1.5 text-[13px] font-semibold text-white/60"
           >
             <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-            Product overview
+            Product — Your Frontend
           </motion.div>
 
           <motion.h1
             {...heroFade(0.22)}
-            className="text-[44px] font-semibold leading-[1.08] tracking-[-0.05em] text-white sm:text-[56px] lg:text-[64px]"
+            className="text-[48px] font-semibold leading-[1.05] tracking-[-0.05em] text-white sm:text-[60px] lg:text-[72px]"
           >
-            Stop switching tabs.
+            Where you work.
             <br />
-            <span className="text-primary">Start seeing the full picture.</span>
+            <span className="text-primary">Where AI serves you.</span>
           </motion.h1>
-
-          <motion.div {...heroFade(0.32)} className="mx-auto mt-4 h-[3px] w-12 rounded-full bg-primary" />
 
           <motion.p
             {...heroFade(0.4)}
-            className="mx-auto mt-7 max-w-2xl text-[17px] font-medium leading-[1.6] tracking-[-0.02em] text-white/55"
+            className="mx-auto mt-7 max-w-2xl text-[17px] font-medium leading-[1.6] tracking-[-0.02em] text-white/45"
           >
-            One workspace. AI surfaces what matters. You approve what happens.
+            The Workspace is your daily surface. The Cognitive Layer renders insights and actions. You approve. Knowledge compounds.
           </motion.p>
 
           <motion.div {...heroFade(0.52)} className="mt-9 flex flex-wrap items-center justify-center gap-3">
@@ -222,13 +221,13 @@ export function ProductContent() {
               href="/contact?intent=demo"
               className="inline-flex h-12 items-center gap-2 rounded-full bg-primary px-7 text-[14px] font-semibold tracking-[-0.02em] text-white transition-opacity hover:opacity-90"
             >
-              Book a live demo <ArrowRight className="h-4 w-4" />
+              Book a demo <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
-              href="/contact"
+              href="/product/how-it-works"
               className="inline-flex h-12 items-center rounded-full border border-white/15 px-6 text-[14px] font-semibold tracking-[-0.02em] text-white/70 transition-colors hover:border-white/30 hover:text-white"
             >
-              Book a walkthrough
+              See how it works
             </Link>
           </motion.div>
         </motion.div>
@@ -349,6 +348,40 @@ export function ProductContent() {
         </div>
       </section>
 
+      <section className="relative overflow-hidden py-28 bg-dark-section border-t border-white/[0.06]">
+        <div className="pointer-events-none absolute inset-0">
+          <div className="absolute left-1/2 top-[30%] h-[500px] w-[700px] -translate-x-1/2 rounded-full opacity-10 blur-[140px]" style={{ background: "radial-gradient(circle, rgba(52,211,153,0.3), transparent 70%)" }} />
+        </div>
+        <div className="relative mx-auto max-w-[1100px] px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ type: "spring", damping: 18, stiffness: 70 }}
+            className="mx-auto mb-14 max-w-2xl text-center"
+          >
+            <p className="mb-3 text-[12px] font-bold uppercase tracking-[0.14em] text-primary">Live preview</p>
+            <h2 className="text-[36px] font-semibold leading-[1.15] tracking-[-0.04em] text-white sm:text-[44px]">
+              Watch the Workspace{" "}
+              <span className="text-primary">in action.</span>
+            </h2>
+            <p className="mt-4 text-[15px] font-medium leading-[1.6] text-white/50">
+              The Workspace shows your accounts. The Cognitive Layer slides up with signals and proposed actions. You approve what happens next.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30, scale: 0.97 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ type: "spring", damping: 20, stiffness: 60 }}
+            className="mx-auto max-w-[900px]"
+          >
+            <DashboardMockup />
+          </motion.div>
+        </div>
+      </section>
+
       <section className="relative overflow-hidden py-28 bg-dark-section">
         <FloatingParticles count={15} />
         <div className="pointer-events-none absolute inset-0">
@@ -362,10 +395,10 @@ export function ProductContent() {
             transition={{ type: "spring", damping: 18, stiffness: 70 }}
             className="mx-auto mb-16 max-w-2xl text-center"
           >
-            <p className="mb-3 text-[12px] font-bold uppercase tracking-[0.14em] text-primary">Three layers of product</p>
-            <h2 className="text-[36px] font-semibold leading-[1.15] tracking-[-0.04em] text-white sm:text-[44px]">
-              One surface.{" "}
-              <span className="text-primary">Three layers of intelligence.</span>
+            <p className="mb-3 text-[12px] font-bold uppercase tracking-[0.14em] text-primary">Two layers of product</p>
+            <h2 className="text-[40px] font-semibold leading-[1.1] tracking-[-0.04em] text-white sm:text-[52px]">
+              Workspace + Cognitive Layer.{" "}
+              <span className="text-primary">Powered by the Spine.</span>
             </h2>
           </motion.div>
 
@@ -510,7 +543,7 @@ export function ProductContent() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ type: "spring", damping: 18, stiffness: 70 }}
-            className="text-[32px] font-semibold leading-[1.15] tracking-[-0.04em] text-white sm:text-[40px]"
+            className="text-[36px] font-semibold leading-[1.1] tracking-[-0.04em] text-white sm:text-[48px]"
           >
             See it working{" "}
             <span className="text-primary">in 20 minutes</span>

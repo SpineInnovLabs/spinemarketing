@@ -13,12 +13,38 @@ A Next.js marketing website for IntegrateWise, migrated from Vercel/Firebase Hos
 
 ## Site Positioning
 
-IntegrateWise is a **Knowledge Workspace over the Spine** — three core concepts:
-- **Spine**: Adaptive, vendor-neutral intelligence layer. Unifies Truth (structured records), Context (conversations), and Session Summaries (governed AI outputs)
-- **Workbench** (formerly L1): Where users work every day
-- **Intelligence Layer** (formerly L2): Where The Twin surfaces signals and proposes actions; nothing executes without human approval (Govern Gate)
+IntegrateWise is a **Knowledge Workspace** empowered by AI and the Spine — NOT a platform, NOT an OS, NOT a tool.
 
-**NAMING CONVENTION**: Never use "L1" or "L2" in copy. Always use "Workbench" and "Intelligence Layer".
+### Architecture Layers
+- **L1 — The Workspace**: 12 domain-specific views, schema-filtered per tenant. Where users work daily.
+- **L2 — The Cognitive Layer** (Cognitive Intelligence Overlay): 14 components accessible via Cmd+J. Non-intrusive overlay — sits alongside work, extends when needed.
+- **Platform Engine** (under the hood): Spine, Entity 360, Schema system, Processing pipeline, Connectors, Knowledge Memory.
+
+### Core Terminology
+- **Spine** (also: Adaptive Spine, Intelligent Spine, Unified Intelligence Layer, Adaptive Layer): The intelligent data layer connecting all data.
+- **Workspace** (L1): Where users work every day — accounts, tasks, workflows, Entity 360 views.
+- **Cognitive Layer** (L2): Where AI serves you — Twin, signals, approvals, pattern detection.
+- **TruthLayer**: Trust/governance system — platform capability, not a product.
+- **Entity 360**: Convergence point where all 3 data flows meet.
+
+### The Cognitive Loop
+**Think → Act → Govern → Repeat → Adjust** (5 steps)
+- Think: Pattern detection, signal generation, situation awareness
+- Act: Agent execution — Twin and other agents live here
+- Govern: Rule enforcement, trust boundaries, compliance checks
+- Repeat: Loop execution on structured data (Flow A only)
+- Adjust: System tuning, confidence calibration, feedback loops
+
+### Three Data Flows
+- **Flow A (Truth/Structured)**: SaaS connectors → Spine. Has a repeat loop. ONLY flow with a repeat loop.
+- **Flow B (Context/Unstructured)**: Docs, emails, conversations → Context Store. NO repeat loop.
+- **Flow C (AI Knowledge/Memory)**: AI sessions → Triage Bot (SOLE writer) → Memory Store. NO repeat loop. NEVER writes directly to Spine — only via HITL approval.
+
+### Key Rules
+- Agents (including Twin) live ONLY in Act, not in truth formation.
+- Twin has READ-ONLY access to Spine; can only write via HITL approval.
+- Triage Bot is the SOLE writer to memory.
+- **NAMING**: Never use "L1"/"L2", "Workbench", or "Intelligence Layer" in copy. Always use "Workspace" and "Cognitive Layer".
 
 ## Homepage Section Order (Narrative Arc)
 
@@ -26,7 +52,7 @@ IntegrateWise is a **Knowledge Workspace over the Spine** — three core concept
 2. **Logos** — "Connect the apps you already use" (marquee)
 3. **Problem** — "Modern work isn't hard. The plumbing is." (Human API pain)
 4. **Spine** — "One layer connects everything." (dedicated SpineSection with DataFlowAnimation)
-5. **Workspace** — "Your workspace. AI that thinks in context." (dashboard mockup + Workbench/Intelligence/HITL pillars)
+5. **Workspace** — "Your workspace. AI that thinks in context." (dashboard mockup + Workspace/Cognitive Layer/HITL pillars)
 6. **Proof** — testimonial + animated counters
 7. **Pricing** — 3 tiers (Starter/Growth/Command)
 8. **Final CTA** — "Ready to see everything in one place?"

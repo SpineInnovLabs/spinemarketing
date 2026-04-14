@@ -17,7 +17,7 @@ const pricingFAQs = [
   },
   {
     question: "Do you offer annual billing?",
-    answer: "Yes. Annual plans come with a discount. Contact our sales team for annual pricing details.",
+    answer: "Yes. Annual plans come with a discount. Book a demo and we'll walk you through annual pricing.",
   },
   {
     question: "What's included in the Implementation packages?",

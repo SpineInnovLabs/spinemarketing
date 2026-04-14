@@ -80,9 +80,9 @@ const items = [
 export function IntelligenceStickyScroll() {
   return (
     <StickyScroll
-      tag="Intelligence Layer"
+      tag="Cognitive Layer"
       heading={<>Five capabilities. <span className="text-primary">One thinking layer.</span></>}
-      subheading="Scroll to explore how the Intelligence Layer detects, reasons, and proposes."
+      subheading="Scroll to explore how the Cognitive Layer detects, reasons, and proposes."
       items={items}
     />
   );

@@ -41,7 +41,7 @@ const steps = [
   },
   {
     num: "02",
-    title: "Your Daily Workbench",
+    title: "Your Daily Workspace",
     desc: "Tasks, emails, and messages in one clean workspace.",
   },
   {
@@ -51,7 +51,7 @@ const steps = [
   },
   {
     num: "04",
-    title: "Approve in the Workbench. Nothing happens without you.",
+    title: "Approve in the Workspace. Nothing happens without you.",
     desc: "AI proposes actions. You review evidence and approve.",
   },
 ];
@@ -75,14 +75,14 @@ export function PersonalOpsContent() {
                 stiffness: 52,
                 delay: 0.2,
               }}
-              className="mb-6 inline-flex items-center gap-2.5 rounded-[40px] bg-white px-4 py-1.5"
-              style={{ boxShadow: "0px 0px 0px 3px rgb(248 248 250)" }}
+              className="mb-6 inline-flex items-center gap-2.5 rounded-full border border-white/10 px-4 py-1.5"
+              style={{ background: "rgba(255,255,255,0.03)", backdropFilter: "blur(12px)" }}
             >
               <span
                 className="h-2 w-2 rounded-full"
                 style={{ background: "var(--gradient-primary-icon)" }}
               />
-              <span className="text-[14px] font-semibold tracking-[-0.03em] text-[#0a0b10]">
+              <span className="text-[14px] font-semibold tracking-[-0.03em] text-white/60">
                 Personal Ops
               </span>
             </motion.div>
@@ -144,7 +144,7 @@ export function PersonalOpsContent() {
                 className="h-[42px] rounded-xl border-2 border-white/15 bg-transparent px-6 text-[15px] font-semibold text-white hover:bg-white/10"
                 asChild
               >
-                <Link href="/contact">Join waitlist</Link>
+                <Link href="/product/the-adaptive-workspace">Explore the Workspace</Link>
               </Button>
             </motion.div>
             <p className="mt-6 text-[14px] font-medium text-white/30">
@@ -371,7 +371,7 @@ export function PersonalOpsContent() {
                 }}
                 asChild
               >
-                <Link href="/contact">Join the waitlist</Link>
+                <Link href="/contact?intent=demo">Book a demo</Link>
               </Button>
               <Button
                 size="lg"
@@ -379,7 +379,7 @@ export function PersonalOpsContent() {
                 className="h-[42px] rounded-xl border-2 border-white/20 bg-transparent px-6 text-[15px] font-semibold text-white hover:bg-white/10"
                 asChild
               >
-                <Link href="/contact?intent=demo">Book a demo</Link>
+                <Link href="/platform/how-it-works">See how it works</Link>
               </Button>
             </div>
           </motion.div>

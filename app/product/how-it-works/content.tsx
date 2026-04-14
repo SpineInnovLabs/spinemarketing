@@ -82,7 +82,7 @@ export function ProductHowItWorksContent() {
             {...heroFade(0.22)}
             className="text-[44px] font-semibold leading-[1.08] tracking-[-0.05em] text-white sm:text-[64px]"
           >
-            The Intelligence Layer.{" "}
+            The Cognitive Layer.{" "}
             <span className="text-primary">Signals, not searches.</span>
           </motion.h1>
           <motion.p
@@ -102,7 +102,7 @@ export function ProductHowItWorksContent() {
       <section className="arvio-section dark-section">
         <div className="mx-auto max-w-[1100px]">
           <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center mb-12">
-            <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">Intelligence Layer</p>
+            <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">Cognitive Layer</p>
             <h2 className="section-heading">Four pillars of <span className="text-primary">proactive intelligence</span></h2>
           </motion.div>
           <div className="grid gap-5 sm:grid-cols-2">

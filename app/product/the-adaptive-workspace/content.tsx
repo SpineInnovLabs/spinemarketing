@@ -123,7 +123,7 @@ export function TheAdaptiveWorkspaceContent() {
       <section className="arvio-section dark-section">
         <div className="mx-auto max-w-[1100px]">
           <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center mb-12">
-            <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">Workbench Views</p>
+            <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">Workspace Views</p>
             <h2 className="section-heading">9 views. <span className="text-primary">One workspace.</span></h2>
           </motion.div>
           <div className="flex flex-wrap justify-center gap-2 mb-10">

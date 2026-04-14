@@ -27,7 +27,7 @@ export default function PlatformPage() {
         <BentoShowcase
           tag="The Workspace"
           heading="See it all. Act on what matters."
-          subheading="The Workbench shows your accounts. The Intelligence Layer surfaces what you'd miss."
+          subheading="The Workspace shows your accounts. The Cognitive Layer surfaces what you'd miss."
         />
         <ComparisonSection />
         <TestimonialsSection />

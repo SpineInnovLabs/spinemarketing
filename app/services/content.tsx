@@ -109,10 +109,10 @@ export function ServicesContent() {
             className="mt-9 flex flex-wrap items-center justify-center gap-3"
           >
             <Link
-              href="/contact?intent=services"
+              href="/contact?intent=demo"
               className="inline-flex h-11 items-center rounded-full bg-primary px-6 text-[14px] font-semibold tracking-[-0.02em] text-white transition-opacity hover:opacity-90"
             >
-              Talk to our team →
+              Book a demo →
             </Link>
           </motion.div>
         </div>
@@ -215,10 +215,10 @@ export function ServicesContent() {
 
           <motion.div {...fade(0.2)} className="mt-8 text-center">
             <Link
-              href="/contact?intent=services"
+              href="/contact?intent=demo"
               className="inline-flex items-center gap-1.5 text-[14px] font-semibold text-primary hover:opacity-80"
             >
-              Start with a discovery call <ArrowRight className="h-4 w-4" />
+              Book a demo <ArrowRight className="h-4 w-4" />
             </Link>
           </motion.div>
         </div>

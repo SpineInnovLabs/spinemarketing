@@ -13,7 +13,7 @@ const items = [
   {
     tag: "Real-Time Sync",
     title: "Sub-100ms from normalization to UI",
-    description: "Firebase real-time layer delivers changes to the Workbench instantly. No polling, no stale data.",
+    description: "Firebase real-time layer delivers changes to the Workspace instantly. No polling, no stale data.",
     icon: Zap,
     color: "#fbbf24",
     features: [

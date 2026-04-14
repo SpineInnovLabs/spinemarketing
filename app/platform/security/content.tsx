@@ -88,7 +88,7 @@ const truthBoundary = [
 
 export function PlatformSecurityContent() {
   return (
-    <div className="relative min-h-screen bg-[#08070e] text-white overflow-hidden">
+    <div className="relative min-h-screen text-white overflow-hidden" style={{ background: "#05070A" }}>
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute -top-32 right-1/3 w-[700px] h-[700px] rounded-full blur-[220px]" style={{ background: "rgba(245,158,11,0.05)" }} />
         <div className="absolute top-[50%] left-1/4 w-[500px] h-[500px] rounded-full blur-[180px]" style={{ background: "rgba(27,167,132,0.05)" }} />

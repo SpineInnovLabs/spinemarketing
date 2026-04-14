@@ -44,11 +44,11 @@ export function TestimonialsSection({
   tag?: string;
 }) {
   return (
-    <section className="relative overflow-hidden bg-dark-section py-28 md:py-36">
+    <section className="relative overflow-hidden py-32 md:py-40" style={{ background: "#05070A" }}>
       <div className="pointer-events-none absolute inset-0">
         <div
-          className="absolute right-[15%] top-[20%] h-[400px] w-[500px] rounded-full opacity-10 blur-[120px]"
-          style={{ background: "radial-gradient(circle, rgba(139,92,246,0.2), transparent 70%)" }}
+          className="absolute right-[15%] top-[20%] h-[500px] w-[600px] rounded-full opacity-[0.07] blur-[140px]"
+          style={{ background: "radial-gradient(circle, rgba(139,92,246,0.4), transparent 70%)" }}
         />
       </div>
       <div className="relative mx-auto max-w-[1100px] px-6">
@@ -57,12 +57,12 @@ export function TestimonialsSection({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ type: "spring", damping: 18, stiffness: 70 }}
-          className="mx-auto mb-14 max-w-2xl text-center"
+          className="mx-auto mb-16 max-w-2xl text-center"
         >
-          <p className="mb-3 text-[12px] font-bold uppercase tracking-[0.14em] text-primary">
+          <p className="mb-4 text-[12px] font-bold uppercase tracking-[0.14em] text-primary">
             {tag}
           </p>
-          <h2 className="text-[36px] font-semibold leading-[1.15] tracking-[-0.04em] text-white sm:text-[44px]">
+          <h2 className="text-[40px] font-semibold leading-[1.1] tracking-[-0.04em] text-white sm:text-[52px]">
             {heading}
           </h2>
         </motion.div>
@@ -75,7 +75,12 @@ export function TestimonialsSection({
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ type: "spring", damping: 18, stiffness: 70, delay: i * 0.08 }}
-              className="group relative overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.03] p-6 transition-all hover:border-white/[0.15] hover:-translate-y-0.5"
+              className="group relative overflow-hidden rounded-2xl border border-white/[0.06] p-6 transition-all hover:border-white/[0.12] hover:-translate-y-0.5"
+              style={{
+                background: "rgba(255,255,255,0.02)",
+                backdropFilter: "blur(12px)",
+                boxShadow: "inset 0 1px 0 rgba(255,255,255,0.04)",
+              }}
             >
               <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
 
@@ -85,7 +90,7 @@ export function TestimonialsSection({
                 ))}
               </div>
 
-              <p className="text-[15px] font-medium leading-[1.7] text-white/65">
+              <p className="text-[15px] font-medium leading-[1.7] text-white/60">
                 &ldquo;{t.quote}&rdquo;
               </p>
 
@@ -98,7 +103,7 @@ export function TestimonialsSection({
                 </div>
                 <div>
                   <div className="text-[14px] font-semibold text-white">{t.name}</div>
-                  <div className="text-[12px] font-medium text-white/40">
+                  <div className="text-[12px] font-medium text-white/35">
                     {t.role} · {t.company}
                   </div>
                 </div>

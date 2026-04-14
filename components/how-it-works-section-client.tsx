@@ -5,7 +5,6 @@ import dynamic from "next/dynamic"
 const HowItWorksSectionDynamic = dynamic(
   () => import("@/components/how-it-works-section").then((m) => m.HowItWorksSection),
   {
-    ssr: false,
     loading: () => (
       <div
         id="how-it-works"

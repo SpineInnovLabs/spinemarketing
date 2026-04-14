@@ -92,11 +92,11 @@ const gatherItems = [
   { icon: Plug, label: "Connectors", description: "70+ tools connected via OAuth, MCP, or webhook.", color: "#3b82f6" },
   { icon: Shield, label: "Govern Gate", description: "Non-bypassable human approval on all actions.", color: "#ef4444" },
   { icon: Lock, label: "TruthBoundary", description: "SOC 2 Type II. AES-256. Immutable audit log.", color: "#f59e0b" },
-  { icon: Eye, label: "Workbench", description: "Entity 360s, tasks, workflows — your daily surface.", color: "#06b6d4" },
-  { icon: Zap, label: "Intelligence Layer", description: "AI suggests with evidence. You approve what executes.", color: "#a855f7" },
+  { icon: Eye, label: "Workspace", description: "Entity 360s, tasks, workflows — your daily surface.", color: "#06b6d4" },
+  { icon: Zap, label: "Cognitive Layer", description: "AI suggests with evidence. You approve what executes.", color: "#a855f7" },
   { icon: Server, label: "Infrastructure", description: "Firebase real-time. Sub-100ms sync.", color: "#ec4899" },
   { icon: GitBranch, label: "MCP Protocol", description: "AI-native integration. Bidirectional data flow.", color: "#14b8a6" },
-  { icon: RefreshCw, label: "Canonical Loop", description: "Truth → Context → AI → Entity 360 → Repeat.", color: "#f97316" },
+  { icon: RefreshCw, label: "Cognitive Loop", description: "Think → Act → Govern → Repeat → Adjust.", color: "#f97316" },
   { icon: Layers, label: "Spine Fabric", description: "Adaptive architecture. Survives tool migrations.", color: "#6366f1" },
 ];
 

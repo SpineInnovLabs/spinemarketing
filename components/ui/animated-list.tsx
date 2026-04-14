@@ -64,6 +64,7 @@ export const AnimatedList = React.memo(
         className={cn(`flex flex-col items-center gap-4`, className)}
         {...props}
       >
+        {/* @ts-expect-error framer-motion v12 AnimatePresence return type */}
         <AnimatePresence>
           {itemsToShow.map((item) => (
             <AnimatedListItem key={(item as React.ReactElement).key}>

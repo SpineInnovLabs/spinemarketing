@@ -3,12 +3,16 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { LeadForm, type LeadIntent } from "@/components/lead-form";
 import { FAQSection } from "@/components/faq-section";
-import { Mail, MapPin, MessageSquare } from "lucide-react";
+import { Mail, MapPin, MessageSquare, ArrowRight } from "lucide-react";
+
+const fade = (delay = 0) => ({
+  initial: { opacity: 0, y: 20 } as const,
+  whileInView: { opacity: 1, y: 0 } as const,
+  viewport: { once: true, margin: "-80px" },
+  transition: { type: "spring" as const, damping: 18, stiffness: 70, delay },
+});
 
 const contactFAQs = [
   {
@@ -21,7 +25,7 @@ const contactFAQs = [
   },
   {
     question: "Can I try it before committing?",
-    answer: "Yes. We run a guided POC where you connect your real apps and see your real data — including the Workbench, Intelligence Layer, and the Twin working with your actual context.",
+    answer: "Yes. We run a guided POC where you connect your real apps and see your real data — including the Workspace, Cognitive Layer, and the Twin working with your actual context.",
   },
   {
     question: "What if I need a connector you don't have?",
@@ -49,44 +53,46 @@ export function ContactContent({
 }) {
   return (
     <>
-      <section className="relative overflow-hidden bg-dark-section">
-        <div className="mx-auto max-w-[1200px] px-6 pt-[180px] pb-[100px] md:px-16">
-          <div className="mx-auto max-w-3xl text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ type: "spring", damping: 16, mass: 1, stiffness: 52, delay: 0.2 }}
-            >
-              <Badge variant="outline" className="mb-6 rounded-full border-primary/30 px-4 py-1.5 text-sm font-semibold text-primary">
-                Company
-              </Badge>
-            </motion.div>
+      <section className="relative overflow-hidden pt-[160px] pb-28" style={{ background: "#05070A" }}>
+        <div className="pointer-events-none absolute inset-0">
+          <div className="absolute left-1/2 top-[25%] h-[600px] w-[800px] -translate-x-1/2 rounded-full opacity-[0.07] blur-[140px]" style={{ background: "radial-gradient(circle, rgba(52,211,153,0.4), transparent 70%)" }} />
+        </div>
+        <div className="relative mx-auto max-w-[900px] px-6 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ type: "spring", damping: 16, stiffness: 52, delay: 0.2 }}
+            className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/[0.08] px-4 py-1.5 text-[13px] font-semibold text-white/50"
+            style={{ background: "rgba(255,255,255,0.03)", backdropFilter: "blur(12px)" }}
+          >
+            <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+            Contact
+          </motion.div>
 
-            <motion.h1
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ type: "spring", damping: 16, mass: 1, stiffness: 52, delay: 0.4 }}
-              className="text-5xl font-semibold leading-none tracking-tight text-white sm:text-6xl lg:text-7xl"
-            >
-              Let&apos;s <span className="text-primary">talk.</span>
-            </motion.h1>
+          <motion.h1
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ type: "spring", damping: 16, stiffness: 52, delay: 0.4 }}
+            className="text-[48px] font-semibold leading-[1.05] tracking-[-0.05em] text-white sm:text-[64px] lg:text-[72px]"
+          >
+            Let&apos;s <span className="text-primary">talk.</span>
+          </motion.h1>
 
-            <motion.p
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ type: "spring", damping: 16, mass: 1, stiffness: 52, delay: 0.6 }}
-              className="mx-auto mt-8 max-w-2xl text-base font-medium leading-relaxed text-white/55"
-            >
-              Whether you want a demo, have a question, or want to explore how
-              IntegrateWise fits your apps — we&apos;re here.
-            </motion.p>
-          </div>
+          <motion.p
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ type: "spring", damping: 16, stiffness: 52, delay: 0.6 }}
+            className="mx-auto mt-7 max-w-2xl text-[17px] font-medium leading-[1.6] text-white/45"
+          >
+            Whether you want a demo, have a question, or want to explore how
+            IntegrateWise fits your apps — we&apos;re here.
+          </motion.p>
         </div>
       </section>
 
-      <section className="bg-dark-section py-24 px-6 md:px-16">
+      <section className="py-28 px-6 md:px-16" style={{ background: "#05070A" }}>
         <div className="mx-auto max-w-[1100px]">
-          <div className="mx-auto grid max-w-4xl gap-6 sm:grid-cols-3">
+          <div className="mx-auto grid max-w-4xl gap-5 sm:grid-cols-3">
             {[
               {
                 icon: MessageSquare,
@@ -115,44 +121,51 @@ export function ContactContent({
             ].map(({ icon: Icon, title, desc, cta, href, external }, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ type: "spring", bounce: 0.2, duration: 0.6, delay: i * 0.1 }}
+                {...fade(i * 0.1)}
+                className="group flex h-full flex-col items-center overflow-hidden rounded-2xl border border-white/[0.06] p-8 text-center transition-all hover:border-primary/20 hover:-translate-y-0.5"
+                style={{
+                  background: "rgba(255,255,255,0.02)",
+                  backdropFilter: "blur(12px)",
+                  boxShadow: "inset 0 1px 0 rgba(255,255,255,0.04)",
+                }}
               >
-                <Card className="flex h-full flex-col items-center border-white/[0.08] bg-white/[0.03] p-8 text-center">
-                  <CardContent className="flex flex-col items-center p-0">
-                    <div
-                      className="flex h-12 w-12 items-center justify-center rounded-xl"
-                      style={{ background: "var(--gradient-primary-icon)" }}
-                    >
-                      <Icon className="h-6 w-6 text-white" />
-                    </div>
-                    <h3 className="mt-5 text-lg font-semibold tracking-tight">
-                      {title}
-                    </h3>
-                    <p className="mt-3 flex-1 text-sm font-medium leading-relaxed text-muted-foreground">
-                      {desc}
-                    </p>
-                    <Button
-                      className="mt-6 h-11 rounded-xl px-4 text-sm font-semibold"
-                      style={{
-                        background: "var(--gradient-primary)",
-                        border: "2px solid rgba(248,248,250,0.12)",
-                        boxShadow: "var(--shadow-button)",
-                      }}
-                      asChild
-                    >
-                      {external ? (
-                        <a href={href}>{cta}</a>
-                      ) : href.startsWith("#") ? (
-                        <a href={href}>{cta}</a>
-                      ) : (
-                        <Link href={href}>{cta}</Link>
-                      )}
-                    </Button>
-                  </CardContent>
-                </Card>
+                <div
+                  className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/[0.10]"
+                  style={{ boxShadow: "0 0 25px rgba(52,211,153,0.12)" }}
+                >
+                  <Icon className="h-5 w-5 text-primary" />
+                </div>
+                <h3 className="mt-5 text-[17px] font-semibold tracking-[-0.03em] text-white">
+                  {title}
+                </h3>
+                <p className="mt-3 flex-1 text-[14px] font-medium leading-[1.6] text-white/40">
+                  {desc}
+                </p>
+                {external ? (
+                  <a
+                    href={href}
+                    className="mt-6 inline-flex h-11 items-center gap-2 rounded-full px-6 text-[13px] font-semibold text-white transition-all hover:opacity-90"
+                    style={{ background: "var(--gradient-primary)", boxShadow: "0 0 20px rgba(27,167,132,0.12)" }}
+                  >
+                    {cta} <ArrowRight className="h-3.5 w-3.5" />
+                  </a>
+                ) : href.startsWith("#") ? (
+                  <a
+                    href={href}
+                    className="mt-6 inline-flex h-11 items-center gap-2 rounded-full px-6 text-[13px] font-semibold text-white transition-all hover:opacity-90"
+                    style={{ background: "var(--gradient-primary)", boxShadow: "0 0 20px rgba(27,167,132,0.12)" }}
+                  >
+                    {cta} <ArrowRight className="h-3.5 w-3.5" />
+                  </a>
+                ) : (
+                  <Link
+                    href={href}
+                    className="mt-6 inline-flex h-11 items-center gap-2 rounded-full px-6 text-[13px] font-semibold text-white transition-all hover:opacity-90"
+                    style={{ background: "var(--gradient-primary)", boxShadow: "0 0 20px rgba(27,167,132,0.12)" }}
+                  >
+                    {cta} <ArrowRight className="h-3.5 w-3.5" />
+                  </Link>
+                )}
               </motion.div>
             ))}
           </div>

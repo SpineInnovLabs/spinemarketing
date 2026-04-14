@@ -16,7 +16,7 @@ const planFeatures = [
     ],
   },
   {
-    category: "Workbench",
+    category: "Workspace",
     features: [
       { name: "Account management", starter: true, growth: true, command: true },
       { name: "Task queue & workflows", starter: true, growth: true, command: true },
@@ -25,7 +25,7 @@ const planFeatures = [
     ],
   },
   {
-    category: "Intelligence Layer",
+    category: "Cognitive Layer",
     features: [
       { name: "Twin Chat", starter: false, growth: true, command: true },
       { name: "Morning Brief", starter: false, growth: true, command: true },
@@ -143,7 +143,7 @@ export function PricingComparison() {
         >
           <h3 className="text-[18px] font-semibold text-white">Still deciding?</h3>
           <p className="mt-2 text-[14px] font-medium text-white/45">
-            Book a walkthrough and we&apos;ll help you find the right tier.
+            Book a demo and we&apos;ll help you find the right tier.
           </p>
           <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
             <Link
@@ -151,12 +151,6 @@ export function PricingComparison() {
               className="inline-flex h-10 items-center rounded-xl bg-primary px-5 text-[13px] font-semibold text-white transition-opacity hover:opacity-90"
             >
               Book a demo
-            </Link>
-            <Link
-              href="/contact"
-              className="inline-flex h-10 items-center rounded-xl border border-white/15 px-5 text-[13px] font-semibold text-white/60 transition-colors hover:border-white/30 hover:text-white"
-            >
-              Talk to sales
             </Link>
           </div>
         </motion.div>

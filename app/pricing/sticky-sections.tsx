@@ -19,15 +19,15 @@ const valueItems = [
   {
     tag: "Start simple",
     title: "See everything in one place from day one.",
-    description: "Connect your apps, get the Workbench, and see every customer as an Entity 360 — unified across all your tools.",
+    description: "Connect your apps, get the Workspace, and see every customer as an Entity 360 — unified across all your tools.",
     icon: Zap,
     color: "#1BA784",
-    features: ["Unlimited connectors", "Entity 360 views", "Workbench access"],
+    features: ["Unlimited connectors", "Entity 360 views", "Workspace access"],
   },
   {
     tag: "Add intelligence",
     title: "Let The Twin surface what you're missing.",
-    description: "The Intelligence Layer monitors cross-system signals and proposes actions — with evidence. You approve everything.",
+    description: "The Cognitive Layer monitors cross-system signals and proposes actions — with evidence. You approve everything.",
     icon: Brain,
     color: "#8b5cf6",
     features: ["Twin signal detection", "Evidence-backed proposals", "Governed approval queue"],
@@ -51,12 +51,12 @@ const valueItems = [
 ];
 
 const includedNodes = [
-  { label: "Spine", icon: Database, color: "#1BA784" },
-  { label: "Workbench", icon: Layers, color: "#3b82f6" },
-  { label: "Entity 360", icon: Eye, color: "#06b6d4" },
-  { label: "The Twin", icon: Brain, color: "#8b5cf6" },
-  { label: "Govern Gate", icon: ShieldCheck, color: "#f59e0b" },
-  { label: "Analytics", icon: BarChart3, color: "#ef4444" },
+  { label: "Spine", icon: Database, color: "#1BA784", description: "Canonical data layer" },
+  { label: "Workspace", icon: Layers, color: "#3b82f6", description: "Daily operating surface" },
+  { label: "Entity 360", icon: Eye, color: "#06b6d4", description: "Unified entity views" },
+  { label: "The Twin", icon: Brain, color: "#8b5cf6", description: "AI-powered insights" },
+  { label: "Govern Gate", icon: ShieldCheck, color: "#f59e0b", description: "Human-in-the-loop approval" },
+  { label: "Analytics", icon: BarChart3, color: "#ef4444", description: "Cross-system reporting" },
 ];
 
 export function PricingValueScroll() {

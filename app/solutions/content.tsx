@@ -18,6 +18,7 @@ import {
   Truck,
   DollarSign,
   User,
+  ArrowRight,
 } from "lucide-react";
 
 const byFunction = [
@@ -25,19 +26,19 @@ const byFunction = [
     icon: Users,
     name: "Account Success",
     href: "/account-success",
-    desc: "Revenue, usage, support, health — one workspace.",
+    desc: "Know which customers need attention before they tell you. Health, usage, support — one view.",
   },
   {
     icon: BarChart3,
     name: "Business Ops",
     href: "/business-ops",
-    desc: "Revenue, pipeline, cash — one live picture.",
+    desc: "Stop asking five people for the same number. Revenue, pipeline, cash — always current.",
   },
   {
     icon: Sparkles,
     name: "Personal Ops",
     href: "/personal-ops",
-    desc: "Meetings, tasks, threads — with session memory.",
+    desc: "Your meetings, tasks, and threads in one place. The Twin remembers what you discussed.",
   },
 ];
 
@@ -46,78 +47,85 @@ const byIndustry = [
     icon: Cloud,
     name: "SaaS",
     href: "/solutions/saas",
-    desc: "CRM + usage + billing = one renewal-ready view.",
+    desc: "See who's actually using your product and who's about to churn — before renewal.",
   },
   {
     icon: Wrench,
     name: "Services & Agencies",
     href: "/solutions/services",
-    desc: "Margin, utilization, billing risk — before clients notice.",
+    desc: "Know which projects are bleeding margin before the client review.",
   },
   {
     icon: Package,
     name: "Manufacturing & Trade",
     href: "/solutions/manufacturing",
-    desc: "Flag delays and payment exceptions early.",
+    desc: "Catch shipment delays and payment exceptions before they snowball.",
   },
   {
     icon: ShoppingCart,
     name: "Retail & Ecommerce",
     href: "/solutions/retail",
-    desc: "Stock, returns, support — act on signals, not complaints.",
+    desc: "Connect inventory, returns, and support so you act on signals, not complaints.",
   },
   {
     icon: Briefcase,
     name: "Professional Services",
     href: "/solutions/professional-services",
-    desc: "Unbilled time, scope creep — caught before revenue leaks.",
+    desc: "Spot unbilled time and scope creep before revenue walks out the door.",
   },
   {
     icon: TrendingUp,
     name: "Finance",
     href: "/solutions/finance",
-    desc: "Collections by customer health, not just aging.",
+    desc: "Prioritize collections by who's likely to pay, not just who owes the most.",
   },
 ];
 
 const byRole = [
   {
     icon: UserCheck,
-    name: "Customer Success & Account Managers",
+    name: "Customer Success Managers",
     href: "/solutions/customer-success",
-    desc: "Risk and expansion signals — before the conversation.",
+    desc: "Walk into every customer call already knowing what changed, what's at risk, and what to say.",
   },
   {
     icon: Telescope,
     name: "Founders & CXOs",
     href: "/solutions/founders",
-    desc: "Monday brief and board pack — seconds, not hours.",
+    desc: "Your Monday brief and board pack — built from live data, ready in seconds.",
   },
   {
     icon: Settings2,
-    name: "RevOps & Business Operations",
+    name: "RevOps & Business Ops",
     href: "/solutions/revops",
-    desc: "Pipeline and forecasts — governed and traceable.",
+    desc: "One source of truth for pipeline, forecast, and handoff — no more spreadsheet wars.",
   },
   {
     icon: Truck,
-    name: "Operations & Delivery Leaders",
+    name: "Operations & Delivery",
     href: "/solutions/operations",
-    desc: "Delivery exceptions caught before the client knows.",
+    desc: "Catch delivery exceptions before the client notices. Utilization and risk in one place.",
   },
   {
     icon: DollarSign,
     name: "Finance Leaders",
     href: "/solutions/finance-leaders",
-    desc: "Cash flow connected to customer health.",
+    desc: "See cash flow connected to customer health. Collections that make sense.",
   },
   {
     icon: User,
     name: "Individual Professionals",
     href: "/solutions/individual",
-    desc: "Morning brief, session memory, task queue — organized.",
+    desc: "Morning brief, session memory, task queue — your personal command center.",
   },
 ];
+
+const fade = (delay = 0) => ({
+  initial: { opacity: 0, y: 20 } as const,
+  whileInView: { opacity: 1, y: 0 } as const,
+  viewport: { once: true, margin: "-80px" },
+  transition: { type: "spring" as const, damping: 18, stiffness: 70, delay },
+});
 
 function GroupCard({
   icon: Icon,
@@ -137,26 +145,31 @@ function GroupCard({
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ type: "spring", bounce: 0.2, duration: 0.6, delay }}
+      transition={{ type: "spring", damping: 18, stiffness: 70, delay }}
     >
       <Link
         href={href}
-        className="group arvio-card flex h-full flex-col p-6 transition-all hover:border-primary/30"
+        className="group flex h-full flex-col overflow-hidden rounded-2xl border border-white/[0.06] p-6 transition-all hover:border-primary/20 hover:-translate-y-0.5"
+        style={{
+          background: "rgba(255,255,255,0.02)",
+          backdropFilter: "blur(12px)",
+          boxShadow: "inset 0 1px 0 rgba(255,255,255,0.04)",
+        }}
       >
         <div
-          className="flex h-10 w-10 items-center justify-center rounded-lg transition-all group-hover:scale-105"
-          style={{ background: "var(--gradient-primary-icon)" }}
+          className="flex h-11 w-11 items-center justify-center rounded-xl transition-transform group-hover:scale-105"
+          style={{ background: "rgba(52,211,153,0.10)", boxShadow: "0 0 25px rgba(52,211,153,0.12)" }}
         >
-          <Icon className="h-5 w-5 text-white" />
+          <Icon className="h-5 w-5 text-primary" />
         </div>
-        <h3 className="mt-4 text-[16px] font-semibold tracking-[-0.03em]">
+        <h3 className="mt-4 text-[16px] font-semibold tracking-[-0.03em] text-white">
           {name}
         </h3>
-        <p className="mt-2 flex-1 text-[14px] font-medium leading-[1.6] text-muted-foreground">
+        <p className="mt-2 flex-1 text-[14px] font-medium leading-[1.6] text-white/40">
           {desc}
         </p>
-        <span className="mt-4 text-[13px] font-semibold text-primary">
-          Learn more →
+        <span className="mt-4 inline-flex items-center gap-1 text-[13px] font-semibold text-primary">
+          Learn more <ArrowRight className="h-3 w-3" />
         </span>
       </Link>
     </motion.div>
@@ -166,16 +179,17 @@ function GroupCard({
 export function SolutionsContent() {
   return (
     <>
-      {/* Hero */}
-      <section
-        className="relative overflow-hidden pb-24 pt-40 bg-dark-section"
-      >
-        <div className="mx-auto max-w-[800px] px-4 text-center">
+      <section className="relative overflow-hidden pb-28 pt-[160px]" style={{ background: "#05070A" }}>
+        <div className="pointer-events-none absolute inset-0">
+          <div className="absolute left-1/2 top-[20%] h-[600px] w-[800px] -translate-x-1/2 rounded-full opacity-[0.08] blur-[140px]" style={{ background: "radial-gradient(circle, rgba(45,212,191,0.5), transparent 70%)" }} />
+        </div>
+        <div className="relative mx-auto max-w-[900px] px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ type: "spring", damping: 20, stiffness: 80 }}
-            className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-[13px] font-semibold text-white/60"
+            className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/[0.08] px-4 py-1.5 text-[13px] font-semibold text-white/50"
+            style={{ background: "rgba(255,255,255,0.03)", backdropFilter: "blur(12px)" }}
           >
             <span className="h-1.5 w-1.5 rounded-full bg-primary" />
             Solutions
@@ -184,43 +198,40 @@ export function SolutionsContent() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ type: "spring", damping: 18, stiffness: 70, delay: 0.15 }}
-            className="text-[48px] font-semibold leading-[1.1] tracking-[-0.05em] text-white sm:text-[64px]"
+            className="text-[48px] font-semibold leading-[1.05] tracking-[-0.05em] text-white sm:text-[64px] lg:text-[72px]"
           >
-            Same Spine.{" "}
-            <span className="text-primary">Your context.</span>
+            Built for how{" "}
+            <span className="text-primary">you actually work.</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ type: "spring", damping: 16, stiffness: 52, delay: 0.35 }}
-            className="mx-auto mt-8 max-w-2xl text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-white/55"
+            className="mx-auto mt-7 max-w-2xl text-[17px] font-medium leading-[1.6] tracking-[-0.02em] text-white/45"
           >
-            One Spine. Shaped to your function, industry, and role.
+            Every team has different tools, different metrics, and different daily priorities. IntegrateWise connects them all and shows each person exactly what they need to see.
           </motion.p>
         </div>
       </section>
 
-      {/* Model strip */}
-      <section className="dark-section border-b py-6" style={{ borderColor: "rgba(255,255,255,0.08)" }}>
-        <div className="mx-auto max-w-[1100px] px-4">
+      <section className="border-y border-white/[0.04] py-6" style={{ background: "#05070A" }}>
+        <div className="mx-auto max-w-[1100px] px-6">
           <motion.div
-            initial={{ opacity: 0, y: 8 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ type: "spring", bounce: 0.2, duration: 0.5 }}
+            {...fade(0)}
             className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-8"
           >
-            <span className="text-[12px] font-bold uppercase tracking-[0.1em] text-primary shrink-0">
-              The model
+            <span className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary shrink-0">
+              How it works
             </span>
             <div className="flex flex-wrap gap-x-6 gap-y-2">
               {[
-                { label: "Spine", note: "Connects every app." },
-                { label: "Workbench", note: "Shaped to your role." },
-                { label: "Intelligence", note: "Proposes. You approve." },
+                { label: "Connect", note: "Link the apps your team already uses." },
+                { label: "Unify", note: "Everything becomes one live picture." },
+                { label: "Surface", note: "AI finds what needs your attention." },
+                { label: "Approve", note: "Nothing happens without your say-so." },
               ].map(({ label, note }) => (
-                <span key={label} className="text-[13px] font-medium text-muted-foreground">
-                  <span className="font-semibold text-foreground">{label}</span> — {note}
+                <span key={label} className="text-[13px] font-medium text-white/35">
+                  <span className="font-semibold text-white/70">{label}</span> — {note}
                 </span>
               ))}
             </div>
@@ -228,24 +239,17 @@ export function SolutionsContent() {
         </div>
       </section>
 
-      {/* By Function */}
-      <section className="arvio-section dark-section">
-        <div className="mx-auto max-w-[1100px]">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-            className="mb-10"
-          >
-            <div className="text-[13px] font-bold uppercase tracking-[0.1em] text-primary mb-2">
+      <section className="py-28 md:py-36" style={{ background: "#05070A" }}>
+        <div className="mx-auto max-w-[1100px] px-6">
+          <motion.div {...fade(0)} className="mb-14">
+            <p className="mb-4 text-[12px] font-bold uppercase tracking-[0.14em] text-primary">
               By Function
-            </div>
-            <h2 className="text-[28px] font-semibold tracking-[-0.04em]">
-              Choose your workspace
+            </p>
+            <h2 className="text-[36px] font-semibold leading-[1.1] tracking-[-0.04em] text-white sm:text-[48px]">
+              Pick what matches your team
             </h2>
           </motion.div>
-          <div className="grid gap-6 sm:grid-cols-3">
+          <div className="grid gap-5 sm:grid-cols-3">
             {byFunction.map((item, i) => (
               <GroupCard key={item.name} {...item} delay={i * 0.07} />
             ))}
@@ -253,24 +257,17 @@ export function SolutionsContent() {
         </div>
       </section>
 
-      {/* By Industry */}
-      <section className="arvio-section dark-section">
-        <div className="mx-auto max-w-[1100px]">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-            className="mb-10"
-          >
-            <div className="text-[13px] font-bold uppercase tracking-[0.1em] text-primary mb-2">
+      <section className="py-28 md:py-36 border-t border-white/[0.04]" style={{ background: "#05070A" }}>
+        <div className="mx-auto max-w-[1100px] px-6">
+          <motion.div {...fade(0)} className="mb-14">
+            <p className="mb-4 text-[12px] font-bold uppercase tracking-[0.14em] text-primary">
               By Industry
-            </div>
-            <h2 className="text-[28px] font-semibold tracking-[-0.04em]">
-              Tuned to your reality
+            </p>
+            <h2 className="text-[36px] font-semibold leading-[1.1] tracking-[-0.04em] text-white sm:text-[48px]">
+              Shaped for your industry
             </h2>
           </motion.div>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {byIndustry.map((item, i) => (
               <GroupCard key={item.name} {...item} delay={i * 0.06} />
             ))}
@@ -278,24 +275,17 @@ export function SolutionsContent() {
         </div>
       </section>
 
-      {/* By Role */}
-      <section className="arvio-section dark-section">
-        <div className="mx-auto max-w-[1100px]">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-            className="mb-10"
-          >
-            <div className="text-[13px] font-bold uppercase tracking-[0.1em] text-primary mb-2">
+      <section className="py-28 md:py-36 border-t border-white/[0.04]" style={{ background: "#05070A" }}>
+        <div className="mx-auto max-w-[1100px] px-6">
+          <motion.div {...fade(0)} className="mb-14">
+            <p className="mb-4 text-[12px] font-bold uppercase tracking-[0.14em] text-primary">
               By Role
-            </div>
-            <h2 className="text-[28px] font-semibold tracking-[-0.04em]">
-              Your workspace, your lens
+            </p>
+            <h2 className="text-[36px] font-semibold leading-[1.1] tracking-[-0.04em] text-white sm:text-[48px]">
+              Your role, your view
             </h2>
           </motion.div>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {byRole.map((item, i) => (
               <GroupCard key={item.name} {...item} delay={i * 0.06} />
             ))}

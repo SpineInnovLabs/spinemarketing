@@ -116,7 +116,7 @@ export function ProductStickySections() {
         tag="Connected Intelligence"
         heading={<>Twelve modules. <span className="text-primary">One operating surface.</span></>}
         subheading="Every capability gathers into a single workspace — no tab switching, no context loss."
-        centerLabel="Workbench"
+        centerLabel="Workspace"
         centerDescription="Your daily surface"
         items={gatherItems}
         glowColor="rgba(139,92,246,0.12)"

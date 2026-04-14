@@ -10,7 +10,7 @@ import { TestimonialsSection } from "@/components/testimonials-section"
 export const metadata: Metadata = {
   title: "The Twin | IntegrateWise",
   description:
-    "The Twin reads Truth, Context, and Session Summaries through the Spine. Surfaces signals in the Intelligence Layer and waits for your approval.",
+    "The Twin reads Truth, Context, and Session Summaries through the Spine. Surfaces signals in the Cognitive Layer and waits for your approval.",
 }
 
 export default function AIPage() {

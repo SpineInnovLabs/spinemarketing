@@ -10,7 +10,7 @@ import { TestimonialsSection } from "@/components/testimonials-section"
 export const metadata: Metadata = {
   title: "Solutions | IntegrateWise",
   description:
-    "One Spine. Workbench for daily work, Intelligence Layer for AI. Built for every function, industry, and role.",
+    "One Spine. Workspace for daily work, Cognitive Layer for AI. Built for every function, industry, and role.",
 }
 
 export default function SolutionsPage() {

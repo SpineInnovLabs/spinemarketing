@@ -52,8 +52,12 @@ function VisualCard({ type }: { type: string }) {
   const v = visualMap[type] || visualMap.spine;
   return (
     <div
-      className="relative overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.02] p-6"
-      style={{ boxShadow: `0 0 60px ${v.color}, inset 0 0 30px ${v.color.replace("0.15", "0.03")}` }}
+      className="relative overflow-hidden rounded-2xl border border-white/[0.06] p-6"
+      style={{
+        background: "rgba(255,255,255,0.015)",
+        backdropFilter: "blur(12px)",
+        boxShadow: `0 0 60px ${v.color}, inset 0 1px 0 rgba(255,255,255,0.04), inset 0 0 30px ${v.color.replace("0.15", "0.02")}`,
+      }}
     >
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808006_1px,transparent_1px),linear-gradient(to_bottom,#80808006_1px,transparent_1px)] bg-[size:20px_20px]" />
       <div className="relative space-y-3">
@@ -64,11 +68,11 @@ function VisualCard({ type }: { type: string }) {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 + i * 0.1, type: "spring", damping: 18 }}
-            className="flex items-center justify-between rounded-xl border border-white/[0.08] bg-white/[0.04] px-4 py-3"
+            className="flex items-center justify-between rounded-xl border border-white/[0.06] bg-white/[0.03] px-4 py-3"
           >
             <div>
               <div className="text-[12px] font-bold text-white/50">{item.label}</div>
-              <div className="text-[11px] text-white/30">{item.value}</div>
+              <div className="text-[11px] text-white/25">{item.value}</div>
             </div>
             <div className="h-2 w-2 rounded-full bg-primary animate-pulse" />
           </motion.div>
@@ -98,7 +102,7 @@ const defaultShowcases: ShowcaseItem[] = [
     cta: { label: "Explore the Spine", href: "/platform/the-adaptive-spine" },
   },
   {
-    tag: "Workbench",
+    tag: "Workspace",
     title: "Where your team works every day.",
     description: "Accounts, tasks, workflows, and calendar — unified in one workspace powered by the Spine.",
     features: [
@@ -107,10 +111,10 @@ const defaultShowcases: ShowcaseItem[] = [
       "Workflow automation engine",
     ],
     visual: "workbench",
-    cta: { label: "See the Workbench", href: "/product/the-adaptive-workspace" },
+    cta: { label: "See the Workspace", href: "/product/the-adaptive-workspace" },
   },
   {
-    tag: "Intelligence Layer",
+    tag: "Cognitive Layer",
     title: "AI that shows its work.",
     description: "The Twin analyzes patterns, proposes actions with evidence, and waits for your approval before anything executes.",
     features: [
@@ -135,7 +139,8 @@ export function FeatureShowcase({
         return (
           <section
             key={item.tag}
-            className="relative overflow-hidden bg-dark-section py-24 md:py-32"
+            className="relative overflow-hidden py-28 md:py-36"
+            style={{ background: "#05070A" }}
           >
             <div className="relative mx-auto max-w-[1100px] px-6">
               <div className={`grid gap-12 lg:gap-16 lg:grid-cols-2 items-center ${isReversed ? "lg:[direction:rtl]" : ""}`}>
@@ -149,13 +154,13 @@ export function FeatureShowcase({
                   <p className="mb-3 text-[12px] font-bold uppercase tracking-[0.14em] text-primary">
                     {item.tag}
                   </p>
-                  <h2 className="text-[32px] font-semibold leading-[1.15] tracking-[-0.04em] text-white sm:text-[40px]">
+                  <h2 className="text-[36px] font-semibold leading-[1.1] tracking-[-0.04em] text-white sm:text-[48px]">
                     {item.title}
                   </h2>
-                  <p className="mt-4 text-[15px] font-medium leading-[1.7] text-white/50">
+                  <p className="mt-5 text-[16px] font-medium leading-[1.7] text-white/45">
                     {item.description}
                   </p>
-                  <ul className="mt-6 space-y-3">
+                  <ul className="mt-7 space-y-3">
                     {item.features.map((f, fi) => (
                       <motion.li
                         key={fi}
@@ -165,10 +170,10 @@ export function FeatureShowcase({
                         transition={{ delay: 0.2 + fi * 0.08 }}
                         className="flex items-center gap-3"
                       >
-                        <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/20">
+                        <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/15">
                           <CheckCircle2 className="h-3 w-3 text-primary" />
                         </div>
-                        <span className="text-[14px] font-medium text-white/60">{f}</span>
+                        <span className="text-[14px] font-medium text-white/55">{f}</span>
                       </motion.li>
                     ))}
                   </ul>
@@ -193,7 +198,6 @@ export function FeatureShowcase({
                 </motion.div>
               </div>
             </div>
-            {i < showcases.length - 1 && <div className="section-divider-subtle mt-24" />}
           </section>
         );
       })}

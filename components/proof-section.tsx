@@ -42,10 +42,10 @@ function AnimatedCounter({ value, suffix = "" }: { value: number; suffix?: strin
 
 export function ProofSection() {
   return (
-    <section className="relative overflow-hidden bg-dark-section py-32 md:py-40">
+    <section className="relative overflow-hidden py-40 md:py-52" style={{ background: "#05070A" }}>
+      <div className="absolute inset-0 bg-grain" />
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-1/2 top-[20%] h-[600px] w-[700px] -translate-x-1/2 rounded-full opacity-25 blur-[160px]" style={{ background: "radial-gradient(circle, rgba(52,211,153,0.30), transparent 70%)" }} />
-        <div className="absolute left-[10%] bottom-[20%] h-[300px] w-[400px] rounded-full opacity-10 blur-[100px]" style={{ background: "radial-gradient(circle, rgba(139,92,246,0.20), transparent 70%)" }} />
+        <div className="absolute left-1/2 top-[20%] h-[600px] w-[700px] -translate-x-1/2 rounded-full opacity-15 blur-[200px]" style={{ background: "radial-gradient(circle, rgba(52,211,153,0.2), transparent 70%)" }} />
       </div>
       <div className="relative mx-auto max-w-[1100px] px-6">
         <motion.div
@@ -71,7 +71,7 @@ export function ProofSection() {
           className="mx-auto mt-16 md:mt-20 max-w-3xl"
         >
           <div className="rounded-2xl p-[1px] bg-gradient-to-br from-primary/25 via-transparent to-primary/10">
-            <div className="rounded-2xl bg-[#0c0b14] p-10 md:p-14 relative overflow-hidden">
+            <div className="rounded-2xl p-10 md:p-14 relative overflow-hidden" style={{ background: "#05070A" }}>
               <div className="pointer-events-none absolute top-0 right-0 h-40 w-40 rounded-full opacity-20 blur-[60px]" style={{ background: "rgba(52,211,153,0.3)" }} />
               <svg width="48" height="48" viewBox="0 0 48 48" fill="none" className="relative mb-4">
                 <path
@@ -122,10 +122,10 @@ export function ProofSection() {
           className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row"
         >
           <Button size="lg" className="h-12 rounded-full px-7 text-sm font-semibold shadow-[0_0_30px_rgba(52,211,153,0.2)]" asChild>
-            <Link href="/contact?intent=demo">See it in action</Link>
+            <Link href="/contact?intent=demo">Book a demo</Link>
           </Button>
           <Button variant="outline" size="lg" className="h-12 rounded-full border-white/15 px-6 text-sm font-semibold text-white/70 hover:border-white/30 hover:text-white" asChild>
-            <Link href="/contact">Talk to us</Link>
+            <Link href="/platform/how-it-works">See how it works</Link>
           </Button>
         </motion.div>
       </div>

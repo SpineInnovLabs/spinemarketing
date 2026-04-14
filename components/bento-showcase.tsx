@@ -24,7 +24,7 @@ function DashboardMockup() {
         <span className="h-2.5 w-2.5 rounded-full bg-red-400/40" />
         <span className="h-2.5 w-2.5 rounded-full bg-amber-400/40" />
         <span className="h-2.5 w-2.5 rounded-full bg-green-400/40" />
-        <span className="ml-2 text-[11px] font-medium text-white/30">Workbench</span>
+        <span className="ml-2 text-[11px] font-medium text-white/30">Workspace</span>
       </div>
       <div className="p-4 space-y-3">
         <div className="grid grid-cols-3 gap-2">
@@ -79,7 +79,7 @@ function TwinMockup() {
     <div className="relative w-full overflow-hidden rounded-xl border border-primary/20 bg-primary/[0.04]">
       <div className="flex items-center gap-2 border-b border-primary/15 bg-primary/[0.06] px-4 py-2.5">
         <Sparkles className="h-3.5 w-3.5 text-primary" />
-        <span className="text-[11px] font-semibold text-primary">Intelligence Layer — Twin</span>
+        <span className="text-[11px] font-semibold text-primary">Cognitive Layer — Twin</span>
       </div>
       <div className="p-4 space-y-3">
         <div className="rounded-lg border border-primary/15 bg-primary/[0.06] p-3">
@@ -128,7 +128,7 @@ function TwinMockup() {
 
 export function BentoShowcase({
   heading = "Everything in one screen.",
-  subheading = "The Workbench shows. The Intelligence Layer thinks. You decide.",
+  subheading = "The Workspace shows. The Cognitive Layer thinks. You decide.",
   tag = "Product",
 }: {
   heading?: string;

@@ -38,7 +38,7 @@ export function DataFlowAnimation() {
     <div
       className="w-full max-w-5xl mx-auto h-[360px] md:h-[440px] rounded-2xl border border-white/10 relative overflow-hidden flex items-center justify-center"
       style={{
-        background: "rgb(8,7,14)",
+        background: "#05070A",
         boxShadow:
           "0 0 60px rgba(27,167,132,0.08), 0 0 0px 1px rgba(255,255,255,0.05)",
       }}

@@ -5,7 +5,6 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Arvio-derived design system — emerald green primary (IntegrateWise brand) */
   --background: 255 255 255;
   --foreground: 10 11 16;
   --card: 255 255 255;
@@ -28,40 +27,37 @@
   --ring: 27 167 132;
   --radius: 0.75rem;
 
-  /* Arvio-style shadows (translated to emerald) */
   --shadow-card: 0px 0px 0px 5px rgb(248 248 250), 0px 0.42px 1.26px -0.42px rgba(27,167,132,0.01), 0px 1.6px 4.8px -0.83px rgba(27,167,132,0.01), 0px 7px 21px -1.25px rgba(27,167,132,0.03);
   --shadow-card-elevated: 0px 0px 0px 3px rgb(255 255 255), 0px 0.42px 1.26px -0.42px rgba(27,167,132,0.09), 0px 1.6px 4.8px -0.83px rgba(27,167,132,0.12), 0px 7px 21px -1.25px rgba(27,167,132,0.24);
   --shadow-button: 0px 0.42px 0.93px -0.42px rgba(27,167,132,0.13), 0px 1.6px 3.52px -0.83px rgba(27,167,132,0.17), 0px 7px 15.4px -1.25px rgba(27,167,132,0.36);
   --shadow-nav: 0px -0.42px 1.26px -0.42px rgba(0,0,0,0.01), 0px -1.6px 4.8px -0.83px rgba(0,0,0,0.01), 0px -7px 21px -1.25px rgba(0,0,0,0.03);
 
-  /* Arvio gradient (translated to emerald) */
   --gradient-primary: radial-gradient(88% 75% at 50% 50%, rgb(27,167,132) 37.4%, rgb(52,211,153) 100%);
   --gradient-primary-icon: radial-gradient(75% 75% at 50% 50%, rgb(27,167,132) 53%, rgb(52,211,153) 100%);
 
-  /* Dark section color (Arvio: #08070e) */
-  --dark-section: 8 7 14;
+  --dark-section: 5 7 10;
 }
 
 .dark {
-  --background: 8 7 14;
+  --background: 5 7 10;
   --foreground: 248 248 250;
-  --card: 18 17 24;
+  --card: 12 14 18;
   --card-foreground: 248 248 250;
-  --popover: 18 17 24;
+  --popover: 12 14 18;
   --popover-foreground: 248 248 250;
   --primary: 52 211 153;
   --primary-light: 110 231 183;
   --primary-foreground: 10 11 16;
-  --secondary: 24 24 30;
+  --secondary: 16 18 22;
   --secondary-foreground: 248 248 250;
-  --muted: 24 24 30;
+  --muted: 16 18 22;
   --muted-foreground: 156 156 160;
   --accent: 52 211 153;
   --accent-foreground: 10 11 16;
   --destructive: 220 38 38;
   --destructive-foreground: 248 248 250;
-  --border: 38 38 44;
-  --input: 38 38 44;
+  --border: 30 32 38;
+  --input: 30 32 38;
   --ring: 52 211 153;
 }
 
@@ -149,7 +145,6 @@
   }
 }
 
-/* Arvio-style utility classes */
 @layer utilities {
   .arvio-card {
     background: rgb(255 255 255);
@@ -182,23 +177,23 @@
     background: var(--gradient-primary-icon);
   }
   .arvio-section {
-    padding: 100px 64px;
+    padding: 140px 64px;
   }
   .arvio-dark-section {
     background-color: rgb(var(--dark-section));
     color: rgb(255 255 255);
   }
   .section-heading {
-    font-size: 52px;
+    font-size: 64px;
     font-weight: 600;
-    letter-spacing: -0.05em;
-    line-height: 1.2;
+    letter-spacing: -0.04em;
+    line-height: 1.08;
   }
   .section-heading-sm {
-    font-size: 40px;
+    font-size: 48px;
     font-weight: 600;
-    letter-spacing: -0.05em;
-    line-height: 1.2;
+    letter-spacing: -0.04em;
+    line-height: 1.1;
   }
 
   .skip-link {
@@ -227,7 +222,6 @@
     }
   }
 
-  /* Logo marquee animation */
   @keyframes marquee {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
@@ -237,15 +231,10 @@
   }
 }
 
-/* ─── Dark Section Cascade Utility ─────────────────────────────────────────
-   Add `dark-section` to any section element to get full dark theme cascade.
-   Handles backgrounds, text, cards, borders, and Tailwind opacity modifiers.
-────────────────────────────────────────────────────────────────────────── */
 .dark-section {
-  background-color: rgb(8, 7, 14) !important;
+  background-color: rgb(5, 7, 10) !important;
 }
 
-/* Headings */
 .dark-section .section-heading,
 .dark-section .section-heading-sm {
   color: rgb(255, 255, 255);
@@ -257,20 +246,20 @@
   color: rgb(255, 255, 255);
 }
 
-/* Card dark variant — overrides white arvio-card */
 .dark-section .arvio-card {
-  background: rgba(255, 255, 255, 0.03) !important;
-  border: 1px solid rgba(255, 255, 255, 0.08) !important;
-  box-shadow: none !important;
+  background: rgba(255, 255, 255, 0.02) !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04) !important;
+  backdrop-filter: blur(12px);
   color: rgb(255, 255, 255);
 }
 .dark-section .arvio-card:hover {
-  background: rgba(255, 255, 255, 0.05) !important;
-  border-color: rgba(255, 255, 255, 0.14) !important;
-  box-shadow: none !important;
+  background: rgba(255, 255, 255, 0.04) !important;
+  border-color: rgba(27, 167, 132, 0.25) !important;
+  box-shadow: 0 20px 60px -15px rgba(27, 167, 132, 0.12), 0 0 0 1px rgba(27, 167, 132, 0.08) !important;
+  transform: translateY(-4px) scale(1.01);
 }
 
-/* Tailwind text color overrides */
 .dark-section .text-foreground {
   color: rgb(255, 255, 255) !important;
 }
@@ -296,7 +285,6 @@
   color: rgba(255, 255, 255, 0.4) !important;
 }
 
-/* Destructive / risk signal overrides */
 .dark-section .text-destructive {
   color: rgb(252, 129, 129) !important;
 }
@@ -310,7 +298,6 @@
   background-color: rgba(239, 68, 68, 0.08) !important;
 }
 
-/* Background overrides */
 .dark-section .bg-muted {
   background-color: rgba(255, 255, 255, 0.04) !important;
 }
@@ -318,7 +305,6 @@
   background-color: rgba(255, 255, 255, 0.03) !important;
 }
 
-/* Border overrides */
 .dark-section .border-border {
   border-color: rgba(255, 255, 255, 0.08) !important;
 }
@@ -335,13 +321,11 @@
   border-color: rgba(255, 255, 255, 0.04) !important;
 }
 
-/* Blockquote in dark sections */
 .dark-section blockquote {
   color: rgba(255, 255, 255, 0.75);
   border-left-color: rgba(45, 212, 191, 0.4);
 }
 
-/* ─── Section Dividers ─── */
 .section-divider {
   height: 1px;
   background: linear-gradient(90deg, transparent 0%, rgba(27,167,132,0.3) 30%, rgba(52,211,153,0.2) 50%, rgba(27,167,132,0.3) 70%, transparent 100%);
@@ -351,10 +335,9 @@
   background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.06) 30%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0.06) 70%, transparent 100%);
 }
 
-/* ─── Background Textures ─── */
 .bg-dot-grid {
-  background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
-  background-size: 24px 24px;
+  background-image: radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 28px 28px;
 }
 .bg-grain {
   position: relative;
@@ -364,22 +347,36 @@
   position: absolute;
   inset: 0;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-  opacity: 0.015;
+  opacity: 0.02;
   pointer-events: none;
   z-index: 0;
 }
 
-/* ─── Gradient glow card ─── */
+.glass-card {
+  position: relative;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.06);
+  backdrop-filter: blur(12px);
+  transition: border-color 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
+}
+.glass-card:hover {
+  border-color: rgba(27,167,132,0.25);
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 20px 60px -15px rgba(27,167,132,0.12), 0 0 0 1px rgba(27,167,132,0.08);
+}
+
 .glow-card {
   position: relative;
   border-radius: 20px;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.08);
-  transition: border-color 0.3s, transform 0.3s;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: border-color 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
 }
 .glow-card:hover {
   border-color: rgba(27,167,132,0.3);
-  transform: translateY(-2px);
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 20px 60px -15px rgba(27,167,132,0.12), 0 0 0 1px rgba(27,167,132,0.08);
 }
 .glow-card-emerald {
   position: relative;
@@ -401,7 +398,6 @@
   opacity: 1;
 }
 
-/* ─── Bento grid ─── */
 .bento-grid {
   display: grid;
   gap: 1rem;
@@ -426,11 +422,10 @@
   }
 }
 
-/* ─── Scroll reveal animation ─── */
 @keyframes fade-up-in {
   from {
     opacity: 0;
-    transform: translateY(24px);
+    transform: translateY(32px);
   }
   to {
     opacity: 1;
@@ -438,10 +433,9 @@
   }
 }
 .animate-fade-up {
-  animation: fade-up-in 0.6s ease-out both;
+  animation: fade-up-in 0.7s ease-out both;
 }
 
-/* ─── Shimmer / pulse glow ─── */
 @keyframes shimmer-glow {
   0%, 100% { opacity: 0.4; }
   50% { opacity: 1; }
@@ -458,7 +452,14 @@
   animation: float 4s ease-in-out infinite;
 }
 
-/* ─── Gradient border effect ─── */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(27,167,132,0.15), 0 0 60px rgba(27,167,132,0.05); }
+  50% { box-shadow: 0 0 40px rgba(27,167,132,0.3), 0 0 100px rgba(27,167,132,0.1); }
+}
+.animate-pulse-glow {
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+
 .gradient-border {
   position: relative;
   border-radius: 20px;
@@ -477,24 +478,54 @@
   pointer-events: none;
 }
 
+.section-fade-top {
+  position: relative;
+}
+.section-fade-top::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(to bottom, rgb(5,7,10), transparent);
+  pointer-events: none;
+  z-index: 1;
+}
+.section-fade-bottom::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(to top, rgb(5,7,10), transparent);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.text-glow-emerald {
+  text-shadow: 0 0 40px rgba(52,211,153,0.3), 0 0 80px rgba(27,167,132,0.15);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-fade-up,
   .animate-shimmer,
-  .animate-float {
+  .animate-float,
+  .animate-pulse-glow {
     animation: none !important;
   }
 }
 
-/* Responsive overrides for Arvio spacing */
 @media (max-width: 1199px) {
   .arvio-section {
-    padding: 80px 32px;
+    padding: 100px 32px;
   }
   .section-heading {
-    font-size: 48px;
+    font-size: 52px;
   }
   .section-heading-sm {
-    font-size: 34px;
+    font-size: 40px;
   }
 }
 
@@ -506,6 +537,6 @@
     font-size: 40px;
   }
   .section-heading-sm {
-    font-size: 28px;
+    font-size: 32px;
   }
 }

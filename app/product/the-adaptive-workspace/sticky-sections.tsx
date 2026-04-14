@@ -31,7 +31,7 @@ export function WorkspaceGather() {
       tag="Workspace Modules"
       heading={<>Nine views. <span className="text-primary">One workspace.</span></>}
       subheading="Every module gathers into a single operating surface — no tab switching, no context loss."
-      centerLabel="Workbench"
+      centerLabel="Workspace"
       centerDescription="Your daily surface"
       items={items}
       glowColor="rgba(139,92,246,0.12)"

@@ -47,7 +47,7 @@ const hitlSteps = [
     desc: "Full-context analysis with confidence and alternatives.",
   },
   {
-    label: "Surfaced in the Intelligence Layer",
+    label: "Surfaced in the Cognitive Layer",
     desc: "Recommendation appears with complete evidence trail.",
   },
   {
@@ -55,7 +55,7 @@ const hitlSteps = [
     desc: "Nothing executes until you approve. Govern Gate is structural.",
   },
   {
-    label: "Action executes in the Workbench",
+    label: "Action executes in the Workspace",
     desc: "Approved actions execute and Session Summary is logged.",
   },
 ];

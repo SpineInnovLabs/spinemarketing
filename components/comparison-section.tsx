@@ -55,11 +55,11 @@ export function ComparisonSection({
   subheading?: string;
 }) {
   return (
-    <section className="relative overflow-hidden bg-dark-section py-28 md:py-36">
+    <section className="relative overflow-hidden py-32 md:py-40" style={{ background: "#05070A" }}>
       <div className="pointer-events-none absolute inset-0">
         <div
-          className="absolute left-1/2 top-[10%] h-[500px] w-[600px] -translate-x-1/2 rounded-full opacity-10 blur-[140px]"
-          style={{ background: "radial-gradient(circle, rgba(52,211,153,0.3), transparent 70%)" }}
+          className="absolute left-1/2 top-[10%] h-[500px] w-[600px] -translate-x-1/2 rounded-full opacity-[0.06] blur-[140px]"
+          style={{ background: "radial-gradient(circle, rgba(52,211,153,0.4), transparent 70%)" }}
         />
       </div>
       <div className="relative mx-auto max-w-[900px] px-6">
@@ -68,15 +68,15 @@ export function ComparisonSection({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ type: "spring", damping: 18, stiffness: 70 }}
-          className="mx-auto mb-14 max-w-2xl text-center"
+          className="mx-auto mb-16 max-w-2xl text-center"
         >
-          <p className="mb-3 text-[12px] font-bold uppercase tracking-[0.14em] text-primary">
+          <p className="mb-4 text-[12px] font-bold uppercase tracking-[0.14em] text-primary">
             Why IntegrateWise
           </p>
-          <h2 className="text-[36px] font-semibold leading-[1.15] tracking-[-0.04em] text-white sm:text-[44px]">
+          <h2 className="text-[40px] font-semibold leading-[1.1] tracking-[-0.04em] text-white sm:text-[52px]">
             {heading}
           </h2>
-          <p className="mt-4 text-[15px] font-medium leading-[1.6] text-white/45">
+          <p className="mt-5 text-[16px] font-medium leading-[1.6] text-white/40">
             {subheading}
           </p>
         </motion.div>
@@ -86,16 +86,21 @@ export function ComparisonSection({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ type: "spring", damping: 18, stiffness: 70, delay: 0.1 }}
-          className="overflow-hidden rounded-2xl border border-white/[0.08]"
+          className="overflow-hidden rounded-2xl border border-white/[0.06]"
+          style={{
+            background: "rgba(255,255,255,0.015)",
+            backdropFilter: "blur(12px)",
+            boxShadow: "inset 0 1px 0 rgba(255,255,255,0.04)",
+          }}
         >
-          <div className="grid grid-cols-[1fr_auto_auto] items-center border-b border-white/[0.06] bg-white/[0.04] px-6 py-4">
-            <span className="text-[13px] font-bold uppercase tracking-[0.1em] text-white/40">
+          <div className="grid grid-cols-[1fr_auto_auto] items-center border-b border-white/[0.06] bg-white/[0.03] px-6 py-4">
+            <span className="text-[13px] font-bold uppercase tracking-[0.1em] text-white/35">
               Feature
             </span>
             <span className="w-[100px] text-center text-[13px] font-bold text-primary">
               IntegrateWise
             </span>
-            <span className="w-[100px] text-center text-[13px] font-bold text-white/40">
+            <span className="w-[100px] text-center text-[13px] font-bold text-white/35">
               Others
             </span>
           </div>
@@ -108,10 +113,10 @@ export function ComparisonSection({
               viewport={{ once: true }}
               transition={{ delay: i * 0.03 }}
               className={`grid grid-cols-[1fr_auto_auto] items-center px-6 py-3.5 ${
-                i % 2 === 0 ? "bg-white/[0.02]" : "bg-transparent"
+                i % 2 === 0 ? "bg-white/[0.015]" : "bg-transparent"
               } ${i < rows.length - 1 ? "border-b border-white/[0.04]" : ""}`}
             >
-              <span className="text-[14px] font-medium text-white/70 pr-4">
+              <span className="text-[14px] font-medium text-white/60 pr-4">
                 {row.feature}
               </span>
               <div className="flex w-[100px] justify-center">

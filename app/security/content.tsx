@@ -47,7 +47,7 @@ const securityFeatures = [
   },
   {
     icon: FileCheck,
-    title: "Govern Gate on every Intelligence Layer action",
+    title: "Govern Gate on every Cognitive Layer action",
     desc: "Nothing changes without your approval.",
   },
   {
@@ -95,14 +95,14 @@ export function SecurityContent() {
                 stiffness: 52,
                 delay: 0.2,
               }}
-              className="mb-6 inline-flex items-center gap-2.5 rounded-[40px] bg-white px-4 py-1.5"
-              style={{ boxShadow: "0px 0px 0px 3px rgb(248 248 250)" }}
+              className="mb-6 inline-flex items-center gap-2.5 rounded-full border border-white/10 px-4 py-1.5"
+              style={{ background: "rgba(255,255,255,0.03)", backdropFilter: "blur(12px)" }}
             >
               <span
                 className="h-2 w-2 rounded-full"
                 style={{ background: "var(--gradient-primary-icon)" }}
               />
-              <span className="text-[14px] font-semibold tracking-[-0.03em] text-[#0a0b10]">
+              <span className="text-[14px] font-semibold tracking-[-0.03em] text-white/60">
                 Security
               </span>
             </motion.div>
@@ -260,8 +260,8 @@ export function SecurityContent() {
                 }}
                 asChild
               >
-                <Link href="/contact?intent=security">
-                  Talk to us about security
+                <Link href="/contact?intent=demo">
+                  Book a demo
                 </Link>
               </Button>
               <Button
@@ -270,7 +270,7 @@ export function SecurityContent() {
                 className="h-[42px] rounded-xl border-2 border-white/15 bg-transparent px-6 text-[15px] font-semibold text-white hover:bg-white/10"
                 asChild
               >
-                <Link href="/contact?intent=demo">Book a demo</Link>
+                <Link href="/platform/security">Security details</Link>
               </Button>
             </div>
           </motion.div>

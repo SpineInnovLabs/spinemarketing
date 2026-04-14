@@ -8,7 +8,7 @@ import { IntelligenceStickyScroll } from "./sticky-sections"
 export const metadata: Metadata = {
   title: "How it Works | IntegrateWise Product",
   description:
-    "The Intelligence Layer — proactive signals, morning briefs, pattern detection, and evidence-backed reasoning.",
+    "The Cognitive Layer — proactive signals, morning briefs, pattern detection, and evidence-backed reasoning.",
 }
 
 export default function ProductHowItWorksPage() {

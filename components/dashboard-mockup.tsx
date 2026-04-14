@@ -455,7 +455,7 @@ export function DashboardMockup() {
             </div>
             <div>
               <div className="flex items-center gap-1.5">
-                <span className="text-[10px] text-gray-800 font-bold">Intelligence Layer</span>
+                <span className="text-[10px] text-gray-800 font-bold">Cognitive Layer</span>
                 <span
                   className="text-[7px] px-1.5 py-0.5 rounded font-semibold"
                   style={{ backgroundColor: "rgba(27,167,132,0.1)", color: "rgb(27,167,132)" }}
@@ -572,7 +572,7 @@ export function DashboardMockup() {
         >
           <ChevronUp className="w-3 h-3 text-primary" />
           <span className="text-[9px] text-gray-500 font-medium">
-            Intelligence Layer — analyzing your accounts...
+            Cognitive Layer — analyzing your accounts...
           </span>
           <motion.div
             className="w-1.5 h-1.5 rounded-full bg-primary"

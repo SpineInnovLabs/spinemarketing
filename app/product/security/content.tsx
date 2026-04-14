@@ -37,7 +37,7 @@ const emergencyItems = [
 
 export function ProductSecurityContent() {
   return (
-    <div className="min-h-screen bg-[#0a0a0f] text-white">
+    <div className="min-h-screen text-white" style={{ background: "#05070A" }}>
       <Header />
 
       <section className="pt-32 pb-20 px-6">

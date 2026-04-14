@@ -125,7 +125,6 @@ const navigation: NavItem[] = [
       { name: "Why IntegrateWise", href: "/why", icon: HelpCircle, desc: "The problem we exist to solve" },
       { name: "About", href: "/about", icon: Building2, desc: "Our story and what we stand for" },
       { name: "Resources", href: "/resources", icon: BookOpen, desc: "Blog, guides, and playbooks" },
-      { name: "Contact", href: "/contact", icon: Mail, desc: "Get in touch with our team" },
     ],
   },
 ];
@@ -154,18 +153,22 @@ function DropdownItem({ item }: { item: NavItemChild }) {
   return (
     <Link
       href={item.href}
-      className="group flex items-start gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50"
+      className="group flex items-start gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-white/[0.06] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
     >
       <div
-        className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg transition-all group-hover:scale-105"
-        style={{ background: "var(--gradient-primary-icon)" }}
+        className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white/[0.06] transition-all group-hover:bg-primary/20 group-hover:scale-105"
       >
-        <Icon className="h-[15px] w-[15px] text-white" />
+        <Icon className="h-[15px] w-[15px] text-white/60 group-hover:text-primary" />
       </div>
       <div className="flex flex-col justify-center">
-        <span className="text-[14px] font-semibold tracking-[-0.03em] text-foreground leading-tight">
+        <span className="text-[14px] font-semibold tracking-[-0.03em] text-white/80 leading-tight group-hover:text-white">
           {item.name}
         </span>
+        {item.desc && (
+          <span className="text-[12px] font-medium text-white/30 mt-0.5">
+            {item.desc}
+          </span>
+        )}
       </div>
     </Link>
   );
@@ -202,10 +205,11 @@ function MegaDropdown({
       }}
     >
       <div
-        className="overflow-hidden rounded-2xl border border-border/40 bg-white/96 p-3 backdrop-blur-xl"
+        className="overflow-hidden rounded-2xl border border-white/[0.08] p-3 backdrop-blur-2xl"
         style={{
+          background: "rgba(8, 10, 14, 0.92)",
           boxShadow:
-            "0 20px 60px -15px rgba(0,0,0,0.12), 0 0px 0px 1px rgba(0,0,0,0.04)",
+            "0 20px 60px -15px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.04), 0 0 80px rgba(27,167,132,0.04)",
         }}
       >
         {isGrouped && nav.groups && (
@@ -259,7 +263,7 @@ function NavTrigger({
     return (
       <Link
         href={nav.href}
-        className="rounded-md px-3 py-2 text-[15px] font-medium tracking-[-0.02em] text-foreground/60 transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50"
+        className="rounded-md px-3 py-2 text-[15px] font-medium tracking-[-0.02em] text-white/50 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-primary/50"
         onMouseEnter={onLeave}
       >
         {nav.label}
@@ -279,8 +283,8 @@ function NavTrigger({
         aria-haspopup="true"
         aria-controls={isOpen ? menuId : undefined}
         id={`${menuId}-trigger`}
-        className={`flex items-center gap-1 rounded-md px-3 py-2 text-[15px] font-medium tracking-[-0.02em] transition-colors focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 ${
-          isOpen ? "text-foreground" : "text-foreground/60 hover:text-foreground"
+        className={`flex items-center gap-1 rounded-md px-3 py-2 text-[15px] font-medium tracking-[-0.02em] transition-colors focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-primary/50 ${
+          isOpen ? "text-white" : "text-white/50 hover:text-white"
         }`}
       >
         {nav.label}
@@ -400,23 +404,25 @@ export function Header({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.2 }}
-          className="fixed inset-0 z-40 bg-black/5 backdrop-blur-[2px]"
+          className="fixed inset-0 z-40 bg-black/40 backdrop-blur-[3px]"
           onMouseEnter={handleLeave}
         />
       )}
 
       <motion.header
         suppressHydrationWarning
-        className="fixed top-0 left-0 right-0 z-50 bg-white"
+        className="fixed top-0 left-0 right-0 z-50"
         initial={initiallyHidden ? { y: "-100%", opacity: 0 } : { y: 0, opacity: 1 }}
         animate={heroRevealed ? { y: 0, opacity: 1 } : { y: "-100%", opacity: 0 }}
         transition={{ type: "spring", damping: 22, stiffness: 200, mass: 0.8 }}
         style={{
-          borderBottom: "1px solid rgb(240, 240, 243)",
-          boxShadow: "var(--shadow-nav)",
+          background: "rgba(5, 7, 10, 0.75)",
+          backdropFilter: "blur(20px) saturate(1.4)",
+          WebkitBackdropFilter: "blur(20px) saturate(1.4)",
+          borderBottom: "1px solid rgba(255, 255, 255, 0.06)",
+          boxShadow: "0 4px 30px rgba(0, 0, 0, 0.3)",
         }}
       >
-        {/* Scroll progress bar */}
         <motion.div
           className="absolute bottom-0 left-0 right-0 h-[2px] origin-left"
           style={{ scaleX, background: "var(--gradient-primary)" }}
@@ -424,18 +430,16 @@ export function Header({
         />
 
         <nav className="mx-auto flex h-[60px] max-w-[1200px] items-center justify-between px-6 md:px-10">
-          {/* Logo */}
           <Link
             href="/"
-            className="flex shrink-0 items-center gap-2.5 rounded-lg focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50"
+            className="flex shrink-0 items-center gap-2.5 rounded-lg focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-primary/50"
           >
-            <SpineLogo className="h-8 w-8 shrink-0" variant="on-light" />
-            <span className="text-[17px] font-semibold tracking-[-0.04em] text-foreground">
+            <SpineLogo className="h-8 w-8 shrink-0" variant="on-dark" />
+            <span className="text-[17px] font-semibold tracking-[-0.04em] text-white">
               Integrate<span className="text-primary">Wise</span>
             </span>
           </Link>
 
-          {/* Desktop nav — centred */}
           <div className="hidden items-center gap-0.5 lg:flex">
             {navigation.map((nav) => (
               <NavTrigger
@@ -448,21 +452,13 @@ export function Header({
             ))}
           </div>
 
-          {/* Desktop CTAs */}
           <div className="hidden shrink-0 items-center gap-2 lg:flex">
             <Button
-              variant="ghost"
-              className="h-[38px] rounded-xl px-4 text-[14px] font-semibold tracking-[-0.02em] text-foreground/60 hover:text-foreground hover:bg-muted"
-              asChild
-            >
-              <Link href="/contact">Contact</Link>
-            </Button>
-            <Button
-              className="h-[38px] rounded-xl px-4 text-[14px] font-semibold tracking-[-0.02em]"
+              className="h-[38px] rounded-xl px-4 text-[14px] font-semibold tracking-[-0.02em] text-white"
               style={{
                 background: "var(--gradient-primary)",
-                border: "2px solid rgba(248,248,250,0.12)",
-                boxShadow: "var(--shadow-button)",
+                border: "1px solid rgba(52,211,153,0.2)",
+                boxShadow: "0 0 20px rgba(27,167,132,0.15), var(--shadow-button)",
               }}
               asChild
             >
@@ -470,11 +466,10 @@ export function Header({
             </Button>
           </div>
 
-          {/* Mobile hamburger */}
           <button
             ref={menuButtonRef}
             type="button"
-            className="rounded-md p-1.5 lg:hidden focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50"
+            className="rounded-md p-1.5 lg:hidden text-white/60 hover:text-white focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-primary/50"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileMenuOpen}
@@ -488,7 +483,6 @@ export function Header({
           </button>
         </nav>
 
-        {/* Mobile menu */}
         {mobileMenuOpen && (
           <motion.div
             id="mobile-nav-panel"
@@ -496,7 +490,8 @@ export function Header({
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             transition={{ duration: 0.2, ease: "easeInOut" }}
-            className="max-h-[82vh] overflow-y-auto border-t border-border/40 bg-white lg:hidden"
+            className="max-h-[82vh] overflow-y-auto border-t border-white/[0.06] lg:hidden"
+            style={{ background: "rgba(5, 7, 10, 0.95)", backdropFilter: "blur(20px)" }}
             role="dialog"
             aria-modal="true"
             aria-label="Site navigation"
@@ -508,12 +503,12 @@ export function Header({
                 return (
                   <div
                     key={nav.label}
-                    className="border-b border-border/30 last:border-0"
+                    className="border-b border-white/[0.06] last:border-0"
                   >
                     <div className="flex items-center justify-between py-3">
                       <Link
                         href={nav.href}
-                        className="text-[15px] font-semibold tracking-[-0.03em] text-foreground"
+                        className="text-[15px] font-semibold tracking-[-0.03em] text-white/80"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         {nav.label}
@@ -521,7 +516,7 @@ export function Header({
                       {hasDropdown && (
                         <button
                           type="button"
-                          className="rounded-md p-1.5 text-muted-foreground hover:text-foreground"
+                          className="rounded-md p-1.5 text-white/30 hover:text-white"
                           onClick={() =>
                             setMobileExpanded(isExpanded ? null : nav.label)
                           }
@@ -534,14 +529,13 @@ export function Header({
                       )}
                     </div>
 
-                    {/* Flat items */}
                     {hasDropdown && isExpanded && nav.items && (
                       <div className="mb-3 flex flex-col gap-0.5 pl-2">
                         {nav.items.map((item) => (
                           <Link
                             key={item.name}
                             href={item.href}
-                            className="flex items-center gap-3 rounded-lg py-2 px-2 text-[14px] font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                            className="flex items-center gap-3 rounded-lg py-2 px-2 text-[14px] font-medium text-white/40 hover:text-white hover:bg-white/[0.04]"
                             onClick={() => setMobileMenuOpen(false)}
                           >
                             <item.icon className="h-4 w-4 shrink-0 text-primary/60" />
@@ -551,7 +545,6 @@ export function Header({
                       </div>
                     )}
 
-                    {/* Grouped items */}
                     {hasDropdown && isExpanded && nav.groups && (
                       <div className="mb-3 flex flex-col gap-4 pl-2">
                         {nav.groups.map((group) => (
@@ -564,7 +557,7 @@ export function Header({
                                 <Link
                                   key={item.name}
                                   href={item.href}
-                                  className="flex items-center gap-3 rounded-lg px-2 py-2 text-[14px] font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                                  className="flex items-center gap-3 rounded-lg px-2 py-2 text-[14px] font-medium text-white/40 hover:text-white hover:bg-white/[0.04]"
                                   onClick={() => setMobileMenuOpen(false)}
                                 >
                                   <item.icon className="h-4 w-4 shrink-0 text-primary/60" />
@@ -582,19 +575,10 @@ export function Header({
 
               <div className="mt-4 flex flex-col gap-2 pb-4">
                 <Button
-                  variant="outline"
-                  className="w-full rounded-xl border-2 border-border/75 text-foreground"
-                  asChild
-                >
-                  <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>
-                    Contact
-                  </Link>
-                </Button>
-                <Button
-                  className="w-full rounded-xl font-semibold"
+                  className="w-full rounded-xl font-semibold text-white"
                   style={{
                     background: "var(--gradient-primary)",
-                    boxShadow: "var(--shadow-button)",
+                    boxShadow: "0 0 20px rgba(27,167,132,0.15)",
                   }}
                   asChild
                 >

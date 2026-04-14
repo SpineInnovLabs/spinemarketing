@@ -1,0 +1,604 @@
+Here is the complete, detailed page content for your five navigation pillars—ready to paste into your site builder.
+
+---
+
+1. PLATFORM /platform
+
+Hero Section
+
+Headline: The Adaptive Spine Architecture
+Subheadline: A vendor-neutral intelligence layer that normalizes truth across your systems, governs every AI action through non-bypassable human approval, and writes nothing back without explicit consent.
+
+Visual: 3-layer diagram (Spine base → Workspace middle → Twin overlay with approval gate)
+CTA: Explore the architecture →
+Secondary: View integration docs →
+
+---
+
+Section: The Five Dimensions
+
+The architectural differentiators that create the whitespace IntegrateWise occupies.
+
+1. Spine Equivalent (Vendor-Neutral SSOT)
+
+Unlike iPaaS tools that only move data or CRMs that lock truth in proprietary schemas, the Spine maintains a normalized, vendor-independent canonical layer.
+
+* Canonical Entities: Account, Contact, Deal, Ticket, Invoice, Project exist as neutral objects, not Salesforce rows or HubSpot records.
+* Live Alignment: Continuous bidirectional sync with conflict resolution, not batch ETL.
+* Schema Evolution: Automatic drift detection when upstream APIs change; field mapping versioned and governed.
+
+Result: Your data has a home independent of any vendor’s roadmap or pricing change.
+
+2. Entity 360 (Live Cross-System View)
+
+Not a dashboard. Not a report. A queryable, living object that assembles in real-time.
+
+* Account 360: CRM status + billing health + open tickets + product usage + recent stakeholder emails + renewal timeline.
+* Conflict Resolution: When two systems disagree (e.g., Salesforce vs. QuickBooks revenue), the Spine flags it; AI suggests resolution based on source-of-record rules you define.
+* Temporal Truth: Point-in-time reconstruction—see exactly what was known on any historical date.
+
+3. Proactive Signal Detection
+
+AI monitors the Spine continuously, not on-demand.
+
+* Cross-System Patterns: “Usage dropped 30% AND champion left AND ticket volume spiked” = Churn risk before the CRM shows it.
+* Confidence Scoring: Every signal carries a confidence score (0-100) based on data freshness and source reliability.
+* Noise Suppression: Low-confidence or stale signals are quarantined, not surfaced.
+
+4. Reasoning with Evidence (The Think Layer)
+
+A dedicated cognitive layer that shows its work.
+
+* Chain-of-Thought: AI explains why it flagged an account as “At Risk,” with hyperlinks to source records across systems.
+* Dual Context Mapping: Every recommendation explicitly states impact on both vendor goals (e.g., Salesforce data quality) and client business goals (e.g., renewal probability).
+* Evidence Anchoring: No insight without goal_refs linking back to canonical Spine entities.
+
+5. Non-Bypassable HITL (Human-in-the-Loop)
+
+Human approval is an architectural gate, not a workflow add-on.
+
+* Approval Topology: All AI-generated actions route through the TruthLayer—a governance membrane that requires human authorization before any write operation.
+* Audit Immutability: Every approval/rejection/edit is append-only, signed, and timestamped in the Spine’s decision log.
+* Emergency Overrides: Even admin “force” actions create traceable exceptions, never silent executions.
+
+---
+
+Section: The 8-Stage Pipeline
+
+How data flows from chaos to governed intelligence.
+
+Column 1	Column 2	Column 3
+Stage	Function	Human Touchpoint
+1. Ingest	Webhooks, APIs, email ingestion, file drops	Connector configuration approval
+2. Normalize	Schema mapping, deduplication, canonicalization	Schema drift review
+3. Store	Spine SSOT, versioned entities, relation graphs	Data retention governance
+4. Render	Workspace views, Entity 360 assembly	View customization
+5. Think	AI signal detection, pattern analysis, reasoning	Confidence threshold tuning
+6. Govern (HITL)	TruthLayer scoring, approval routing, evidence display	Mandatory approval gate
+7. Act	Write-backs to connected systems, task creation	Execute or reschedule
+8. Re-ingest	Action outcomes flow back to Spine as new truth	Outcome validation
+
+
+---
+
+Section: Technical Specifications
+
+Infrastructure: Cloudflare (Workers, D1, R2, Queues) + Supabase (PostgreSQL, Auth, Realtime)
+Protocol: Event-driven with idempotency keys, DLQ for failed webhooks, circuit breakers for API limits
+Security: End-to-end encryption at rest (AES-256) and in transit (TLS 1.3), SOC 2 Type II audit trail
+Scale: Sub-100ms query latency for Entity 360 assembly; 99.9% uptime SLA on Spine availability
+
+---
+
+2. PRODUCT /product
+
+Hero Section
+
+Headline: The Knowledge Workspace over the Spine
+Subheadline: One interface for accounts, projects, and workflows. AI reads everything, suggests the next move, and waits for your approval before touching any system.
+
+CTA: See live demo →
+Secondary: Watch 3-min overview →
+
+---
+
+Section: Three Layers of Product
+
+Layer 1: The Workspace (L1)
+
+Where your team works daily.
+
+Account Command Center
+
+* Unified timeline: Every email, ticket, invoice, note, and meeting across systems in chronological order.
+* Risk & Opportunity Cards: AI-surfaced signals with severity badges (🔴 Critical, 🟠 At-Risk, 🟡 Watch, 🟢 Healthy).
+* Action Composer: Draft emails, update fields, create tasks—queued for approval before execution.
+
+Portfolio Views
+
+* CSMs: Health score heatmaps, renewal calendars, expansion pipelines.
+* Ops Leaders: Revenue risk waterfalls, collection priorities, project exception lists.
+* Individuals: Morning brief, follow-up memory, cross-tool task aggregation.
+
+Knowledge Memory
+Approved insights compound. Rejected actions teach the system. The workspace grows sharper without polluting source systems.
+
+Layer 2: The Twin (L2)
+
+The AI that understands context, not just content.
+
+Proactive Intelligence
+
+* Morning Brief: AI-generated digest of what changed overnight across your portfolio.
+* Exception Surfacing: “FinanceFlow Solutions: Payment failed + Champion left + 3 P1 tickets” — linked and scored.
+* Draft & Propose: AI drafts the follow-up email, the QBR agenda, the escalation memo—you edit and approve.
+
+Session Continuity
+Conversations are grounded in Spine entities, not floating chat threads. Ask “What happened with TechServe last week?” and AI answers from the unified timeline, not memory hallucination.
+
+Layer 3: The Spine (L0/L3 Foundation)
+
+Invisible infrastructure you trust.
+
+* TruthLayer Governance: Every proposed action displays its source evidence and confidence score.
+* Approval Flows: Route suggestions to CSM, Manager, or Finance based on impact and risk thresholds.
+* Write-Back Safety: Approved actions execute via idempotent APIs with automatic retry and rollback capabilities.
+
+---
+
+Section: Core Modules
+
+Account Intelligence Workspace
+
+Live Entity 360 for B2B relationships. Health scoring across CRM, product analytics, billing, and support. Renewal risk prediction with 90-day lookahead.
+
+Revenue & Collections Intelligence
+
+Cash flow visibility overlaid with customer health. Prioritize collections by “ability to pay” and “strategic importance” simultaneously. AI drafts payment reminders with appropriate tone based on relationship status.
+
+Escalation & Risk Command
+
+Cross-ticket pattern detection. “Three similar P1 tickets from Enterprise accounts in APAC this week” surfaced as product risk, not isolated incidents.
+
+Executive Operating Console
+
+Board-ready briefs generated from live Spine data—not static spreadsheets. “This week: $2.1M at risk, 4 expansions identified, 12 actions pending approval.”
+
+---
+
+Section: Governance by Design
+
+Not optional. Not configurable away. Architecture.
+
+* Approval Required: No “auto-approve” setting exists for critical actions. Human gate is mandatory.
+* Evidence Visibility: Every AI suggestion includes “Why this matters” with source links.
+* Audit Completeness: Who approved the health score change? When? Based on what data? Immutable log.
+* Reversibility: Approved actions can be rolled back within 24 hours if error detected.
+
+---
+
+3. SOLUTIONS /solutions
+
+Architecture: Role-Based Landing
+
+For Customer Success & TAMs /solutions/account-success
+
+Hero: Save Accounts. Accelerate Renewals. Never Miss a Signal.
+Pain: “I manage 50 accounts. To prep for a call, I open Salesforce, Zendesk, Stripe, Gmail, and our product analytics. By the time I have context, the meeting started.”
+Solution: One Account 360 showing product usage, billing health, support load, and stakeholder changes. AI flags churn risk and drafts save plays. You approve and send.
+
+Capabilities:
+
+* Renewal Command Center: 90/60/30-day renewal pipeline with health indicators.
+* Champion Tracking: Automatic stakeholder mapping; alerts when champions change roles or stop engaging.
+* QBR Auto-Prep: AI assembles account review decks from real usage and outcome data.
+
+Outcome Metrics: NRR, GRR, Time-to-Intervention, Expansion Rate.
+
+---
+
+For RevOps & Business Operations /solutions/business-ops
+
+Hero: The Operating System for Revenue, Risk, and Reality.
+Pain: “Our data lives in 12 tools. My board deck is a Frankenstein spreadsheet updated at 2 AM. I don’t trust the numbers, and neither do they.”
+Solution: Live operating console connecting pipeline, bookings, billings, and collections. AI detects process leaks (e.g., “Deals stalled in ‘Negotiation’ for 45 days with no activity”).
+
+Capabilities:
+
+* Weekly Brief Generation: One-page narrative of business changes, not just metric dumps.
+* Process Health Monitoring: SLA adherence across Quote-to-Cash, onboarding velocity, support escalation rates.
+* Cross-Functional Alignment: Shared views for Sales, CS, and Finance with unified definitions (e.g., “What is an ‘At-Risk’ account?”).
+
+Outcome Metrics: Cash Conversion Cycle, Pipeline Coverage, Forecast Accuracy.
+
+---
+
+For Founders & CXOs /solutions/executives
+
+Hero: Monday Morning Clarity. Board-Ready Confidence.
+Pain: “I make decisions based on partial information. By the time red flags reach me, they’re on fire.”
+Solution: Executive console with exception-based management. Only surfaces what requires human judgment, with full context attached.
+
+Capabilities:
+
+* Exception Reports: “3 accounts representing $800K ARR require your attention this week. Here is why.”
+* Strategic Account Reviews: AI-compiled briefs before key meetings, including relationship history and competitor mentions.
+* Governance Oversight: Audit trail of all AI-approved actions across the organization.
+
+---
+
+For Individual Operators /solutions/personal-ops
+
+Hero: Your Work, Unified. Your Decisions, Governed.
+Pain: “I live in Slack, Gmail, Salesforce, and Notion. I spend 40% of my day just figuring out what I should be doing.”
+Solution: Personal command center aggregating tasks, follow-ups, and key threads. AI morning brief and session memory.
+
+Capabilities:
+
+* Follow-Up Memory: “You promised to check on this 3 days ago across 4 different threads. Here is the current status.”
+* Meeting Prep: 2-minute briefs before every call with recent emails, ticket updates, and deal changes.
+* Focus Mode: AI-suggested priority queue based on deadlines, stakeholder seniority, and business impact.
+
+---
+
+Industry-Specific Solutions
+
+SaaS & Subscription /solutions/saas
+
+Focus: Adoption-to-Renewal lifecycle.
+Connect product usage (Segment/Amplitude), billing (Stripe), support (Zendesk), and CRM (Salesforce). AI correlates usage drops with renewal dates; CSMs intervene early with approved playbooks.
+
+Professional Services /solutions/services
+
+Focus: Project margin protection.
+Unify project management (Asana/Jira), time tracking, billing (QuickBooks), and client communication. AI flags scope creep, utilization drops, and payment delays before they erode margin.
+
+Manufacturing & Trade /solutions/manufacturing
+
+Focus: Order-to-cash exceptions.
+Connect ERP orders, shipment tracking, inventory, and AR. AI identifies stuck orders, delivery exceptions, and payment delays in one view for operations teams.
+
+---
+
+4. PRICING /pricing
+
+Philosophy
+
+Pay for governance and scale, not just connections. Every tier includes the Spine—only the depth of AI reasoning and control increases.
+
+---
+
+Starter $49/mo
+
+For: Small teams needing unified visibility without AI governance overhead.
+
+* Up to 5 connectors
+* L1 Knowledge Workspace (Account 360, task management, timeline views)
+* Basic Spine (Normalization, deduplication, conflict detection)
+* Manual approval workflows (You trigger actions; system queues them)
+* Email support
+* No AI reasoning layer
+
+Best for: Solopreneurs, small agencies, early-stage startups with 3-4 core tools.
+
+---
+
+Growth $99/mo (Most Popular)
+
+For: Teams ready for proactive intelligence with evidence-based governance.
+
+* Up to 15 connectors
+* Everything in Starter, plus:
+* L2 The Twin (AI signal detection, morning briefs, exception surfacing)
+* TruthLayer Basic (Confidence scoring on insights, evidence links)
+* HITL Approval Gates (Mandatory human approval for all write-backs)
+* Knowledge Compounding (Approved actions improve future recommendations)
+* Priority support (24-hour SLA)
+
+Best for: Scaling CS teams, RevOps functions, mid-market SaaS.
+
+---
+
+Command $199/mo
+
+For: Organizations requiring full governance, auditability, and scale.
+
+* Unlimited connectors
+* Everything in Growth, plus:
+* Advanced TruthLayer (Multi-AI verification, custom confidence thresholds, anomaly detection)
+* Enterprise Governance (SSO/SAML, RBAC with field-level permissions, immutable audit logs)
+* Custom Playbooks (AI reasoning tuned to your specific business logic and risk models)
+* Spine API Access (Query the normalized layer directly for custom analytics)
+* Dedicated success manager
+
+Best for: Enterprise CS orgs, regulated industries (Fintech, Healthcare), complex multi-entity structures.
+
+---
+
+Implementation Services (Add-on)
+
+Platform Setup: From $3,000
+Schema design, connector configuration, initial Entity 360 tuning, team onboarding.
+
+Connector Workshop: From $2,000
+Custom integration development for proprietary or legacy systems not in the standard library.
+
+Custom Intelligence: Custom quote
+Tailored AI reasoning models for specific industry signals or compliance requirements.
+
+---
+
+CTA Section
+
+Question: “Which tier fits my stack?”
+Body: Book a 20-minute architecture review. We’ll map your current tools to the Spine and recommend the right governance tier.
+Button: Schedule architecture review →
+
+---
+
+5. COMPANY /company
+
+Hero: The Category Definers
+
+Headline: We are building the Adaptive Signal Intelligence Workspace.
+Subheadline: Not an AI chatbot. Not an integration platform. A new category where unified truth, governed reasoning, and human judgment converge.
+
+---
+
+Section: Why IntegrateWise Exists
+
+The Problem We Solved First
+Our founder saved an 8-figure “red account” at a previous enterprise SaaS company—not through heroics, but by manually cross-referencing 7 disconnected systems to find the root cause. The tools didn’t talk. The AI didn’t know. The human was the API.
+
+That rescue exposed the gap: Organizations have data in dozens of apps, but no unified truth layer to govern how AI operates across them.
+
+The Three Failures We Fix:
+
+1. Fragmentation: Business truth scattered across CRM, billing, support, docs, and chat.
+2. Blind AI: Generic AI lacks operational context, producing confident hallucinations.
+3. Ungoverned Automation: Actions execute without approval trails, evidence, or human oversight.
+
+Our Answer:
+The Spine — a vendor-neutral intelligence layer that normalizes truth.
+The Twin — AI that reasons on that truth, showing its work.
+The TruthLayer — non-bypassable human approval before any action.
+
+---
+
+Section: The Architecture of Trust
+
+Design Principles:
+
+* Normalize once, render anywhere: Data is canonical in the Spine, displayed contextually in Workspaces.
+* No metric without goal_refs: Every dashboard number links to a specific business objective.
+* Dual context always: Every AI recommendation expresses impact on both vendor systems and client outcomes.
+* No writes without HITL: Architectural law, not feature flag.
+
+---
+
+Section: The Founding Story
+
+The $8M Save
+A strategic account was churning. In the CRM, they looked healthy. In support, they were angry. In product analytics, usage had cliff-dropped. In billing, invoices were unpaid.
+
+No single system showed the pattern. By the time a human “bridged” the data, it was usually too late.
+
+We built IntegrateWise so the pattern finds the human—early, with evidence, and waiting for approval to act.
+
+Today:
+70+ systems connected. 3-layer intelligence deployed. Zero bypassable automation.
+
+---
+
+Section: Leadership & Location
+
+Nirmal Prince J
+Founder, CEO & Designated Partner
+12+ years enterprise integration architecture. Formerly CSM + Integration Architect at Salesforce. MuleSoft certified. Lives in the intersection of system design and customer outcomes.
+
+IntegrateWise LLP
+Bengaluru, India — HSR Layout / Haralur
+Serving global B2B SaaS, Services, and Operations-heavy industries.
+
+Contact:
+connect@integratewise.co
+nirmalprince@integratewise.ai
++91 70263 17111
+
+---
+
+Section: Category Vision
+
+We believe:
+The future of work is not more AI doing things to you. It is AI that understands your full operational context, proposes actions with evidence, and waits for your judgment before executing.
+
+We are building:
+The Knowledge Workspace over the Spine — where apps can finally talk to each other, and humans can finally think instead of bridge.
+
+---
+
+Here is the complete, page-by-page detailed content for your expanded navigation architecture—ready for Webflow, Next.js, or your CMS.
+
+SOLUTIONS ARCHITECTURE
+
+By Function
+
+1. Account Success /solutions/account-success
+
+For CSMs, Account Managers, and Growth teams managing B2B relationships
+
+HeroHeadline: Save accounts. Accelerate renewals. Never miss a signal.Subheadline: One Account 360 that unifies CRM, product usage, billing, and support—where AI surfaces churn risk and expansion opportunity with evidence, and every save play waits for your approval.CTA: See Account Success workspace →
+
+The ProblemYou manage 50-100 accounts. To prepare for a QBR, you open Salesforce, Zendesk, Stripe, your product analytics tool, Gmail, and Slack. By the time you’ve assembled context, the meeting started—or the renewal already slipped.
+
+Risk hides in the gaps between usage drop and support tickets.
+
+Expansion opportunity is invisible when billing lives in QuickBooks and activity lives in Salesforce.
+
+You write the same “checking in” emails because you don’t have the full health picture.
+
+The SolutionIntegrateWise gives CSMs a Account Command Center—a single workspace where the Spine assembles the complete customer story from every connected system. The Twin reads this unified picture, detects patterns that indicate risk or growth potential, and prepares recommended actions. But nothing sends until you approve it.
+
+Core Capabilities
+
+Renewal Command Center: 90/60/30-day pipeline with health indicators drawn from cross-system signals (usage + billing + sentiment).
+
+Champion Lifecycle Tracking: Automatic stakeholder mapping with departure alerts; when your champion leaves, AI flags the account for immediate attention.
+
+QBR Auto-Prep: One-click generation of business review decks using real product adoption data, outcome metrics, and relationship history—not CRM guesses.
+
+Save Play Workspace: AI suggests specific interventions based on risk patterns (e.g., “Usage down + Sponsor gone + Payment late = High churn risk”), drafts the outreach, and queues it for your edit and approval.
+
+GovernanceEvery health score change, every escalation suggestion, every renewal forecast displays its source data and confidence score. You approve or edit before any customer communication sends. Full audit trail: “CSM approved risk escalation on [Date] based on Spine confidence score 87/100.”
+
+Connects: Salesforce, HubSpot, Zendesk, Intercom, Stripe, Chargebee, product analytics (Segment, Amplitude), Slack, Gmail.KPIs: Net Revenue Retention (NRR), Gross Revenue Retention (GRR), Time-to-Intervention, Expansion Rate, Renewal Forecast Accuracy.
+
+1. Business Ops /solutions/business-ops
+
+For COOs, RevOps, and Operations leaders who need the live operating picture
+
+HeroHeadline: The live operating picture. Governed.Subheadline: Revenue, risk, and operations unified in one executive workspace. AI explains what changed across your systems this week and proposes actions—waiting for your approval before any system updates.CTA: Explore Business Ops →
+
+The ProblemYour business truth is fragmented across 12+ tools. Your Monday morning involves logging into Salesforce, Stripe, Zendesk, Asana, and three different spreadsheets to understand if you’re on track. By Wednesday, the picture is outdated.
+
+Revenue leaks appear first in billing, last in CRM.
+
+Escalations start in support but don’t reach leadership until they’re fires.
+
+Board decks require 6 hours of manual data stitching—and you still don’t trust the numbers.
+
+The SolutionBusiness Ops is a command center connecting pipeline, bookings, billings, collections, delivery status, and customer health into one governed view. The Spine normalizes data from CRM, finance, support, and project systems. The Twin detects operational patterns (process blocks, margin leaks, cash flow risks) and prepares executive briefs and suggested interventions. TruthLayer ensures every proposed change—whether a process fix or a data correction—waits for human approval.
+
+Core Capabilities
+
+Weekly Operating Brief: AI-generated one-page narrative of business changes (revenue movement, at-risk accounts, collection priorities, delivery exceptions) with evidence from source systems.
+
+Revenue & Cash Cockpit: Real-time view of ARR, MRR, collections, and churn risk with drill-down to account-level context.
+
+Exception-Based Management: Surface only what requires human judgment—AI suppresses noise, highlights true anomalies (e.g., “Deal stalled in ‘Negotiation’ for 45 days with no stakeholder activity”).
+
+Cross-Functional Alignment: Shared definitions across Sales, CS, and Finance. One definition of “At-Risk,” sourced from the same Spine data.
+
+GovernanceProcess changes, health score adjustments, and automated workflows all route through approval gates. RevOps maintains control over definitions; executives maintain control over actions. Immutable logs show who approved what operational change and when.
+
+Connects: Salesforce, HubSpot, QuickBooks, Stripe, Zendesk, Jira, Asana, Monday.com, NetSuite, Slack.KPIs: Cash Conversion Cycle, Pipeline Coverage, Forecast Accuracy, Collection Efficiency, Gross Margin per Project.
+
+1. Personal Ops /solutions/personal-ops
+
+For individual operators, managers, and knowledge workers
+
+HeroHeadline: Your workspace. Your context. Total control.Subheadline: Tasks, follow-ups, emails, and threads from all your apps unified in one calm view. AI prepares your morning brief and suggests next actions—never executing without your explicit approval.CTA: Try Personal Ops →
+
+The ProblemYou live across Gmail, Slack, Salesforce, Notion, Jira, and Calendar. You spend 40% of your day just figuring out what you should be doing—hunting for context, scrolling through threads, checking five apps before a meeting.
+
+Follow-ups fall through cracks because they live in different tools.
+
+You miss critical context in meetings because you can’t assemble the full story fast enough.
+
+AI assistants act without your knowledge, sending messages or creating tasks you didn’t authorize.
+
+The SolutionPersonal Ops is your individual command center—a L1 workspace aggregating your specific tasks, commitments, and priorities from across the organization’s tools. The Twin reads your Spine-connected data and provides a morning brief, session memory, and cross-tool search. But unlike “agent” tools, it cannot send emails, update tickets, or move deals without your explicit click.
+
+Core Capabilities
+
+Morning Brief: 2-minute AI-generated digest of what changed overnight in your accounts, projects, and priorities—pulled from email, Slack, CRM, and task tools.
+
+Follow-Up Memory: “You promised to check on this 4 days ago across three different threads. Here’s the current status and suggested next step.”
+
+Meeting Prep: Instant pre-meeting briefs with recent emails, ticket updates, deal changes, and stakeholder notes for the specific attendees.
+
+Focus Mode: AI-suggested priority queue based on deadlines, stakeholder seniority, and business impact—not just due dates.
+
+GovernancePersonal but governed. AI can draft your responses, but cannot send them. It can suggest tasks, but cannot create them in your name until you approve. Your personal workspace respects organizational data permissions—you only see what the Spine’s RBAC allows.
+
+Connects: Gmail, Outlook, Slack, Salesforce, HubSpot, Notion, Asana, Jira, Google Calendar, Zoom.KPIs: Response Time, Task Completion Velocity, Meeting Preparation Quality, Context-Switching Reduction.
+
+By Industry
+
+1. SaaS /solutions/industries/saas
+
+Focus: Renewals, expansion, adoption
+
+HeroHeadline: The SaaS Intelligence WorkspaceSubheadline: Unify product usage, subscription billing, support health, and CRM data to protect NRR and catch churn before it happens.
+
+ProblemRenewal risk is invisible in CRM. A customer can show “Healthy” in Salesforce while their product usage cliff-dropped and their champion just quit—information trapped in three different tools.
+
+SolutionIntegrateWise connects your product analytics (Segment, Amplitude, Mixpanel), billing (Stripe, Chargebee), support (Zendesk), and CRM (Salesforce) into one Account 360. AI correlates usage patterns with renewal dates, flagging “Product-Qualified Risk” and “Product-Qualified Expansion” for CSMs to act on—with approval gates ensuring no automated emails damage relationships.
+
+Specific Capabilities:
+
+Adoption-to-Renewal Tracking: Health scores weighted by login frequency, feature adoption, and license utilization, not just gut feel.
+
+Churn Early Warning: Pattern detection across support ticket sentiment, payment delays, and usage drops.
+
+Expansion Playbooks: AI identifies “Power Users” approaching license limits and drafts upgrade conversations.
+
+Connectors: Salesforce, HubSpot, Stripe, Chargebee, Zendesk, Segment, Amplitude, Slack, GitHub (for dev-facing products).Metrics: NRR, Logo Retention, Time-to-Value, Expansion ARR.
+
+1. Services & Agencies /solutions/industries/services
+
+Focus: Projects, utilisation, billing
+
+HeroHeadline: Protect margin. Deliver certainty.Subheadline: One view of project health, team utilization, client billing, and delivery risk—where AI flags scope creep before it erodes your margin.
+
+ProblemProjects live in Asana or Jira. Time tracking is in Harvest or Toggl. Invoices are in QuickBooks. Client emails are in Gmail. You discover a project is bleeding margin only when you reconcile the books—too late to fix it.
+
+SolutionUnify project management, time tracking, billing, and client communication into one Project 360. The Spine links tasks to invoices to emails, showing real-time project margin. AI detects utilization drops, scope creep signals (tickets outside SOW), and billing delays, proposing actions for project managers to approve.
+
+Specific Capabilities:
+
+Margin Protection: Real-time project P&L showing billed vs. burned vs. scope.
+
+Utilization Balancing: AI suggests resource reallocation when team members are under/over-booked across projects.
+
+Client Health Scoring: Support ticket volume + payment history + stakeholder sentiment analysis.
+
+Connectors: Asana, Monday.com, Jira, Harvest, Toggl, QuickBooks, Xero, Slack, Gmail.Metrics: Project Margin, Utilization Rate, Days Sales Outstanding (DSO), Client Satisfaction.
+
+1. Manufacturing & Trade /solutions/industries/manufacturing
+
+Focus: Orders, shipments, exceptions
+
+HeroHeadline: From chaos to clarity.Subheadline: Connect orders, production, shipments, and payments into one exception-management workspace. AI flags what’s stuck before it becomes a customer problem.
+
+ProblemOrders live in ERP. Shipments are tracked in spreadsheets. Customer communication is in email. You find out about a delayed shipment when the customer calls angry—not when it happened.
+
+SolutionIntegrateWise creates an Order 360 connecting ERP (NetSuite, SAP), shipping trackers (FedEx, DHL APIs), inventory systems, and customer communication. AI monitors for exceptions—delayed shipments, inventory shortages, payment holds—and surfaces them with full customer context for operations teams to resolve.
+
+Specific Capabilities:
+
+Exception Triage: Auto-prioritize delayed orders by customer value and contract penalties.
+
+Cash Flow Protection: Link shipment confirmation to invoice release; flag orders shipped-but-not-billed.
+
+Supplier Risk: Track inbound delays that affect your outbound commitments.
+
+Connectors: NetSuite, SAP, Shopify, Salesforce, logistics APIs, QuickBooks.Metrics: On-Time Delivery %, Cash Conversion Cycle, Exception Resolution Time.
+
+1. Retail & Ecommerce /solutions/industries/retail
+
+Focus: Stock, orders, returns, support
+
+HeroHeadline: Unified commerce operations.Subheadline: See stock, orders, returns, and customer support as one operational picture—not isolated channels.
+
+ProblemYour ecommerce platform (Shopify), inventory (DEAR), support (Zendesk), and returns (Loop) don’t talk. High-value customers return products and complain on Twitter before your team knows they had a problem.
+
+SolutionThe Spine unifies commerce data into a Customer Operations Workspace. AI detects patterns like “VIP customer + return initiated + negative sentiment in support” and flags for immediate retention action—waiting for your approval before sending recovery offers.
+
+Specific Capabilities:
+
+Inventory-Aware Support: Support agents see stock levels when handling complaints; can reserve replacement inventory immediately.
+
+Returns Intelligence: AI correlates return reasons with product batches or descriptions to flag quality issues.
+
+VIP Routing: High-value customers with open orders get priority support queue placement.
+
+Connectors: Shopify, WooCommerce, NetSuite, Zendesk, Loop, Gorgias, Klaviyo, Stripe.Metrics: Customer Lifetime Value (CLV), Return Rate, Support Resolution Time, Stock-Out Frequency.
+
+1. Professional Services /solutions/industries/professional-services
+
+Focus: Engagements, billing, relationships
+
+HeroHeadline: Every engagement, fully visible.Subheadline: Law firms, consultancies, and advisory practices unified—matters, time, billing, and client relationships in one governed workspace.
+
+All paths converge on the same architecture: Spine normalization → Workspace rendering → Twin reasoning → TruthLayer approval.

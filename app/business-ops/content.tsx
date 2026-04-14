@@ -569,18 +569,18 @@ const howItWorksSteps: StickyScrollStep[] = [
     label: "Step 02 \u2014 Build the Spine",
     title: "Three data flows. One complete picture.",
     description:
-      "Revenue, pipeline, and costs sync as Truth. Context and sessions converge in your Workbench.",
+      "Revenue, pipeline, and costs sync as Truth. Context and sessions converge in your Workspace.",
     visual: <OpsNormalizeVisual />,
   },
   {
-    label: "Step 03 \u2014 Daily Workbench",
+    label: "Step 03 \u2014 Daily Workspace",
     title: "Your operating view — always current.",
     description:
       "MRR, pipeline, support, and cash in one live workspace. Same truth, four role-specific lenses.",
     visual: <OpsViewVisual />,
   },
   {
-    label: "Step 04 \u2014 Intelligence Layer",
+    label: "Step 04 \u2014 Cognitive Layer",
     title: "AI proposes. You decide.",
     description:
       "AI surfaces anomalies, drafts board decks, and flags risks. Nothing executes without your approval.",
@@ -646,14 +646,14 @@ export function BusinessOpsContent() {
                   stiffness: 52,
                   delay: 0.2,
                 }}
-                className="mb-6 inline-flex items-center gap-2.5 rounded-[40px] bg-white px-4 py-1.5"
-                style={{ boxShadow: "0px 0px 0px 3px rgb(248 248 250)" }}
+                className="mb-6 inline-flex items-center gap-2.5 rounded-full border border-white/10 px-4 py-1.5"
+                style={{ background: "rgba(255,255,255,0.03)", backdropFilter: "blur(12px)" }}
               >
                 <span
                   className="h-2 w-2 rounded-full"
                   style={{ background: "var(--gradient-primary-icon)" }}
                 />
-                <span className="text-[14px] font-semibold tracking-[-0.03em] text-[#0a0b10]">
+                <span className="text-[14px] font-semibold tracking-[-0.03em] text-white/60">
                   Business Ops
                 </span>
               </motion.div>
@@ -812,7 +812,7 @@ export function BusinessOpsContent() {
               transition={{ type: "spring", bounce: 0.2, duration: 0.6, delay: 0 }}
               className="arvio-card p-6"
             >
-              <h3 className="text-[14px] font-bold uppercase tracking-[0.1em] text-primary mb-3">Workbench — Your daily surface for the business</h3>
+              <h3 className="text-[14px] font-bold uppercase tracking-[0.1em] text-primary mb-3">Workspace — Your daily surface for the business</h3>
               <p className="text-[14px] font-medium leading-[1.7] text-muted-foreground">
                 Live operating picture: pipeline, spend, utilization, blockers. Annotate, assign, and act daily.
               </p>
@@ -824,7 +824,7 @@ export function BusinessOpsContent() {
               transition={{ type: "spring", bounce: 0.2, duration: 0.6, delay: 0.1 }}
               className="arvio-card p-6"
             >
-              <h3 className="text-[14px] font-bold uppercase tracking-[0.1em] text-primary mb-3">Intelligence Layer — AI reasoning for the business</h3>
+              <h3 className="text-[14px] font-bold uppercase tracking-[0.1em] text-primary mb-3">Cognitive Layer — AI reasoning for the business</h3>
               <p className="text-[14px] font-medium leading-[1.7] text-muted-foreground">
                 AI detects cross-system anomalies and drafts actions with evidence. You approve before execution.
               </p>

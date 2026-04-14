@@ -49,7 +49,8 @@ export function StatsBar({
   stats?: { value: number; suffix?: string; prefix?: string; label: string }[];
 }) {
   return (
-    <section className="relative bg-dark-section border-y border-white/[0.06]">
+    <section className="relative border-y border-white/[0.04]" style={{ background: "#05070A" }}>
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-transparent via-primary/[0.02] to-transparent" />
       <div className="mx-auto max-w-[1100px] px-6">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -61,14 +62,14 @@ export function StatsBar({
           {stats.map(({ value, suffix, prefix, label }, i) => (
             <div
               key={label}
-              className={`flex flex-col items-center justify-center gap-1.5 px-4 py-10 ${
-                i < stats.length - 1 ? "border-r border-white/[0.06]" : ""
+              className={`flex flex-col items-center justify-center gap-1.5 px-4 py-12 ${
+                i < stats.length - 1 ? "border-r border-white/[0.04]" : ""
               }`}
             >
-              <span className="text-[36px] font-bold tracking-[-0.04em] text-white">
+              <span className="text-[40px] font-bold tracking-[-0.04em] text-white">
                 <AnimatedStat value={value} suffix={suffix || ""} prefix={prefix || ""} />
               </span>
-              <span className="text-center text-[11px] font-semibold uppercase tracking-[0.12em] text-white/40">
+              <span className="text-center text-[11px] font-semibold uppercase tracking-[0.12em] text-white/35">
                 {label}
               </span>
             </div>

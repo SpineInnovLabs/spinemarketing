@@ -107,14 +107,14 @@ export function AIContent() {
                 stiffness: 52,
                 delay: 0.2,
               }}
-              className="mb-6 inline-flex items-center gap-2.5 rounded-[40px] bg-white px-4 py-1.5"
-              style={{ boxShadow: "0px 0px 0px 3px rgb(248 248 250)" }}
+              className="mb-6 inline-flex items-center gap-2.5 rounded-full border border-white/10 px-4 py-1.5"
+              style={{ background: "rgba(255,255,255,0.03)", backdropFilter: "blur(12px)" }}
             >
               <span
                 className="h-2 w-2 rounded-full"
                 style={{ background: "var(--gradient-primary-icon)" }}
               />
-              <span className="text-[14px] font-semibold tracking-[-0.03em] text-[#0a0b10]">
+              <span className="text-[14px] font-semibold tracking-[-0.03em] text-white/60">
                 The Twin
               </span>
             </motion.div>
@@ -280,7 +280,7 @@ export function AIContent() {
         </div>
       </section>
 
-      {/* The Twin lives in the Intelligence Layer */}
+      {/* The Twin lives in the Cognitive Layer */}
       <section className="arvio-section dark-section">
         <div className="mx-auto max-w-[1100px]">
           <motion.div
@@ -291,17 +291,17 @@ export function AIContent() {
             className="mx-auto max-w-2xl text-center"
           >
             <h2 className="section-heading">
-              The Twin lives in the <span className="text-primary">Intelligence Layer</span>.
-              Actions execute in the <span className="text-primary">Workbench</span>.
+              The Twin lives in the <span className="text-primary">Cognitive Layer</span>.
+              Actions execute in the <span className="text-primary">Workspace</span>.
             </h2>
             <p className="mt-4 text-[15px] font-medium text-muted-foreground">
-              The Intelligence Layer surfaces insights. When you approve, the Workbench executes.
+              The Cognitive Layer surfaces insights. When you approve, the Workspace executes.
             </p>
           </motion.div>
           <div className="mx-auto mt-12 grid max-w-3xl gap-4 sm:grid-cols-3">
             {[
               {
-                label: "Intelligence Layer — The Twin proposes",
+                label: "Cognitive Layer — The Twin proposes",
                 desc: "Signals surface with evidence. You decide.",
               },
               {
@@ -309,7 +309,7 @@ export function AIContent() {
                 desc: "Full reasoning visible. Approve, edit, or reject.",
               },
               {
-                label: "Workbench — Executes",
+                label: "Workspace — Executes",
                 desc: "Approved actions update records and connected apps.",
               },
             ].map(({ label, desc }, i) => (
@@ -342,7 +342,7 @@ export function AIContent() {
             transition={{ delay: 0.3, duration: 0.6 }}
             className="mx-auto mt-6 max-w-xl text-center text-[14px] font-semibold text-foreground"
           >
-            The Twin proposes. You decide. The Workbench executes.
+            The Twin proposes. You decide. The Workspace executes.
           </motion.p>
         </div>
       </section>

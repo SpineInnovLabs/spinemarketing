@@ -45,9 +45,9 @@ export function IntegrationsContent() {
       <section className="relative overflow-hidden bg-dark-section">
         <div className="mx-auto max-w-[1200px] px-6 pt-[160px] pb-[100px] md:px-16">
           <div className="mx-auto max-w-3xl text-center">
-            <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ type: "spring", damping: 16, mass: 1, stiffness: 52, delay: 0.2 }} className="mb-6 inline-flex items-center gap-2.5 rounded-[40px] bg-white px-4 py-1.5" style={{ boxShadow: "0px 0px 0px 3px rgb(248 248 250)" }}>
+            <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ type: "spring", damping: 16, mass: 1, stiffness: 52, delay: 0.2 }} className="mb-6 inline-flex items-center gap-2.5 rounded-full border border-white/10 px-4 py-1.5" style={{ background: "rgba(255,255,255,0.03)", backdropFilter: "blur(12px)" }}>
               <span className="h-2 w-2 rounded-full" style={{ background: "var(--gradient-primary-icon)" }} />
-              <span className="text-[14px] font-semibold tracking-[-0.03em] text-[#0a0b10]">Integrations</span>
+              <span className="text-[14px] font-semibold tracking-[-0.03em] text-white/60">Integrations</span>
             </motion.div>
             <motion.h1 initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ type: "spring", damping: 16, mass: 1, stiffness: 52, delay: 0.4 }} className="text-[48px] font-semibold leading-[1em] tracking-[-0.05em] text-white sm:text-[54px] lg:text-[64px]">
               70+ integrations. 13 categories.{" "}<span className="text-primary">One Spine.</span>
@@ -127,7 +127,7 @@ export function IntegrationsContent() {
             <h3 className="text-[14px] font-bold uppercase tracking-[0.1em] text-primary">India & UAE connectors — coming soon</h3>
             <div className="mt-3 flex flex-wrap gap-2">
               {["Tally", "Razorpay", "PhonePe", "Vyapar", "Khatabook", "Shiprocket", "Zoho Books", "PayTabs", "Network International", "Noon Seller", "Aramex"].map((name) => (
-                <span key={name} className="rounded-lg border border-border/30 bg-white/50 px-3 py-1.5 text-[13px] font-medium text-muted-foreground">
+                <span key={name} className="rounded-lg border border-white/10 bg-white/5 px-3 py-1.5 text-[13px] font-medium text-white/50">
                   {name}
                 </span>
               ))}
