@@ -9,7 +9,7 @@ const footerColumns: {
   {
     heading: "Solutions",
     links: [
-      { name: "Account Success", href: "/account-success" },
+      { name: "Resolution", href: "/account-success" },
       { name: "Business Ops", href: "/business-ops" },
       { name: "Personal Ops", href: "/personal-ops" },
       { name: "View all solutions →", href: "/solutions" },

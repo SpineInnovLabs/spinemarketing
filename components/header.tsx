@@ -91,7 +91,7 @@ const navigation: NavItem[] = [
       {
         label: "By Function",
         items: [
-          { name: "Account Success", href: "/account-success", icon: Users, desc: "Account 360 across every app" },
+          { name: "Resolution", href: "/account-success", icon: Users, desc: "Entity matching and dedup" },
           { name: "Business Ops", href: "/business-ops", icon: BarChart3, desc: "The live operating picture" },
           { name: "Personal Ops", href: "/personal-ops", icon: Sparkles, desc: "Your workspace, your context" },
         ],

@@ -484,8 +484,8 @@ function SolutionLinks() {
   const links = [
     {
       href: "/account-success",
-      label: "Account Success",
-      desc: "For CS & Account teams",
+      label: "Resolution",
+      desc: "Entity matching & dedup",
     },
     {
       href: "/business-ops",

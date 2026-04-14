@@ -5,9 +5,9 @@ import { FinalCTA } from "@/components/final-cta"
 import { AccountSuccessContent } from "./content"
 
 export const metadata: Metadata = {
-  title: "Account Success | IntegrateWise",
+  title: "Resolution | IntegrateWise",
   description:
-    "Complete account view. Spot risks early. AI proposes, you approve.",
+    "Cross-tool entity matching and dedup. Confidence scoring with human review.",
 }
 
 export default function AccountSuccessPage() {

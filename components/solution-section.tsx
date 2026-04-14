@@ -161,7 +161,7 @@ export function SolutionSection() {
           className="mx-auto mt-16 grid max-w-5xl gap-4 sm:grid-cols-3"
         >
           {[
-            { href: "/account-success", label: "Account Success", desc: "For CS & Account teams" },
+            { href: "/account-success", label: "Resolution", desc: "Entity matching & dedup" },
             { href: "/business-ops", label: "Business Ops", desc: "For Operations leaders" },
             { href: "/personal-ops", label: "Personal Ops", desc: "For individuals" },
           ].map((link) => (
