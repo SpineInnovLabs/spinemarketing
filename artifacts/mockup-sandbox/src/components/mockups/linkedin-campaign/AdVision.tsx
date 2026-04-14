@@ -30,20 +30,25 @@ export function AdVision() {
       </div>
 
       <div style={{
-        position: 'absolute', bottom: '5vw', left: '4vw', right: '4vw', zIndex: 2
+        position: 'absolute', top: '10vw', left: '4vw', right: '4vw', zIndex: 2
       }}>
-        <div style={{ display: 'inline-block', background: 'rgba(168,85,247,0.12)', border: '1px solid rgba(168,85,247,0.3)', borderRadius: '6px', padding: '0.6vw 1.5vw', marginBottom: '2vw' }}>
-          <span style={{ color: '#c084fc', fontSize: '1.5vw', fontWeight: 600, fontFamily: 'Inter, sans-serif', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Category Defining</span>
+        <div style={{ display: 'inline-block', background: 'rgba(168,85,247,0.12)', border: '1px solid rgba(168,85,247,0.3)', borderRadius: '6px', padding: '0.5vw 1.2vw', marginBottom: '1.5vw' }}>
+          <span style={{ color: '#c084fc', fontSize: '1.4vw', fontWeight: 600, fontFamily: 'Inter, sans-serif', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Category Defining</span>
         </div>
 
-        <div style={{ fontFamily: 'Inter, sans-serif', fontWeight: 800, color: 'white', fontSize: '5.2vw', lineHeight: 1.1, marginBottom: '2vw' }}>
+        <div style={{ fontFamily: 'Inter, sans-serif', fontWeight: 800, color: 'white', fontSize: '5vw', lineHeight: 1.1, marginBottom: '1.5vw' }}>
           From integration<br/>
           to <span style={{ color: '#34D399' }}>intelligence</span>.
         </div>
 
-        <div style={{ fontFamily: 'Inter, sans-serif', color: 'rgba(255,255,255,0.6)', fontSize: '2vw', lineHeight: 1.5, marginBottom: '2.5vw', maxWidth: '90%' }}>
-          Not a CRM. Not an iPaaS. Not another dashboard. IntegrateWise is the Adaptive Spine — the knowledge workspace your entire company runs on.
+        <div style={{ fontFamily: 'Inter, sans-serif', color: 'rgba(255,255,255,0.6)', fontSize: '1.8vw', lineHeight: 1.5, maxWidth: '85%' }}>
+          Not a CRM. Not an iPaaS. The Adaptive Spine — the knowledge workspace your entire company runs on.
         </div>
+      </div>
+
+      <div style={{
+        position: 'absolute', bottom: '4vw', left: '4vw', right: '4vw', zIndex: 2
+      }}>
 
         <div style={{
           background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)',
