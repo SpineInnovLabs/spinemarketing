@@ -4,6 +4,8 @@ import { Footer } from "@/components/footer";
 import { FinalCTA } from "@/components/final-cta";
 import { PricingSection } from "@/components/pricing-section";
 import { PricingFAQ } from "./faq";
+import { PricingHero } from "./pricing-hero";
+import { PricingTrustBar } from "./trust-bar";
 
 export const metadata: Metadata = {
   title: "Pricing | IntegrateWise",
@@ -16,22 +18,9 @@ export default function PricingPage() {
     <div className="min-h-screen bg-dark-section">
       <Header />
       <main id="main">
-        <section className="relative overflow-hidden bg-dark-section">
-          <div className="mx-auto max-w-[1200px] px-6 pt-40 pb-16 md:px-16">
-            <div className="mx-auto max-w-3xl text-center">
-              <h1 className="text-5xl font-semibold leading-none tracking-tight text-white sm:text-6xl lg:text-7xl">
-                One Spine.{" "}
-                <span className="text-primary">Two layers. Three tiers.</span>
-              </h1>
-              <p className="mx-auto mt-8 max-w-2xl text-base font-medium leading-relaxed text-white/55">
-                Start with L1 — the Workbench where all your accounts live in
-                one view. Unlock L2 — the Intelligence Layer where the Twin
-                proposes and you approve. Scale as your team&apos;s needs grow.
-              </p>
-            </div>
-          </div>
-        </section>
+        <PricingHero />
         <PricingSection hideHeading />
+        <PricingTrustBar />
         <PricingFAQ />
         <FinalCTA />
       </main>

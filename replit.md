@@ -119,6 +119,13 @@ The entire site uses a **fully dark design** with shadcn/ui components and Tailw
 - **Animations**: Framer Motion `whileInView` with spring transitions, stagger variants, `useScroll`/`useTransform` parallax
 - **Product UI mockups** (inside how-it-works/solutions-doors sections) intentionally use light backgrounds to demo the actual product interface
 - **FAQ sections**: Reusable `FAQSection` component with Accordion; used on `/pricing` and `/platform`
+- **Section dividers**: `.section-divider` (gradient line) and `.section-divider-subtle` between sections
+- **Background textures**: `.bg-dot-grid` for subtle dot-grid pattern on alternating sections
+
+### Inner Page Architecture
+- **Platform page** (`app/platform/content.tsx`): Visual storytelling with Spine diagram, Execution Path visualization, Connector tabs (SaaS/Webhooks/MCP), L1/L2 layer comparison with inline mockups, and Canonical Loop CTA
+- **Workbench page** (`app/product/workbench/content.tsx`): Product mockup, interactive accordion for 12 domain views grouped by category, Twin section, bento-style core components grid
+- **Pricing page** (`app/pricing/page.tsx`): Enhanced hero (`pricing-hero.tsx`), shared PricingSection component (unchanged), trust bar (`trust-bar.tsx`), FAQ, FinalCTA
 
 ## Shared Layout Components
 
