@@ -8,23 +8,23 @@ const pillars = [
   {
     num: "01",
     icon: Database,
-    title: "Your workspace",
+    title: "Unifies",
     description:
-      "Manage accounts, track tasks, run workflows, review renewals — all in one place. Replaces the 12 tabs.",
+      "One truth from many sources, so you stop reconciling.",
   },
   {
     num: "02",
     icon: Brain,
-    title: "The Twin accelerates you",
+    title: "Adapts",
     description:
-      "AI reads your data, conversations, and accumulated knowledge. It surfaces what matters, proposes actions, and learns from your decisions.",
+      "Survives tool changes, so your history never resets.",
   },
   {
     num: "03",
     icon: ShieldCheck,
-    title: "Nothing happens without you",
+    title: "Remembers",
     description:
-      "Every insight has evidence. Every action waits for your approval. Approved actions create real tasks, update real records, and flow back into the system.",
+      "Compounds knowledge daily, so tomorrow starts smarter than today.",
   },
 ];
 
@@ -40,8 +40,8 @@ export function SolutionSection() {
           className="mx-auto max-w-2xl text-center"
         >
           <h2 className="section-heading">
-            Your workspace.{" "}
-            <span className="text-primary">AI that makes you faster.</span>
+            The Spine{" "}
+            <span className="text-primary">connects.</span>
           </h2>
           <p className="mt-6 text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">
             Manage accounts, track tasks, run workflows. The Twin watches
@@ -115,8 +115,8 @@ export function SolutionSection() {
           className="mx-auto mt-10 max-w-2xl text-center"
         >
           <p className="text-[15px] font-semibold tracking-[-0.02em] text-foreground">
-            The workspace is the daily driver.{" "}
-            <span className="text-primary">The Twin is the accelerator.</span>
+            One nervous system.{" "}
+            <span className="text-primary">Every tool connected. Every action approved.</span>
           </p>
         </motion.div>
       </div>

@@ -18,51 +18,42 @@ const plans = [
   {
     name: "Starter",
     prices: { india: "₹999", international: "$49", enterprise: "Custom" },
-    period: "/mo",
-    description: "Connect your tools. See everything in one place.",
+    period: "/user/mo",
+    description: "The awakening.",
     features: [
-      "Up to 5 connectors",
-      "One workspace for all your tools",
-      "Complete view of every account",
-      "Basic signals and alerts",
-      "Email support",
+      "Connect a small set of tools and feel basics clearly",
+      "Manual approvals for every move keep early trust strong",
+      "Great for individuals or tiny teams testing the Spine",
     ],
-    cta: "Book a demo",
+    cta: "Begin feeling",
     href: "/contact?intent=pricing",
     highlighted: false,
   },
   {
     name: "Growth",
     prices: { india: "₹2,999", international: "$99", enterprise: "Custom" },
-    period: "/mo",
-    description: "AI that watches your business and tells you what matters.",
+    period: "/user/mo",
+    description: "Developed reflexes.",
     features: [
-      "Up to 15 connectors",
-      "Everything in Starter",
-      "AI insights with evidence",
-      "Knowledge that compounds over time",
-      "Custom playbooks and workflows",
-      "Priority support",
+      "Connect many tools and unlock richer patterns",
+      "Intelligence suggests actions, you approve with full context",
+      "Ideal for growing teams that want governed, shared insight",
     ],
-    cta: "Book a demo",
+    cta: "Develop awareness",
     href: "/contact?intent=pricing",
     highlighted: true,
   },
   {
     name: "Command",
     prices: { india: "₹7,999", international: "$199", enterprise: "Custom" },
-    period: "/mo",
-    description:
-      "Full intelligence. Full governance. Nothing happens without your say.",
+    period: "",
+    description: "Full nervous system.",
     features: [
-      "Unlimited connectors",
-      "Everything in Growth",
-      "Confidence scoring on every insight",
-      "Multi-AI verified knowledge",
-      "Enterprise governance and audit trail",
-      "SSO, RBAC, dedicated success team",
+      "Connect the full body of tools without losing clarity",
+      "Deep pattern detection with layered approval gates",
+      "One governed brain for the entire organization",
     ],
-    cta: "Contact sales",
+    cta: "Talk to us",
     href: "/contact?intent=pricing",
     highlighted: false,
   },
@@ -82,8 +73,8 @@ export function PricingSection() {
           className="mx-auto max-w-2xl text-center"
         >
           <h2 className="section-heading">
-            Simple pricing.{" "}
-            <span className="text-primary">Scale as you grow.</span>
+            Choose your{" "}
+            <span className="text-primary">nervous system stage.</span>
           </h2>
           <p className="mt-4 text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">
             Start small, add more tools and intelligence as your team needs it.

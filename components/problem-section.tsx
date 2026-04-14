@@ -4,10 +4,9 @@ import { AlertTriangle, Eye, GitBranch, ShieldOff } from "lucide-react"
 import { motion } from "framer-motion"
 
 const problems = [
-  { icon: GitBranch, text: "Tools are disconnected" },
-  { icon: Eye, text: "Knowledge is scattered across docs, tickets, and conversations" },
-  { icon: AlertTriangle, text: "AI works blind, without full context" },
-  { icon: ShieldOff, text: "AI tools act on their own — no way to review, approve, or track what happened" },
+  { icon: GitBranch, text: "Data scattered. You hunt across twelve tabs before every decision." },
+  { icon: Eye, text: "Intelligence blind. No full context, so nudges arrive late or wrong." },
+  { icon: ShieldOff, text: "Automation rogue. Things fire without you, so trust quietly erodes." },
 ]
 
 export function ProblemSection() {
@@ -22,11 +21,11 @@ export function ProblemSection() {
           className="mx-auto max-w-2xl text-center"
         >
           <h2 className="section-heading">
-            Modern work isn&apos;t hard.{" "}
-            <span className="text-primary">The plumbing is.</span>
+            The Human API{" "}
+            <span className="text-primary">is breaking.</span>
           </h2>
           <p className="mt-6 text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">
-            Copy-paste. Tab-switch. Repeat. Your tools don&apos;t talk. Your AI doesn&apos;t know. You&apos;re the bridge.
+            You are the bridge. And it&apos;s exhausting.
           </p>
         </motion.div>
 

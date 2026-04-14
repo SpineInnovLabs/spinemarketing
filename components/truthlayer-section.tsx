@@ -4,10 +4,10 @@ import { motion } from "framer-motion"
 import { ShieldCheck, Brain, UserCheck, BookOpen } from "lucide-react"
 
 const steps = [
-  { icon: Brain, label: "The Twin reasons", desc: "Reads your data, conversations, and accumulated knowledge" },
-  { icon: ShieldCheck, label: "TruthLayer governs", desc: "Scores confidence, traces evidence, checks freshness" },
-  { icon: UserCheck, label: "You decide", desc: "Approve, edit, or reject — full reasoning visible" },
-  { icon: BookOpen, label: "Knowledge compounds", desc: "Confirmed insights enter memory. Every AI reads from it." },
+  { icon: Brain, label: "Action pauses", desc: "Every suggestion waits in a calm approval space" },
+  { icon: ShieldCheck, label: "You see evidence", desc: "Edit tone, check reasoning, understand why" },
+  { icon: UserCheck, label: "Permit or deny", desc: "Nothing moves without your conscious yes" },
+  { icon: BookOpen, label: "System learns", desc: "Future proposals fit you better over time" },
 ]
 
 export function TruthLayerSection() {
@@ -26,11 +26,11 @@ export function TruthLayerSection() {
             <span className="text-[14px] font-semibold tracking-[-0.03em] text-primary">TruthLayer</span>
           </div>
           <h2 className="text-[40px] font-semibold tracking-[-0.05em] leading-[1.15] text-white sm:text-[48px]">
-            The Twin proposes.{" "}
-            <span className="text-primary">You decide what becomes knowledge.</span>
+            You{" "}
+            <span className="text-primary">decide.</span>
           </h2>
           <p className="mt-6 text-[15px] font-medium leading-[1.5] text-white/40">
-            TruthLayer governs what enters Knowledge Memory. Not your data. Not your conversations. Just what AI learns — and only after you approve.
+            Intelligence suggests and drafts wait, so nothing moves without your conscious yes.
           </p>
         </motion.div>
 
