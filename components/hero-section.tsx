@@ -245,16 +245,14 @@ export function HeroSection() {
   if (!mounted) {
     return (
       <section
-        className="relative w-full min-h-screen overflow-hidden"
-        className="bg-dark-section"
+        className="relative w-full min-h-screen overflow-hidden bg-dark-section"
       />
     );
   }
 
   return (
     <section
-      className={`relative w-full min-h-screen overflow-hidden ${isChaos ? "cursor-pointer" : ""}`}
-      className="bg-dark-section"
+      className={`relative w-full min-h-screen overflow-hidden bg-dark-section ${isChaos ? "cursor-pointer" : ""}`}
       onClick={handleSkip}
     >
       {/* ── Background ambient glows ── */}
