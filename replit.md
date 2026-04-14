@@ -36,7 +36,8 @@ The IntegrateWise marketing site is built with **Next.js 16** using the App Rout
 **Key Feature Specifications:**
 -   **Comprehensive Sitemap:** Covers main pages, solutions categorized by function, industry, and role, and detailed platform/product child pages.
 -   **Navigation Structure:** Uses nested dropdowns for "Platform," "Product," "Solutions," and "Company" in the header.
--   **Campaign Gallery:** Features 36 campaign creatives used for OG images and a dedicated gallery page, following a strict naming convention.
+-   **Architecture Blueprints:** 4 Spine architecture diagrams at `public/images/architecture/` showing the Adaptive Spine, three data flows, Cognitive Loop, and Entity 360 — featured prominently on the Campaign Gallery page.
+-   **Campaign Gallery:** Features 36 campaign creatives and 4 architecture blueprints, used for OG images and a dedicated gallery page at `/resources/campaign`, following a strict naming convention.
 -   **Ad Creative System (Mockup Sandbox):** An internal tool for previewing 42 campaign creatives with predefined brand tokens and logo assets, proxied via `/__mockup/*`.
 
 ## External Dependencies

@@ -4,23 +4,23 @@ import { Footer } from "@/components/footer"
 import { CampaignGalleryContent } from "./content"
 
 export const metadata: Metadata = {
-  title: "Campaign Gallery — LinkedIn & WhatsApp Creatives | IntegrateWise",
+  title: "Campaign Gallery — Architecture & Creatives | IntegrateWise",
   description:
-    "Browse 36 campaign designs across LinkedIn ads, posts, banners, carousels, and WhatsApp creatives — crafted for Account Success, Business Ops, and Personal Ops professionals.",
+    "Architecture blueprints showing the Adaptive Spine at the center of every tool, plus 36 campaign designs across LinkedIn and WhatsApp — for Account Success, Business Ops, and Personal Ops.",
   alternates: { canonical: "/resources/campaign" },
   openGraph: {
-    title: "Campaign Gallery — LinkedIn & WhatsApp Creatives | IntegrateWise",
+    title: "Campaign Gallery — Architecture & Creatives | IntegrateWise",
     description:
-      "36 campaign designs across LinkedIn and WhatsApp for Account Success, Business Ops, and Personal Ops.",
+      "The Adaptive Spine connects every tool into one source of truth. Architecture blueprints and 36 campaign designs.",
     images: [
-      { url: "/images/campaign/Banner-Tagline.jpg", width: 1584, height: 396, alt: "IntegrateWise Campaign Gallery" },
+      { url: "/images/architecture/spine-architecture.png", width: 1200, height: 1200, alt: "IntegrateWise — The Adaptive Spine Architecture" },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Campaign Gallery | IntegrateWise",
-    description: "36 campaign designs across LinkedIn and WhatsApp.",
-    images: ["/images/campaign/Banner-Tagline.jpg"],
+    title: "Campaign Gallery — Architecture & Creatives | IntegrateWise",
+    description: "The Adaptive Spine connects every tool into one source of truth.",
+    images: ["/images/architecture/spine-architecture.png"],
   },
 }
 

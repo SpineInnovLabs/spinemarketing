@@ -169,14 +169,116 @@ export function CampaignGalleryContent() {
               {...fade(0.3)}
               className="mx-auto mt-8 max-w-2xl text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-white/55"
             >
-              36 campaign designs across LinkedIn and WhatsApp — crafted to speak directly to Account Success, Business Ops, and Personal Ops professionals.
+              Architecture blueprints and 36 campaign designs — showing how the Adaptive Spine connects every tool into one governed workspace for Account Success, Business Ops, and Personal Ops.
             </motion.p>
           </div>
         </div>
       </section>
 
+      <section className="bg-dark-section px-6 pt-8 pb-16 md:px-16">
+        <div className="mx-auto max-w-[1200px]">
+          <motion.div {...fade()} className="mb-8 flex items-center gap-3">
+            <h2 className="text-[22px] font-semibold tracking-[-0.03em] text-white">
+              The Adaptive Spine — Architecture Blueprints
+            </h2>
+            <span className="rounded-full bg-primary/15 px-2.5 py-0.5 text-[11px] font-bold text-primary uppercase tracking-wider">
+              Core
+            </span>
+          </motion.div>
+          <motion.p {...fade(0.05)} className="mb-10 max-w-3xl text-[15px] font-medium leading-[1.6] text-white/45">
+            The Spine sits at the center — connecting Salesforce, HubSpot, Slack, Stripe, Zendesk, and every other tool into a single source of truth. AI thinks using the Spine and governs via policy, but a human must approve every action.
+          </motion.p>
+
+          <div className="grid gap-6 sm:grid-cols-2">
+            {[
+              {
+                src: "/images/architecture/adaptive-spine-intelligence.png",
+                title: "The Adaptive Spine for Enterprise Intelligence",
+                desc: "Problem vs Solution — tool sprawl and ungrounded AI risk on the left, the Adaptive Spine with governed cognitive loop on the right. Three data flows (Structured, Unstructured, AI Memory) converge at the Truth Boundary.",
+              },
+              {
+                src: "/images/architecture/spine-architecture.png",
+                title: "The Spine — Powering Governed, Context-Rich AI",
+                desc: "Full architecture showing the Workspace, Cognitive Layer, Adaptive Spine as single source of truth, the Cognitive Loop (Think → Govern → Act → Adjust), and the $8M account save proof point.",
+              },
+              {
+                src: "/images/architecture/governed-enterprise-ai.png",
+                title: "Cognitive Operating System for Governed Enterprise AI",
+                desc: "End-to-end data flow: scattered tools → Adaptive Spine (SSOT) normalization → Governance Gate → HITL approval → measurable results. The 12×11 matrix delivers truth across functions and industries.",
+              },
+              {
+                src: "/images/architecture/cognitive-operating-system.png",
+                title: "Three Planes of Data Integration",
+                desc: "Flow A (Structured Tool Data), Flow B (Document Evidence), Flow C (AI Chat History) — all feeding the Adaptive Spine. The 8-Stage Normalization Pipeline, Governed Cognitive Loop, and Entity 360 View.",
+              },
+            ].map((arch, i) => (
+              <motion.div
+                key={arch.src}
+                {...fade(i * 0.08)}
+                className="group cursor-pointer overflow-hidden rounded-xl border border-white/[0.08] bg-white/[0.02] transition-all hover:border-primary/20 hover:bg-white/[0.04]"
+                onClick={() =>
+                  setLightbox({
+                    src: arch.src,
+                    title: arch.title,
+                    channel: "linkedin",
+                    type: "post",
+                    persona: "general",
+                    width: 1200,
+                    height: 1200,
+                  })
+                }
+              >
+                <div className="relative overflow-hidden">
+                  <Image
+                    src={arch.src}
+                    alt={arch.title}
+                    width={1200}
+                    height={1200}
+                    className="w-full h-auto transition-transform duration-300 group-hover:scale-[1.02]"
+                    loading={i < 2 ? "eager" : "lazy"}
+                  />
+                </div>
+                <div className="px-5 py-4">
+                  <div className="text-[14px] font-semibold text-white/90 leading-snug">{arch.title}</div>
+                  <p className="mt-2 text-[12px] font-medium leading-[1.5] text-white/35">{arch.desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div {...fade(0.3)} className="mt-6 flex items-center justify-center gap-4">
+            <Link
+              href="/platform/the-adaptive-spine"
+              className="text-[13px] font-semibold text-primary/80 hover:text-primary transition flex items-center gap-1"
+            >
+              Explore the Adaptive Spine
+              <ChevronRight className="h-3.5 w-3.5" />
+            </Link>
+            <span className="text-white/10">|</span>
+            <Link
+              href="/platform/how-it-works"
+              className="text-[13px] font-semibold text-white/40 hover:text-white/60 transition flex items-center gap-1"
+            >
+              How it works
+              <ChevronRight className="h-3.5 w-3.5" />
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
       <section className="bg-dark-section px-6 pb-24 md:px-16">
         <div className="mx-auto max-w-[1200px]">
+          <div className="mb-10 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
+
+          <motion.div {...fade()} className="mb-8 flex items-center gap-3">
+            <h2 className="text-[22px] font-semibold tracking-[-0.03em] text-white">
+              Campaign Creatives
+            </h2>
+            <span className="rounded-full bg-white/[0.06] px-2.5 py-0.5 text-[11px] font-bold text-white/30">
+              {assets.length}
+            </span>
+          </motion.div>
+
           <motion.div {...fade()} className="mb-6 flex flex-wrap items-center justify-center gap-2">
             {filters.map((f) => (
               <button
