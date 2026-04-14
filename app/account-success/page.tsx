@@ -5,9 +5,22 @@ import { FinalCTA } from "@/components/final-cta"
 import { AccountSuccessContent } from "./content"
 
 export const metadata: Metadata = {
-  title: "Resolution | IntegrateWise",
+  title: "Account Success — One Customer, One Record | IntegrateWise",
   description:
-    "Cross-tool entity matching and dedup. Confidence scoring with human review.",
+    "Detect churn signals across 4+ tools before it's too late. Cross-tool entity matching, confidence scoring, and human-approved merges. One customer. One record.",
+  alternates: { canonical: "/account-success" },
+  openGraph: {
+    title: "Account Success — One Customer, One Record | IntegrateWise",
+    description:
+      "Detect churn signals across 4+ tools before it's too late. Cross-tool entity matching with confidence scoring.",
+    images: [{ url: "/images/campaign/Banner-AccountSuccess-A.jpg", width: 1584, height: 396, alt: "IntegrateWise Account Success" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Account Success — One Customer, One Record | IntegrateWise",
+    description: "Detect churn signals across 4+ tools before it's too late.",
+    images: ["/images/campaign/Banner-AccountSuccess-A.jpg"],
+  },
 }
 
 export default function AccountSuccessPage() {

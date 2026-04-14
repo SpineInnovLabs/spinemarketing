@@ -33,6 +33,7 @@ const footerColumns: {
     links: [
       { name: "Account Success", href: "/account-success" },
       { name: "Business Ops", href: "/business-ops" },
+      { name: "Personal Ops", href: "/personal-ops" },
       { name: "By Industry", href: "/solutions" },
       { name: "By Role", href: "/solutions" },
     ],
@@ -44,6 +45,7 @@ const footerColumns: {
       { name: "About", href: "/about" },
       { name: "Blog", href: "/blog" },
       { name: "Resources", href: "/resources" },
+      { name: "Campaign Gallery", href: "/resources/campaign" },
       { name: "Contact", href: "/contact" },
     ],
   },
