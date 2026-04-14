@@ -18,61 +18,61 @@ const securityFeatures = [
   {
     icon: Lock,
     title: "Encryption everywhere",
-    desc: "AES-256 at rest, TLS 1.3 in transit. Encrypted at every stage.",
+    desc: "AES-256 at rest, TLS 1.3 in transit.",
   },
   {
     icon: ShieldCheck,
     title: "SOC 2 aligned",
-    desc: "Aligned with SOC 2 Type II requirements for security, availability, and confidentiality.",
+    desc: "Security, availability, and confidentiality standards.",
   },
   {
     icon: Eye,
     title: "Complete audit trails",
-    desc: "Every access, recommendation, approval, and action is logged with full context.",
+    desc: "Every access, approval, and action logged.",
   },
   {
     icon: KeyRound,
     title: "Role-based access control",
-    desc: "Granular RBAC ensures team members only see and act on the data relevant to their role.",
+    desc: "Granular RBAC scoped to each user role.",
   },
   {
     icon: Users,
     title: "SSO & identity management",
-    desc: "Enterprise SSO via SAML 2.0 and OIDC. Works with Okta, Azure AD, Google Workspace.",
+    desc: "SAML 2.0 and OIDC with major providers.",
   },
   {
     icon: Server,
     title: "Data residency",
-    desc: "Multi-region deployment options coming soon for local data regulation compliance.",
+    desc: "Multi-region deployment options coming soon.",
   },
   {
     icon: FileCheck,
-    title: "Govern Gate on every L2 action",
-    desc: "Every action proposed in the Intelligence Layer (L2) passes through the Govern Gate before executing. Nothing in your Spine or connected apps changes without your approval.",
+    title: "Govern Gate on every Intelligence Layer action",
+    desc: "Nothing changes without your approval.",
   },
   {
     icon: ClipboardCheck,
     title: "Compliance packages",
-    desc: "Pre-built compliance configurations for GDPR and industry-specific requirements.",
+    desc: "Pre-built GDPR and industry configurations.",
   },
 ];
 
 const principles = [
   {
     title: "Read-first architecture",
-    desc: "IntegrateWise reads from your systems. No data migration, no data ownership transfer.",
+    desc: "No data migration or ownership transfer.",
   },
   {
     title: "Minimal data footprint",
-    desc: "We connect the signals we need. Raw data stays in your source systems.",
+    desc: "Raw data stays in your source systems.",
   },
   {
     title: "Zero-trust by default",
-    desc: "Every API call, every data access, every AI action goes through authentication and authorization. No implicit trust.",
+    desc: "Every call authenticated and authorized.",
   },
   {
     title: "You stay in control, always",
-    desc: "AI session summaries go through TruthLayer before entering knowledge. Actions go through the Govern Gate before executing. Your data, your approval, your control.",
+    desc: "Your data, your approval, your control.",
   },
 ];
 
@@ -135,10 +135,7 @@ export function SecurityContent() {
               }}
               className="mx-auto mt-8 max-w-2xl text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-white/55"
             >
-              IntegrateWise is built so that AI never acts without approval,
-              data never moves without encryption, and every action has an audit
-              trail. Security isn&apos;t something we added. It&apos;s how the
-              system works.
+              AI never acts without approval, data never moves without encryption, every action has an audit trail.
             </motion.p>
           </div>
         </div>
@@ -251,8 +248,7 @@ export function SecurityContent() {
               <span className="text-primary">it proves itself.</span>
             </h2>
             <p className="mt-6 text-[17px] font-medium leading-[1.5] text-white/40">
-              Every action logged. Every AI proposal governed. Every approval
-              traceable.
+              Every action logged. Every proposal governed. Every approval traceable.
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-2.5 sm:flex-row">
               <Button

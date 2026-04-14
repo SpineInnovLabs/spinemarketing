@@ -33,17 +33,17 @@ const viewCategories = [
     category: "Customer & Revenue",
     icon: Users,
     views: [
-      { view: "Account Success", function: "Strategic account visibility", elements: "Entity 360 cards, renewal risk timeline, QBR auto-prep", icon: TrendingUp, accent: true },
-      { view: "Customer Success", function: "Relationship health", elements: "Health score heatmaps, churn mitigation, sponsor tracking", icon: Users },
-      { view: "RevOps", function: "Pipeline governance", elements: "Quote-to-Cash velocity, SLA grids, forecast tracking", icon: BarChart3 },
+      { view: "Account Success", function: "Strategic account visibility", elements: "Entity 360 cards, renewal risk, QBR prep", icon: TrendingUp, accent: true },
+      { view: "Customer Success", function: "Relationship health", elements: "Health heatmaps, churn mitigation, sponsor tracking", icon: Users },
+      { view: "RevOps", function: "Pipeline governance", elements: "Quote-to-Cash velocity, SLA grids, forecasts", icon: BarChart3 },
     ],
   },
   {
     category: "Operations & Execution",
     icon: Briefcase,
     views: [
-      { view: "Business Operations", function: "Process optimization", elements: "Pipeline/risk correlation, Flow Trace, bottleneck detection", icon: Activity },
-      { view: "Executive Oversight", function: "Leadership summaries", elements: "Monday Brief, Board Pack, cross-departmental metrics", icon: Eye },
+      { view: "Business Operations", function: "Process optimization", elements: "Pipeline correlation, Flow Trace, bottlenecks", icon: Activity },
+      { view: "Executive Oversight", function: "Leadership summaries", elements: "Monday Brief, Board Pack, cross-dept metrics", icon: Eye },
       { view: "Finance", function: "Economic health", elements: "Cash flow cockpit, collection priority, revenue risk", icon: DollarSign },
     ],
   },
@@ -51,8 +51,8 @@ const viewCategories = [
     category: "Personal & Team",
     icon: User,
     views: [
-      { view: "Personal Ops", function: "Individual productivity", elements: "Morning Brief inbox, cross-tool tasks, session memory", icon: User },
-      { view: "Cross-Functional", function: "Inter-departmental alignment", elements: "Shared Entity 360s, collaborative approval queues", icon: Layers },
+      { view: "Personal Ops", function: "Individual productivity", elements: "Morning Brief, cross-tool tasks, session memory", icon: User },
+      { view: "Cross-Functional", function: "Inter-departmental alignment", elements: "Shared Entity 360s, collaborative approvals", icon: Layers },
       { view: "Regional / SMB", function: "Localized compliance", elements: "Geo-filtered views, regulatory context", icon: Globe },
     ],
   },
@@ -62,7 +62,7 @@ const viewCategories = [
     views: [
       { view: "Technical Integrity", function: "System health monitoring", elements: "Connector status, Spine diagnostics, sync latency", icon: Server },
       { view: "DevOps", function: "Infrastructure oversight", elements: "API monitors, webhook status, pipeline diagnostics", icon: Code2 },
-      { view: "Admin / Governance", function: "Truth Boundary config", elements: "Approval matrices, permissions, audit log viewer", icon: Shield },
+      { view: "Admin / Governance", function: "Truth Boundary config", elements: "Approval matrices, permissions, audit logs", icon: Shield },
     ],
   },
 ];
@@ -74,7 +74,7 @@ const coreComponents = [
     bgColor: "bg-blue-400/10",
     borderColor: "border-blue-400/20",
     name: "Entity 360 Navigator",
-    desc: "Visual relation graphs — Account → Contacts → Deals → Tickets → Invoices — assembled in real time from Spine records.",
+    desc: "Visual relation graphs assembled in real time from Spine records.",
   },
   {
     icon: Clock,
@@ -82,7 +82,7 @@ const coreComponents = [
     bgColor: "bg-violet-400/10",
     borderColor: "border-violet-400/20",
     name: "Temporal Slider",
-    desc: "\"Show me this account as of [Date]\" with point-in-time reconstruction from versioned SpineVault records.",
+    desc: "Point-in-time reconstruction from versioned SpineVault records.",
   },
   {
     icon: Map,
@@ -90,7 +90,7 @@ const coreComponents = [
     bgColor: "bg-amber-400/10",
     borderColor: "border-amber-400/20",
     name: "Conflict Resolution UI",
-    desc: "Side-by-side comparison when systems disagree — with manual resolution and canonical selection.",
+    desc: "Side-by-side comparison when systems disagree. You pick canonical truth.",
   },
   {
     icon: Cpu,
@@ -98,7 +98,7 @@ const coreComponents = [
     bgColor: "bg-emerald-400/10",
     borderColor: "border-emerald-400/20",
     name: "Schema Mapper",
-    desc: "Visual interface showing how every tool field maps to canonical Spine entities.",
+    desc: "See how every tool field maps to canonical Spine entities.",
   },
 ];
 
@@ -285,7 +285,7 @@ export function WorkbenchContent() {
               <span className="text-primary">Control every reflex.</span>
             </h1>
             <p className="text-[17px] text-white/50 max-w-xl mx-auto leading-relaxed font-medium">
-              One workspace. Full context. Governed AI. 12 domain views over the same Spine.
+              One workspace with full context and governed AI across 12 domain views.
             </p>
           </motion.div>
         </div>
@@ -314,7 +314,7 @@ export function WorkbenchContent() {
               <span className="text-primary">Role-aware.</span>
             </h2>
             <p className="mt-4 text-[16px] font-medium leading-[1.6] text-white/45">
-              Account Success. Business Ops. Personal. Each view maps to the canonical Spine schema.
+              Each view maps to the canonical Spine schema.
             </p>
           </motion.div>
 
@@ -353,17 +353,17 @@ export function WorkbenchContent() {
               {
                 icon: Brain,
                 title: "Morning Brief",
-                desc: "Overnight changes distilled. Three priorities. Full context.",
+                desc: "Overnight changes distilled into three priorities.",
               },
               {
                 icon: Sparkles,
                 title: "Execute with confidence",
-                desc: "Draft email. Update field. Create task. Approved only.",
+                desc: "Draft, update, create — approved actions only.",
               },
               {
                 icon: Shield,
                 title: "Conscious control",
-                desc: "Drafts wait. You edit. You approve. Full audit trail.",
+                desc: "Drafts wait. You edit and approve. Full audit trail.",
               },
             ].map(({ icon: Icon, title, desc }, i) => (
               <motion.div

@@ -7,28 +7,28 @@ export function CustomerSuccessRoleContent() {
     <RoleSolutionLayout
       role="Customer Success & TAMs"
       headline="Save accounts. Before the conversation starts."
-      subheadline="AI surfaces which accounts need attention today — and drafts the save play for your approval."
+      subheadline="AI surfaces at-risk accounts and drafts save plays for your approval."
       ctaLabel="See Account Success workspace →"
       ctaHref="/account-success"
       focus={[
         {
           title: "Renewal Risk Prediction",
-          desc: "90-day lookahead across CRM, usage, billing, and support — know which accounts are at risk before the conversation starts.",
+          desc: "90-day lookahead across CRM, usage, billing, and support.",
         },
         {
           title: "Expansion Signal Detection",
-          desc: "AI surfaces usage spikes and license limit approaches as expansion moments with a drafted upgrade conversation ready.",
+          desc: "Usage spikes and license limits flagged as expansion moments.",
         },
         {
           title: "QBR Preparation Automation",
-          desc: "AI assembles account review decks from real adoption data and relationship history — you finalize and present.",
+          desc: "Account review decks assembled from real adoption data.",
         },
         {
           title: "Escalation Management",
-          desc: "Usage drop, champion left, and P1 tickets surfaced as one combined risk signal with full context attached.",
+          desc: "Combined risk signals with full context attached.",
         },
       ]}
-      governanceNote="AI suggests health score changes — you approve them. AI drafts outreach — you review before it sends. No customer-facing action executes without CSM sign-off."
+      governanceNote="AI suggests changes — you approve. No customer action without CSM sign-off."
       connects={[
         "Salesforce", "HubSpot", "Zendesk", "Intercom",
         "Stripe", "Chargebee", "Segment", "Amplitude", "Slack", "Gmail",

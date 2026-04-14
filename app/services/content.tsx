@@ -22,52 +22,52 @@ const services = [
     icon: Wrench,
     label: "Implementation",
     headline: "From signed to live in 14 days",
-    body: "We map your existing tools to the Spine schema, configure your connectors, resolve field conflicts, and hand you a normalized, queryable Entity 360 for every account — before your first full billing cycle.",
+    body: "We map your tools, configure connectors, and deliver a normalized Entity 360.",
     bullets: [
       "Connector setup and authentication",
-      "Canonical schema mapping and field normalization",
-      "Deduplication rules and golden record configuration",
-      "Workspace and Knowledge UI customization",
-      "Team onboarding and workflow documentation",
+      "Schema mapping and field normalization",
+      "Deduplication and golden record config",
+      "Workspace customization",
+      "Team onboarding",
     ],
   },
   {
     icon: Settings2,
     label: "Managed Data Ops",
     headline: "We run the Loader so you don't have to",
-    body: "Ongoing management of your data pipeline — monitoring ingestion health, resolving schema drift when vendors change their APIs, auditing entity quality, and ensuring the Spine stays current.",
+    body: "Ongoing pipeline management — ingestion health, schema drift, entity quality.",
     bullets: [
-      "Continuous ingestion monitoring and alerting",
-      "Upstream API change detection and schema re-mapping",
-      "Entity quality audits and deduplication maintenance",
+      "Continuous ingestion monitoring",
+      "API change detection and re-mapping",
+      "Entity quality audits",
       "Quarterly truth health reviews",
-      "Incident response for broken connector flows",
+      "Incident response for broken flows",
     ],
   },
   {
     icon: Plug,
     label: "Custom Connectors",
     headline: "If we don't have it, we build it",
-    body: "Legacy ERPs, proprietary data warehouses, internal tools, flat-file exports — if your system has data that belongs in the Spine, we build a connector that normalizes it through the same 5-stage pipeline.",
+    body: "Legacy ERPs, internal tools, flat files — normalized through the same pipeline.",
     bullets: [
       "Scoping and feasibility assessment",
       "Connector development and testing",
       "Normalization rule authoring",
       "Documentation and handoff",
-      "Optional ongoing maintenance retainer",
+      "Optional maintenance retainer",
     ],
   },
   {
     icon: Users,
     label: "Strategic Advisory",
     headline: "Revenue operations that run on truth",
-    body: "For teams standing up RevOps, CS programs, or unified data strategies — we embed alongside your ops leads to design the Entity 360 architecture, approval workflows, and Twin configuration that map to your business model.",
+    body: "We design your Entity 360 architecture and Twin configuration.",
     bullets: [
-      "Data strategy and SSOT architecture design",
-      "RevOps and CS workflow design on top of Spine",
+      "Data strategy and SSOT design",
+      "RevOps and CS workflow design",
       "TruthLayer governance configuration",
-      "Twin training and confidence calibration",
-      "Playbook documentation and enablement",
+      "Twin training and calibration",
+      "Playbook documentation",
     ],
   },
 ];
@@ -75,7 +75,6 @@ const services = [
 export function ServicesContent() {
   return (
     <>
-      {/* ── Hero ─────────────────────────────────────────────────── */}
       <section
         className="relative overflow-hidden pb-28 pt-40 bg-dark-section"
       >
@@ -102,9 +101,7 @@ export function ServicesContent() {
             {...heroFade(0.38)}
             className="mx-auto mt-7 max-w-xl text-[17px] font-medium leading-[1.55] tracking-[-0.02em] text-white/50"
           >
-            Implementation, managed data operations, custom connector
-            development, and strategic advisory — delivered by the team that
-            built the Spine.
+            Implementation, managed ops, custom connectors, and advisory — from the team that built the Spine.
           </motion.p>
 
           <motion.div
@@ -121,7 +118,6 @@ export function ServicesContent() {
         </div>
       </section>
 
-      {/* ── Services Grid ─────────────────────────────────────────── */}
       <section className="arvio-section dark-section">
         <div className="mx-auto max-w-[1100px]">
           <div className="grid gap-6 lg:grid-cols-2">
@@ -167,7 +163,6 @@ export function ServicesContent() {
         </div>
       </section>
 
-      {/* ── How it works ─────────────────────────────────────────── */}
       <section
         className="arvio-section dark-section bg-dark-section"
       >
@@ -187,17 +182,17 @@ export function ServicesContent() {
               {
                 num: "01",
                 title: "Discovery call",
-                body: "We map your current tool stack, data flows, and highest-value use cases. Usually 60 minutes.",
+                body: "We map your tools, data flows, and top use cases.",
               },
               {
                 num: "02",
                 title: "Scoped proposal",
-                body: "A fixed-scope statement of work — timeline, deliverables, and what 'done' looks like. No open-ended retainers unless you want ongoing managed ops.",
+                body: "Fixed-scope SOW with timeline and deliverables.",
               },
               {
                 num: "03",
                 title: "Delivery and handoff",
-                body: "We build, configure, test, and document. Your team is trained and autonomous before we step back.",
+                body: "We build, test, document, and train your team.",
               },
             ].map(({ num, title, body }, i) => (
               <motion.div
@@ -229,7 +224,6 @@ export function ServicesContent() {
         </div>
       </section>
 
-      {/* ── Resources link ────────────────────────────────────────── */}
       <section className="arvio-section dark-section">
         <div className="mx-auto max-w-[1100px]">
           <motion.div
@@ -248,8 +242,7 @@ export function ServicesContent() {
                   Implementation guides and playbooks
                 </p>
                 <p className="text-[13px] font-medium text-muted-foreground">
-                  Field mapping templates, connector configuration docs, and
-                  Entity 360 setup guides — in the resource library.
+                  Templates, connector docs, and Entity 360 setup guides.
                 </p>
               </div>
             </div>

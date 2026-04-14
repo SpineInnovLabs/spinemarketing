@@ -8,19 +8,19 @@ import { Footer } from "@/components/footer";
 const actionLibrary = [
   {
     icon: Mail, color: "text-blue-400", name: "Communication Actions",
-    items: ["Email drafting (Gmail/Outlook) with tone adjustment — formal or casual", "Slack message composition with channel selection", "Meeting agenda generation from Entity 360 context"],
+    items: ["Email drafting with tone adjustment", "Slack message composition", "Meeting agenda generation"],
   },
   {
     icon: Database, color: "text-violet-400", name: "Data Update Actions",
-    items: ["CRM field updates (Salesforce, HubSpot) with rollback", "Health score adjustments with justification logging", "Opportunity stage progression with required field validation"],
+    items: ["CRM field updates with rollback", "Health score adjustments with logging", "Opportunity stage progression"],
   },
   {
     icon: GitBranch, color: "text-purple-400", name: "Task Creation",
-    items: ["Asana/Jira/Zendesk ticket creation with pre-populated Spine context", "Auto-assignment based on workload and expertise matching", "Due date recommendation from related milestone velocity"],
+    items: ["Ticket creation with Spine context", "Auto-assignment by workload", "Due date recommendation"],
   },
   {
     icon: FileText, color: "text-amber-400", name: "Document Generation",
-    items: ["QBR decks from Account 360 data", "Renewal proposals with usage analytics", "Executive briefs with cross-system KPIs"],
+    items: ["QBR decks from Account 360", "Renewal proposals with analytics", "Executive briefs with KPIs"],
   },
 ];
 
@@ -36,16 +36,16 @@ const workflowExample = {
 };
 
 const executionFeatures = [
-  { title: "Action Queue Management", desc: "Prioritized list with due dates, impact scores, and estimated execution time." },
-  { title: "One-Click Execution", desc: "Post-approval, a single trigger fires multi-system write-backs with real-time progress indicators." },
-  { title: "Smart Scheduling", desc: "Delay execution to optimal times — \"Send email Tuesday 9 AM when open rates are highest\"." },
-  { title: "Conditional Logic", desc: "\"If health score < 50, then escalate to VP AND draft save play\" — branching sequences executed automatically." },
+  { title: "Action Queue Management", desc: "Prioritized list with due dates and impact scores." },
+  { title: "One-Click Execution", desc: "Multi-system write-backs with real-time progress." },
+  { title: "Smart Scheduling", desc: "Delay execution to optimal send times." },
+  { title: "Conditional Logic", desc: "Branching sequences executed automatically on rules." },
 ];
 
 const outcomeFeatures = [
-  { icon: BarChart3, color: "text-emerald-400", title: "Action History", desc: "Complete immutable log of executed actions with success/failure status. Every write is traceable to the approving user and originating Spine data." },
-  { icon: GitBranch, color: "text-cyan-400", title: "Feedback Loop", desc: "Thumbs up/down on outcomes feeds the Adjust stage of the Execution Path — refining confidence scoring and suggestion quality over time." },
-  { icon: Settings2, color: "text-blue-400", title: "Performance Metrics", desc: "Action acceptance rates, average time-to-approval, and outcome success correlation across all action types and users." },
+  { icon: BarChart3, color: "text-emerald-400", title: "Action History", desc: "Immutable log of executed actions with status." },
+  { icon: GitBranch, color: "text-cyan-400", title: "Feedback Loop", desc: "Thumbs up/down refines scoring over time." },
+  { icon: Settings2, color: "text-blue-400", title: "Performance Metrics", desc: "Acceptance rates and outcome correlation." },
 ];
 
 export function TwinOperationsContent() {
@@ -64,7 +64,7 @@ export function TwinOperationsContent() {
               Action execution and<br />workflow management.
             </h1>
             <p className="text-xl text-white/60 max-w-2xl mx-auto leading-relaxed">
-              From email drafts to CRM updates, QBR decks to multi-step onboarding sequences — Twin Operations orchestrates every approved action across your connected systems.
+              Twin Operations orchestrates every approved action across your connected systems.
             </p>
           </motion.div>
         </div>

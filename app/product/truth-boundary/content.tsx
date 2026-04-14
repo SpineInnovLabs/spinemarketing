@@ -21,29 +21,29 @@ const governanceFeatures = [
   {
     icon: Eye,
     title: "Proposed Action Queue",
-    desc: "All AI suggestions await your approval with full Entity 360 context attached. You see why the Twin proposed the action, which Spine entities triggered it, and what the downstream impact will be.",
+    desc: "AI suggestions await approval with full Entity 360 context.",
   },
   {
     icon: AlertTriangle,
     title: "Impact Preview",
-    desc: 'Visual confirmation showing exactly which systems will be affected before you approve. "This will update Salesforce, send a Slack notification, and create an Asana task." No surprises.',
+    desc: "See exactly which systems will be affected before approving.",
   },
   {
     icon: ShieldCheck,
     title: "Confidence Scoring",
-    desc: "Twin Trigger Score visualization showing the confidence threshold at the moment of proposal. Low-confidence signals are quarantined before reaching the queue — you only see what the system is sure about.",
+    desc: "Low-confidence signals quarantined. You only see high-certainty items.",
   },
   {
     icon: Edit3,
     title: "Edit Before Execute",
-    desc: "Modify AI-drafted content before the Truth Boundary allows passage to execution. Change the email copy, adjust the field value, reschedule the task — then approve the edited version.",
+    desc: "Modify AI drafts before the Truth Boundary allows execution.",
   },
 ];
 
 const safetyMechanisms = [
-  { label: "Cross-Contamination Prevention", desc: "AI cannot access unauthorized departments or contexts. Contextual Firewalling enforced at the Spine level — not a UI restriction." },
-  { label: "Immutable Audit Trail", desc: "Append-only log of every approval decision and resulting action. Every 'yes', 'no', and edit is timestamped, signed, and traceable." },
-  { label: "Emergency Override", desc: "Traceable exception handling with mandatory governance logging. Even override actions create a full audit record — no silent bypasses." },
+  { label: "Cross-Contamination Prevention", desc: "AI cannot access unauthorized departments. Enforced at the Spine level." },
+  { label: "Immutable Audit Trail", desc: "Append-only log of every approval decision. Timestamped and traceable." },
+  { label: "Emergency Override", desc: "Traceable exception handling with mandatory governance logging." },
 ];
 
 export function TruthBoundaryContent() {
@@ -71,10 +71,7 @@ export function TruthBoundaryContent() {
             {...heroFade(0.38)}
             className="mx-auto mt-7 max-w-xl text-[17px] font-medium leading-[1.55] tracking-[-0.02em] text-white/50"
           >
-            The strategic utility layer ensuring AI identifies triggers but
-            humans authorize execution. The primary architectural constraint
-            preventing black-box AI implementations — built into the system,
-            not bolted on.
+            The architectural constraint preventing black-box AI — built in, not bolted on.
           </motion.p>
           <motion.div {...heroFade(0.5)} className="mt-9 flex flex-wrap items-center justify-center gap-3">
             <Link href="/contact?intent=demo" className="inline-flex h-11 items-center rounded-full bg-primary px-6 text-[14px] font-semibold tracking-[-0.02em] text-white transition-opacity hover:opacity-90">
@@ -93,9 +90,9 @@ export function TruthBoundaryContent() {
           </motion.div>
           <div className="grid gap-5 sm:grid-cols-3 max-w-3xl mx-auto">
             {[
-              { title: "Mandatory Human Verification", desc: "Every AI-initiated action that modifies data or initiates external communication requires explicit human 'OK'. No exceptions, no auto-approvals, no bypass." },
-              { title: "Absolute Truth Boundary", desc: "AI operations restricted to validated SpineVault data. The Twin cannot reason on data that hasn't passed the 8-stage normalization pipeline." },
-              { title: "Data Sovereignty", desc: '"Your data, your rules." Total organizational ownership of ontological models. You define what the AI can and cannot access — not the platform.' },
+              { title: "Mandatory Human Verification", desc: "Every AI action requires explicit human OK. No exceptions." },
+              { title: "Absolute Truth Boundary", desc: "AI restricted to validated SpineVault data only." },
+              { title: "Data Sovereignty", desc: "You define what AI can access — not the platform." },
             ].map(({ title, desc }, i) => (
               <motion.div key={title} {...fade(i * 0.07)} className="arvio-card p-6">
                 <ShieldCheck className="mb-3 h-5 w-5 text-primary" />

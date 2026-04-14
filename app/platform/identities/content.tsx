@@ -13,7 +13,7 @@ const sections = [
     iconColor: "#3b82f6",
     label: "Structured",
     title: "Entity 360 — CRM, billing, support, usage",
-    desc: "Every Salesforce record, Stripe invoice, Zendesk ticket, and usage metric normalized into a single canonical object. One schema regardless of how many tools you connect.",
+    desc: "Every record normalized into one canonical object.",
     items: ["Account → Contacts → Deals → Tickets → Invoices", "Cross-tool canonical schema", "Automatic relation graphs"],
   },
   {
@@ -22,7 +22,7 @@ const sections = [
     iconColor: "#8b5cf6",
     label: "Unstructured",
     title: "Documents, threads, transcripts",
-    desc: "PDFs, contracts, email bodies, Slack conversations, and meeting transcripts ingested as first-class identity data — parsed, linked to Spine entities, and structurally indexed.",
+    desc: "PDFs, emails, and conversations parsed as identity data.",
     items: ["MCP document ingestion", "Semantic NLP extraction", "Communication thread linking"],
   },
   {
@@ -31,7 +31,7 @@ const sections = [
     iconColor: "#a855f7",
     label: "AI Chat",
     title: "Sessions grounded in Entity 360",
-    desc: "Chat histories are not floating contexts. Every session links to real canonical records. Decisions and context extracted from conversations are routed through Flow C Triage before entering SpineVault.",
+    desc: "Every session links to real canonical records.",
     items: ["Session-to-entity grounding", "Knowledge extraction pipeline", "Flow C Triage routing"],
   },
   {
@@ -40,7 +40,7 @@ const sections = [
     iconColor: "#f59e0b",
     label: "Resolution",
     title: "Cross-tool entity matching and dedup",
-    desc: "\"John Smith\" in Salesforce = \"john@company.com\" in Stripe — resolved automatically with confidence scoring. Low-confidence matches surface for human review before entering the canonical record.",
+    desc: "Automatic matching with confidence scoring and human review.",
     items: ["Multi-signal match scoring", "0–100 confidence index", "Manual resolution UI"],
   },
 ];
@@ -68,7 +68,7 @@ export function IdentitiesContent() {
               <span className="text-primary">One canonical record.</span>
             </h1>
             <p className="text-xl text-white/55 max-w-2xl mx-auto leading-relaxed mb-10">
-              Structured CRM data, unstructured documents, AI conversations, and cross-tool duplicates — all resolved into unified canonical identities your team can act on.
+              All data resolved into unified canonical identities your team can act on.
             </p>
             <Link
               href="/contact?intent=demo"
@@ -126,7 +126,7 @@ export function IdentitiesContent() {
             className="rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.05] to-transparent p-14"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">One record. Every tool.</h2>
-            <p className="text-white/50 text-lg mb-10 max-w-lg mx-auto">See how Identity Resolution eliminates duplicate records and cross-tool confusion across your stack.</p>
+            <p className="text-white/50 text-lg mb-10 max-w-lg mx-auto">See how Identity Resolution eliminates duplicates across your stack.</p>
             <Link
               href="/contact?intent=demo"
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl text-[15px] font-semibold text-white"

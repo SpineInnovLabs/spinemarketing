@@ -18,45 +18,45 @@ const spineCapabilities = [
   {
     icon: Database,
     title: "Structured data flows",
-    desc: "CRM records, billing events, support tickets, contracts, product usage metrics — every structured data point across all connected apps flows into the Spine and stays current.",
+    desc: "CRM, billing, support, and usage data flowing into the Spine.",
   },
   {
     icon: MessageSquare,
     title: "Unstructured context",
-    desc: "Emails, call transcripts, Slack threads, meeting notes, support conversations — the Spine reads and indexes the context around every record, not just the record itself.",
+    desc: "Emails, transcripts, and conversations indexed alongside records.",
   },
   {
     icon: FileText,
     title: "Session Summaries",
-    desc: "Every AI reasoning session produces a governed, attributed Session Summary. These are not chat logs — they are auditable intelligence outputs stored as first-class data.",
+    desc: "Auditable AI outputs stored as first-class data.",
   },
   {
     icon: GitMerge,
     title: "Entity-level unification",
-    desc: "The Spine links every data point to the right entity — account, contact, deal, project, invoice. One account has one view across 12 apps.",
+    desc: "Every data point linked to the right entity across apps.",
   },
 ];
 
 const hitlSteps = [
   {
     label: "Signal detected",
-    desc: "The Spine surfaces a cross-system pattern: usage down, champion left, support tickets unresolved, invoice delayed.",
+    desc: "Cross-system pattern surfaces from the Spine.",
   },
   {
     label: "AI reasons with evidence",
-    desc: "The Twin analyses the full context from the Spine — not a single app. It builds a recommendation with supporting data, confidence, and alternatives.",
+    desc: "Full-context analysis with confidence and alternatives.",
   },
   {
-    label: "Surfaced in L2",
-    desc: "The recommendation appears in the Intelligence Layer with full evidence. You see what the Twin saw, what it concluded, and what it suggests.",
+    label: "Surfaced in the Intelligence Layer",
+    desc: "Recommendation appears with complete evidence trail.",
   },
   {
     label: "You approve",
-    desc: "Nothing executes until you approve. You can edit, reject, or pass. The Govern Gate is non-bypassable — not configurable, structural.",
+    desc: "Nothing executes until you approve. Govern Gate is structural.",
   },
   {
-    label: "Action executes in L1",
-    desc: "Approved actions execute in the Daily Workbench. The Session Summary is logged: what changed, what the AI reasoned, who approved, when.",
+    label: "Action executes in the Workbench",
+    desc: "Approved actions execute and Session Summary is logged.",
   },
 ];
 
@@ -64,32 +64,32 @@ const differentiators = [
   {
     icon: Lock,
     title: "Vendor-neutral",
-    desc: "The Spine is not owned by your CRM, your helpdesk, or your ERP. It sits above your apps — so it can reason across all of them without being biased by any one.",
+    desc: "Sits above your apps — reasons across all of them.",
   },
   {
     icon: Eye,
     title: "Adaptive",
-    desc: "As your stack changes — new apps connected, old ones removed — the Spine adapts. Entity mappings update. Context continues to accumulate.",
+    desc: "Adapts as your stack changes. Context keeps accumulating.",
   },
   {
     icon: Brain,
     title: "Evidence-first",
-    desc: "Every AI output is tied to its source data. The Twin cannot reason in a vacuum. Every recommendation shows the signals it was built from.",
+    desc: "Every AI output tied to its source data.",
   },
   {
     icon: CheckSquare,
     title: "HITL by architecture",
-    desc: "Human-in-the-loop is not a setting or a policy. It is built into the execution path. The Govern Gate cannot be bypassed by any workflow, automation, or API call.",
+    desc: "Govern Gate cannot be bypassed by any workflow or API.",
   },
   {
     icon: History,
     title: "Permanent audit",
-    desc: "Every action, every approval, every Session Summary is logged immutably. The audit trail exists because the architecture requires it — not because you remembered to enable it.",
+    desc: "Every action and approval logged immutably.",
   },
   {
     icon: Zap,
     title: "Live entity state",
-    desc: "The Spine maintains a live view of every entity across all apps. There are no stale snapshots. When a record changes in any connected app, the Spine knows.",
+    desc: "Real-time view of every entity across all apps.",
   },
 ];
 
@@ -125,10 +125,7 @@ export function SpineContent() {
             transition={{ type: "spring", damping: 16, stiffness: 52, delay: 0.35 }}
             className="mx-auto mt-8 max-w-2xl text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-white/55"
           >
-            The Spine is an adaptive, vendor-neutral layer that unifies
-            structured records, unstructured conversations, and AI outputs from
-            every connected app. AI reasons on the full picture. Every action
-            waits for human approval.
+            A vendor-neutral layer unifying records, conversations, and AI outputs — every action waits for human approval.
           </motion.p>
         </div>
       </section>
@@ -148,9 +145,7 @@ export function SpineContent() {
               <span className="text-primary">One unified truth.</span>
             </h2>
             <p className="section-subheading mt-4">
-              The Spine unifies Truth (structured records), Context (conversations
-              and history), and Session Summaries (governed AI outputs) into one
-              entity-level intelligence layer.
+              Truth, Context, and Session Summaries unified into one intelligence layer.
             </p>
           </motion.div>
           <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -198,8 +193,7 @@ export function SpineContent() {
               <span className="text-primary">not a setting.</span>
             </h2>
             <p className="mt-4 text-[17px] font-medium leading-[1.5] text-white/55">
-              It&apos;s the architecture. The Govern Gate is built into the execution
-              path. No workflow, automation, or API call can bypass it.
+              The Govern Gate is built into the execution path. Nothing bypasses it.
             </p>
           </motion.div>
           <div className="relative mx-auto mt-16 max-w-3xl">

@@ -8,42 +8,42 @@ const timeline = [
   {
     year: "2011",
     title: "Integration Architect",
-    desc: "13+ years wiring enterprise systems across telecom, finance, healthcare, retail, and insurance.",
+    desc: "13+ years wiring enterprise systems across five industries.",
   },
   {
     year: "Expert",
     title: "MuleSoft Architect",
-    desc: "One of India's leading MuleSoft Integration Architects. API-led connectivity and canonical data models.",
+    desc: "India's leading MuleSoft architect. API-led connectivity.",
   },
   {
     year: "CSM Era",
     title: "Customer Success at Salesforce",
-    desc: "Managed MuleSoft enterprise accounts. Saw the same plumbing failures at the human layer.",
+    desc: "MuleSoft enterprise CSM. Saw plumbing failures at the human layer.",
   },
   {
     year: "The Crisis",
     title: "The Red Account",
-    desc: "Inherited an $8M account at 100% attrition risk. Zero handover. Weeks of manual cross-referencing.",
+    desc: "$8M account at 100% attrition risk. Zero handover.",
   },
   {
     year: "The Discovery",
     title: "Two Hidden Signals",
-    desc: "An unsigned contract. Interpersonal conflicts buried across fragmented records. Both invisible to every dashboard.",
+    desc: "Unsigned contract. Hidden conflicts. Invisible to every dashboard.",
   },
   {
     year: "The Save",
     title: "$8M Renewed",
-    desc: "Resolved both signals. Full renewal. An account written off as lost — brought back.",
+    desc: "Both signals resolved. Full renewal. Account saved.",
   },
   {
     year: "2025",
     title: "Founded IntegrateWise LLP",
-    desc: "Built in Bengaluru to automate everything done manually during that save.",
+    desc: "Built in Bengaluru. Automates what was done manually.",
   },
   {
     year: "2026",
     title: "Knowledge Workspace over the Spine",
-    desc: "The architecture evolves: Truth + Context + Session Summaries. L1 (Daily Workbench) and L2 (Intelligence Layer). Three data flows. One Canonical Loop. The Twin proposes. You stay in control.",
+    desc: "Workbench + Intelligence Layer. Three data flows. You stay in control.",
   },
 ];
 
@@ -134,16 +134,12 @@ export function AboutContent() {
                 because their tools couldn&apos;t talk to each other.&rdquo;
               </blockquote>
               <p>
-                Nirmal Prince J spent 13 years as a MuleSoft Integration
-                Architect — wiring enterprise systems across telecom, finance,
-                healthcare, retail, and insurance. His job: make disconnected
-                systems speak the same language.
+                13 years wiring enterprise systems. His job: make disconnected
+                tools speak the same language.
               </p>
               <p>
-                But the more systems he connected, the clearer a deeper problem
-                became. The tools were connected. The data was flowing. And yet,
-                nobody could put it all together in a way that was useful for
-                the human making a decision.
+                The tools were connected. The data flowed. But nobody could
+                assemble it for the human making the decision.
               </p>
             </div>
           </motion.div>
@@ -188,15 +184,11 @@ export function AboutContent() {
 
             <div className="mt-8 space-y-6 text-[16px] font-medium leading-[1.8] tracking-[-0.01em] text-foreground/75">
               <p>
-                Nirmal joined Salesforce as a Customer Success Manager for
-                MuleSoft accounts. A fellow CSM left. Their biggest account —
-                ~$8 million — landed on his desk with no handover and no
-                context.
+                A fellow CSM left. Their biggest account — ~$8M — landed on
+                his desk. No handover. No context.
               </p>
               <p>
-                No transition document. No relationship history. No record of
-                what had been promised or delivered. The account was marked Red
-                — 100% attrition risk. Nobody could explain why.
+                Marked Red. 100% attrition risk. Nobody could explain why.
               </p>
               <blockquote className="border-l-2 border-primary pl-6 text-[17px] italic text-foreground">
                 &ldquo;The data existed — in seven different places, seven
@@ -204,10 +196,8 @@ export function AboutContent() {
                 at once.&rdquo;
               </blockquote>
               <p>
-                He became the integration layer. For weeks, he manually
-                cross-referenced support tickets against CRM notes, email
-                threads against project milestones, Slack messages against
-                contract terms.
+                He became the integration layer. Weeks of cross-referencing
+                tickets, CRM notes, emails, and Slack against contract terms.
               </p>
             </div>
 
@@ -223,9 +213,7 @@ export function AboutContent() {
                   The unsigned contract
                 </h4>
                 <p className="mt-3 text-[14px] font-medium leading-[1.6] text-muted-foreground">
-                  The $8M contract had never been signed. It had quietly stalled
-                  every conversation and blocked every milestone — and it
-                  wasn&apos;t in any single system.
+                  The $8M contract was never signed. It stalled everything — invisible to any single system.
                 </p>
               </div>
               <div className="rounded-xl border border-border bg-background p-6">
@@ -236,10 +224,7 @@ export function AboutContent() {
                   The hidden conflict
                 </h4>
                 <p className="mt-3 text-[14px] font-medium leading-[1.6] text-muted-foreground">
-                  Buried in fragments of notes and email tones — evidence of
-                  interpersonal conflict between key decision-makers. The kind
-                  of tension that derails renewals because the relationship
-                  fractures, not the product.
+                  Interpersonal conflict between decision-makers. Buried in fragments. The kind of tension that derails renewals.
                 </p>
               </div>
             </div>
@@ -264,19 +249,13 @@ export function AboutContent() {
             </h2>
             <div className="mt-8 space-y-6 text-[16px] font-medium leading-[1.8] tracking-[-0.01em] text-foreground/75">
               <p>
-                With both signals identified, Nirmal resolved the unsigned
-                contract and addressed the interpersonal dynamics — work that
-                required the full context no single tool could provide.
+                Both signals identified. Contract resolved. Relationship rebuilt from zero.
               </p>
-              <p>He rebuilt the relationship from zero. Meeting by meeting.</p>
               <p className="text-[18px] text-foreground font-semibold">
                 When renewal time came — they renewed. The full $8 million.
               </p>
               <p>
-                An account written off as 100% attrition — saved. Not because a
-                better tool surfaced the right alert. Because one person
-                manually connected every piece of data and found the signals no
-                single tool could see.
+                Written off as lost. Saved — because one person manually connected every signal.
               </p>
               <blockquote className="border-l-2 border-primary pl-6 text-[17px] italic text-foreground">
                 &ldquo;I saved it. But it nearly killed me to do it by hand.
@@ -306,15 +285,10 @@ export function AboutContent() {
             </h2>
             <div className="mt-8 space-y-6 text-[16px] font-medium leading-[1.8] tracking-[-0.01em] text-foreground/75">
               <p>
-                The Red Account recovery wasn&apos;t a whiteboard exercise. It
-                was a lived experience — hidden signals that only became visible
-                through weeks of manual integration work.
+                Not a whiteboard exercise. A lived experience — signals visible only through manual integration.
               </p>
               <p>
-                Nirmal didn&apos;t set out to build another CRM or analytics
-                tool. He set out to automate what he had done by hand: the
-                cross-referencing, the signal discovery, the context building
-                across disconnected apps.
+                He set out to automate what he did by hand: cross-referencing, signal discovery, context building.
               </p>
               <p className="text-foreground font-semibold">
                 He had spent 13 years building the plumbing. Now he was going to
@@ -327,11 +301,11 @@ export function AboutContent() {
             </h3>
             <div className="mt-6 space-y-3">
               {[
-                "Connect every app into the Spine — one canonical source of truth.",
-                "Build three data flows automatically: Truth (records), Context (conversations), Session Summaries (governed AI outputs).",
-                "Surface hidden signals automatically in L2 — the unsigned contract, the buried conflict, the churn risk no dashboard shows.",
-                "Let The Twin propose actions with full evidence — in the Intelligence Layer, never directly in your data.",
-                "Require human approval through the Govern Gate before anything executes.",
+                "Connect every app into the Spine — one source of truth.",
+                "Three data flows: Truth, Context, AI Sessions.",
+                "Surface hidden signals no single dashboard shows.",
+                "The Twin proposes with evidence. Never touches your data directly.",
+                "Human approval required before anything executes.",
               ].map((item, i) => (
                 <motion.div
                   key={i}
@@ -364,8 +338,8 @@ export function AboutContent() {
               style={{ background: "var(--gradient-primary)" }}
             >
               <p className="text-[17px] font-semibold leading-[1.5] text-white">
-                A Knowledge Workspace over the Spine — where teams work in L1,
-                AI proposes in L2, and humans stay in control.
+                A Knowledge Workspace over the Spine — teams work in the Workbench,
+                AI proposes in the Intelligence Layer, humans stay in control.
               </p>
               <p className="mt-1 text-[15px] font-medium text-white/70">
                 This is IntegrateWise.

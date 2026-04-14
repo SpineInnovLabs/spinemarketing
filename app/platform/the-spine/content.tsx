@@ -21,34 +21,34 @@ const coreFunctions = [
   {
     icon: Zap,
     title: "Unified Adaptive Connectivity",
-    body: "Integrates every internal and external tool into a single execution layer. Treats every input as a connector — SaaS tools, AI services, MCP (Model Context Protocol), and webhooks all feed into one adaptive normalization layer.",
+    body: "Every tool feeds one adaptive normalization layer.",
   },
   {
     icon: Shield,
     title: "Contextual Firewalling",
-    body: "Filters data by industry and department before it reaches the user. A Sales Twin does not ingest Engineering context unless specifically authorized. Data is industry-filtered and department-relevant before surfacing in any Workspace view.",
+    body: "Data filtered by department before reaching users.",
   },
   {
     icon: RefreshCw,
     title: "Data Normalization",
-    body: "Converts raw tool outputs into the universal schema required by Workspace views. Handles schema drift automatically — when Salesforce changes its API, the Spine schema remains constant; only the connector mapping updates.",
+    body: "Raw outputs converted to universal schema automatically.",
   },
   {
     icon: GitBranch,
     title: "Entity 360 Assembly",
-    body: "The de-siloed master record. Queryable in sub-100ms, the Spine assembles CRM + Billing + Support + Product + Communication data into living operational graphs: Account → Contacts → Deals → Tickets → Invoices.",
+    body: "CRM, billing, and support unified into living records.",
   },
 ];
 
 const pipelineStages = [
-  { num: "1", stage: "Ingest", fn: "API polling, webhooks, streaming events, file drops" },
-  { num: "2", stage: "Validate", fn: "Schema checking, auth verification, payload integrity" },
-  { num: "3", stage: "Parse", fn: "Extract entities from vendor-specific formats" },
-  { num: "4", stage: "Normalize", fn: "Map to canonical Spine schema — Account, Contact, Deal, Ticket, Invoice, Project" },
-  { num: "5", stage: "Deduplicate", fn: "Merge logic, conflict resolution, golden record creation" },
-  { num: "6", stage: "Enrich", fn: "Add metadata, relationships, temporal markers" },
-  { num: "7", stage: "Persist", fn: "Write to SpineVault with full versioning — point-in-time reconstruction" },
-  { num: "8", stage: "Emit", fn: "Trigger downstream events, update Workspace views, notify Cognitive Layer" },
+  { num: "1", stage: "Ingest", fn: "APIs, webhooks, streaming, file drops" },
+  { num: "2", stage: "Validate", fn: "Schema, auth, and payload checks" },
+  { num: "3", stage: "Parse", fn: "Extract entities from vendor formats" },
+  { num: "4", stage: "Normalize", fn: "Map to canonical Spine schema" },
+  { num: "5", stage: "Deduplicate", fn: "Merge logic and golden records" },
+  { num: "6", stage: "Enrich", fn: "Add metadata and relationships" },
+  { num: "7", stage: "Persist", fn: "Write with full versioning" },
+  { num: "8", stage: "Emit", fn: "Trigger views and notify systems" },
 ];
 
 export function TheSpineContent() {
@@ -76,9 +76,7 @@ export function TheSpineContent() {
             {...heroFade(0.38)}
             className="mx-auto mt-7 max-w-xl text-[17px] font-medium leading-[1.55] tracking-[-0.02em] text-white/50"
           >
-            Unlike a data warehouse (analytics) or iPaaS (movement), the
-            SpineVault is the canonical residence where organizational truth
-            survives vendor changes. Knowledge Memory in a state of constant readiness.
+            Where organizational truth lives — surviving every vendor change.
           </motion.p>
         </div>
       </section>
@@ -131,7 +129,7 @@ export function TheSpineContent() {
           </motion.div>
           <motion.div {...fade(0.2)} className="mt-6 text-center">
             <p className="text-[13px] font-medium text-muted-foreground">
-              By stage 8, scattered tool data has become <strong className="text-foreground">queryable canonical truth</strong> — available to every Workspace view and every AI session in under 100ms.
+              By stage 8, scattered data becomes <strong className="text-foreground">queryable canonical truth</strong> in under 100ms.
             </p>
           </motion.div>
         </div>
@@ -145,7 +143,7 @@ export function TheSpineContent() {
               Not a cache. <span className="text-primary">The system of record.</span>
             </h2>
             <p className="mx-auto mt-4 text-[15px] font-medium leading-[1.6] text-white/40">
-              The SpineVault survives vendor changes, API deprecations, and tool migrations. Your canonical truth is yours — not locked in any vendor schema.
+              Your canonical truth survives vendor changes and API deprecations.
             </p>
             <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
               <Link href="/platform/flows" className="inline-flex h-10 items-center rounded-full border border-white/15 px-5 text-[13px] font-semibold text-white/60 hover:border-white/30 hover:text-white transition-colors">

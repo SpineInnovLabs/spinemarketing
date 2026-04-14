@@ -58,36 +58,31 @@ const interfaceComponents = [
     icon: Database,
     label: "Master Entity Cards",
     headline: "Unified objects, not tool-specific records",
-    body: "Accounts, Contacts, Deals, and Projects exist as canonical entities in the Spine — not as Salesforce rows or HubSpot records. Every field shows which system it came from, when it was last synced, and whether it conflicts with another source.",
-    visual: "entity-cards",
+    body: "Canonical entities in the Spine. Every field shows source, last sync, and conflicts.",
   },
   {
     icon: GitBranch,
     label: "Relation Graph Navigator",
     headline: "Account → Contacts → Deals → Tickets → Invoices",
-    body: "A live visual graph that traces the relationships between every canonical entity. Navigate from an Account to its active Contacts, open Deals, support Tickets, and outstanding Invoices — assembled in real-time from the Spine, not a static join.",
-    visual: "graph",
+    body: "Live visual graph tracing entity relationships. Assembled in real time from the Spine.",
   },
   {
     icon: Clock,
     label: "Temporal Views",
     headline: "Point-in-time reconstruction",
-    body: "Ask the Spine to show you any entity as it existed at a specific point in history. 'Show me this client as of last quarter' returns the exact state — ARR, contacts, health score, open tickets — as the Spine knew it on that date.",
-    visual: "temporal",
+    body: "See any entity as it existed at a specific date in history.",
   },
   {
     icon: AlertTriangle,
     label: "Conflict Resolution UI",
     headline: "Side-by-side when systems disagree",
-    body: "When Salesforce shows $120k ARR and QuickBooks shows $94k, the Entity 360 surfaces both values with source attribution and lets you manually select the canonical truth. Your resolution becomes law — stored in the Spine with your name and timestamp.",
-    visual: "conflict",
+    body: "Select the canonical truth when sources conflict. Your resolution becomes law.",
   },
   {
     icon: Activity,
     label: "Freshness Indicators",
     headline: "Data staleness badges per field",
-    body: "Every field carries a sync-status badge showing when it was last updated from its source system. A contact title that was last synced 47 days ago is flagged differently than an ARR value updated 3 minutes ago via Stripe webhook.",
-    visual: "freshness",
+    body: "Every field shows when it was last synced from its source system.",
   },
 ];
 
@@ -119,10 +114,7 @@ export function Entity360Content() {
             {...heroFade(0.38)}
             className="mx-auto mt-7 max-w-xl text-[17px] font-medium leading-[1.55] tracking-[-0.02em] text-white/50"
           >
-            The visual manifestation of the Spine&apos;s canonical entities.
-            Every Account, Contact, Deal, and Project as a unified object —
-            not a Salesforce record, not a HubSpot contact.{" "}
-            <span className="text-white/80">The truth, assembled in real time.</span>
+            Every Account, Contact, Deal, and Project as one unified object — the truth, assembled in real time.
           </motion.p>
 
           <motion.div
@@ -157,8 +149,7 @@ export function Entity360Content() {
               <span className="text-primary">Every tool's data inside.</span>
             </h2>
             <p className="mt-4 text-[16px] font-medium leading-[1.55] text-muted-foreground">
-              Each entity type is a unified object that draws from every
-              connected system — not a copy of one system&apos;s view.
+              Each entity draws from every connected system — not one tool's view.
             </p>
           </motion.div>
 
@@ -265,8 +256,7 @@ export function Entity360Content() {
               Every connection, visible at once
             </h2>
             <p className="mt-4 text-[16px] font-medium leading-[1.55] text-muted-foreground">
-              The Spine knows how entities relate. The Entity 360 makes those
-              relationships navigable.
+              The Spine knows how entities relate. Entity 360 makes them navigable.
             </p>
           </motion.div>
 
@@ -310,7 +300,7 @@ export function Entity360Content() {
                 ))}
               </div>
               <p className="mt-2 text-center text-[12px] font-medium text-muted-foreground">
-                Sub-100ms assembly from the Spine · Updated on every webhook event
+                Sub-100ms assembly from the Spine
               </p>
             </div>
           </motion.div>
@@ -329,9 +319,7 @@ export function Entity360Content() {
               <span className="text-primary">Once.</span>
             </h2>
             <p className="mt-4 text-[16px] font-medium leading-[1.55] text-muted-foreground">
-              Your resolution is persisted in the Spine with source, author,
-              and timestamp — and becomes the canonical truth for every
-              downstream AI session.
+              Your resolution becomes canonical truth for every downstream AI session.
             </p>
           </motion.div>
 
@@ -395,8 +383,7 @@ export function Entity360Content() {
             </div>
             <div className="border-t border-border bg-muted/50 px-6 py-3">
               <p className="text-[11px] font-medium text-muted-foreground">
-                Resolution will be logged in Spine audit trail with your name and timestamp.
-                Source system data remains unchanged.
+                Resolution logged in Spine audit trail with your name and timestamp.
               </p>
             </div>
           </motion.div>

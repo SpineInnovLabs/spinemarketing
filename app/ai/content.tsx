@@ -26,13 +26,13 @@ const threeLayers = [
   {
     icon: MessageSquare,
     label: "Context",
-    desc: "Emails, Slack, docs, meetings, conversations",
+    desc: "Emails, Slack, docs, and conversations",
     color: "rgb(52,211,153)",
   },
   {
     icon: BookOpen,
     label: "Session Summaries",
-    desc: "What AI learned, governed by TruthLayer before entering knowledge",
+    desc: "Governed AI outputs entering knowledge",
     color: "rgb(110,231,183)",
   },
 ];
@@ -69,22 +69,22 @@ const approvalSteps = [
   {
     num: "01",
     title: "The Twin generates",
-    desc: "Reads all three layers through the Spine, connects dots across apps, produces insight with evidence.",
+    desc: "Reads all layers, connects dots, produces evidence.",
   },
   {
     num: "02",
     title: "TruthLayer scores",
-    desc: "Confidence level, evidence chain, source freshness — all visible before you decide.",
+    desc: "Confidence, evidence chain, source freshness — all visible.",
   },
   {
     num: "03",
     title: "You review",
-    desc: "Approve, edit, or reject. Full reasoning visible. Nothing happens without your say.",
+    desc: "Approve, edit, or reject. Nothing happens without you.",
   },
   {
     num: "04",
     title: "Becomes knowledge",
-    desc: "Approved session summaries enter knowledge. Every AI in your workspace reads from it. Intelligence compounds over time.",
+    desc: "Approved summaries enter knowledge. Intelligence compounds.",
   },
 ];
 
@@ -145,10 +145,7 @@ export function AIContent() {
               }}
               className="mx-auto mt-8 max-w-2xl text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-white/55"
             >
-              The Twin reads your data, your conversations, and your session
-              history through the Spine. It thinks in full context, surfaces
-              signals in L2, and waits for your approval before anything
-              changes.
+              Full-context AI that surfaces signals and waits for your approval before anything changes.
             </motion.p>
           </div>
         </div>
@@ -203,7 +200,6 @@ export function AIContent() {
             ))}
           </div>
 
-          {/* How it connects */}
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -219,8 +215,7 @@ export function AIContent() {
             <p className="text-center text-[14px] font-semibold text-foreground">
               Usage drop <span className="text-muted-foreground">(Truth)</span>{" "}
               + budget freeze in email{" "}
-              <span className="text-muted-foreground">(Context)</span> + your
-              decision to escalate &gt;30% drops{" "}
+              <span className="text-muted-foreground">(Context)</span> + escalation rule{" "}
               <span className="text-muted-foreground">(Session Summaries)</span>{" "}
               ={" "}
               <span className="text-primary">
@@ -246,7 +241,7 @@ export function AIContent() {
               <span className="text-primary">Max 3 per entity per day.</span>
             </h2>
             <p className="mt-4 text-[15px] font-medium text-muted-foreground">
-              Every insight: what happened, why it matters, what to do next.
+              What happened, why it matters, what to do next.
             </p>
           </motion.div>
 
@@ -285,7 +280,7 @@ export function AIContent() {
         </div>
       </section>
 
-      {/* The Twin lives in L2 */}
+      {/* The Twin lives in the Intelligence Layer */}
       <section className="arvio-section dark-section">
         <div className="mx-auto max-w-[1100px]">
           <motion.div
@@ -296,31 +291,26 @@ export function AIContent() {
             className="mx-auto max-w-2xl text-center"
           >
             <h2 className="section-heading">
-              The Twin lives in <span className="text-primary">L2</span>.
-              Actions execute in <span className="text-primary">L1</span>.
+              The Twin lives in the <span className="text-primary">Intelligence Layer</span>.
+              Actions execute in the <span className="text-primary">Workbench</span>.
             </h2>
             <p className="mt-4 text-[15px] font-medium text-muted-foreground">
-              The Intelligence Layer (L2) is where the Twin surfaces insights,
-              proposes actions, and lets you chat with it. Twin Chat, action
-              buttons, and draft previews all live in L2. When you approve an
-              action, it executes in L1 — your Daily Workbench. Tasks are
-              created, records are updated, emails are sent, and everything
-              writes back to the Spine.
+              The Intelligence Layer surfaces insights. When you approve, the Workbench executes.
             </p>
           </motion.div>
           <div className="mx-auto mt-12 grid max-w-3xl gap-4 sm:grid-cols-3">
             {[
               {
                 label: "Intelligence Layer — The Twin proposes",
-                desc: "Signals surface with evidence. Chat, action buttons, and draft previews live here. You decide.",
+                desc: "Signals surface with evidence. You decide.",
               },
               {
                 label: "You approve",
-                desc: "Full reasoning visible. Approve, edit, or reject. Nothing moves without your say.",
+                desc: "Full reasoning visible. Approve, edit, or reject.",
               },
               {
                 label: "Workbench — Executes",
-                desc: "Approved actions create tasks, update records, send emails, and write back to connected apps.",
+                desc: "Approved actions update records and connected apps.",
               },
             ].map(({ label, desc }, i) => (
               <motion.div
@@ -352,7 +342,7 @@ export function AIContent() {
             transition={{ delay: 0.3, duration: 0.6 }}
             className="mx-auto mt-6 max-w-xl text-center text-[14px] font-semibold text-foreground"
           >
-            The Twin proposes. You decide. L1 executes.
+            The Twin proposes. You decide. The Workbench executes.
           </motion.p>
         </div>
       </section>
@@ -370,7 +360,7 @@ export function AIContent() {
             <h2 className="section-heading">
               Not just a chatbot.{" "}
               <span className="text-primary">
-                An AI that actually understands your work.
+                An AI that understands your work.
               </span>
             </h2>
           </motion.div>
@@ -383,23 +373,23 @@ export function AIContent() {
               },
               {
                 num: "02",
-                title: "Reads your apps, not just your prompts",
-                desc: "Full context from every connected app through the Spine.",
+                title: "Reads your apps, not just prompts",
+                desc: "Full context from every connected app.",
               },
               {
                 num: "03",
                 title: "Complete context of your work",
-                desc: "Every app, every conversation, every decision — all connected.",
+                desc: "Every app, conversation, and decision connected.",
               },
               {
                 num: "04",
                 title: "Learns without polluting",
-                desc: "Reads truth and context. Never overwrites them. Session summaries go through TruthLayer.",
+                desc: "Session summaries go through TruthLayer.",
               },
               {
                 num: "05",
                 title: "Limited by design",
-                desc: "Maximum 3 insights per entity per day. Quality over noise.",
+                desc: "Max 3 insights per entity per day.",
               },
             ].map(({ num, title, desc }, i) => (
               <motion.div
@@ -460,13 +450,7 @@ export function AIContent() {
               </span>
             </h2>
             <p className="mt-6 text-[15px] font-medium leading-[1.5] text-white/40">
-              TruthLayer can&apos;t be bypassed, overridden, or turned off.
-              It&apos;s how the product is built.
-            </p>
-            <p className="mt-3 text-[14px] font-medium leading-[1.5] text-white/25 italic">
-              AI session summaries are the only path into Knowledge. They never
-              enter the Spine directly. This keeps your source of truth clean
-              and your AI&apos;s memory governed.
+              TruthLayer can&apos;t be bypassed or turned off. It&apos;s how the product is built.
             </p>
           </motion.div>
 

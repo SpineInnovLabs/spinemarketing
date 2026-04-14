@@ -45,25 +45,23 @@ const opsLogos = [
 const comparisons = [
   {
     before: "Revenue numbers differ in every tool",
-    after:
-      "One unified revenue view — assembled from every system automatically",
+    after: "One unified revenue view — automatic",
   },
   {
-    before: "Board deck assembled manually every quarter",
-    after: "Reports build themselves from live data — ready in minutes",
+    before: "Board deck assembled manually",
+    after: "Reports build from live data in minutes",
   },
   {
-    before: "Forecasts based on last month's spreadsheet",
-    after: "Real-time projections grounded in actual pipeline and billing data",
+    before: "Forecasts from last month's spreadsheet",
+    after: "Real-time projections from actual data",
   },
   {
-    before: "Problems discovered after they've already hit revenue",
-    after: "Risks flagged early — with cross-system evidence attached",
+    before: "Problems found after they hit revenue",
+    after: "Risks flagged early with evidence",
   },
   {
-    before: "Each team sees its own tool, its own slice",
-    after:
-      "Everyone sees the same truth — through their own role-specific lens",
+    before: "Each team sees its own slice",
+    after: "Same truth — role-specific lenses",
   },
 ];
 
@@ -71,32 +69,32 @@ const fourViews = [
   {
     icon: User,
     role: "For Founders",
-    desc: "ARR, growth rate, cash signals, and risk — one screen, real time. No digging.",
+    desc: "ARR, cash, and risk — one screen, real time.",
   },
   {
     icon: Building2,
     role: "For CEOs",
-    desc: "Revenue, retention, pipeline health, team performance — board prep in minutes, not days.",
+    desc: "Revenue, pipeline, retention — board prep in minutes.",
   },
   {
     icon: Settings,
     role: "For COOs",
-    desc: "Who's blocked, what's at risk, where handoffs break — with evidence, not anecdotes.",
+    desc: "Blockers, risks, broken handoffs — with evidence.",
   },
   {
     icon: Monitor,
     role: "For CTO/CIOs",
-    desc: "Integration health, data quality, sync status, system landscape — all in one place.",
+    desc: "Integration health, data quality, sync status.",
   },
 ];
 
 const dayOneOutcomes = [
-  "One cross-system operating view — CRM, billing, support, project management, email assembled automatically",
-  "Role-specific dashboards — same data, different lenses for every leader",
-  "Board decks and reports that build themselves from live data",
-  "Risk signals surfaced early — revenue drops, support spikes, pipeline gaps connected and flagged",
-  "AI that reasons across your entire business — and waits for your approval before acting",
-  "Day-one value — not months of implementation and consultant fees",
+  "Cross-system operating view — assembled automatically",
+  "Role-specific dashboards — same data, different lenses",
+  "Board decks that build from live data",
+  "Risk signals surfaced early with cross-system evidence",
+  "AI reasons across your business — waits for approval",
+  "Day-one value — no months of implementation",
 ];
 
 /* ═══════════════════════════════════════════════════════════
@@ -564,28 +562,28 @@ const howItWorksSteps: StickyScrollStep[] = [
     label: "Step 01 \u2014 Connect",
     title: "Plug in the apps your business runs on",
     description:
-      "Salesforce, Stripe, QuickBooks, Jira, Slack, HubSpot, Asana, Gmail \u2014 connect via OAuth in minutes. Your apps keep working exactly as they do today. The Spine starts reading them immediately. No engineering team required.",
+      "Connect via OAuth in minutes. No engineering required.",
     visual: <OpsConnectVisual />,
   },
   {
     label: "Step 02 \u2014 Build the Spine",
     title: "Three data flows. One complete picture.",
     description:
-      "Revenue, pipeline, and costs sync into the Spine as Truth. Emails and conversations enrich entities as Context. AI session outputs become Session Summaries after TruthLayer review. All three converge in your Daily Workbench.",
+      "Revenue, pipeline, and costs sync as Truth. Context and sessions converge in your Workbench.",
     visual: <OpsNormalizeVisual />,
   },
   {
     label: "Step 03 \u2014 Daily Workbench",
     title: "Your operating view — always current.",
     description:
-      "MRR, pipeline health, support costs, team velocity, and cash flow converge into a live workspace. Manage accounts, run tasks, and review renewals — all in the Workbench. Same truth, four role-specific lenses. No more assembling context from twelve tabs.",
+      "MRR, pipeline, support, and cash in one live workspace. Same truth, four role-specific lenses.",
     visual: <OpsViewVisual />,
   },
   {
     label: "Step 04 \u2014 Intelligence Layer",
     title: "AI proposes. You decide.",
     description:
-      "The Twin surfaces anomalies, generates board decks, flags cash flow risks, and recommends actions \u2014 all in the Intelligence Layer. Nothing moves to the Workbench or writes to connected apps without your approval. Evidence on every insight. Full audit trail.",
+      "AI surfaces anomalies, drafts board decks, and flags risks. Nothing executes without your approval.",
     visual: <OpsGovernVisual />,
   },
 ];
@@ -671,8 +669,8 @@ export function BusinessOpsContent() {
                 }}
                 className="text-[40px] font-semibold leading-[1.1em] tracking-[-0.05em] text-white sm:text-[52px] lg:text-[60px]"
               >
-                Run Business Ops from one{" "}
-                <span className="text-primary">governed intelligence workspace.</span>
+                One workspace.{" "}
+                <span className="text-primary">Your entire business, connected.</span>
               </motion.h1>
               <motion.p
                 initial={{ opacity: 0, y: 12 }}
@@ -686,11 +684,7 @@ export function BusinessOpsContent() {
                 }}
                 className="mx-auto mt-8 max-w-2xl text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-white/55 lg:mx-0"
               >
-                Business Ops is the Workbench for founders, COOs, RevOps, and
-                operations leaders who need a clear, live picture of the
-                business across CRM, finance, support, product, and internal
-                work — backed by an Intelligence Layer that reasons across
-                systems with human-in-the-loop control.
+                Live picture across CRM, finance, support, and ops — with AI that reasons and waits for approval.
               </motion.p>
               <motion.div
                 initial={{ opacity: 0, y: 12 }}
@@ -784,14 +778,10 @@ export function BusinessOpsContent() {
               </h2>
               <div className="mt-8 space-y-4 text-[17px] font-medium leading-[1.7] tracking-[-0.02em] text-muted-foreground">
                 <p>
-                  Revenue is in Salesforce. Invoices are in QuickBooks. Tickets
-                  are in Zendesk. Projects are in Jira. Plans are in Notion.
-                  Communication is in Slack and Gmail. You&apos;re the one
-                  connecting these into a picture of the business.
+                Revenue, invoices, tickets, projects — all in different tools. You&apos;re the one connecting them.
                 </p>
                 <p className="text-foreground font-semibold">
-                  That&apos;s not running a business. That&apos;s running a data
-                  collection agency.
+                  That&apos;s not running a business. That&apos;s data plumbing.
                 </p>
               </div>
             </motion.div>
@@ -799,7 +789,7 @@ export function BusinessOpsContent() {
         </div>
       </section>
 
-      {/* ── L1/L2 SOLUTION FRAMING ────────────────────────── */}
+      {/* ── WORKBENCH/INTELLIGENCE SOLUTION FRAMING ────────────────────────── */}
       <section className="arvio-section dark-section">
         <div className="mx-auto max-w-[1100px]">
           <motion.div
@@ -822,9 +812,9 @@ export function BusinessOpsContent() {
               transition={{ type: "spring", bounce: 0.2, duration: 0.6, delay: 0 }}
               className="arvio-card p-6"
             >
-              <h3 className="text-[14px] font-bold uppercase tracking-[0.1em] text-primary mb-3">L1 — Your Daily Workbench for the business</h3>
+              <h3 className="text-[14px] font-bold uppercase tracking-[0.1em] text-primary mb-3">Workbench — Your daily surface for the business</h3>
               <p className="text-[14px] font-medium leading-[1.7] text-muted-foreground">
-                Open any view — by function, team, or initiative — and see the live operating picture: pipeline, spend, headcount, utilisation, decisions, blockers, and conversations. Annotate, assign, and act. This is where your team works every day.
+                Live operating picture: pipeline, spend, utilization, blockers. Annotate, assign, and act daily.
               </p>
             </motion.div>
             <motion.div
@@ -834,9 +824,9 @@ export function BusinessOpsContent() {
               transition={{ type: "spring", bounce: 0.2, duration: 0.6, delay: 0.1 }}
               className="arvio-card p-6"
             >
-              <h3 className="text-[14px] font-bold uppercase tracking-[0.1em] text-primary mb-3">L2 — The Intelligence Layer for the business</h3>
+              <h3 className="text-[14px] font-bold uppercase tracking-[0.1em] text-primary mb-3">Intelligence Layer — AI reasoning for the business</h3>
               <p className="text-[14px] font-medium leading-[1.7] text-muted-foreground">
-                The Twin reads the full business through the Spine. It detects cross-system anomalies, flags risks before they surface, and drafts recommended actions with evidence. You review in L2, approve, and the action executes in L1.
+                AI detects cross-system anomalies and drafts actions with evidence. You approve before execution.
               </p>
             </motion.div>
           </div>
@@ -913,8 +903,7 @@ export function BusinessOpsContent() {
               <span className="text-primary">Different lenses.</span>
             </h2>
             <p className="mt-4 text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">
-              Every leader sees the same truth from the Spine — just through
-              the lens that matters most for their role.
+              Same truth, different lens for each role.
             </p>
           </motion.div>
           <div className="mx-auto mt-16 grid max-w-4xl gap-6 sm:grid-cols-2">
@@ -1073,26 +1062,26 @@ export function BusinessOpsContent() {
               {
                 num: "01",
                 title: "Monday operating brief for leadership",
-                quote: "Give me a weekly brief combining MRR, pipeline, churn risk, cash, support load, and project status — with a narrative of what changed and why.",
-                desc: "The Twin reads the Spine on Monday morning and generates a brief covering every function. You see it in L2, linked to live data in L1. One screen instead of twelve tabs.",
+                quote: "Weekly brief: MRR, pipeline, churn, cash — what changed and why.",
+                desc: "AI generates a Monday brief across every function. One screen, not twelve tabs.",
               },
               {
                 num: "02",
                 title: "Revenue movement analysis",
-                quote: "Explain this month's net revenue change: new business, expansions, contractions, and churn. Show me the key accounts and events behind each.",
-                desc: "The Twin traces revenue shifts back to specific accounts, deals, and signals from Salesforce, Stripe, support, and product usage. Evidence comes through the Spine. You see the full breakdown in L2.",
+                quote: "Explain net revenue change — accounts and events behind each shift.",
+                desc: "AI traces revenue shifts to specific accounts and deals with evidence.",
               },
               {
                 num: "03",
                 title: "Cross-system risk radar",
-                quote: "Surface situations where multiple systems point to trouble — rising support volume, slipping delivery milestones, and delayed payments for the same accounts.",
-                desc: "The Twin correlates signals across apps that no single tool can see. When support, delivery, and payments all flash red for the same account, it surfaces the pattern with evidence. You review in L2, approve the intervention, and it executes in L1.",
+                quote: "Surface where multiple systems point to trouble for the same account.",
+                desc: "AI correlates cross-app signals no single tool can see. You approve interventions.",
               },
               {
                 num: "04",
                 title: "Board pack generation",
-                quote: "From live data, generate a board-ready summary with key charts and a written explanation. Let me approve and export instead of building from spreadsheets.",
-                desc: "Entity 360 has the data. The Twin drafts the narrative. You review, edit, approve, and export. Board prep goes from days to minutes.",
+                quote: "Generate a board-ready summary from live data for my approval.",
+                desc: "AI drafts the narrative. You review, approve, and export in minutes.",
               },
             ].map(({ num, title, quote, desc }, i) => (
               <motion.div
@@ -1137,9 +1126,7 @@ export function BusinessOpsContent() {
               <span className="text-primary">one source of truth.</span>
             </h2>
             <p className="mt-6 text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">
-              See how one workspace shows how the business is really doing, why
-              it moved, and what to do next — with AI that thinks in full
-              context and waits for your approval.
+              One workspace. Full business picture. AI that waits for your approval.
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-2.5 sm:flex-row">
               <Button

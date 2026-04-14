@@ -37,33 +37,33 @@ const csLogos = [
 const comparisons = [
   {
     before: "Check 8 apps every morning",
-    after: "One live profile per account — assembled automatically",
+    after: "One live profile per account",
   },
   {
-    before: "Health scores in a spreadsheet someone updates weekly",
-    after: "Health computed from real data across every system",
+    before: "Health scores in a stale spreadsheet",
+    after: "Health computed from real data",
   },
   {
-    before: "Churn signals hiding across different apps",
-    after: "Risks flagged 90 days out — with evidence attached",
+    before: "Churn signals hiding across apps",
+    after: "Risks flagged 90 days out",
   },
   {
-    before: "Hours of QBR prep across tabs and docs",
-    after: "QBR-ready in minutes, every data point sourced",
+    before: "Hours of QBR prep",
+    after: "QBR-ready in minutes",
   },
   {
-    before: "AI with zero context on your accounts",
-    after: "AI reads Truth, Context, and Session Summaries — then asks permission",
+    before: "AI with zero account context",
+    after: "AI reads full context — then asks permission",
   },
 ];
 
 const dayOneOutcomes = [
-  "One complete view of every account — CRM, support, billing, email, conversations assembled automatically",
-  "Health scores that reflect reality — computed from actual data, not a field someone forgot to update",
-  "Churn signals surfaced 90 days before renewal — with evidence, not guesses",
-  "QBR prep in minutes — every data point sourced and ready",
-  "AI that reasons with full context — and waits for your approval before acting",
-  "Knowledge that compounds — every decision teaches the system",
+  "Complete account view — CRM, support, billing, email unified",
+  "Health scores computed from real data automatically",
+  "Churn signals surfaced 90 days before renewal",
+  "QBR prep in minutes — every data point sourced",
+  "AI reasons with full context — waits for approval",
+  "Knowledge compounds — every decision teaches the system",
 ];
 
 /* ═══════════════════════════════════════════════════════════
@@ -565,28 +565,28 @@ const howItWorksSteps: StickyScrollStep[] = [
     label: "Step 01 \u2014 Connect",
     title: "Plug in your CS stack",
     description:
-      "Salesforce, HubSpot, Zendesk, Intercom, Stripe, Slack, Gmail \u2014 plug in the apps your CS team uses every day. One-time OAuth setup. No engineering team required.",
+      "Plug in your CS apps via OAuth. No engineering required.",
     visual: <CSConnectVisual />,
   },
   {
     label: "Step 02 \u2014 Unify",
     title: "Account data gets organized automatically",
     description:
-      "Scattered data from every tool flows into one intelligence layer. Duplicates merge. Relationships are preserved. One reliable profile for every account \u2014 built behind the scenes.",
+      "Data from every tool merges into one reliable account profile automatically.",
     visual: <CSNormalizeVisual />,
   },
   {
     label: "Step 03 \u2014 Entity 360",
     title: "See every account completely",
     description:
-      "Every interaction, payment, ticket, and conversation converges into a live Entity 360 view. Truth, Context, and Session Summaries in one place. No more digging through apps to prep for a call.",
+      "Payments, tickets, and conversations in one live Entity 360 view. No more digging through apps.",
     visual: <CSEntity360Visual />,
   },
   {
     label: "Step 04 \u2014 Govern",
     title: "AI proposes. You decide.",
     description:
-      "AI spots churn risks, drafts renewal emails, and flags escalations \u2014 but nothing fires without your approval. You see the evidence and the reasoning. You always have the final say.",
+      "AI flags risks and drafts actions — nothing fires without your approval.",
     visual: <CSGovernVisual />,
   },
 ];
@@ -672,9 +672,9 @@ export function AccountSuccessContent() {
                 }}
                 className="text-[40px] font-semibold leading-[1.1em] tracking-[-0.05em] text-white sm:text-[52px] lg:text-[60px]"
               >
-                Protect revenue with a clear{" "}
+                Protect revenue.{" "}
                 <span className="text-primary">
-                  Account Success workspace.
+                  See every account clearly.
                 </span>
               </motion.h1>
               <motion.p
@@ -689,10 +689,7 @@ export function AccountSuccessContent() {
                 }}
                 className="mx-auto mt-8 max-w-2xl text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-white/55 lg:mx-0"
               >
-                Account Success is the Workbench where CSMs, account managers,
-                and leaders see the full story of every account in one place,
-                while the Intelligence Layer explains what changed and proposes
-                next steps that always wait for your approval.
+                One workspace for every account. AI explains what changed and proposes next steps — always with your approval.
               </motion.p>
               <motion.div
                 initial={{ opacity: 0, y: 12 }}
@@ -788,10 +785,7 @@ export function AccountSuccessContent() {
               </h2>
               <div className="mt-8 space-y-4 text-[17px] font-medium leading-[1.7] tracking-[-0.02em] text-muted-foreground">
                 <p>
-                  CRM says healthy. Support has 3 P1 tickets. Billing shows a
-                  failed payment. Champion silent for 2 weeks. You&apos;re the
-                  one connecting the dots manually. No single tool tells you
-                  what&apos;s actually happening.
+                  CRM says healthy. Support has 3 P1 tickets. You&apos;re connecting the dots manually.
                 </p>
                 <p className="text-foreground font-semibold">
                   That&apos;s not Customer Success. That&apos;s data plumbing.
@@ -802,7 +796,7 @@ export function AccountSuccessContent() {
         </div>
       </section>
 
-      {/* ── L1/L2 SOLUTION FRAMING ────────────────────────── */}
+      {/* ── WORKBENCH/INTELLIGENCE SOLUTION FRAMING ────────────────────────── */}
       <section className="arvio-section dark-section">
         <div className="mx-auto max-w-[1100px]">
           <motion.div
@@ -825,9 +819,9 @@ export function AccountSuccessContent() {
               transition={{ type: "spring", bounce: 0.2, duration: 0.6, delay: 0 }}
               className="arvio-card p-6"
             >
-              <h3 className="text-[14px] font-bold uppercase tracking-[0.1em] text-primary mb-3">L1 — Your Daily Workbench for accounts</h3>
+              <h3 className="text-[14px] font-bold uppercase tracking-[0.1em] text-primary mb-3">Workbench — Your daily surface for accounts</h3>
               <p className="text-[14px] font-medium leading-[1.7] text-muted-foreground">
-                Open any account and see the full story: revenue, product usage, support tickets, emails, conversations, stakeholders, and renewal timeline. Track tasks, manage renewals, run playbooks, and log engagement. This is where you work every day.
+                Full account story in one view: revenue, usage, tickets, emails, renewals. Track tasks and run playbooks daily.
               </p>
             </motion.div>
             <motion.div
@@ -837,9 +831,9 @@ export function AccountSuccessContent() {
               transition={{ type: "spring", bounce: 0.2, duration: 0.6, delay: 0.1 }}
               className="arvio-card p-6"
             >
-              <h3 className="text-[14px] font-bold uppercase tracking-[0.1em] text-primary mb-3">L2 — The Intelligence Layer for account teams</h3>
+              <h3 className="text-[14px] font-bold uppercase tracking-[0.1em] text-primary mb-3">Intelligence Layer — AI reasoning for account teams</h3>
               <p className="text-[14px] font-medium leading-[1.7] text-muted-foreground">
-                The Twin reads the complete picture through the Spine. It highlights health drops, churn risk, expansion signals, and champion changes. Recommended actions appear with evidence. You review in L2, approve, and the action executes in L1.
+                AI highlights health drops, churn risk, and expansion signals. You review evidence, approve, and actions execute.
               </p>
             </motion.div>
           </div>
@@ -1028,26 +1022,26 @@ export function AccountSuccessContent() {
               {
                 num: "01",
                 title: "Early churn detection",
-                quote: "Show me accounts whose usage is dropping, tickets are rising, invoices are late, or champions are quiet — all in one view, before renewal is close.",
-                desc: "The workspace shows a ranked list of at-risk accounts with evidence from every connected app. You see the full picture in L1. The Twin flags what changed and why in L2.",
+                quote: "Show me at-risk accounts before renewal is close.",
+                desc: "Ranked at-risk accounts with cross-app evidence. AI flags what changed and why.",
               },
               {
                 num: "02",
                 title: "Guided renewal save plan",
-                quote: "For this at-risk account, generate a renewal risk summary, propose the top 3 actions, and draft the outreach and internal tasks for me to approve.",
-                desc: "The Twin reads the account's Entity 360, prepares a recovery plan with evidence, and queues draft emails and tasks. You review in L2, approve, and the actions execute in L1.",
+                quote: "Generate a renewal risk summary and draft the save play for approval.",
+                desc: "AI prepares a recovery plan with evidence. You approve, actions execute.",
               },
               {
                 num: "03",
                 title: "QBR in a click",
-                quote: "Assemble a QBR for this customer: revenue trend, product usage, support history, NPS, and key events. Turn it into a brief and slide outline I can refine.",
-                desc: "Entity 360 already has the data. The Twin drafts a QBR outline with talking points. You review, edit, and approve before sharing. Minutes, not hours.",
+                quote: "Assemble a QBR with revenue, usage, support, and NPS.",
+                desc: "AI drafts QBR with talking points. You refine and share in minutes.",
               },
               {
                 num: "04",
                 title: "Expansion opportunity surfacing",
-                quote: "List customers with strong adoption, good NPS, and new stakeholders appearing in email or Slack. Suggest the next expansion motion for each.",
-                desc: "The Twin scans Truth and Context signals across your portfolio and surfaces accounts ready to grow. Suggested actions appear in L2 with evidence. You approve the ones that make sense.",
+                quote: "Surface accounts ready for expansion with evidence.",
+                desc: "AI identifies growth-ready accounts. Suggested actions with evidence — you approve.",
               },
             ].map(({ num, title, quote, desc }, i) => (
               <motion.div
@@ -1092,8 +1086,7 @@ export function AccountSuccessContent() {
               <span className="text-primary">between your account apps.</span>
             </h2>
             <p className="mt-6 text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">
-              See how one workspace gives you the full story for every account,
-              with AI that thinks in context and waits for your approval.
+              One workspace. Full account story. AI that waits for your approval.
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-2.5 sm:flex-row">
               <Button

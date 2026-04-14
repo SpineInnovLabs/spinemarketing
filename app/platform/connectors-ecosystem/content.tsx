@@ -10,25 +10,25 @@ const protocols = [
   {
     icon: Globe, accent: "#3b82f6", bg: "rgba(59,130,246,0.12)",
     name: "SaaS APIs",
-    desc: "RESTful connections to Salesforce, HubSpot, Stripe, Zendesk, and 60+ SaaS tools with field-level schema registry. Every field maps to a canonical Spine entity.",
+    desc: "60+ tools with field-level schema registry.",
     tags: ["60+ integrations", "Field-level schema", "Auto-mapping"],
   },
   {
     icon: Zap, accent: "#8b5cf6", bg: "rgba(139,92,246,0.12)",
     name: "MCP Protocol",
-    desc: "Model Context Protocol — a standardized bridge for AI-native communication, giving models controlled access to local and remote data without custom integration work.",
+    desc: "AI-native bridge for controlled data access.",
     tags: ["AI-native bridge", "Controlled data access", "Standardized"],
   },
   {
     icon: RefreshCw, accent: "#a855f7", bg: "rgba(168,85,247,0.12)",
     name: "Webhooks",
-    desc: "Event-driven real-time ingestion. Payloads arrive, validate, and enter the normalization feed with idempotency keys — guaranteeing no duplicate records even on retries.",
+    desc: "Real-time ingestion with idempotency keys.",
     tags: ["Real-time events", "Idempotency keys", "Retry-safe"],
   },
   {
     icon: FileText, accent: "#f59e0b", bg: "rgba(245,158,11,0.12)",
     name: "File Ingestion",
-    desc: "CSV, PDF, and XLSX drops processed through the same parsing and normalization pipeline as live API data — no separate workflow, no manual mapping.",
+    desc: "CSV, PDF, XLSX through the same normalization pipeline.",
     tags: ["CSV / PDF / XLSX", "Same pipeline", "Automatic normalization"],
   },
 ];
@@ -37,17 +37,17 @@ const services = [
   {
     icon: Plug, accent: "#06b6d4", bg: "rgba(6,182,212,0.12)",
     name: "Loader Service",
-    desc: "High-velocity ingestion engine with Dead Letter Queue management — failed records are held, retried, and surfaced for review without losing a single event.",
+    desc: "High-velocity ingestion with Dead Letter Queue management.",
   },
   {
     icon: Globe, accent: "#10b981", bg: "rgba(16,185,129,0.12)",
     name: "Adapter Pattern",
-    desc: "Standardized interface per connector category (CRM, Billing, Support) ensures consistent normalization regardless of which vendor you swap in or out.",
+    desc: "Consistent normalization regardless of vendor swaps.",
   },
   {
     icon: Shield, accent: "#f43f5e", bg: "rgba(244,63,94,0.12)",
     name: "Schema Registry",
-    desc: "Versioned field mappings per connector. Every field-to-canonical mapping is tracked, auditable, and rollback-ready when upstream APIs change.",
+    desc: "Versioned, auditable field mappings per connector.",
   },
 ];
 
@@ -74,7 +74,7 @@ export function ConnectorsEcosystemContent() {
               <span className="text-primary">One normalized feed.</span>
             </h1>
             <p className="text-xl text-white/55 max-w-2xl mx-auto leading-relaxed mb-10">
-              SaaS APIs, AI models, webhooks, and file drops — all treated as sensory inputs to the Spine. Automatically upgraded when upstream APIs change. Zero manual intervention.
+              All inputs auto-upgrade when upstream APIs change — zero manual intervention.
             </p>
             <Link
               href="/contact?intent=demo"
@@ -163,7 +163,7 @@ export function ConnectorsEcosystemContent() {
             className="rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.05] to-transparent p-14"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Connect everything in minutes.</h2>
-            <p className="text-white/50 text-lg mb-10 max-w-lg mx-auto">See how the Connectors EcoSystem turns your fragmented SaaS stack into a single normalized data feed.</p>
+            <p className="text-white/50 text-lg mb-10 max-w-lg mx-auto">See the full Connectors EcoSystem in a live demo.</p>
             <Link
               href="/contact?intent=demo"
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl text-[15px] font-semibold text-white"

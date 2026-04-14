@@ -6,35 +6,35 @@ export function ManufacturingContent() {
   return (
     <IndustrySolutionLayout
       category="Manufacturing & Trade"
-      headline="Catch exceptions. Before your customers do."
-      subheadline="Connect orders, shipments, and payments into one exception workspace — AI flags what's stuck before it reaches the customer."
+      headline="Living tissue that connects your supply chain."
+      subheadline="Orders, shipments, and payments unified into one exception workspace."
       ctaLabel="Explore the workspace →"
       problem={{
         bullets: [
-          "Shipment delays appear in logistics before they reach CRM or customer-facing teams.",
-          "Payment holds and AR exceptions live in finance, unknown to operations.",
-          "You lose cash to shipped-but-not-billed orders because systems don't talk.",
+          "Shipment delays appear in logistics but not in CRM.",
+          "Payment holds live in finance, unknown to operations.",
+          "Shipped-but-not-billed orders bleed cash silently.",
         ],
       }}
       capabilities={[
         {
           title: "Exception Triage",
-          desc: "Prioritize delayed orders by customer value and contract penalties — highest impact first.",
+          desc: "Prioritize delays by customer value and contract penalties.",
         },
         {
           title: "Cash Flow Protection",
-          desc: "Link shipment confirmation to invoice release and flag shipped-but-not-billed orders immediately.",
+          desc: "Link shipment confirmation to invoice release automatically.",
         },
         {
           title: "Supplier Risk Monitoring",
-          desc: "Surface inbound delays that cascade into outbound commitments before they become customer escalations.",
+          desc: "Surface inbound delays before they cascade to customers.",
         },
         {
           title: "Customer Communication Governance",
-          desc: "AI drafts delay notifications with full context — you approve before anything reaches the customer.",
+          desc: "AI drafts delay notifications. You approve before sending.",
         },
       ]}
-      governance="Every exception action and customer notification routes through the approval gate — full audit trail of who approved which intervention and based on what data."
+      governance="Every exception action routes through approval. Full audit trail included."
       connectors={[
         "NetSuite", "SAP", "Shopify", "Salesforce",
         "FedEx API", "DHL API", "QuickBooks",

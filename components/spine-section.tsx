@@ -27,7 +27,7 @@ export function SpineSection() {
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-emerald-300">connects everything.</span>
           </h2>
           <p className="mt-6 text-base font-medium leading-relaxed text-white/50">
-            Every app you use plugs into the Spine. Data flows in, gets normalized into one common language, and comes out as a single, unified truth. No migration. No engineering team. The Spine adapts when your tools change — your truth stays intact.
+            Apps plug in. Data normalizes. Truth stays intact — even when tools change.
           </p>
         </motion.div>
 
@@ -51,15 +51,15 @@ export function SpineSection() {
           {[
             {
               title: "Apps flow in",
-              desc: "CRM, billing, support, chat, docs — all connected via OAuth. No code, no CSV exports.",
+              desc: "OAuth connect. No code. No CSV exports.",
             },
             {
               title: "Truth emerges",
-              desc: "The Spine normalizes records into one language. Duplicates merge. Conflicts resolve. One truth per entity.",
+              desc: "Duplicates merge. Conflicts resolve. One truth.",
             },
             {
               title: "Tools can change",
-              desc: "Switch from Salesforce to HubSpot? The Spine adapts. Your unified truth survives any migration.",
+              desc: "Swap any app. The Spine adapts automatically.",
             },
           ].map((item, i) => (
             <motion.div

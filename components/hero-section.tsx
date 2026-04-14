@@ -579,9 +579,7 @@ export function HeroSection() {
             }}
             className="mx-auto mt-8 max-w-2xl text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-white/55"
           >
-            IntegrateWise turns tool data, live context, and AI session memory
-            into one knowledge workspace — so AI works with full context and
-            every action stays under your control.
+            One workspace. Full context. Every action under your control.
           </motion.p>
 
           {/* CTAs */}

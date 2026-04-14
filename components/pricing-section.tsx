@@ -19,13 +19,13 @@ const regions: { key: Region; label: string }[] = [
 const plans = [
   {
     name: "Starter",
-    tier: "L1",
+    tier: "Workbench",
     prices: { india: "₹999", international: "$49", enterprise: "Custom" },
     period: "/mo",
-    description: "Your Workbench. Connect your apps. See every account, task, and workflow in one unified view over the Spine.",
+    description: "Connect apps. See everything in one view.",
     features: [
       "Up to 5 connectors via OAuth",
-      "L1 Workbench — accounts, tasks, workflows, calendar",
+      "Workbench — accounts, tasks, workflows, calendar",
       "Entity 360 — complete view of every account from the Spine",
       "Truth + Context data flows (structured records + signals)",
       "Basic risk alerts and account health signals",
@@ -38,14 +38,14 @@ const plans = [
   },
   {
     name: "Growth",
-    tier: "L1 + L2",
+    tier: "Workbench + Intelligence",
     prices: { india: "₹2,999", international: "$99", enterprise: "Custom" },
     period: "/mo",
-    description: "Activate the Intelligence Layer. The Twin watches through the Spine, surfaces signals with evidence, and proposes actions for your approval.",
+    description: "The Twin surfaces signals and proposes actions.",
     features: [
       "Up to 15 connectors",
       "Everything in Starter",
-      "L2 Intelligence Layer — Twin Chat, action proposals, draft previews",
+      "Intelligence Layer — Twin Chat, action proposals, draft previews",
       "AI Session Summaries linked to Entity 360s in the Spine",
       "Confidence scores and evidence chains on every insight",
       "TruthLayer governance — every AI action waits for your approval",
@@ -62,7 +62,7 @@ const plans = [
     tier: "Enterprise",
     prices: { india: "₹7,999", international: "$199", enterprise: "Custom" },
     period: "/mo",
-    description: "Full L1 + L2 with enterprise governance. Every AI proposal passes through the Govern Gate — non-bypassable, auditable, and traceable.",
+    description: "Enterprise governance. Every action auditable.",
     features: [
       "Unlimited connectors",
       "Everything in Growth",
@@ -102,7 +102,7 @@ export function PricingSection({ hideHeading = false }: { hideHeading?: boolean 
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-emerald-300">Scale as you grow.</span>
               </h2>
               <p className="mt-4 text-base font-medium leading-relaxed text-white/50">
-                Start small, add more apps and intelligence as your team needs it. No hidden costs.
+                Start small. Scale as you grow. No hidden costs.
               </p>
             </>
           )}

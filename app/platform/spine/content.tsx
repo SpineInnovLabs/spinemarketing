@@ -10,25 +10,25 @@ const capabilities = [
   {
     icon: Database,
     title: "SpineVault",
-    desc: "Maintains Knowledge Memory in constant readiness — zero-shot context maintenance without retraining. Every entity state preserved with full version history.",
+    desc: "Knowledge Memory in constant readiness — zero retraining needed.",
     stat: "Zero retraining",
   },
   {
     icon: GitMerge,
     title: "Canonical Entities",
-    desc: "Account, Contact, Deal, Ticket, Invoice exist as neutral objects that survive CRM migrations. Vendor fields map to canonical schema — never the other way around.",
+    desc: "Vendor-neutral objects that survive CRM migrations.",
     stat: "Vendor-neutral",
   },
   {
     icon: Clock,
     title: "Temporal Truth",
-    desc: "Append-only versioning enables point-in-time reconstruction of any entity state. Reconstruct exactly what was known about any record at any moment in history.",
+    desc: "Point-in-time reconstruction of any entity state.",
     stat: "Full history",
   },
   {
     icon: Shield,
     title: "Schema Drift Immunity",
-    desc: "Upstream API changes are handled in the mapping layer. The Spine schema remains constant — no downstream breakage when Salesforce updates a field or Stripe restructures an object.",
+    desc: "Upstream API changes handled in the mapping layer.",
     stat: "Always stable",
   },
 ];
@@ -67,7 +67,7 @@ export function SpineContent() {
               <span className="text-primary">everything else maps to.</span>
             </h1>
             <p className="text-xl text-white/55 max-w-2xl mx-auto leading-relaxed mb-10">
-              A vendor-neutral data layer that converts fragmented SaaS outputs into a single, versioned, time-aware source of truth — without retraining, without rebuilding, without compromise.
+              A vendor-neutral data layer converting fragmented SaaS into one versioned source of truth.
             </p>
             <Link
               href="/contact?intent=demo"
@@ -133,7 +133,7 @@ export function SpineContent() {
               </div>
               <div>
                 <h2 className="text-2xl font-bold">8-Stage Normalization Pipeline</h2>
-                <p className="text-white/45 text-sm">Every record that enters the Spine goes through the same governed path.</p>
+                <p className="text-white/45 text-sm">Every record follows the same governed path.</p>
               </div>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -162,7 +162,7 @@ export function SpineContent() {
             className="rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.05] to-transparent p-14"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Your data, perfectly organized.</h2>
-            <p className="text-white/50 text-lg mb-10 max-w-lg mx-auto">See how the Spine unifies your entire SaaS stack in a single 30-minute session.</p>
+            <p className="text-white/50 text-lg mb-10 max-w-lg mx-auto">See the Spine unify your SaaS stack in 30 minutes.</p>
             <Link
               href="/contact?intent=demo"
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl text-[15px] font-semibold text-white"

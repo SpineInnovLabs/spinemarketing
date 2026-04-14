@@ -25,8 +25,8 @@ const platformFAQs: FAQItem[] = [
     answer: "The Spine is IntegrateWise's data backbone. It connects to your apps via OAuth, normalizes records from every system into a unified model, and keeps everything in sync. Think of it as a live, cross-system database — not a data warehouse. It's what makes Entity 360 views, AI reasoning, and cross-app actions possible.",
   },
   {
-    question: "What are L1 and L2?",
-    answer: "L1 is the Workbench — where you see accounts, tasks, workflows, and engagement logs in one view. L2 is the Intelligence Layer — where the AI Twin reads your data through the Spine, spots patterns, drafts actions, and presents them with evidence. You approve everything from L1.",
+    question: "What are the Workbench and Intelligence Layer?",
+    answer: "The Workbench is where you see accounts, tasks, workflows, and engagement logs in one view. The Intelligence Layer is where the AI Twin reads your data through the Spine, spots patterns, drafts actions, and presents them with evidence. You approve everything from the Workbench.",
   },
   {
     question: "How is IntegrateWise different from a CRM or a dashboard tool?",
@@ -46,11 +46,11 @@ const platformFAQs: FAQItem[] = [
   },
   {
     question: "Can I start with just the Workbench?",
-    answer: "Absolutely. Our Starter tier gives you L1 — the Workbench — with full Entity 360 views, unified tasks, workflows, and basic health signals. When you're ready, upgrade to Growth to unlock the Intelligence Layer (L2) where the Twin starts reasoning across your data.",
+    answer: "Absolutely. Our Starter tier gives you the Workbench with full Entity 360 views, unified tasks, workflows, and basic health signals. When you're ready, upgrade to Growth to unlock the Intelligence Layer where the Twin starts reasoning across your data.",
   },
   {
     question: "What are Session Summaries?",
-    answer: "When you interact with the Twin in L2, each conversation generates a Session Summary — a structured record of what was discussed, what was proposed, and what was approved. These summaries pass through TruthLayer governance before entering the Spine's knowledge, ensuring your system's memory is always accurate and human-verified.",
+    answer: "When you interact with the Twin in the Intelligence Layer, each conversation generates a Session Summary — a structured record of what was discussed, what was proposed, and what was approved. These summaries pass through TruthLayer governance before entering the Spine's knowledge, ensuring your system's memory is always accurate and human-verified.",
   },
 ];
 

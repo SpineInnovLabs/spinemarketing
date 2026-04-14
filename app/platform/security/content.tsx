@@ -12,28 +12,28 @@ const dataProtection = [
     accent: "#3b82f6",
     bg: "rgba(59,130,246,0.12)",
     title: "AES-256 Encryption at Rest",
-    desc: "SpineVault, D1, and R2 storage encrypted at rest with AES-256. Encryption keys managed per-tenant and rotated on a configurable schedule.",
+    desc: "Per-tenant keys, rotated on configurable schedule.",
   },
   {
     icon: ShieldCheck,
     accent: "#10b981",
     bg: "rgba(16,185,129,0.12)",
     title: "TLS 1.3 in Transit",
-    desc: "All data in transit — API calls, webhook payloads, connector traffic — secured with TLS 1.3. There are no unencrypted data paths in the platform.",
+    desc: "No unencrypted data paths in the platform.",
   },
   {
     icon: FileText,
     accent: "#8b5cf6",
     bg: "rgba(139,92,246,0.12)",
     title: "Field-Level Encryption",
-    desc: "PII and sensitive financial data encrypted separately at the field level within SpineVault. Internal queries respect field-level access boundaries.",
+    desc: "PII and financial data encrypted separately.",
   },
   {
     icon: Globe,
     accent: "#f59e0b",
     bg: "rgba(245,158,11,0.12)",
     title: "Regional Data Residency",
-    desc: "Data sovereignty options across India, EU, and US regions. Your data stays in your selected region — no cross-border transfer without explicit configuration.",
+    desc: "Data stays in your selected region — no cross-border transfer.",
   },
 ];
 
@@ -43,21 +43,21 @@ const accessControl = [
     accent: "#3b82f6",
     bg: "rgba(59,130,246,0.12)",
     title: "RBAC",
-    desc: "Role-based access control with field-level permissions. Each user sees only the Entity 360 attributes their role is authorized to access.",
+    desc: "Field-level permissions per user role.",
   },
   {
     icon: Globe,
     accent: "#8b5cf6",
     bg: "rgba(139,92,246,0.12)",
     title: "SSO / SAML",
-    desc: "Enterprise identity provider integration. Connect Okta, Azure AD, or Google Workspace for centralized authentication and automated provisioning.",
+    desc: "Okta, Azure AD, or Google Workspace integration.",
   },
   {
     icon: ShieldCheck,
     accent: "#a855f7",
     bg: "rgba(168,85,247,0.12)",
     title: "Contextual Firewalling",
-    desc: "Department and industry filters prevent unauthorized data access. Sales knowledge does not leak to Engineering contexts unless explicitly authorized.",
+    desc: "Department filters prevent unauthorized data access.",
   },
 ];
 
@@ -67,21 +67,21 @@ const truthBoundary = [
     accent: "#f59e0b",
     bg: "rgba(245,158,11,0.12)",
     title: "Hard-Coded Architectural Constraint",
-    desc: "Not a policy setting. The Truth Boundary is an architectural mandate — AI cannot write to any system without explicit human approval. There is no configuration that removes this.",
+    desc: "AI cannot write without human approval. No override exists.",
   },
   {
     icon: AlertTriangle,
     accent: "#f43f5e",
     bg: "rgba(244,63,94,0.12)",
     title: "Emergency Override Audit",
-    desc: "Force-executions require justification entry and create an immutable override log. Traceable exception handling with mandatory audit trails — no silent bypasses.",
+    desc: "Force-executions require justification with immutable logs.",
   },
   {
     icon: FileText,
     accent: "#06b6d4",
     bg: "rgba(6,182,212,0.12)",
     title: "Session Isolation",
-    desc: "AI chat contexts are sandboxed from production data unless explicitly approved. Sessions cannot access or modify canonical records outside the HITL gate.",
+    desc: "AI contexts sandboxed from production data.",
   },
 ];
 
@@ -108,7 +108,7 @@ export function PlatformSecurityContent() {
               <span className="text-primary">when you say so.</span>
             </h1>
             <p className="text-xl text-white/55 max-w-2xl mx-auto leading-relaxed mb-10">
-              Encryption at rest and in transit, RBAC with field-level permissions, SOC 2 alignment, and an architectural mandate that AI cannot write to your systems without human approval.
+              Encryption everywhere, RBAC, SOC 2 alignment, and an architectural mandate for human approval.
             </p>
             <Link
               href="/contact?intent=demo"
@@ -131,7 +131,7 @@ export function PlatformSecurityContent() {
               </div>
               <div>
                 <h2 className="text-2xl font-bold">Data Protection</h2>
-                <p className="text-white/40 text-sm">Encryption, transit security, and regional sovereignty</p>
+                <p className="text-white/40 text-sm">Encryption, transit security, regional sovereignty</p>
               </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -205,7 +205,7 @@ export function PlatformSecurityContent() {
               <h2 className="text-2xl font-bold">Truth Boundary Enforcement</h2>
             </div>
             <p className="text-white/50 mb-8 ml-[52px] text-sm leading-relaxed">
-              Not a feature toggle. Not a policy. An architectural constraint baked into the platform — AI cannot modify your systems under any circumstances without human approval.
+              An architectural constraint — AI cannot modify systems without human approval.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {truthBoundary.map((t, i) => (
@@ -243,7 +243,7 @@ export function PlatformSecurityContent() {
             className="rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.05] to-transparent p-14"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Enterprise-grade from day one.</h2>
-            <p className="text-white/50 text-lg mb-10 max-w-lg mx-auto">Walk through the full security model and Truth Boundary architecture in a 30-minute session.</p>
+            <p className="text-white/50 text-lg mb-10 max-w-lg mx-auto">Walk through the security model in a 30-minute session.</p>
             <Link
               href="/contact?intent=demo"
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl text-[15px] font-semibold text-white"

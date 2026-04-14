@@ -40,9 +40,7 @@ export function PricingHero() {
             {...heroFade(0.35)}
             className="mx-auto mt-6 max-w-2xl text-[17px] font-medium leading-relaxed text-white/50"
           >
-            Start with L1 — the Workbench where all your accounts live in
-            one view. Unlock L2 — the Intelligence Layer where the Twin
-            proposes and you approve. Scale as your team&apos;s needs grow.
+            Start with the Workbench — all your accounts in one view. Add the Intelligence Layer when you&apos;re ready.
           </motion.p>
 
           <motion.div

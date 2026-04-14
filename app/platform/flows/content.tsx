@@ -42,9 +42,7 @@ export function PlatformFlowsContent() {
             {...heroFade(0.38)}
             className="mx-auto mt-7 max-w-xl text-[17px] font-medium leading-[1.55] tracking-[-0.02em] text-white/50"
           >
-            How data moves through the Platform. Two operational loops,
-            one triage mechanism, and Twin Trigger Scoring that transforms
-            the system from reactive to predictive.
+            Two loops, one triage mechanism, and predictive Twin Trigger Scoring.
           </motion.p>
         </div>
       </section>
@@ -56,8 +54,7 @@ export function PlatformFlowsContent() {
             <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">Flow C</p>
             <h2 className="section-heading">The Triage Mechanism</h2>
             <p className="mt-4 text-[16px] font-medium leading-[1.55] text-muted-foreground">
-              The gatekeeper determining whether incoming data should update Knowledge Memory passively — or trigger immediate Twin Activation.
-              Flow C prevents unnecessary AI interruptions while ensuring critical signals reach the Digital Twin.
+              Decides whether data updates memory passively or triggers Twin Activation.
             </p>
           </motion.div>
           <motion.div {...fade(0.1)} className="grid gap-5 sm:grid-cols-2 max-w-2xl mx-auto">
@@ -66,13 +63,13 @@ export function PlatformFlowsContent() {
                 icon: GitBranch,
                 outcome: "Update Knowledge Memory",
                 label: "Passive learning",
-                desc: "Low-significance data — field updates, routine status changes, background sync events — flow silently into the Spine to enrich Knowledge Memory without interrupting the user.",
+                desc: "Low-significance data enriches memory silently.",
               },
               {
                 icon: Zap,
                 outcome: "Trigger Twin Activation",
                 label: "Immediate action",
-                desc: "High-significance signals — champion departure, usage cliff, overdue invoice + open renewal — cross the Twin Trigger Score threshold and surface as a Proposed Action for human approval.",
+                desc: "High-significance signals surface as Proposed Actions.",
               },
             ].map(({ icon: Icon, outcome, label, desc }) => (
               <div key={outcome} className="arvio-card p-7">
@@ -101,14 +98,14 @@ export function PlatformFlowsContent() {
                 id: "A",
                 name: "Flow A: Tool → Truth",
                 chain: "SaaS data → Connectors → SpineVault → Entity 360 → Twin monitoring",
-                desc: "The fast loop. Raw tool data ingested via the 8-stage normalization pipeline, stored as canonical entities in the SpineVault, assembled into Entity 360 objects, and monitored continuously by the Digital Twin.",
+                desc: "Raw tool data normalized and stored as canonical entities.",
                 governed: "System-governed",
               },
               {
                 id: "B",
                 name: "Flow B: Context → Truth",
                 chain: "AI Session Summaries → Flow C Triage → Knowledge UI validation → SpineVault update → Refined Twin reasoning",
-                desc: "The slow loop. Human interactions — calls, emails, decisions — summarized by AI, triaged by Flow C, validated in the Knowledge UI, and stored as structured knowledge that refines future Twin reasoning.",
+                desc: "Human interactions validated and stored as structured knowledge.",
                 governed: "Human-governed",
               },
             ].map(({ id, name, chain, desc, governed }) => (
@@ -137,7 +134,7 @@ export function PlatformFlowsContent() {
               From reactive to <span className="text-primary">predictive</span>
             </h2>
             <p className="mx-auto mt-5 max-w-xl text-[16px] font-medium leading-[1.6] text-white/45">
-              Algorithmic threshold that evaluates Entity 360 changes and determines when a Signal has reached sufficient significance to propose a Proposed Action. Not a notification system — a prediction engine.
+              Algorithmic threshold that determines when signals warrant action.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
               <Link href="/product/intelligence-layer" className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-primary hover:opacity-80">

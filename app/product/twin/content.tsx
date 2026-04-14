@@ -6,21 +6,21 @@ import { Header } from "@/components/header-client";
 import { Footer } from "@/components/footer";
 
 const virtualState = [
-  { title: "Entity 360 Mirroring", desc: "Real-time digital representation of the user's entire work context across all connected tools — every field, relation, and signal in one model." },
-  { title: "Live Synchronization", desc: "Firebase Realtime listeners ensure Twin state matches Workbench activities within sub-100ms from normalization to UI update." },
-  { title: "Context Persistence", desc: "Survives browser refreshes, session timeouts, and device switches without data loss. The Twin never starts from scratch." },
+  { title: "Entity 360 Mirroring", desc: "Real-time representation of your entire work context." },
+  { title: "Live Synchronization", desc: "Sub-100ms sync from normalization to UI update." },
+  { title: "Context Persistence", desc: "Survives refreshes and device switches. Never starts from scratch." },
 ];
 
 const scoringLevels = [
-  { score: "0 – 30", badge: "🟢", label: "Informational", desc: "Background monitoring. Entity changes logged; no action surfaced." },
-  { score: "31 – 70", badge: "🟡", label: "Watch", desc: "Surfaced in the daily Morning Brief for awareness. No immediate action required." },
-  { score: "71 – 100", badge: "🔴", label: "Critical / Action Required", desc: "Immediate notification + Proposed Action generated and routed to the HITL approval queue." },
+  { score: "0 – 30", badge: "🟢", label: "Informational", desc: "Background monitoring. Changes logged, no action surfaced." },
+  { score: "31 – 70", badge: "🟡", label: "Watch", desc: "Surfaced in Morning Brief for awareness." },
+  { score: "71 – 100", badge: "🔴", label: "Critical / Action Required", desc: "Immediate notification with Proposed Action generated." },
 ];
 
 const sessionItems = [
-  { icon: Brain, color: "text-violet-400", title: "Zero-Shot Operation", desc: "No training period required. The Twin operates immediately on current SpineVault state from the moment a connector is active." },
-  { icon: RefreshCw, color: "text-blue-400", title: "Context Grounding", desc: "All reasoning is hyperlinked to specific Entity 360 objects — not floating chat contexts. Every insight traces back to a canonical record." },
-  { icon: Clock, color: "text-emerald-400", title: "Memory Continuity", desc: "Remembers prior interactions without model retraining via Knowledge Memory integration. Context accumulates across sessions automatically." },
+  { icon: Brain, color: "text-violet-400", title: "Zero-Shot Operation", desc: "Operates immediately on current SpineVault state." },
+  { icon: RefreshCw, color: "text-blue-400", title: "Context Grounding", desc: "All reasoning linked to specific Entity 360 objects." },
+  { icon: Clock, color: "text-emerald-400", title: "Memory Continuity", desc: "Context accumulates across sessions automatically." },
 ];
 
 export function TwinContent() {
@@ -39,7 +39,7 @@ export function TwinContent() {
               A virtual state machine<br />for your entire work context.
             </h1>
             <p className="text-xl text-white/60 max-w-2xl mx-auto leading-relaxed">
-              The Digital Twin mirrors your Entity 360 in real time — scoring changes, surfacing critical signals, and maintaining context across every session without retraining.
+              The Twin mirrors your Entity 360 in real time — scoring, surfacing signals, and persisting context.
             </p>
           </motion.div>
         </div>
@@ -65,7 +65,7 @@ export function TwinContent() {
             className="rounded-2xl border border-white/10 bg-white/[0.03] p-8">
             <h2 className="text-lg font-bold mb-2">Twin Trigger Scoring</h2>
             <p className="text-white/50 text-sm mb-6 leading-relaxed">
-              Visual 0-100 scoring gauge. When Entity 360 changes cross a threshold, the Twin surfaces a signal at the appropriate severity — from background monitoring to immediate action.
+              Visual 0-100 gauge. Signals surface at the right severity level.
             </p>
             <div className="space-y-3">
               {scoringLevels.map((s) => (

@@ -9,15 +9,15 @@ import Link from "next/link";
 const firebaseCards = [
   {
     title: "Realtime Database",
-    desc: "High-velocity synchronization for live Workbench views. Entity state updates propagate to every connected client within sub-100ms from normalization to UI update.",
+    desc: "Sub-100ms entity state updates to every client.",
   },
   {
     title: "State Persistence",
-    desc: "Current state of every entity, signal, and Twin activation maintained across sessions — survives browser refreshes, timeouts, and device switches without data loss.",
+    desc: "Survives refreshes, timeouts, and device switches.",
   },
   {
     title: "Cloud Functions Eventing",
-    desc: "Cloud Functions trigger on SpineVault updates, driving downstream view assembly, signal detection, and notification routing automatically — no polling, pure event-driven.",
+    desc: "Pure event-driven downstream processing — no polling.",
   },
 ];
 
@@ -27,57 +27,57 @@ const services = [
     accent: "#3b82f6",
     bg: "rgba(59,130,246,0.12)",
     name: "Spine Service",
-    desc: "Core SSOT, entity resolution, schema governance. The authoritative source for all canonical data — every read and write flows through here.",
+    desc: "Core SSOT, entity resolution, schema governance.",
   },
   {
     icon: Layers,
     accent: "#8b5cf6",
     bg: "rgba(139,92,246,0.12)",
     name: "Context Service",
-    desc: "Real-time view assembly and conflict detection. Composes domain-specific views from raw Spine data on demand — no pre-computed aggregates to go stale.",
+    desc: "Real-time view assembly and conflict detection.",
   },
   {
     icon: Zap,
     accent: "#a855f7",
     bg: "rgba(168,85,247,0.12)",
     name: "Twin Service",
-    desc: "AI reasoning engine and signal detection. Evaluates Entity 360 changes and generates trigger scoring — the cognitive layer of the platform.",
+    desc: "AI reasoning engine and signal detection.",
   },
   {
     icon: Globe,
     accent: "#f59e0b",
     bg: "rgba(245,158,11,0.12)",
     name: "Approval Service",
-    desc: "TruthLayer governance and routing logic. Manages the HITL queue and approval topology — ensuring every proposed action reaches the right human.",
+    desc: "TruthLayer governance and HITL routing logic.",
   },
   {
     icon: BarChart3,
     accent: "#10b981",
     bg: "rgba(16,185,129,0.12)",
     name: "Action Service",
-    desc: "Write-back execution with idempotency and rollback. Executes approved actions against connected systems — with a 24-hour revert window on every write.",
+    desc: "Write-back execution with 24h rollback window.",
   },
   {
     icon: Server,
     accent: "#06b6d4",
     bg: "rgba(6,182,212,0.12)",
     name: "Notification Service",
-    desc: "Alert routing and digest generation. Delivers signals, Morning Briefs, and exception alerts to the right people at the right time — no notification spam.",
+    desc: "Alert routing and digest generation — no spam.",
   },
 ];
 
 const scalabilityCards = [
   {
     title: "Cloudflare Edge",
-    desc: "Workers deployed at the edge for low-latency global access. Requests route to the nearest point of presence automatically.",
+    desc: "Workers at edge for low-latency global access.",
   },
   {
     title: "D1 / R2 Storage",
-    desc: "Distributed storage for SpineVault (D1) and blob data (R2) — durable, globally replicated, and cost-efficient at scale.",
+    desc: "Distributed, globally replicated, cost-efficient storage.",
   },
   {
     title: "Queue Management",
-    desc: "Cloudflare Queues handle async processing and Dead Letter Queue management — no data lost during ingestion spikes.",
+    desc: "Async processing — no data lost during spikes.",
   },
 ];
 
@@ -104,7 +104,7 @@ export function InfrastructureContent() {
               <span className="text-primary">Global edge. Sub-100ms.</span>
             </h1>
             <p className="text-xl text-white/55 max-w-2xl mx-auto leading-relaxed mb-10">
-              Firebase Realtime Database, Cloudflare Workers at the edge, versioned D1 storage, and six purpose-built microservices — the engine behind every sync, signal, and approved action.
+              Firebase, Cloudflare Workers, and six purpose-built microservices power every sync.
             </p>
             <Link
               href="/contact?intent=demo"
@@ -140,7 +140,7 @@ export function InfrastructureContent() {
               </div>
               <div>
                 <h2 className="text-2xl font-bold">Firebase Architecture</h2>
-                <p className="text-white/40 text-sm">Real-time sync, event-driven state, cross-session persistence</p>
+                <p className="text-white/40 text-sm">Real-time sync and event-driven state</p>
               </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -167,7 +167,7 @@ export function InfrastructureContent() {
               </div>
               <div>
                 <h2 className="text-2xl font-bold">Service Architecture</h2>
-                <p className="text-white/40 text-sm">Six microservices, each with a single clear responsibility</p>
+                <p className="text-white/40 text-sm">Six microservices, single clear responsibility each</p>
               </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -200,7 +200,7 @@ export function InfrastructureContent() {
               </div>
               <div>
                 <h2 className="text-2xl font-bold">Cloudflare Edge & Scale</h2>
-                <p className="text-white/40 text-sm">Edge distribution, distributed storage, async queue management</p>
+                <p className="text-white/40 text-sm">Edge distribution and async queue management</p>
               </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -233,7 +233,7 @@ export function InfrastructureContent() {
             className="rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.05] to-transparent p-14"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Built for scale from day one.</h2>
-            <p className="text-white/50 text-lg mb-10 max-w-lg mx-auto">Walk through the full infrastructure architecture and see how it handles your data volumes and growth.</p>
+            <p className="text-white/50 text-lg mb-10 max-w-lg mx-auto">Walk through the full architecture in a 30-minute session.</p>
             <Link
               href="/contact?intent=demo"
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl text-[15px] font-semibold text-white"

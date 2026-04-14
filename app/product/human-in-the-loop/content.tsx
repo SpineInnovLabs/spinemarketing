@@ -6,27 +6,27 @@ import { Header } from "@/components/header-client";
 import { Footer } from "@/components/footer";
 
 const queueFeatures = [
-  { title: "Proposed Action Queue", desc: "Central inbox of all AI-suggested actions requiring human approval before execution. Sortable by urgency, impact ($), confidence score, and entity type. Filterable by department, account tier, and action type." },
-  { title: "Impact Preview Panel", desc: "Visual confirmation of exact system effects before approval — \"This will update Salesforce Opportunity Stage to Negotiation\", \"This will send Slack notification to #customer-success\"." },
-  { title: "Evidence Inspector", desc: "Side-by-side display with hyperlinked proof. Source data from SpineVault, confidence score visualization (87/100), and goal_refs linking to canonical entities." },
+  { title: "Proposed Action Queue", desc: "Central inbox of AI-suggested actions awaiting approval. Sortable by urgency and impact." },
+  { title: "Impact Preview Panel", desc: "See exact system effects before you approve any action." },
+  { title: "Evidence Inspector", desc: "Side-by-side proof with confidence scores and entity links." },
 ];
 
 const approvalTiers = [
-  { tier: "Tier 1", who: "CSM", what: "Routine health score updates, standard emails", impact: "< $1K impact" },
-  { tier: "Tier 2", who: "Manager", what: "Escalations, contract modifications", impact: "$1K – $10K impact" },
-  { tier: "Tier 3", who: "VP / Executive", what: "Strategic actions, pricing changes, churn interventions", impact: "> $10K impact" },
+  { tier: "Tier 1", who: "CSM", what: "Routine updates, standard emails", impact: "< $1K impact" },
+  { tier: "Tier 2", who: "Manager", what: "Escalations, contract changes", impact: "$1K – $10K impact" },
+  { tier: "Tier 3", who: "VP / Executive", what: "Strategic actions, pricing changes", impact: "> $10K impact" },
 ];
 
 const govControls = [
-  { icon: Edit3, color: "text-blue-400", title: "Edit Before Approve", desc: "Full text editor for AI-drafted emails, field value adjustment, and escalation level modification before any system is touched." },
-  { icon: UserCheck, color: "text-emerald-400", title: "Delegation Settings", desc: "Temporary approval authority transfer — \"While on PTO, route my approvals to [Name]\" with full audit trail maintained." },
-  { icon: ShieldCheck, color: "text-amber-400", title: "Bulk Approval Safety", desc: "Maximum 10 actions per batch approval with mandatory rollback capability. No runaway automated batches." },
+  { icon: Edit3, color: "text-blue-400", title: "Edit Before Approve", desc: "Modify AI drafts before any system is touched." },
+  { icon: UserCheck, color: "text-emerald-400", title: "Delegation Settings", desc: "Transfer approval authority with full audit trail." },
+  { icon: ShieldCheck, color: "text-amber-400", title: "Bulk Approval Safety", desc: "Max 10 actions per batch with mandatory rollback." },
 ];
 
 const emergency = [
-  { icon: AlertTriangle, color: "text-red-400", title: "Pause Twin", desc: "Instant suspension of all proactive suggestions during critical incidents. One click, immediate effect." },
-  { icon: Eye, color: "text-violet-400", title: "Override with Audit", desc: "Force-execute actions with mandatory justification entry. Creates an immutable override log that cannot be modified." },
-  { icon: RotateCcw, color: "text-cyan-400", title: "Rollback Interface", desc: "24-hour window to reverse approved actions with a single-click revert. Post-execution safety net for every write." },
+  { icon: AlertTriangle, color: "text-red-400", title: "Pause Twin", desc: "Instant suspension of all proactive suggestions." },
+  { icon: Eye, color: "text-violet-400", title: "Override with Audit", desc: "Force-execute with mandatory justification entry." },
+  { icon: RotateCcw, color: "text-cyan-400", title: "Rollback Interface", desc: "24-hour window to reverse any approved action." },
 ];
 
 export function HumanInTheLoopContent() {
@@ -45,7 +45,7 @@ export function HumanInTheLoopContent() {
               The Truth Boundary<br />Control Center.
             </h1>
             <p className="text-xl text-white/60 max-w-2xl mx-auto leading-relaxed">
-              Every AI-proposed action enters a governed approval queue. Preview impact, inspect evidence, edit before approving — with tiered routing, delegation, and a 24-hour rollback window.
+              Every AI action enters a governed approval queue with tiered routing and 24-hour rollback.
             </p>
           </motion.div>
         </div>

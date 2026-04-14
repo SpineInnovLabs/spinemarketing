@@ -7,27 +7,27 @@ export function FinanceLeadersContent() {
     <RoleSolutionLayout
       role="Finance Leaders"
       headline="Financial clarity. Before the board asks."
-      subheadline="Collections and cash flow connected to customer reality — not just invoice aging."
+      subheadline="Collections and cash flow connected to customer reality."
       ctaLabel="Explore the workspace →"
       focus={[
         {
           title: "Revenue Protection",
-          desc: "Link billing to delivery and customer health — know churn risk before issuing the next invoice.",
+          desc: "Link billing to delivery and health — spot churn risk early.",
         },
         {
           title: "Smart Collections",
-          desc: "Prioritize by cash impact and customer health — tone-appropriate dunning reviewed by you before it sends.",
+          desc: "Prioritize by cash impact — dunning reviewed before it sends.",
         },
         {
           title: "Audit Readiness",
-          desc: "Immutable logs of all revenue-impacting decisions with source evidence and timestamps.",
+          desc: "Immutable logs of all revenue decisions with timestamps.",
         },
         {
           title: "Cash Flow Forecasting",
-          desc: "AI-weighted projections based on customer health and payment history — accurate runway estimates with source evidence.",
+          desc: "AI-weighted projections based on health and payment history.",
         },
       ]}
-      governanceNote="Every dunning message and write-off recommendation requires Finance approval — AI provides analysis, humans control the cash."
+      governanceNote="Every dunning message and write-off requires Finance approval."
       connects={[
         "QuickBooks", "NetSuite", "Sage", "Stripe",
         "Salesforce", "HubSpot", "Zendesk",

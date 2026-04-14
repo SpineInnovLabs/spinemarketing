@@ -199,7 +199,7 @@ export function DashboardMockup() {
 
   return (
     <div className="relative w-full" style={{ height: 520 }}>
-      {/* ═══ L1: WORKSPACE ═══ */}
+      {/* ═══ WORKBENCH: WORKSPACE ═══ */}
       <motion.div
         className="absolute inset-0 rounded-2xl border border-gray-200 overflow-hidden shadow-xl bg-white"
         animate={{
@@ -405,7 +405,7 @@ export function DashboardMockup() {
         </div>
       </motion.div>
 
-      {/* ═══ L2: INTELLIGENCE DRAWER ═══ */}
+      {/* ═══ INTELLIGENCE: DRAWER ═══ */}
       <motion.div
         className="absolute left-1 right-1 bottom-0 rounded-t-2xl border border-b-0 border-gray-200 overflow-hidden z-10"
         style={{

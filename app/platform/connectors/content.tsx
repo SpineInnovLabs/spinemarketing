@@ -21,25 +21,25 @@ const inputTypes = [
   {
     icon: Plug,
     type: "SaaS Tools",
-    desc: "Standard API-driven enterprise software. Every call, webhook, and polling cycle feeds the 8-stage normalization pipeline.",
+    desc: "API-driven software feeding the normalization pipeline.",
     examples: ["Salesforce", "HubSpot", "Stripe", "Zendesk", "Jira", "Asana", "Slack"],
   },
   {
     icon: Brain,
     type: "AI Services",
-    desc: "Direct pipes to LLMs and specialized cognitive processors — outputs feed back into the Spine as typed, versioned entities.",
+    desc: "LLM outputs stored as versioned Spine entities.",
     examples: ["OpenAI", "Anthropic", "Google Gemini", "Mistral"],
   },
   {
     icon: Zap,
     type: "MCP (Model Context Protocol)",
-    desc: "Bridge for AI-native communication. Standardized protocol for models to access local and remote data sources with structured context.",
+    desc: "AI-native bridge for structured data access.",
     examples: ["Local file systems", "Internal databases", "Custom data sources", "Legacy ERPs"],
   },
   {
     icon: RefreshCw,
     type: "Webhooks",
-    desc: "Flexible, event-driven inputs for real-time capture. Zero polling latency. Any system that can POST can feed the Spine.",
+    desc: "Event-driven inputs with zero polling latency.",
     examples: ["Custom events", "Payment notifications", "Form submissions", "IoT sensors"],
   },
 ];
@@ -69,9 +69,7 @@ export function PlatformConnectorsContent() {
             {...heroFade(0.38)}
             className="mx-auto mt-7 max-w-xl text-[17px] font-medium leading-[1.55] tracking-[-0.02em] text-white/50"
           >
-            Every input is a connector. Whether from complex CRMs, AI services,
-            MCP sources, or simple webhooks — all data contributes to the
-            organization&apos;s collective memory through the same Spine pipeline.
+            Every input is a connector — all data flows through one Spine pipeline.
           </motion.p>
           <motion.div {...heroFade(0.5)} className="mt-9 flex flex-wrap items-center justify-center gap-3">
             <Link href="/product/connectors" className="inline-flex h-11 items-center rounded-full bg-primary px-6 text-[14px] font-semibold tracking-[-0.02em] text-white transition-opacity hover:opacity-90">
@@ -112,8 +110,7 @@ export function PlatformConnectorsContent() {
             <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">Auto-Upgrade</p>
             <h2 className="section-heading">Connectors that <span className="text-primary">maintain themselves</span></h2>
             <p className="mt-4 text-[15px] font-medium leading-[1.55] text-muted-foreground">
-              Connectors feature native protocols that adapt automatically as external services update their APIs.
-              Eliminates technical debt associated with API maintenance and versioning — ensuring continuous connectivity without manual intervention.
+              Adapts automatically when external APIs change. Zero manual intervention.
             </p>
             <Link href="/product/connectors" className="mt-6 inline-flex h-10 items-center rounded-full bg-primary px-5 text-[13px] font-semibold text-white transition-opacity hover:opacity-90">
               Manage your connectors →

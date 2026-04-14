@@ -18,32 +18,32 @@ const problems = [
   {
     icon: AlertCircle,
     title: "Apps and data are fragmented",
-    desc: "Your team works across CRM, support, billing, email, project tools, and finance. Each app holds a slice of the truth. Nobody holds the whole picture.",
+    desc: "Each app holds a slice. Nobody holds the whole picture.",
   },
   {
     icon: Bot,
     title: "AI acts without full context",
-    desc: "Copilots connected to a single app can only reason on that app's data. They miss the cross-system signals that actually matter — and they act before you've approved anything.",
+    desc: "Single-app copilots miss cross-system signals. They act before you approve.",
   },
   {
     icon: ShieldOff,
     title: "No governance on automation",
-    desc: "Shadow automation fires without audit trails. Actions execute without evidence. When something goes wrong, there's no record of why the system did what it did.",
+    desc: "Actions execute without evidence or audit trail. No record of why.",
   },
 ];
 
 const breaks = [
   {
     title: "Missed signals",
-    desc: "A customer's usage dropped, their champion left, and three support tickets went unresolved — but no single app flagged the combined risk. You only found out on renewal day.",
+    desc: "Usage dropped, champion left, tickets unresolved — no app flagged the combined risk.",
   },
   {
     title: "Shadow automation",
-    desc: "A workflow updated records in three systems overnight. Nobody approved it. Nobody knows what triggered it. The audit shows nothing.",
+    desc: "Records changed overnight. Nobody approved it. The audit shows nothing.",
   },
   {
     title: "Audit and trust risk",
-    desc: "A board asks why a deal was marked won. The AI wrote the note. There's no evidence chain, no human approval, no session record.",
+    desc: "Board asks why a deal was marked won. No evidence chain. No session record.",
   },
 ];
 
@@ -51,32 +51,32 @@ const existingFails = [
   {
     icon: LayoutDashboard,
     title: "CRM-centric views",
-    desc: "CRMs give you the sales record. They don't show you support health, billing status, product usage, or the last three conversations — in one place, for every account.",
+    desc: "CRMs show the sales record. Not support, billing, or usage — in one place.",
   },
   {
     icon: Eye,
     title: "Dashboards only",
-    desc: "BI tools aggregate data beautifully. They don't tell you what to do next, don't connect to your workflow, and don't govern any action that follows.",
+    desc: "Beautiful charts. No next action. No workflow. No governance.",
   },
   {
     icon: Workflow,
     title: "Isolated copilots",
-    desc: "App-specific AI assistants reason on one tool's data. They don't know what's happening across your stack. Every copilot is blind to every other app.",
+    desc: "Each copilot reasons on one tool. Blind to every other app.",
   },
 ];
 
 const answer = [
   {
     title: "One Spine",
-    desc: "The Spine connects every app — CRM, support, billing, email, finance, projects — into one adaptive intelligence layer. Structured records, unstructured conversations, and AI outputs all unified.",
+    desc: "Every app connected. Records, conversations, and AI outputs — unified.",
   },
   {
     title: "One workspace",
-    desc: "The Workbench is your Daily workspace. Every team sees the right view — accounts, business, or personal — built from the full truth across all connected apps. One place to work every day.",
+    desc: "Every team sees the right view — built from full truth across all apps.",
   },
   {
     title: "Governed AI",
-    desc: "The Intelligence Layer watches everything, reasons with evidence, and surfaces signals and recommended actions. Nothing executes until you approve. Every output is a Session Summary — logged, attributed, and traceable.",
+    desc: "AI surfaces signals with evidence. Nothing executes until you approve.",
   },
 ];
 
@@ -112,8 +112,7 @@ export function WhyContent() {
             transition={{ type: "spring", damping: 16, stiffness: 52, delay: 0.35 }}
             className="mx-auto mt-8 max-w-2xl text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-white/55"
           >
-            It&apos;s that the signal is scattered, the AI has no full context, and
-            every action bypasses governance. IntegrateWise fixes all three.
+            Signal is scattered. AI has no context. Actions bypass governance.
           </motion.p>
         </div>
       </section>
@@ -133,8 +132,7 @@ export function WhyContent() {
               <span className="text-primary">apps don&apos;t talk</span>
             </h2>
             <p className="section-subheading mt-4">
-              Your team uses 8–15 apps every day. Each holds a piece of the
-              truth. No single view shows the full picture.
+              8–15 apps. No single view shows the full picture.
             </p>
           </motion.div>
           <div className="mt-16 grid gap-6 sm:grid-cols-3">
@@ -217,8 +215,7 @@ export function WhyContent() {
               <span className="text-primary">can&apos;t fix this</span>
             </h2>
             <p className="section-subheading mt-4">
-              CRMs, dashboards, and isolated copilots were built for a world
-              where one app had most of the picture. That world is gone.
+              Built for a world where one app had the picture. That world is gone.
             </p>
           </motion.div>
           <div className="mt-16 grid gap-6 sm:grid-cols-3">
@@ -266,9 +263,7 @@ export function WhyContent() {
               <span className="text-primary">Governed AI.</span>
             </h2>
             <p className="mt-4 text-[17px] font-medium leading-[1.5] text-white/55">
-              IntegrateWise connects every app over a shared Spine, gives every
-              team a unified workspace, and makes the AI wait for your approval
-              before anything changes.
+              Every app connected. Every team unified. AI waits for your approval.
             </p>
           </motion.div>
           <div className="mt-16 grid gap-6 sm:grid-cols-3">

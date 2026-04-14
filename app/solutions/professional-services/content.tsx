@@ -6,35 +6,35 @@ export function ProfessionalServicesContent() {
   return (
     <IndustrySolutionLayout
       category="Professional Services"
-      headline="Stop revenue leaks. See every engagement clearly."
-      subheadline="Matters, time, billing, and client relationships in one governed workspace — no more revenue lost to unbilled time."
+      headline="The metabolism that converts billable time into revenue."
+      subheadline="Matters, time, billing, and client health in one workspace."
       ctaLabel="Explore the workspace →"
       problem={{
         bullets: [
-          "Unbilled time sits in WIP for 30+ days because time entries and billing are disconnected.",
-          "Matters approaching scope limits aren't flagged until the partner reviews the file.",
-          "Key client stakeholders disengage and no one notices until the relationship is damaged.",
+          "Unbilled time sits in WIP because entries and billing disconnect.",
+          "Scope limits aren't flagged until the partner reviews the file.",
+          "Client disengagement goes unnoticed until damage is done.",
         ],
       }}
       capabilities={[
         {
           title: "Matter Margin Tracking",
-          desc: "Real-time billed vs. WIP vs. estimate per matter — know which engagements are profitable before you close them.",
+          desc: "Real-time billed vs. WIP vs. estimate per matter.",
         },
         {
           title: "Client Relationship Monitoring",
-          desc: "Track communication frequency with decision-makers and alert when engagement goes silent.",
+          desc: "Alerts when decision-maker communication goes silent.",
         },
         {
           title: "Billing Hygiene",
-          desc: "Auto-flag missing narratives and matters approaching billing caps — recover revenue before it's written off.",
+          desc: "Auto-flag missing narratives and matters near billing caps.",
         },
         {
           title: "Scope Limit Alerts",
-          desc: "AI surfaces matters near agreed fee caps — giving partners time to have the conversation before overage becomes dispute.",
+          desc: "AI surfaces matters near fee caps before overage disputes.",
         },
       ]}
-      governance="Every billing adjustment and scope change communication routes through the approval gate — full audit trail with source data attached."
+      governance="Billing adjustments and scope changes route through approval. Full audit trail."
       connectors={[
         "Clio", "LeanLaw", "Actionstep",
         "QuickBooks", "Xero", "Outlook", "Gmail",

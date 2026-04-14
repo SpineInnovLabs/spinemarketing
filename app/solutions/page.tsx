@@ -7,7 +7,7 @@ import { SolutionsContent } from "./content"
 export const metadata: Metadata = {
   title: "Solutions | IntegrateWise",
   description:
-    "One Spine. One workspace. L1 for daily work, L2 for AI intelligence. Built for every function, industry, and role.",
+    "One Spine. Workbench for daily work, Intelligence Layer for AI. Built for every function, industry, and role.",
 }
 
 export default function SolutionsPage() {

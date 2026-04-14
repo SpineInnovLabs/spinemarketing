@@ -5,14 +5,15 @@ import Link from "next/link";
 import { useRef, useEffect, useState } from "react";
 import {
   LayoutDashboard,
-  Brain,
+  Sparkles,
   ShieldCheck,
-  TrendingUp,
+  Coins,
   Clock,
   CheckCircle2,
-  Zap,
+  ScanSearch,
   ArrowRight,
-  Eye,
+  Gauge,
+  Fingerprint,
 } from "lucide-react";
 
 function AnimatedCounter({ value, suffix = "" }: { value: number; suffix?: string }) {
@@ -110,20 +111,20 @@ const layers = [
     title: "Where your team works every day",
     color: { bg: "rgba(45,212,191,0.12)", glow: "rgba(45,212,191,0.25)", text: "#2dd4bf" },
     items: [
-      { name: "Account Command Center", desc: "Every email, ticket, invoice, and meeting — unified in one timeline. AI surfaces risk signals and drafts follow-ups for your approval." },
-      { name: "Portfolio Views", desc: "Health heatmaps, renewal calendars, and expansion pipelines. Revenue risk waterfalls and project exception lists — all live." },
-      { name: "Knowledge Memory", desc: "Approved insights compound. Rejected actions teach the system. Your workspace grows sharper over time." },
+      { name: "Account Command Center", desc: "Unified timeline. AI-drafted follow-ups." },
+      { name: "Portfolio Views", desc: "Health, renewals, expansion — all live." },
+      { name: "Knowledge Memory", desc: "Approved insights compound over time." },
     ],
   },
   {
     tag: "Intelligence Layer",
-    icon: Brain,
+    icon: Sparkles,
     title: "AI that understands your business context",
     color: { bg: "rgba(139,92,246,0.12)", glow: "rgba(139,92,246,0.25)", text: "#8b5cf6" },
     items: [
-      { name: "Morning Brief", desc: "AI-generated digest of what changed overnight — exceptions ranked by revenue impact, not notification volume." },
-      { name: "Proactive Signals", desc: "\"Payment failed + Champion left + 3 P1 tickets\" — linked, scored, and surfaced before you ask." },
-      { name: "Session Continuity", desc: "Ask \"What happened with TechServe last week?\" AI answers from the unified timeline — grounded in real data." },
+      { name: "Morning Brief", desc: "What changed overnight, ranked by impact." },
+      { name: "Proactive Signals", desc: "Linked, scored, surfaced before you ask." },
+      { name: "Session Continuity", desc: "Ask anything. AI answers from real data." },
     ],
   },
   {
@@ -132,25 +133,25 @@ const layers = [
     title: "Invisible infrastructure you can trust",
     color: { bg: "rgba(251,191,36,0.12)", glow: "rgba(251,191,36,0.25)", text: "#fbbf24" },
     items: [
-      { name: "Evidence-First Governance", desc: "Every suggestion shows its source data and confidence score before proceeding." },
-      { name: "Configurable Approval Flows", desc: "Route suggestions to CSM, Manager, or Finance based on impact thresholds you define." },
-      { name: "Write-Back Safety", desc: "Approved actions execute via idempotent APIs with automatic retry and rollback." },
+      { name: "Evidence-First Governance", desc: "Source data and confidence on every suggestion." },
+      { name: "Configurable Approval Flows", desc: "Route by impact. CSM, Manager, or Finance." },
+      { name: "Write-Back Safety", desc: "Idempotent APIs. Automatic retry and rollback." },
     ],
   },
 ];
 
 const modules = [
-  { title: "Account Intelligence", desc: "Health scoring across CRM, billing, and support with a 90-day renewal risk lookahead.", icon: Eye },
-  { title: "Revenue & Collections", desc: "AI drafts payment reminders with the right tone based on relationship status.", icon: TrendingUp },
-  { title: "Escalation & Risk", desc: "Pattern detection across tickets — surface product risk before it becomes churn.", icon: Zap },
-  { title: "Executive Console", desc: "Board-ready briefs from live data. \"$2.1M at risk, 4 expansions identified.\"", icon: Brain },
+  { title: "Account Intelligence", desc: "Health scoring with 90-day renewal lookahead.", icon: Gauge },
+  { title: "Revenue & Collections", desc: "AI-drafted reminders tuned to relationship.", icon: Coins },
+  { title: "Escalation & Risk", desc: "Detect product risk before it becomes churn.", icon: ScanSearch },
+  { title: "Executive Console", desc: "Board-ready briefs from live data.", icon: Fingerprint },
 ];
 
 const governancePrinciples = [
-  { icon: CheckCircle2, title: "Approval Required", desc: "No auto-approve for critical actions. The human gate is mandatory." },
-  { icon: Eye, title: "Evidence Visibility", desc: "Every suggestion links back to source data — never a black-box recommendation." },
-  { icon: Clock, title: "Full Audit Log", desc: "Who approved what, when, and based on which data. Immutable and append-only." },
-  { icon: ArrowRight, title: "Reversibility", desc: "Approved actions can be rolled back within 24 hours if an error is detected." },
+  { icon: CheckCircle2, title: "Approval Required", desc: "Human gate is mandatory for critical actions." },
+  { icon: ScanSearch, title: "Evidence Visibility", desc: "Every suggestion links to its source data." },
+  { icon: Clock, title: "Full Audit Log", desc: "Who, what, when — immutable and append-only." },
+  { icon: Fingerprint, title: "Reversibility", desc: "Roll back any action within 24 hours." },
 ];
 
 const socialProofMetrics = [
@@ -213,7 +214,7 @@ export function ProductContent() {
             {...heroFade(0.4)}
             className="mx-auto mt-7 max-w-2xl text-[17px] font-medium leading-[1.6] tracking-[-0.02em] text-white/55"
           >
-            IntegrateWise connects your CRM, billing, support, and project tools into one live workspace. AI surfaces what needs attention, drafts the next action, and waits for your approval — before touching anything.
+            One workspace. AI surfaces what matters. You approve what happens.
           </motion.p>
 
           <motion.div {...heroFade(0.52)} className="mt-9 flex flex-wrap items-center justify-center gap-3">
@@ -274,11 +275,11 @@ export function ProductContent() {
           >
             <p className="mb-3 text-[12px] font-bold uppercase tracking-[0.14em] text-primary">How it works</p>
             <h2 className="text-[36px] font-semibold leading-[1.15] tracking-[-0.04em] text-white sm:text-[44px]">
-              From scattered data to{" "}
-              <span className="text-primary">one clear action</span>
+              Connect. Work. Approve.{" "}
+              <span className="text-primary">See your Twin working.</span>
             </h2>
             <p className="mt-4 text-[15px] font-medium leading-[1.6] text-white/50">
-              IntegrateWise reads your tools, reasons across all of them, and presents the next move — ready for your approval.
+              Four steps to a workspace that thinks with you.
             </p>
           </motion.div>
 
@@ -293,11 +294,12 @@ export function ProductContent() {
               <span className="ml-3 text-[12px] font-semibold text-white/40">Account Command Center</span>
             </div>
 
-            <div className="grid gap-px bg-white/[0.04] sm:grid-cols-3">
+            <div className="grid gap-px bg-white/[0.04] sm:grid-cols-2 lg:grid-cols-4">
               {[
-                { num: "1", color: "#2dd4bf", label: "Connect", title: "Your tools stay where they are", desc: "Salesforce, HubSpot, Jira, Stripe, Zendesk — connect once, IntegrateWise reads everything in real time.", tags: ["CRM", "Billing", "Support", "Projects"] },
-                { num: "2", color: "#8b5cf6", label: "Surface", title: "AI reasons across every signal", desc: "", alerts: [{ label: "Payment failed", severity: "High" }, { label: "Champion left", severity: "Critical" }, { label: "3 open P1 tickets", severity: "High" }] },
-                { num: "3", color: "#2dd4bf", label: "Act", title: "You approve, IntegrateWise executes", desc: "", draft: true },
+                { num: "1", color: "#2dd4bf", label: "Connect", title: "Your tools stay where they are", desc: "CRM, billing, support, projects — connect once via OAuth.", tags: ["CRM", "Billing", "Support", "Projects"] },
+                { num: "2", color: "#8b5cf6", label: "Work", title: "One workspace for everything", desc: "Accounts, tasks, workflows, calendar — all unified.", alerts: null },
+                { num: "3", color: "#fbbf24", label: "Approve", title: "Nothing happens without you", desc: "", draft: true },
+                { num: "4", color: "#2dd4bf", label: "Twin", title: "See your Twin working", desc: "", alerts: [{ label: "Morning brief ready", severity: "High" }, { label: "3 signals surfaced", severity: "Critical" }, { label: "Draft follow-up prepared", severity: "High" }] },
               ].map((step, i) => (
                 <motion.div
                   key={i}
@@ -520,7 +522,7 @@ export function ProductContent() {
             transition={{ type: "spring", damping: 18, stiffness: 70, delay: 0.08 }}
             className="mx-auto mt-5 max-w-lg text-[16px] font-medium leading-[1.6] text-white/50"
           >
-            Book a walkthrough and we&apos;ll show you the workspace with your own tools connected.
+            We&apos;ll connect your tools live. See it in 20 minutes.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 16 }}

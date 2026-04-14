@@ -7,7 +7,7 @@ import { PersonalOpsContent } from "./content"
 export const metadata: Metadata = {
   title: "Personal Ops | IntegrateWise",
   description:
-    "Your personal Knowledge Workspace. Connect your apps, work in L1, let the Twin surface insights in L2 — and approve what actually happens.",
+    "Your personal Knowledge Workspace. Connect your apps, work in the Workbench, let the Twin surface insights — and approve what happens.",
 }
 
 export default function PersonalOpsPage() {

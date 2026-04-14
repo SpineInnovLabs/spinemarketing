@@ -153,9 +153,9 @@ function ExecutionPathVisual() {
     { icon: Database, label: "Load", desc: "Ingest from tools" },
     { icon: Server, label: "Store", desc: "Unified in Spine" },
     { icon: Brain, label: "Think", desc: "AI analyzes" },
-    { icon: ShieldCheck, label: "Approve", desc: "Human gate" },
-    { icon: Zap, label: "Act", desc: "Execute approved" },
+    { icon: Zap, label: "Act", desc: "You approve, it executes" },
     { icon: RefreshCw, label: "Adjust", desc: "Learn & improve" },
+    { icon: ArrowRight, label: "Repeat", desc: "Knowledge compounds" },
   ];
 
   return (
@@ -172,21 +172,21 @@ function ExecutionPathVisual() {
           >
             <div
               className={`relative rounded-2xl border p-5 text-center transition-all duration-300 ${
-                step.label === "Approve"
+                step.label === "Act"
                   ? "border-primary/30 bg-primary/[0.08] hover:border-primary/50"
                   : "border-white/[0.08] bg-white/[0.03] hover:border-white/[0.15]"
               }`}
             >
               <div
                 className={`mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-xl ${
-                  step.label === "Approve" ? "bg-primary/20" : "bg-white/[0.06]"
+                  step.label === "Act" ? "bg-primary/20" : "bg-white/[0.06]"
                 }`}
               >
-                <step.icon className={`h-5 w-5 ${step.label === "Approve" ? "text-primary" : "text-white/60"}`} />
+                <step.icon className={`h-5 w-5 ${step.label === "Act" ? "text-primary" : "text-white/60"}`} />
               </div>
               <div className="text-[13px] font-bold text-white">{step.label}</div>
               <div className="text-[11px] text-white/40 mt-1">{step.desc}</div>
-              {step.label === "Approve" && (
+              {step.label === "Act" && (
                 <div className="absolute -top-2 left-1/2 -translate-x-1/2 rounded-full bg-primary px-2 py-0.5 text-[9px] font-bold text-white">
                   YOU
                 </div>
@@ -210,7 +210,7 @@ function ExecutionPathVisual() {
         <div className="mx-auto max-w-[700px] h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
         <div className="flex justify-between max-w-[700px] mx-auto mt-2">
           <span className="text-[9px] text-white/20 uppercase tracking-widest">Input</span>
-          <span className="text-[9px] text-primary/60 uppercase tracking-widest font-bold">Human Gate</span>
+          <span className="text-[9px] text-primary/60 uppercase tracking-widest font-bold">You Decide</span>
           <span className="text-[9px] text-white/20 uppercase tracking-widest">Output</span>
         </div>
       </motion.div>
@@ -325,11 +325,11 @@ export function PlatformContent() {
             {...heroFade(0.5)}
             className="mt-10 flex flex-wrap items-center justify-center gap-2 text-[13px] font-semibold"
           >
-            {["Connect", "Three Data Paths", "L1 + L2", "Twin", "Canonical Loop"].map((item, i, arr) => (
+            {["Connect", "Three Data Paths", "Workbench + Intelligence", "Twin", "Canonical Loop"].map((item, i, arr) => (
               <span key={item} className="flex items-center gap-2">
                 <span
                   className={`rounded-xl px-4 py-1.5 ${
-                    item === "L1 + L2"
+                    item === "Workbench + Intelligence"
                       ? "bg-primary text-white"
                       : "border border-white/10 bg-white/5 text-white/60"
                   }`}
@@ -498,11 +498,11 @@ export function PlatformContent() {
             </p>
             <h2 className="text-[36px] font-semibold leading-[1.15] tracking-[-0.05em] text-white sm:text-[48px]">
               Load. Store. Think.{" "}
-              <span className="text-primary">Approve.</span>{" "}
-              Act. Adjust. Repeat.
+              <span className="text-primary">Act.</span>{" "}
+              Adjust. Repeat.
             </h2>
             <p className="mt-5 text-[16px] font-medium leading-[1.6] text-white/45">
-              AI suggests at Think. You decide at Approve.
+              AI thinks. You act. Knowledge compounds.
             </p>
           </motion.div>
 
@@ -519,8 +519,8 @@ export function PlatformContent() {
               Two Layers. One Workspace.
             </p>
             <h2 className="text-[40px] font-semibold leading-[1.15] tracking-[-0.05em] text-white sm:text-[52px]">
-              Everything surfaces in L1.{" "}
-              <span className="text-primary">Everything intelligent happens in L2.</span>
+              Everything surfaces in the Workbench.{" "}
+              <span className="text-primary">Everything intelligent happens in the Intelligence Layer.</span>
             </h2>
           </motion.div>
 
@@ -532,14 +532,14 @@ export function PlatformContent() {
               <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
               <div className="mb-5 flex items-center gap-3">
                 <span className="rounded-lg border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.1em] text-white/50">
-                  Layer 1
+                  Workbench
                 </span>
                 <span className="text-[20px] font-bold tracking-[-0.04em] text-white">
                   The Workbench
                 </span>
               </div>
               <p className="text-[14px] font-medium leading-[1.7] text-white/50">
-                Your daily operating surface. Entity 360s, task queue, workflow tracker, calendar, inbox signals — unified from the Spine.
+                Your daily surface. Entity 360s, tasks, workflows — unified from the Spine.
               </p>
               <ul className="mt-6 space-y-2.5">
                 {[
@@ -591,14 +591,14 @@ export function PlatformContent() {
               <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
               <div className="mb-5 flex items-center gap-3">
                 <span className="rounded-lg border border-primary/20 bg-primary/10 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.1em] text-primary">
-                  Layer 2
+                  Intelligence
                 </span>
                 <span className="text-[20px] font-bold tracking-[-0.04em] text-white">
                   Intelligence Layer
                 </span>
               </div>
               <p className="text-[14px] font-medium leading-[1.7] text-white/50">
-                The Twin reads the Spine. Suggests actions with evidence. Waits for your approval. Nothing executes until you say so.
+                The Twin suggests with evidence. You approve what executes.
               </p>
               <ul className="mt-6 space-y-2.5">
                 {[
@@ -693,7 +693,7 @@ export function PlatformContent() {
                 Living memory.
               </h3>
               <p className="mt-3 text-[14px] font-medium leading-[1.7] text-white/45">
-                Remembers without retraining. Grows daily. Every approved action, every session summary feeds back into the Spine.
+                Grows daily. No retraining required.
               </p>
               <div className="mt-6 flex items-center gap-4">
                 {[

@@ -9,27 +9,27 @@ const whatChanges = [
   {
     icon: Inbox,
     title: "Morning briefing, already waiting",
-    desc: "Emails, tasks, Slack threads, and meetings — pulled from your connected apps into one view. No manual assembly.",
+    desc: "Emails, tasks, Slack, and meetings in one view automatically.",
   },
   {
     icon: Brain,
     title: "AI conversations that compound",
-    desc: "Session summaries from your AI chats are governed by TruthLayer. Approved summaries become knowledge the Twin can reference later. Your thinking builds on itself.",
+    desc: "Session summaries become knowledge AI references later.",
   },
   {
     icon: CalendarCheck,
     title: "Tasks, notes, and calendar unified",
-    desc: "Stop switching between your task app, notes app, and calendar. See what's due, what's waiting, and what needs attention in one view.",
+    desc: "What's due, waiting, and urgent — one view.",
   },
   {
     icon: Sparkles,
     title: "AI that knows your context",
-    desc: "When you ask a question, AI already knows what you're working on and what's due. It reasons across your full picture — not from zero.",
+    desc: "AI reasons across your full picture, not from zero.",
   },
   {
     icon: BookOpen,
     title: "A workspace that learns",
-    desc: "Over time, IntegrateWise surfaces what matters to you. It learns your patterns and priorities. Less noise, more signal.",
+    desc: "Surfaces what matters. Less noise, more signal.",
   },
 ];
 
@@ -37,22 +37,22 @@ const steps = [
   {
     num: "01",
     title: "Connect the apps you already use",
-    desc: "Gmail, Slack, Calendar, Notion, ChatGPT, Claude — plug them in once via OAuth. Your data stays yours. The Spine starts reading immediately.",
+    desc: "Plug in via OAuth once. The Spine starts reading immediately.",
   },
   {
     num: "02",
     title: "Your Daily Workbench",
-    desc: "Tasks, emails, messages, and AI conversations flow into one clean workspace. Manage everything from one surface — no switching between tabs.",
+    desc: "Tasks, emails, and messages in one clean workspace.",
   },
   {
     num: "03",
     title: "The Twin works with your full context",
-    desc: "In the Intelligence Layer, the Twin reads your calendar, tasks, conversations, and session history. Ask a question, get an answer grounded in everything. No copy-pasting context.",
+    desc: "Ask a question, get an answer grounded in everything.",
   },
   {
     num: "04",
     title: "Approve in the Workbench. Nothing happens without you.",
-    desc: "The Twin proposes actions in the Intelligence Layer. You review the evidence and approve. Approved actions flow to your Workbench and execute. Session summaries go through TruthLayer before entering your knowledge.",
+    desc: "AI proposes actions. You review evidence and approve.",
   },
 ];
 
@@ -113,11 +113,7 @@ export function PersonalOpsContent() {
               }}
               className="mx-auto mt-8 max-w-2xl text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-white/55"
             >
-              Personal Ops is the Workbench for individual operators, managers,
-              and leaders who work across many apps and threads — giving them
-              one clear view of today&apos;s priorities powered by an
-              Intelligence Layer that understands context and never acts without
-              your permission.
+              One clear view of today&apos;s priorities. AI that understands context and never acts without permission.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 12 }}
@@ -174,15 +170,10 @@ export function PersonalOpsContent() {
               </h2>
               <div className="mt-8 space-y-6 text-[17px] font-medium leading-[1.7] tracking-[-0.02em] text-muted-foreground">
                 <p>
-                  Every morning you open email, calendar, Slack, your project
-                  tool, your notes app, and maybe an AI chat. You spend the
-                  first hour just figuring out what matters. By the time you
-                  start real work, the day is already moving.
+                  Every morning you open six apps just to figure out what matters. The day starts before you do.
                 </p>
                 <p className="text-foreground font-semibold">
-                  The problem isn&apos;t you. The problem is that your apps
-                  don&apos;t talk to each other, and your AI doesn&apos;t
-                  remember yesterday.
+                  Your apps don&apos;t talk to each other. Your AI doesn&apos;t remember yesterday.
                 </p>
               </div>
             </motion.div>
@@ -304,26 +295,26 @@ export function PersonalOpsContent() {
               {
                 num: "01",
                 title: "Morning briefing",
-                quote: "At the start of my day, pull today's meetings, priority emails, tasks, and open threads into one list and give me a short brief on what to do first.",
-                desc: "The Twin reads your connected apps through the Spine and generates a morning brief. You see it in the Intelligence Layer, linked to the actual emails, meetings, and tasks in your Workbench. Five minutes to clarity.",
+                quote: "Pull today's meetings, emails, and tasks into one brief.",
+                desc: "AI generates a morning brief linked to actual items. Five minutes to clarity.",
               },
               {
                 num: "02",
                 title: "Conversation and session memory",
-                quote: "Summarize my latest AI chats, documents, and meeting notes into a clean project summary that I can approve and save as my current source of truth.",
-                desc: "The Twin creates session summaries from your recent work. TruthLayer governs what enters knowledge. You approve, edit, or reject. Only confirmed insights become part of your AI's memory.",
+                quote: "Summarize recent work into a project summary I can approve.",
+                desc: "AI creates session summaries. You approve what enters knowledge.",
               },
               {
                 num: "03",
                 title: "Promise and follow-up tracker",
-                quote: "Scan recent emails and messages to find promises I made or requests I accepted that don't have a task yet. Let me turn them into tracked items in one click.",
-                desc: "The Twin reads your Context signals — emails, Slack messages, meeting notes — and surfaces commitments without follow-ups. You turn them into tasks in your Workbench with one click.",
+                quote: "Find promises and requests without a task yet.",
+                desc: "AI surfaces commitments without follow-ups. One click to create tasks.",
               },
               {
                 num: "04",
                 title: "Weekly planning",
-                quote: "Help me plan my week combining work tasks, personal tasks, and meetings into one view. Suggest what to move, drop, or delegate. I review and confirm the plan.",
-                desc: "The Twin pulls tasks, meetings, and goals into one weekly view. It suggests priorities and trade-offs. You approve the plan, and it becomes your Workbench for the week.",
+                quote: "Plan my week — suggest what to move, drop, or delegate.",
+                desc: "AI combines tasks, meetings, and goals. You approve the plan.",
               },
             ].map(({ num, title, quote, desc }, i) => (
               <motion.div
@@ -368,8 +359,7 @@ export function PersonalOpsContent() {
               <span className="text-primary">Not the other way around.</span>
             </h2>
             <p className="mt-6 text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">
-              See how one calm workspace gives you a clear start every morning,
-              with AI that remembers your context and waits for your approval.
+              One calm workspace. Clear mornings. AI that remembers and waits for approval.
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-2.5 sm:flex-row">
               <Button

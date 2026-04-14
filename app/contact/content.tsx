@@ -21,7 +21,7 @@ const contactFAQs = [
   },
   {
     question: "Can I try it before committing?",
-    answer: "Yes. We run a guided POC where you connect your real apps and see your real data in the workspace — including L1 (your Daily Workbench), L2 (the Intelligence Layer), and the Twin working with your actual context.",
+    answer: "Yes. We run a guided POC where you connect your real apps and see your real data — including the Workbench, Intelligence Layer, and the Twin working with your actual context.",
   },
   {
     question: "What if I need a connector you don't have?",

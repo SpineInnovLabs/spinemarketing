@@ -25,19 +25,19 @@ const byFunction = [
     icon: Users,
     name: "Account Success",
     href: "/account-success",
-    desc: "Every account's revenue, usage, support, and health — connected in one workspace.",
+    desc: "Revenue, usage, support, health — one workspace.",
   },
   {
     icon: BarChart3,
     name: "Business Ops",
     href: "/business-ops",
-    desc: "Revenue, pipeline, cash, and exceptions — one live picture for founders and leaders.",
+    desc: "Revenue, pipeline, cash — one live picture.",
   },
   {
     icon: Sparkles,
     name: "Personal Ops",
     href: "/personal-ops",
-    desc: "Your meetings, tasks, and threads in one place — with memory that carries context forward.",
+    desc: "Meetings, tasks, threads — with session memory.",
   },
 ];
 
@@ -46,37 +46,37 @@ const byIndustry = [
     icon: Cloud,
     name: "SaaS",
     href: "/solutions/saas",
-    desc: "Protect NRR by connecting CRM, product usage, and billing into one renewal-ready account view.",
+    desc: "CRM + usage + billing = one renewal-ready view.",
   },
   {
     icon: Wrench,
     name: "Services & Agencies",
     href: "/solutions/services",
-    desc: "See project margin, utilization, and billing risk before they become client problems.",
+    desc: "Margin, utilization, billing risk — before clients notice.",
   },
   {
     icon: Package,
     name: "Manufacturing & Trade",
     href: "/solutions/manufacturing",
-    desc: "Flag delayed orders and payment exceptions before customers call to complain.",
+    desc: "Flag delays and payment exceptions early.",
   },
   {
     icon: ShoppingCart,
     name: "Retail & Ecommerce",
     href: "/solutions/retail",
-    desc: "Connect stock, returns, and support so teams act on signals — not complaints.",
+    desc: "Stock, returns, support — act on signals, not complaints.",
   },
   {
     icon: Briefcase,
     name: "Professional Services",
     href: "/solutions/professional-services",
-    desc: "Surface unbilled time, scope creep, and disengaged clients before revenue leaks.",
+    desc: "Unbilled time, scope creep — caught before revenue leaks.",
   },
   {
     icon: TrendingUp,
     name: "Finance",
     href: "/solutions/finance",
-    desc: "Prioritize collections by customer health, not just invoice aging.",
+    desc: "Collections by customer health, not just aging.",
   },
 ];
 
@@ -85,37 +85,37 @@ const byRole = [
     icon: UserCheck,
     name: "Customer Success & Account Managers",
     href: "/solutions/customer-success",
-    desc: "AI-surfaced risk and expansion signals — save accounts before the conversation starts.",
+    desc: "Risk and expansion signals — before the conversation.",
   },
   {
     icon: Telescope,
     name: "Founders & CXOs",
     href: "/solutions/founders",
-    desc: "Monday brief, board pack, and top-account oversight — built in seconds, not hours.",
+    desc: "Monday brief and board pack — seconds, not hours.",
   },
   {
     icon: Settings2,
     name: "RevOps & Business Operations",
     href: "/solutions/revops",
-    desc: "Pipeline, forecasts, and process hygiene — governed and traceable across every tool.",
+    desc: "Pipeline and forecasts — governed and traceable.",
   },
   {
     icon: Truck,
     name: "Operations & Delivery Leaders",
     href: "/solutions/operations",
-    desc: "Catch delivery exceptions and utilization gaps before they reach the client.",
+    desc: "Delivery exceptions caught before the client knows.",
   },
   {
     icon: DollarSign,
     name: "Finance Leaders",
     href: "/solutions/finance-leaders",
-    desc: "Collections and cash flow connected to customer health — not just invoice dates.",
+    desc: "Cash flow connected to customer health.",
   },
   {
     icon: User,
     name: "Individual Professionals",
     href: "/solutions/individual",
-    desc: "Morning briefing, session memory, and task queue — your day, already organised.",
+    desc: "Morning brief, session memory, task queue — organized.",
   },
 ];
 
@@ -195,8 +195,7 @@ export function SolutionsContent() {
             transition={{ type: "spring", damping: 16, stiffness: 52, delay: 0.35 }}
             className="mx-auto mt-8 max-w-2xl text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-white/55"
           >
-            One Spine. One Workbench. One Intelligence layer — shaped to your
-            function, your industry, and your role.
+            One Spine. Shaped to your function, industry, and role.
           </motion.p>
         </div>
       </section>
@@ -216,9 +215,9 @@ export function SolutionsContent() {
             </span>
             <div className="flex flex-wrap gap-x-6 gap-y-2">
               {[
-                { label: "Spine", note: "Connects every app into unified truth." },
-                { label: "Daily Workbench", note: "Shaped to your function or role." },
-                { label: "Intelligence Layer", note: "Surfaces signals. Proposes actions. Waits for your approval." },
+                { label: "Spine", note: "Connects every app." },
+                { label: "Workbench", note: "Shaped to your role." },
+                { label: "Intelligence", note: "Proposes. You approve." },
               ].map(({ label, note }) => (
                 <span key={label} className="text-[13px] font-medium text-muted-foreground">
                   <span className="font-semibold text-foreground">{label}</span> — {note}

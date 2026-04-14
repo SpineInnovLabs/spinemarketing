@@ -56,7 +56,7 @@ export function LogosSection() {
           transition={{ type: "spring", damping: 18, stiffness: 70, delay: 0.08 }}
           className="mt-3 text-center text-[15px] font-medium leading-[1.5] tracking-[-0.02em] text-white/40"
         >
-          All your key apps plug into the Spine and show up in one Knowledge Workspace — no migration, no engineering team needed.
+          Plug into the Spine. Show up in one workspace.
         </motion.p>
       </div>
       <div className="relative mt-8">

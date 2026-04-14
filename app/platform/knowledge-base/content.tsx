@@ -12,40 +12,40 @@ const memoryCards = [
     accent: "#8b5cf6",
     bg: "rgba(139,92,246,0.12)",
     title: "Zero-Shot Context",
-    desc: "Accumulated organizational intelligence grows daily without model retraining. The system operates immediately on current SpineVault state — no warmup, no setup period.",
+    desc: "Grows daily without model retraining. Operates immediately.",
   },
   {
     icon: BookOpen,
     accent: "#3b82f6",
     bg: "rgba(59,130,246,0.12)",
     title: "Beyond RAG",
-    desc: "Unlike Retrieval-Augmented Generation, Knowledge Memory provides a persistent, evolving narrative of organizational state — not stale snippets stitched together at query time.",
+    desc: "Persistent, evolving narrative — not stale snippets.",
   },
   {
     icon: GitMerge,
     accent: "#10b981",
     bg: "rgba(16,185,129,0.12)",
     title: "Entity-Anchored",
-    desc: "All knowledge is linked to canonical Spine entities — Account 360, Contact 360 — not floating contexts or disconnected documents that drift from source data.",
+    desc: "All knowledge linked to canonical Spine entities.",
   },
 ];
 
 const truthLayerCards = [
   {
     title: "Approval Topology",
-    desc: "Routing logic for human verification — who approves what based on impact level, action type, and entity tier. Configurable per team, role, and threshold.",
+    desc: "Configurable routing for human verification by role.",
   },
   {
     title: "Audit Immutability",
-    desc: "Append-only logs of every decision and data change. Nothing can be silently altered — every write is traceable with an evidence hash that links back to Spine records.",
+    desc: "Append-only logs — every write is traceable.",
   },
   {
     title: "Confidence Scoring",
-    desc: "0–100 scoring on every insight before human presentation. Low-confidence items are quarantined pending additional signal — never surfaced as fact.",
+    desc: "0–100 scoring before human presentation.",
   },
   {
     title: "Governance Membrane",
-    desc: "The TruthLayer enforces the absolute Truth Boundary — an architectural mandate that AI cannot write to any system without human approval. Not a policy. A constraint.",
+    desc: "AI cannot write without human approval. Architectural mandate.",
   },
 ];
 
@@ -55,21 +55,21 @@ const accumulationCards = [
     accent: "#3b82f6",
     bg: "rgba(59,130,246,0.12)",
     title: "Flow C Triage",
-    desc: "The decision gate between Store and Think. Determines whether AI Session Summaries enter Knowledge Base passively or trigger Twin Activation for immediate action.",
+    desc: "Decides passive storage vs. Twin Activation.",
   },
   {
     icon: CheckCircle,
     accent: "#10b981",
     bg: "rgba(16,185,129,0.12)",
     title: "Human Validation",
-    desc: "The Knowledge UI surfaces extracted insights for approval before persistence. Humans review what enters canonical memory — maintaining accuracy at the source.",
+    desc: "Insights reviewed before entering canonical memory.",
   },
   {
     icon: Eye,
     accent: "#8b5cf6",
     bg: "rgba(139,92,246,0.12)",
     title: "Contextual Firewalling",
-    desc: "Sales knowledge does not leak to Engineering contexts. Department-scoped knowledge boundaries are enforced at the persistence layer — not just at the UI level.",
+    desc: "Department-scoped knowledge boundaries enforced at persistence.",
   },
 ];
 
@@ -96,7 +96,7 @@ export function KnowledgeBaseContent() {
               <span className="text-primary">without retraining.</span>
             </h1>
             <p className="text-xl text-white/55 max-w-2xl mx-auto leading-relaxed mb-10">
-              Knowledge Memory accumulates organizational context automatically. TruthLayer governs every insight before it enters canonical memory — so what your team sees is always anchored in fact.
+              Knowledge Memory accumulates context automatically, governed by TruthLayer.
             </p>
             <Link
               href="/contact?intent=demo"
@@ -119,7 +119,7 @@ export function KnowledgeBaseContent() {
               </div>
               <div>
                 <h2 className="text-2xl font-bold">Knowledge Memory</h2>
-                <p className="text-white/40 text-sm">Persistent, entity-anchored organizational intelligence</p>
+                <p className="text-white/40 text-sm">Persistent, entity-anchored intelligence</p>
               </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -160,7 +160,7 @@ export function KnowledgeBaseContent() {
               <h2 className="text-2xl font-bold">TruthLayer</h2>
               <span className="px-3 py-1 rounded-full text-xs font-semibold border" style={{ borderColor: "rgba(245,158,11,0.3)", color: "#f59e0b", background: "rgba(245,158,11,0.08)" }}>Governance membrane</span>
             </div>
-            <p className="text-white/50 mb-8 ml-[52px] text-sm leading-relaxed">The architectural layer that ensures every insight is verified, every write is authorized, and every decision is auditable — before it ever reaches your team.</p>
+            <p className="text-white/50 mb-8 ml-[52px] text-sm leading-relaxed">Every insight verified and every write authorized before reaching your team.</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               {truthLayerCards.map((t, i) => (
                 <motion.div
@@ -186,7 +186,7 @@ export function KnowledgeBaseContent() {
               </div>
               <div>
                 <h2 className="text-2xl font-bold">Knowledge Accumulation</h2>
-                <p className="text-white/40 text-sm">How context enters and stays accurate over time</p>
+                <p className="text-white/40 text-sm">How context enters and stays accurate</p>
               </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -225,7 +225,7 @@ export function KnowledgeBaseContent() {
             className="rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.05] to-transparent p-14"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Knowledge that compounds daily.</h2>
-            <p className="text-white/50 text-lg mb-10 max-w-lg mx-auto">See how Knowledge Memory and TruthLayer keep your team's intelligence accurate and growing.</p>
+            <p className="text-white/50 text-lg mb-10 max-w-lg mx-auto">See how Knowledge Memory keeps your intelligence accurate and growing.</p>
             <Link
               href="/contact?intent=demo"
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl text-[15px] font-semibold text-white"

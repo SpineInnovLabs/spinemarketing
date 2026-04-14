@@ -366,7 +366,7 @@ const steps: StickyScrollStep[] = [
     label: "Step 04 — You approve",
     title: "You approve what happens",
     description:
-      "Suggested actions appear in L1 for review. Nothing updates in any app until a human approves. Approved actions write back to connected apps and are added to the Spine's memory.",
+      "Suggested actions appear in the Workbench for review. Nothing updates until you approve. Approved actions write back and enter the Spine's memory.",
     visual: <GovernVisual />,
   },
 ];

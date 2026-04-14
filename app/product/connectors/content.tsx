@@ -21,28 +21,28 @@ const inputTypes = [
   {
     type: "SaaS Tools",
     count: "70+",
-    desc: "Standard API-driven enterprise software — CRM, billing, support, project management, communication.",
+    desc: "API-driven enterprise software — CRM, billing, support, and more.",
     examples: ["Salesforce", "HubSpot", "Stripe", "Zendesk", "Jira", "Asana", "Slack", "Linear", "Notion", "Intercom", "QuickBooks", "Xero"],
     color: "primary",
   },
   {
     type: "AI Services",
     count: "12+",
-    desc: "Direct pipes to LLMs and specialized cognitive processors, feeding structured outputs back into the Spine as typed entities.",
+    desc: "Direct pipes to LLMs feeding structured outputs into the Spine.",
     examples: ["OpenAI", "Anthropic", "Google Gemini", "Perplexity", "Cohere", "Mistral"],
     color: "neutral",
   },
   {
     type: "MCP Protocol",
     count: "Any",
-    desc: "Model Context Protocol — a standardized bridge for AI-native communication, enabling models to access local and remote data sources with structured context.",
+    desc: "Standardized bridge for AI-native communication with any data source.",
     examples: ["Local file systems", "Internal databases", "Custom data sources", "Legacy ERPs"],
     color: "neutral",
   },
   {
     type: "Webhooks",
     count: "Unlimited",
-    desc: "Flexible, event-driven inputs for real-time capture from any system that can POST. Zero polling latency.",
+    desc: "Event-driven inputs for real-time capture. Zero polling latency.",
     examples: ["Custom events", "Form submissions", "Payment events", "Calendar events", "IoT sensors"],
     color: "neutral",
   },
@@ -53,48 +53,48 @@ const managementFeatures = [
     icon: Plug,
     label: "Connector Directory",
     headline: "Find, configure, activate in minutes",
-    body: "Browse 70+ pre-built connectors organized by category. Each connector shows its sync method, data types it provides, and which Spine entity fields it populates. One-click OAuth for most SaaS tools.",
+    body: "Browse 70+ pre-built connectors. One-click OAuth for most SaaS tools.",
     details: [
-      "Search by tool name, data type, or entity field",
-      "Preview what data each connector surfaces before activating",
-      "Permission scoping — request only the data you need",
-      "Sandbox testing before live Spine ingestion",
+      "Search by tool name or data type",
+      "Preview data before activating",
+      "Permission scoping per connector",
+      "Sandbox testing before live ingestion",
     ],
   },
   {
     icon: RefreshCw,
     label: "Auto-Upgrade Status",
-    headline: "Connector health without manual maintenance",
-    body: "Every connector carries a live health indicator. When an upstream API changes its schema, the auto-upgrade protocol detects the drift and remaps to the new structure — your Spine canonical schema stays constant.",
+    headline: "Connector health without maintenance",
+    body: "Live health indicators with automatic schema remapping on API changes.",
     details: [
-      "Live sync status: Connected / Degraded / Action Required",
-      "API version tracking with automatic schema remapping",
-      "Retry logic and dead-letter queue visibility",
-      "Webhook delivery rate and latency dashboards",
+      "Live sync status indicators",
+      "Automatic API version tracking",
+      "Retry logic and dead-letter visibility",
+      "Webhook latency dashboards",
     ],
   },
   {
     icon: Settings2,
     label: "Unified Flow Configuration",
-    headline: "SaaS + AI Services + MCP + Webhooks — one interface",
-    body: "Configure every input type through a single setup flow. No separate admin panels per tool. Define sync frequency, entity mapping, field-level inclusion, and conflict resolution rules from one place.",
+    headline: "SaaS + AI + MCP + Webhooks — one interface",
+    body: "Configure every input type through a single setup flow.",
     details: [
-      "Sync frequency: Real-time, hourly, daily, or manual",
-      "Field-level inclusion rules per connector",
-      "Entity mapping customization (which Spine fields this connector populates)",
-      "Conflict resolution priority order across sources",
+      "Real-time, hourly, daily, or manual sync",
+      "Field-level inclusion rules",
+      "Entity mapping customization",
+      "Conflict resolution priority order",
     ],
   },
   {
     icon: Shield,
     label: "Contextual Firewalling Controls",
-    headline: "Set what each team sees — and what it doesn't",
-    body: "Control data visibility by department and industry context. A Sales Twin does not ingest Engineering tickets unless explicitly authorized. Configure exactly which data flows to which Workspace view.",
+    headline: "Set what each team sees",
+    body: "Control data visibility by department and context. Configurable per view.",
     details: [
       "Department-level data access controls",
-      "Industry filter configuration (prevent cross-domain noise)",
+      "Industry filter configuration",
       "Twin-level context permissions",
-      "Field-level visibility masking for sensitive PII",
+      "Field-level PII masking",
     ],
   },
 ];
@@ -134,9 +134,7 @@ export function ProductConnectorsContent() {
             {...heroFade(0.38)}
             className="mx-auto mt-7 max-w-xl text-[17px] font-medium leading-[1.55] tracking-[-0.02em] text-white/50"
           >
-            The user-facing management layer for the Spine&apos;s integration
-            infrastructure. Configure, monitor, and govern every data source —
-            SaaS tools, AI services, MCP, and webhooks — from one interface.
+            Configure, monitor, and govern every data source from one interface.
           </motion.p>
 
           <motion.div
@@ -171,9 +169,7 @@ export function ProductConnectorsContent() {
               <span className="text-primary">One Spine.</span>
             </h2>
             <p className="mt-4 text-[16px] font-medium leading-[1.55] text-muted-foreground">
-              Whether it&apos;s a CRM API, an LLM output, an AI-native MCP
-              source, or a raw webhook — every input normalizes through the
-              same Spine pipeline into canonical entities.
+              Every input normalizes through the same Spine pipeline into canonical entities.
             </p>
           </motion.div>
 
@@ -323,9 +319,7 @@ export function ProductConnectorsContent() {
               Auto-Upgrade eliminates connector maintenance
             </h2>
             <p className="mx-auto mt-3 max-w-lg text-[15px] font-medium leading-[1.6] text-muted-foreground">
-              When Salesforce changes its API, your canonical Spine schema
-              stays constant. Only the connector mapping updates — automatically,
-              without downtime, without your team touching a line of config.
+              When APIs change, your Spine schema stays constant. Connector mappings update automatically.
             </p>
             <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
               <Link

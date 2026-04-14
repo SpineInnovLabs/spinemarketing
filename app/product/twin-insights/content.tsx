@@ -7,26 +7,26 @@ import { Footer } from "@/components/footer";
 
 const signalPatterns = [
   { signal: "Churn Risk", inputs: "Usage dropped 30% AND champion left AND ticket spike", score: "87", color: "text-red-400", border: "border-red-500/20" },
-  { signal: "Expansion Opportunity", inputs: "Invoice paid early + Usage up + New stakeholders added", score: "74", color: "text-emerald-400", border: "border-emerald-500/20" },
+  { signal: "Expansion Opportunity", inputs: "Invoice paid early + Usage up + New stakeholders", score: "74", color: "text-emerald-400", border: "border-emerald-500/20" },
 ];
 
 const briefComponents = [
-  { title: "Portfolio Health Changes", desc: "Accounts that moved from Healthy → At-Risk overnight, with entity links and driving signals." },
-  { title: "Pending Approvals", desc: "Actions requiring attention today, ranked by impact and urgency." },
-  { title: "Follow-Up Reminders", desc: "Promises made in prior AI sessions surfaced as actionable reminders." },
-  { title: "Competitive Mentions", desc: "Competitor names detected in email threads, meeting transcripts, and support tickets." },
+  { title: "Portfolio Health Changes", desc: "Accounts that moved from Healthy to At-Risk overnight." },
+  { title: "Pending Approvals", desc: "Actions needing attention today, ranked by impact." },
+  { title: "Follow-Up Reminders", desc: "Prior session promises surfaced as reminders." },
+  { title: "Competitive Mentions", desc: "Competitor names detected across communications." },
 ];
 
 const exceptionItems = [
-  { icon: BarChart3, color: "text-blue-400", title: "Anomaly Surfacing", desc: "Statistical outliers in billing, usage, and communication patterns flagged with supporting evidence from SpineVault." },
-  { icon: TrendingUp, color: "text-violet-400", title: "Trend Analysis", desc: "Week-over-week entity health trajectories with velocity indicators — accelerating, stabilising, or degrading." },
-  { icon: Clock, color: "text-amber-400", title: "Predictive Alerts", desc: "90/60/30-day renewal risk countdowns. Collection probability scores. Project deadline risk from milestone velocity." },
+  { icon: BarChart3, color: "text-blue-400", title: "Anomaly Surfacing", desc: "Statistical outliers flagged with supporting evidence." },
+  { icon: TrendingUp, color: "text-violet-400", title: "Trend Analysis", desc: "Week-over-week health trajectories with velocity indicators." },
+  { icon: Clock, color: "text-amber-400", title: "Predictive Alerts", desc: "Renewal risk countdowns and deadline probability scores." },
 ];
 
 const evidenceItems = [
-  { icon: Brain, color: "text-purple-400", title: "Chain-of-Thought Visualization", desc: "Step-by-step explanation of AI reasoning with goal_refs — every insight traces back to the Spine records that produced it." },
-  { icon: GitMerge, color: "text-cyan-400", title: "Dual Context Mapping", desc: "System impact (\"Updates Salesforce field Last_Contact_Date\") alongside business impact (\"Reduces churn probability by 15%\")." },
-  { icon: Zap, color: "text-emerald-400", title: "Source Attribution", desc: "Every insight links back to originating SpineVault records. No floating conclusions — everything is anchored to canonical data." },
+  { icon: Brain, color: "text-purple-400", title: "Chain-of-Thought Visualization", desc: "Step-by-step AI reasoning traced to Spine records." },
+  { icon: GitMerge, color: "text-cyan-400", title: "Dual Context Mapping", desc: "System impact alongside business impact, side by side." },
+  { icon: Zap, color: "text-emerald-400", title: "Source Attribution", desc: "Every insight links back to canonical SpineVault records." },
 ];
 
 export function TwinInsightsContent() {
@@ -45,7 +45,7 @@ export function TwinInsightsContent() {
               Proactive intelligence.<br />Signals, not searches.
             </h1>
             <p className="text-xl text-white/60 max-w-2xl mx-auto leading-relaxed">
-              Signals surface automatically based on Entity 360 changes — cross-system pattern detection, Morning Brief, exception alerts, and evidence-backed reasoning in one place.
+              Signals surface automatically from cross-system pattern detection and evidence-backed reasoning.
             </p>
           </motion.div>
         </div>
@@ -57,7 +57,7 @@ export function TwinInsightsContent() {
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}
             className="rounded-2xl border border-white/10 bg-white/[0.03] p-8">
             <h2 className="text-lg font-bold mb-2">Signal Inbox</h2>
-            <p className="text-white/50 text-sm mb-6 leading-relaxed">Cross-system pattern detection. Signals surface proactively — not from search. Low-confidence or stale signals are quarantined by Flow C triage before reaching you.</p>
+            <p className="text-white/50 text-sm mb-6 leading-relaxed">Cross-system pattern detection. Low-confidence signals quarantined before reaching you.</p>
             <div className="space-y-4">
               {signalPatterns.map((s) => (
                 <div key={s.signal} className={`rounded-xl border ${s.border} bg-white/[0.02] p-5`}>
@@ -74,7 +74,7 @@ export function TwinInsightsContent() {
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }}
             className="rounded-2xl border border-white/10 bg-white/[0.03] p-8">
             <h2 className="text-lg font-bold mb-2">Morning Brief Generator</h2>
-            <p className="text-white/50 text-sm mb-6 leading-relaxed">AI-generated digest of overnight changes across your portfolio. Flow C algorithm surfaces only high-signal items — suppressing routine updates so you see only what matters.</p>
+            <p className="text-white/50 text-sm mb-6 leading-relaxed">AI-generated digest of overnight changes. Only high-signal items surface.</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {briefComponents.map((b) => (
                 <div key={b.title} className="rounded-xl border border-white/8 bg-white/[0.02] p-5">

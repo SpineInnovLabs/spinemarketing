@@ -1,6 +1,6 @@
 "use client";
 
-import { Database, Brain, ShieldCheck, ArrowRight } from "lucide-react";
+import { LayoutGrid, Sparkles, UserCheck, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { DashboardMockup } from "@/components/dashboard-mockup";
@@ -9,29 +9,29 @@ import { Badge } from "@/components/ui/badge";
 const pillars = [
   {
     num: "01",
-    icon: Database,
+    icon: LayoutGrid,
     title: "Your Daily Workbench",
-    label: "L1",
+    label: "Workbench",
     description:
-      "Accounts, tasks, workflows, renewals, approvals, calendar, and engagement logs — all in one place. This is where you work every day.",
+      "Accounts, tasks, workflows, calendar — one place to work every day.",
     color: { bg: "rgba(52,211,153,0.10)", glow: "rgba(52,211,153,0.35)", text: "#34d399", border: "rgba(52,211,153,0.20)", gradFrom: "#34d399", gradTo: "#059669" },
   },
   {
     num: "02",
-    icon: Brain,
+    icon: Sparkles,
     title: "The Intelligence Layer",
-    label: "L2",
+    label: "Intelligence",
     description:
-      "AI reads your data through the Spine, spots patterns, and surfaces signals with evidence. Every action waits for explicit approval.",
+      "AI spots patterns, surfaces signals with evidence. You approve.",
     color: { bg: "rgba(139,92,246,0.10)", glow: "rgba(139,92,246,0.35)", text: "#8b5cf6", border: "rgba(139,92,246,0.20)", gradFrom: "#8b5cf6", gradTo: "#6d28d9" },
   },
   {
     num: "03",
-    icon: ShieldCheck,
+    icon: UserCheck,
     title: "Nothing happens without you",
     label: "HITL",
     description:
-      "Every insight has evidence. Every action waits for your approval. Approved actions write back to connected apps and are added to the Spine\u2019s memory.",
+      "Every insight has evidence. Every action waits for your approval.",
     color: { bg: "rgba(251,191,36,0.10)", glow: "rgba(251,191,36,0.35)", text: "#fbbf24", border: "rgba(251,191,36,0.20)", gradFrom: "#fbbf24", gradTo: "#d97706" },
   },
 ];
@@ -70,7 +70,7 @@ export function SolutionSection() {
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-emerald-300">AI that thinks in context.</span>
           </h2>
           <p className="mt-6 text-base font-medium leading-relaxed text-white/50">
-            Manage accounts, track tasks, and run workflows in one place. The Twin reads your data and proposes what&apos;s next — you decide what actually happens.
+            Your daily surface. The Twin proposes — you decide.
           </p>
         </motion.div>
 

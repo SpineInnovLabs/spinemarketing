@@ -6,32 +6,32 @@ import { Header } from "@/components/header-client";
 import { Footer } from "@/components/footer";
 
 const trustDashboard = [
-  { zone: "Green Zone", color: "text-emerald-400", border: "border-emerald-500/20", desc: "AI reasoning, suggestion generation, evidence compilation. The Twin operates freely here — thinking, scoring, surfacing." },
-  { zone: "Red Zone", color: "text-red-400", border: "border-red-500/20", desc: "System write-backs, customer communications, data modifications. Requires explicit human approval — no exceptions." },
+  { zone: "Green Zone", color: "text-emerald-400", border: "border-emerald-500/20", desc: "AI reasoning, scoring, and evidence compilation. Twin operates freely here." },
+  { zone: "Red Zone", color: "text-red-400", border: "border-red-500/20", desc: "System writes and communications. Requires explicit human approval." },
 ];
 
 const sovereigntyControls = [
-  { title: "Your Data, Your Rules", desc: "Configuration panel for complete organizational ownership of ontological models. IntegrateWise holds no claim to your canonical data." },
-  { title: "Regional Data Residency", desc: "Select India, EU, or US as your data region. Data stays in your selected region — no cross-border transfer without explicit configuration." },
-  { title: "Retention Policies", desc: "Per-entity-type data retention policy settings. Define how long records, AI sessions, and audit logs are stored." },
+  { title: "Your Data, Your Rules", desc: "Complete ownership of ontological models and canonical data." },
+  { title: "Regional Data Residency", desc: "Select India, EU, or US. No cross-border transfer." },
+  { title: "Retention Policies", desc: "Per-entity-type retention settings for records and logs." },
 ];
 
 const auditFeatures = [
-  { icon: FileText, color: "text-blue-400", title: "Immutable Decision Log", desc: "Complete history of who approved what, when, and based on which Spine data. Filterable by user, date range, entity, action type, and impact level." },
-  { icon: Eye, color: "text-violet-400", title: "Session Replay", desc: "Reconstruct the exact Entity 360 state at the time of any approval decision — full forensic reconstruction for compliance or dispute resolution." },
-  { icon: RotateCcw, color: "text-amber-400", title: "Reversal Tracking", desc: "Complete log of all rolled-back actions with reason codes, rolling user attribution, and time-to-reversal metrics." },
+  { icon: FileText, color: "text-blue-400", title: "Immutable Decision Log", desc: "Complete history of who approved what and when." },
+  { icon: Eye, color: "text-violet-400", title: "Session Replay", desc: "Reconstruct exact Entity 360 state at any approval time." },
+  { icon: RotateCcw, color: "text-amber-400", title: "Reversal Tracking", desc: "Full log of rolled-back actions with reason codes." },
 ];
 
 const rbacItems = [
-  { title: "RBAC Visualization", desc: "Field-level permission grid showing who can see which Entity 360 attributes. Visual matrix across all roles and entity types." },
-  { title: "Contextual Firewalling UI", desc: "Department isolation settings — prevent Sales from seeing Engineering data unless explicitly authorized. Configurable per team and data domain." },
-  { title: "API Key Management", desc: "Interface for generating and revoking connector credentials with scope limitation. Every key is scoped, audited, and time-bounded." },
+  { title: "RBAC Visualization", desc: "Field-level permission grid across all roles." },
+  { title: "Contextual Firewalling UI", desc: "Department isolation settings per team and data domain." },
+  { title: "API Key Management", desc: "Scoped, audited, and time-bounded credentials." },
 ];
 
 const emergencyItems = [
-  { icon: AlertTriangle, color: "text-red-400", title: "Kill Switch", desc: "Immediate halt of all Twin operations during security incidents. One action, instant effect across all connected systems and sessions." },
-  { icon: Eye, color: "text-violet-400", title: "Breach Response", desc: "Automated data access logs for forensic analysis. Full timeline of every entity access, AI session, and write-back in the incident window." },
-  { icon: RotateCcw, color: "text-cyan-400", title: "Recovery Interface", desc: "Point-in-time restoration of SpineVault from encrypted backups. Select any restore point and preview the entity state before committing." },
+  { icon: AlertTriangle, color: "text-red-400", title: "Kill Switch", desc: "Immediate halt of all Twin operations. One click." },
+  { icon: Eye, color: "text-violet-400", title: "Breach Response", desc: "Automated access logs for forensic analysis." },
+  { icon: RotateCcw, color: "text-cyan-400", title: "Recovery Interface", desc: "Point-in-time SpineVault restoration from backups." },
 ];
 
 export function ProductSecurityContent() {
@@ -50,7 +50,7 @@ export function ProductSecurityContent() {
               Truth Boundary UI.<br />Audit logs. Compliance.
             </h1>
             <p className="text-xl text-white/60 max-w-2xl mx-auto leading-relaxed">
-              The product-level security interface — visualize where AI ends and human control begins, manage access, export compliance reports, and respond to incidents with full forensic context.
+              Visualize where AI ends and human control begins — with full forensic context.
             </p>
           </motion.div>
         </div>
@@ -62,7 +62,7 @@ export function ProductSecurityContent() {
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}
             className="rounded-2xl border border-white/10 bg-white/[0.03] p-8">
             <h2 className="text-lg font-bold mb-2">Trust & Governance Dashboard</h2>
-            <p className="text-white/50 text-sm mb-6 leading-relaxed">A graphical representation of where AI memory ends and human control begins. Every operation is categorised into one of two zones.</p>
+            <p className="text-white/50 text-sm mb-6 leading-relaxed">Every operation is categorised into one of two zones.</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-6">
               {trustDashboard.map((t) => (
                 <div key={t.zone} className={`rounded-xl border ${t.border} bg-white/[0.02] p-6`}>

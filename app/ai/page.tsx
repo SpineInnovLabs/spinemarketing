@@ -7,7 +7,7 @@ import { AIContent } from "./content"
 export const metadata: Metadata = {
   title: "The Twin | IntegrateWise",
   description:
-    "The Twin reads Truth, Context, and Session Summaries through the Spine. It thinks in full context, surfaces signals in L2, and waits for your approval before anything changes.",
+    "The Twin reads Truth, Context, and Session Summaries through the Spine. Surfaces signals in the Intelligence Layer and waits for your approval.",
 }
 
 export default function AIPage() {

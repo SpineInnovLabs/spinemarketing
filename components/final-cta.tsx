@@ -26,8 +26,7 @@ export function FinalCTA() {
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-emerald-300 to-primary">in one place?</span>
           </h2>
           <p className="mt-6 text-base font-medium leading-relaxed text-white/55">
-            Bring your existing apps into a Knowledge Workspace over the Spine
-            and see how AI can think in context while you stay in control.
+            Your apps. One Spine. AI that thinks in context.
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Button

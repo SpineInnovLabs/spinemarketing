@@ -6,36 +6,36 @@ export function SaasContent() {
   return (
     <IndustrySolutionLayout
       category="SaaS & Subscription"
-      headline="Protect NRR. Catch churn before it starts."
-      subheadline="Unify product usage, billing, support, and CRM to protect NRR and catch churn before it happens."
+      headline="The nervous system for SaaS renewals."
+      subheadline="Unified signals from usage, billing, and support protect NRR."
       ctaLabel="See Account Success workspace →"
       ctaHref="/contact"
       problem={{
         bullets: [
-          "Usage drops don't surface in CRM until a CSM manually updates the health score.",
-          "Champion departures live in email and LinkedIn — not in the account record.",
-          "You find out about churn risk when the customer calls to cancel, not 90 days before.",
+          "Usage drops hide in product analytics, invisible to CRM.",
+          "Champion departures go unnoticed until renewal.",
+          "Churn risk surfaces at cancellation, not 90 days before.",
         ],
       }}
       capabilities={[
         {
           title: "Adoption-to-Renewal Tracking",
-          desc: "Health scores weighted by feature adoption, login frequency, and license utilization.",
+          desc: "Health scores weighted by adoption, logins, and utilization.",
         },
         {
           title: "Churn Early Warning",
-          desc: "Combined signal from support sentiment, payment delays, and usage drops — before any single app would flag it.",
+          desc: "Combined signals from support, payments, and usage drops.",
         },
         {
           title: "Expansion Playbooks",
-          desc: "AI identifies Power Users near license limits and drafts upgrade conversations for your approval.",
+          desc: "AI identifies power users near limits, drafts upgrade conversations.",
         },
         {
           title: "QBR Auto-Prep",
-          desc: "One-click business review decks built from real product adoption data and relationship history.",
+          desc: "One-click review decks from real adoption data.",
         },
       ]}
-      governance="Every health score change and expansion recommendation shows its source data. CSMs approve before any communication sends — full audit trail included."
+      governance="Every score change shows source data. CSMs approve before any message sends."
       connectors={[
         "Salesforce", "HubSpot", "Stripe", "Chargebee", "Zendesk",
         "Segment", "Amplitude", "Mixpanel", "Slack", "GitHub",
