@@ -54,7 +54,7 @@ export function AboutContent() {
       <section
         className="relative overflow-hidden bg-dark-section"
       >
-        <div className="mx-auto max-w-[1200px] px-6 pt-[160px] pb-[100px] md:px-16">
+        <div className="mx-auto max-w-[1200px] px-6 pt-[180px] pb-[120px] md:px-16">
           <div className="mx-auto max-w-3xl text-center">
             <motion.div
               initial={{ opacity: 0, y: 12 }}
@@ -66,14 +66,13 @@ export function AboutContent() {
                 stiffness: 52,
                 delay: 0.2,
               }}
-              className="mb-6 inline-flex items-center gap-2.5 rounded-[40px] bg-white px-4 py-1.5"
-              style={{ boxShadow: "0px 0px 0px 3px rgb(248 248 250)" }}
+              className="mb-6 inline-flex items-center gap-2.5 rounded-[40px] border border-white/10 bg-white/5 px-4 py-1.5"
             >
               <span
                 className="h-2 w-2 rounded-full"
                 style={{ background: "var(--gradient-primary-icon)" }}
               />
-              <span className="text-[14px] font-semibold tracking-[-0.03em] text-[#0a0b10]">
+              <span className="text-[14px] font-semibold tracking-[-0.03em] text-white/60">
                 The Founder Story
               </span>
             </motion.div>

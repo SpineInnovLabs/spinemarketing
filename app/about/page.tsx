@@ -3,8 +3,8 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { FinalCTA } from "@/components/final-cta"
 import { AboutContent } from "./content"
+import { AboutJourneyScroll, AboutPlatformGather } from "./sticky-sections"
 import { StatsBar } from "@/components/stats-bar"
-import { BenefitsGrid } from "@/components/benefits-grid"
 import { TestimonialsSection } from "@/components/testimonials-section"
 
 export const metadata: Metadata = {
@@ -19,6 +19,7 @@ export default function AboutPage() {
       <Header />
       <main id="main">
         <AboutContent />
+        <AboutJourneyScroll />
         <StatsBar
           stats={[
             { value: 13, suffix: "+", label: "Years of integration" },
@@ -27,10 +28,7 @@ export default function AboutPage() {
             { value: 5, suffix: "", label: "Industries served" },
           ]}
         />
-        <BenefitsGrid
-          tag="What we built"
-          heading="From one save to a platform."
-        />
+        <AboutPlatformGather />
         <TestimonialsSection heading="Why teams trust IntegrateWise." />
         <FinalCTA />
       </main>

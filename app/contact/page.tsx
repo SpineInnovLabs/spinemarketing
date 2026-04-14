@@ -2,6 +2,7 @@ import { Metadata } from "next"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { ContactContent } from "./content"
+import { ContactOnboardingGather } from "./sticky-sections"
 
 export const metadata: Metadata = {
   title: "Contact | IntegrateWise",
@@ -15,6 +16,7 @@ export default function ContactPage() {
       <Header />
       <main id="main">
         <ContactContent defaultIntent="contact" />
+        <ContactOnboardingGather />
       </main>
       <Footer />
     </div>

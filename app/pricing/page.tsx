@@ -7,6 +7,7 @@ import { PricingFAQ } from "./faq";
 import { PricingHero } from "./pricing-hero";
 import { PricingTrustBar } from "./trust-bar";
 import { PricingComparison } from "./comparison";
+import { PricingValueScroll, PricingIncludedGather } from "./sticky-sections";
 import { TestimonialsSection } from "@/components/testimonials-section";
 
 export const metadata: Metadata = {
@@ -22,7 +23,9 @@ export default function PricingPage() {
       <main id="main">
         <PricingHero />
         <PricingSection hideHeading />
+        <PricingValueScroll />
         <PricingComparison />
+        <PricingIncludedGather />
         <PricingTrustBar />
         <TestimonialsSection
           heading="What teams say about the value."

@@ -50,7 +50,7 @@ export function ContactContent({
   return (
     <>
       <section className="relative overflow-hidden bg-dark-section">
-        <div className="mx-auto max-w-[1200px] px-6 pt-40 pb-24 md:px-16">
+        <div className="mx-auto max-w-[1200px] px-6 pt-[180px] pb-[100px] md:px-16">
           <div className="mx-auto max-w-3xl text-center">
             <motion.div
               initial={{ opacity: 0, y: 12 }}
@@ -84,7 +84,7 @@ export function ContactContent({
         </div>
       </section>
 
-      <section className="bg-dark-section py-16 px-6 md:px-16">
+      <section className="bg-dark-section py-24 px-6 md:px-16">
         <div className="mx-auto max-w-[1100px]">
           <div className="mx-auto grid max-w-4xl gap-6 sm:grid-cols-3">
             {[
@@ -120,7 +120,7 @@ export function ContactContent({
                 viewport={{ once: true }}
                 transition={{ type: "spring", bounce: 0.2, duration: 0.6, delay: i * 0.1 }}
               >
-                <Card className="flex h-full flex-col items-center border-border bg-card p-8 text-center">
+                <Card className="flex h-full flex-col items-center border-white/[0.08] bg-white/[0.03] p-8 text-center">
                   <CardContent className="flex flex-col items-center p-0">
                     <div
                       className="flex h-12 w-12 items-center justify-center rounded-xl"

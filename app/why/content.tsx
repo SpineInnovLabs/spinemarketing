@@ -85,7 +85,7 @@ export function WhyContent() {
     <>
       {/* Hero */}
       <section
-        className="relative overflow-hidden pb-24 pt-40 bg-dark-section"
+        className="relative overflow-hidden pb-[100px] pt-[180px] bg-dark-section"
       >
         <div className="mx-auto max-w-[800px] px-4 text-center">
           <motion.div
