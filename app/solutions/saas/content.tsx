@@ -6,7 +6,7 @@ export function SaasContent() {
   return (
     <IndustrySolutionLayout
       category="SaaS & Subscription"
-      headline="The nervous system for SaaS renewals."
+      headline="The data backbone for SaaS renewals."
       subheadline="Unified signals from usage, billing, and support protect NRR."
       ctaLabel="See Account Success workspace →"
       ctaHref="/contact"

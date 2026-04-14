@@ -311,7 +311,7 @@ export function PlatformContent() {
             className="text-[48px] font-semibold leading-[1.05] tracking-[-0.055em] text-white sm:text-[64px]"
           >
             The adaptive{" "}
-            <span className="text-primary">nervous system.</span>
+            <span className="text-primary">data architecture.</span>
           </motion.h1>
 
           <motion.p
@@ -375,11 +375,11 @@ export function PlatformContent() {
               The Spine
             </p>
             <h2 className="text-[40px] font-semibold leading-[1.15] tracking-[-0.05em] text-white sm:text-[52px]">
-              Living tissue,{" "}
+              Adaptive fabric,{" "}
               <span className="text-primary">not rigid pipes.</span>
             </h2>
             <p className="mt-5 text-[16px] font-medium leading-[1.6] text-white/45">
-              Connects applications like neural pathways. Adapts automatically.
+              Connects applications as a unified layer. Adapts automatically.
             </p>
           </motion.div>
 
@@ -420,7 +420,7 @@ export function PlatformContent() {
               <span className="text-primary">AI Sessions.</span>
             </h2>
             <p className="mt-5 text-[16px] font-medium leading-[1.6] text-white/45">
-              All data becomes unified body-awareness.
+              All data becomes unified operational context.
             </p>
           </motion.div>
 
@@ -659,7 +659,7 @@ export function PlatformContent() {
             </p>
             <h2 className="text-[40px] font-semibold leading-[1.15] tracking-[-0.05em] text-white sm:text-[52px]">
               Universal{" "}
-              <span className="text-primary">sensory inputs.</span>
+              <span className="text-primary">data inputs.</span>
             </h2>
             <p className="mt-5 text-[16px] font-medium leading-[1.6] text-white/45">
               SaaS, MCP, webhooks. Auto-upgrade when APIs change.
@@ -690,7 +690,7 @@ export function PlatformContent() {
               </div>
               <p className="mb-2 text-[12px] font-bold uppercase tracking-[0.12em] text-primary">Knowledge Base</p>
               <h3 className="text-[24px] font-semibold tracking-[-0.04em] text-white leading-tight">
-                Living memory.
+                Persistent memory.
               </h3>
               <p className="mt-3 text-[14px] font-medium leading-[1.7] text-white/45">
                 Grows daily. No retraining required.
@@ -729,7 +729,7 @@ export function PlatformContent() {
                 </div>
                 <p className="mb-1 text-[12px] font-bold uppercase tracking-[0.12em] text-primary">Infrastructure</p>
                 <h3 className="text-[20px] font-semibold tracking-[-0.04em] text-white leading-tight">
-                  High-velocity nervous system.
+                  High-velocity data layer.
                 </h3>
                 <p className="mt-3 text-[13px] font-medium leading-[1.65] text-white/40">
                   Firebase real-time. Sub-100ms sync. Built for operational speed.

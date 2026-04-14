@@ -292,7 +292,7 @@ export function AboutContent() {
               </p>
               <p className="text-foreground font-semibold">
                 He had spent 13 years building the plumbing. Now he was going to
-                build the brain.
+                build the intelligence layer.
               </p>
             </div>
 

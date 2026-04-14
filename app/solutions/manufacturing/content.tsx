@@ -6,7 +6,7 @@ export function ManufacturingContent() {
   return (
     <IndustrySolutionLayout
       category="Manufacturing & Trade"
-      headline="Living tissue that connects your supply chain."
+      headline="The unified layer that connects your supply chain."
       subheadline="Orders, shipments, and payments unified into one exception workspace."
       ctaLabel="Explore the workspace →"
       problem={{

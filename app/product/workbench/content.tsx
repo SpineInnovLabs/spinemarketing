@@ -340,7 +340,7 @@ export function WorkbenchContent() {
               The Twin
             </p>
             <h2 className="text-[40px] font-semibold leading-[1.15] tracking-[-0.05em] text-white sm:text-[48px]">
-              The brain{" "}
+              The intelligence{" "}
               <span className="text-primary">at the top.</span>
             </h2>
             <p className="mt-4 text-[16px] font-medium leading-[1.6] text-white/45">

@@ -6,6 +6,8 @@ import { PricingSection } from "@/components/pricing-section";
 import { PricingFAQ } from "./faq";
 import { PricingHero } from "./pricing-hero";
 import { PricingTrustBar } from "./trust-bar";
+import { PricingComparison } from "./comparison";
+import { TestimonialsSection } from "@/components/testimonials-section";
 
 export const metadata: Metadata = {
   title: "Pricing | IntegrateWise",
@@ -20,7 +22,12 @@ export default function PricingPage() {
       <main id="main">
         <PricingHero />
         <PricingSection hideHeading />
+        <PricingComparison />
         <PricingTrustBar />
+        <TestimonialsSection
+          heading="What teams say about the value."
+          tag="Customer Stories"
+        />
         <PricingFAQ />
         <FinalCTA />
       </main>

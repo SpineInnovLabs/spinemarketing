@@ -130,6 +130,22 @@ The entire site uses a **fully dark design** with shadcn/ui components and Tailw
 - **Workbench page** (`app/product/workbench/content.tsx`): Product mockup, interactive accordion for 12 domain views grouped by category, Twin section, bento-style core components grid
 - **Pricing page** (`app/pricing/page.tsx`): Enhanced hero (`pricing-hero.tsx`), shared PricingSection component (unchanged), trust bar (`trust-bar.tsx`), FAQ, FinalCTA
 
+## Rich Shared Components (Arvio-style)
+
+These reusable components add visual richness across all non-home pages:
+
+| Component | File | Usage |
+|-----------|------|-------|
+| `ComparisonSection` | `components/comparison-section.tsx` | IntegrateWise vs Others feature comparison table |
+| `TestimonialsSection` | `components/testimonials-section.tsx` | 4-card testimonial grid with star ratings |
+| `BenefitsGrid` | `components/benefits-grid.tsx` | 6-item icon benefit cards with hover effects |
+| `StatsBar` | `components/stats-bar.tsx` | Animated counter metrics strip |
+| `BentoShowcase` | `components/bento-showcase.tsx` | Dashboard + Twin mockup bento grid |
+| `FeatureShowcase` | `components/feature-showcase.tsx` | Alternating text + visual card sections |
+| `PricingComparison` | `app/pricing/comparison.tsx` | Plan-by-plan feature comparison table |
+
+All components use dark theme (`bg-dark-section`), emerald accent (`#34D399`/`text-primary`), framer-motion animations, and the established card pattern (`border-white/[0.08] bg-white/[0.03]`).
+
 ## Shared Layout Components
 
 - `app/solutions/_shared/IndustrySolutionLayout.tsx` — shared layout for all 6 industry pages
