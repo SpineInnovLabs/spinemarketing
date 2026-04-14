@@ -66,3 +66,33 @@ id = "OAzNc-q-HD4ZOK8b0o1If"
 uri = "file://artifacts/mockup-sandbox/public/images/adaptive-spine.png"
 type = "image"
 title = "Adaptive Spine visualization"
+
+[[generated]]
+id = "7xxKDBgI4RL9RCHXzUNBZ"
+uri = "file://artifacts/mockup-sandbox/public/images/campaign-pain.png"
+type = "image"
+title = "Pain point campaign image"
+
+[[generated]]
+id = "iX4s0yyJzdOoFT_TCU0yU"
+uri = "file://artifacts/mockup-sandbox/public/images/campaign-product.png"
+type = "image"
+title = "Product campaign image"
+
+[[generated]]
+id = "MfMXE7mU_S7DFBjkJitaM"
+uri = "file://artifacts/mockup-sandbox/public/images/campaign-trust.png"
+type = "image"
+title = "Trust governance campaign image"
+
+[[generated]]
+id = "cJi5uQCPXIv551A02jCB1"
+uri = "file://artifacts/mockup-sandbox/public/images/campaign-vision.png"
+type = "image"
+title = "Vision spine campaign image"
+
+[[generated]]
+id = "UAmnEFl0PHAjOYEA_1xn3"
+uri = "file://artifacts/mockup-sandbox/public/images/campaign-curiosity.png"
+type = "image"
+title = "Curiosity discovery campaign image"
