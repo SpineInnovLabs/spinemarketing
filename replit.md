@@ -18,6 +18,18 @@ IntegrateWise is a **Knowledge Workspace over the Spine** — three core concept
 - **L1 — Daily Workbench**: Where users work every day
 - **L2 — Intelligence Layer**: Where The Twin surfaces signals and proposes actions; nothing executes without human approval (Govern Gate)
 
+## Homepage Section Order (Narrative Arc)
+
+1. **Hero** — chaos animation (floating scattered tools)
+2. **Logos** — "Connect the apps you already use" (marquee)
+3. **Problem** — "Modern work isn't hard. The plumbing is." (Human API pain)
+4. **Spine** — "One layer connects everything." (dedicated SpineSection with DataFlowAnimation)
+5. **Workspace** — "Your workspace. AI that thinks in context." (dashboard mockup + L1/L2/HITL pillars)
+6. **How It Works** — "How it actually works" (4-step sticky scroll walkthrough)
+7. **Proof** — testimonial + animated counters
+8. **Pricing** — 3 tiers (Starter/Growth/Command)
+9. **Final CTA** — "Ready to see everything in one place?"
+
 ## Full Sitemap
 
 ### Top-level pages

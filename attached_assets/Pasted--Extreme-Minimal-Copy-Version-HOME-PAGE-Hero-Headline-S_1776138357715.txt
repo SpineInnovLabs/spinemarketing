@@ -1,0 +1,442 @@
+**Extreme Minimal Copy Version**
+
+---
+
+## **HOME PAGE** `/`
+
+**Hero**
+```
+Headline: Stop being the bridge.
+
+Subhead: One view of every customer. AI suggests. You approve.
+
+CTA: [See it] [Book demo]
+```
+
+**Problem (Icon Cards)**
+- 12 tabs open. One brain stretched.
+- Customer data scattered. You hunt.
+- AI works blind. No context.
+- Automation acts alone. No control.
+
+**Solution (3 Cards)**
+- **The Spine** → Connects tools like neural tissue.
+- **The Workbench** → One view. Full context.
+- **TruthBoundary** → AI waits. You decide.
+
+**How It Works (6 Steps)**
+1. **Connect** → Tools plug into the Spine.
+2. **Feel** → Spine unifies into body-awareness.
+3. **Sense** → AI reads the full nervous system.
+4. **Suggest** → Actions drafted with evidence.
+5. **Approve** → You edit. You control.
+6. **Learn** → Memory compounds. Smarter daily.
+
+**Proof**
+```
+$8M saved. One nervous system.
+"Finally saw the full picture before they churned."
+```
+
+**Final CTA**
+```
+See your customers clearly.
+
+[Book demo]
+```
+
+---
+
+## **PLATFORM** `/platform`
+
+**Hero**
+```
+Headline: The adaptive nervous system.
+
+Subhead: Grows between your tools. Adapts when they change.
+```
+
+**Spine**
+```
+Headline: Living tissue, not rigid pipes.
+
+Subhead: Connects applications like neural pathways. Adapts automatically.
+```
+
+**Identities**
+```
+Headline: Structured. Unstructured. AI Sessions.
+
+Subhead: All data becomes unified body-awareness.
+```
+
+**Execution Path**
+```
+Headline: Load. Store. Think. Approve. Act. Adjust. Repeat.
+
+Subhead: AI suggests at Think. You decide at Approve.
+```
+
+**Connectors**
+```
+Headline: Universal sensory inputs.
+
+Subhead: SaaS, MCP, webhooks. Auto-upgrade when APIs change.
+```
+
+**Knowledge Base**
+```
+Headline: Living memory.
+
+Subhead: Remembers without retraining. Grows daily.
+```
+
+**Security**
+```
+Headline: The TruthBoundary.
+
+Subhead: Hard-coded human approval. Immutable audit.
+```
+
+**Infrastructure**
+```
+Headline: High-velocity nervous system.
+
+Subhead: Firebase real-time. Sub-100ms sync.
+```
+
+---
+
+## **PRODUCT** `/product`
+
+**Hero**
+```
+Headline: Feel everything. Control every reflex.
+
+Subhead: One workspace. Full context. Governed AI.
+```
+
+**Workbench**
+```
+Headline: 12 domain views.
+
+Subhead: Account Success. Business Ops. Personal. Role-aware.
+```
+
+**Twin**
+```
+Headline: The brain at the top.
+
+Subhead: Reads the Spine. Suggests actions. Waits for you.
+```
+
+**Human in the Loop**
+```
+Headline: Conscious control.
+
+Subhead: Drafts wait. You edit. You approve.
+```
+
+**Twin Insights**
+```
+Headline: Morning Brief.
+
+Subhead: Overnight changes distilled. Three priorities. Full context.
+```
+
+**Twin Operations**
+```
+Headline: Execute with confidence.
+
+Subhead: Draft email. Update field. Create task. Approved only.
+```
+
+**Security**
+```
+Headline: Governance by design.
+
+Subhead: Audit everything. Own your data.
+```
+
+---
+
+## **SOLUTIONS** `/solutions`
+
+**Hub Page**
+```
+Headline: One nervous system. Different organisms.
+
+By Function:
+- Account Success → Feel churn early.
+- Business Ops → Sense flow blockages.  
+- Personal Ops → Own your context.
+
+By Industry:
+- SaaS → Fast metabolism. Protect recurring.
+- Services → Project muscle. Protect margin.
+- Manufacturing → Heavy skeletal. Feel supply.
+- Retail → Sensory skin. Manage touchpoints.
+- Professional → Brain tissue. Manage load.
+- Finance → Circulatory. Cash flow.
+
+By Role:
+- CSMs → Feel accounts. Save them.
+- Founders → See whole body. Decide.
+- RevOps → Pipeline flow. No clots.
+- Operations → Project muscle. Utilization.
+- Finance → Blood flow. Collections.
+- Individual → Personal context. Clear mind.
+```
+
+---
+
+## **INDUSTRY PAGES**
+
+### **SaaS** `/solutions/saas`
+```
+Headline: Feel adoption. Protect recurring revenue.
+
+Problem:
+- Usage drops here. Billing there. Blind.
+- Churn surprises. Always too late.
+
+Solution:
+- Spine feels metabolism. Unified signals.
+- AI detects distress. You intervene early.
+
+Visual: Fast-metabolism organism. Quick pulses. Early glows.
+```
+
+### **Services** `/solutions/services`
+```
+Headline: Sense project muscle. Protect margin.
+
+Problem:
+- Over-serving one client. Under-using team.
+- Margin dies quietly.
+
+Solution:
+- Spine feels utilization tension.
+- Scope creep sensed early. You adjust.
+
+Visual: Muscular system. Project contractions. Oxygen flow.
+```
+
+### **Manufacturing** `/solutions/manufacturing`
+```
+Headline: Feel the supply chain pulse.
+
+Problem:
+- Order stuck. Shipment delayed. Customer angry.
+- Find out too late.
+
+Solution:
+- Spine feels skeletal structure.
+- Blockages sensed. You intervene.
+
+Visual: Heavy skeleton. Neural tissue wrapped. Blockage detection.
+```
+
+### **Retail** `/solutions/retail`
+```
+Headline: Sense every touchpoint.
+
+Problem:
+- Stockout surprise. Return floods. Blind.
+- Too many nerves. No coherence.
+
+Solution:
+- Spine integrates sensory overload.
+- Hot spots felt. Restock early.
+
+Visual: Skin with nerve endings. Coherent feeling from chaos.
+```
+
+### **Professional** `/solutions/professional-services`
+```
+Headline: Feel the cognitive load.
+
+Problem:
+- Over-thinking projects. Unbilled hours.
+- Burnout then write-off.
+
+Solution:
+- Spine feels brain load.
+- Scope creep early. Bill timely.
+
+Visual: Brain tissue. Neural activity. Energy monitoring.
+```
+
+### **Finance** `/solutions/finance`
+```
+Headline: Feel cash circulation.
+
+Problem:
+- Invoices clot. Cash anemia.
+- Aging reports. Late action.
+
+Solution:
+- Spine feels blood flow.
+- Clots detected early. Priority by health.
+
+Visual: Circulatory system. Cash as blood. Clot detection.
+```
+
+---
+
+## **ROLE PAGES**
+
+### **Customer Success** `/solutions/customer-success`
+```
+Headline: Save accounts. Accelerate renewals.
+
+Before: 7 tools to check one account.
+After: One view. Early signals. Approved actions.
+
+KPIs: NRR. GRR. Early warning.
+```
+
+### **Founders** `/solutions/founders`
+```
+Headline: Awake to the whole body.
+
+Before: Flying blind. Spreadsheets lie.
+After: Monday Brief. Full view. Decide.
+
+KPIs: Runway. Risk. Cash.
+```
+
+### **RevOps** `/solutions/revops`
+```
+Headline: Pipeline flow. No clots.
+
+Before: Disconnected data. Manual reconcile.
+After: Live operating picture. Flow trace.
+
+KPIs: Velocity. Accuracy. Conversion.
+```
+
+### **Operations** `/solutions/operations`
+```
+Headline: Project muscle. Utilization.
+
+Before: Slack messages. Status unknown.
+After: Full muscle awareness. Capacity clear.
+
+KPIs: Utilization. Margin. Delivery.
+```
+
+### **Finance Leaders** `/solutions/finance-leaders`
+```
+Headline: Cash circulation. Collections.
+
+Before: Aging reports. Surprise shortfalls.
+After: Real-time flow. Smart priority.
+
+KPIs: DSO. Runway. Cash.
+```
+
+### **Individual** `/solutions/individual`
+```
+Headline: Personal context. Clear mind.
+
+Before: Tab chaos. Forgotten follow-ups.
+After: Morning Brief. Session memory. Focus.
+
+KPIs: Response time. Task completion.
+```
+
+---
+
+## **FUNCTION PAGES**
+
+### **Account Success** `/account-success`
+```
+Headline: The command center.
+
+Comparison:
+Before: Fragmented. Reactive. Surprised.
+After: Unified. Proactive. Saved.
+
+Day One:
+- See full account.
+- Health accurate.
+- Risks early.
+```
+
+### **Business Ops** `/business-ops`
+```
+Headline: The operating room.
+
+Comparison:
+Before: Spreadsheets. Stale. Panic.
+After: Live picture. Monday Brief. Calm.
+
+Day One:
+- Pipeline visible.
+- Cash flowing.
+- Blockages seen.
+```
+
+### **Personal Ops** `/personal-ops`
+```
+Headline: Your context.
+
+Comparison:
+Before: Context lost. Tabs everywhere.
+After: Morning ready. Session memory.
+
+Day One:
+- Tasks unified.
+- Follow-ups remembered.
+- Focus protected.
+```
+
+---
+
+## **COMPANY** `/company`
+
+**Hero**
+```
+Headline: We built the nervous system we needed.
+
+Story: Manual bridges failed. $8M save. Spine born.
+
+Location: Bengaluru. Global reach.
+```
+
+**Why**
+```
+Headline: Why IntegrateWise?
+
+Not a CRM. Not automation. The layer above.
+Unifier. Governor. Memory.
+```
+
+**Contact**
+```
+Headline: Connect.
+
+Email: connect@integratewise.co
+Phone: +91 70263 17111
+Place: Bengaluru, India
+```
+
+---
+
+## **PRICING** `/pricing`
+
+```
+Starter — $49
+Connect 5 tools. See unified. Basic feel.
+
+Growth — $99 ← Most Popular  
+Connect 15. AI suggests. You approve. Memory.
+
+Command — $199
+Unlimited. Full governance. Audit all.
+```
+
+---
+
+**All copy now fits the constraint:** Maximum 15 words per description. Headlines under 10 words. No paragraphs. Biological metaphor maintained. Visuals carry the weight.

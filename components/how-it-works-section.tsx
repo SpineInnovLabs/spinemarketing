@@ -10,7 +10,6 @@ import {
 import { OrbitingCircles } from "@/components/ui/orbiting-circles";
 import { AnimatedList } from "@/components/ui/animated-list";
 import { AnimatedBeam } from "@/components/ui/animated-beam";
-import { DataFlowAnimation } from "@/components/data-flow-animation";
 import Image from "next/image";
 import React, { useRef } from "react";
 
@@ -373,34 +372,21 @@ const steps: StickyScrollStep[] = [
 ];
 
 const sectionHeading = (
-  <div>
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-      className="mx-auto max-w-2xl text-center"
-    >
-      <h2 className="text-[36px] font-semibold leading-[1.15] tracking-[-0.04em] text-white sm:text-[44px]">
-        From scattered apps to{" "}
-        <span className="text-primary">one clear picture</span>
-      </h2>
-      <p className="mt-4 text-[16px] font-medium leading-[1.6] text-white/45">
-        Four steps. One workspace. You stay in control.
-      </p>
-    </motion.div>
-
-    {/* Data Flow Animation — shows the complete pipeline at a glance */}
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
-      transition={{ type: "spring", bounce: 0.2, duration: 0.8, delay: 0.2 }}
-      className="mx-auto mt-12 max-w-5xl"
-    >
-      <DataFlowAnimation />
-    </motion.div>
-  </div>
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, margin: "-100px" }}
+    transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+    className="mx-auto max-w-2xl text-center"
+  >
+    <h2 className="text-[36px] font-semibold leading-[1.15] tracking-[-0.04em] text-white sm:text-[44px]">
+      How it{" "}
+      <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-emerald-300">actually works</span>
+    </h2>
+    <p className="mt-4 text-[16px] font-medium leading-[1.6] text-white/50">
+      Four steps. One workspace. You stay in control.
+    </p>
+  </motion.div>
 );
 
 /* ── Exported section ──────────────────────────────────── */
