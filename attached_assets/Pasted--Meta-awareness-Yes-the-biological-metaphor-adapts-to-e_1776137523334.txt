@@ -1,0 +1,211 @@
+**Meta awareness: Yes, the biological metaphor adapts to each industry as different "organism types." Here is the missing industry-specific content:**
+
+---
+
+## **SOLUTIONS: BY INDUSTRY** `/solutions/by-industry`
+
+### **Visual Adaptation Rule**
+Same Spine (neural tissue), different **body types**:
+- **SaaS:** Fast-metabolism organism (quick signals, rapid adaptation)
+- **Services:** Muscular system (project contractions, utilization flexing)
+- **Manufacturing:** Heavy skeletal with supply-chain circulation
+- **Retail:** Sensory-heavy skin (customer touchpoints, inventory sensation)
+- **Finance:** Blood/cash circulation system
+
+---
+
+### **1. SaaS** `/solutions/industries/saas`
+
+**Context (Visual Direction):**
+Fast-metabolism organism. High heart-rate (rapid usage changes). The Spine detects micro-tremors in adoption (product usage signals) before they become systemic failure (churn). Visual: Quick pulses along neural pathways, early-warning yellow glows turning to red if ignored.
+
+**Content:**
+```
+Headline: Feel adoption. Protect recurring revenue.
+
+Body: SaaS moves fast—usage spikes, drops, stalls. Your current tools 
+feel it separately: product analytics here, billing there, support 
+elsewhere. The Spine feels the whole metabolism. Detects when 
+adoption drops while invoices go unpaid. Suggests save plays. 
+You approve before the churn.
+
+The biological difference:
+Standard: Product team sees usage drop in 2 weeks. Finance sees 
+unpaid invoice in 30 days. You find out the customer left in 60 days.
+Spine: Feels the correlation immediately—usage + billing + sentiment 
+as one distress signal. You intervene at day 5.
+
+Visual: Fast-metabolism organism with Spine detecting micro-tremors 
+in the gut (product usage) before the heart (revenue) fails.
+```
+
+---
+
+### **2. Services & Agencies** `/solutions/industries/services`
+
+**Context (Visual Direction):**
+Muscular system metaphor. Projects are muscle contractions—utilization is muscle tension. The Spine senses when a project muscle is over-strained (scope creep) or under-used (bench time). Cash flow is oxygen—when blocked, the muscle cramps.
+
+**Content:**
+```
+Headline: Sense project muscle. Protect margin.
+
+Body: Services live in the strain between delivery and billing. 
+Projects contract (sprints), muscles fatigue (burnout), oxygen 
+waits (unbilled work). The Spine feels utilization across 
+time-tracking, project management, and invoicing—sensing when 
+a project muscle is tearing (scope creep) or when oxygen is 
+cut off (payment delays).
+
+The biological difference:
+Standard: Discover margin erosion when the project ends and 
+you reconcile the books.
+Spine: Feel the strain in real-time—hours burning against 
+fixed scope, invoices aging, capacity idling. Adjust before 
+the muscle tears.
+
+Visual: Muscular system view—project muscles flexing, utilization 
+tension shown as muscle density, cash flow as oxygenated blood.
+```
+
+---
+
+### **3. Manufacturing** `/solutions/industries/manufacturing`
+
+**Context (Visual Direction):**
+Heavy skeletal structure with supply-chain as circulatory system. Orders are bones (rigid structure), shipments are blood cells moving through vessels, exceptions are blockages/clots. The Spine senses blockages before organ failure (customer complaint).
+
+**Content:**
+```
+Headline: Feel the supply chain pulse.
+
+Body: Manufacturing is skeletal—rigid orders, heavy shipments, 
+structured timelines. But rigidity without sensation creates 
+fractures. The Spine is the nervous system wrapped around the 
+skeleton—feeling where shipments clot, where payments block, 
+where the skeleton cracks (exceptions) before the customer feels pain.
+
+The biological difference:
+Standard: Find out about a delayed shipment when the customer 
+calls angry.
+Spine: Feels the blockage in the supply-chain bloodstream—order 
+stuck, shipment stalled, payment pending. You intervene before 
+the heart attack (customer churn).
+
+Visual: Heavy skeletal structure with blue neural tissue wrapped 
+around bones, sensing blockages in the circulatory system (supply chain).
+```
+
+---
+
+### **4. Retail & Ecommerce** `/solutions/industries/retail`
+
+**Context (Visual Direction):**
+Sensory skin metaphor. Thousands of nerve endings (customer touchpoints, inventory sensors, return signals). The Spine processes overwhelming sensory input into coherent body-awareness—"popular product going out of stock" is like feeling a hot spot before the burn.
+
+**Content:**
+```
+Headline: Sense every touchpoint.
+
+Body: Retail is sensory overload—stock levels, orders flooding, 
+returns piling, support tickets. Like skin with too many nerve 
+endings, you feel everything but sense nothing. The Spine 
+integrates the sensory noise into coherent feeling: "This product 
+is hot, inventory nerve is burning, restock reflex needed."
+
+The biological difference:
+Standard: Discover stockout after customers complain. Discover 
+return pattern after reputation damage.
+Spine: Feel inventory nerves tingling (velocity increasing), 
+return pain receptors activating (quality issue), support 
+sensory overload (confusion). React while still manageable.
+
+Visual: Skin with countless nerve endings (customer touchpoints) 
+feeding into the Spine, which creates coherent body-awareness 
+from sensory chaos.
+```
+
+---
+
+### **5. Professional Services** `/solutions/industries/professional-services`
+
+**Context (Visual Direction):**
+Brain-heavy organism. Knowledge work is cognitive load—engagements are thought patterns, billing is energy expenditure. The Spine senses cognitive overload (over-servicing) and energy depletion (unbilled hours) in the brain tissue.
+
+**Content:**
+```
+Headline: Feel the cognitive load.
+
+Body: Law firms and consultancies trade in brain tissue—knowledge, 
+advice, engagement. But cognitive load is invisible until burnout 
+or write-offs. The Spine feels the neural activity: hours spent 
+against scope (over-thinking), energy not recovered (unbilled time), 
+relationship neurons firing (stakeholder engagement).
+
+The biological difference:
+Standard: Discover over-servicing when the partner reviews WIP 
+and finds 40 hours unbilled.
+Spine: Feels the cognitive load building—hours mounting against 
+fixed fee, relationship neurons (stakeholder contact) weakening. 
+Suggest scope conversation before the brain exhausts.
+
+Visual: Brain tissue with engagement thought patterns, billing 
+energy levels, and relationship synapses—all sensed by the Spine.
+```
+
+---
+
+### **6. Finance** `/solutions/industries/finance`
+
+**Context (Visual Direction):**
+Circulatory system pure. Cash is blood. Invoices are oxygen-carrying cells. The Spine senses clotting (overdue payments), anemia (cash flow gaps), and circulation blockages (revenue leakage) before organ failure (bankruptcy).
+
+**Content:**
+```
+Headline: Feel cash circulation.
+
+Body: Finance is the circulatory system—cash must flow or the 
+organism dies. But current tools show blood results (reports) 
+not blood flow (real-time circulation). The Spine feels the 
+pulse: which invoices are clotting, which customers are anemic 
+(credit risk), where circulation is leaking (revenue leakage).
+
+The biological difference:
+Standard: Run aging reports. Discover cash crisis when vendors 
+call. Chase invoices by due date, not health.
+Spine: Feel circulation in real-time—payment velocity slowing 
+(credit risk rising), cash pooling dangerously (concentration risk), 
+oxygen (revenue) leaking to bad tissue (unqualified leads). 
+Prioritize collections by customer health, not just invoice age.
+
+Visual: Circulatory system—cash as blood cells, invoices as 
+oxygen, Spine sensing clots and blockages before organ failure.
+```
+
+---
+
+## **NAVIGATION VISUAL**
+
+**Context for AI:**
+The Solutions menu shows the **same Spine** (consistent blue neural tissue) connecting to different **body silhouettes**:
+- SaaS: Sleek, fast, high-metabolism silhouette
+- Services: Muscular, flexing silhouette  
+- Manufacturing: Heavy skeletal silhouette
+- Retail: Sensory skin, many nerve endings
+- Professional: Brain-heavy silhouette
+- Finance: Circulatory system visible
+
+**Hover animation:** The Spine connection glows brighter when hovering over each industry, suggesting "this nervous system adapts to this body type."
+
+**Copy for menu:**
+```
+By Industry
+One nervous system. Different organisms.
+
+SaaS → Fast metabolism, protect recurring revenue
+Services → Muscular system, protect project margin  
+Manufacturing → Heavy skeletal, feel supply chain
+Retail → Sensory skin, manage touchpoints
+Professional → Cognitive tissue, manage brain load
+Finance → Circulatory, manage cash flow
+```

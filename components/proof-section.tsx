@@ -1,7 +1,6 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
@@ -45,7 +44,8 @@ export function ProofSection() {
   return (
     <section className="relative overflow-hidden bg-dark-section py-32 md:py-40">
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-1/2 top-[30%] h-[500px] w-[600px] -translate-x-1/2 rounded-full opacity-20 blur-[120px]" style={{ background: "radial-gradient(circle, rgba(52,211,153,0.25), transparent 70%)" }} />
+        <div className="absolute left-1/2 top-[20%] h-[600px] w-[700px] -translate-x-1/2 rounded-full opacity-25 blur-[160px]" style={{ background: "radial-gradient(circle, rgba(52,211,153,0.30), transparent 70%)" }} />
+        <div className="absolute left-[10%] bottom-[20%] h-[300px] w-[400px] rounded-full opacity-10 blur-[100px]" style={{ background: "radial-gradient(circle, rgba(139,92,246,0.20), transparent 70%)" }} />
       </div>
       <div className="relative mx-auto max-w-[1100px] px-6">
         <motion.div
@@ -55,11 +55,11 @@ export function ProofSection() {
           transition={{ type: "spring", damping: 18, stiffness: 70 }}
           className="mx-auto max-w-3xl text-center"
         >
-          <Badge variant="outline" className="mb-4 rounded-full border-primary/30 px-3 py-1 text-xs font-bold uppercase tracking-widest text-primary">
+          <Badge variant="outline" className="mb-4 rounded-full border-primary/30 bg-primary/5 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-primary backdrop-blur-sm">
             Social proof
           </Badge>
           <h2 className="text-4xl font-semibold leading-tight tracking-tight text-white sm:text-5xl">
-            Proven in <span className="text-primary">real operations</span>
+            Proven in <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-emerald-300">real operations</span>
           </h2>
         </motion.div>
 
@@ -70,23 +70,30 @@ export function ProofSection() {
           transition={{ type: "spring", damping: 18, stiffness: 60, delay: 0.15 }}
           className="mx-auto mt-16 md:mt-20 max-w-3xl"
         >
-          <Card className="border-border bg-white/[0.03] p-10 md:p-14">
-            <CardContent className="p-0">
-              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" className="mb-4">
+          <div className="rounded-2xl p-[1px] bg-gradient-to-br from-primary/25 via-transparent to-primary/10">
+            <div className="rounded-2xl bg-[#0c0b14] p-10 md:p-14 relative overflow-hidden">
+              <div className="pointer-events-none absolute top-0 right-0 h-40 w-40 rounded-full opacity-20 blur-[60px]" style={{ background: "rgba(52,211,153,0.3)" }} />
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" className="relative mb-4">
                 <path
                   d="M18 28H10V20C10 14.48 14.48 10 20 10V14C16.69 14 14 16.69 14 20H18V28ZM34 28H26V20C26 14.48 30.48 10 36 10V14C32.69 14 30 16.69 30 20H34V28Z"
-                  fill="rgba(52,211,153,0.2)"
+                  fill="url(#quoteGrad)"
                 />
+                <defs>
+                  <linearGradient id="quoteGrad" x1="10" y1="10" x2="36" y2="28" gradientUnits="userSpaceOnUse">
+                    <stop stopColor="#34d399" stopOpacity="0.4" />
+                    <stop offset="1" stopColor="#059669" stopOpacity="0.15" />
+                  </linearGradient>
+                </defs>
               </svg>
 
-              <blockquote className="text-base font-medium leading-relaxed text-white/70">
+              <blockquote className="relative text-base font-medium leading-relaxed text-white/70">
                 &ldquo;We went from &lsquo;I think this account is healthy&rsquo;
                 to &lsquo;Here&apos;s the score, here&apos;s why, and here&apos;s
                 what to do next&rsquo; — with evidence from every system, not
                 guesswork.&rdquo;
               </blockquote>
 
-              <Separator className="mt-8 bg-white/[0.06]" />
+              <Separator className="mt-8 bg-white/[0.08]" />
 
               <div className="grid grid-cols-1 gap-4 pt-6 sm:grid-cols-3">
                 {[
@@ -95,7 +102,7 @@ export function ProofSection() {
                   { value: 3, suffix: "", label: "Truth · Context · Session Summaries", extra: " flows" },
                 ].map((stat, i) => (
                   <div key={i} className="text-center">
-                    <div className="text-[34px] font-bold tracking-tight text-primary">
+                    <div className="text-[34px] font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-primary to-emerald-300">
                       <AnimatedCounter value={stat.value} suffix={stat.suffix} />
                       {stat.extra && <span className="text-xl">{stat.extra}</span>}
                     </div>
@@ -103,8 +110,8 @@ export function ProofSection() {
                   </div>
                 ))}
               </div>
-            </CardContent>
-          </Card>
+            </div>
+          </div>
         </motion.div>
 
         <motion.div
@@ -114,7 +121,7 @@ export function ProofSection() {
           transition={{ type: "spring", damping: 18, stiffness: 70, delay: 0.3 }}
           className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row"
         >
-          <Button size="lg" className="h-12 rounded-full px-7 text-sm font-semibold" asChild>
+          <Button size="lg" className="h-12 rounded-full px-7 text-sm font-semibold shadow-[0_0_30px_rgba(52,211,153,0.2)]" asChild>
             <Link href="/contact?intent=demo">See it in action</Link>
           </Button>
           <Button variant="outline" size="lg" className="h-12 rounded-full border-white/15 px-6 text-sm font-semibold text-white/70 hover:border-white/30 hover:text-white" asChild>

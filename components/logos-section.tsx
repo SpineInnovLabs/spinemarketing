@@ -24,9 +24,9 @@ const logos = [
 
 function LogoCard({ name, src }: { name: string; src: string }) {
   return (
-    <div className="flex items-center gap-3 rounded-xl border border-white/[0.08] bg-white/[0.04] px-5 py-3 backdrop-blur-sm transition-colors hover:border-white/[0.15]">
-      <Image src={src} alt={name} width={24} height={24} />
-      <span className="whitespace-nowrap text-[15px] font-semibold tracking-[-0.02em] text-white/50">
+    <div className="group flex items-center gap-3 rounded-xl border border-white/[0.06] bg-white/[0.03] px-5 py-3 backdrop-blur-sm transition-all duration-300 hover:border-primary/25 hover:bg-white/[0.06] hover:shadow-[0_0_20px_rgba(52,211,153,0.06)]">
+      <Image src={src} alt={name} width={24} height={24} className="opacity-70 transition-opacity group-hover:opacity-100" />
+      <span className="whitespace-nowrap text-[15px] font-semibold tracking-[-0.02em] text-white/40 transition-colors group-hover:text-white/70">
         {name}
       </span>
     </div>
@@ -35,8 +35,11 @@ function LogoCard({ name, src }: { name: string; src: string }) {
 
 export function LogosSection() {
   return (
-    <section className="py-24 md:py-28 bg-dark-section">
-      <div className="mx-auto max-w-[1200px] px-6 md:px-16">
+    <section className="relative py-24 md:py-28 bg-dark-section overflow-hidden">
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute left-1/2 top-1/2 h-[400px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-10 blur-[120px]" style={{ background: "radial-gradient(circle, rgba(52,211,153,0.20), transparent 70%)" }} />
+      </div>
+      <div className="relative mx-auto max-w-[1200px] px-6 md:px-16">
         <motion.p
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -57,8 +60,8 @@ export function LogosSection() {
         </motion.p>
       </div>
       <div className="relative mt-8">
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-[rgb(8,7,14)] to-transparent" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-[rgb(8,7,14)] to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-32 bg-gradient-to-r from-[rgb(8,7,14)] to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-32 bg-gradient-to-l from-[rgb(8,7,14)] to-transparent" />
         <Marquee pauseOnHover className="[--duration:45s] [--gap:1rem]">
           {logos.map((logo) => (
             <LogoCard key={logo.name} name={logo.name} src={logo.src} />
