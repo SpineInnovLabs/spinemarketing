@@ -9,16 +9,6 @@ const footerColumns: {
   links: { name: string; href: string; external?: boolean }[];
 }[] = [
   {
-    heading: "Product",
-    links: [
-      { name: "The Workspace", href: "/product/the-adaptive-workspace" },
-      { name: "Cognitive Layer", href: "/product/how-it-works" },
-      { name: "The Twin", href: "/ai" },
-      { name: "Approval Gate", href: "/product/approval-gate-twin" },
-      { name: "Pricing", href: "/pricing" },
-    ],
-  },
-  {
     heading: "Platform",
     links: [
       { name: "The Adaptive Spine", href: "/platform/the-adaptive-spine" },
@@ -26,6 +16,16 @@ const footerColumns: {
       { name: "Integrations", href: "/platform/integrations" },
       { name: "Security", href: "/platform/security" },
       { name: "Infrastructure", href: "/platform/infrastructure" },
+    ],
+  },
+  {
+    heading: "Product",
+    links: [
+      { name: "The Workspace", href: "/product/the-adaptive-workspace" },
+      { name: "Cognitive Layer", href: "/product/how-it-works" },
+      { name: "The Twin", href: "/ai" },
+      { name: "Approval Gate", href: "/product/approval-gate-twin" },
+      { name: "Pricing", href: "/pricing" },
     ],
   },
   {
