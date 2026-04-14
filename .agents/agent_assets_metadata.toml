@@ -54,3 +54,15 @@ id = "jsyJt-NERx79Wpq6djfUA"
 uri = "file://artifacts/mockup-sandbox/public/images/hero-google-trust.png"
 type = "image"
 title = "human hand approve shield vault"
+
+[[generated]]
+id = "S4WRRkIlj3WOe16wBK0Cf"
+uri = "file://artifacts/mockup-sandbox/public/images/mockup-crm-ui.png"
+type = "image"
+title = "Dark mode CRM UI"
+
+[[generated]]
+id = "OAzNc-q-HD4ZOK8b0o1If"
+uri = "file://artifacts/mockup-sandbox/public/images/adaptive-spine.png"
+type = "image"
+title = "Adaptive Spine visualization"
