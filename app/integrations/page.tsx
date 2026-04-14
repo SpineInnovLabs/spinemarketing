@@ -5,16 +5,27 @@ import { FinalCTA } from "@/components/final-cta"
 import { IntegrationsContent } from "./content"
 import { StatsBar } from "@/components/stats-bar"
 import { TestimonialsSection } from "@/components/testimonials-section"
+import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
   title: "Integrations | IntegrateWise",
   description:
     "70+ apps connected into one Spine. Salesforce, HubSpot, Slack, Stripe, and more.",
+  alternates: { canonical: "/integrations" },
+  openGraph: {
+    title: "Integrations | IntegrateWise",
+    description: "70+ apps connected into one Spine. Salesforce, HubSpot, Slack, Stripe, and more.",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "IntegrateWise" }],
+  },
 }
 
 export default function IntegrationsPage() {
   return (
     <div className="min-h-screen bg-dark-section">
+      <BreadcrumbJsonLd items={[
+        { name: "Home", url: "https://integratewise.ai" },
+        { name: "Integrations", url: "https://integratewise.ai/integrations" },
+      ]} />
       <Header />
       <main id="main">
         <IntegrationsContent />

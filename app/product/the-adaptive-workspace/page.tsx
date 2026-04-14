@@ -4,16 +4,28 @@ import { Footer } from "@/components/footer"
 import { FinalCTA } from "@/components/final-cta"
 import { TheAdaptiveWorkspaceContent } from "./content"
 import { WorkspaceGather } from "./sticky-sections"
+import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
   title: "The Adaptive Workspace | IntegrateWise Product",
   description:
     "Role-based views built on Entity 360. Nine workspace views, one canonical truth.",
+  alternates: { canonical: "/product/the-adaptive-workspace" },
+  openGraph: {
+    title: "The Adaptive Workspace | IntegrateWise Product",
+    description: "Role-based views built on Entity 360. Nine workspace views, one canonical truth.",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "IntegrateWise" }],
+  },
 }
 
 export default function TheAdaptiveWorkspacePage() {
   return (
     <div className="min-h-screen bg-dark-section">
+      <BreadcrumbJsonLd items={[
+        { name: "Home", url: "https://integratewise.ai" },
+        { name: "Product", url: "https://integratewise.ai/product" },
+        { name: "The Adaptive Workspace", url: "https://integratewise.ai/product/the-adaptive-workspace" },
+      ]} />
       <Header />
       <main id="main">
         <TheAdaptiveWorkspaceContent />

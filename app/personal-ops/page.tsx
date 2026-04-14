@@ -3,6 +3,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { FinalCTA } from "@/components/final-cta"
 import { PersonalOpsContent } from "./content"
+import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
   title: "Personal Ops — Your Morning, Auto-Organized | IntegrateWise",
@@ -25,6 +26,10 @@ export const metadata: Metadata = {
 export default function PersonalOpsPage() {
   return (
     <div className="min-h-screen bg-dark-section">
+      <BreadcrumbJsonLd items={[
+        { name: "Home", url: "https://integratewise.ai" },
+        { name: "Personal Ops", url: "https://integratewise.ai/personal-ops" },
+      ]} />
       <Header />
       <main id="main">
         <PersonalOpsContent />

@@ -6,16 +6,28 @@ import { StatsBar } from "@/components/stats-bar"
 import { IntegrationShowcase } from "@/components/integration-showcase"
 import { PlatformIntegrationsContent } from "./content"
 import { IntegrationsStickyScroll } from "./sticky-sections"
+import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
   title: "Integrations | IntegrateWise Platform",
   description:
     "SaaS APIs, MCP, webhooks, and file drops — all through one normalization pipeline into the Spine.",
+  alternates: { canonical: "/platform/integrations" },
+  openGraph: {
+    title: "Integrations | IntegrateWise Platform",
+    description: "SaaS APIs, MCP, webhooks, and file drops — all through one normalization pipeline into the Spine.",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "IntegrateWise" }],
+  },
 }
 
 export default function PlatformIntegrationsPage() {
   return (
     <div className="min-h-screen bg-dark-section">
+      <BreadcrumbJsonLd items={[
+        { name: "Home", url: "https://integratewise.ai" },
+        { name: "Platform", url: "https://integratewise.ai/platform" },
+        { name: "Integrations", url: "https://integratewise.ai/platform/integrations" },
+      ]} />
       <Header />
       <main id="main">
         <PlatformIntegrationsContent />

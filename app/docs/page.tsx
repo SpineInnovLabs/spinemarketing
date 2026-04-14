@@ -2,15 +2,26 @@ import { Metadata } from "next"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { FinalCTA } from "@/components/final-cta"
+import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
   title: "Documentation | IntegrateWise",
   description: "Set up connectors, configure your workspace, and use AI features.",
+  alternates: { canonical: "/docs" },
+  openGraph: {
+    title: "Documentation | IntegrateWise",
+    description: "Set up connectors, configure your workspace, and use AI features.",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "IntegrateWise" }],
+  },
 }
 
 export default function DocsPage() {
   return (
     <div className="min-h-screen bg-background">
+      <BreadcrumbJsonLd items={[
+        { name: "Home", url: "https://integratewise.ai" },
+        { name: "Documentation", url: "https://integratewise.ai/docs" },
+      ]} />
       <Header />
       <main id="main">
         <section className="mx-auto max-w-[1100px] px-6 pt-[140px] pb-24 md:px-16">

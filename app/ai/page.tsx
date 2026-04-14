@@ -6,16 +6,27 @@ import { AIContent } from "./content"
 import { BentoShowcase } from "@/components/bento-showcase"
 import { ComparisonSection } from "@/components/comparison-section"
 import { TestimonialsSection } from "@/components/testimonials-section"
+import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
   title: "The Twin | IntegrateWise",
   description:
     "The Twin reads Truth, Context, and Session Summaries through the Spine. Surfaces signals in the Cognitive Layer and waits for your approval.",
+  alternates: { canonical: "/ai" },
+  openGraph: {
+    title: "The Twin | IntegrateWise",
+    description: "The Twin reads Truth, Context, and Session Summaries through the Spine. Surfaces signals in the Cognitive Layer and waits for your approval.",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "IntegrateWise" }],
+  },
 }
 
 export default function AIPage() {
   return (
     <div className="min-h-screen bg-dark-section">
+      <BreadcrumbJsonLd items={[
+        { name: "Home", url: "https://integratewise.ai" },
+        { name: "The Twin", url: "https://integratewise.ai/ai" },
+      ]} />
       <Header />
       <main id="main">
         <AIContent />

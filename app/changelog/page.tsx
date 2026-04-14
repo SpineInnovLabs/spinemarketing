@@ -2,15 +2,26 @@ import { Metadata } from "next"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { entries } from "@/content/changelog"
+import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
   title: "Changelog | IntegrateWise",
   description: "What's new in IntegrateWise — product updates, new connectors, and improvements.",
+  alternates: { canonical: "/changelog" },
+  openGraph: {
+    title: "Changelog | IntegrateWise",
+    description: "What's new in IntegrateWise — product updates, new connectors, and improvements.",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "IntegrateWise" }],
+  },
 }
 
 export default function ChangelogPage() {
   return (
     <div className="min-h-screen bg-background">
+      <BreadcrumbJsonLd items={[
+        { name: "Home", url: "https://integratewise.ai" },
+        { name: "Changelog", url: "https://integratewise.ai/changelog" },
+      ]} />
       <Header />
       <main id="main">
         <section className="relative overflow-hidden bg-dark-section">

@@ -6,16 +6,27 @@ import { AboutContent } from "./content"
 import { AboutJourneyScroll, AboutPlatformGather } from "./sticky-sections"
 import { StatsBar } from "@/components/stats-bar"
 import { TestimonialsSection } from "@/components/testimonials-section"
+import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
   title: "About | IntegrateWise",
   description:
     "Born from a real $8M account save. One Spine. One Workspace. You stay in control.",
+  alternates: { canonical: "/about" },
+  openGraph: {
+    title: "About | IntegrateWise",
+    description: "Born from a real $8M account save. One Spine. One Workspace. You stay in control.",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "IntegrateWise" }],
+  },
 }
 
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-dark-section">
+      <BreadcrumbJsonLd items={[
+        { name: "Home", url: "https://integratewise.ai" },
+        { name: "About", url: "https://integratewise.ai/about" },
+      ]} />
       <Header />
       <main id="main">
         <AboutContent />

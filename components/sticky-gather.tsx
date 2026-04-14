@@ -39,11 +39,13 @@ export function StickyGather({
   const centerOpacity = useTransform(scrollYProgress, [0.15, 0.4], [0, 1]);
   const bgGlowOpacity = useTransform(scrollYProgress, [0.2, 0.5], [0, 0.3]);
 
+  if (!items || items.length === 0) return null;
+
   const angleStep = (2 * Math.PI) / items.length;
   const radius = 220;
 
   return (
-    <section ref={containerRef} className="relative bg-dark-section overflow-hidden py-32 md:py-44">
+    <section ref={containerRef} className="relative bg-dark-section overflow-hidden py-32 md:py-44" style={{ position: "relative" }}>
       <div className="pointer-events-none absolute inset-0">
         <motion.div
           className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-[200px]"
@@ -129,7 +131,7 @@ export function StickyGather({
                   className="flex h-10 w-10 items-center justify-center rounded-xl"
                   style={{ background: `${item.color}18`, boxShadow: `0 0 24px ${item.color}12` }}
                 >
-                  <item.icon className="h-5 w-5" style={{ color: item.color }} />
+                  {item.icon && <item.icon className="h-5 w-5" style={{ color: item.color }} />}
                 </div>
                 <h3 className="text-[15px] font-semibold tracking-[-0.02em] text-white">{item.label}</h3>
               </div>
@@ -172,7 +174,7 @@ function GatherNode({
           className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/[0.08]"
           style={{ background: `${item.color}12`, boxShadow: `0 0 30px ${item.color}10` }}
         >
-          <item.icon className="h-6 w-6" style={{ color: item.color }} />
+          {item.icon && <item.icon className="h-6 w-6" style={{ color: item.color }} />}
         </div>
         <span className="text-[11px] font-bold text-white/60 whitespace-nowrap">{item.label}</span>
       </div>

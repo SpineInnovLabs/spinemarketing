@@ -34,7 +34,9 @@ The IntegrateWise marketing site is built with **Next.js 16** using the App Rout
 -   **Dedicated Layouts:** Shared layouts for industry and role-specific solutions pages.
 
 **Key Feature Specifications:**
--   **Comprehensive Sitemap:** Covers main pages, solutions categorized by function, industry, and role, and detailed platform/product child pages.
+-   **Dynamic Sitemap:** Generated via `app/sitemap.ts` (Next.js metadata route), auto-discovering all 46 routes including blog posts with `lastmod` dates. Replaced the static `public/sitemap.xml`.
+-   **SEO:** Every page has canonical URLs (`alternates.canonical`), explicit OpenGraph metadata, and BreadcrumbList JSON-LD. Product/platform pages include SoftwareApplication JSON-LD. Pricing page includes FAQPage JSON-LD.
+-   **Structured Data:** `components/structured-data.tsx` provides reusable JSON-LD components (BreadcrumbJsonLd, SoftwareApplicationJsonLd, FAQPageJsonLd, WebPageJsonLd).
 -   **Navigation Structure:** Uses nested dropdowns for "Platform," "Product," "Solutions," and "Company" in the header.
 -   **Architecture Blueprints:** 4 Spine architecture diagrams at `public/images/architecture/` showing the Adaptive Spine, three data flows, Cognitive Loop, and Entity 360 — featured prominently on the Campaign Gallery page.
 -   **Campaign Gallery:** Features 36 campaign creatives and 4 architecture blueprints, used for OG images and a dedicated gallery page at `/resources/campaign`, following a strict naming convention.

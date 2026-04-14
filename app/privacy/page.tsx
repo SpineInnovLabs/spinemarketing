@@ -1,15 +1,26 @@
 import { Metadata } from "next"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
   title: "Privacy Policy | IntegrateWise",
   description: "How IntegrateWise collects, uses, and protects your data.",
+  alternates: { canonical: "/privacy" },
+  openGraph: {
+    title: "Privacy Policy | IntegrateWise",
+    description: "How IntegrateWise collects, uses, and protects your data.",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "IntegrateWise" }],
+  },
 }
 
 export default function PrivacyPage() {
   return (
     <div className="min-h-screen bg-background">
+      <BreadcrumbJsonLd items={[
+        { name: "Home", url: "https://integratewise.ai" },
+        { name: "Privacy Policy", url: "https://integratewise.ai/privacy" },
+      ]} />
       <Header />
       <main id="main">
         <section className="mx-auto max-w-[800px] px-6 pt-[140px] pb-24 md:px-16">

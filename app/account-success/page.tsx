@@ -3,6 +3,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { FinalCTA } from "@/components/final-cta"
 import { AccountSuccessContent } from "./content"
+import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
   title: "Account Success — One Customer, One Record | IntegrateWise",
@@ -26,6 +27,10 @@ export const metadata: Metadata = {
 export default function AccountSuccessPage() {
   return (
     <div className="min-h-screen bg-dark-section">
+      <BreadcrumbJsonLd items={[
+        { name: "Home", url: "https://integratewise.ai" },
+        { name: "Account Success", url: "https://integratewise.ai/account-success" },
+      ]} />
       <Header />
       <main id="main">
         <AccountSuccessContent />

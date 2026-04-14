@@ -6,16 +6,27 @@ import { SolutionsContent } from "./content"
 import { StatsBar } from "@/components/stats-bar"
 import { BenefitsGrid } from "@/components/benefits-grid"
 import { TestimonialsSection } from "@/components/testimonials-section"
+import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
   title: "Solutions | IntegrateWise",
   description:
     "One Spine. Workspace for daily work, Cognitive Layer for AI. Built for every function, industry, and role.",
+  alternates: { canonical: "/solutions" },
+  openGraph: {
+    title: "Solutions | IntegrateWise",
+    description: "One Spine. Workspace for daily work, Cognitive Layer for AI. Built for every function, industry, and role.",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "IntegrateWise" }],
+  },
 }
 
 export default function SolutionsPage() {
   return (
     <div className="min-h-screen bg-dark-section">
+      <BreadcrumbJsonLd items={[
+        { name: "Home", url: "https://integratewise.ai" },
+        { name: "Solutions", url: "https://integratewise.ai/solutions" },
+      ]} />
       <Header />
       <main id="main">
         <SolutionsContent />

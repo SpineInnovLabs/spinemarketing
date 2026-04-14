@@ -8,16 +8,28 @@ import { BenefitsGrid } from "@/components/benefits-grid";
 import { ComparisonSection } from "@/components/comparison-section";
 import { TestimonialsSection } from "@/components/testimonials-section";
 import { ProductStickySections } from "./sticky-sections";
+import { SoftwareApplicationJsonLd, BreadcrumbJsonLd } from "@/components/structured-data";
 
 export const metadata: Metadata = {
   title: "Product | IntegrateWise",
   description:
     "One workspace. AI surfaces what matters. You approve what happens.",
+  alternates: { canonical: "/product" },
+  openGraph: {
+    title: "Product | IntegrateWise",
+    description: "One workspace. AI surfaces what matters. You approve what happens.",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "IntegrateWise Product" }],
+  },
 };
 
 export default function ProductPage() {
   return (
     <div className="min-h-screen bg-dark-section">
+      <SoftwareApplicationJsonLd />
+      <BreadcrumbJsonLd items={[
+        { name: "Home", url: "https://integratewise.ai" },
+        { name: "Product", url: "https://integratewise.ai/product" },
+      ]} />
       <Header />
       <main id="main">
         <ProductContent />

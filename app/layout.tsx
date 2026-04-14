@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     "One workspace. Every customer. Every tool. AI proposes, you approve.",
   icons: {
     icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
-    apple: "/apple-icon.png",
+    apple: "/icon.svg",
   },
   openGraph: {
     title: "IntegrateWise — Stop being the human API between your apps.",
@@ -43,7 +43,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" data-scroll-behavior="smooth" suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"

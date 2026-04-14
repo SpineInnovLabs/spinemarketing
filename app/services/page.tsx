@@ -5,16 +5,27 @@ import { FinalCTA } from "@/components/final-cta"
 import { ServicesContent } from "./content"
 import { BenefitsGrid } from "@/components/benefits-grid"
 import { TestimonialsSection } from "@/components/testimonials-section"
+import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
   title: "Services | IntegrateWise",
   description:
     "Implementation, onboarding, and managed operations. We get you to truth faster.",
+  alternates: { canonical: "/services" },
+  openGraph: {
+    title: "Services | IntegrateWise",
+    description: "Implementation, onboarding, and managed operations. We get you to truth faster.",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "IntegrateWise" }],
+  },
 }
 
 export default function ServicesPage() {
   return (
     <div className="min-h-screen bg-dark-section">
+      <BreadcrumbJsonLd items={[
+        { name: "Home", url: "https://integratewise.ai" },
+        { name: "Services", url: "https://integratewise.ai/services" },
+      ]} />
       <Header />
       <main id="main">
         <ServicesContent />

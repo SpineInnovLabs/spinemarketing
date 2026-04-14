@@ -5,15 +5,26 @@ import { FinalCTA } from "@/components/final-cta"
 import { posts } from "@/content/blog"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
+import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
   title: "Blog | IntegrateWise",
   description: "Insights on connected workspaces, AI governance, and operational intelligence.",
+  alternates: { canonical: "/blog" },
+  openGraph: {
+    title: "Blog | IntegrateWise",
+    description: "Insights on connected workspaces, AI governance, and operational intelligence.",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "IntegrateWise" }],
+  },
 }
 
 export default function BlogPage() {
   return (
     <div className="min-h-screen bg-dark-section">
+      <BreadcrumbJsonLd items={[
+        { name: "Home", url: "https://integratewise.ai" },
+        { name: "Blog", url: "https://integratewise.ai/blog" },
+      ]} />
       <Header />
       <main id="main">
         <section className="relative overflow-hidden bg-dark-section">

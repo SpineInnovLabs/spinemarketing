@@ -6,16 +6,27 @@ import { SecurityContent } from "./content"
 import { StatsBar } from "@/components/stats-bar"
 import { ComparisonSection } from "@/components/comparison-section"
 import { TestimonialsSection } from "@/components/testimonials-section"
+import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
   title: "Security | IntegrateWise",
   description:
     "Enterprise-grade security, governance, and compliance. SOC 2 aligned, encrypted at rest and in transit, with complete audit trails.",
+  alternates: { canonical: "/security" },
+  openGraph: {
+    title: "Security | IntegrateWise",
+    description: "Enterprise-grade security, governance, and compliance. SOC 2 aligned, encrypted at rest and in transit, with complete audit trails.",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "IntegrateWise" }],
+  },
 }
 
 export default function SecurityPage() {
   return (
     <div className="min-h-screen bg-dark-section">
+      <BreadcrumbJsonLd items={[
+        { name: "Home", url: "https://integratewise.ai" },
+        { name: "Security", url: "https://integratewise.ai/security" },
+      ]} />
       <Header />
       <main id="main">
         <SecurityContent />

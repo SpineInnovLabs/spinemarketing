@@ -1,15 +1,26 @@
 import { Metadata } from "next"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
   title: "Terms & Conditions | IntegrateWise",
   description: "Terms of service for using IntegrateWise.",
+  alternates: { canonical: "/terms" },
+  openGraph: {
+    title: "Terms & Conditions | IntegrateWise",
+    description: "Terms of service for using IntegrateWise.",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "IntegrateWise" }],
+  },
 }
 
 export default function TermsPage() {
   return (
     <div className="min-h-screen bg-background">
+      <BreadcrumbJsonLd items={[
+        { name: "Home", url: "https://integratewise.ai" },
+        { name: "Terms & Conditions", url: "https://integratewise.ai/terms" },
+      ]} />
       <Header />
       <main id="main">
         <section className="mx-auto max-w-[800px] px-6 pt-[140px] pb-24 md:px-16">

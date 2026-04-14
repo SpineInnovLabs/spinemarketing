@@ -6,16 +6,27 @@ import { WhyContent } from "./content"
 import { WhyPainScroll, WhyAnswerGather } from "./sticky-sections"
 import { ComparisonSection } from "@/components/comparison-section"
 import { TestimonialsSection } from "@/components/testimonials-section"
+import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
   title: "Why IntegrateWise | One Spine. One Workspace. Governed AI.",
   description:
     "Apps are fragmented. AI lacks context. IntegrateWise unifies everything under your control.",
+  alternates: { canonical: "/why" },
+  openGraph: {
+    title: "Why IntegrateWise | One Spine. One Workspace. Governed AI.",
+    description: "Apps are fragmented. AI lacks context. IntegrateWise unifies everything under your control.",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "IntegrateWise" }],
+  },
 }
 
 export default function WhyPage() {
   return (
     <div className="min-h-screen bg-dark-section">
+      <BreadcrumbJsonLd items={[
+        { name: "Home", url: "https://integratewise.ai" },
+        { name: "Why IntegrateWise", url: "https://integratewise.ai/why" },
+      ]} />
       <Header />
       <main id="main">
         <WhyContent />

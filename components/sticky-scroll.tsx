@@ -38,11 +38,15 @@ export function StickyScroll({
     setActiveIndex(idx);
   });
 
-  const activeItem = items[activeIndex];
-  const ActiveIcon = activeItem.icon;
+  if (!items || items.length === 0) return null;
+
+  const activeItem = items[activeIndex] ?? items[0];
+  const ActiveIcon = activeItem?.icon;
+
+  if (!activeItem) return null;
 
   return (
-    <section ref={containerRef} className="relative bg-dark-section" style={{ height: `${(items.length + 1) * 100}vh` }}>
+    <section ref={containerRef} className="relative bg-dark-section" style={{ height: `${(items.length + 1) * 100}vh`, position: "relative" }}>
       <div className="sticky top-0 h-screen overflow-hidden">
         <div className="pointer-events-none absolute inset-0">
           <motion.div
@@ -101,7 +105,7 @@ export function StickyScroll({
                         }`}
                         style={{ background: isActive ? `${item.color}20` : "rgba(255,255,255,0.06)" }}
                       >
-                        <item.icon className="h-4 w-4" style={{ color: isActive ? item.color : "rgba(255,255,255,0.4)" }} />
+                        {item.icon && <item.icon className="h-4 w-4" style={{ color: isActive ? item.color : "rgba(255,255,255,0.4)" }} />}
                       </div>
                       <div>
                         <span className={`text-[13px] font-semibold tracking-[-0.02em] transition-colors ${isActive ? "text-white" : "text-white/40"}`}>
@@ -144,7 +148,7 @@ export function StickyScroll({
                           className="flex h-12 w-12 items-center justify-center rounded-2xl"
                           style={{ background: `${activeItem.color}18`, boxShadow: `0 0 40px ${activeItem.color}15` }}
                         >
-                          <ActiveIcon className="h-6 w-6" style={{ color: activeItem.color }} />
+                          {ActiveIcon && <ActiveIcon className="h-6 w-6" style={{ color: activeItem.color }} />}
                         </div>
                         <div>
                           <p className="text-[11px] font-bold uppercase tracking-[0.1em]" style={{ color: `${activeItem.color}90` }}>
