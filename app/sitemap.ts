@@ -3,6 +3,8 @@ import fs from "fs"
 import path from "path"
 import { posts } from "@/content/blog"
 
+export const dynamic = "force-static"
+
 const BASE_URL = "https://integratewise.ai"
 
 const PRIORITY_MAP: Record<string, number> = {

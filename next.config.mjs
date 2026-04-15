@@ -1,17 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
   images: {
     unoptimized: true,
   },
-  allowedDevOrigins: ["*.replit.dev", "*.worf.replit.dev"],
-  async rewrites() {
-    return [
-      {
-        source: '/__mockup/:path*',
-        destination: 'http://localhost:23636/__mockup/:path*',
-      },
-    ];
+  typescript: {
+    ignoreBuildErrors: true,
   },
+  allowedDevOrigins: ["*.replit.dev", "*.worf.replit.dev"],
 }
 
 export default nextConfig

@@ -59,7 +59,7 @@ const plans = [
   },
 ];
 
-export function PricingSection() {
+export function PricingSection({ hideHeading = false }: { hideHeading?: boolean } = {}) {
   const [region, setRegion] = useState<Region>("international");
 
   return (
@@ -72,14 +72,18 @@ export function PricingSection() {
           transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
           className="mx-auto max-w-2xl text-center"
         >
-          <h2 className="section-heading">
-            Choose your{" "}
-            <span className="text-primary">nervous system stage.</span>
-          </h2>
-          <p className="mt-4 text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">
-            Start small, add more tools and intelligence as your team needs it.
-            No hidden costs.
-          </p>
+          {!hideHeading && (
+            <>
+              <h2 className="section-heading">
+                Choose your{" "}
+                <span className="text-primary">nervous system stage.</span>
+              </h2>
+              <p className="mt-4 text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">
+                Start small, add more tools and intelligence as your team needs it.
+                No hidden costs.
+              </p>
+            </>
+          )}
 
           {/* Geo Toggle */}
           <div

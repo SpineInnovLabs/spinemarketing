@@ -4,6 +4,18 @@
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "cleanUrls": true,
     "trailingSlash": false,
+    "redirects": [
+      {
+        "source": "/docs",
+        "destination": "https://docs.integratewise.ai/",
+        "type": 301
+      },
+      {
+        "source": "/changelog",
+        "destination": "https://changelog.integratewise.ai/",
+        "type": 301
+      }
+    ],
     "headers": [
       {
         "source": "**/*.@(js|css|svg|png|jpg|jpeg|gif|ico|woff|woff2)",
