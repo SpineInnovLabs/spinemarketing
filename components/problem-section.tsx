@@ -21,8 +21,7 @@ export function ProblemSection() {
           className="mx-auto max-w-2xl text-center"
         >
           <h2 className="section-heading text-[rgba(246,239,239,1)]">
-            The Human API{" "}
-            <span className="text-primary">is breaking.</span>
+            The Core Problem of 2025
           </h2>
           <p className="mt-6 text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">
             You are the bridge. And it&apos;s exhausting.
