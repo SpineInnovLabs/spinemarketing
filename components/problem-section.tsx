@@ -20,9 +20,8 @@ export function ProblemSection() {
           transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
           className="mx-auto max-w-2xl text-center"
         >
-          <h2 className="section-heading">
-            The Human API{" "}
-            <span className="text-primary">is breaking.</span>
+          <h2 className="section-heading text-[rgba(246,239,239,1)]">
+            The Core Problem of 2025
           </h2>
           <p className="mt-6 text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">
             You are the bridge. And it&apos;s exhausting.
