@@ -20,7 +20,7 @@ export function ProblemSection() {
           transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
           className="mx-auto max-w-2xl text-center"
         >
-          <h2 className="section-heading">
+          <h2 className="section-heading text-[rgba(246,239,239,1)]">
             The Human API{" "}
             <span className="text-primary">is breaking.</span>
           </h2>
