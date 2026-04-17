@@ -15,9 +15,23 @@ const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0
 
 let analytics: ReturnType<typeof getAnalytics> | null = null
 if (typeof window !== "undefined") {
-  isSupported().then((supported) => {
-    if (supported) analytics = getAnalytics(app)
-  })
+  // Skip analytics in development environment to avoid network errors
+  const isDevelopment = typeof window !== "undefined" &&
+    (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1")
+
+  if (!isDevelopment) {
+    isSupported().then((supported) => {
+      if (supported) {
+        try {
+          analytics = getAnalytics(app)
+        } catch (error) {
+          console.error("Failed to initialize analytics:", error)
+        }
+      }
+    }).catch((error) => {
+      console.error("Failed to check analytics support:", error)
+    })
+  }
 }
 
 export { app, analytics }
