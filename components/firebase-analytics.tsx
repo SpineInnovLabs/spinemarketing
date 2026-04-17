@@ -4,7 +4,10 @@ import { useEffect } from "react"
 
 export function FirebaseAnalytics() {
   useEffect(() => {
-    import("@/lib/firebase")
+    // Load Firebase analytics with error handling
+    import("@/lib/firebase").catch((error) => {
+      console.debug("Analytics module load deferred or failed:", error)
+    })
   }, [])
   return null
 }
