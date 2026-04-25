@@ -9,7 +9,7 @@ export function SpineSection() {
     <section id="spine-section" className="relative overflow-hidden py-40 md:py-52" style={{ background: "#05070A" }}>
       <div className="absolute inset-0 bg-grain" />
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-1/2 top-[30%] h-[600px] w-[800px] -translate-x-1/2 rounded-full opacity-15 blur-[200px]" style={{ background: "radial-gradient(circle, rgba(27,167,132,0.25), transparent 60%)" }} />
+        <div className="absolute left-1/2 top-[30%] h-[600px] w-[800px] -translate-x-1/2 rounded-full opacity-15 blur-[200px]" style={{ background: "radial-gradient(circle, rgba(255,178,44,0.25), transparent 60%)" }} />
       </div>
 
       <div className="relative mx-auto max-w-[1100px] px-6">

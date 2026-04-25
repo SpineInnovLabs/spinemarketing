@@ -207,7 +207,7 @@ export function AccountSuccessContent() {
           className="pointer-events-none absolute inset-0"
           style={{
             background:
-              "radial-gradient(60% 50% at 75% 50%, rgba(27,167,132,0.06) 0%, transparent 100%)",
+              "radial-gradient(60% 50% at 75% 50%, rgba(255,178,44,0.06) 0%, transparent 100%)",
           }}
         />
         <div className="relative mx-auto max-w-[1200px] px-6 pt-[160px] pb-[100px] md:px-16">

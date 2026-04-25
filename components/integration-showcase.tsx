@@ -22,7 +22,7 @@ const defaultTools: Tool[] = [
   { icon: Globe, name: "Salesforce", desc: "CRM data, opportunities, contacts", color: "#3b82f6", bg: "rgba(59,130,246,0.12)" },
   { icon: Mail, name: "HubSpot", desc: "Marketing, deals, engagement data", color: "#f97316", bg: "rgba(249,115,22,0.12)" },
   { icon: Database, name: "Stripe", desc: "Billing, subscriptions, invoices", color: "#8b5cf6", bg: "rgba(139,92,246,0.12)" },
-  { icon: Plug, name: "Zendesk", desc: "Tickets, support metrics, CSAT", color: "#10b981", bg: "rgba(16,185,129,0.12)" },
+  { icon: Plug, name: "Zendesk", desc: "Tickets, support metrics, CSAT", color: "#ffb22c", bg: "rgba(16,185,129,0.12)" },
   { icon: Zap, name: "Slack", desc: "Messages, channels, alerts", color: "#e879f9", bg: "rgba(232,121,249,0.12)" },
   { icon: RefreshCw, name: "Jira", desc: "Projects, sprints, issue tracking", color: "#06b6d4", bg: "rgba(6,182,212,0.12)" },
   { icon: FileText, name: "Notion", desc: "Docs, wikis, knowledge bases", color: "#f59e0b", bg: "rgba(245,158,11,0.12)" },

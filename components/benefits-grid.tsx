@@ -57,7 +57,7 @@ export function BenefitsGrid({
       <div className="pointer-events-none absolute inset-0">
         <div
           className="absolute left-[30%] bottom-[15%] h-[500px] w-[600px] rounded-full opacity-[0.06] blur-[140px]"
-          style={{ background: "radial-gradient(circle, rgba(52,211,153,0.3), transparent 70%)" }}
+          style={{ background: "radial-gradient(circle, rgba(255,178,44,0.3), transparent 70%)" }}
         />
       </div>
       <div className="relative mx-auto max-w-[1100px] px-6">
@@ -91,9 +91,9 @@ export function BenefitsGrid({
                 boxShadow: "inset 0 1px 0 rgba(255,255,255,0.04)",
               }}
             >
-              <div className="pointer-events-none absolute -right-8 -top-8 h-32 w-32 rounded-full opacity-0 blur-[50px] transition-opacity group-hover:opacity-100" style={{ background: "rgba(52,211,153,0.12)" }} />
+              <div className="pointer-events-none absolute -right-8 -top-8 h-32 w-32 rounded-full opacity-0 blur-[50px] transition-opacity group-hover:opacity-100" style={{ background: "rgba(255,178,44,0.12)" }} />
 
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/[0.08] transition-transform group-hover:scale-105" style={{ boxShadow: "0 0 30px rgba(52,211,153,0.08)" }}>
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/[0.08] transition-transform group-hover:scale-105" style={{ boxShadow: "0 0 30px rgba(255,178,44,0.08)" }}>
                 <Icon className="h-5 w-5 text-primary" />
               </div>
               <h3 className="text-[17px] font-semibold tracking-[-0.03em] text-white">

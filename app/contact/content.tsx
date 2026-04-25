@@ -55,7 +55,7 @@ export function ContactContent({
     <>
       <section className="relative overflow-hidden pt-[160px] pb-28" style={{ background: "#05070A" }}>
         <div className="pointer-events-none absolute inset-0">
-          <div className="absolute left-1/2 top-[25%] h-[600px] w-[800px] -translate-x-1/2 rounded-full opacity-[0.07] blur-[140px]" style={{ background: "radial-gradient(circle, rgba(52,211,153,0.4), transparent 70%)" }} />
+          <div className="absolute left-1/2 top-[25%] h-[600px] w-[800px] -translate-x-1/2 rounded-full opacity-[0.07] blur-[140px]" style={{ background: "radial-gradient(circle, rgba(255,178,44,0.4), transparent 70%)" }} />
         </div>
         <div className="relative mx-auto max-w-[900px] px-6 text-center">
           <motion.div
@@ -131,7 +131,7 @@ export function ContactContent({
               >
                 <div
                   className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/[0.10]"
-                  style={{ boxShadow: "0 0 25px rgba(52,211,153,0.12)" }}
+                  style={{ boxShadow: "0 0 25px rgba(255,178,44,0.12)" }}
                 >
                   <Icon className="h-5 w-5 text-primary" />
                 </div>
@@ -145,7 +145,7 @@ export function ContactContent({
                   <a
                     href={href}
                     className="mt-6 inline-flex h-11 items-center gap-2 rounded-full px-6 text-[13px] font-semibold text-white transition-all hover:opacity-90"
-                    style={{ background: "var(--gradient-primary)", boxShadow: "0 0 20px rgba(27,167,132,0.12)" }}
+                    style={{ background: "var(--gradient-primary)", boxShadow: "0 0 20px rgba(255,178,44,0.12)" }}
                   >
                     {cta} <ArrowRight className="h-3.5 w-3.5" />
                   </a>
@@ -153,7 +153,7 @@ export function ContactContent({
                   <a
                     href={href}
                     className="mt-6 inline-flex h-11 items-center gap-2 rounded-full px-6 text-[13px] font-semibold text-white transition-all hover:opacity-90"
-                    style={{ background: "var(--gradient-primary)", boxShadow: "0 0 20px rgba(27,167,132,0.12)" }}
+                    style={{ background: "var(--gradient-primary)", boxShadow: "0 0 20px rgba(255,178,44,0.12)" }}
                   >
                     {cta} <ArrowRight className="h-3.5 w-3.5" />
                   </a>
@@ -161,7 +161,7 @@ export function ContactContent({
                   <Link
                     href={href}
                     className="mt-6 inline-flex h-11 items-center gap-2 rounded-full px-6 text-[13px] font-semibold text-white transition-all hover:opacity-90"
-                    style={{ background: "var(--gradient-primary)", boxShadow: "0 0 20px rgba(27,167,132,0.12)" }}
+                    style={{ background: "var(--gradient-primary)", boxShadow: "0 0 20px rgba(255,178,44,0.12)" }}
                   >
                     {cta} <ArrowRight className="h-3.5 w-3.5" />
                   </Link>

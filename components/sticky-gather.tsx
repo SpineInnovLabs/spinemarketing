@@ -18,7 +18,7 @@ export function StickyGather({
   centerLabel,
   centerDescription,
   items,
-  glowColor = "rgba(27,167,132,0.15)",
+  glowColor = "rgba(255,178,44,0.15)",
 }: {
   tag?: string;
   heading: ReactNode;
@@ -78,8 +78,8 @@ export function StickyGather({
             <div
               className="flex flex-col items-center justify-center w-[160px] h-[160px] rounded-full border border-primary/30"
               style={{
-                background: "radial-gradient(circle, rgba(27,167,132,0.12) 0%, rgba(27,167,132,0.03) 70%)",
-                boxShadow: "0 0 80px rgba(27,167,132,0.15), inset 0 0 40px rgba(27,167,132,0.05)",
+                background: "radial-gradient(circle, rgba(255,178,44,0.12) 0%, rgba(255,178,44,0.03) 70%)",
+                boxShadow: "0 0 80px rgba(255,178,44,0.15), inset 0 0 40px rgba(255,178,44,0.05)",
               }}
             >
               <span className="text-[14px] font-bold text-primary tracking-[-0.02em]">{centerLabel}</span>

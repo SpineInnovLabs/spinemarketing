@@ -10,7 +10,7 @@ export function SaasContent() {
       subheadline="See who's actually using your product, who stopped logging in, and who's about to leave — 90 days before the contract ends."
       ctaLabel="See it with your data →"
       ctaHref="/contact?intent=demo"
-      accentColor="rgba(45,212,191,0.5)"
+      accentColor="rgba(255,178,44,0.5)"
       beforeAfter={[
         {
           before: "You check product analytics, then CRM, then support — three tools, three stories, no single truth.",

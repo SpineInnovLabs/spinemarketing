@@ -19,11 +19,11 @@ import {
 
 const scrollItems = [
   {
-    tag: "Canonical Data",
-    title: "One truth from many sources",
-    description: "Accounts, contacts, deals, tickets, invoices — normalized, deduplicated, versioned. Every record links back to its origin.",
+    tag: "Structured Data",
+    title: "Connect Everything. Miss Nothing.",
+    description: "CRMs, ERPs, billing systems, project management tools. We sync records, fields, and relationships bidirectionally in real-time.",
     icon: Database,
-    color: "#2dd4bf",
+    color: "#ffb22c",
     features: [
       "Auto-deduplication across all connected tools",
       "Version history on every entity change",
@@ -32,9 +32,9 @@ const scrollItems = [
     ],
   },
   {
-    tag: "Contextual Signals",
-    title: "Patterns humans miss, surfaced automatically",
-    description: "Behavioral traces, engagement deltas, billing anomalies, support sentiment — assembled into actionable context.",
+    tag: "Unstructured Data",
+    title: "Context, Sentiment, and Key Decisions",
+    description: "Slack threads, emails, support tickets, meeting notes. We extract context, sentiment, and key decisions from natural language.",
     icon: Activity,
     color: "#8b5cf6",
     features: [
@@ -45,9 +45,9 @@ const scrollItems = [
     ],
   },
   {
-    tag: "AI Sessions",
-    title: "Every interaction becomes knowledge",
-    description: "Conversations auto-summarized, linked to entities, persisted. The Spine compounds intelligence every day.",
+    tag: "AI Session Knowledge",
+    title: "Every Twin Interaction is Indexed",
+    description: "Questions asked, insights generated, and decisions made become part of the Digital Memory. The Spine compounds intelligence every day.",
     icon: Brain,
     color: "#fbbf24",
     features: [
@@ -59,8 +59,8 @@ const scrollItems = [
   },
   {
     tag: "Connectors",
-    title: "Universal data inputs — SaaS, MCP, webhooks",
-    description: "70+ integrations. OAuth connect in minutes. Auto-upgrade when APIs change. Your tools stay where they are.",
+    title: "Connect Your Entire Stack",
+    description: "Pre-built integrations for the tools you already use. From CRMs to chat apps to accounting software — plug in and sync in minutes.",
     icon: Plug,
     color: "#3b82f6",
     features: [
@@ -72,8 +72,8 @@ const scrollItems = [
   },
   {
     tag: "Governance",
-    title: "Hard-coded human approval. Immutable audit.",
-    description: "Every action requires approval. Every decision logged. SOC 2 Type II. AES-256 encryption at rest and in transit.",
+    title: "Governance Boundaries",
+    description: "The Adaptive Spine isn't just smart — it's safe. Every piece of data is governed by strict access controls, audit logs, and approval gates.",
     icon: Shield,
     color: "#ef4444",
     features: [
@@ -86,18 +86,18 @@ const scrollItems = [
 ];
 
 const gatherItems = [
-  { icon: Database, label: "Truth Layer", description: "Canonical records — normalized, versioned, deduplicated.", color: "#2dd4bf" },
-  { icon: Activity, label: "Context Layer", description: "Behavioral patterns and risk signals assembled automatically.", color: "#8b5cf6" },
-  { icon: Brain, label: "AI Sessions", description: "Compounding knowledge from every interaction.", color: "#fbbf24" },
-  { icon: Plug, label: "Connectors", description: "70+ tools connected via OAuth, MCP, or webhook.", color: "#3b82f6" },
-  { icon: Shield, label: "Govern Gate", description: "Non-bypassable human approval on all actions.", color: "#ef4444" },
-  { icon: Lock, label: "TruthBoundary", description: "SOC 2 Type II. AES-256. Immutable audit log.", color: "#f59e0b" },
-  { icon: Eye, label: "Workspace", description: "Entity 360s, tasks, workflows — your daily surface.", color: "#06b6d4" },
-  { icon: Zap, label: "Cognitive Layer", description: "AI suggests with evidence. You approve what executes.", color: "#a855f7" },
-  { icon: Server, label: "Infrastructure", description: "Firebase real-time. Sub-100ms sync.", color: "#ec4899" },
-  { icon: GitBranch, label: "MCP Protocol", description: "AI-native integration. Bidirectional data flow.", color: "#14b8a6" },
-  { icon: RefreshCw, label: "Cognitive Loop", description: "Think → Act → Govern → Repeat → Adjust.", color: "#f97316" },
-  { icon: Layers, label: "Spine Fabric", description: "Adaptive architecture. Survives tool migrations.", color: "#6366f1" },
+  { icon: Database, label: "Structured Data", description: "CRMs, ERPs, billing systems synced bidirectionally.", color: "#ffb22c" },
+  { icon: Activity, label: "Unstructured Data", description: "Slack, email, tickets — context and sentiment extracted.", color: "#8b5cf6" },
+  { icon: Brain, label: "AI Session Knowledge", description: "Every Twin interaction indexed and persisted.", color: "#fbbf24" },
+  { icon: Plug, label: "Connectors", description: "100+ tools connected via OAuth, MCP, or webhook.", color: "#3b82f6" },
+  { icon: Shield, label: "Govern Gate", description: "Role-based access, audit trails, approval gates.", color: "#ef4444" },
+  { icon: Lock, label: "Security", description: "SOC 2 Type II. GDPR Ready. HIPAA Compliant. Tenant Isolation.", color: "#f59e0b" },
+  { icon: Eye, label: "Workspace", description: "Unified entity views, evidence-backed insights, approval-gated actions.", color: "#06b6d4" },
+  { icon: Zap, label: "Cognitive Layer", description: "Observes, reasons, suggests — never acts without your approval.", color: "#a855f7" },
+  { icon: Server, label: "Infrastructure", description: "Tenant isolation, field-level encryption, immutable audit logs.", color: "#ec4899" },
+  { icon: GitBranch, label: "MCP Protocol", description: "AI-native bidirectional data flow.", color: "#14b8a6" },
+  { icon: RefreshCw, label: "Cognitive Loop", description: "Ingest → Digital Memory → Twin Reasons → You Approve → Act.", color: "#f97316" },
+  { icon: Layers, label: "Spine Fabric", description: "Adaptive architecture. Survives tool migrations. Memory persists.", color: "#6366f1" },
 ];
 
 export function PlatformStickyScroll() {

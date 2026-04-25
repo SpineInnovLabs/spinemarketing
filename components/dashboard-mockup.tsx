@@ -70,12 +70,12 @@ const CONNECT_NAV = [
 
 /* ─── Account card data ─── */
 const ACCOUNTS = [
-  { name: "TechServe India", type: "Enterprise · Tech", emoji: "🟢", arr: "$420K", growth: "+12.5%", growthUp: true, health: 92, healthLabel: "Healthy", healthColor: "rgb(27,167,132)", renewal: "126d", progress: 85 },
+  { name: "TechServe India", type: "Enterprise · Tech", emoji: "🟢", arr: "$420K", growth: "+12.5%", growthUp: true, health: 92, healthLabel: "Healthy", healthColor: "rgb(255,178,44)", renewal: "126d", progress: 85 },
   { name: "CloudBridge APAC", type: "Enterprise · Cloud", emoji: "🟢", arr: "$280K", growth: "+8.3%", growthUp: true, health: 78, healthLabel: "At-Risk", healthColor: "#f59e0b", renewal: "72d", progress: 92 },
   { name: "FinanceFlow", type: "Mid-Market · FinTech", emoji: "🟠", arr: "$180K", growth: "-2.1%", growthUp: false, health: 54, healthLabel: "Critical", healthColor: "#ef4444", renewal: "29d", progress: 67 },
-  { name: "DataVault AU", type: "Enterprise · Security", emoji: "🟢", arr: "$350K", growth: "+15.2%", growthUp: true, health: 88, healthLabel: "Healthy", healthColor: "rgb(27,167,132)", renewal: "204d", progress: 78 },
+  { name: "DataVault AU", type: "Enterprise · Security", emoji: "🟢", arr: "$350K", growth: "+15.2%", growthUp: true, health: 88, healthLabel: "Healthy", healthColor: "rgb(255,178,44)", renewal: "204d", progress: 78 },
   { name: "RetailNest Pte", type: "SMB · Retail", emoji: "🟡", arr: "$95K", growth: "+5.7%", growthUp: true, health: 71, healthLabel: "At-Risk", healthColor: "#f59e0b", renewal: "98d", progress: 45 },
-  { name: "HealthTech Innov", type: "Mid-Market · Health", emoji: "🟢", arr: "$210K", growth: "+22%", growthUp: true, health: 95, healthLabel: "Healthy", healthColor: "rgb(27,167,132)", renewal: "202d", progress: 90 },
+  { name: "HealthTech Innov", type: "Mid-Market · Health", emoji: "🟢", arr: "$210K", growth: "+22%", growthUp: true, health: 95, healthLabel: "Healthy", healthColor: "rgb(255,178,44)", renewal: "202d", progress: 90 },
 ]
 
 /* ─── Approval items ─── */
@@ -135,7 +135,7 @@ function AccountCard({ account, delay }: { account: (typeof ACCOUNTS)[0]; delay:
         </div>
         <span
           className="text-[7px] font-semibold"
-          style={{ color: account.growthUp ? "rgb(27,167,132)" : "#ef4444" }}
+          style={{ color: account.growthUp ? "rgb(255,178,44)" : "#ef4444" }}
         >
           {account.growth}
         </span>
@@ -226,11 +226,11 @@ export function DashboardMockup() {
             <div className="px-2 py-1.5 border-b border-[#1e3048]">
               <div
                 className="flex items-center gap-1.5 px-1.5 py-1 rounded-md"
-                style={{ backgroundColor: "rgba(27,167,132,0.1)" }}
+                style={{ backgroundColor: "rgba(255,178,44,0.1)" }}
               >
                 <div
                   className="w-4 h-4 rounded flex items-center justify-center"
-                  style={{ backgroundColor: "rgba(27,167,132,0.2)" }}
+                  style={{ backgroundColor: "rgba(255,178,44,0.2)" }}
                 >
                   <span className="text-[7px]">🌏</span>
                 </div>
@@ -255,7 +255,7 @@ export function DashboardMockup() {
                     className={`flex items-center gap-1.5 px-1.5 py-[3px] rounded-md transition-colors ${
                       active ? "text-primary-light" : "text-[#8da0b8]/50"
                     }`}
-                    style={active ? { backgroundColor: "rgba(27,167,132,0.12)" } : {}}
+                    style={active ? { backgroundColor: "rgba(255,178,44,0.12)" } : {}}
                   >
                     <NavIcon className="w-2.5 h-2.5 shrink-0" />
                     <span className={`text-[7px] truncate ${active ? "font-semibold" : ""}`}>
@@ -288,8 +288,8 @@ export function DashboardMockup() {
                 className="flex items-center gap-1.5 px-1.5 py-[3px] rounded-md"
                 animate={{
                   backgroundColor: drawerOpen
-                    ? "rgba(27,167,132,0.2)"
-                    : "rgba(27,167,132,0.08)",
+                    ? "rgba(255,178,44,0.2)"
+                    : "rgba(255,178,44,0.08)",
                 }}
               >
                 <Sparkles className="w-2.5 h-2.5 text-primary" />
@@ -308,7 +308,7 @@ export function DashboardMockup() {
             <div className="px-2 py-2 border-t border-[#1e3048] flex items-center gap-1.5">
               <div
                 className="w-5 h-5 rounded-full flex items-center justify-center"
-                style={{ backgroundColor: "rgba(27,167,132,0.15)" }}
+                style={{ backgroundColor: "rgba(255,178,44,0.15)" }}
               >
                 <span className="text-[7px] text-primary font-semibold">AR</span>
               </div>
@@ -338,7 +338,7 @@ export function DashboardMockup() {
                   <span className="text-[7px] text-gray-500 uppercase font-medium">Ops Lead</span>
                   <div
                     className="w-5 h-5 rounded-full flex items-center justify-center"
-                    style={{ backgroundColor: "rgba(27,167,132,0.1)" }}
+                    style={{ backgroundColor: "rgba(255,178,44,0.1)" }}
                   >
                     <span className="text-[6px] text-primary font-semibold">A</span>
                   </div>
@@ -449,7 +449,7 @@ export function DashboardMockup() {
           <div className="flex items-center gap-2.5">
             <div
               className="w-7 h-7 rounded-lg flex items-center justify-center"
-              style={{ backgroundColor: "rgba(27,167,132,0.1)" }}
+              style={{ backgroundColor: "rgba(255,178,44,0.1)" }}
             >
               <Sparkles className="w-4 h-4 text-primary" />
             </div>
@@ -458,7 +458,7 @@ export function DashboardMockup() {
                 <span className="text-[10px] text-gray-800 font-bold">Cognitive Layer</span>
                 <span
                   className="text-[7px] px-1.5 py-0.5 rounded font-semibold"
-                  style={{ backgroundColor: "rgba(27,167,132,0.1)", color: "rgb(27,167,132)" }}
+                  style={{ backgroundColor: "rgba(255,178,44,0.1)", color: "rgb(255,178,44)" }}
                 >
                   ACTIVE
                 </span>
@@ -599,8 +599,8 @@ export function DashboardMockup() {
           <div
             className="flex flex-col items-center px-1 py-1.5 rounded-r-lg border border-l-0"
             style={{
-              backgroundColor: "rgba(27,167,132,0.06)",
-              borderColor: "rgba(27,167,132,0.15)",
+              backgroundColor: "rgba(255,178,44,0.06)",
+              borderColor: "rgba(255,178,44,0.15)",
             }}
           >
             <span className="text-[7px] text-primary uppercase tracking-widest [writing-mode:vertical-lr] rotate-180 font-semibold">

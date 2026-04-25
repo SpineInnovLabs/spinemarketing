@@ -9,14 +9,14 @@ const layers = [
     label: "Truth",
     title: "Your systems of record",
     desc: "CRM, billing, support, project tools, docs, email, chat — all connected, synced, and kept current.",
-    color: { bg: "rgba(45,212,191,0.12)", glow: "rgba(45,212,191,0.25)", text: "#2dd4bf" },
+    color: { bg: "rgba(255,178,44,0.12)", glow: "rgba(255,178,44,0.25)", text: "#ffb22c" },
   },
   {
     icon: MessageSquare,
     label: "Context",
     title: "Live human context",
     desc: "Conversations, notes, meeting decisions, session context — captured as it happens.",
-    color: { bg: "rgba(52,211,153,0.12)", glow: "rgba(52,211,153,0.25)", text: "#34d399" },
+    color: { bg: "rgba(255,178,44,0.12)", glow: "rgba(255,178,44,0.25)", text: "#ffb22c" },
   },
   {
     icon: BookOpen,
@@ -41,7 +41,7 @@ export function AIDifferentiators() {
   return (
     <section className="relative overflow-hidden py-24 bg-dark-section">
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-1/2 top-[20%] h-[500px] w-[600px] -translate-x-1/2 rounded-full opacity-20 blur-[120px]" style={{ background: "radial-gradient(circle, rgba(45,212,191,0.2), transparent 70%)" }} />
+        <div className="absolute left-1/2 top-[20%] h-[500px] w-[600px] -translate-x-1/2 rounded-full opacity-20 blur-[120px]" style={{ background: "radial-gradient(circle, rgba(255,178,44,0.2), transparent 70%)" }} />
       </div>
       <div className="relative mx-auto max-w-[1100px] px-6">
         <motion.div

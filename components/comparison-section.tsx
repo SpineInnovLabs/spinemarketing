@@ -59,7 +59,7 @@ export function ComparisonSection({
       <div className="pointer-events-none absolute inset-0">
         <div
           className="absolute left-1/2 top-[10%] h-[500px] w-[600px] -translate-x-1/2 rounded-full opacity-[0.06] blur-[140px]"
-          style={{ background: "radial-gradient(circle, rgba(52,211,153,0.4), transparent 70%)" }}
+          style={{ background: "radial-gradient(circle, rgba(255,178,44,0.4), transparent 70%)" }}
         />
       </div>
       <div className="relative mx-auto max-w-[900px] px-6">

@@ -11,13 +11,13 @@ import { ProductStickySections } from "./sticky-sections";
 import { SoftwareApplicationJsonLd, BreadcrumbJsonLd } from "@/components/structured-data";
 
 export const metadata: Metadata = {
-  title: "Product | IntegrateWise",
+  title: "Product — Your Governed Workspace | IntegrateWise",
   description:
-    "One workspace. AI surfaces what matters. You approve what happens.",
+    "Your Governed Knowledge Workspace. Unified entity views, evidence-backed insights, and approval-gated actions.",
   alternates: { canonical: "/product" },
   openGraph: {
-    title: "Product | IntegrateWise",
-    description: "One workspace. AI surfaces what matters. You approve what happens.",
+    title: "Product — Your Governed Workspace | IntegrateWise",
+    description: "Your Governed Knowledge Workspace. Unified entity views, evidence-backed insights, and approval-gated actions.",
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "IntegrateWise Product" }],
   },
 };
@@ -38,7 +38,7 @@ export default function ProductPage() {
         <BenefitsGrid />
         <ComparisonSection
           heading="Why teams choose IntegrateWise."
-          subheading="One workspace vs. stitching together tools that don't talk to each other."
+          subheading="One governed workspace vs. stitching together tools that don't talk to each other."
         />
         <TestimonialsSection heading="Teams building on IntegrateWise." />
         <FinalCTA />

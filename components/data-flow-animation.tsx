@@ -21,9 +21,9 @@ const SOURCES = [
 
 /* ─── Output workspace views (right side) ─── */
 const OUTPUTS = [
-  { name: "Account Success", color: "rgb(27,167,132)", y: 25 },
-  { name: "Business Ops", color: "rgb(52,211,153)", y: 50 },
-  { name: "Personal Ops", color: "rgb(110,231,183)", y: 75 },
+  { name: "Account Success", color: "rgb(255,178,44)", y: 25 },
+  { name: "Business Ops", color: "rgb(255,178,44)", y: 50 },
+  { name: "Personal Ops", color: "rgb(255,200,100)", y: 75 },
 ];
 
 export function DataFlowAnimation() {
@@ -40,7 +40,7 @@ export function DataFlowAnimation() {
       style={{
         background: "#05070A",
         boxShadow:
-          "0 0 60px rgba(27,167,132,0.08), 0 0 0px 1px rgba(255,255,255,0.05)",
+          "0 0 60px rgba(255,178,44,0.08), 0 0 0px 1px rgba(255,255,255,0.05)",
       }}
     >
       {/* Background grid */}
@@ -51,7 +51,7 @@ export function DataFlowAnimation() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 50% 60% at 50% 50%, rgba(27,167,132,0.06) 0%, transparent 70%)",
+            "radial-gradient(ellipse 50% 60% at 50% 50%, rgba(255,178,44,0.06) 0%, transparent 70%)",
         }}
       />
 
@@ -65,11 +65,11 @@ export function DataFlowAnimation() {
           {/* Left-to-center gradient */}
           <linearGradient id="dfa-grad-left" x1="0%" y1="0%" x2="100%" y2="0%">
             <stop offset="0%" stopColor="rgba(255,255,255,0.03)" />
-            <stop offset="100%" stopColor="rgba(27,167,132,0.4)" />
+            <stop offset="100%" stopColor="rgba(255,178,44,0.4)" />
           </linearGradient>
           {/* Center-to-right gradient */}
           <linearGradient id="dfa-grad-right" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="rgba(27,167,132,0.4)" />
+            <stop offset="0%" stopColor="rgba(255,178,44,0.4)" />
             <stop offset="100%" stopColor="rgba(255,255,255,0.03)" />
           </linearGradient>
           {/* Particle glow */}
@@ -116,7 +116,7 @@ export function DataFlowAnimation() {
                     <circle
                       key={`pl-${i}-${pIdx}`}
                       r="3"
-                      fill="rgb(27,167,132)"
+                      fill="rgb(255,178,44)"
                       filter="url(#dfa-glow)"
                       opacity="0"
                     >
@@ -168,7 +168,7 @@ export function DataFlowAnimation() {
                     <circle
                       key={`pr-${i}-${pIdx}`}
                       r="3.5"
-                      fill="rgb(52,211,153)"
+                      fill="rgb(255,178,44)"
                       filter="url(#dfa-glow-out)"
                       opacity="0"
                     >
@@ -230,21 +230,21 @@ export function DataFlowAnimation() {
         className="absolute left-[40%] w-[20%] h-[65%] top-[17.5%] rounded-2xl z-10 flex flex-col items-center justify-center overflow-hidden"
         style={{
           background:
-            "linear-gradient(180deg, rgba(27,167,132,0.08) 0%, rgba(52,211,153,0.06) 50%, rgba(27,167,132,0.08) 100%)",
-          border: "1px solid rgba(27,167,132,0.25)",
+            "linear-gradient(180deg, rgba(255,178,44,0.08) 0%, rgba(255,178,44,0.06) 50%, rgba(255,178,44,0.08) 100%)",
+          border: "1px solid rgba(255,178,44,0.25)",
           boxShadow:
-            "0 0 60px rgba(27,167,132,0.12), inset 0 0 30px rgba(27,167,132,0.04)",
+            "0 0 60px rgba(255,178,44,0.12), inset 0 0 30px rgba(255,178,44,0.04)",
         }}
       >
         {/* Inner ambient gradient */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent_0%,rgba(27,167,132,0.06)_50%,transparent_100%)] opacity-60" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent_0%,rgba(255,178,44,0.06)_50%,transparent_100%)] opacity-60" />
 
         {/* Scanline */}
         <motion.div
           className="absolute inset-x-0 h-[2px] opacity-40"
           style={{
-            background: "rgb(27,167,132)",
-            boxShadow: "0 0 12px rgb(27,167,132)",
+            background: "rgb(255,178,44)",
+            boxShadow: "0 0 12px rgb(255,178,44)",
           }}
           animate={
             prefersReducedMotion
@@ -261,7 +261,7 @@ export function DataFlowAnimation() {
         {/* Icon */}
         <div
           className="mb-2 relative z-10 h-8 w-16 shrink-0 md:h-10 md:w-20"
-          style={{ filter: "drop-shadow(0 0 20px rgba(27,167,132,0.4))" }}
+          style={{ filter: "drop-shadow(0 0 20px rgba(255,178,44,0.4))" }}
         >
           <SpineLogo className="h-full w-full" variant="on-dark" />
         </div>
@@ -273,7 +273,7 @@ export function DataFlowAnimation() {
         <div className="relative z-10 mt-2 flex flex-col gap-1 px-2 w-full">
           {[
             { label: "Truth", color: "rgba(27,167,132,0.9)" },
-            { label: "Context", color: "rgba(52,211,153,0.9)" },
+            { label: "Context", color: "rgba(255,178,44,0.9)" },
             { label: "Memory", color: "rgba(110,231,183,0.9)" },
           ].map((flow, i) => (
             <motion.div
@@ -336,8 +336,8 @@ export function DataFlowAnimation() {
           className="absolute right-[2%] md:right-[3%] w-[16%] md:w-[15%] h-[13%] border rounded-xl flex items-center justify-center backdrop-blur-md z-20 transition-transform hover:scale-[1.04]"
           style={{
             top: `calc(${view.y}% - 6.5%)`,
-            backgroundColor: "rgba(27,167,132,0.06)",
-            borderColor: "rgba(27,167,132,0.2)",
+            backgroundColor: "rgba(255,178,44,0.06)",
+            borderColor: "rgba(255,178,44,0.2)",
             boxShadow: "0 0 20px rgba(0,0,0,0.25)",
           }}
         >

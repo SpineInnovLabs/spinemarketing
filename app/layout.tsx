@@ -5,7 +5,7 @@ import "./globals.css"
 
 import { FirebaseAnalytics } from "@/components/firebase-analytics"
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" })
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://integratewise.ai"),
@@ -66,7 +66,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${inter.className} antialiased`} suppressHydrationWarning>
+      <body className={`${inter.variable} ${inter.className} antialiased`} suppressHydrationWarning>
         <a href="#main" className="skip-link">
           Skip to main content
         </a>

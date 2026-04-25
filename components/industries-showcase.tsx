@@ -68,7 +68,7 @@ const industries: Industry[] = [
     tagline: "Collections by customer health, not just aging.",
     pain: "Collections prioritized by invoice age, not customer context.",
     result: "AI-ranked collection priority combining payment history + account health.",
-    color: "#10b981", bg: "rgba(16,185,129,0.12)",
+    color: "#ffb22c", bg: "rgba(16,185,129,0.12)",
   },
   {
     icon: Building2, name: "Real Estate & Property", href: "/solutions",
@@ -134,7 +134,7 @@ export function IndustriesShowcase({
   return (
     <section ref={containerRef} className="relative arvio-section dark-section overflow-hidden">
       <motion.div className="absolute inset-0 pointer-events-none" style={{ y: bgY }}>
-        <div className="absolute top-[20%] left-[10%] w-[500px] h-[500px] rounded-full blur-[200px]" style={{ background: "rgba(27,167,132,0.04)" }} />
+        <div className="absolute top-[20%] left-[10%] w-[500px] h-[500px] rounded-full blur-[200px]" style={{ background: "rgba(255,178,44,0.04)" }} />
         <div className="absolute bottom-[20%] right-[10%] w-[400px] h-[400px] rounded-full blur-[180px]" style={{ background: "rgba(139,92,246,0.03)" }} />
       </motion.div>
 

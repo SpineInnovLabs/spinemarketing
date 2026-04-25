@@ -15,7 +15,7 @@ export function PricingHero() {
       <div className="pointer-events-none absolute inset-0">
         <div
           className="absolute left-1/2 top-[15%] h-[600px] w-[800px] -translate-x-1/2 rounded-full opacity-[0.07] blur-[140px]"
-          style={{ background: "radial-gradient(circle, rgba(27,167,132,0.4), transparent 70%)" }}
+          style={{ background: "radial-gradient(circle, rgba(255,178,44,0.4), transparent 70%)" }}
         />
       </div>
 
@@ -61,7 +61,7 @@ export function PricingHero() {
                     : "border border-white/[0.06]"
                 }`}
                 style={{
-                  background: i === 1 ? "rgba(52,211,153,0.06)" : "rgba(255,255,255,0.02)",
+                  background: i === 1 ? "rgba(255,178,44,0.06)" : "rgba(255,255,255,0.02)",
                   backdropFilter: "blur(12px)",
                 }}
               >

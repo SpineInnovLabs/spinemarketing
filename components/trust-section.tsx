@@ -49,9 +49,9 @@ function ApprovalMockup() {
         </div>
 
         <div className="flex gap-3">
-          <div className="flex-1 flex items-center justify-center gap-2 rounded-xl py-3 bg-emerald-500/10 border border-emerald-500/20 cursor-default">
-            <CheckCircle2 className="h-4 w-4 text-emerald-400" />
-            <span className="text-[13px] font-semibold text-emerald-400">Approve</span>
+          <div className="flex-1 flex items-center justify-center gap-2 rounded-xl py-3 bg-[#ffb22c]/10 border border-[#ffb22c]/20 cursor-default">
+            <CheckCircle2 className="h-4 w-4 text-[#ffb22c]" />
+            <span className="text-[13px] font-semibold text-[#ffb22c]">Approve</span>
           </div>
           <div className="flex-1 flex items-center justify-center gap-2 rounded-xl py-3 bg-white/[0.03] border border-white/[0.08] cursor-default">
             <XCircle className="h-4 w-4 text-white/30" />
@@ -67,8 +67,8 @@ function FlowDiagram() {
   const steps = [
     { label: "AI Detects", icon: "🧠", color: "rgba(139,92,246,0.15)", borderColor: "rgba(139,92,246,0.25)" },
     { label: "Suggestion", icon: "💡", color: "rgba(251,191,36,0.15)", borderColor: "rgba(251,191,36,0.25)" },
-    { label: "Human Reviews", icon: "👤", color: "rgba(52,211,153,0.15)", borderColor: "rgba(52,211,153,0.25)" },
-    { label: "Execution", icon: "⚡", color: "rgba(52,211,153,0.15)", borderColor: "rgba(52,211,153,0.25)" },
+    { label: "Human Reviews", icon: "👤", color: "rgba(255,178,44,0.15)", borderColor: "rgba(255,178,44,0.25)" },
+    { label: "Execution", icon: "⚡", color: "rgba(255,178,44,0.15)", borderColor: "rgba(255,178,44,0.25)" },
   ];
 
   return (

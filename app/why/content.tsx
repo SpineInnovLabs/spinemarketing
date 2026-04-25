@@ -235,7 +235,7 @@ export function WhyContent() {
 
       <section className="relative overflow-hidden py-28 md:py-36 border-t border-white/[0.04]" style={{ background: "#05070A" }}>
         <div className="pointer-events-none absolute inset-0">
-          <div className="absolute left-1/2 top-[30%] h-[500px] w-[600px] -translate-x-1/2 rounded-full opacity-[0.06] blur-[140px]" style={{ background: "radial-gradient(circle, rgba(52,211,153,0.4), transparent 70%)" }} />
+          <div className="absolute left-1/2 top-[30%] h-[500px] w-[600px] -translate-x-1/2 rounded-full opacity-[0.06] blur-[140px]" style={{ background: "radial-gradient(circle, rgba(255,178,44,0.4), transparent 70%)" }} />
         </div>
         <div className="relative mx-auto max-w-[1100px] px-6">
           <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center">
@@ -275,7 +275,7 @@ export function WhyContent() {
             <Link
               href="/contact?intent=demo"
               className="inline-flex h-12 items-center gap-2 rounded-full px-7 text-[14px] font-semibold text-white transition-all hover:opacity-90"
-              style={{ background: "var(--gradient-primary)", boxShadow: "0 0 30px rgba(27,167,132,0.15)" }}
+              style={{ background: "var(--gradient-primary)", boxShadow: "0 0 30px rgba(255,178,44,0.15)" }}
             >
               Book a demo <ArrowRight className="h-4 w-4" />
             </Link>

@@ -8,7 +8,7 @@ export function FinalCTA() {
   return (
     <section className="relative overflow-hidden" style={{ backgroundColor: "rgb(8, 7, 14)" }}>
       <div className="mx-auto max-w-[1100px] px-6 py-[100px] md:px-16">
-        <div className="pointer-events-none absolute inset-0 rounded-[50px]" style={{ background: "radial-gradient(50% 50% at 50% 50%, rgba(27,167,132,0.08) 0%, transparent 100%)" }} />
+        <div className="pointer-events-none absolute inset-0 rounded-[50px]" style={{ background: "radial-gradient(50% 50% at 50% 50%, rgba(255,178,44,0.08) 0%, transparent 100%)" }} />
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

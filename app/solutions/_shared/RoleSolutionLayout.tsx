@@ -37,12 +37,12 @@ const heroFade = (delay = 0) => ({
 
 const focusIcons = [Zap, Eye, TrendingUp, Target, Shield, Zap];
 const focusColors = [
-  { bg: "rgba(45,212,191,0.10)", glow: "rgba(45,212,191,0.20)", text: "#2dd4bf" },
+  { bg: "rgba(45,212,191,0.10)", glow: "rgba(45,212,191,0.20)", text: "#ffb22c" },
   { bg: "rgba(139,92,246,0.10)", glow: "rgba(139,92,246,0.20)", text: "#8b5cf6" },
   { bg: "rgba(59,130,246,0.10)", glow: "rgba(59,130,246,0.20)", text: "#3b82f6" },
   { bg: "rgba(251,191,36,0.10)", glow: "rgba(251,191,36,0.20)", text: "#fbbf24" },
   { bg: "rgba(236,72,153,0.10)", glow: "rgba(236,72,153,0.20)", text: "#ec4899" },
-  { bg: "rgba(45,212,191,0.10)", glow: "rgba(45,212,191,0.20)", text: "#2dd4bf" },
+  { bg: "rgba(45,212,191,0.10)", glow: "rgba(45,212,191,0.20)", text: "#ffb22c" },
 ];
 
 export function RoleSolutionLayout({
@@ -69,7 +69,7 @@ export function RoleSolutionLayout({
     <>
       <section className="relative overflow-hidden" style={{ background: "#05070A" }}>
         <div className="pointer-events-none absolute inset-0">
-          <div className="absolute left-1/2 top-[20%] h-[600px] w-[800px] -translate-x-1/2 rounded-full opacity-[0.08] blur-[140px]" style={{ background: "radial-gradient(circle, rgba(45,212,191,0.5), transparent 70%)" }} />
+          <div className="absolute left-1/2 top-[20%] h-[600px] w-[800px] -translate-x-1/2 rounded-full opacity-[0.08] blur-[140px]" style={{ background: "radial-gradient(circle, rgba(255,178,44,0.5), transparent 70%)" }} />
           <div className="absolute left-[15%] top-[65%] h-[300px] w-[400px] rounded-full opacity-[0.05] blur-[120px]" style={{ background: "radial-gradient(circle, rgba(139,92,246,0.4), transparent 70%)" }} />
         </div>
 
@@ -107,7 +107,7 @@ export function RoleSolutionLayout({
             <Link
               href={ctaHref}
               className="inline-flex h-12 items-center gap-2 rounded-full px-7 text-[14px] font-semibold tracking-[-0.02em] text-white transition-all hover:opacity-90"
-              style={{ background: "var(--gradient-primary)", boxShadow: "0 0 30px rgba(27,167,132,0.15)" }}
+              style={{ background: "var(--gradient-primary)", boxShadow: "0 0 30px rgba(255,178,44,0.15)" }}
             >
               {ctaLabel} <ArrowRight className="h-4 w-4" />
             </Link>
@@ -117,7 +117,7 @@ export function RoleSolutionLayout({
 
       <section className="relative overflow-hidden py-28 md:py-36" style={{ background: "#05070A" }}>
         <div className="pointer-events-none absolute inset-0">
-          <div className="absolute left-[20%] top-[30%] h-[400px] w-[500px] rounded-full opacity-[0.05] blur-[120px]" style={{ background: "radial-gradient(circle, rgba(45,212,191,0.4), transparent 70%)" }} />
+          <div className="absolute left-[20%] top-[30%] h-[400px] w-[500px] rounded-full opacity-[0.05] blur-[120px]" style={{ background: "radial-gradient(circle, rgba(255,178,44,0.4), transparent 70%)" }} />
         </div>
         <div className="relative mx-auto max-w-[1100px] px-6">
           <motion.div {...fade(0)} className="mx-auto mb-16 max-w-2xl text-center">
@@ -168,7 +168,7 @@ export function RoleSolutionLayout({
             style={{
               background: "linear-gradient(135deg, rgba(45,212,191,0.04), rgba(139,92,246,0.03))",
               backdropFilter: "blur(12px)",
-              boxShadow: "0 0 40px rgba(27,167,132,0.06)",
+              boxShadow: "0 0 40px rgba(255,178,44,0.06)",
             }}
           >
             <div className="px-8 py-8 sm:px-10">
@@ -235,7 +235,7 @@ export function RoleSolutionLayout({
 
       <section className="relative overflow-hidden py-28" style={{ background: "#05070A" }}>
         <div className="pointer-events-none absolute inset-0">
-          <div className="absolute left-1/2 top-1/2 h-[400px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-[0.06] blur-[120px]" style={{ background: "radial-gradient(circle, rgba(45,212,191,0.4), transparent 70%)" }} />
+          <div className="absolute left-1/2 top-1/2 h-[400px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-[0.06] blur-[120px]" style={{ background: "radial-gradient(circle, rgba(255,178,44,0.4), transparent 70%)" }} />
         </div>
         <div className="relative mx-auto max-w-[700px] px-6 text-center">
           <motion.h2
@@ -255,7 +255,7 @@ export function RoleSolutionLayout({
             <Link
               href="/contact?intent=demo"
               className="inline-flex h-12 items-center gap-2 rounded-full px-8 text-[15px] font-semibold text-white transition-all hover:opacity-90"
-              style={{ background: "var(--gradient-primary)", boxShadow: "0 0 30px rgba(27,167,132,0.15)" }}
+              style={{ background: "var(--gradient-primary)", boxShadow: "0 0 30px rgba(255,178,44,0.15)" }}
             >
               Book a demo <ArrowRight className="h-4 w-4" />
             </Link>

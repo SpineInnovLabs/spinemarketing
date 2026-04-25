@@ -9,7 +9,7 @@ export function FinanceLeadersContent() {
       headline="Know the answer before the board asks."
       subheadline="Collections, cash flow, and revenue risk — connected to what's actually happening with your customers, not just what's on the invoice."
       ctaLabel="See the workspace →"
-      accentColor="rgba(45,212,191,0.5)"
+      accentColor="rgba(255,178,44,0.5)"
       beforeAfter={[
         {
           label: "Collections",

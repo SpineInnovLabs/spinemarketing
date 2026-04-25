@@ -10,7 +10,7 @@ const cards = [
     title: "Loader Service",
     description: "Connect any SaaS tool via OAuth or API key. Data flows in automatically — no CSV exports, no manual sync, no code.",
     detail: "70+ connectors available",
-    color: { text: "#34d399", bg: "rgba(52,211,153,0.06)", border: "rgba(52,211,153,0.10)", glow: "rgba(52,211,153,0.15)" },
+    color: { text: "#ffb22c", bg: "rgba(255,178,44,0.06)", border: "rgba(52,211,153,0.10)", glow: "rgba(255,178,44,0.15)" },
   },
   {
     icon: Layers,
@@ -43,7 +43,7 @@ export function IntegrationArchSection() {
     <section className="relative overflow-hidden py-40 md:py-52" style={{ background: "#05070A" }}>
       <div className="absolute inset-0 bg-grain" />
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-[15%] top-[30%] h-[500px] w-[500px] rounded-full opacity-10 blur-[180px]" style={{ background: "radial-gradient(circle, rgba(52,211,153,0.2), transparent 70%)" }} />
+        <div className="absolute left-[15%] top-[30%] h-[500px] w-[500px] rounded-full opacity-10 blur-[180px]" style={{ background: "radial-gradient(circle, rgba(255,178,44,0.2), transparent 70%)" }} />
         <div className="absolute right-[15%] bottom-[20%] h-[400px] w-[400px] rounded-full opacity-10 blur-[150px]" style={{ background: "radial-gradient(circle, rgba(139,92,246,0.15), transparent 70%)" }} />
       </div>
 

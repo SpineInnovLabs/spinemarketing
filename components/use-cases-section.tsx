@@ -46,7 +46,7 @@ export function UseCasesSection() {
     <section className="relative overflow-hidden py-40 md:py-52" style={{ background: "#05070A" }}>
       <div className="absolute inset-0 bg-grain" />
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute top-[30%] right-[20%] w-[600px] h-[600px] rounded-full blur-[220px]" style={{ background: "rgba(27,167,132,0.04)" }} />
+        <div className="absolute top-[30%] right-[20%] w-[600px] h-[600px] rounded-full blur-[220px]" style={{ background: "rgba(255,178,44,0.04)" }} />
       </div>
 
       <div className="relative mx-auto max-w-[1100px] px-6">

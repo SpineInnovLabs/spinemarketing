@@ -21,19 +21,19 @@ const threeLayers = [
     icon: Database,
     label: "Truth",
     desc: "Structured data from 70+ connected apps",
-    color: "rgb(27,167,132)",
+    color: "rgb(255,178,44)",
   },
   {
     icon: MessageSquare,
     label: "Context",
     desc: "Emails, Slack, docs, and conversations",
-    color: "rgb(52,211,153)",
+    color: "rgb(255,178,44)",
   },
   {
     icon: BookOpen,
     label: "Session Summaries",
     desc: "Governed AI outputs entering knowledge",
-    color: "rgb(110,231,183)",
+    color: "rgb(255,200,100)",
   },
 ];
 

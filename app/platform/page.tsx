@@ -12,13 +12,13 @@ import { PlatformStickyScroll } from "./sticky-sections"
 import { BreadcrumbJsonLd, SoftwareApplicationJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
-  title: "Platform | IntegrateWise",
+  title: "Platform — The Adaptive Spine | IntegrateWise",
   description:
-    "The Adaptive Spine. Connects every app. Governs every AI action. Nothing happens without your approval.",
+    "The Adaptive Spine — where scattered data becomes unified Digital Memory. Connect 100+ tools. Govern every AI action. Nothing happens without your approval.",
   alternates: { canonical: "/platform" },
   openGraph: {
-    title: "Platform | IntegrateWise",
-    description: "The Adaptive Spine. Connects every app. Governs every AI action. Nothing happens without your approval.",
+    title: "Platform — The Adaptive Spine | IntegrateWise",
+    description: "The Adaptive Spine — where scattered data becomes unified Digital Memory. Connect 100+ tools. Govern every AI action. Nothing happens without your approval.",
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "IntegrateWise" }],
   },
 }
@@ -39,7 +39,7 @@ export default function PlatformPage() {
         <BentoShowcase
           tag="The Workspace"
           heading="See it all. Act on what matters."
-          subheading="The Workspace shows your accounts. The Cognitive Layer surfaces what you'd miss."
+          subheading="The Workspace shows your accounts. Your Twin surfaces what you'd miss."
         />
         <ComparisonSection />
         <TestimonialsSection />

@@ -97,7 +97,7 @@ export function TestimonialsSection({
               <div className="mt-6 flex items-center gap-3 border-t border-white/[0.06] pt-5">
                 <div
                   className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-[13px] font-bold text-white"
-                  style={{ background: "linear-gradient(135deg, rgba(52,211,153,0.3), rgba(139,92,246,0.3))" }}
+                  style={{ background: "linear-gradient(135deg, rgba(255,178,44,0.3), rgba(139,92,246,0.3))" }}
                 >
                   {t.avatar}
                 </div>

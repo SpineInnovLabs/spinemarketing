@@ -9,7 +9,7 @@ export function FinanceIndustryContent() {
       headline="Collect smarter. Not just harder."
       subheadline="Stop chasing invoices blindly. See which customers can pay, which need a conversation, and which are about to churn — all in one view."
       ctaLabel="See it with your data →"
-      accentColor="rgba(45,212,191,0.5)"
+      accentColor="rgba(255,178,44,0.5)"
       beforeAfter={[
         {
           label: "Collection priority",

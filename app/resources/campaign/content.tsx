@@ -144,7 +144,7 @@ export function CampaignGalleryContent() {
           className="pointer-events-none absolute inset-0"
           style={{
             background:
-              "radial-gradient(60% 50% at 50% 30%, rgba(27,167,132,0.08) 0%, transparent 100%)",
+              "radial-gradient(60% 50% at 50% 30%, rgba(255,178,44,0.08) 0%, transparent 100%)",
           }}
         />
         <div className="relative mx-auto max-w-[1200px] px-6 pt-[140px] pb-[48px] md:px-16">

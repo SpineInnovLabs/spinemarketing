@@ -23,7 +23,7 @@ const scrollItems = [
     title: "Unified timeline for every account",
     description: "One view with every touchpoint — CRM, billing, support, product usage. AI-drafted follow-ups ready to approve.",
     icon: LayoutDashboard,
-    color: "#2dd4bf",
+    color: "#ffb22c",
     features: [
       "Live entity 360 with cross-system timeline",
       "AI-drafted emails and follow-ups ready to review",
@@ -86,11 +86,11 @@ const scrollItems = [
 ];
 
 const gatherItems = [
-  { icon: LayoutDashboard, label: "Command Center", description: "Unified account timeline with AI-drafted actions.", color: "#2dd4bf" },
+  { icon: LayoutDashboard, label: "Command Center", description: "Unified account timeline with AI-drafted actions.", color: "#ffb22c" },
   { icon: Bell, label: "Morning Brief", description: "Overnight changes ranked by business impact.", color: "#8b5cf6" },
   { icon: ShieldCheck, label: "Approval Queue", description: "Evidence-backed suggestions. You decide.", color: "#fbbf24" },
   { icon: Gauge, label: "Health Scoring", description: "90-day lookahead with renewal probability.", color: "#3b82f6" },
-  { icon: Coins, label: "Revenue Signals", description: "Expansion, collections, billing anomaly alerts.", color: "#10b981" },
+  { icon: Coins, label: "Revenue Signals", description: "Expansion, collections, billing anomaly alerts.", color: "#ffb22c" },
   { icon: ScanSearch, label: "Risk Detection", description: "Product risk and churn signals before escalation.", color: "#ef4444" },
   { icon: Mail, label: "Unified Inbox", description: "Email, Slack, calendar — one communication surface.", color: "#06b6d4" },
   { icon: Fingerprint, label: "Executive Console", description: "Board-ready briefs from live operational data.", color: "#a855f7" },
@@ -104,7 +104,7 @@ export function ProductStickySections() {
   return (
     <>
       <StickyScroll
-        tag="The Workspace"
+        tag="Adaptive Workspace"
         heading={<>Every surface. <span className="text-primary">One workspace.</span></>}
         subheading="Scroll to explore the five core surfaces that make up your daily operating view."
         items={scrollItems}

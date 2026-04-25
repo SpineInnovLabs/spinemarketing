@@ -53,7 +53,7 @@ export function SignalStoryLayout({
   category,
   headline,
   subheadline,
-  accentColor = "rgba(45,212,191,0.5)",
+  accentColor = "rgba(255,178,44,0.5)",
   ctaLabel = "Book a demo",
   ctaHref = "/contact?intent=demo",
   beforeAfter,
@@ -98,7 +98,7 @@ export function SignalStoryLayout({
             <Link
               href={ctaHref}
               className="inline-flex h-12 items-center gap-2 rounded-full px-7 text-[14px] font-semibold tracking-[-0.02em] text-white transition-all hover:opacity-90"
-              style={{ background: "var(--gradient-primary)", boxShadow: "0 0 30px rgba(27,167,132,0.15)" }}
+              style={{ background: "var(--gradient-primary)", boxShadow: "0 0 30px rgba(255,178,44,0.15)" }}
             >
               {ctaLabel} <ArrowRight className="h-4 w-4" />
             </Link>
@@ -177,7 +177,7 @@ export function SignalStoryLayout({
             <div className="space-y-8">
               {signals.map((s, i) => (
                 <motion.div key={i} {...fade(i * 0.1)} className="relative flex gap-6 pl-1">
-                  <div className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-primary/20 text-[14px] font-bold text-primary" style={{ background: "rgba(45,212,191,0.08)" }}>
+                  <div className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-primary/20 text-[14px] font-bold text-primary" style={{ background: "rgba(255,178,44,0.08)" }}>
                     {i + 1}
                   </div>
                   <div className="pt-1.5">
@@ -270,7 +270,7 @@ export function SignalStoryLayout({
             Connect two of your tools and see a live 360 view in under two hours.
           </motion.p>
           <motion.div {...fade(0.16)} className="mt-8">
-            <Link href="/contact?intent=demo" className="inline-flex h-12 items-center gap-2 rounded-full px-8 text-[15px] font-semibold text-white transition-all hover:opacity-90" style={{ background: "var(--gradient-primary)", boxShadow: "0 0 30px rgba(27,167,132,0.15)" }}>
+            <Link href="/contact?intent=demo" className="inline-flex h-12 items-center gap-2 rounded-full px-8 text-[15px] font-semibold text-white transition-all hover:opacity-90" style={{ background: "var(--gradient-primary)", boxShadow: "0 0 30px rgba(255,178,44,0.15)" }}>
               Book a demo <ArrowRight className="h-4 w-4" />
             </Link>
           </motion.div>

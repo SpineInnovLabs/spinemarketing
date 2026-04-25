@@ -83,7 +83,7 @@ export function DayInLifeLayout({
               {subheadline}
             </motion.p>
             <motion.div {...heroFade(0.52)} className="mt-10 flex flex-wrap items-center justify-center gap-3">
-              <Link href={ctaHref} className="inline-flex h-12 items-center gap-2 rounded-full px-7 text-[14px] font-semibold tracking-[-0.02em] text-white transition-all hover:opacity-90" style={{ background: "var(--gradient-primary)", boxShadow: "0 0 30px rgba(27,167,132,0.15)" }}>
+              <Link href={ctaHref} className="inline-flex h-12 items-center gap-2 rounded-full px-7 text-[14px] font-semibold tracking-[-0.02em] text-white transition-all hover:opacity-90" style={{ background: "var(--gradient-primary)", boxShadow: "0 0 30px rgba(255,178,44,0.15)" }}>
                 {ctaLabel} <ArrowRight className="h-4 w-4" />
               </Link>
             </motion.div>
@@ -243,7 +243,7 @@ export function DayInLifeLayout({
             We&apos;ll walk through your typical day and show you exactly where IntegrateWise fits.
           </motion.p>
           <motion.div {...fade(0.16)} className="mt-8">
-            <Link href="/contact?intent=demo" className="inline-flex h-12 items-center gap-2 rounded-full px-8 text-[15px] font-semibold text-white transition-all hover:opacity-90" style={{ background: "var(--gradient-primary)", boxShadow: "0 0 30px rgba(27,167,132,0.15)" }}>
+            <Link href="/contact?intent=demo" className="inline-flex h-12 items-center gap-2 rounded-full px-8 text-[15px] font-semibold text-white transition-all hover:opacity-90" style={{ background: "var(--gradient-primary)", boxShadow: "0 0 30px rgba(255,178,44,0.15)" }}>
               Book a demo <ArrowRight className="h-4 w-4" />
             </Link>
           </motion.div>

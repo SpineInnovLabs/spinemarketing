@@ -10,7 +10,7 @@ export function CustomerSuccessRoleContent() {
       subheadline="Your accounts, their health, their history — one calm view that tells you where to spend your time today."
       ctaLabel="See your command center →"
       ctaHref="/account-success"
-      accentColor="rgba(45,212,191,0.5)"
+      accentColor="rgba(255,178,44,0.5)"
       beforeAfter={[
         {
           before: "Monday morning. 35 accounts. You open Salesforce, then Zendesk, then Stripe, then Slack — piecing together who needs attention.",

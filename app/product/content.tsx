@@ -109,56 +109,56 @@ const heroFade = (delay = 0) => ({
 
 const layers = [
   {
-    tag: "Workspace",
+    tag: "Adaptive Workspace",
     icon: LayoutDashboard,
-    title: "Your daily operating surface on top of the Spine",
-    color: { bg: "rgba(45,212,191,0.12)", glow: "rgba(45,212,191,0.25)", text: "#2dd4bf" },
+    title: "Your Command Center for Every Entity",
+    color: { bg: "rgba(255,178,44,0.12)", glow: "rgba(255,178,44,0.25)", text: "#ffb22c" },
     items: [
-      { name: "Account 360s", desc: "Unified canonical record with activity, risk, and next steps." },
-      { name: "Task Queues & Workflows", desc: "Work from one screen instead of stitching together ten tools." },
-      { name: "Domain-Specific Views", desc: "Customer Success, RevOps, and BizOps share the same underlying reality." },
+      { name: "Unified Entity Views", desc: "See accounts, clients, or projects with complete history and context." },
+      { name: "Evidence-Backed Insights", desc: "Every insight is linked to source data — emails, tickets, meetings." },
+      { name: "Approval-Gated Actions", desc: "AI suggests, you approve. Nothing executes without your explicit consent." },
     ],
   },
   {
-    tag: "Cognitive Layer",
+    tag: "Digital Memory",
     icon: Sparkles,
-    title: "Continuous detection engine bound to Spine events",
+    title: "Your Digital Memory, Surfaced and Actionable",
     color: { bg: "rgba(139,92,246,0.12)", glow: "rgba(139,92,246,0.25)", text: "#8b5cf6" },
     items: [
-      { name: "Cross-Stack Pattern Detection", desc: "Reads CRM, support, billing, email, and product — sees trends single-tool copilots miss." },
-      { name: "Scored Signals", desc: "Converts normalized streams into scored signals, ranked by impact." },
-      { name: "One Detection Layer", desc: "Instead of AI per app, one detection layer over your entire stack." },
+      { name: "Unified Data", desc: "All CRM fields, billing history, product usage, support tickets, and communication threads in one view." },
+      { name: "Complete History", desc: "Temporal timeline showing how the entity evolved — from first contact to current state." },
+      { name: "Relationship Graph", desc: "See how this entity connects to others — related accounts, shared contacts, linked projects." },
     ],
   },
   {
-    tag: "The Twin",
+    tag: "Insights Inbox",
     icon: Brain,
-    title: "Your AI copilot attached to that detection layer",
+    title: "Your AI Twin Watches. You Decide.",
     color: { bg: "rgba(251,191,36,0.12)", glow: "rgba(251,191,36,0.25)", text: "#fbbf24" },
     items: [
-      { name: "Evidence Assembly", desc: "Explains why a signal exists and proposes concrete actions." },
-      { name: "Spine-Grounded", desc: "Operates on the Spine's truth, not screen-scraped guesses." },
-      { name: "Reasoning First", desc: "Always shows its reasoning before asking for approval." },
+      { name: "Proactive Monitoring", desc: "Your Twin watches for anomalies, risks, and opportunities — so you don't have to manually check every account." },
+      { name: "Prioritized Queue", desc: "Insights ranked by urgency and impact. Critical renewal risks appear at the top." },
+      { name: "Smart Filters", desc: "Filter by entity type, urgency level, source system, or team member." },
     ],
   },
   {
     tag: "Approval Gate",
     icon: ShieldCheck,
-    title: "The hard boundary between the Twin and execution",
+    title: "AI Suggests. You Approve.",
     color: { bg: "rgba(239,68,68,0.08)", glow: "rgba(239,68,68,0.15)", text: "#f87171" },
     items: [
-      { name: "Evidence Links", desc: "Links back to Spine entities and raw events on every action." },
-      { name: "Confidence Scores", desc: "Tunable by team and signal type — you control the threshold." },
-      { name: "Impact Previews", desc: "See which records and tools will change before you approve." },
+      { name: "Human-in-the-Loop", desc: "Every suggested action requires your approval. No autonomous execution. You're always in control." },
+      { name: "Review Before Sending", desc: "Review AI-generated drafts before sending. Edit suggestions before approval." },
+      { name: "Reject with Feedback", desc: "Reject with feedback to improve your Twin over time." },
     ],
   },
 ];
 
 const socialProofMetrics = [
-  { value: 500, suffix: "+", label: "B2B accounts managed" },
-  { value: 40, suffix: "+", label: "system connectors" },
+  { value: 100, suffix: "+", label: "Tools connected" },
+  { value: 14, suffix: "hrs", label: "Saved per week" },
   { value: 90, suffix: "s", label: "avg time to first insight", prefix: "< " },
-  { value: 100, suffix: "%", label: "human approval required" },
+  { value: 100, suffix: "%", label: "Human approval required" },
 ];
 
 export function ProductContent() {
@@ -183,7 +183,7 @@ export function ProductContent() {
       <section ref={heroRef} className="relative overflow-hidden" style={{ background: "#05070A" }}>
         <FloatingParticles count={25} />
         <div className="pointer-events-none absolute inset-0">
-          <div className="absolute left-1/2 top-[15%] h-[600px] w-[800px] -translate-x-1/2 rounded-full opacity-30 blur-[140px]" style={{ background: "radial-gradient(circle, rgba(45,212,191,0.25), transparent 70%)" }} />
+          <div className="absolute left-1/2 top-[15%] h-[600px] w-[800px] -translate-x-1/2 rounded-full opacity-30 blur-[140px]" style={{ background: "radial-gradient(circle, rgba(255,178,44,0.25), transparent 70%)" }} />
           <div className="absolute right-[5%] top-[55%] h-[400px] w-[500px] rounded-full opacity-20 blur-[120px]" style={{ background: "radial-gradient(circle, rgba(139,92,246,0.2), transparent 70%)" }} />
         </div>
 
@@ -196,23 +196,23 @@ export function ProductContent() {
             className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.06] px-4 py-1.5 text-[13px] font-semibold text-white/60"
           >
             <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-            Product
+            Work the Way You Want
           </motion.div>
 
           <motion.h1
             {...heroFade(0.22)}
             className="text-[48px] font-semibold leading-[1.05] tracking-[-0.05em] text-white sm:text-[60px] lg:text-[72px]"
           >
-            See, review, and act
+            Your Governed
             <br />
-            <span className="text-primary">on canonical truth.</span>
+            <span className="text-primary">Knowledge Workspace.</span>
           </motion.h1>
 
           <motion.p
             {...heroFade(0.4)}
             className="mx-auto mt-7 max-w-2xl text-[17px] font-medium leading-[1.6] tracking-[-0.02em] text-white/45"
           >
-            The Product layer is how your teams see, review, and act on the Spine&apos;s canonical truth. The Workspace, Cognitive Layer, Twin, and Approval Gate work together — the Spine cleans and unifies data; the Product turns that into a daily surface, an always-on detection engine, and a governed execution path that never bypasses human judgment.
+            The Workbench transforms scattered data into unified entity views, evidence-backed insights, and approval-gated actions — so you work with complete context, not fragmented tools. No more tab-switching. No more context loss.
           </motion.p>
 
           <motion.div {...heroFade(0.52)} className="mt-9 flex flex-wrap items-center justify-center gap-3">
@@ -223,10 +223,10 @@ export function ProductContent() {
               Book a demo <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
-              href="/product/how-it-works"
+              href="#digital-memory"
               className="inline-flex h-12 items-center rounded-full border border-white/15 px-6 text-[14px] font-semibold tracking-[-0.02em] text-white/70 transition-colors hover:border-white/30 hover:text-white"
             >
-              See how it works
+              Explore Features
             </Link>
           </motion.div>
         </motion.div>
@@ -261,7 +261,7 @@ export function ProductContent() {
 
       <section ref={mockupRef} className="relative overflow-hidden py-24 bg-dark-section">
         <div className="pointer-events-none absolute inset-0">
-          <div className="absolute left-[15%] top-[20%] h-[400px] w-[500px] rounded-full opacity-15 blur-[100px]" style={{ background: "radial-gradient(circle, rgba(45,212,191,0.3), transparent 70%)" }} />
+          <div className="absolute left-[15%] top-[20%] h-[400px] w-[500px] rounded-full opacity-15 blur-[100px]" style={{ background: "radial-gradient(circle, rgba(255,178,44,0.3), transparent 70%)" }} />
         </div>
         <div className="relative mx-auto max-w-[1100px] px-6">
           <motion.div
@@ -294,10 +294,10 @@ export function ProductContent() {
 
             <div className="grid gap-px bg-white/[0.04] sm:grid-cols-2 lg:grid-cols-4">
               {[
-                { num: "1", color: "#2dd4bf", label: "Connect", title: "Your tools stay where they are", desc: "CRM, billing, support, projects — connect once via OAuth.", tags: ["CRM", "Billing", "Support", "Projects"] },
-                { num: "2", color: "#8b5cf6", label: "Detect", title: "One detection layer over your stack", desc: "Cognitive Layer watches normalized streams and finds patterns.", alerts: null },
-                { num: "3", color: "#fbbf24", label: "Propose", title: "Twin assembles evidence", desc: "Explains why, proposes what to do, shows its reasoning.", draft: true },
-                { num: "4", color: "#2dd4bf", label: "Approve", title: "Nothing happens without you", desc: "", alerts: [{ label: "Evidence linked to Spine entities", severity: "High" }, { label: "Confidence score: 87", severity: "Critical" }, { label: "Impact preview ready", severity: "High" }] },
+                { num: "1", color: "#ffb22c", label: "Connect", title: "Your tools stay where they are", desc: "CRM, billing, support, projects — connect once via OAuth.", tags: ["CRM", "Billing", "Support", "Projects"] },
+                { num: "2", color: "#8b5cf6", label: "Remember", title: "Digital Memory builds over time", desc: "Data + Context unified. The Spine transforms raw data into structured knowledge.", alerts: null },
+                { num: "3", color: "#fbbf24", label: "Observe", title: "Your Twin watches everything", desc: "Surfaces insights with evidence citations. Identifies risks, opportunities, and patterns.", draft: true },
+                { num: "4", color: "#ffb22c", label: "Approve", title: "Nothing happens without you", desc: "", alerts: [{ label: "Evidence linked to source data", severity: "High" }, { label: "Confidence score: 87", severity: "Critical" }, { label: "Impact preview ready", severity: "High" }] },
               ].map((step, i) => (
                 <motion.div
                   key={i}
@@ -350,7 +350,7 @@ export function ProductContent() {
 
       <section className="relative overflow-hidden py-28 bg-dark-section border-t border-white/[0.06]">
         <div className="pointer-events-none absolute inset-0">
-          <div className="absolute left-1/2 top-[30%] h-[500px] w-[700px] -translate-x-1/2 rounded-full opacity-10 blur-[140px]" style={{ background: "radial-gradient(circle, rgba(52,211,153,0.3), transparent 70%)" }} />
+          <div className="absolute left-1/2 top-[30%] h-[500px] w-[700px] -translate-x-1/2 rounded-full opacity-10 blur-[140px]" style={{ background: "radial-gradient(circle, rgba(255,178,44,0.3), transparent 70%)" }} />
         </div>
         <div className="relative mx-auto max-w-[1100px] px-6">
           <motion.div

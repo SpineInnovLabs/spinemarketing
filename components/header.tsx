@@ -37,6 +37,8 @@ import {
   Eye,
   Globe,
   Server,
+  Layers,
+  RefreshCw,
 } from "lucide-react";
 import { motion, useScroll, useSpring } from "framer-motion";
 
@@ -64,21 +66,32 @@ const navigation: NavItem[] = [
     label: "Platform",
     href: "/platform",
     items: [
-      { name: "The Adaptive Spine", href: "/platform/the-adaptive-spine", icon: Database },
-      { name: "How it Works", href: "/platform/how-it-works", icon: GitBranch },
-      { name: "Integrations", href: "/platform/integrations", icon: Plug },
-      { name: "Security", href: "/platform/security", icon: ShieldCheck },
-      { name: "Infrastructure", href: "/platform/infrastructure", icon: Server },
+      { name: "Adaptive Spine", href: "/platform#platform-overview", icon: Layers, desc: "The memory foundation" },
+      { name: "How it Works", href: "/platform#ingestion", icon: GitBranch, desc: "Ingestion & processing pipeline" },
+      { name: "Digital Memory", href: "/platform#entity-memory", icon: Brain, desc: "Entity graph & knowledge base" },
+      { name: "Security", href: "/platform#governance", icon: ShieldCheck, desc: "Governance & trust boundaries" },
+      { name: "Connectors", href: "/platform#connectors", icon: Plug, desc: "100+ native integrations" },
     ],
   },
   {
     label: "Product",
     href: "/product",
     items: [
-      { name: "The Adaptive Workspace", href: "/product/the-adaptive-workspace", icon: Cpu },
-      { name: "How it Works", href: "/product/how-it-works", icon: TrendingUp },
-      { name: "Approval Gate & Twin", href: "/product/approval-gate-twin", icon: UserCheck },
-      { name: "Security", href: "/product/security", icon: ShieldCheck },
+      { name: "Adaptive Workspace", href: "/product#workbench-hero", icon: Cpu },
+      { name: "Digital Memory", href: "/product#entity-360", icon: TrendingUp },
+      { name: "Approval Gate", href: "/product#approvals", icon: UserCheck },
+      { name: "The Looper", href: "/product#collaboration", icon: ShieldCheck },
+    ],
+  },
+  {
+    label: "Your Twin",
+    href: "/ai",
+    items: [
+      { name: "Reasoning", href: "/ai#reasoning", icon: Brain, desc: "How your Twin thinks" },
+      { name: "Evidence", href: "/ai#evidence", icon: Eye, desc: "Every insight backed by proof" },
+      { name: "Safety & Boundaries", href: "/ai#boundaries", icon: ShieldCheck, desc: "What your Twin cannot do" },
+      { name: "Human Approval", href: "/ai#approval", icon: UserCheck, desc: "You always have the final say" },
+      { name: "Model Options", href: "/ai#models", icon: Cpu, desc: "Swap AI models, keep your memory" },
     ],
   },
   {
@@ -88,7 +101,7 @@ const navigation: NavItem[] = [
       {
         label: "By Function",
         items: [
-          { name: "Resolution", href: "/account-success", icon: Users, desc: "Entity matching and dedup" },
+          { name: "Account Success", href: "/account-success", icon: Users, desc: "Never miss a renewal signal" },
           { name: "Business Ops", href: "/business-ops", icon: BarChart3, desc: "The live operating picture" },
           { name: "Personal Ops", href: "/personal-ops", icon: Sparkles, desc: "Your workspace, your context" },
         ],
@@ -118,13 +131,14 @@ const navigation: NavItem[] = [
     ],
   },
   { label: "Pricing", href: "/pricing" },
+
   {
     label: "Company",
     href: "/about",
     items: [
       { name: "Why IntegrateWise", href: "/why", icon: HelpCircle, desc: "The problem we exist to solve" },
       { name: "About", href: "/about", icon: Building2, desc: "Our story and what we stand for" },
-      { name: "Resources", href: "/resources", icon: BookOpen, desc: "Blog, guides, and playbooks" },
+      { name: "Contact", href: "/contact", icon: Mail, desc: "Get in touch" },
     ],
   },
 ];
@@ -209,7 +223,7 @@ function MegaDropdown({
         style={{
           background: "rgba(8, 10, 14, 0.92)",
           boxShadow:
-            "0 20px 60px -15px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.04), 0 0 80px rgba(27,167,132,0.04)",
+            "0 20px 60px -15px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.04), 0 0 80px rgba(255,178,44,0.04)",
         }}
       >
         {isGrouped && nav.groups && (
@@ -457,8 +471,8 @@ export function Header({
               className="h-[38px] rounded-xl px-4 text-[14px] font-semibold tracking-[-0.02em] text-white"
               style={{
                 background: "var(--gradient-primary)",
-                border: "1px solid rgba(52,211,153,0.2)",
-                boxShadow: "0 0 20px rgba(27,167,132,0.15), var(--shadow-button)",
+                border: "1px solid rgba(255,178,44,0.2)",
+                boxShadow: "0 0 20px rgba(255,178,44,0.15), var(--shadow-button)",
               }}
               asChild
             >
@@ -578,7 +592,7 @@ export function Header({
                   className="w-full rounded-xl font-semibold text-white"
                   style={{
                     background: "var(--gradient-primary)",
-                    boxShadow: "0 0 20px rgba(27,167,132,0.15)",
+                    boxShadow: "0 0 20px rgba(255,178,44,0.15)",
                   }}
                   asChild
                 >

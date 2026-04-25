@@ -138,7 +138,7 @@ export function BentoShowcase({
   return (
     <section className="relative overflow-hidden bg-dark-section py-28 md:py-36">
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-[20%] top-[25%] h-[400px] w-[500px] rounded-full opacity-12 blur-[120px]" style={{ background: "radial-gradient(circle, rgba(52,211,153,0.2), transparent 70%)" }} />
+        <div className="absolute left-[20%] top-[25%] h-[400px] w-[500px] rounded-full opacity-12 blur-[120px]" style={{ background: "radial-gradient(circle, rgba(255,178,44,0.2), transparent 70%)" }} />
         <div className="absolute right-[10%] bottom-[20%] h-[300px] w-[400px] rounded-full opacity-10 blur-[100px]" style={{ background: "radial-gradient(circle, rgba(139,92,246,0.15), transparent 70%)" }} />
       </div>
       <div className="relative mx-auto max-w-[1100px] px-6">
@@ -168,15 +168,15 @@ export function BentoShowcase({
               icon: LayoutDashboard,
               title: "Unified View",
               desc: "All accounts, tasks, workflows in one workspace.",
-              color: "rgba(45,212,191,0.12)",
-              glow: "rgba(45,212,191,0.15)",
+              color: "rgba(255,178,44,0.12)",
+              glow: "rgba(255,178,44,0.15)",
             },
             {
               icon: Activity,
               title: "Live Data Spine",
               desc: "Three data flows keep everything in sync.",
-              color: "rgba(52,211,153,0.12)",
-              glow: "rgba(52,211,153,0.15)",
+              color: "rgba(255,178,44,0.12)",
+              glow: "rgba(255,178,44,0.15)",
             },
             {
               icon: ShieldCheck,

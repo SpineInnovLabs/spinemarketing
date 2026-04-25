@@ -11,21 +11,21 @@ const footerColumns: {
   {
     heading: "Platform",
     links: [
-      { name: "The Adaptive Spine", href: "/platform/the-adaptive-spine" },
-      { name: "How it Works", href: "/platform/how-it-works" },
-      { name: "Integrations", href: "/platform/integrations" },
-      { name: "Security", href: "/platform/security" },
-      { name: "Infrastructure", href: "/platform/infrastructure" },
+      { name: "Adaptive Spine", href: "/platform#platform-overview" },
+      { name: "How it Works", href: "/platform#ingestion" },
+      { name: "Digital Memory", href: "/platform#entity-memory" },
+      { name: "Security", href: "/platform#governance" },
+      { name: "Connectors", href: "/platform#connectors" },
     ],
   },
   {
     heading: "Product",
     links: [
-      { name: "The Workspace", href: "/product/the-adaptive-workspace" },
-      { name: "Cognitive Layer", href: "/product/how-it-works" },
-      { name: "The Twin", href: "/ai" },
-      { name: "Approval Gate", href: "/product/approval-gate-twin" },
-      { name: "Pricing", href: "/pricing" },
+      { name: "Adaptive Workspace", href: "/product#workbench-hero" },
+      { name: "Digital Memory", href: "/product#entity-360" },
+      { name: "Approval Gate", href: "/product#approvals" },
+      { name: "The Looper", href: "/product#collaboration" },
+      { name: "Your Twin", href: "/ai" },
     ],
   },
   {
@@ -39,13 +39,20 @@ const footerColumns: {
     ],
   },
   {
+    heading: "Learn",
+    links: [
+      { name: "Blog", href: "/blog" },
+      { name: "Resources", href: "/resources" },
+      { name: "Docs", href: "https://docs.integratewise.ai", external: true },
+      { name: "Changelog", href: "/changelog" },
+    ],
+  },
+  {
     heading: "Company",
     links: [
       { name: "Why IntegrateWise", href: "/why" },
       { name: "About", href: "/about" },
-      { name: "Blog", href: "/blog" },
-      { name: "Resources", href: "/resources" },
-      { name: "Campaign Gallery", href: "/resources/campaign" },
+      { name: "Pricing", href: "/pricing" },
       { name: "Contact", href: "/contact" },
     ],
   },
@@ -105,7 +112,7 @@ export function Footer() {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
+            <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-5">
               {footerColumns.map(({ heading, links }) => (
                 <div key={heading}>
                   <h3 className="mb-5 text-[12px] font-bold uppercase tracking-[0.12em] text-white/50">

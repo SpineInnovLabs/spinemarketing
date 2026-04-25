@@ -158,7 +158,7 @@ function GroupCard({
       >
         <div
           className="flex h-11 w-11 items-center justify-center rounded-xl transition-transform group-hover:scale-105"
-          style={{ background: "rgba(52,211,153,0.10)", boxShadow: "0 0 25px rgba(52,211,153,0.12)" }}
+          style={{ background: "rgba(52,211,153,0.10)", boxShadow: "0 0 25px rgba(255,178,44,0.12)" }}
         >
           <Icon className="h-5 w-5 text-primary" />
         </div>
@@ -181,7 +181,7 @@ export function SolutionsContent() {
     <>
       <section className="relative overflow-hidden pb-28 pt-[160px]" style={{ background: "#05070A" }}>
         <div className="pointer-events-none absolute inset-0">
-          <div className="absolute left-1/2 top-[20%] h-[600px] w-[800px] -translate-x-1/2 rounded-full opacity-[0.08] blur-[140px]" style={{ background: "radial-gradient(circle, rgba(45,212,191,0.5), transparent 70%)" }} />
+          <div className="absolute left-1/2 top-[20%] h-[600px] w-[800px] -translate-x-1/2 rounded-full opacity-[0.08] blur-[140px]" style={{ background: "radial-gradient(circle, rgba(255,178,44,0.5), transparent 70%)" }} />
         </div>
         <div className="relative mx-auto max-w-[900px] px-6 text-center">
           <motion.div

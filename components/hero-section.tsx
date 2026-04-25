@@ -38,30 +38,30 @@ function SpineCore() {
         <div
           className="absolute w-[120px] h-[120px] rounded-full"
           style={{
-            background: "radial-gradient(circle, rgba(27,167,132,0.25) 0%, transparent 70%)",
+            background: "radial-gradient(circle, rgba(255,178,44,0.25) 0%, transparent 70%)",
             filter: "blur(30px)",
           }}
         />
         <div
           className="absolute w-[200px] h-[200px] rounded-full animate-pulse-glow"
           style={{
-            background: "radial-gradient(circle, rgba(52,211,153,0.08) 0%, transparent 60%)",
+            background: "radial-gradient(circle, rgba(255,178,44,0.08) 0%, transparent 60%)",
           }}
         />
         <div
           className="relative w-16 h-16 rounded-2xl flex items-center justify-center"
           style={{
-            background: "linear-gradient(135deg, rgba(27,167,132,0.2), rgba(52,211,153,0.1))",
-            border: "1px solid rgba(27,167,132,0.3)",
-            boxShadow: "0 0 40px rgba(27,167,132,0.2), inset 0 0 20px rgba(27,167,132,0.1)",
+            background: "linear-gradient(135deg, rgba(255,178,44,0.2), rgba(255,178,44,0.1))",
+            border: "1px solid rgba(255,178,44,0.3)",
+            boxShadow: "0 0 40px rgba(255,178,44,0.2), inset 0 0 20px rgba(255,178,44,0.1)",
           }}
         >
           <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-            <path d="M14 3L14 25" stroke="rgba(52,211,153,0.8)" strokeWidth="2" strokeLinecap="round" />
-            <path d="M7 8L14 3L21 8" stroke="rgba(52,211,153,0.8)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            <circle cx="14" cy="14" r="3" fill="rgba(52,211,153,0.9)" />
-            <path d="M5 14H9" stroke="rgba(52,211,153,0.5)" strokeWidth="1.5" strokeLinecap="round" />
-            <path d="M19 14H23" stroke="rgba(52,211,153,0.5)" strokeWidth="1.5" strokeLinecap="round" />
+            <path d="M14 3L14 25" stroke="rgba(255,178,44,0.8)" strokeWidth="2" strokeLinecap="round" />
+            <path d="M7 8L14 3L21 8" stroke="rgba(255,178,44,0.8)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            <circle cx="14" cy="14" r="3" fill="rgba(255,178,44,0.9)" />
+            <path d="M5 14H9" stroke="rgba(255,178,44,0.5)" strokeWidth="1.5" strokeLinecap="round" />
+            <path d="M19 14H23" stroke="rgba(255,178,44,0.5)" strokeWidth="1.5" strokeLinecap="round" />
           </svg>
         </div>
       </motion.div>
@@ -77,7 +77,7 @@ function DataPulse({ fromAngle, radius, delay }: { fromAngle: number; radius: nu
     <motion.div
       className="absolute left-1/2 top-1/2 w-1.5 h-1.5 rounded-full"
       style={{
-        background: "rgb(52,211,153)",
+        background: "rgb(255,178,44)",
         boxShadow: "0 0 8px rgba(52,211,153,0.6)",
       }}
       initial={{ x: startX, y: startY, opacity: 0, scale: 0 }}
@@ -153,7 +153,7 @@ export function HeroSection() {
         <div
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full"
           style={{
-            background: "radial-gradient(circle, rgba(27,167,132,0.06) 0%, transparent 50%)",
+            background: "radial-gradient(circle, rgba(255,178,44,0.06) 0%, transparent 50%)",
           }}
         />
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.008)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.008)_1px,transparent_1px)] bg-[size:80px_80px] pointer-events-none [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_10%,transparent_100%)]" />
@@ -211,7 +211,7 @@ export function HeroSection() {
                       animate={{
                         opacity: isReveal ? ring.opacity : ring.opacity * 0.5,
                         borderColor: isReveal
-                          ? "rgba(27,167,132,0.15)"
+                          ? "rgba(255,178,44,0.15)"
                           : "rgba(255,255,255,0.06)",
                       }}
                       transition={{ duration: 1.5 }}
@@ -258,14 +258,14 @@ export function HeroSection() {
             transition={{ type: "spring", damping: 16, stiffness: 52, delay: isReveal ? 0.4 : 0 }}
             className="mb-8 inline-flex items-center gap-2.5 rounded-full px-5 py-2 border border-white/[0.08] bg-white/[0.03] backdrop-blur-sm"
           >
-            <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+            <span className="h-2 w-2 rounded-full bg-[#ffb22c] animate-pulse" />
             <span className="text-[13px] font-medium tracking-wide text-white/60">
-              The Knowledge Workspace over the Spine
+              Are you the hidden cost in your own workflow?
             </span>
           </motion.div>
 
           <h1 className="text-[48px] sm:text-[64px] lg:text-[80px] font-semibold leading-[0.95] tracking-[-0.04em] text-white">
-            {["Stop", "being", "the"].map((word, i) => (
+            {["Still", "juggling"].map((word, i) => (
               <motion.span
                 key={i}
                 initial={{ opacity: 0, y: 24, filter: "blur(6px)" }}
@@ -282,7 +282,7 @@ export function HeroSection() {
               </motion.span>
             ))}
             <br className="hidden sm:block" />
-            {["human", "API"].map((word, i) => (
+            {["tools"].map((word, i) => (
               <motion.span
                 key={`h-${i}`}
                 initial={{ opacity: 0, y: 24, filter: "blur(6px)" }}
@@ -298,7 +298,7 @@ export function HeroSection() {
                 {word}
               </motion.span>
             ))}
-            {["between", "your", "tools."].map((word, i) => (
+            {["and", "tabs?"].map((word, i) => (
               <motion.span
                 key={`g-${i}`}
                 initial={{ opacity: 0, y: 24, filter: "blur(6px)" }}
@@ -309,7 +309,7 @@ export function HeroSection() {
                   stiffness: 60,
                   delay: isReveal ? 0.9 + i * 0.08 : 0,
                 }}
-                className="mr-[0.22em] inline-block text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-emerald-300 text-glow-emerald"
+                className="mr-[0.22em] inline-block text-transparent bg-clip-text" style={{ background: "linear-gradient(90deg, #ffb22c, #FFE1CC)" }}
               >
                 {word}
               </motion.span>
@@ -322,7 +322,8 @@ export function HeroSection() {
             transition={{ type: "spring", damping: 16, stiffness: 52, delay: isReveal ? 1.2 : 0 }}
             className="mx-auto mt-8 max-w-xl text-[17px] sm:text-[19px] font-medium leading-[1.6] tracking-[-0.01em] text-white/40"
           >
-            One workspace. Full context. Every action under your control.
+            <span className="block text-white/60 font-semibold mb-2">Tired of resetting context every 30 minutes?</span>
+            Your context is buried in Slack, lost in CRM notes, scattered across tabs — and you&apos;re the one manually connecting the dots.
           </motion.p>
 
           <motion.div
@@ -333,14 +334,14 @@ export function HeroSection() {
           >
             <Button
               size="lg"
-              className="h-[52px] rounded-full px-8 text-[15px] font-semibold tracking-[-0.02em] shadow-[0_0_40px_rgba(52,211,153,0.2)] transition-shadow hover:shadow-[0_0_60px_rgba(52,211,153,0.35)]"
+              className="h-[52px] rounded-full px-8 text-[15px] font-semibold tracking-[-0.02em] shadow-[0_0_40px_rgba(255,178,44,0.2)] transition-shadow hover:shadow-[0_0_60px_rgba(52,211,153,0.35)]"
               style={{
                 background: "var(--gradient-primary)",
-                border: "2px solid rgba(52,211,153,0.2)",
+                border: "2px solid rgba(255,178,44,0.2)",
               }}
               asChild
             >
-              <Link href="/contact?intent=demo">Book a demo</Link>
+              <Link href="/contact?intent=demo">Book a demo before your context resets again</Link>
             </Button>
             <Button
               size="lg"

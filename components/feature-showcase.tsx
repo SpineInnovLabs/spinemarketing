@@ -15,7 +15,7 @@ type ShowcaseItem = {
 
 const visualMap: Record<string, { color: string; items: { label: string; value: string }[] }> = {
   spine: {
-    color: "rgba(52,211,153,0.15)",
+    color: "rgba(255,178,44,0.15)",
     items: [
       { label: "Truth Flow", value: "Canonical records" },
       { label: "Context Flow", value: "Signals & patterns" },
@@ -23,7 +23,7 @@ const visualMap: Record<string, { color: string; items: { label: string; value: 
     ],
   },
   workbench: {
-    color: "rgba(45,212,191,0.15)",
+    color: "rgba(255,178,44,0.15)",
     items: [
       { label: "Accounts", value: "Entity 360 view" },
       { label: "Tasks", value: "Prioritized queue" },

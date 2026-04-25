@@ -28,7 +28,7 @@ export function DayOneSection() {
   return (
     <section className="relative overflow-hidden bg-dark-section py-32 md:py-40">
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute right-[15%] top-[25%] h-[400px] w-[500px] rounded-full opacity-15 blur-[120px]" style={{ background: "radial-gradient(circle, rgba(52,211,153,0.25), transparent 70%)" }} />
+        <div className="absolute right-[15%] top-[25%] h-[400px] w-[500px] rounded-full opacity-15 blur-[120px]" style={{ background: "radial-gradient(circle, rgba(255,178,44,0.25), transparent 70%)" }} />
       </div>
       <div className="relative mx-auto max-w-[1100px] px-6">
         <div className="mx-auto max-w-4xl">
