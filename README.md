@@ -1,30 +1,44 @@
-# SaaS landing page
+# IntegrateWise — Marketing Site
 
-*Automatically synced with your [v0.app](https://v0.app) deployments*
+The marketing site for [integratewise.ai](https://integratewise.ai) — built with Next.js 16, Tailwind CSS v4, and deployed to Firebase Hosting.
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/integratewize/v0-saa-s-landing-page)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/h1NJMO7AFYO)
+## Stack
 
-## Overview
+- **Framework**: Next.js 16 (static export)
+- **Styling**: Tailwind CSS v4
+- **Animations**: Framer Motion
+- **Icons**: Lucide React
+- **Hosting**: Firebase Hosting (`integratewise-4a649`)
+- **Package manager**: pnpm
 
-This repository will stay in sync with your deployed chats on [v0.app](https://v0.app).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.app](https://v0.app).
+## Local Development
 
-## Deployment
+```bash
+pnpm install
+pnpm dev
+```
 
-Your project is live at:
+Opens at `http://localhost:5000`
 
-**[https://vercel.com/integratewize/v0-saa-s-landing-page](https://vercel.com/integratewize/v0-saa-s-landing-page)**
+## Build & Deploy
 
-## Build your app
+```bash
+# Build static export
+pnpm build
 
-Continue building your app on:
+# Deploy to Firebase Hosting
+pnpm deploy
+```
 
-**[https://v0.app/chat/h1NJMO7AFYO](https://v0.app/chat/h1NJMO7AFYO)**
+## Design System
 
-## How It Works
+- **Background**: `#0a0a0a`
+- **Cards**: `#111111` / `#1a1a1a`
+- **Accent**: `#ffb22c` (amber/gold)
+- **Font**: Inter
+- **Border**: `rgba(255,255,255,0.10)`
 
-1. Create and modify your project using [v0.app](https://v0.app)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+## Redirects
+
+- `/docs` -> https://docs.integratewise.ai
+- `/changelog` -> https://changelog.integratewise.ai
