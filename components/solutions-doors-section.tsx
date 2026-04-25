@@ -26,15 +26,15 @@ function AccountSuccessVisual() {
       name: "Acme Corp",
       initials: "AC",
       health: 94,
-      healthColor: "text-emerald-600",
+      healthColor: "text-primary",
       badge: "Healthy",
-      badgeBg: "bg-emerald-50 text-emerald-600",
+      badgeBg: "bg-primary/10 text-primary",
       signals: [
         {
           icon: TrendingUp,
           text: "NPS increased to 78",
           time: "2h ago",
-          color: "text-emerald-500",
+          color: "text-primary",
         },
         {
           icon: AlertTriangle,
@@ -235,7 +235,7 @@ function BusinessOpsVisual() {
         <span className="text-[13px] font-semibold tracking-[-0.02em]">
           Active Workflows
         </span>
-        <span className="ml-auto rounded-full bg-emerald-50 px-2 py-0.5 text-[11px] font-semibold text-emerald-600">
+        <span className="ml-auto rounded-full bg-primary/10 px-2 py-0.5 text-[11px] font-semibold text-primary">
           4 running
         </span>
       </motion.div>
@@ -292,7 +292,7 @@ function BusinessOpsVisual() {
             <div
               className={`ml-auto h-2 w-2 shrink-0 rounded-full ${
                 wf.status === "completed"
-                  ? "bg-emerald-500"
+                  ? "bg-primary"
                   : wf.status === "in-progress"
                     ? "bg-amber-500 animate-pulse"
                     : "bg-muted-foreground/30"
@@ -362,9 +362,9 @@ function PersonalOpsVisual() {
                 Wednesday, March 12
               </div>
             </div>
-            <div className="ml-auto flex items-center gap-1 rounded-full bg-emerald-50 px-2.5 py-0.5">
-              <div className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
-              <span className="text-[11px] font-semibold text-emerald-600">
+            <div className="ml-auto flex items-center gap-1 rounded-full bg-primary/10 px-2.5 py-0.5">
+              <div className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
+              <span className="text-[11px] font-semibold text-primary">
                 Live
               </span>
             </div>

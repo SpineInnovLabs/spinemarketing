@@ -185,13 +185,13 @@ function Entity360Visual() {
               Enterprise Account
             </div>
           </div>
-          <div className="ml-auto rounded-full bg-emerald-50 px-2.5 py-0.5 text-[12px] font-semibold text-emerald-600">
+          <div className="ml-auto rounded-full bg-primary/10 px-2.5 py-0.5 text-[12px] font-semibold text-primary">
             Healthy
           </div>
         </div>
         <div className="mt-5 grid grid-cols-3 gap-3">
           {[
-            { label: "Health", value: "92", color: "text-emerald-600" },
+            { label: "Health", value: "92", color: "text-primary" },
             { label: "NPS", value: "74", color: "text-primary" },
             { label: "Tickets", value: "3", color: "text-amber-600" },
           ].map((s) => (
@@ -381,7 +381,7 @@ const sectionHeading = (
   >
     <h2 className="text-[36px] font-semibold leading-[1.15] tracking-[-0.04em] text-white sm:text-[44px]">
       How it{" "}
-      <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-emerald-300">actually works</span>
+      <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-[#FFE1CC]">actually works</span>
     </h2>
     <p className="mt-4 text-[16px] font-medium leading-[1.6] text-white/50">
       Four steps. One workspace. You stay in control.

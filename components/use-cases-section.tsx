@@ -62,7 +62,7 @@ export function UseCasesSection() {
           </Badge>
           <h2 className="section-heading text-white">
             Real signals.{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-emerald-300 text-glow-emerald">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ffb22c] to-[#FFE1CC]">
               Real actions.
             </span>
           </h2>

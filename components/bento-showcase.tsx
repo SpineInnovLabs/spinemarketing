@@ -23,7 +23,7 @@ function DashboardMockup() {
       <div className="flex items-center gap-2 border-b border-white/[0.06] bg-white/[0.04] px-4 py-2.5">
         <span className="h-2.5 w-2.5 rounded-full bg-red-400/40" />
         <span className="h-2.5 w-2.5 rounded-full bg-amber-400/40" />
-        <span className="h-2.5 w-2.5 rounded-full bg-green-400/40" />
+        <span className="h-2.5 w-2.5 rounded-full bg-primary/40" />
         <span className="ml-2 text-[11px] font-medium text-white/30">Workspace</span>
       </div>
       <div className="p-4 space-y-3">

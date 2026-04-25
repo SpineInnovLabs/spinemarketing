@@ -206,8 +206,8 @@ export function PricingSection({ hideHeading = false }: { hideHeading?: boolean 
               <Button
                 className={`mt-8 h-[42px] w-full rounded-xl text-[15px] font-semibold tracking-[-0.3px] ${
                   plan.highlighted
-                    ? "border-2 border-white/20 bg-white text-foreground hover:bg-white/90"
-                    : "border-2 border-border/75 bg-white text-foreground"
+                    ? "border-2 border-white/20 bg-white text-[#111111] hover:bg-white/90"
+                    : "border-2 border-border/75 bg-white text-[#111111]"
                 }`}
                 variant={plan.highlighted ? "secondary" : "outline"}
                 asChild

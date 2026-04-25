@@ -3,16 +3,21 @@
 import { LogosSection } from "@/components/logos-section"
 import { ProblemSection } from "@/components/problem-section"
 import { FinalCTA } from "@/components/final-cta"
-import { UseCasesSection } from "@/components/use-cases-section"
-import { TrustSection } from "@/components/trust-section"
-import { IntegrationArchSection } from "@/components/integration-arch-section"
-import { CredibilitySection } from "@/components/credibility-section"
+import { HomeStorySection } from "@/components/home-story-section"
+import {
+  HomeConfidenceSection,
+  HomeFeaturesSection,
+  HomePricingPreviewSection,
+  HomeUseCasesSection,
+  HomeVisionSection,
+} from "@/components/home-narrative-sections"
 
 export function HomeSections() {
   return (
     <>
-      <LogosSection />
       <ProblemSection />
+      <HomeVisionSection />
+      <LogosSection />
     </>
   )
 }
@@ -20,10 +25,11 @@ export function HomeSections() {
 export function HomeBottomSections() {
   return (
     <>
-      <TrustSection />
-      <IntegrationArchSection />
-      <UseCasesSection />
-      <CredibilitySection />
+      <HomeStorySection />
+      <HomeFeaturesSection />
+      <HomeUseCasesSection />
+      <HomePricingPreviewSection />
+      <HomeConfidenceSection />
       <FinalCTA />
     </>
   )

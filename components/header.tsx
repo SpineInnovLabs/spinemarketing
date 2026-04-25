@@ -66,37 +66,40 @@ const navigation: NavItem[] = [
     label: "Platform",
     href: "/platform",
     items: [
-      { name: "Adaptive Spine", href: "/platform#platform-overview", icon: Layers, desc: "The memory foundation" },
-      { name: "How it Works", href: "/platform#ingestion", icon: GitBranch, desc: "Ingestion & processing pipeline" },
-      { name: "Digital Memory", href: "/platform#entity-memory", icon: Brain, desc: "Entity graph & knowledge base" },
-      { name: "Security", href: "/platform#governance", icon: ShieldCheck, desc: "Governance & trust boundaries" },
+      { name: "The Spine", href: "/platform#the-spine", icon: Layers, desc: "Where data becomes Memory" },
+      { name: "How it Works", href: "/platform#how-it-works", icon: GitBranch, desc: "From tools to Digital Memory" },
+      { name: "Memory", href: "/platform#memory", icon: Brain, desc: "Your growing knowledge base" },
       { name: "Connectors", href: "/platform#connectors", icon: Plug, desc: "100+ native integrations" },
+      { name: "Security", href: "/platform#security", icon: ShieldCheck, desc: "Private by architecture" },
     ],
   },
   {
     label: "Product",
     href: "/product",
     items: [
-      { name: "Adaptive Workspace", href: "/product#workbench-hero", icon: Cpu },
-      { name: "Digital Memory", href: "/product#entity-360", icon: TrendingUp },
-      { name: "Approval Gate", href: "/product#approvals", icon: UserCheck },
-      { name: "The Looper", href: "/product#collaboration", icon: ShieldCheck },
+      { name: "Workbench", href: "/product#workbench", icon: Cpu, desc: "Where you see and act on Memory" },
+      { name: "The Twin", href: "/product#twin", icon: Brain, desc: "Connects, explains, prepares" },
+      { name: "Approval", href: "/product#approval", icon: UserCheck, desc: "Nothing acts without you" },
+      { name: "Reference Layer", href: "/product#reference-layer", icon: Layers, desc: "Separate memories, coherent life" },
+      { name: "How it Works", href: "/product#how-it-works", icon: GitBranch, desc: "The full product loop" },
     ],
   },
   {
     label: "Your Twin",
     href: "/ai",
     items: [
-      { name: "Reasoning", href: "/ai#reasoning", icon: Brain, desc: "How your Twin thinks" },
-      { name: "Evidence", href: "/ai#evidence", icon: Eye, desc: "Every insight backed by proof" },
-      { name: "Safety & Boundaries", href: "/ai#boundaries", icon: ShieldCheck, desc: "What your Twin cannot do" },
-      { name: "Human Approval", href: "/ai#approval", icon: UserCheck, desc: "You always have the final say" },
-      { name: "Model Options", href: "/ai#models", icon: Cpu, desc: "Swap AI models, keep your memory" },
+      { name: "Not Usual AI", href: "/ai#not-usual-ai", icon: Brain, desc: "Governed intelligence, not a chatbot" },
+      { name: "Truth You Own", href: "/ai#truth-you-own", icon: Database, desc: "Memory stays yours, AI is rented" },
+      { name: "Swappable Intelligence", href: "/ai#swappable", icon: RefreshCw, desc: "Models change, Memory stays" },
+      { name: "What Twin Watches", href: "/ai#what-twin-watches", icon: Eye, desc: "Connects, explains, prepares" },
+      { name: "Boundaries", href: "/ai#boundaries", icon: ShieldCheck, desc: "What Twin cannot do" },
+      { name: "Approval Flow", href: "/ai#approval-flow", icon: UserCheck, desc: "Nothing acts without you" },
+      { name: "Audit Trail", href: "/ai#audit-trail", icon: GitBranch, desc: "Full history of every decision" },
     ],
   },
   {
     label: "Solutions",
-    href: "/solutions",
+    href: "/#solutions-section",
     groups: [
       {
         label: "By Function",
@@ -130,13 +133,13 @@ const navigation: NavItem[] = [
       },
     ],
   },
-  { label: "Pricing", href: "/pricing" },
+  { label: "Pricing", href: "/#pricing-section" },
 
   {
     label: "Company",
     href: "/about",
     items: [
-      { name: "Why IntegrateWise", href: "/why", icon: HelpCircle, desc: "The problem we exist to solve" },
+      { name: "Why IntegrateWise", href: "/#why-born-section", icon: HelpCircle, desc: "The problem we exist to solve" },
       { name: "About", href: "/about", icon: Building2, desc: "Our story and what we stand for" },
       { name: "Contact", href: "/contact", icon: Mail, desc: "Get in touch" },
     ],
@@ -167,15 +170,15 @@ function DropdownItem({ item }: { item: NavItemChild }) {
   return (
     <Link
       href={item.href}
-      className="group flex items-start gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-white/[0.06] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
+      className="group flex items-start gap-3 rounded-xl border border-transparent px-3 py-2.5 transition-all hover:border-[#FFE1CC]/10 hover:bg-[#FFE1CC]/[0.06] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FFE1CC]/40"
     >
       <div
-        className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white/[0.06] transition-all group-hover:bg-primary/20 group-hover:scale-105"
+        className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-[#1d1d1d] transition-all group-hover:border-[#FFE1CC]/20 group-hover:bg-[#FFE1CC]/10 group-hover:scale-105"
       >
-        <Icon className="h-[15px] w-[15px] text-white/60 group-hover:text-primary" />
+        <Icon className="h-[15px] w-[15px] text-white/45 group-hover:text-[#FFE1CC]" />
       </div>
       <div className="flex flex-col justify-center">
-        <span className="text-[14px] font-semibold tracking-[-0.03em] text-white/80 leading-tight group-hover:text-white">
+        <span className="text-[14px] font-semibold tracking-[-0.03em] text-white/75 leading-tight group-hover:text-white">
           {item.name}
         </span>
         {item.desc && (
@@ -219,18 +222,18 @@ function MegaDropdown({
       }}
     >
       <div
-        className="overflow-hidden rounded-2xl border border-white/[0.08] p-3 backdrop-blur-2xl"
+        className="overflow-hidden rounded-[22px] border border-white/[0.10] p-3 backdrop-blur-2xl"
         style={{
-          background: "rgba(8, 10, 14, 0.92)",
+          background: "linear-gradient(180deg, rgba(29,29,29,0.96), rgba(17,17,17,0.96))",
           boxShadow:
-            "0 20px 60px -15px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.04), 0 0 80px rgba(255,178,44,0.04)",
+            "0 24px 80px -28px rgba(0,0,0,0.85), 0 0 0 1px rgba(255,255,255,0.04), 0 0 80px rgba(255,225,204,0.05)",
         }}
       >
         {isGrouped && nav.groups && (
           <div className="grid grid-cols-3 gap-x-2 gap-y-1">
             {nav.groups.map((group) => (
               <div key={group.label}>
-                <div className="mb-1 px-3 pt-1 text-[11px] font-bold uppercase tracking-[0.1em] text-primary/70">
+                <div className="mb-1 px-3 pt-1 text-[11px] font-bold uppercase tracking-[0.14em] text-[#FFE1CC]/65">
                   {group.label}
                 </div>
                 <div className="flex flex-col gap-0.5">
@@ -277,7 +280,7 @@ function NavTrigger({
     return (
       <Link
         href={nav.href}
-        className="rounded-md px-3 py-2 text-[15px] font-medium tracking-[-0.02em] text-white/50 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-primary/50"
+        className="rounded-full px-3.5 py-2 text-[14px] font-semibold tracking-[-0.02em] text-white/50 transition-colors hover:bg-white/[0.04] hover:text-white focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-[#FFE1CC]/35"
         onMouseEnter={onLeave}
       >
         {nav.label}
@@ -297,8 +300,8 @@ function NavTrigger({
         aria-haspopup="true"
         aria-controls={isOpen ? menuId : undefined}
         id={`${menuId}-trigger`}
-        className={`flex items-center gap-1 rounded-md px-3 py-2 text-[15px] font-medium tracking-[-0.02em] transition-colors focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-primary/50 ${
-          isOpen ? "text-white" : "text-white/50 hover:text-white"
+        className={`flex items-center gap-1 rounded-full px-3.5 py-2 text-[14px] font-semibold tracking-[-0.02em] transition-colors focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-[#FFE1CC]/35 ${
+          isOpen ? "bg-[#FFE1CC]/10 text-white" : "text-white/50 hover:bg-white/[0.04] hover:text-white"
         }`}
       >
         {nav.label}
@@ -418,7 +421,7 @@ export function Header({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.2 }}
-          className="fixed inset-0 z-40 bg-black/40 backdrop-blur-[3px]"
+          className="fixed inset-0 z-40 bg-black/35 backdrop-blur-[2px]"
           onMouseEnter={handleLeave}
         />
       )}
@@ -430,27 +433,29 @@ export function Header({
         animate={heroRevealed ? { y: 0, opacity: 1 } : { y: "-100%", opacity: 0 }}
         transition={{ type: "spring", damping: 22, stiffness: 200, mass: 0.8 }}
         style={{
-          background: "rgba(5, 7, 10, 0.75)",
-          backdropFilter: "blur(20px) saturate(1.4)",
-          WebkitBackdropFilter: "blur(20px) saturate(1.4)",
-          borderBottom: "1px solid rgba(255, 255, 255, 0.06)",
-          boxShadow: "0 4px 30px rgba(0, 0, 0, 0.3)",
+          background: "rgba(17, 17, 17, 0.78)",
+          backdropFilter: "blur(22px) saturate(1.25)",
+          WebkitBackdropFilter: "blur(22px) saturate(1.25)",
+          borderBottom: "1px solid rgba(255, 255, 255, 0.08)",
+          boxShadow: "0 12px 40px rgba(0, 0, 0, 0.28)",
         }}
       >
         <motion.div
-          className="absolute bottom-0 left-0 right-0 h-[2px] origin-left"
-          style={{ scaleX, background: "var(--gradient-primary)" }}
+          className="absolute bottom-0 left-0 right-0 h-px origin-left"
+          style={{ scaleX, background: "linear-gradient(90deg, transparent, #FFE1CC, transparent)" }}
           suppressHydrationWarning
         />
 
-        <nav className="mx-auto flex h-[60px] max-w-[1200px] items-center justify-between px-6 md:px-10">
+        <nav className="mx-auto flex h-[68px] max-w-[1200px] items-center justify-between px-6 md:px-10">
           <Link
             href="/"
-            className="flex shrink-0 items-center gap-2.5 rounded-lg focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-primary/50"
+            className="group flex shrink-0 items-center gap-2.5 rounded-xl focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-[#FFE1CC]/35"
           >
-            <SpineLogo className="h-8 w-8 shrink-0" variant="on-dark" />
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#FFE1CC]/15 bg-[#FFE1CC]/10 transition-colors group-hover:border-[#FFE1CC]/25">
+              <SpineLogo className="h-7 w-7 shrink-0" variant="on-dark" />
+            </div>
             <span className="text-[17px] font-semibold tracking-[-0.04em] text-white">
-              Integrate<span className="text-primary">Wise</span>
+              Integrate<span className="text-[#FFE1CC]">Wise</span>
             </span>
           </Link>
 
@@ -467,12 +472,18 @@ export function Header({
           </div>
 
           <div className="hidden shrink-0 items-center gap-2 lg:flex">
+            <Link
+              href="/contact"
+              className="rounded-full px-3.5 py-2 text-[14px] font-semibold tracking-[-0.02em] text-white/50 transition-colors hover:bg-white/[0.04] hover:text-white"
+            >
+              Contact
+            </Link>
             <Button
-              className="h-[38px] rounded-xl px-4 text-[14px] font-semibold tracking-[-0.02em] text-white"
+              className="h-[40px] rounded-full px-5 text-[14px] font-semibold tracking-[-0.02em] text-[#111111] hover:opacity-90"
               style={{
-                background: "var(--gradient-primary)",
-                border: "1px solid rgba(255,178,44,0.2)",
-                boxShadow: "0 0 20px rgba(255,178,44,0.15), var(--shadow-button)",
+                background: "linear-gradient(90deg, #FFE1CC 0%, #FFFFFF 100%)",
+                border: "1px solid rgba(255,255,255,0.14)",
+                boxShadow: "0 14px 34px -20px rgba(255,225,204,0.75)",
               }}
               asChild
             >
@@ -483,7 +494,7 @@ export function Header({
           <button
             ref={menuButtonRef}
             type="button"
-            className="rounded-md p-1.5 lg:hidden text-white/60 hover:text-white focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-primary/50"
+            className="rounded-xl border border-white/10 bg-[#1d1d1d] p-2 lg:hidden text-white/60 hover:text-white focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-[#FFE1CC]/35"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileMenuOpen}
@@ -504,8 +515,8 @@ export function Header({
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             transition={{ duration: 0.2, ease: "easeInOut" }}
-            className="max-h-[82vh] overflow-y-auto border-t border-white/[0.06] lg:hidden"
-            style={{ background: "rgba(5, 7, 10, 0.95)", backdropFilter: "blur(20px)" }}
+            className="max-h-[82vh] overflow-y-auto border-t border-white/[0.08] lg:hidden"
+            style={{ background: "rgba(17, 17, 17, 0.97)", backdropFilter: "blur(22px)" }}
             role="dialog"
             aria-modal="true"
             aria-label="Site navigation"
@@ -517,12 +528,12 @@ export function Header({
                 return (
                   <div
                     key={nav.label}
-                    className="border-b border-white/[0.06] last:border-0"
+                  className="border-b border-white/[0.07] last:border-0"
                   >
                     <div className="flex items-center justify-between py-3">
                       <Link
                         href={nav.href}
-                        className="text-[15px] font-semibold tracking-[-0.03em] text-white/80"
+                         className="text-[15px] font-semibold tracking-[-0.03em] text-white/80"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         {nav.label}
@@ -530,7 +541,7 @@ export function Header({
                       {hasDropdown && (
                         <button
                           type="button"
-                          className="rounded-md p-1.5 text-white/30 hover:text-white"
+                           className="rounded-md p-1.5 text-white/35 hover:text-[#FFE1CC]"
                           onClick={() =>
                             setMobileExpanded(isExpanded ? null : nav.label)
                           }
@@ -549,10 +560,10 @@ export function Header({
                           <Link
                             key={item.name}
                             href={item.href}
-                            className="flex items-center gap-3 rounded-lg py-2 px-2 text-[14px] font-medium text-white/40 hover:text-white hover:bg-white/[0.04]"
+                             className="flex items-center gap-3 rounded-lg py-2 px-2 text-[14px] font-medium text-white/45 hover:bg-[#FFE1CC]/[0.06] hover:text-white"
                             onClick={() => setMobileMenuOpen(false)}
                           >
-                            <item.icon className="h-4 w-4 shrink-0 text-primary/60" />
+                             <item.icon className="h-4 w-4 shrink-0 text-[#FFE1CC]/65" />
                             {item.name}
                           </Link>
                         ))}
@@ -563,7 +574,7 @@ export function Header({
                       <div className="mb-3 flex flex-col gap-4 pl-2">
                         {nav.groups.map((group) => (
                           <div key={group.label}>
-                            <div className="mb-1.5 text-[11px] font-bold uppercase tracking-[0.1em] text-primary/60">
+                             <div className="mb-1.5 text-[11px] font-bold uppercase tracking-[0.14em] text-[#FFE1CC]/60">
                               {group.label}
                             </div>
                             <div className="flex flex-col gap-0.5">
@@ -571,10 +582,10 @@ export function Header({
                                 <Link
                                   key={item.name}
                                   href={item.href}
-                                  className="flex items-center gap-3 rounded-lg px-2 py-2 text-[14px] font-medium text-white/40 hover:text-white hover:bg-white/[0.04]"
+                                   className="flex items-center gap-3 rounded-lg px-2 py-2 text-[14px] font-medium text-white/45 hover:bg-[#FFE1CC]/[0.06] hover:text-white"
                                   onClick={() => setMobileMenuOpen(false)}
                                 >
-                                  <item.icon className="h-4 w-4 shrink-0 text-primary/60" />
+                                   <item.icon className="h-4 w-4 shrink-0 text-[#FFE1CC]/65" />
                                   {item.name}
                                 </Link>
                               ))}
@@ -589,10 +600,10 @@ export function Header({
 
               <div className="mt-4 flex flex-col gap-2 pb-4">
                 <Button
-                  className="w-full rounded-xl font-semibold text-white"
+                  className="w-full rounded-full font-semibold text-[#111111] hover:opacity-90"
                   style={{
-                    background: "var(--gradient-primary)",
-                    boxShadow: "0 0 20px rgba(255,178,44,0.15)",
+                    background: "linear-gradient(90deg, #FFE1CC 0%, #FFFFFF 100%)",
+                    boxShadow: "0 14px 34px -20px rgba(255,225,204,0.75)",
                   }}
                   asChild
                 >

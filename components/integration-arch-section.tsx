@@ -60,7 +60,7 @@ export function IntegrationArchSection() {
           </Badge>
           <h2 className="section-heading text-white">
             Built to{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-400">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ffb22c] to-[#FFE1CC]">
               absorb any tool.
             </span>
           </h2>
