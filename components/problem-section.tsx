@@ -4,9 +4,9 @@ import { AlertTriangle, Eye, GitBranch, ShieldOff } from "lucide-react"
 import { motion } from "framer-motion"
 
 const problems = [
-  { icon: GitBranch, text: "Data scattered. You hunt across twelve tabs before every decision." },
-  { icon: Eye, text: "Intelligence blind. No full context, so nudges arrive late or wrong." },
-  { icon: ShieldOff, text: "Automation rogue. Things fire without you, so trust quietly erodes." },
+  { icon: Eye, text: "AI is isolated. Your AI only knows what you tell it." },
+  { icon: GitBranch, text: "Business knowledge is scattered. Across CRM, email, Slack, documents, meetings, tickets, code, and finance." },
+  { icon: ShieldOff, text: "Every question starts from scratch. No business context, no continuity." },
 ]
 
 export function ProblemSection() {
@@ -21,10 +21,10 @@ export function ProblemSection() {
           className="mx-auto max-w-2xl text-center"
         >
           <h2 className="section-heading text-[rgba(246,239,239,1)]">
-            The Core Problem of 2025
+            AI is Isolated.
           </h2>
           <p className="mt-6 text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">
-            You are the bridge. And it&apos;s exhausting.
+            Today&apos;s AI assistants only know what you tell them. Your business knowledge is scattered across dozens of applications.
           </p>
         </motion.div>
 

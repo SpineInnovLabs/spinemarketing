@@ -8,23 +8,23 @@ const pillars = [
   {
     num: "01",
     icon: Database,
-    title: "Unifies",
+    title: "Authorized Once",
     description:
-      "One truth from many sources, so you stop reconciling.",
+      "Choose your business systems. Authorize them once. IntegrateWise prepares everything else.",
   },
   {
     num: "02",
     icon: Brain,
-    title: "Adapts",
+    title: "Discovers Organization",
     description:
-      "Survives tool changes, so your history never resets.",
+      "Automatically maps your organization's structure, relationships, and workflows.",
   },
   {
     num: "03",
     icon: ShieldCheck,
-    title: "Remembers",
+    title: "Ready to Work",
     description:
-      "Compounds knowledge daily, so tomorrow starts smarter than today.",
+      "Your AI now has full business context, operational memory, and the workbench to act.",
   },
 ];
 
@@ -40,12 +40,11 @@ export function SolutionSection() {
           className="mx-auto max-w-2xl text-center"
         >
           <h2 className="section-heading">
-            The Spine{" "}
-            <span className="text-primary">connects.</span>
+            Connect the AI{" "}
+            <span className="text-primary">you already use.</span>
           </h2>
           <p className="mt-6 text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">
-            Manage accounts, track tasks, run workflows. The Twin watches
-            everything and proposes what&apos;s next.
+            Don&apos;t learn another AI. Bring your existing AI—ChatGPT, Claude, Gemini, Cursor—into your organization securely through governed connectors.
           </p>
         </motion.div>
 
@@ -115,8 +114,8 @@ export function SolutionSection() {
           className="mx-auto mt-10 max-w-2xl text-center"
         >
           <p className="text-[15px] font-semibold tracking-[-0.02em] text-foreground">
-            One nervous system.{" "}
-            <span className="text-primary">Every tool connected. Every action approved.</span>
+            Stop making your AI guess.{" "}
+            <span className="text-primary">Connect your business once. Work with complete operational context.</span>
           </p>
         </motion.div>
       </div>

@@ -17,8 +17,8 @@ export function FinalCTA() {
           className="relative mx-auto max-w-2xl text-center"
         >
           <h2 className="text-[40px] font-semibold tracking-[-0.05em] leading-[1.2] text-white sm:text-[48px] lg:text-[52px]">
-            Grow your{" "}
-            <span className="text-primary">Spine.</span>
+            Stop making your AI{" "}
+            <span className="text-primary">guess.</span>
           </h2>
           <div className="mt-10 flex flex-col items-center justify-center gap-2.5 sm:flex-row">
             <Button
@@ -27,7 +27,7 @@ export function FinalCTA() {
               style={{ background: "var(--gradient-primary)", border: "2px solid rgba(248,248,250,0.12)", boxShadow: "var(--shadow-button)" }}
               asChild
             >
-              <Link href="/contact?intent=demo">See it live</Link>
+              <Link href="/contact?intent=demo">Connect Your AI</Link>
             </Button>
           </div>
         </motion.div>

@@ -265,7 +265,7 @@ export function HeroSection() {
           </motion.div>
 
           <h1 className="text-[48px] sm:text-[64px] lg:text-[80px] font-semibold leading-[0.95] tracking-[-0.04em] text-white">
-            {["Stop", "being", "the"].map((word, i) => (
+            {["Your", "AI", "knows"].map((word, i) => (
               <motion.span
                 key={i}
                 initial={{ opacity: 0, y: 24, filter: "blur(6px)" }}
@@ -282,7 +282,7 @@ export function HeroSection() {
               </motion.span>
             ))}
             <br className="hidden sm:block" />
-            {["human", "API"].map((word, i) => (
+            {["everything."].map((word, i) => (
               <motion.span
                 key={`h-${i}`}
                 initial={{ opacity: 0, y: 24, filter: "blur(6px)" }}
@@ -298,7 +298,7 @@ export function HeroSection() {
                 {word}
               </motion.span>
             ))}
-            {["between", "your", "tools."].map((word, i) => (
+            {["Until", "you", "start", "working."].map((word, i) => (
               <motion.span
                 key={`g-${i}`}
                 initial={{ opacity: 0, y: 24, filter: "blur(6px)" }}
@@ -320,9 +320,9 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 16 }}
             animate={isReveal ? { opacity: 1, y: 0 } : {}}
             transition={{ type: "spring", damping: 16, stiffness: 52, delay: isReveal ? 1.2 : 0 }}
-            className="mx-auto mt-8 max-w-xl text-[17px] sm:text-[19px] font-medium leading-[1.6] tracking-[-0.01em] text-white/40"
+            className="mx-auto mt-8 max-w-2xl text-[17px] sm:text-[19px] font-medium leading-[1.6] tracking-[-0.01em] text-white/40"
           >
-            One workspace. Full context. Every action under your control.
+            IntegrateWise connects your AI to your business ecosystem through governed connectors, builds a unified operational memory, and prepares an adaptive workbench where people and AI work from the same context.
           </motion.p>
 
           <motion.div
@@ -340,7 +340,7 @@ export function HeroSection() {
               }}
               asChild
             >
-              <Link href="/contact?intent=demo">Book a demo</Link>
+              <Link href="/contact?intent=demo">Connect Your AI</Link>
             </Button>
             <Button
               size="lg"
@@ -349,7 +349,7 @@ export function HeroSection() {
               asChild
             >
               <Link href="#spine-section">
-                See How It Works
+                Watch 3 Minute Demo
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>
