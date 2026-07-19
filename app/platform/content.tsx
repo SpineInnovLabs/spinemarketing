@@ -246,22 +246,22 @@ export function PlatformContent() {
             style={{ background: "rgba(255,255,255,0.03)", backdropFilter: "blur(12px)" }}
           >
             <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-            Platform — The Backend Engine
+            Platform
           </motion.div>
 
           <motion.h1
             {...heroFade(0.2)}
             className="text-[48px] font-semibold leading-[1.05] tracking-[-0.05em] text-white sm:text-[60px] lg:text-[72px]"
           >
-            Where your data becomes{" "}
-            <span className="text-primary">canonical, resilient, and queryable.</span>
+            Built for Operational{" "}
+            <span className="text-primary">Continuity and Governed Intelligence.</span>
           </motion.h1>
 
           <motion.p
             {...heroFade(0.38)}
             className="mx-auto mt-7 max-w-2xl text-[17px] font-medium leading-[1.6] tracking-[-0.02em] text-white/45"
           >
-            The Adaptive Spine ingests fragmented SaaS data, runs it through a governed normalization pipeline, and emits schema-stable entities that the Product layer consumes. Connect once. Never re-plumb.
+            IntegrateWise is the operational capability platform that unifies your AI, applications, and teams into one governed fabric—so work gets done seamlessly, securely, and at scale.
           </motion.p>
 
           <motion.div

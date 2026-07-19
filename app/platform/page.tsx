@@ -14,12 +14,12 @@ import { BreadcrumbJsonLd, SoftwareApplicationJsonLd } from "@/components/struct
 export const metadata: Metadata = {
   title: "Platform | IntegrateWise",
   description:
-    "The Adaptive Spine. Connects every app. Governs every AI action. Nothing happens without your approval.",
+    "The Operational Capability Platform for the AI Era. Unifies your AI, applications, and teams into one governed fabric. Built for operational continuity and governed intelligence.",
   alternates: { canonical: "/platform" },
   openGraph: {
     title: "Platform | IntegrateWise",
-    description: "The Adaptive Spine. Connects every app. Governs every AI action. Nothing happens without your approval.",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "IntegrateWise" }],
+    description: "The Operational Capability Platform for the AI Era. Unifies your AI, applications, and teams into one governed fabric.",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "IntegrateWise Platform" }],
   },
 }
 

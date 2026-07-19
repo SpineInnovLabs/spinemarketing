@@ -203,16 +203,16 @@ export function ProductContent() {
             {...heroFade(0.22)}
             className="text-[48px] font-semibold leading-[1.05] tracking-[-0.05em] text-white sm:text-[60px] lg:text-[72px]"
           >
-            See, review, and act
+            Twelve Operational Workbenches.
             <br />
-            <span className="text-primary">on canonical truth.</span>
+            <span className="text-primary">One Unified Capability Fabric.</span>
           </motion.h1>
 
           <motion.p
             {...heroFade(0.4)}
             className="mx-auto mt-7 max-w-2xl text-[17px] font-medium leading-[1.6] tracking-[-0.02em] text-white/45"
           >
-            The Product layer is how your teams see, review, and act on the Spine&apos;s canonical truth. The Workspace, Cognitive Layer, Twin, and Approval Gate work together — the Spine cleans and unifies data; the Product turns that into a daily surface, an always-on detection engine, and a governed execution path that never bypasses human judgment.
+            Role-aware. Contextual. Governed. Every workbench is powered by the Adaptive Spine and connected to your complete ecosystem.
           </motion.p>
 
           <motion.div {...heroFade(0.52)} className="mt-9 flex flex-wrap items-center justify-center gap-3">

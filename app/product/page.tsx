@@ -13,11 +13,11 @@ import { SoftwareApplicationJsonLd, BreadcrumbJsonLd } from "@/components/struct
 export const metadata: Metadata = {
   title: "Product | IntegrateWise",
   description:
-    "One workspace. AI surfaces what matters. You approve what happens.",
+    "Twelve operational workbenches powered by the Adaptive Spine. Role-aware, contextual, governed. Every workbench is connected to your complete ecosystem.",
   alternates: { canonical: "/product" },
   openGraph: {
     title: "Product | IntegrateWise",
-    description: "One workspace. AI surfaces what matters. You approve what happens.",
+    description: "Twelve operational workbenches. One unified capability fabric. One Adaptive Spine.",
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "IntegrateWise Product" }],
   },
 };

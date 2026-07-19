@@ -8,14 +8,14 @@ import { TestimonialsSection } from "@/components/testimonials-section"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
-  title: "Integrations | IntegrateWise",
+  title: "Ecosystem | IntegrateWise",
   description:
-    "70+ apps connected into one Spine. Salesforce, HubSpot, Slack, Stripe, and more.",
+    "One Ecosystem. Infinite Possibilities. Connect with 200+ pre-built connectors via OAuth in minutes. No migration. No engineering. One unified operational fabric.",
   alternates: { canonical: "/integrations" },
   openGraph: {
-    title: "Integrations | IntegrateWise",
-    description: "70+ apps connected into one Spine. Salesforce, HubSpot, Slack, Stripe, and more.",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "IntegrateWise" }],
+    title: "Ecosystem | IntegrateWise",
+    description: "Connect your entire tech stack into one unified operational ecosystem. 200+ pre-built connectors. Zero engineering required.",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "IntegrateWise Ecosystem" }],
   },
 }
 
