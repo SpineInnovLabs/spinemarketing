@@ -260,12 +260,12 @@ export function HeroSection() {
           >
             <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
             <span className="text-[13px] font-medium tracking-wide text-white/60">
-              The Knowledge Workspace over the Spine
+              AI-NATIVE. OPERATIONAL. GOVERNED.
             </span>
           </motion.div>
 
           <h1 className="text-[48px] sm:text-[64px] lg:text-[80px] font-semibold leading-[0.95] tracking-[-0.04em] text-white">
-            {["Your", "AI", "knows"].map((word, i) => (
+            {["Your", "Last", "Auth"].map((word, i) => (
               <motion.span
                 key={i}
                 initial={{ opacity: 0, y: 24, filter: "blur(6px)" }}
@@ -282,7 +282,7 @@ export function HeroSection() {
               </motion.span>
             ))}
             <br className="hidden sm:block" />
-            {["everything."].map((word, i) => (
+            {["to", "Complete"].map((word, i) => (
               <motion.span
                 key={`h-${i}`}
                 initial={{ opacity: 0, y: 24, filter: "blur(6px)" }}
@@ -298,7 +298,7 @@ export function HeroSection() {
                 {word}
               </motion.span>
             ))}
-            {["Until", "you", "start", "working."].map((word, i) => (
+            {["Your", "Ecosystem."].map((word, i) => (
               <motion.span
                 key={`g-${i}`}
                 initial={{ opacity: 0, y: 24, filter: "blur(6px)" }}
@@ -322,7 +322,7 @@ export function HeroSection() {
             transition={{ type: "spring", damping: 16, stiffness: 52, delay: isReveal ? 1.2 : 0 }}
             className="mx-auto mt-8 max-w-2xl text-[17px] sm:text-[19px] font-medium leading-[1.6] tracking-[-0.01em] text-white/40"
           >
-            IntegrateWise connects your AI to your business ecosystem through governed connectors, builds a unified operational memory, and prepares an adaptive workbench where people and AI work from the same context.
+            One authentication. Every capability. Everywhere you work. IntegrateWise connects your AI, business applications, and teams into a single operational capability fabric. Stay in ChatGPT, Claude, Hermes, or your Workbench while IntegrateWise securely executes work across your connected ecosystem.
           </motion.p>
 
           <motion.div
@@ -340,7 +340,7 @@ export function HeroSection() {
               }}
               asChild
             >
-              <Link href="/contact?intent=demo">Connect Your AI</Link>
+              <Link href="/contact?intent=demo">Start Free</Link>
             </Button>
             <Button
               size="lg"
@@ -349,7 +349,7 @@ export function HeroSection() {
               asChild
             >
               <Link href="#spine-section">
-                Watch 3 Minute Demo
+                Watch Demo
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>

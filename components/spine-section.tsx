@@ -24,11 +24,10 @@ export function SpineSection() {
             Adaptive Spine
           </Badge>
           <h2 className="section-heading text-white">
-            Your Business.{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-emerald-300 text-glow-emerald">As One System.</span>
+            Memory • Context • Intelligence • Governance • Continuity
           </h2>
           <p className="mt-6 text-[17px] font-medium leading-relaxed text-white/35">
-            Salesforce calls it an Account. HubSpot calls it a Company. Another CRM calls it a Customer. IntegrateWise understands they&apos;re describing the same business entity and creates one unified operational view.
+            Every workbench draws from the Adaptive Spine—your unified operational memory that keeps context, intelligence, and continuity aligned across the entire organization.
           </p>
         </motion.div>
 
@@ -47,12 +46,14 @@ export function SpineSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ type: "spring", damping: 20, stiffness: 60, delay: 0.3 }}
-          className="mx-auto mt-16 grid max-w-4xl gap-8 sm:grid-cols-3"
+          className="mx-auto mt-16 grid max-w-5xl gap-8 sm:grid-cols-2 lg:grid-cols-5"
         >
           {[
-            { title: "Unifies", desc: "One truth from many sources across your ecosystem." },
-            { title: "Adapts", desc: "Survives tool changes without breaking continuity." },
-            { title: "Remembers", desc: "Compounds knowledge daily building operational memory." },
+            { title: "Memory", desc: "Unified operational memory across every team." },
+            { title: "Context", desc: "Right context. Right time. Right action." },
+            { title: "Intelligence", desc: "AI-enhanced insights that drive better decisions." },
+            { title: "Continuity", desc: "Seamless handoffs and operational resilience." },
+            { title: "Governance", desc: "Policies, approvals, audit and compliance." },
           ].map((item, i) => (
             <motion.div
               key={i}

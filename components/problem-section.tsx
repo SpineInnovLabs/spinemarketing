@@ -4,9 +4,9 @@ import { AlertTriangle, Eye, GitBranch, ShieldOff } from "lucide-react"
 import { motion } from "framer-motion"
 
 const problems = [
-  { icon: Eye, text: "AI is isolated. Your AI only knows what you tell it." },
-  { icon: GitBranch, text: "Business knowledge is scattered. Across CRM, email, Slack, documents, meetings, tickets, code, and finance." },
-  { icon: ShieldOff, text: "Every question starts from scratch. No business context, no continuity." },
+  { icon: Eye, text: "Call Sarah - Best available calling provider" },
+  { icon: GitBranch, text: "Email the customer - Gmail, Outlook, or CRM Email" },
+  { icon: ShieldOff, text: "Create a task - Jira, GitHub, Linear, or Notion" },
 ]
 
 export function ProblemSection() {
@@ -21,10 +21,10 @@ export function ProblemSection() {
           className="mx-auto max-w-2xl text-center"
         >
           <h2 className="section-heading text-[rgba(246,239,239,1)]">
-            AI is Isolated.
+            You think in work. We handle the rest.
           </h2>
           <p className="mt-6 text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">
-            Today&apos;s AI assistants only know what you tell them. Your business knowledge is scattered across dozens of applications.
+            HUMAN INTENT → EXECUTION
           </p>
         </motion.div>
 

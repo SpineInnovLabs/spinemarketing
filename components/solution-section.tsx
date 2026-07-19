@@ -8,23 +8,37 @@ const pillars = [
   {
     num: "01",
     icon: Database,
-    title: "Authorized Once",
+    title: "You express intent",
     description:
-      "Choose your business systems. Authorize them once. IntegrateWise prepares everything else.",
+      "In natural language—inside ChatGPT, Claude, Hermes, or your Workbench.",
   },
   {
     num: "02",
     icon: Brain,
-    title: "Discovers Organization",
+    title: "We understand",
     description:
-      "Automatically maps your organization's structure, relationships, and workflows.",
+      "The Universal Capability Fabric interprets your intent and determines the best action.",
   },
   {
     num: "03",
     icon: ShieldCheck,
-    title: "Ready to Work",
+    title: "We govern",
     description:
-      "Your AI now has full business context, operational memory, and the workbench to act.",
+      "Policies and approvals ensure every action is secure, compliant, and aligned.",
+  },
+  {
+    num: "04",
+    icon: Database,
+    title: "We execute",
+    description:
+      "The right provider is selected and the action is executed across your ecosystem.",
+  },
+  {
+    num: "05",
+    icon: Brain,
+    title: "We maintain continuity",
+    description:
+      "Results, context, and outcomes are captured in the Adaptive Spine for long-term value.",
   },
 ];
 
@@ -40,11 +54,11 @@ export function SolutionSection() {
           className="mx-auto max-w-2xl text-center"
         >
           <h2 className="section-heading">
-            Connect the AI{" "}
-            <span className="text-primary">you already use.</span>
+            UNIVERSAL CAPABILITY FABRIC{" "}
+            <span className="text-primary">Human intent → Governed execution</span>
           </h2>
           <p className="mt-6 text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">
-            Don&apos;t learn another AI. Bring your existing AI—ChatGPT, Claude, Gemini, Cursor—into your organization securely through governed connectors.
+            IntegrateWise securely resolves the intent, selects the right provider, executes the action, and maintains operational continuity.
           </p>
         </motion.div>
 
@@ -64,7 +78,7 @@ export function SolutionSection() {
           <DashboardMockup />
         </motion.div>
 
-        <div className="mx-auto mt-16 grid max-w-5xl gap-6 sm:grid-cols-3">
+        <div className="mx-auto mt-16 grid max-w-6xl gap-6 sm:grid-cols-2 lg:grid-cols-5">
           {pillars.map(({ num, icon: Icon, title, description }, i) => (
             <motion.div
               key={i}
@@ -114,8 +128,7 @@ export function SolutionSection() {
           className="mx-auto mt-10 max-w-2xl text-center"
         >
           <p className="text-[15px] font-semibold tracking-[-0.02em] text-foreground">
-            Stop making your AI guess.{" "}
-            <span className="text-primary">Connect your business once. Work with complete operational context.</span>
+            IntegrateWise securely resolves the intent, selects the right provider, executes the action, and maintains operational continuity.
           </p>
         </motion.div>
       </div>
