@@ -1,47 +1,9 @@
 "use client"
 
-import React, { useState, useEffect, useRef, useCallback } from "react"
+import { useState, useEffect, useRef, useCallback } from "react"
 import { motion } from "framer-motion"
 import { SpineLogo } from "@/components/spine-logo"
-import {
-  Home,
-  FolderKanban,
-  Users,
-  Contact,
-  Calendar,
-  FileText,
-  CheckSquare,
-  StickyNote,
-  BookOpen,
-  Brain,
-  Search,
-  Bell,
-  AlertTriangle,
-  Plus,
-  Download,
-  LayoutGrid,
-  List,
-  Sparkles,
-  X,
-  ChevronUp,
-  Check,
-  Shield,
-  GitBranch,
-  Target,
-  TrendingUp,
-  LineChart,
-  Workflow,
-  Clock,
-  Eye,
-  Activity,
-  Zap,
-  Bot,
-  CircleDot,
-  RefreshCw,
-  UserCircle,
-  Link,
-  MessageSquare,
-} from "lucide-react"
+import { Chrome as Home, FolderKanban, Users, Contact, Calendar, FileText, SquareCheck as CheckSquare, StickyNote, BookOpen, Brain, Search, Bell, TriangleAlert as AlertTriangle, Plus, Download, LayoutGrid, List, Sparkles, X, ChevronUp, Check, Shield, GitBranch, Target, TrendingUp, ChartLine as LineChart, Workflow, Clock, Eye, Activity, Zap, Bot, CircleDot, RefreshCw, CircleUser as UserCircle, Link, MessageSquare } from "lucide-react"
 
 /* ─── Sidebar nav ─── */
 const WORKSPACE_NAV = [

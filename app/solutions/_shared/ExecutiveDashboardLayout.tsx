@@ -2,8 +2,8 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import React from "react";
 import { ArrowRight, Shield, TrendingDown, TrendingUp } from "lucide-react";
+import { fade, heroFade } from "@/lib/motion";
 
 export interface BeforeAfterItem {
   label: string;
@@ -31,19 +31,6 @@ export interface ExecutiveDashboardProps {
   metrics: string[];
   outcomes?: { stat: string; label: string }[];
 }
-
-const fade = (delay = 0) => ({
-  initial: { opacity: 0, y: 20 } as const,
-  whileInView: { opacity: 1, y: 0 } as const,
-  viewport: { once: true, margin: "-80px" },
-  transition: { type: "spring" as const, damping: 18, stiffness: 70, delay },
-});
-
-const heroFade = (delay = 0) => ({
-  initial: { opacity: 0, y: 14 } as const,
-  animate: { opacity: 1, y: 0 } as const,
-  transition: { type: "spring" as const, damping: 16, mass: 1, stiffness: 52, delay },
-});
 
 export function ExecutiveDashboardLayout({
   role,

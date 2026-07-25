@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Linkedin, Twitter, Mail, ArrowRight } from "lucide-react";
+import { Linkedin, Twitter, Mail } from "lucide-react";
 import { SpineLogo } from "@/components/spine-logo";
 
 const footerColumns: {

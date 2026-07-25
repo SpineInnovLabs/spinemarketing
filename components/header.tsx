@@ -4,40 +4,7 @@ import { useState, useRef, useCallback, useEffect } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { SpineLogo } from "@/components/spine-logo";
-import {
-  Menu,
-  X,
-  ChevronDown,
-  Users,
-  BarChart3,
-  Sparkles,
-  Plug,
-  Brain,
-  ShieldCheck,
-  Building2,
-  Mail,
-  Cloud,
-  Wrench,
-  Package,
-  ShoppingCart,
-  Briefcase,
-  TrendingUp,
-  UserCheck,
-  Telescope,
-  Settings2,
-  Truck,
-  DollarSign,
-  User,
-  BookOpen,
-  GitMerge,
-  HelpCircle,
-  Database,
-  Cpu,
-  GitBranch,
-  Eye,
-  Globe,
-  Server,
-} from "lucide-react";
+import { Menu, X, ChevronDown, Users, ChartBar as BarChart3, Sparkles, Plug, Brain, ShieldCheck, Building2, Mail, Cloud, Wrench, Package, ShoppingCart, Briefcase, TrendingUp, UserCheck, Telescope, Settings2, Truck, DollarSign, User, BookOpen, CircleHelp as HelpCircle, Database, Cpu, GitBranch, Server } from "lucide-react";
 import { motion, useScroll, useSpring } from "framer-motion";
 
 type NavItemChild = {
