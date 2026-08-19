@@ -75,7 +75,7 @@ const navigation: NavItem[] = [
     label: "Workspace",
     href: "/product",
     items: [
-      { name: "Self-Organizing Workspace", href: "/product/the-adaptive-workspace", icon: Cpu },
+      { name: "Spine Workspace", href: "/product/the-adaptive-workspace", icon: Cpu },
       { name: "How the Workspace Works", href: "/product/how-it-works", icon: TrendingUp },
       { name: "Twin & Governed Actions", href: "/product/approval-gate-twin", icon: UserCheck },
       { name: "Security", href: "/product/security", icon: ShieldCheck },

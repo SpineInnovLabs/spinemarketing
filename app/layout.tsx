@@ -13,26 +13,26 @@ export const metadata: Metadata = {
     canonical: "/",
     types: { "application/rss+xml": "/rss.xml" },
   },
-  title: "IntegrateWise — The Self-Organizing Workspace",
+  title: "IntegrateWise — Spine Workspace | Operational Continuity Platform",
   description:
-    "A self-organizing workspace for operational continuity and governed intelligence across your people, AI, and business systems.",
+    "One spine. Every operation. Governed. The Spine Workspace is IntegrateWise's Operational Continuity Platform for governed intelligence across your people, AI, and business systems.",
   icons: {
     icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
     apple: "/icon.svg",
   },
   openGraph: {
-    title: "IntegrateWise — Stop being the human API between your apps.",
+    title: "IntegrateWise — Spine Workspace | Operational Continuity Platform",
     description:
-      "One workspace. Every customer. Every tool. AI proposes, you approve.",
+      "One spine. Every operation. Governed. The Spine Workspace unifies your people, AI, and business systems.",
     siteName: "IntegrateWise",
     type: "website",
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "IntegrateWise" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "IntegrateWise — Stop being the human API between your apps.",
+    title: "IntegrateWise — Spine Workspace | Operational Continuity Platform",
     description:
-      "One workspace. Every customer. Every tool. AI proposes, you approve.",
+      "One spine. Every operation. Governed. The Spine Workspace unifies your people, AI, and business systems.",
     images: ["/og.png"],
   },
 }

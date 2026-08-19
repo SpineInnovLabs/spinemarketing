@@ -446,7 +446,7 @@ const steps: StickyScrollStep[] = [
     label: "Business Operations",
     title: "One operating environment for the work.",
     description:
-      "The Self-Organizing Workspace compiles the operational context behind decisions, coordinates governed actions, and preserves continuity across systems.",
+      "The Spine Workspace compiles the operational context behind decisions, coordinates governed actions, and preserves continuity across systems.",
     visual: <BusinessOpsVisual />,
   },
   {

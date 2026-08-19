@@ -22,10 +22,10 @@ interface FAQSectionProps {
 const platformFAQs: FAQItem[] = [
   {
     question: "What is the Adaptive Spine?",
-    answer: "The Adaptive Spine is the operational continuity substrate beneath the Self-Organizing Workspace. It preserves governed truth, context, evidence, memory, and continuity across approved systems so people and AI can work from the same operational picture.",
+    answer: "The Adaptive Spine is the operational continuity substrate beneath the Spine Workspace. It preserves governed truth, context, evidence, memory, and continuity across approved systems so people and AI can work from the same operational picture.",
   },
   {
-    question: "What is the Self-Organizing Workspace?",
+    question: "What is the Spine Workspace?",
     answer: "It is the customer-facing product: one continuous operating environment that projects the right views, canvases, knowledge, Twin interactions, approvals, and governed actions for each role and context.",
   },
   {

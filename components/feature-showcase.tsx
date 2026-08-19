@@ -102,7 +102,7 @@ const defaultShowcases: ShowcaseItem[] = [
     cta: { label: "Explore the Spine", href: "/platform/the-adaptive-spine" },
   },
   {
-    tag: "Self-Organizing Workspace",
+    tag: "Spine Workspace",
     title: "One shell. Many projections.",
     description: "The workspace reorganizes around role, domain, entity, intent, and active context while governed truth remains stable underneath.",
     features: [
