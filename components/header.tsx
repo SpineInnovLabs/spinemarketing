@@ -64,20 +64,20 @@ const navigation: NavItem[] = [
     label: "Platform",
     href: "/platform",
     items: [
-      { name: "The Adaptive Spine", href: "/platform/the-adaptive-spine", icon: Database },
-      { name: "How it Works", href: "/platform/how-it-works", icon: GitBranch },
+      { name: "Operational Continuity", href: "/platform/the-adaptive-spine", icon: Database },
+      { name: "How the Platform Works", href: "/platform/how-it-works", icon: GitBranch },
       { name: "Integrations", href: "/platform/integrations", icon: Plug },
       { name: "Security", href: "/platform/security", icon: ShieldCheck },
       { name: "Infrastructure", href: "/platform/infrastructure", icon: Server },
     ],
   },
   {
-    label: "Product",
+    label: "Workspace",
     href: "/product",
     items: [
-      { name: "The Adaptive Workspace", href: "/product/the-adaptive-workspace", icon: Cpu },
-      { name: "How it Works", href: "/product/how-it-works", icon: TrendingUp },
-      { name: "Approval Gate & Twin", href: "/product/approval-gate-twin", icon: UserCheck },
+      { name: "Self-Organizing Workspace", href: "/product/the-adaptive-workspace", icon: Cpu },
+      { name: "How the Workspace Works", href: "/product/how-it-works", icon: TrendingUp },
+      { name: "Twin & Governed Actions", href: "/product/approval-gate-twin", icon: UserCheck },
       { name: "Security", href: "/product/security", icon: ShieldCheck },
     ],
   },
@@ -88,9 +88,9 @@ const navigation: NavItem[] = [
       {
         label: "By Function",
         items: [
-          { name: "Resolution", href: "/account-success", icon: Users, desc: "Entity matching and dedup" },
-          { name: "Business Ops", href: "/business-ops", icon: BarChart3, desc: "The live operating picture" },
-          { name: "Personal Ops", href: "/personal-ops", icon: Sparkles, desc: "Your workspace, your context" },
+          { name: "Account Success", href: "/account-success", icon: Users, desc: "Customer context and continuity" },
+          { name: "Business Operations", href: "/business-ops", icon: BarChart3, desc: "The live operating picture" },
+          { name: "Individual Professionals", href: "/personal-ops", icon: Sparkles, desc: "Your work, your context" },
         ],
       },
       {

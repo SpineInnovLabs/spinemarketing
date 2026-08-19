@@ -342,31 +342,31 @@ function GovernVisual() {
 
 const steps: StickyScrollStep[] = [
   {
-    label: "Step 01 — Connect",
-    title: "Plug in your apps",
+    label: "Step 01 — Observe",
+    title: "Connect the approved systems",
     description:
-      "CRM, billing, support, project management, docs, email, and chat all flow into the Spine and show up in one workspace. No data migration. No engineering team needed.",
+      "Your business applications, conversations, documents, and operational signals become available through governed connectors without replacing the systems you already use.",
     visual: <ConnectVisual />,
   },
   {
-    label: "Step 02 — The Spine",
-    title: "The Spine keeps truth aligned",
+    label: "Step 02 — Understand",
+    title: "The Adaptive Spine preserves context",
     description:
-      "The Spine turns scattered records into one consistent operational picture for each account, project, invoice, or ticket. Duplicates merge. Conflicts resolve. One truth per entity.",
+      "Operational truth, relationships, evidence, decisions, and memory remain aligned across systems so the workspace can compile the right context for the work.",
     visual: <NormalizeVisual />,
   },
   {
-    label: "Step 03 — AI in context",
-    title: "AI thinks in context",
+    label: "Step 03 — Decide",
+    title: "Twin reasons over active context",
     description:
-      "AI scans the connected picture through the Spine, finds risks and opportunities, and prepares recommendations with evidence. Truth + Context + Session Summaries = Entity 360.",
+      "Twin observes, orients, and prepares recommendations, artifacts, and next actions with evidence while keeping the user in control of the decision.",
     visual: <Entity360Visual />,
   },
   {
-    label: "Step 04 — You approve",
-    title: "You approve what happens",
+    label: "Step 04 — Act and continue",
+    title: "Governed actions preserve continuity",
     description:
-      "Suggested actions appear in the Workspace for review. Nothing updates until you approve. Approved actions write back and enter the Spine's memory.",
+      "Policy determines execution authority. Approved actions run through capabilities, outcomes are verified and reconciled, and continuity is preserved for the next decision.",
     visual: <GovernVisual />,
   },
 ];

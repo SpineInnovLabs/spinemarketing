@@ -13,9 +13,9 @@ export const metadata: Metadata = {
     canonical: "/",
     types: { "application/rss+xml": "/rss.xml" },
   },
-  title: "IntegrateWise — Stop being the human API between your apps.",
+  title: "IntegrateWise — The Self-Organizing Workspace",
   description:
-    "One workspace. Every customer. Every tool. AI proposes, you approve.",
+    "A self-organizing workspace for operational continuity and governed intelligence across your people, AI, and business systems.",
   icons: {
     icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
     apple: "/icon.svg",

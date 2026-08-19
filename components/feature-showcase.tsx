@@ -90,9 +90,9 @@ function VisualCard({ type }: { type: string }) {
 
 const defaultShowcases: ShowcaseItem[] = [
   {
-    tag: "The Spine",
-    title: "One source of truth for every tool.",
-    description: "Connect your apps once. The Spine normalizes, deduplicates, and versions everything into three data flows.",
+    tag: "Adaptive Spine",
+    title: "Continuity across every system.",
+    description: "Connect approved systems once. The Adaptive Spine preserves operational truth, context, evidence, and memory as your tools change.",
     features: [
       "Normalized canonical records",
       "Auto-detected behavioral signals",
@@ -102,9 +102,9 @@ const defaultShowcases: ShowcaseItem[] = [
     cta: { label: "Explore the Spine", href: "/platform/the-adaptive-spine" },
   },
   {
-    tag: "Workspace",
-    title: "Where your team works every day.",
-    description: "Accounts, tasks, workflows, and calendar — unified in one workspace powered by the Spine.",
+    tag: "Self-Organizing Workspace",
+    title: "One shell. Many projections.",
+    description: "The workspace reorganizes around role, domain, entity, intent, and active context while governed truth remains stable underneath.",
     features: [
       "Entity 360 for every account",
       "AI-prioritized task queue",
@@ -114,9 +114,9 @@ const defaultShowcases: ShowcaseItem[] = [
     cta: { label: "See the Workspace", href: "/product/the-adaptive-workspace" },
   },
   {
-    tag: "Cognitive Layer",
-    title: "AI that shows its work.",
-    description: "The Twin analyzes patterns, proposes actions with evidence, and waits for your approval before anything executes.",
+    tag: "Twin",
+    title: "Contextual intelligence with governed authority.",
+    description: "Twin observes, orients, reasons, and prepares proposals from compiled context. Execution remains policy-bound, approved, evidenced, and reconciled.",
     features: [
       "Evidence chains on every insight",
       "Confidence scores for trust",

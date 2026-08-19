@@ -22,23 +22,23 @@ interface FAQSectionProps {
 const platformFAQs: FAQItem[] = [
   {
     question: "What is the Adaptive Spine?",
-    answer: "The Spine is IntegrateWise's data backbone. It connects to your apps via OAuth, normalizes records from every system into a unified model, and keeps everything in sync. Think of it as a live, cross-system database — not a data warehouse. It's what makes Entity 360 views, AI reasoning, and cross-app actions possible.",
+    answer: "The Adaptive Spine is the operational continuity substrate beneath the Self-Organizing Workspace. It preserves governed truth, context, evidence, memory, and continuity across approved systems so people and AI can work from the same operational picture.",
   },
   {
-    question: "What are the Workspace and Cognitive Layer?",
-    answer: "The Workspace is where you see accounts, tasks, workflows, and engagement logs in one view. The Cognitive Layer is where the AI Twin reads your data through the Spine, spots patterns, drafts actions, and presents them with evidence. You approve everything from the Workspace.",
+    question: "What is the Self-Organizing Workspace?",
+    answer: "It is the customer-facing product: one continuous operating environment that projects the right views, canvases, knowledge, Twin interactions, approvals, and governed actions for each role and context.",
   },
   {
     question: "How is IntegrateWise different from a CRM or a dashboard tool?",
     answer: "CRMs store your sales data. Dashboard tools visualize metrics. IntegrateWise connects all your tools — CRM, support, billing, project management — into one live workspace where AI reasons across the full picture and proposes actions with evidence. Nothing happens without your approval.",
   },
   {
-    question: "What does 'human-in-the-loop' actually mean?",
-    answer: "Every AI-generated insight, recommendation, or proposed action is presented to you with evidence from your connected apps. You review the reasoning and approve, modify, or reject. Approved actions are logged in an immutable decision record. The AI never acts autonomously.",
+    question: "What authority does Twin have?",
+    answer: "Twin may reason, prepare, and propose autonomously. Execution authority is governed by policy, permissions, approvals, and capability contracts. Outcomes are evidenced, verified, and reconciled against the provider.",
   },
   {
-    question: "How many apps can I connect?",
-    answer: "Starter supports up to 5 connectors, Growth supports up to 15, and Command offers unlimited connectors. We support 70+ apps including Salesforce, HubSpot, Stripe, Slack, Jira, Zendesk, Gmail, Notion, and more.",
+    question: "How does IntegrateWise connect to our systems?",
+    answer: "Approved systems connect through governed connectors, MCP, APIs, webhooks, and provider capabilities. IntegrateWise is designed to work with the systems you already use rather than forcing a migration.",
   },
   {
     question: "Is my data secure?",

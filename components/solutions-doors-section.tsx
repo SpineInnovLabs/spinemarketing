@@ -443,10 +443,10 @@ const steps: StickyScrollStep[] = [
     visual: <AccountSuccessVisual />,
   },
   {
-    label: "Business Ops",
-    title: "Stop being the human API.",
+    label: "Business Operations",
+    title: "One operating environment for the work.",
     description:
-      "CRM, billing, support, project management — one workspace. Cross-system workflows run automatically while you approve every action.",
+      "The Self-Organizing Workspace compiles the operational context behind decisions, coordinates governed actions, and preserves continuity across systems.",
     visual: <BusinessOpsVisual />,
   },
   {
