@@ -7,14 +7,14 @@ import { ResourcesScroll } from "./sticky-sections";
 import { BreadcrumbJsonLd } from "@/components/structured-data";
 
 export const metadata: Metadata = {
-  title: "Resources | IntegrateWise",
+  title: "Resources | SpineWorkspace",
   description:
-    "Guides, use cases, and tools to help you get the most from IntegrateWise.",
+    "Guides, use cases, and tools to help you get the most from SpineWorkspace.",
   alternates: { canonical: "/resources" },
   openGraph: {
-    title: "Resources | IntegrateWise",
-    description: "Guides, use cases, and tools to help you get the most from IntegrateWise.",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "IntegrateWise" }],
+    title: "Resources | SpineWorkspace",
+    description: "Guides, use cases, and tools to help you get the most from SpineWorkspace.",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "SpineWorkspace" }],
   },
 };
 

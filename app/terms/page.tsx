@@ -4,13 +4,13 @@ import { Footer } from "@/components/footer"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
-  title: "Terms & Conditions | IntegrateWise",
-  description: "Terms of service for using IntegrateWise.",
+  title: "Terms & Conditions | SpineWorkspace",
+  description: "Terms of service for using SpineWorkspace.",
   alternates: { canonical: "/terms" },
   openGraph: {
-    title: "Terms & Conditions | IntegrateWise",
-    description: "Terms of service for using IntegrateWise.",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "IntegrateWise" }],
+    title: "Terms & Conditions | SpineWorkspace",
+    description: "Terms of service for using SpineWorkspace.",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "SpineWorkspace" }],
   },
 }
 

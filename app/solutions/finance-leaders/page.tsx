@@ -6,14 +6,14 @@ import { FinanceLeadersContent } from "./content"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
-  title: "Finance Leaders | IntegrateWise",
+  title: "Finance Leaders | SpineWorkspace",
   description:
     "Cash, collections, runway — accounting, billing, and CRM unified.",
   alternates: { canonical: "/solutions/finance-leaders" },
   openGraph: {
-    title: "Finance Leaders | IntegrateWise",
+    title: "Finance Leaders | SpineWorkspace",
     description: "Cash, collections, runway — accounting, billing, and CRM unified.",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "IntegrateWise" }],
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "SpineWorkspace" }],
   },
 }
 

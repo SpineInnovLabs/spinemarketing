@@ -19,7 +19,7 @@ export async function generateMetadata({
   const post = posts.find((p) => p.slug === slug);
   if (!post) return { title: "Not Found" };
   return {
-    title: `${post.title} | IntegrateWise Blog`,
+    title: `${post.title} | SpineWorkspace Blog`,
     description: post.description,
   };
 }

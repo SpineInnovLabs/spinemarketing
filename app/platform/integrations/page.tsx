@@ -9,14 +9,14 @@ import { IntegrationsStickyScroll } from "./sticky-sections"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
-  title: "Integrations | IntegrateWise Platform",
+  title: "Integrations | SpineWorkspace Platform",
   description:
     "SaaS APIs, MCP, webhooks, and file drops — all through one normalization pipeline into the Spine.",
   alternates: { canonical: "/platform/integrations" },
   openGraph: {
-    title: "Integrations | IntegrateWise Platform",
+    title: "Integrations | SpineWorkspace Platform",
     description: "SaaS APIs, MCP, webhooks, and file drops — all through one normalization pipeline into the Spine.",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "IntegrateWise" }],
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "SpineWorkspace" }],
   },
 }
 

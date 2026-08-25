@@ -5,13 +5,13 @@ import { entries } from "@/content/changelog"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
-  title: "Changelog | IntegrateWise",
-  description: "What's new in IntegrateWise — product updates, new connectors, and improvements.",
+  title: "Changelog | SpineWorkspace",
+  description: "What's new in SpineWorkspace — product updates, new connectors, and improvements.",
   alternates: { canonical: "/changelog" },
   openGraph: {
-    title: "Changelog | IntegrateWise",
-    description: "What's new in IntegrateWise — product updates, new connectors, and improvements.",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "IntegrateWise" }],
+    title: "Changelog | SpineWorkspace",
+    description: "What's new in SpineWorkspace — product updates, new connectors, and improvements.",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "SpineWorkspace" }],
   },
 }
 

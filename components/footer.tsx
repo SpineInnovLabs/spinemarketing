@@ -22,9 +22,9 @@ const footerColumns: {
     heading: "Product",
     links: [
       { name: "The Workspace", href: "/product/the-adaptive-workspace" },
-      { name: "Cognitive Layer", href: "/product/how-it-works" },
-      { name: "The Twin", href: "/ai" },
-      { name: "Approval Gate", href: "/product/approval-gate-twin" },
+      { name: "The Twin", href: "/product/how-it-works" },
+      { name: "The Twin (AI)", href: "/ai" },
+      { name: "Governance", href: "/product/approval-gate-twin" },
       { name: "Pricing", href: "/pricing" },
     ],
   },
@@ -41,7 +41,7 @@ const footerColumns: {
   {
     heading: "Company",
     links: [
-      { name: "Why IntegrateWise", href: "/why" },
+      { name: "Why SpineWorkspace", href: "/why" },
       { name: "About", href: "/about" },
       { name: "Blog", href: "/blog" },
       { name: "Resources", href: "/resources" },
@@ -66,11 +66,11 @@ export function Footer() {
               >
                 <SpineLogo className="h-8 w-8 shrink-0" variant="on-dark" />
                 <span className="text-[18px] font-semibold tracking-[-0.04em] text-white">
-                  Integrate<span className="text-primary">Wise</span>
+                  Spine<span className="text-primary">Workspace</span>
                 </span>
               </Link>
               <p className="mt-5 max-w-[280px] text-[14px] font-medium leading-[1.7] text-white/40">
-                A Knowledge Workspace empowered by AI and the Spine. Your tools connected. Your data unified. You decide what happens.
+                The shared work environment where humans and AI work together. Your tools connected. Your data unified. You decide what happens. Built by IntegrateWise.
               </p>
 
               <div className="mt-6 flex items-center gap-3">

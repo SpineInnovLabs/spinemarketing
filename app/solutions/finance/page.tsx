@@ -6,14 +6,14 @@ import { FinanceIndustryContent } from "./content"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
-  title: "Finance | IntegrateWise Solutions",
+  title: "Finance | SpineWorkspace Solutions",
   description:
     "Revenue, risk, collections, cash — the financial picture that finance leaders actually need to run the business.",
   alternates: { canonical: "/solutions/finance" },
   openGraph: {
-    title: "Finance | IntegrateWise Solutions",
+    title: "Finance | SpineWorkspace Solutions",
     description: "Revenue, risk, collections, cash — the financial picture that finance leaders actually need to run the business.",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "IntegrateWise" }],
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "SpineWorkspace" }],
   },
 }
 

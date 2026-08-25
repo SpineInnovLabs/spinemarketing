@@ -12,14 +12,14 @@ import { PlatformStickyScroll } from "./sticky-sections"
 import { BreadcrumbJsonLd, SoftwareApplicationJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
-  title: "Platform | IntegrateWise",
+  title: "Platform | SpineWorkspace",
   description:
     "The Adaptive Spine. Connects every app. Governs every AI action. Nothing happens without your approval.",
   alternates: { canonical: "/platform" },
   openGraph: {
-    title: "Platform | IntegrateWise",
+    title: "Platform | SpineWorkspace",
     description: "The Adaptive Spine. Connects every app. Governs every AI action. Nothing happens without your approval.",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "IntegrateWise" }],
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "SpineWorkspace" }],
   },
 }
 

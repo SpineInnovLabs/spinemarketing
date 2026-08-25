@@ -8,13 +8,13 @@ import { ArrowRight } from "lucide-react"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
-  title: "Blog | IntegrateWise",
+  title: "Blog | SpineWorkspace",
   description: "Insights on connected workspaces, AI governance, and operational intelligence.",
   alternates: { canonical: "/blog" },
   openGraph: {
-    title: "Blog | IntegrateWise",
+    title: "Blog | SpineWorkspace",
     description: "Insights on connected workspaces, AI governance, and operational intelligence.",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "IntegrateWise" }],
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "SpineWorkspace" }],
   },
 }
 

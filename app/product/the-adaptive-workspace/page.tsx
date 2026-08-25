@@ -7,14 +7,14 @@ import { WorkspaceGather } from "./sticky-sections"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
-  title: "The Adaptive Workspace | IntegrateWise Product",
+  title: "The Adaptive Workspace | SpineWorkspace Product",
   description:
     "Role-based views built on Entity 360. Nine workspace views, one canonical truth.",
   alternates: { canonical: "/product/the-adaptive-workspace" },
   openGraph: {
-    title: "The Adaptive Workspace | IntegrateWise Product",
+    title: "The Adaptive Workspace | SpineWorkspace Product",
     description: "Role-based views built on Entity 360. Nine workspace views, one canonical truth.",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "IntegrateWise" }],
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "SpineWorkspace" }],
   },
 }
 

@@ -9,14 +9,14 @@ import { SpineStickyScroll } from "./sticky-sections"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
-  title: "The Adaptive Spine | IntegrateWise Platform",
+  title: "The Adaptive Spine | SpineWorkspace Platform",
   description:
     "The Adaptive Spine — vendor-neutral data layer converting fragmented SaaS into one versioned source of truth.",
   alternates: { canonical: "/platform/the-adaptive-spine" },
   openGraph: {
-    title: "The Adaptive Spine | IntegrateWise Platform",
+    title: "The Adaptive Spine | SpineWorkspace Platform",
     description: "The Adaptive Spine — vendor-neutral data layer converting fragmented SaaS into one versioned source of truth.",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "IntegrateWise" }],
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "SpineWorkspace" }],
   },
 }
 

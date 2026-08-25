@@ -6,14 +6,14 @@ import { ProfessionalServicesContent } from "./content"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
-  title: "Professional Services | IntegrateWise Solutions",
+  title: "Professional Services | SpineWorkspace Solutions",
   description:
     "Engagements, deliverables, billing, relationships — the full account view that professional service teams need.",
   alternates: { canonical: "/solutions/professional-services" },
   openGraph: {
-    title: "Professional Services | IntegrateWise Solutions",
+    title: "Professional Services | SpineWorkspace Solutions",
     description: "Engagements, deliverables, billing, relationships — the full account view that professional service teams need.",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "IntegrateWise" }],
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "SpineWorkspace" }],
   },
 }
 

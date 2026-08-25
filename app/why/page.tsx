@@ -9,14 +9,14 @@ import { TestimonialsSection } from "@/components/testimonials-section"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
-  title: "Why IntegrateWise | One Spine. One Workspace. Governed AI.",
+  title: "Why SpineWorkspace | One Spine. One Workspace. Governed AI.",
   description:
-    "Apps are fragmented. AI lacks context. IntegrateWise unifies everything under your control.",
+    "Apps are fragmented. AI lacks context. SpineWorkspace unifies everything under your control.",
   alternates: { canonical: "/why" },
   openGraph: {
-    title: "Why IntegrateWise | One Spine. One Workspace. Governed AI.",
-    description: "Apps are fragmented. AI lacks context. IntegrateWise unifies everything under your control.",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "IntegrateWise" }],
+    title: "Why SpineWorkspace | One Spine. One Workspace. Governed AI.",
+    description: "Apps are fragmented. AI lacks context. SpineWorkspace unifies everything under your control.",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "SpineWorkspace" }],
   },
 }
 

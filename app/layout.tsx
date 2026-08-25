@@ -13,26 +13,26 @@ export const metadata: Metadata = {
     canonical: "/",
     types: { "application/rss+xml": "/rss.xml" },
   },
-  title: "IntegrateWise — Stop being the human API between your apps.",
+  title: "SpineWorkspace — Stop being the human API between your apps.",
   description:
-    "One workspace. Every customer. Every tool. AI proposes, you approve.",
+    "One workspace. Every customer. Every tool. AI proposes, you approve. Built by IntegrateWise.",
   icons: {
     icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
     apple: "/icon.svg",
   },
   openGraph: {
-    title: "IntegrateWise — Stop being the human API between your apps.",
+    title: "SpineWorkspace — Stop being the human API between your apps.",
     description:
-      "One workspace. Every customer. Every tool. AI proposes, you approve.",
-    siteName: "IntegrateWise",
+      "One workspace. Every customer. Every tool. AI proposes, you approve. Built by IntegrateWise.",
+    siteName: "SpineWorkspace",
     type: "website",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "IntegrateWise" }],
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "SpineWorkspace" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "IntegrateWise — Stop being the human API between your apps.",
+    title: "SpineWorkspace — Stop being the human API between your apps.",
     description:
-      "One workspace. Every customer. Every tool. AI proposes, you approve.",
+      "One workspace. Every customer. Every tool. AI proposes, you approve. Built by IntegrateWise.",
     images: ["/og.png"],
   },
 }
@@ -51,7 +51,7 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              name: "IntegrateWise",
+              name: "SpineWorkspace",
               url: "https://integratewise.ai",
               logo: "https://integratewise.ai/icon.svg",
               sameAs: [],

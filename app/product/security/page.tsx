@@ -3,13 +3,13 @@ import { ProductSecurityContent } from "./content"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
-  title: "Security — IntegrateWise Product",
+  title: "Security — SpineWorkspace Product",
   description: "Security controls built into the product — approval gates, audit logs, and governance by design.",
   alternates: { canonical: "/product/security" },
   openGraph: {
-    title: "Security — IntegrateWise Product",
+    title: "Security — SpineWorkspace Product",
     description: "Security controls built into the product — approval gates, audit logs, and governance by design.",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "IntegrateWise" }],
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "SpineWorkspace" }],
   },
 }
 

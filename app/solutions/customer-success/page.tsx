@@ -6,14 +6,14 @@ import { CustomerSuccessRoleContent } from "./content"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
-  title: "Customer Success & Account Managers | IntegrateWise",
+  title: "Customer Success & Account Managers | SpineWorkspace",
   description:
     "Save at-risk accounts. Accelerate renewals. Surface expansion signals.",
   alternates: { canonical: "/solutions/customer-success" },
   openGraph: {
-    title: "Customer Success & Account Managers | IntegrateWise",
+    title: "Customer Success & Account Managers | SpineWorkspace",
     description: "Save at-risk accounts. Accelerate renewals. Surface expansion signals.",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "IntegrateWise" }],
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "SpineWorkspace" }],
   },
 }
 

@@ -5,13 +5,13 @@ import { FinalCTA } from "@/components/final-cta"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
-  title: "Documentation | IntegrateWise",
+  title: "Documentation | SpineWorkspace",
   description: "Set up connectors, configure your workspace, and use AI features.",
   alternates: { canonical: "/docs" },
   openGraph: {
-    title: "Documentation | IntegrateWise",
+    title: "Documentation | SpineWorkspace",
     description: "Set up connectors, configure your workspace, and use AI features.",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "IntegrateWise" }],
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "SpineWorkspace" }],
   },
 }
 

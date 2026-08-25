@@ -9,14 +9,14 @@ import { TestimonialsSection } from "@/components/testimonials-section"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
-  title: "The Twin | IntegrateWise",
+  title: "The Twin | SpineWorkspace",
   description:
     "The Twin reads Truth, Context, and Session Summaries through the Spine. Surfaces signals in the Cognitive Layer and waits for your approval.",
   alternates: { canonical: "/ai" },
   openGraph: {
-    title: "The Twin | IntegrateWise",
+    title: "The Twin | SpineWorkspace",
     description: "The Twin reads Truth, Context, and Session Summaries through the Spine. Surfaces signals in the Cognitive Layer and waits for your approval.",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "IntegrateWise" }],
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "SpineWorkspace" }],
   },
 }
 

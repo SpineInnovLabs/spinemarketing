@@ -6,14 +6,14 @@ import { SpineContent } from "./content"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
-  title: "Spine & Intelligence | IntegrateWise",
+  title: "Spine & Intelligence | SpineWorkspace",
   description:
     "Vendor-neutral data backbone. Unifies every app. AI reasons with evidence. You approve.",
   alternates: { canonical: "/spine" },
   openGraph: {
-    title: "Spine & Intelligence | IntegrateWise",
+    title: "Spine & Intelligence | SpineWorkspace",
     description: "Vendor-neutral data backbone. Unifies every app. AI reasons with evidence. You approve.",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "IntegrateWise" }],
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "SpineWorkspace" }],
   },
 }
 

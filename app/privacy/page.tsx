@@ -4,13 +4,13 @@ import { Footer } from "@/components/footer"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | IntegrateWise",
-  description: "How IntegrateWise collects, uses, and protects your data.",
+  title: "Privacy Policy | SpineWorkspace",
+  description: "How SpineWorkspace collects, uses, and protects your data.",
   alternates: { canonical: "/privacy" },
   openGraph: {
-    title: "Privacy Policy | IntegrateWise",
-    description: "How IntegrateWise collects, uses, and protects your data.",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "IntegrateWise" }],
+    title: "Privacy Policy | SpineWorkspace",
+    description: "How SpineWorkspace collects, uses, and protects your data.",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "SpineWorkspace" }],
   },
 }
 

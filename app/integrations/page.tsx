@@ -8,14 +8,14 @@ import { TestimonialsSection } from "@/components/testimonials-section"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
-  title: "Integrations | IntegrateWise",
+  title: "Integrations | SpineWorkspace",
   description:
     "70+ apps connected into one Spine. Salesforce, HubSpot, Slack, Stripe, and more.",
   alternates: { canonical: "/integrations" },
   openGraph: {
-    title: "Integrations | IntegrateWise",
+    title: "Integrations | SpineWorkspace",
     description: "70+ apps connected into one Spine. Salesforce, HubSpot, Slack, Stripe, and more.",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "IntegrateWise" }],
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "SpineWorkspace" }],
   },
 }
 

@@ -22,12 +22,12 @@ export function SoftwareApplicationJsonLd() {
   const data = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    name: "IntegrateWise",
+    name: "SpineWorkspace",
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
     url: "https://integratewise.ai",
     description:
-      "One workspace. Every customer. Every tool. AI proposes, you approve.",
+      "The shared work environment where humans and AI work together. Built by IntegrateWise.",
     offers: {
       "@type": "Offer",
       price: "49",
@@ -82,7 +82,7 @@ export function WebPageJsonLd({
     url,
     isPartOf: {
       "@type": "WebSite",
-      name: "IntegrateWise",
+      name: "SpineWorkspace",
       url: "https://integratewise.ai",
     },
   }

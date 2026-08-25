@@ -6,14 +6,14 @@ import { ServicesContent } from "./content"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
-  title: "Services & Agencies | IntegrateWise Solutions",
+  title: "Services & Agencies | SpineWorkspace Solutions",
   description:
     "Projects, utilisation, invoices, client health — the full engagement picture.",
   alternates: { canonical: "/solutions/services" },
   openGraph: {
-    title: "Services & Agencies | IntegrateWise Solutions",
+    title: "Services & Agencies | SpineWorkspace Solutions",
     description: "Projects, utilisation, invoices, client health — the full engagement picture.",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "IntegrateWise" }],
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "SpineWorkspace" }],
   },
 }
 

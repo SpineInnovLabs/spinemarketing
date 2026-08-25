@@ -6,14 +6,14 @@ import { SaasContent } from "./content"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
-  title: "SaaS | IntegrateWise Solutions",
+  title: "SaaS | SpineWorkspace Solutions",
   description:
     "Renewals, expansion, adoption — connected in one account view.",
   alternates: { canonical: "/solutions/saas" },
   openGraph: {
-    title: "SaaS | IntegrateWise Solutions",
+    title: "SaaS | SpineWorkspace Solutions",
     description: "Renewals, expansion, adoption — connected in one account view.",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "IntegrateWise" }],
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "SpineWorkspace" }],
   },
 }
 

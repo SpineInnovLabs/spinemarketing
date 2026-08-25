@@ -9,14 +9,14 @@ import { TestimonialsSection } from "@/components/testimonials-section"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
-  title: "Solutions | IntegrateWise",
+  title: "Solutions | SpineWorkspace",
   description:
     "One Spine. Workspace for daily work, Cognitive Layer for AI. Built for every function, industry, and role.",
   alternates: { canonical: "/solutions" },
   openGraph: {
-    title: "Solutions | IntegrateWise",
+    title: "Solutions | SpineWorkspace",
     description: "One Spine. Workspace for daily work, Cognitive Layer for AI. Built for every function, industry, and role.",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "IntegrateWise" }],
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "SpineWorkspace" }],
   },
 }
 

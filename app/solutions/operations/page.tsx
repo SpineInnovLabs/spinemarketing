@@ -6,14 +6,14 @@ import { OperationsContent } from "./content"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
-  title: "Operations & Delivery Leaders | IntegrateWise",
+  title: "Operations & Delivery Leaders | SpineWorkspace",
   description:
     "Utilisation, delivery, exceptions, escalations — the live view that keeps projects on track and clients happy.",
   alternates: { canonical: "/solutions/operations" },
   openGraph: {
-    title: "Operations & Delivery Leaders | IntegrateWise",
+    title: "Operations & Delivery Leaders | SpineWorkspace",
     description: "Utilisation, delivery, exceptions, escalations — the live view that keeps projects on track and clients happy.",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "IntegrateWise" }],
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "SpineWorkspace" }],
   },
 }
 

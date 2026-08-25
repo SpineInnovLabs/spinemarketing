@@ -6,18 +6,18 @@ import { BusinessOpsContent } from "./content"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
-  title: "Business Ops — 12 Tabs → One Workspace | IntegrateWise",
+  title: "Business Ops — 12 Tabs → One Workspace | SpineWorkspace",
   description:
     "Stop toggling between 12 tabs to find context. Cross-system visibility with AI that handles the busywork — with your approval. Zero context lost.",
   alternates: { canonical: "/business-ops" },
   openGraph: {
-    title: "Business Ops — 12 Tabs → One Workspace | IntegrateWise",
+    title: "Business Ops — 12 Tabs → One Workspace | SpineWorkspace",
     description: "Stop toggling between 12 tabs to find context. Cross-system visibility with AI that handles the busywork.",
-    images: [{ url: "/images/campaign/Banner-BusinessOps-A.jpg", width: 1584, height: 396, alt: "IntegrateWise Business Ops" }],
+    images: [{ url: "/images/campaign/Banner-BusinessOps-A.jpg", width: 1584, height: 396, alt: "SpineWorkspace Business Ops" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Business Ops — 12 Tabs → One Workspace | IntegrateWise",
+    title: "Business Ops — 12 Tabs → One Workspace | SpineWorkspace",
     description: "Stop toggling between 12 tabs to find context. Zero context lost.",
     images: ["/images/campaign/Banner-BusinessOps-A.jpg"],
   },

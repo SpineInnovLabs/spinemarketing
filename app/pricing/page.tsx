@@ -21,14 +21,14 @@ const pricingFAQData = [
 ];
 
 export const metadata: Metadata = {
-  title: "Pricing | IntegrateWise",
+  title: "Pricing | SpineWorkspace",
   description:
     "Simple pricing. Start at ₹999/$49/mo. Scale to enterprise governance.",
   alternates: { canonical: "/pricing" },
   openGraph: {
-    title: "Pricing | IntegrateWise",
+    title: "Pricing | SpineWorkspace",
     description: "Simple pricing. Start at ₹999/$49/mo. Scale to enterprise governance.",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "IntegrateWise Pricing" }],
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "SpineWorkspace Pricing" }],
   },
 };
 

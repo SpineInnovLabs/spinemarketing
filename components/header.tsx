@@ -77,7 +77,7 @@ const navigation: NavItem[] = [
     items: [
       { name: "The Adaptive Workspace", href: "/product/the-adaptive-workspace", icon: Cpu },
       { name: "How it Works", href: "/product/how-it-works", icon: TrendingUp },
-      { name: "Approval Gate & Twin", href: "/product/approval-gate-twin", icon: UserCheck },
+      { name: "Governance & Twin", href: "/product/approval-gate-twin", icon: UserCheck },
       { name: "Security", href: "/product/security", icon: ShieldCheck },
     ],
   },
@@ -122,7 +122,7 @@ const navigation: NavItem[] = [
     label: "Company",
     href: "/about",
     items: [
-      { name: "Why IntegrateWise", href: "/why", icon: HelpCircle, desc: "The problem we exist to solve" },
+      { name: "Why SpineWorkspace", href: "/why", icon: HelpCircle, desc: "The problem we exist to solve" },
       { name: "About", href: "/about", icon: Building2, desc: "Our story and what we stand for" },
       { name: "Resources", href: "/resources", icon: BookOpen, desc: "Blog, guides, and playbooks" },
     ],
@@ -436,7 +436,7 @@ export function Header({
           >
             <SpineLogo className="h-8 w-8 shrink-0" variant="on-dark" />
             <span className="text-[17px] font-semibold tracking-[-0.04em] text-white">
-              Integrate<span className="text-primary">Wise</span>
+              Spine<span className="text-primary">Workspace</span>
             </span>
           </Link>
 

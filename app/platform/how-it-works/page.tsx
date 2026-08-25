@@ -7,14 +7,14 @@ import { HowItWorksGather } from "./sticky-sections"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
-  title: "How it Works | IntegrateWise Platform",
+  title: "How it Works | SpineWorkspace Platform",
   description:
     "Data flows, identity resolution, knowledge base, and the triage mechanism that powers the Adaptive Spine.",
   alternates: { canonical: "/platform/how-it-works" },
   openGraph: {
-    title: "How it Works | IntegrateWise Platform",
+    title: "How it Works | SpineWorkspace Platform",
     description: "Data flows, identity resolution, knowledge base, and the triage mechanism that powers the Adaptive Spine.",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "IntegrateWise" }],
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "SpineWorkspace" }],
   },
 }
 
