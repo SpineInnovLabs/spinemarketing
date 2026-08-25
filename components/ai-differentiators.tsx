@@ -57,7 +57,7 @@ export function AIDifferentiators() {
             <span className="text-primary">One complete picture.</span>
           </h2>
           <p className="mt-4 text-[15px] font-medium leading-[1.6] text-white/45">
-            IntegrateWise works across three distinct data flows that other products miss.
+            SpineWorkspace works across three distinct data flows that other products miss.
           </p>
         </motion.div>
 

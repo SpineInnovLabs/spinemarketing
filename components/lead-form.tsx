@@ -40,7 +40,7 @@ export function LeadForm({ defaultIntent = "contact" }: { defaultIntent?: LeadIn
   const endpoint = process.env.NEXT_PUBLIC_CONTACT_FORM_ACTION?.trim()
 
   const mailtoFallback = useCallback(() => {
-    const subject = encodeURIComponent(`[${intentLabel(intent)}] ${company || "IntegrateWise"}`)
+    const subject = encodeURIComponent(`[${intentLabel(intent)}] ${company || "SpineWorkspace"}`)
     const body = encodeURIComponent(
       `Name: ${name}\nEmail: ${email}\nCompany: ${company}\nIntent: ${intentLabel(intent)}\n\n${message}`,
     )
@@ -75,7 +75,7 @@ export function LeadForm({ defaultIntent = "contact" }: { defaultIntent?: LeadIn
           company: company.trim(),
           message: message.trim(),
           intent: intentLabel(intent),
-          _subject: `[IntegrateWise] ${intentLabel(intent)} — ${name.trim()}`,
+          _subject: `[SpineWorkspace] ${intentLabel(intent)} — ${name.trim()}`,
         }),
       })
       if (!res.ok) {

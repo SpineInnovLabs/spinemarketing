@@ -40,7 +40,7 @@ export default function AboutPage() {
           ]}
         />
         <AboutPlatformGather />
-        <TestimonialsSection heading="Why teams trust IntegrateWise." />
+        <TestimonialsSection heading="Why teams trust SpineWorkspace." />
         <FinalCTA />
       </main>
       <Footer />

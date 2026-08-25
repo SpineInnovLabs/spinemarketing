@@ -85,7 +85,7 @@ export function ContactContent({
             className="mx-auto mt-7 max-w-2xl text-[17px] font-medium leading-[1.6] text-white/45"
           >
             Whether you want a demo, have a question, or want to explore how
-            IntegrateWise fits your apps — we&apos;re here.
+            SpineWorkspace fits your apps — we&apos;re here.
           </motion.p>
         </div>
       </section>
@@ -97,7 +97,7 @@ export function ContactContent({
               {
                 icon: MessageSquare,
                 title: "Book a demo",
-                desc: "See IntegrateWise in action with a live walkthrough tailored to your use case.",
+                desc: "See SpineWorkspace in action with a live walkthrough tailored to your use case.",
                 cta: "Book a demo",
                 href: "/contact?intent=demo",
                 external: false,

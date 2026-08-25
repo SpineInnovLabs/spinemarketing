@@ -13,7 +13,7 @@ import { FAQPageJsonLd, BreadcrumbJsonLd } from "@/components/structured-data";
 
 const pricingFAQData = [
   { question: "Can I switch between plans?", answer: "Yes. You can upgrade or downgrade at any time. When upgrading, you get immediate access to the new tier's features. When downgrading, changes take effect at your next billing cycle." },
-  { question: "Is there a free trial?", answer: "We offer guided demos where you can see IntegrateWise working with your actual tools and data. Book a demo and we'll walk you through a personalized setup." },
+  { question: "Is there a free trial?", answer: "We offer guided demos where you can see SpineWorkspace working with your actual tools and data. Book a demo and we'll walk you through a personalized setup." },
   { question: "What counts as a 'connector'?", answer: "Each app you connect counts as one connector — for example, Salesforce is one connector, Slack is another. Connecting multiple instances of the same app (e.g., two Salesforce orgs) counts as two connectors." },
   { question: "Do you offer annual billing?", answer: "Yes. Annual plans come with a discount. Book a demo and we'll walk you through annual pricing." },
   { question: "What's included in the Implementation packages?", answer: "Workspace setup covers your initial app connections, data mapping, and workspace configuration. Connector workshop is a hands-on session to integrate your specific tools. Custom add-ons cover advanced configurations like custom data flows or enterprise SSO setup." },

@@ -108,7 +108,7 @@ export function WorkflowTransformLayout({
                 <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-red-500/10">
                   <X className="h-3.5 w-3.5 text-red-400" />
                 </div>
-                <span className="text-[13px] font-bold uppercase tracking-[0.1em] text-red-400/70">Without IntegrateWise</span>
+                <span className="text-[13px] font-bold uppercase tracking-[0.1em] text-red-400/70">Without SpineWorkspace</span>
               </div>
               {beforeAfter.map((item, i) => (
                 <div key={i} className="rounded-xl border border-red-500/[0.08] px-5 py-4" style={{ background: "rgba(239,68,68,0.03)" }}>
@@ -121,7 +121,7 @@ export function WorkflowTransformLayout({
                 <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-primary/10">
                   <Check className="h-3.5 w-3.5 text-primary" />
                 </div>
-                <span className="text-[13px] font-bold uppercase tracking-[0.1em] text-primary/70">With IntegrateWise</span>
+                <span className="text-[13px] font-bold uppercase tracking-[0.1em] text-primary/70">With SpineWorkspace</span>
               </div>
               {beforeAfter.map((item, i) => (
                 <div key={i} className="rounded-xl border border-primary/[0.08] px-5 py-4" style={{ background: "rgba(45,212,191,0.03)" }}>

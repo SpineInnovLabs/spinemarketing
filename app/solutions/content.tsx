@@ -209,7 +209,7 @@ export function SolutionsContent() {
             transition={{ type: "spring", damping: 16, stiffness: 52, delay: 0.35 }}
             className="mx-auto mt-7 max-w-2xl text-[17px] font-medium leading-[1.6] tracking-[-0.02em] text-white/45"
           >
-            Every team has different tools, different metrics, and different daily priorities. IntegrateWise connects them all and shows each person exactly what they need to see.
+            Every team has different tools, different metrics, and different daily priorities. SpineWorkspace connects them all and shows each person exactly what they need to see.
           </motion.p>
         </div>
       </section>

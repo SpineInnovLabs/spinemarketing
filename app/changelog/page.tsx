@@ -28,7 +28,7 @@ export default function ChangelogPage() {
           <div className="mx-auto max-w-[800px] px-6 pt-[160px] pb-[80px] md:px-16">
             <h1 className="text-[40px] font-semibold tracking-[-0.05em] leading-[1.1] text-white sm:text-[52px]">Changelog</h1>
             <p className="mt-4 max-w-xl text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-white/55">
-              What&apos;s new in IntegrateWise.
+              What&apos;s new in SpineWorkspace.
             </p>
           </div>
         </section>

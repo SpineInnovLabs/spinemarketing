@@ -144,7 +144,7 @@ export function DayInLifeLayout({
             <div className="mx-auto mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-primary/10">
               <Clock className="h-5 w-5 text-primary" />
             </div>
-            <p className="mb-4 text-[12px] font-bold uppercase tracking-[0.14em] text-primary">A day with IntegrateWise</p>
+            <p className="mb-4 text-[12px] font-bold uppercase tracking-[0.14em] text-primary">A day with SpineWorkspace</p>
             <h2 className="text-[36px] font-semibold leading-[1.1] tracking-[-0.04em] text-white sm:text-[48px]">
               What your morning <span className="text-primary">actually looks like</span>
             </h2>
@@ -240,7 +240,7 @@ export function DayInLifeLayout({
             Try it <span className="text-primary">with your workflow</span>
           </motion.h2>
           <motion.p {...fade(0.08)} className="mx-auto mt-5 max-w-lg text-[16px] font-medium leading-[1.6] text-white/45">
-            We&apos;ll walk through your typical day and show you exactly where IntegrateWise fits.
+            We&apos;ll walk through your typical day and show you exactly where SpineWorkspace fits.
           </motion.p>
           <motion.div {...fade(0.16)} className="mt-8">
             <Link href="/contact?intent=demo" className="inline-flex h-12 items-center gap-2 rounded-full px-8 text-[15px] font-semibold text-white transition-all hover:opacity-90" style={{ background: "var(--gradient-primary)", boxShadow: "0 0 30px rgba(27,167,132,0.15)" }}>

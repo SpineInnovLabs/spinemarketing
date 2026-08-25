@@ -113,7 +113,7 @@ export function SignalStoryLayout({
               The transformation
             </p>
             <h2 className="text-[36px] font-semibold leading-[1.1] tracking-[-0.04em] text-white sm:text-[48px]">
-              Before & after <span className="text-primary">IntegrateWise</span>
+              Before & after <span className="text-primary">SpineWorkspace</span>
             </h2>
           </motion.div>
           <div className="space-y-3">

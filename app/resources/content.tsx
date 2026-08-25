@@ -73,7 +73,7 @@ const deepDives = [
   },
   {
     icon: Video,
-    title: "Why IntegrateWise",
+    title: "Why SpineWorkspace",
     desc: "The problem we exist to solve. Signal, context, governance.",
     href: "/why",
   },
@@ -109,7 +109,7 @@ export function ResourcesContent() {
               {...fade(0.35)}
               className="mx-auto mt-8 max-w-xl text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-white/55"
             >
-              Guides, playbooks, and deep dives to help you understand IntegrateWise.
+              Guides, playbooks, and deep dives to help you understand SpineWorkspace.
             </motion.p>
           </div>
         </div>

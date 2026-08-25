@@ -22,15 +22,15 @@ interface FAQSectionProps {
 const platformFAQs: FAQItem[] = [
   {
     question: "What is the Adaptive Spine?",
-    answer: "The Spine is IntegrateWise's data backbone. It connects to your apps via OAuth, normalizes records from every system into a unified model, and keeps everything in sync. Think of it as a live, cross-system database — not a data warehouse. It's what makes Entity 360 views, AI reasoning, and cross-app actions possible.",
+    answer: "The Spine is SpineWorkspace's data backbone. It connects to your apps via OAuth, normalizes records from every system into a unified model, and keeps everything in sync. Think of it as a live, cross-system database — not a data warehouse. It's what makes Entity 360 views, AI reasoning, and cross-app actions possible.",
   },
   {
     question: "What are the Workspace and Cognitive Layer?",
     answer: "The Workspace is where you see accounts, tasks, workflows, and engagement logs in one view. The Cognitive Layer is where the AI Twin reads your data through the Spine, spots patterns, drafts actions, and presents them with evidence. You approve everything from the Workspace.",
   },
   {
-    question: "How is IntegrateWise different from a CRM or a dashboard tool?",
-    answer: "CRMs store your sales data. Dashboard tools visualize metrics. IntegrateWise connects all your tools — CRM, support, billing, project management — into one live workspace where AI reasons across the full picture and proposes actions with evidence. Nothing happens without your approval.",
+    question: "How is SpineWorkspace different from a CRM or a dashboard tool?",
+    answer: "CRMs store your sales data. Dashboard tools visualize metrics. SpineWorkspace connects all your tools — CRM, support, billing, project management — into one live workspace where AI reasons across the full picture and proposes actions with evidence. Nothing happens without your approval.",
   },
   {
     question: "What does 'human-in-the-loop' actually mean?",

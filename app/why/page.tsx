@@ -25,7 +25,7 @@ export default function WhyPage() {
     <div className="min-h-screen bg-dark-section">
       <BreadcrumbJsonLd items={[
         { name: "Home", url: "https://integratewise.ai" },
-        { name: "Why IntegrateWise", url: "https://integratewise.ai/why" },
+        { name: "Why SpineWorkspace", url: "https://integratewise.ai/why" },
       ]} />
       <Header />
       <main id="main">
@@ -33,7 +33,7 @@ export default function WhyPage() {
         <WhyPainScroll />
         <ComparisonSection
           heading="Stop stitching. Start seeing."
-          subheading="IntegrateWise replaces fragmented dashboards with one governed workspace."
+          subheading="SpineWorkspace replaces fragmented dashboards with one governed workspace."
         />
         <WhyAnswerGather />
         <TestimonialsSection />

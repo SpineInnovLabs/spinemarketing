@@ -12,7 +12,7 @@ const resourceItems = [
   {
     tag: "Use-case library",
     title: "Real-world playbooks for every team.",
-    description: "Revenue, CS, support, finance, and executive decisioning — see how IntegrateWise transforms each workflow.",
+    description: "Revenue, CS, support, finance, and executive decisioning — see how SpineWorkspace transforms each workflow.",
     icon: BookOpen,
     color: "#1BA784",
     features: ["Account success patterns", "Revenue operations plays", "Executive decision briefs"],

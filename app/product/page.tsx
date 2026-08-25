@@ -37,10 +37,10 @@ export default function ProductPage() {
         <FeatureShowcase />
         <BenefitsGrid />
         <ComparisonSection
-          heading="Why teams choose IntegrateWise."
+          heading="Why teams choose SpineWorkspace."
           subheading="One workspace vs. stitching together tools that don't talk to each other."
         />
-        <TestimonialsSection heading="Teams building on IntegrateWise." />
+        <TestimonialsSection heading="Teams building on SpineWorkspace." />
         <FinalCTA />
       </main>
       <Footer />

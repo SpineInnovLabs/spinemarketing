@@ -70,9 +70,9 @@ export function WhyPainScroll() {
 export function WhyAnswerGather() {
   return (
     <StickyGather
-      tag="The IntegrateWise Answer"
+      tag="The SpineWorkspace Answer"
       heading="Six capabilities. One governed workspace."
-      centerLabel="IntegrateWise"
+      centerLabel="SpineWorkspace"
       items={answerNodes}
     />
   );

@@ -39,10 +39,10 @@ export default function SolutionsPage() {
           ]}
         />
         <BenefitsGrid
-          tag="Why IntegrateWise"
+          tag="Why SpineWorkspace"
           heading="Same Spine. Every context."
         />
-        <TestimonialsSection heading="Teams already using IntegrateWise." />
+        <TestimonialsSection heading="Teams already using SpineWorkspace." />
         <FinalCTA />
       </main>
       <Footer />

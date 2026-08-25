@@ -103,7 +103,7 @@ export function WhyContent() {
             style={{ background: "rgba(255,255,255,0.03)", backdropFilter: "blur(12px)" }}
           >
             <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-            Why IntegrateWise
+            Why SpineWorkspace
           </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 16 }}
@@ -302,7 +302,7 @@ export function WhyContent() {
               saved.&rdquo;
             </blockquote>
             <p className="mt-4 text-[14px] font-medium text-white/30">
-              Account Success team — IntegrateWise early customer
+              Account Success team — SpineWorkspace early customer
             </p>
           </motion.div>
         </div>

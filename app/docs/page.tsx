@@ -27,7 +27,7 @@ export default function DocsPage() {
         <section className="mx-auto max-w-[1100px] px-6 pt-[140px] pb-24 md:px-16">
           <h1 className="text-[36px] font-semibold tracking-[-0.04em] leading-[1.2] sm:text-[44px]">Documentation</h1>
           <p className="mt-4 max-w-xl text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">
-            Everything you need to get started and get the most from IntegrateWise.
+            Everything you need to get started and get the most from SpineWorkspace.
           </p>
           <div className="mt-16 rounded-2xl border border-border/50 bg-muted/30 p-12 text-center">
             <p className="text-[17px] font-semibold tracking-[-0.03em]">Coming soon</p>

@@ -53,7 +53,7 @@ export default function SecurityPage() {
           ]}
         />
         <TestimonialsSection
-          heading="Security teams trust IntegrateWise."
+          heading="Security teams trust SpineWorkspace."
           tag="Security Stories"
         />
         <FinalCTA />

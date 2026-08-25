@@ -278,14 +278,14 @@ function OpsConnectVisual() {
         >
           <Image
             src="/icon.svg"
-            alt="IntegrateWise"
+            alt="SpineWorkspace"
             width={28}
             height={28}
             className="brightness-0 invert"
           />
         </div>
         <span className="text-[11px] font-semibold text-muted-foreground">
-          IntegrateWise
+          SpineWorkspace
         </span>
       </div>
       <div className="flex flex-col gap-6">
@@ -343,7 +343,7 @@ function OpsNormalizeVisual() {
         >
           <Image
             src="/icon.svg"
-            alt="IntegrateWise"
+            alt="SpineWorkspace"
             width={32}
             height={32}
             className="brightness-0 invert"
@@ -850,7 +850,7 @@ export function BusinessOpsContent() {
               <span className="text-white/40">a department.</span>
             </h2>
             <p className="mt-4 text-[17px] font-semibold leading-[1.5] text-primary">
-              IntegrateWise shows you the business.
+              SpineWorkspace shows you the business.
             </p>
           </motion.div>
 
@@ -1054,7 +1054,7 @@ export function BusinessOpsContent() {
           >
             <h2 className="section-heading">
               What Business Ops leaders{" "}
-              <span className="text-primary">do inside IntegrateWise</span>
+              <span className="text-primary">do inside SpineWorkspace</span>
             </h2>
           </motion.div>
           <div className="mt-12 grid gap-6 sm:grid-cols-2">

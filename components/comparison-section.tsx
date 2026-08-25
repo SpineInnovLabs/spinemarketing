@@ -48,7 +48,7 @@ function CellValue({ value }: { value: boolean | string }) {
 export function ComparisonSection({
   rows = defaultRows,
   heading = "The better way to work.",
-  subheading = "See how IntegrateWise compares to stitching tools together.",
+  subheading = "See how SpineWorkspace compares to stitching tools together.",
 }: {
   rows?: ComparisonRow[];
   heading?: string;
@@ -71,7 +71,7 @@ export function ComparisonSection({
           className="mx-auto mb-16 max-w-2xl text-center"
         >
           <p className="mb-4 text-[12px] font-bold uppercase tracking-[0.14em] text-primary">
-            Why IntegrateWise
+            Why SpineWorkspace
           </p>
           <h2 className="text-[40px] font-semibold leading-[1.1] tracking-[-0.04em] text-white sm:text-[52px]">
             {heading}
@@ -98,7 +98,7 @@ export function ComparisonSection({
               Feature
             </span>
             <span className="w-[100px] text-center text-[13px] font-bold text-primary">
-              IntegrateWise
+              SpineWorkspace
             </span>
             <span className="w-[100px] text-center text-[13px] font-bold text-white/35">
               Others

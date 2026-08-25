@@ -115,7 +115,7 @@ export default async function BlogPostPage({
               Ready to stop being the human API?
             </p>
             <p className="mt-2 text-[15px] font-medium text-muted-foreground">
-              See IntegrateWise in action.
+              See SpineWorkspace in action.
             </p>
             <Link
               href="/contact?intent=demo"

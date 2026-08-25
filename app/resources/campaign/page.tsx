@@ -27,18 +27,18 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  name: "IntegrateWise Campaign Gallery",
+  name: "SpineWorkspace Campaign Gallery",
   description:
     "36 campaign designs across LinkedIn and WhatsApp — crafted for Account Success, Business Ops, and Personal Ops professionals.",
   url: "https://integratewise.ai/resources/campaign",
   publisher: {
     "@type": "Organization",
-    name: "IntegrateWise",
+    name: "SpineWorkspace",
     url: "https://integratewise.ai",
   },
   mainEntity: {
     "@type": "ImageGallery",
-    name: "IntegrateWise Marketing Campaign Designs",
+    name: "SpineWorkspace Marketing Campaign Designs",
     numberOfItems: 36,
     about: [
       { "@type": "Thing", name: "Account Success" },

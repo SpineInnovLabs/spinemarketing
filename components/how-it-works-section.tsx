@@ -70,14 +70,14 @@ function ConnectVisual() {
         >
           <Image
             src="/icon.svg"
-            alt="IntegrateWise"
+            alt="SpineWorkspace"
             width={28}
             height={28}
             className="brightness-0 invert"
           />
         </div>
         <span className="text-[11px] font-semibold text-muted-foreground">
-          IntegrateWise
+          SpineWorkspace
         </span>
       </div>
 
@@ -139,7 +139,7 @@ function NormalizeVisual() {
         >
           <Image
             src="/icon.svg"
-            alt="IntegrateWise"
+            alt="SpineWorkspace"
             width={32}
             height={32}
             className="brightness-0 invert"

@@ -339,7 +339,7 @@ export function CampaignGalleryContent() {
                     <div className="relative overflow-hidden">
                       <Image
                         src={asset.src}
-                        alt={`${asset.title} — IntegrateWise ${typeLabel(asset.type)}`}
+                        alt={`${asset.title} — SpineWorkspace ${typeLabel(asset.type)}`}
                         width={asset.width}
                         height={asset.height}
                         className="w-full h-auto transition-transform duration-300 group-hover:scale-[1.02]"
@@ -382,7 +382,7 @@ export function CampaignGalleryContent() {
             <span className="text-primary">in action?</span>
           </motion.h2>
           <motion.p {...fade(0.1)} className="mt-6 text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">
-            These are real campaign designs showing real IntegrateWise capabilities. Book a demo to see the Workspace live.
+            These are real campaign designs showing real SpineWorkspace capabilities. Book a demo to see the Workspace live.
           </motion.p>
           <motion.div {...fade(0.2)} className="mt-10 flex flex-col items-center justify-center gap-2.5 sm:flex-row">
             <Button
