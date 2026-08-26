@@ -580,7 +580,7 @@ const howItWorksSteps: StickyScrollStep[] = [
     visual: <OpsViewVisual />,
   },
   {
-    label: "Step 04 \u2014 Cognitive Layer",
+    label: "Step 04 \u2014 Twin",
     title: "AI proposes. You decide.",
     description:
       "AI surfaces anomalies, drafts board decks, and flags risks. Nothing executes without your approval.",
@@ -824,7 +824,7 @@ export function BusinessOpsContent() {
               transition={{ type: "spring", bounce: 0.2, duration: 0.6, delay: 0.1 }}
               className="arvio-card p-6"
             >
-              <h3 className="text-[14px] font-bold uppercase tracking-[0.1em] text-primary mb-3">Cognitive Layer — AI reasoning for the business</h3>
+              <h3 className="text-[14px] font-bold uppercase tracking-[0.1em] text-primary mb-3">Twin — AI reasoning for the business</h3>
               <p className="text-[14px] font-medium leading-[1.7] text-muted-foreground">
                 AI detects cross-system anomalies and drafts actions with evidence. You approve before execution.
               </p>

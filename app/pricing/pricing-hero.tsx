@@ -41,7 +41,7 @@ export function PricingHero() {
             {...heroFade(0.35)}
             className="mx-auto mt-7 max-w-2xl text-[17px] font-medium leading-[1.6] text-white/45"
           >
-            Start with the Workspace — all your accounts in one view. Add the Cognitive Layer when you&apos;re ready.
+            Start with the Workspace — all your accounts in one view. Add the Twin when you&apos;re ready.
           </motion.p>
 
           <motion.div

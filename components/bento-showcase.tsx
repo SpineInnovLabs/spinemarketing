@@ -79,7 +79,7 @@ function TwinMockup() {
     <div className="relative w-full overflow-hidden rounded-xl border border-primary/20 bg-primary/[0.04]">
       <div className="flex items-center gap-2 border-b border-primary/15 bg-primary/[0.06] px-4 py-2.5">
         <Sparkles className="h-3.5 w-3.5 text-primary" />
-        <span className="text-[11px] font-semibold text-primary">Cognitive Layer — Twin</span>
+        <span className="text-[11px] font-semibold text-primary">Twin — Twin</span>
       </div>
       <div className="p-4 space-y-3">
         <div className="rounded-lg border border-primary/15 bg-primary/[0.06] p-3">
@@ -128,7 +128,7 @@ function TwinMockup() {
 
 export function BentoShowcase({
   heading = "Everything in one screen.",
-  subheading = "The Workspace shows. The Cognitive Layer thinks. You decide.",
+  subheading = "The Workspace shows. The Twin thinks. You decide.",
   tag = "Product",
 }: {
   heading?: string;

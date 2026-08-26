@@ -199,7 +199,7 @@ export function CampaignGalleryContent() {
               {
                 src: "/images/architecture/spine-architecture.png",
                 title: "The Spine — Powering Governed, Context-Rich AI",
-                desc: "Full architecture showing the Workspace, Cognitive Layer, Adaptive Spine as single source of truth, the Cognitive Loop (Think → Govern → Act → Adjust), and the $8M account save proof point.",
+                desc: "Full architecture showing the Workspace, Twin, Adaptive Spine as single source of truth, the Cognitive Loop (Think → Govern → Act → Adjust), and the $8M account save proof point.",
               },
               {
                 src: "/images/architecture/governed-enterprise-ai.png",
@@ -405,6 +405,7 @@ export function CampaignGalleryContent() {
         </div>
       </section>
 
+      {/* @ts-expect-error framer-motion v11 AnimatePresence type */}
       <AnimatePresence>
         {lightbox && (
           <motion.div

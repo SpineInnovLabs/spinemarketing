@@ -296,7 +296,7 @@ export function PlatformHowItWorksContent() {
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
               <Link href="/product/how-it-works" className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-primary hover:opacity-80">
-                See the Cognitive Layer <ArrowRight className="h-3.5 w-3.5" />
+                See the Twin <ArrowRight className="h-3.5 w-3.5" />
               </Link>
             </div>
           </motion.div>

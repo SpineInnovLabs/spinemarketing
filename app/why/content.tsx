@@ -79,7 +79,7 @@ const answer = [
   },
   {
     title: "One workspace",
-    desc: "The Workspace is where you work. The Cognitive Layer is where AI serves you. Both powered by the Spine.",
+    desc: "The Workspace is where you work. The Twin is where AI serves you. Both powered by the Spine.",
   },
   {
     title: "Governed AI",

@@ -23,7 +23,7 @@ export function TruthLayerSection() {
         >
           <div className="mb-4 inline-flex items-center gap-2 rounded-[40px] border border-primary/20 bg-primary/5 px-4 py-1.5">
             <ShieldCheck className="h-4 w-4 text-primary" />
-            <span className="text-[14px] font-semibold tracking-[-0.03em] text-primary">Approval Gate</span>
+            <span className="text-[14px] font-semibold tracking-[-0.03em] text-primary">Governance</span>
           </div>
           <h2 className="text-[40px] font-semibold tracking-[-0.05em] leading-[1.15] text-white sm:text-[48px]">
             You{" "}

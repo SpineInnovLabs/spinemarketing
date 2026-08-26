@@ -82,7 +82,7 @@ export function ProductHowItWorksContent() {
             {...heroFade(0.22)}
             className="text-[44px] font-semibold leading-[1.08] tracking-[-0.05em] text-white sm:text-[64px]"
           >
-            The Cognitive Layer.{" "}
+            The Twin.{" "}
             <span className="text-primary">Signals, not searches.</span>
           </motion.h1>
           <motion.p
@@ -93,7 +93,7 @@ export function ProductHowItWorksContent() {
           </motion.p>
           <motion.div {...heroFade(0.5)} className="mt-9 flex flex-wrap items-center justify-center gap-3">
             <Link href="/contact?intent=demo" className="inline-flex h-11 items-center rounded-full bg-primary px-6 text-[14px] font-semibold tracking-[-0.02em] text-white transition-opacity hover:opacity-90">
-              See the Cognitive Layer →
+              See the Twin →
             </Link>
           </motion.div>
         </div>
@@ -102,7 +102,7 @@ export function ProductHowItWorksContent() {
       <section className="arvio-section dark-section">
         <div className="mx-auto max-w-[1100px]">
           <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center mb-12">
-            <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">Cognitive Layer</p>
+            <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">Twin</p>
             <h2 className="section-heading">The continuous <span className="text-primary">detection engine</span></h2>
           </motion.div>
           <div className="grid gap-5 sm:grid-cols-2">
@@ -215,7 +215,7 @@ export function ProductHowItWorksContent() {
             </p>
             <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
               <Link href="/product/approval-gate-twin" className="inline-flex h-10 items-center rounded-full border border-white/15 px-5 text-[13px] font-semibold text-white/60 hover:border-white/30 hover:text-white transition-colors">
-                Approval Gate & Twin in Action →
+                Governance & Twin in Action →
               </Link>
             </div>
           </motion.div>

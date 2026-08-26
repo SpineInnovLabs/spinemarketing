@@ -39,7 +39,7 @@ const governanceFeatures = [
   {
     icon: Edit3,
     title: "Edit Before Execute",
-    desc: "Modify AI drafts before the Approval Gate allows execution.",
+    desc: "Modify AI drafts before the Governance allows execution.",
   },
 ];
 
@@ -105,7 +105,7 @@ export function ApprovalGateTwinContent() {
             className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-[13px] font-semibold text-white/60"
           >
             <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-            Product · Approval Gate & Twin
+            Product · Governance & Twin
           </motion.div>
           <motion.h1
             {...heroFade(0.22)}
@@ -131,7 +131,7 @@ export function ApprovalGateTwinContent() {
       <section className="arvio-section dark-section">
         <div className="mx-auto max-w-[1100px]">
           <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center mb-12">
-            <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">Approval Gate</p>
+            <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">Governance</p>
             <h2 className="section-heading">Governed <span className="text-primary">by design</span></h2>
           </motion.div>
           <div className="grid gap-5 sm:grid-cols-2">

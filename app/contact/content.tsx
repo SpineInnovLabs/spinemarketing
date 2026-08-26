@@ -25,7 +25,7 @@ const contactFAQs = [
   },
   {
     question: "Can I try it before committing?",
-    answer: "Yes. We run a guided POC where you connect your real apps and see your real data — including the Workspace, Cognitive Layer, and the Twin working with your actual context.",
+    answer: "Yes. We run a guided POC where you connect your real apps and see your real data — including the Workspace, Twin, and the Twin working with your actual context.",
   },
   {
     question: "What if I need a connector you don't have?",

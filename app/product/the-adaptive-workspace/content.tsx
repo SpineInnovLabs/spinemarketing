@@ -236,7 +236,7 @@ export function TheAdaptiveWorkspaceContent() {
             </p>
             <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
               <Link href="/product/approval-gate-twin" className="inline-flex h-10 items-center rounded-full border border-white/15 px-5 text-[13px] font-semibold text-white/60 hover:border-white/30 hover:text-white transition-colors">
-                Approval Gate & Twin →
+                Governance & Twin →
               </Link>
             </div>
           </motion.div>

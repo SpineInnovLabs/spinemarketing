@@ -93,7 +93,7 @@ const gatherItems = [
   { icon: Shield, label: "Govern Gate", description: "Non-bypassable human approval on all actions.", color: "#ef4444" },
   { icon: Lock, label: "TruthBoundary", description: "SOC 2 Type II. AES-256. Immutable audit log.", color: "#f59e0b" },
   { icon: Eye, label: "Workspace", description: "Entity 360s, tasks, workflows — your daily surface.", color: "#06b6d4" },
-  { icon: Zap, label: "Cognitive Layer", description: "AI suggests with evidence. You approve what executes.", color: "#a855f7" },
+  { icon: Zap, label: "Twin", description: "AI suggests with evidence. You approve what executes.", color: "#a855f7" },
   { icon: Server, label: "Infrastructure", description: "Firebase real-time. Sub-100ms sync.", color: "#ec4899" },
   { icon: GitBranch, label: "MCP Protocol", description: "AI-native integration. Bidirectional data flow.", color: "#14b8a6" },
   { icon: RefreshCw, label: "Cognitive Loop", description: "Think → Act → Govern → Repeat → Adjust.", color: "#f97316" },

@@ -42,7 +42,7 @@ const visualMap: Record<string, { color: string; items: { label: string; value: 
     color: "rgba(251,191,36,0.15)",
     items: [
       { label: "Audit Trail", value: "Immutable log" },
-      { label: "Approval Gate", value: "Human required" },
+      { label: "Governance", value: "Human required" },
       { label: "Confidence", value: "Scored insights" },
     ],
   },
@@ -114,7 +114,7 @@ const defaultShowcases: ShowcaseItem[] = [
     cta: { label: "See the Workspace", href: "/product/the-adaptive-workspace" },
   },
   {
-    tag: "Cognitive Layer",
+    tag: "Twin",
     title: "AI that shows its work.",
     description: "The Twin analyzes patterns, proposes actions with evidence, and waits for your approval before anything executes.",
     features: [

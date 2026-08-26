@@ -67,7 +67,7 @@ const deepDives = [
   },
   {
     icon: Lightbulb,
-    title: "Approval Gate & Twin",
+    title: "Governance & Twin",
     desc: "Governed AI that proposes with evidence. You approve.",
     href: "/product/approval-gate-twin",
   },

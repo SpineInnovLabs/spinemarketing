@@ -9,11 +9,11 @@ import { BreadcrumbJsonLd } from "@/components/structured-data"
 export const metadata: Metadata = {
   title: "How it Works | SpineWorkspace Product",
   description:
-    "The Cognitive Layer — proactive signals, morning briefs, pattern detection, and evidence-backed reasoning.",
+    "The Twin — proactive signals, morning briefs, pattern detection, and evidence-backed reasoning.",
   alternates: { canonical: "/product/how-it-works" },
   openGraph: {
     title: "How it Works | SpineWorkspace Product",
-    description: "The Cognitive Layer — proactive signals, morning briefs, pattern detection, and evidence-backed reasoning.",
+    description: "The Twin — proactive signals, morning briefs, pattern detection, and evidence-backed reasoning.",
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "SpineWorkspace" }],
   },
 }

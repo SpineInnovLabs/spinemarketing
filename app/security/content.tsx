@@ -47,7 +47,7 @@ const securityFeatures = [
   },
   {
     icon: FileCheck,
-    title: "Govern Gate on every Cognitive Layer action",
+    title: "Govern Gate on every Twin action",
     desc: "Nothing changes without your approval.",
   },
   {

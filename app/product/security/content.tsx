@@ -48,7 +48,7 @@ export function ProductSecurityContent() {
               Security
             </div>
             <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white to-white/60 bg-clip-text text-transparent">
-              Approval Gate UI.<br />Audit logs. Compliance.
+              Governance UI.<br />Audit logs. Compliance.
             </h1>
             <p className="text-xl text-white/60 max-w-2xl mx-auto leading-relaxed">
               Visualize where AI ends and human control begins — with full forensic context.

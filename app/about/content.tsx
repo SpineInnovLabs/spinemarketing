@@ -55,7 +55,7 @@ const timeline = [
   {
     year: "2026",
     title: "Knowledge Workspace over the Spine",
-    desc: "Workspace + Cognitive Layer. Three data ecosystems. You stay in control.",
+    desc: "Workspace + Twin. Three data ecosystems. You stay in control.",
   },
 ];
 
@@ -296,7 +296,7 @@ export function AboutContent() {
               style={{ background: "var(--gradient-primary)" }}
             >
               <p className="text-[17px] font-semibold leading-[1.5] text-white">
-                A Knowledge Workspace over the Spine — the Workspace is where you work, the Cognitive Layer is where AI serves you.
+                A Knowledge Workspace over the Spine — the Workspace is where you work, the Twin is where AI serves you.
               </p>
               <p className="mt-1 text-[15px] font-medium text-white/70">
                 This is IntegrateWise.

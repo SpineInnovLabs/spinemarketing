@@ -53,7 +53,7 @@ const journeyItems = [
 const platformNodes = [
   { label: "Spine", icon: Database, color: "#1BA784", description: "Canonical data layer connecting every source" },
   { label: "Workspace", icon: Layers, color: "#3b82f6", description: "Your daily operating surface" },
-  { label: "Cognitive Layer", icon: Brain, color: "#8b5cf6", description: "AI-powered pattern detection" },
+  { label: "Twin", icon: Brain, color: "#8b5cf6", description: "AI-powered pattern detection" },
   { label: "The Twin", icon: Eye, color: "#06b6d4", description: "Cognitive overlay for recommendations" },
   { label: "Govern Gate", icon: ShieldCheck, color: "#f59e0b", description: "Human-in-the-loop approval" },
   { label: "Entity 360", icon: Users, color: "#ef4444", description: "Complete view of every entity" },

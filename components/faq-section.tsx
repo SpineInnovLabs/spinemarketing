@@ -25,8 +25,8 @@ const platformFAQs: FAQItem[] = [
     answer: "The Spine is SpineWorkspace's data backbone. It connects to your apps via OAuth, normalizes records from every system into a unified model, and keeps everything in sync. Think of it as a live, cross-system database — not a data warehouse. It's what makes Entity 360 views, AI reasoning, and cross-app actions possible.",
   },
   {
-    question: "What are the Workspace and Cognitive Layer?",
-    answer: "The Workspace is where you see accounts, tasks, workflows, and engagement logs in one view. The Cognitive Layer is where the AI Twin reads your data through the Spine, spots patterns, drafts actions, and presents them with evidence. You approve everything from the Workspace.",
+    question: "What are the Workspace and Twin?",
+    answer: "The Workspace is where you see accounts, tasks, workflows, and engagement logs in one view. The Twin is where the AI Twin reads your data through the Spine, spots patterns, drafts actions, and presents them with evidence. You approve everything from the Workspace.",
   },
   {
     question: "How is SpineWorkspace different from a CRM or a dashboard tool?",
@@ -46,11 +46,11 @@ const platformFAQs: FAQItem[] = [
   },
   {
     question: "Can I start with just the Workspace?",
-    answer: "Absolutely. Our Starter tier gives you the Workspace with full Entity 360 views, unified tasks, workflows, and basic health signals. When you're ready, upgrade to Growth to unlock the Cognitive Layer where the Twin starts reasoning across your data.",
+    answer: "Absolutely. Our Starter tier gives you the Workspace with full Entity 360 views, unified tasks, workflows, and basic health signals. When you're ready, upgrade to Growth to unlock the Twin where the Twin starts reasoning across your data.",
   },
   {
     question: "What are Session Summaries?",
-    answer: "When you interact with the Twin in the Cognitive Layer, each conversation generates a Session Summary — a structured record of what was discussed, what was proposed, and what was approved. These summaries pass through the Approval Gate before entering the Spine's knowledge, ensuring your system's memory is always accurate and human-verified.",
+    answer: "When you interact with the Twin in the Twin, each conversation generates a Session Summary — a structured record of what was discussed, what was proposed, and what was approved. These summaries pass through the Governance before entering the Spine's knowledge, ensuring your system's memory is always accurate and human-verified.",
   },
 ];
 

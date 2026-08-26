@@ -71,7 +71,6 @@ export function BlurFade({
     hiddenFilter !== visibleFilter
 
   return (
-    /* @ts-expect-error framer-motion v12 AnimatePresence return type */
     <AnimatePresence>
       <motion.div
         ref={ref}

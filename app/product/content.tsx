@@ -120,7 +120,7 @@ const layers = [
     ],
   },
   {
-    tag: "Cognitive Layer",
+    tag: "Twin",
     icon: Sparkles,
     title: "Continuous detection engine bound to Spine events",
     color: { bg: "rgba(139,92,246,0.12)", glow: "rgba(139,92,246,0.25)", text: "#8b5cf6" },
@@ -142,7 +142,7 @@ const layers = [
     ],
   },
   {
-    tag: "Approval Gate",
+    tag: "Governance",
     icon: ShieldCheck,
     title: "The hard boundary between the Twin and execution",
     color: { bg: "rgba(239,68,68,0.08)", glow: "rgba(239,68,68,0.15)", text: "#f87171" },
@@ -212,7 +212,7 @@ export function ProductContent() {
             {...heroFade(0.4)}
             className="mx-auto mt-7 max-w-2xl text-[17px] font-medium leading-[1.6] tracking-[-0.02em] text-white/45"
           >
-            The Product layer is how your teams see, review, and act on the Spine&apos;s canonical truth. The Workspace, Cognitive Layer, Twin, and Approval Gate work together — the Spine cleans and unifies data; the Product turns that into a daily surface, an always-on detection engine, and a governed execution path that never bypasses human judgment.
+            The Product layer is how your teams see, review, and act on the Spine&apos;s canonical truth. The Workspace, Twin, Twin, and Governance work together — the Spine cleans and unifies data; the Product turns that into a daily surface, an always-on detection engine, and a governed execution path that never bypasses human judgment.
           </motion.p>
 
           <motion.div {...heroFade(0.52)} className="mt-9 flex flex-wrap items-center justify-center gap-3">
@@ -277,7 +277,7 @@ export function ProductContent() {
               <span className="text-primary">You approve.</span>
             </h2>
             <p className="mt-4 text-[15px] font-medium leading-[1.6] text-white/50">
-              The Spine cleans data. The Cognitive Layer detects patterns. The Twin proposes actions. You decide what executes.
+              The Spine cleans data. The Twin detects patterns. The Twin proposes actions. You decide what executes.
             </p>
           </motion.div>
 
@@ -295,7 +295,7 @@ export function ProductContent() {
             <div className="grid gap-px bg-white/[0.04] sm:grid-cols-2 lg:grid-cols-4">
               {[
                 { num: "1", color: "#2dd4bf", label: "Connect", title: "Your tools stay where they are", desc: "CRM, billing, support, projects — connect once via OAuth.", tags: ["CRM", "Billing", "Support", "Projects"] },
-                { num: "2", color: "#8b5cf6", label: "Detect", title: "One detection layer over your stack", desc: "Cognitive Layer watches normalized streams and finds patterns.", alerts: null },
+                { num: "2", color: "#8b5cf6", label: "Detect", title: "One detection layer over your stack", desc: "Twin watches normalized streams and finds patterns.", alerts: null },
                 { num: "3", color: "#fbbf24", label: "Propose", title: "Twin assembles evidence", desc: "Explains why, proposes what to do, shows its reasoning.", draft: true },
                 { num: "4", color: "#2dd4bf", label: "Approve", title: "Nothing happens without you", desc: "", alerts: [{ label: "Evidence linked to Spine entities", severity: "High" }, { label: "Confidence score: 87", severity: "Critical" }, { label: "Impact preview ready", severity: "High" }] },
               ].map((step, i) => (
@@ -397,8 +397,8 @@ export function ProductContent() {
           >
             <p className="mb-3 text-[12px] font-bold uppercase tracking-[0.14em] text-primary">Four components</p>
             <h2 className="text-[40px] font-semibold leading-[1.1] tracking-[-0.04em] text-white sm:text-[52px]">
-              Workspace. Cognitive Layer. Twin.{" "}
-              <span className="text-primary">Approval Gate.</span>
+              Workspace. Twin. Twin.{" "}
+              <span className="text-primary">Governance.</span>
             </h2>
           </motion.div>
 

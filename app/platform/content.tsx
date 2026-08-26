@@ -471,7 +471,7 @@ export function PlatformContent() {
             </p>
             <h2 className="text-[40px] font-semibold leading-[1.1] tracking-[-0.05em] text-white sm:text-[52px]">
               The Workspace is where you work.{" "}
-              <span className="text-primary">The Cognitive Layer is where AI serves you.</span>
+              <span className="text-primary">The Twin is where AI serves you.</span>
             </h2>
           </motion.div>
 
@@ -545,7 +545,7 @@ export function PlatformContent() {
                   Cognitive
                 </span>
                 <span className="text-[20px] font-bold tracking-[-0.04em] text-white">
-                  Cognitive Layer
+                  Twin
                 </span>
               </div>
               <p className="text-[14px] font-medium leading-[1.7] text-white/50">

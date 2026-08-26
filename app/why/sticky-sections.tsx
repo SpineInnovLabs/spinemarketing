@@ -51,7 +51,7 @@ const painItems = [
 const answerNodes = [
   { label: "Spine", icon: Layers, color: "#1BA784" },
   { label: "Workspace", icon: Brain, color: "#3b82f6" },
-  { label: "Cognitive Layer", icon: Zap, color: "#8b5cf6" },
+  { label: "Twin", icon: Zap, color: "#8b5cf6" },
   { label: "Govern Gate", icon: ShieldCheck, color: "#f59e0b" },
   { label: "Entity 360", icon: Eye, color: "#06b6d4" },
   { label: "Audit Trail", icon: ShieldAlert, color: "#ef4444" },

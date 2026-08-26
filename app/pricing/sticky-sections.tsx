@@ -27,7 +27,7 @@ const valueItems = [
   {
     tag: "Add intelligence",
     title: "Let The Twin surface what you're missing.",
-    description: "The Cognitive Layer monitors cross-system signals and proposes actions — with evidence. You approve everything.",
+    description: "The Twin monitors cross-system signals and proposes actions — with evidence. You approve everything.",
     icon: Brain,
     color: "#8b5cf6",
     features: ["Twin signal detection", "Evidence-backed proposals", "Governed approval queue"],

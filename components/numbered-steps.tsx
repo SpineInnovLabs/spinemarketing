@@ -19,7 +19,7 @@ type Step = {
 const defaultSteps: Step[] = [
   { num: "01", title: "Connect your tools", desc: "Link SaaS, webhooks, and MCP sources in minutes. No custom code required." },
   { num: "02", title: "Spine normalizes everything", desc: "Raw data flows through 8-stage normalization into canonical Entity 360 records." },
-  { num: "03", title: "Twin surfaces signals", desc: "The Cognitive Layer detects patterns and proposes actions with evidence." },
+  { num: "03", title: "Twin surfaces signals", desc: "The Twin detects patterns and proposes actions with evidence." },
   { num: "04", title: "You approve and execute", desc: "Review AI suggestions in the approval queue. Edit, approve, or reject with full audit trail." },
 ];
 

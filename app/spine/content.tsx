@@ -47,7 +47,7 @@ const hitlSteps = [
     desc: "Full-context analysis with confidence and alternatives.",
   },
   {
-    label: "Surfaced in the Cognitive Layer",
+    label: "Surfaced in the Twin",
     desc: "Recommendation appears with complete evidence trail.",
   },
   {
