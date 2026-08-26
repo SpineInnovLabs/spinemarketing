@@ -397,7 +397,7 @@ export function ProductContent() {
           >
             <p className="mb-3 text-[12px] font-bold uppercase tracking-[0.14em] text-primary">Four components</p>
             <h2 className="text-[40px] font-semibold leading-[1.1] tracking-[-0.04em] text-white sm:text-[52px]">
-              Workspace. Twin. Twin.{" "}
+              Workspace. Twin.{" "}
               <span className="text-primary">Governance.</span>
             </h2>
           </motion.div>
