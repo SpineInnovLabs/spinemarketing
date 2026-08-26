@@ -212,7 +212,7 @@ export function ProductContent() {
             {...heroFade(0.4)}
             className="mx-auto mt-7 max-w-2xl text-[17px] font-medium leading-[1.6] tracking-[-0.02em] text-white/45"
           >
-            The Product layer is how your teams see, review, and act on the Spine&apos;s canonical truth. The Workspace, Twin, Twin, and Governance work together — the Spine cleans and unifies data; the Product turns that into a daily surface, an always-on detection engine, and a governed execution path that never bypasses human judgment.
+            The Product layer is how your teams see, review, and act on the Spine&apos;s canonical truth. The Workspace, Twin, and Governance work together — the Spine cleans and unifies data; the Product turns that into a daily surface, an always-on detection engine, and a governed execution path that never bypasses human judgment.
           </motion.p>
 
           <motion.div {...heroFade(0.52)} className="mt-9 flex flex-wrap items-center justify-center gap-3">

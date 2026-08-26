@@ -65,7 +65,7 @@ const services = [
     bullets: [
       "Data strategy and SSOT design",
       "RevOps and CS workflow design",
-      "Governance governance configuration",
+      "Governance configuration",
       "Twin training and calibration",
       "Playbook documentation",
     ],

@@ -38,7 +38,7 @@ const planFeatures = [
     category: "Governance",
     features: [
       { name: "Basic risk alerts", starter: true, growth: true, command: true },
-      { name: "Governance governance", starter: false, growth: true, command: true },
+      { name: "Governance", starter: false, growth: true, command: true },
       { name: "Govern Gate (immutable log)", starter: false, growth: false, command: true },
       { name: "SSO & RBAC", starter: false, growth: false, command: true },
       { name: "Enterprise audit trail", starter: false, growth: false, command: true },
