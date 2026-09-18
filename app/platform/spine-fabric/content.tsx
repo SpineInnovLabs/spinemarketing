@@ -78,7 +78,7 @@ const pipeline = [
   { step: "08", name: "Emit", desc: "Trigger downstream views" },
 ];
 
-export function TheAdaptiveSpineContent() {
+export function SpineFabricContent() {
   return (
     <>
       <section className="relative overflow-hidden pb-28 pt-40 bg-dark-section">
@@ -91,7 +91,7 @@ export function TheAdaptiveSpineContent() {
             className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-[13px] font-semibold text-white/60"
           >
             <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-            Platform · The Adaptive Spine
+            Platform · The Spine Fabric
           </motion.div>
           <motion.h1
             {...heroFade(0.22)}
@@ -104,7 +104,7 @@ export function TheAdaptiveSpineContent() {
             {...heroFade(0.38)}
             className="mx-auto mt-7 max-w-xl text-[17px] font-medium leading-[1.55] tracking-[-0.02em] text-white/50"
           >
-            A vendor-neutral data layer converting fragmented SaaS into one versioned source of truth.
+            The shared contextual operating layer. Spine Fabric unifies entities, events, evidence, and decisions from every connected tool — one versioned source of truth that humans and AI both work from.
           </motion.p>
           <motion.div {...heroFade(0.5)} className="mt-9 flex flex-wrap items-center justify-center gap-3">
             <Link href="/contact?intent=demo" className="inline-flex h-11 items-center rounded-full bg-primary px-6 text-[14px] font-semibold tracking-[-0.02em] text-white transition-opacity hover:opacity-90">

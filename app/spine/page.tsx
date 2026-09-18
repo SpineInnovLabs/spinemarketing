@@ -8,11 +8,11 @@ import { BreadcrumbJsonLd } from "@/components/structured-data"
 export const metadata: Metadata = {
   title: "Spine & Intelligence | SpineWorkspace",
   description:
-    "Vendor-neutral data backbone. Unifies every app. AI reasons with evidence. You approve.",
+    "Spine Fabric: the shared contextual layer under your business. Unifies every app. AI reasons with evidence. You approve.",
   alternates: { canonical: "/spine" },
   openGraph: {
     title: "Spine & Intelligence | SpineWorkspace",
-    description: "Vendor-neutral data backbone. Unifies every app. AI reasons with evidence. You approve.",
+    description: "Spine Fabric: the shared contextual layer under your business. Unifies every app. AI reasons with evidence. You approve.",
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "SpineWorkspace" }],
   },
 }

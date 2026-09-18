@@ -260,7 +260,7 @@ export function HeroSection() {
           >
             <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
             <span className="text-[13px] font-medium tracking-wide text-white/60">
-              The Knowledge Workspace over the Spine
+              The self-organizing Knowledge Workspace
             </span>
           </motion.div>
 

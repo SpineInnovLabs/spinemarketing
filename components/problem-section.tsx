@@ -21,10 +21,10 @@ export function ProblemSection() {
           className="mx-auto max-w-2xl text-center"
         >
           <h2 className="section-heading text-[rgba(246,239,239,1)]">
-            The Core Problem of 2025
+            Your work should not start from zero
           </h2>
           <p className="mt-6 text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">
-            You are the bridge. And it&apos;s exhausting.
+            The information already exists. It&apos;s just fragmented. So you become the bridge — and it&apos;s exhausting.
           </p>
         </motion.div>
 

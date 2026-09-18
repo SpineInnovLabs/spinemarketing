@@ -11,7 +11,7 @@ const footerColumns: {
   {
     heading: "Platform",
     links: [
-      { name: "The Adaptive Spine", href: "/platform/the-adaptive-spine" },
+      { name: "Spine Fabric", href: "/platform/spine-fabric" },
       { name: "How it Works", href: "/platform/how-it-works" },
       { name: "Integrations", href: "/platform/integrations" },
       { name: "Security", href: "/platform/security" },
@@ -70,7 +70,7 @@ export function Footer() {
                 </span>
               </Link>
               <p className="mt-5 max-w-[280px] text-[14px] font-medium leading-[1.7] text-white/40">
-                The shared work environment where humans and AI work together. Your tools connected. Your data unified. You decide what happens. Built by IntegrateWise.
+                The self-organizing workspace where humans and AI work from the same live business context. The Spine connects your tools and preserves continuity — you decide what happens. Built by IntegrateWise.
               </p>
 
               <div className="mt-6 flex items-center gap-3">

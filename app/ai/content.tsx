@@ -130,8 +130,8 @@ export function AIContent() {
               }}
               className="text-[48px] font-semibold leading-[1em] tracking-[-0.05em] text-white sm:text-[54px] lg:text-[64px]"
             >
-              Your AI copilot{" "}
-              <span className="text-primary">attached to the detection layer.</span>
+              Your personal AI operator,{" "}
+              <span className="text-primary">grounded in your business.</span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 12 }}
@@ -145,7 +145,7 @@ export function AIContent() {
               }}
               className="mx-auto mt-8 max-w-2xl text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-white/55"
             >
-              Assembles evidence, explains why a signal exists, proposes concrete actions. Operates on the Spine&apos;s truth, not screen-scraped guesses. Always shows its reasoning before asking for approval.
+              Assembles evidence, explains why a signal exists, proposes concrete actions. Operates on governed context from the Spine Fabric, not screen-scraped guesses. Always shows its reasoning before asking for approval. And through the Spine Agent Network, it coordinates specialist agents behind the scenes — you talk to one intelligence, not a menu of bots.
             </motion.p>
           </div>
         </div>
@@ -291,8 +291,8 @@ export function AIContent() {
             className="mx-auto max-w-2xl text-center"
           >
             <h2 className="section-heading">
-              The Twin lives in the <span className="text-primary">Twin</span>.
-              Actions execute in the <span className="text-primary">Workspace</span>.
+              The Twin <span className="text-primary">proposes</span>.
+              The Workspace <span className="text-primary">executes</span>.
             </h2>
             <p className="mt-4 text-[15px] font-medium text-muted-foreground">
               The Twin surfaces insights. When you approve, the Workspace executes.
@@ -301,7 +301,7 @@ export function AIContent() {
           <div className="mx-auto mt-12 grid max-w-3xl gap-4 sm:grid-cols-3">
             {[
               {
-                label: "Twin — The Twin proposes",
+                label: "The Twin proposes",
                 desc: "Signals surface with evidence. You decide.",
               },
               {
@@ -384,7 +384,7 @@ export function AIContent() {
               {
                 num: "04",
                 title: "Learns without polluting",
-                desc: "Session summaries go through the Governance.",
+                desc: "Session summaries go through Governance.",
               },
               {
                 num: "05",
@@ -450,7 +450,7 @@ export function AIContent() {
               </span>
             </h2>
             <p className="mt-6 text-[15px] font-medium leading-[1.5] text-white/40">
-              The Governance can&apos;t be bypassed or turned off. It&apos;s how the product is built.
+              Governance can&apos;t be bypassed or turned off. It&apos;s how the product is built.
             </p>
           </motion.div>
 
@@ -511,7 +511,7 @@ export function AIContent() {
               }}
               asChild
             >
-              <Link href="/contact?intent=demo">See the Governance in action</Link>
+              <Link href="/contact?intent=demo">See Governance in action</Link>
             </Button>
           </motion.div>
         </div>

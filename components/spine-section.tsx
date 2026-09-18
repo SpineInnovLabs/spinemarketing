@@ -28,7 +28,7 @@ export function SpineSection() {
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-emerald-300 text-glow-emerald">connects everything.</span>
           </h2>
           <p className="mt-6 text-[17px] font-medium leading-relaxed text-white/35">
-            Apps plug in. Data normalizes. Truth stays intact — even when tools change.
+            Your CRM knows the customer. Your project system knows the work. None of them know the complete story — the Spine connects the pieces into one operational context. Apps plug in. Data normalizes. Truth stays intact.
           </p>
         </motion.div>
 

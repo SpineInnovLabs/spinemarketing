@@ -4,33 +4,33 @@ import { Footer } from "@/components/footer"
 import { FinalCTA } from "@/components/final-cta"
 import { IntegrationShowcase } from "@/components/integration-showcase"
 import { TestimonialsSection } from "@/components/testimonials-section"
-import { TheAdaptiveSpineContent } from "./content"
+import { SpineFabricContent } from "./content"
 import { SpineStickyScroll } from "./sticky-sections"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
-  title: "The Adaptive Spine | SpineWorkspace Platform",
+  title: "Spine Fabric | SpineWorkspace Platform",
   description:
-    "The Adaptive Spine — vendor-neutral data layer converting fragmented SaaS into one versioned source of truth.",
-  alternates: { canonical: "/platform/the-adaptive-spine" },
+    "Spine Fabric — the shared contextual operating layer unifying entities, events, evidence, and decisions from every connected tool.",
+  alternates: { canonical: "/platform/spine-fabric" },
   openGraph: {
-    title: "The Adaptive Spine | SpineWorkspace Platform",
-    description: "The Adaptive Spine — vendor-neutral data layer converting fragmented SaaS into one versioned source of truth.",
+    title: "Spine Fabric | SpineWorkspace Platform",
+    description: "Spine Fabric — the shared contextual operating layer unifying entities, events, evidence, and decisions from every connected tool.",
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "SpineWorkspace" }],
   },
 }
 
-export default function TheAdaptiveSpinePage() {
+export default function SpineFabricPage() {
   return (
     <div className="min-h-screen bg-dark-section">
       <BreadcrumbJsonLd items={[
         { name: "Home", url: "https://integratewise.ai" },
         { name: "Platform", url: "https://integratewise.ai/platform" },
-        { name: "The Adaptive Spine", url: "https://integratewise.ai/platform/the-adaptive-spine" },
+        { name: "Spine Fabric", url: "https://integratewise.ai/platform/spine-fabric" },
       ]} />
       <Header />
       <main id="main">
-        <TheAdaptiveSpineContent />
+        <SpineFabricContent />
         <SpineStickyScroll />
         <IntegrationShowcase
           tag="Works With Everything"

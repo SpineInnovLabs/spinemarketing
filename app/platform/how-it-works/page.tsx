@@ -9,11 +9,11 @@ import { BreadcrumbJsonLd } from "@/components/structured-data"
 export const metadata: Metadata = {
   title: "How it Works | SpineWorkspace Platform",
   description:
-    "Data flows, identity resolution, knowledge base, and the triage mechanism that powers the Adaptive Spine.",
+    "Data flows, identity resolution, knowledge base, and the triage mechanism that powers the Spine Fabric.",
   alternates: { canonical: "/platform/how-it-works" },
   openGraph: {
     title: "How it Works | SpineWorkspace Platform",
-    description: "Data flows, identity resolution, knowledge base, and the triage mechanism that powers the Adaptive Spine.",
+    description: "Data flows, identity resolution, knowledge base, and the triage mechanism that powers the Spine Fabric.",
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "SpineWorkspace" }],
   },
 }

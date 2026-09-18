@@ -105,7 +105,7 @@ export function PlatformStickyScroll() {
     <>
       <StickyScroll
         tag="Deep Dive"
-        heading={<>Five layers of the <span className="text-primary">Adaptive Spine.</span></>}
+        heading={<>Five layers of the <span className="text-primary">Spine Fabric.</span></>}
         subheading="Scroll to explore each layer of the architecture that adapts to your tools."
         items={scrollItems}
       />

@@ -81,7 +81,7 @@ export function SpineStickyScroll() {
   return (
     <StickyScroll
       tag="Architecture Deep Dive"
-      heading={<>Five pillars of the <span className="text-primary">Adaptive Spine.</span></>}
+      heading={<>Five pillars of the <span className="text-primary">Spine Fabric.</span></>}
       subheading="Scroll to explore how the Spine maintains one truth across all your connected tools."
       items={items}
     />

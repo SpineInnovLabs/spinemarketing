@@ -27,7 +27,7 @@ export function SoftwareApplicationJsonLd() {
     operatingSystem: "Web",
     url: "https://integratewise.ai",
     description:
-      "The shared work environment where humans and AI work together. Built by IntegrateWise.",
+      "The self-organizing Knowledge Workspace where people and AI work from the same live business context. Built by IntegrateWise — the operational continuity platform.",
     offers: {
       "@type": "Offer",
       price: "49",

@@ -14,6 +14,11 @@
         "source": "/changelog",
         "destination": "https://changelog.integratewise.ai/",
         "type": 301
+      },
+      {
+        "source": "/platform/the-adaptive-spine",
+        "destination": "/platform/spine-fabric",
+        "type": 301
       }
     ],
     "headers": [

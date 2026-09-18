@@ -261,7 +261,7 @@ export function PlatformContent() {
             {...heroFade(0.38)}
             className="mx-auto mt-7 max-w-2xl text-[17px] font-medium leading-[1.6] tracking-[-0.02em] text-white/45"
           >
-            The Adaptive Spine ingests fragmented SaaS data, runs it through a governed normalization pipeline, and emits schema-stable entities that the Product layer consumes. Connect once. Never re-plumb.
+            The Spine Fabric ingests fragmented SaaS data, runs it through a governed normalization pipeline, and emits schema-stable entities that the Product layer consumes. Connect once. Never re-plumb.
           </motion.p>
 
           <motion.div

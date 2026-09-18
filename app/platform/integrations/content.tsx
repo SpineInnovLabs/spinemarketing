@@ -207,8 +207,8 @@ export function PlatformIntegrationsContent() {
               Auto-upgrade when APIs change. Schema drift handled in the mapping layer.
             </p>
             <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
-              <Link href="/platform/the-adaptive-spine" className="inline-flex h-10 items-center rounded-full border border-white/15 px-5 text-[13px] font-semibold text-white/60 hover:border-white/30 hover:text-white transition-colors">
-                The Adaptive Spine →
+              <Link href="/platform/spine-fabric" className="inline-flex h-10 items-center rounded-full border border-white/15 px-5 text-[13px] font-semibold text-white/60 hover:border-white/30 hover:text-white transition-colors">
+                The Spine Fabric →
               </Link>
             </div>
           </motion.div>

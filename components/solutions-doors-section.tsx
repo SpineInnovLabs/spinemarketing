@@ -473,7 +473,7 @@ const sectionHeading = (
     </h2>
     <p className="mt-4 text-[16px] font-medium leading-[1.6] text-white/45">
       One Knowledge Workspace. Different views for individuals, account teams,
-      and operations leaders — all powered by the same Spine and AI Twin.
+      and operations leaders — all powered by the same Spine Fabric and Twin.
     </p>
   </motion.div>
 );

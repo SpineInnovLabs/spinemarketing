@@ -169,7 +169,7 @@ export function CampaignGalleryContent() {
               {...fade(0.3)}
               className="mx-auto mt-8 max-w-2xl text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-white/55"
             >
-              Architecture blueprints and 36 campaign designs — showing how the Adaptive Spine connects every tool into one governed workspace for Account Success, Business Ops, and Personal Ops.
+              Architecture blueprints and 36 campaign designs — showing how the Spine Fabric connects every tool into one governed workspace for Account Success, Business Ops, and Personal Ops.
             </motion.p>
           </div>
         </div>
@@ -179,7 +179,7 @@ export function CampaignGalleryContent() {
         <div className="mx-auto max-w-[1200px]">
           <motion.div {...fade()} className="mb-8 flex items-center gap-3">
             <h2 className="text-[22px] font-semibold tracking-[-0.03em] text-white">
-              The Adaptive Spine — Architecture Blueprints
+              The Spine Fabric — Architecture Blueprints
             </h2>
             <span className="rounded-full bg-primary/15 px-2.5 py-0.5 text-[11px] font-bold text-primary uppercase tracking-wider">
               Core
@@ -193,23 +193,23 @@ export function CampaignGalleryContent() {
             {[
               {
                 src: "/images/architecture/adaptive-spine-intelligence.png",
-                title: "The Adaptive Spine for Enterprise Intelligence",
-                desc: "Problem vs Solution — tool sprawl and ungrounded AI risk on the left, the Adaptive Spine with governed cognitive loop on the right. Three data flows (Structured, Unstructured, AI Memory) converge at the Truth Boundary.",
+                title: "The Spine Fabric for Enterprise Intelligence",
+                desc: "Problem vs Solution — tool sprawl and ungrounded AI risk on the left, the Spine Fabric with governed cognitive loop on the right. Three data flows (Structured, Unstructured, AI Memory) converge at the Truth Boundary.",
               },
               {
                 src: "/images/architecture/spine-architecture.png",
                 title: "The Spine — Powering Governed, Context-Rich AI",
-                desc: "Full architecture showing the Workspace, Twin, Adaptive Spine as single source of truth, the Cognitive Loop (Think → Govern → Act → Adjust), and the $8M account save proof point.",
+                desc: "Full architecture showing the Workspace, Twin, Spine Fabric as single source of truth, the Cognitive Loop (Think → Govern → Act → Adjust), and the $8M account save proof point.",
               },
               {
                 src: "/images/architecture/governed-enterprise-ai.png",
                 title: "Cognitive Operating System for Governed Enterprise AI",
-                desc: "End-to-end data flow: scattered tools → Adaptive Spine (SSOT) normalization → Governance Gate → HITL approval → measurable results. The 12×11 matrix delivers truth across functions and industries.",
+                desc: "End-to-end data flow: scattered tools → Spine Fabric (SSOT) normalization → Governance Gate → HITL approval → measurable results. The 12×11 matrix delivers truth across functions and industries.",
               },
               {
                 src: "/images/architecture/cognitive-operating-system.png",
                 title: "Three Planes of Data Integration",
-                desc: "Flow A (Structured Tool Data), Flow B (Document Evidence), Flow C (AI Chat History) — all feeding the Adaptive Spine. The 8-Stage Normalization Pipeline, Governed Cognitive Loop, and Entity 360 View.",
+                desc: "Flow A (Structured Tool Data), Flow B (Document Evidence), Flow C (AI Chat History) — all feeding the Spine Fabric. The 8-Stage Normalization Pipeline, Governed Cognitive Loop, and Entity 360 View.",
               },
             ].map((arch, i) => (
               <motion.div
@@ -248,10 +248,10 @@ export function CampaignGalleryContent() {
 
           <motion.div {...fade(0.3)} className="mt-6 flex items-center justify-center gap-4">
             <Link
-              href="/platform/the-adaptive-spine"
+              href="/platform/spine-fabric"
               className="text-[13px] font-semibold text-primary/80 hover:text-primary transition flex items-center gap-1"
             >
-              Explore the Adaptive Spine
+              Explore the Spine Fabric
               <ChevronRight className="h-3.5 w-3.5" />
             </Link>
             <span className="text-white/10">|</span>

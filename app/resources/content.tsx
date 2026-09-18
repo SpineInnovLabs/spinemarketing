@@ -49,9 +49,9 @@ const featuredResources = [
 const deepDives = [
   {
     icon: Layers,
-    title: "The Adaptive Spine",
+    title: "The Spine Fabric",
     desc: "How the data architecture unifies fragmented SaaS.",
-    href: "/platform/the-adaptive-spine",
+    href: "/platform/spine-fabric",
   },
   {
     icon: Shield,

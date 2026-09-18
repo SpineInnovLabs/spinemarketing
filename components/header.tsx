@@ -64,7 +64,7 @@ const navigation: NavItem[] = [
     label: "Platform",
     href: "/platform",
     items: [
-      { name: "The Adaptive Spine", href: "/platform/the-adaptive-spine", icon: Database },
+      { name: "Spine Fabric", href: "/platform/spine-fabric", icon: Database },
       { name: "How it Works", href: "/platform/how-it-works", icon: GitBranch },
       { name: "Integrations", href: "/platform/integrations", icon: Plug },
       { name: "Security", href: "/platform/security", icon: ShieldCheck },
@@ -75,7 +75,7 @@ const navigation: NavItem[] = [
     label: "Product",
     href: "/product",
     items: [
-      { name: "The Adaptive Workspace", href: "/product/the-adaptive-workspace", icon: Cpu },
+      { name: "The Workspace", href: "/product/the-adaptive-workspace", icon: Cpu },
       { name: "How it Works", href: "/product/how-it-works", icon: TrendingUp },
       { name: "Governance & Twin", href: "/product/approval-gate-twin", icon: UserCheck },
       { name: "Security", href: "/product/security", icon: ShieldCheck },

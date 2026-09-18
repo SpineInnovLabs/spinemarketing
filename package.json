@@ -36,7 +36,13 @@
   "pnpm": {
     "onlyBuiltDependencies": [
       "@tailwindcss/oxide",
-      "sharp"
+      "esbuild",
+      "sharp",
+      "@firebase/util",
+      "protobufjs",
+      "bufferutil",
+      "utf-8-validate",
+      "core-js"
     ],
     "ignoredBuiltDependencies": [
       "esbuild"
