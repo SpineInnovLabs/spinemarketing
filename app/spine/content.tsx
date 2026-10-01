@@ -18,7 +18,7 @@ const spineCapabilities = [
   {
     icon: Database,
     title: "Structured data flows",
-    desc: "CRM, billing, support, and usage data flowing into the Spine.",
+    desc: "CRM, billing, support, and usage data flowing into Spine Fabric.",
   },
   {
     icon: MessageSquare,
@@ -40,7 +40,7 @@ const spineCapabilities = [
 const hitlSteps = [
   {
     label: "Signal detected",
-    desc: "Cross-system pattern surfaces from the Spine.",
+    desc: "Cross-system pattern surfaces from Spine Fabric.",
   },
   {
     label: "AI reasons with evidence",
@@ -98,7 +98,7 @@ export function SpineContent() {
     <>
       {/* Hero */}
       <section
-        className="relative overflow-hidden pb-24 pt-40 bg-dark-section"
+        className="relative overflow-hidden pb-24 pt-40 bg-white"
       >
         <div className="mx-auto max-w-[800px] px-4 text-center">
           <motion.div
@@ -130,7 +130,7 @@ export function SpineContent() {
         </div>
       </section>
 
-      {/* What the Spine does */}
+      {/* What Spine Fabric does */}
       <section className="arvio-section dark-section">
         <div className="mx-auto max-w-[1100px]">
           <motion.div
@@ -178,7 +178,7 @@ export function SpineContent() {
 
       {/* HITL flow */}
       <section
-        className="arvio-section dark-section bg-dark-section"
+        className="arvio-section dark-section bg-white"
       >
         <div className="mx-auto max-w-[1100px]">
           <motion.div
@@ -239,7 +239,7 @@ export function SpineContent() {
             className="mx-auto max-w-2xl text-center"
           >
             <h2 className="section-heading">
-              What makes the Spine{" "}
+              What makes Spine Fabric{" "}
               <span className="text-primary">different</span>
             </h2>
           </motion.div>

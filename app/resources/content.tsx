@@ -88,7 +88,7 @@ const deepDives = [
 export function ResourcesContent() {
   return (
     <>
-      <section className="relative overflow-hidden bg-dark-section">
+      <section className="relative overflow-hidden bg-white">
         <div className="mx-auto max-w-[1100px] px-6 pt-[180px] pb-[100px]">
           <div className="mx-auto max-w-2xl text-center">
             <motion.div

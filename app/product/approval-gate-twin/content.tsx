@@ -95,7 +95,7 @@ const emergencyControls = [
 export function ApprovalGateTwinContent() {
   return (
     <>
-      <section className="relative overflow-hidden pb-28 pt-40 bg-dark-section">
+      <section className="relative overflow-hidden pb-28 pt-40 bg-white">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute -top-32 left-1/4 w-[700px] h-[700px] rounded-full blur-[220px]" style={{ background: "rgba(27,167,132,0.07)" }} />
         </div>
@@ -284,7 +284,7 @@ export function ApprovalGateTwinContent() {
         </div>
       </section>
 
-      <section className="arvio-section dark-section bg-dark-section">
+      <section className="arvio-section dark-section bg-white">
         <div className="mx-auto max-w-[680px] px-4 text-center">
           <motion.div {...fade(0)}>
             <UserCheck className="mx-auto mb-4 h-7 w-7 text-primary" />

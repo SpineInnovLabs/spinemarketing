@@ -19,8 +19,8 @@ export default function DocsPage() {
   return (
     <div className="min-h-screen bg-background">
       <BreadcrumbJsonLd items={[
-        { name: "Home", url: "https://integratewise.ai" },
-        { name: "Documentation", url: "https://integratewise.ai/docs" },
+        { name: "Home", url: "https://spineworkspace.com" },
+        { name: "Documentation", url: "https://spineworkspace.com/docs" },
       ]} />
       <Header />
       <main id="main">
@@ -31,7 +31,7 @@ export default function DocsPage() {
           </p>
           <div className="mt-16 rounded-2xl border border-border/50 bg-muted/30 p-12 text-center">
             <p className="text-[17px] font-semibold tracking-[-0.03em]">Coming soon</p>
-            <p className="mt-2 text-[15px] font-medium text-muted-foreground">Documentation is being written. In the meantime, <a href="mailto:connect@integratewise.ai" className="text-primary hover:underline">reach out</a> and we&apos;ll help you directly.</p>
+            <p className="mt-2 text-[15px] font-medium text-muted-foreground">Documentation is being written. In the meantime, <a href="mailto:connect@spineworkspace.com" className="text-primary hover:underline">reach out</a> and we&apos;ll help you directly.</p>
           </div>
         </section>
         <FinalCTA />

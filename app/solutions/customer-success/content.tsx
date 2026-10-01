@@ -9,7 +9,7 @@ export function CustomerSuccessRoleContent() {
       headline="Walk into every call already knowing what changed."
       subheadline="Your accounts, their health, their history — one calm view that tells you where to spend your time today."
       ctaLabel="See your command center →"
-      ctaHref="/account-success"
+      ctaHref="https://account-success.spineworkspace.com"
       accentColor="rgba(45,212,191,0.5)"
       beforeAfter={[
         {

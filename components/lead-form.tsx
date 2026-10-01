@@ -7,14 +7,31 @@ import { Textarea } from "@/components/ui/textarea"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 
-export type LeadIntent = "contact" | "demo" | "pricing"
+export type LeadIntent =
+  | "contact"
+  | "demo"
+  | "pricing"
+  | "design-partner"
+  | "partnership"
+  | "media"
+  | "careers"
+  | "security"
 
-const MAIL = "connect@integratewise.ai"
+const MAIL = "connect@spineworkspace.com"
+
+const INTENT_LABELS: Record<LeadIntent, string> = {
+  contact: "General contact",
+  demo: "Book a demo",
+  pricing: "Pricing / plan question",
+  "design-partner": "Design partner interest",
+  partnership: "Partnership / ecosystem",
+  media: "Media / speaking",
+  careers: "Hiring / careers",
+  security: "Security inquiry",
+}
 
 function intentLabel(intent: LeadIntent): string {
-  if (intent === "demo") return "Book a demo"
-  if (intent === "pricing") return "Pricing / plan question"
-  return "General contact"
+  return INTENT_LABELS[intent]
 }
 
 function Label({ htmlFor, children }: { htmlFor: string; children: React.ReactNode }) {
@@ -124,9 +141,9 @@ export function LeadForm({ defaultIntent = "contact" }: { defaultIntent?: LeadIn
               onChange={(e) => setIntent(e.target.value as LeadIntent)}
               className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
             >
-              <option value="contact">General contact</option>
-              <option value="demo">Book a demo</option>
-              <option value="pricing">Pricing / plans</option>
+              {(Object.keys(INTENT_LABELS) as LeadIntent[]).map((key) => (
+                <option key={key} value={key}>{INTENT_LABELS[key]}</option>
+              ))}
             </select>
           </div>
 

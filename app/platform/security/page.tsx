@@ -17,9 +17,9 @@ export default function PlatformSecurityPage() {
   return (
     <>
       <BreadcrumbJsonLd items={[
-        { name: "Home", url: "https://integratewise.ai" },
-        { name: "Platform", url: "https://integratewise.ai/platform" },
-        { name: "Security", url: "https://integratewise.ai/platform/security" },
+        { name: "Home", url: "https://spineworkspace.com" },
+        { name: "Platform", url: "https://spineworkspace.com/platform" },
+        { name: "Security", url: "https://spineworkspace.com/platform/security" },
       ]} />
       <PlatformSecurityContent />
     </>

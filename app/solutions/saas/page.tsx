@@ -19,11 +19,11 @@ export const metadata: Metadata = {
 
 export default function SaasPage() {
   return (
-    <div className="min-h-screen bg-dark-section">
+    <div className="min-h-screen bg-white">
       <BreadcrumbJsonLd items={[
-        { name: "Home", url: "https://integratewise.ai" },
-        { name: "Solutions", url: "https://integratewise.ai/solutions" },
-        { name: "SaaS", url: "https://integratewise.ai/solutions/saas" },
+        { name: "Home", url: "https://spineworkspace.com" },
+        { name: "Solutions", url: "https://spineworkspace.com/solutions" },
+        { name: "SaaS", url: "https://spineworkspace.com/solutions/saas" },
       ]} />
       <Header />
       <main id="main">

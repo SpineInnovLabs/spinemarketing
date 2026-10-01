@@ -4,11 +4,14 @@ import { motion } from "framer-motion";
 import { ShieldCheck, Eye, Users, FileText, AlertTriangle, RotateCcw } from "lucide-react";
 import { Header } from "@/components/header-client";
 import { Footer } from "@/components/footer";
+import { PageHero } from "@/components/marketing/page-hero";
+import { Section, SectionHeader } from "@/components/marketing/section";
+import { FinalCTA } from "@/components/final-cta";
 import { ProductSecurityStickyScroll } from "./sticky-sections";
 
 const trustDashboard = [
-  { zone: "Green Zone", color: "text-emerald-400", border: "border-emerald-500/20", desc: "AI reasoning, scoring, and evidence compilation. Twin operates freely here." },
-  { zone: "Red Zone", color: "text-red-400", border: "border-red-500/20", desc: "System writes and communications. Requires explicit human approval." },
+  { zone: "Green Zone", tone: "text-[#0176D3]", border: "border-[#0176D3]/20", bg: "bg-[#F3F6F9]", desc: "AI reasoning, scoring, and evidence compilation. Twin operates freely here." },
+  { zone: "Red Zone", tone: "text-red-600", border: "border-red-200", bg: "bg-red-50/50", desc: "System writes and communications. Requires explicit human approval." },
 ];
 
 const sovereigntyControls = [
@@ -18,9 +21,9 @@ const sovereigntyControls = [
 ];
 
 const auditFeatures = [
-  { icon: FileText, color: "text-blue-400", title: "Immutable Decision Log", desc: "Complete history of who approved what and when." },
-  { icon: Eye, color: "text-violet-400", title: "Session Replay", desc: "Reconstruct exact Entity 360 state at any approval time." },
-  { icon: RotateCcw, color: "text-amber-400", title: "Reversal Tracking", desc: "Full log of rolled-back actions with reason codes." },
+  { icon: FileText, title: "Immutable Decision Log", desc: "Complete history of who approved what and when." },
+  { icon: Eye, title: "Session Replay", desc: "Reconstruct exact Entity 360 state at any approval time." },
+  { icon: RotateCcw, title: "Reversal Tracking", desc: "Full log of rolled-back actions with reason codes." },
 ];
 
 const rbacItems = [
@@ -30,107 +33,95 @@ const rbacItems = [
 ];
 
 const emergencyItems = [
-  { icon: AlertTriangle, color: "text-red-400", title: "Kill Switch", desc: "Immediate halt of all Twin operations. One click." },
-  { icon: Eye, color: "text-violet-400", title: "Breach Response", desc: "Automated access logs for forensic analysis." },
-  { icon: RotateCcw, color: "text-cyan-400", title: "Recovery Interface", desc: "Point-in-time Spine restoration from backups." },
+  { icon: AlertTriangle, title: "Kill Switch", desc: "Immediate halt of all Twin operations. One click." },
+  { icon: Eye, title: "Breach Response", desc: "Automated access logs for forensic analysis." },
+  { icon: RotateCcw, title: "Recovery Interface", desc: "Point-in-time Spine restoration from backups." },
 ];
+
+const fade = (delay = 0) => ({
+  initial: { opacity: 0, y: 16 } as const,
+  whileInView: { opacity: 1, y: 0 } as const,
+  viewport: { once: true, margin: "-60px" },
+  transition: { type: "spring" as const, damping: 18, stiffness: 70, delay },
+});
 
 export function ProductSecurityContent() {
   return (
-    <div className="min-h-screen text-white" style={{ background: "#05070A" }}>
+    <div className="min-h-screen bg-white">
       <Header />
+      <main id="main">
+        <PageHero
+          badge="Product Security"
+          headline="Governance UI. Audit logs. Compliance."
+          subhead="Visualize where AI ends and human control begins — with full forensic context in SpineWorkspace."
+          primaryCta={{ label: "Contact security team", href: "/contact?intent=security" }}
+        />
 
-      <section className="pt-32 pb-20 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 text-sm text-white/60 mb-8">
-              <ShieldCheck className="w-4 h-4" />
-              Security
-            </div>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white to-white/60 bg-clip-text text-transparent">
-              Governance UI.<br />Audit logs. Compliance.
-            </h1>
-            <p className="text-xl text-white/60 max-w-2xl mx-auto leading-relaxed">
-              Visualize where AI ends and human control begins — with full forensic context.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      <section className="pb-24 px-6">
-        <div className="max-w-5xl mx-auto space-y-8">
-
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}
-            className="rounded-2xl border border-white/10 bg-white/[0.03] p-8">
-            <h2 className="text-lg font-bold mb-2">Trust & Governance Dashboard</h2>
-            <p className="text-white/50 text-sm mb-6 leading-relaxed">Every operation is categorised into one of two zones.</p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-6">
-              {trustDashboard.map((t) => (
-                <div key={t.zone} className={`rounded-xl border ${t.border} bg-white/[0.02] p-6`}>
-                  <div className={`font-semibold text-sm mb-2 ${t.color}`}>{t.zone}</div>
-                  <p className="text-white/50 text-sm leading-relaxed">{t.desc}</p>
-                </div>
-              ))}
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              {sovereigntyControls.map((s) => (
-                <div key={s.title} className="rounded-xl border border-white/8 bg-white/[0.02] p-5">
-                  <div className="font-semibold mb-2 text-sm">{s.title}</div>
-                  <p className="text-white/50 text-sm leading-relaxed">{s.desc}</p>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-
-          <div>
-            <h2 className="text-sm font-bold mb-5 text-white/50 uppercase tracking-widest">Approval Audit Center</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-              {auditFeatures.map((a, i) => (
-                <motion.div key={a.title} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.07 }}
-                  className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
-                  <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-4">
-                    <a.icon className={`w-5 h-5 ${a.color}`} />
-                  </div>
-                  <div className="font-semibold mb-2">{a.title}</div>
-                  <p className="text-white/50 text-sm leading-relaxed">{a.desc}</p>
-                </motion.div>
-              ))}
-            </div>
+        <Section variant="muted">
+          <SectionHeader label="Trust & Governance Dashboard" headline="Every operation is categorised into one of two zones" />
+          <div className="grid gap-4 md:grid-cols-2 mb-6">
+            {trustDashboard.map((t) => (
+              <div key={t.zone} className={`rounded-md border ${t.border} ${t.bg} p-6`}>
+                <div className={`font-semibold text-sm mb-2 ${t.tone}`}>{t.zone}</div>
+                <p className="text-[14px] leading-relaxed text-[#444]">{t.desc}</p>
+              </div>
+            ))}
           </div>
-
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}
-            className="rounded-2xl border border-white/10 bg-white/[0.03] p-8">
-            <h2 className="text-lg font-bold mb-6 flex items-center gap-3"><Users className="w-5 h-5 text-blue-400" />Access Control Matrix</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-              {rbacItems.map((r) => (
-                <div key={r.title} className="rounded-xl border border-white/8 bg-white/[0.02] p-5">
-                  <div className="font-semibold mb-2 text-sm">{r.title}</div>
-                  <p className="text-white/50 text-sm leading-relaxed">{r.desc}</p>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-
-          <div>
-            <h2 className="text-sm font-bold mb-5 text-white/50 uppercase tracking-widest">Emergency Protocols</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-              {emergencyItems.map((e, i) => (
-                <motion.div key={e.title} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.07 }}
-                  className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
-                  <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-4">
-                    <e.icon className={`w-5 h-5 ${e.color}`} />
-                  </div>
-                  <div className="font-semibold mb-2">{e.title}</div>
-                  <p className="text-white/50 text-sm leading-relaxed">{e.desc}</p>
-                </motion.div>
-              ))}
-            </div>
+          <div className="grid gap-4 md:grid-cols-3">
+            {sovereigntyControls.map((s, i) => (
+              <motion.div key={s.title} {...fade(i * 0.05)} className="rounded-md border border-[#E5E5E5] bg-white p-5">
+                <div className="font-semibold text-[#032D60] mb-2 text-sm">{s.title}</div>
+                <p className="text-[14px] leading-relaxed text-[#444]">{s.desc}</p>
+              </motion.div>
+            ))}
           </div>
+        </Section>
 
-        </div>
-      </section>
+        <Section>
+          <SectionHeader label="Approval Audit Center" headline="Full forensic context on every decision" />
+          <div className="grid gap-4 md:grid-cols-3">
+            {auditFeatures.map((a, i) => (
+              <motion.div key={a.title} {...fade(i * 0.06)} className="rounded-md border border-[#E5E5E5] bg-white p-6 shadow-[0_1px_2px_rgba(0,0,0,0.04)]">
+                <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-md bg-[#F3F6F9]">
+                  <a.icon className="h-5 w-5 text-[#0176D3]" />
+                </div>
+                <div className="font-semibold text-[#032D60] mb-2">{a.title}</div>
+                <p className="text-[14px] leading-relaxed text-[#444]">{a.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </Section>
 
-      <ProductSecurityStickyScroll />
+        <Section variant="muted">
+          <SectionHeader label="Access Control Matrix" headline="Permissions scoped to role and context" />
+          <div className="grid gap-4 md:grid-cols-3">
+            {rbacItems.map((r, i) => (
+              <motion.div key={r.title} {...fade(i * 0.05)} className="rounded-md border border-[#E5E5E5] bg-white p-5">
+                <div className="font-semibold text-[#032D60] mb-2 text-sm">{r.title}</div>
+                <p className="text-[14px] leading-relaxed text-[#444]">{r.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </Section>
+
+        <Section>
+          <SectionHeader label="Emergency Protocols" headline="Controls when you need them most" />
+          <div className="grid gap-4 md:grid-cols-3">
+            {emergencyItems.map((e, i) => (
+              <motion.div key={e.title} {...fade(i * 0.06)} className="rounded-md border border-[#E5E5E5] bg-white p-6 shadow-[0_1px_2px_rgba(0,0,0,0.04)]">
+                <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-md bg-[#F3F6F9]">
+                  <e.icon className="h-5 w-5 text-[#0176D3]" />
+                </div>
+                <div className="font-semibold text-[#032D60] mb-2">{e.title}</div>
+                <p className="text-[14px] leading-relaxed text-[#444]">{e.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </Section>
+
+        <ProductSecurityStickyScroll />
+        <FinalCTA />
+      </main>
       <Footer />
     </div>
   );

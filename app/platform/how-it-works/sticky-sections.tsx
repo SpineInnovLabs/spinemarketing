@@ -28,7 +28,7 @@ export function HowItWorksGather() {
     <StickyGather
       tag="The Full Loop"
       heading={<>Eight steps. <span className="text-primary">One continuous cycle.</span></>}
-      subheading="From raw data ingestion to compounding intelligence — every step converges in the Spine."
+      subheading="From raw data ingestion to compounding intelligence — every step converges in Spine Fabric."
       centerLabel="The Spine"
       centerDescription="Canonical core"
       items={items}

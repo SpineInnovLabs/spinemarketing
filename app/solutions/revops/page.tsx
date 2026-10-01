@@ -19,11 +19,11 @@ export const metadata: Metadata = {
 
 export default function RevOpsPage() {
   return (
-    <div className="min-h-screen bg-dark-section">
+    <div className="min-h-screen bg-white">
       <BreadcrumbJsonLd items={[
-        { name: "Home", url: "https://integratewise.ai" },
-        { name: "Solutions", url: "https://integratewise.ai/solutions" },
-        { name: "RevOps", url: "https://integratewise.ai/solutions/revops" },
+        { name: "Home", url: "https://spineworkspace.com" },
+        { name: "Solutions", url: "https://spineworkspace.com/solutions" },
+        { name: "RevOps", url: "https://spineworkspace.com/solutions/revops" },
       ]} />
       <Header />
       <main id="main">

@@ -9,23 +9,23 @@ import { TestimonialsSection } from "@/components/testimonials-section"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
-  title: "Solutions | SpineWorkspace",
+  title: "Solutions — Functional workbenches for every team",
   description:
-    "One Spine. Workspace for daily work, Twin for AI. Built for every function, industry, and role.",
+    "Public marketing pages for SpineWorkspace functional solutions. Each maps to authenticated workbench projections on spineworkspace.com.",
   alternates: { canonical: "/solutions" },
   openGraph: {
     title: "Solutions | SpineWorkspace",
-    description: "One Spine. Workspace for daily work, Twin for AI. Built for every function, industry, and role.",
+    description: "One Spine Fabric. Workspace for daily work, Twin for AI. Built for every function, industry, and role.",
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "SpineWorkspace" }],
   },
 }
 
 export default function SolutionsPage() {
   return (
-    <div className="min-h-screen bg-dark-section">
+    <div className="min-h-screen bg-white">
       <BreadcrumbJsonLd items={[
-        { name: "Home", url: "https://integratewise.ai" },
-        { name: "Solutions", url: "https://integratewise.ai/solutions" },
+        { name: "Home", url: "https://spineworkspace.com" },
+        { name: "Solutions", url: "https://spineworkspace.com/solutions" },
       ]} />
       <Header />
       <main id="main">

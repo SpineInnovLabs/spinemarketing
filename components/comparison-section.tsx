@@ -25,22 +25,22 @@ const defaultRows: ComparisonRow[] = [
 function CellValue({ value }: { value: boolean | string }) {
   if (value === true) {
     return (
-      <div className="flex h-6 w-6 items-center justify-center rounded-full bg-primary/20">
-        <Check className="h-3.5 w-3.5 text-primary" />
+      <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[#0176D3]/10">
+        <Check className="h-3.5 w-3.5 text-[#0176D3]" />
       </div>
     );
   }
   if (value === false) {
     return (
-      <div className="flex h-6 w-6 items-center justify-center rounded-full bg-white/[0.06]">
-        <X className="h-3.5 w-3.5 text-white/25" />
+      <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[#F3F6F9]">
+        <X className="h-3.5 w-3.5 text-[#C9C9C9]" />
       </div>
     );
   }
   return (
     <div className="flex h-6 items-center">
-      <Minus className="mr-1 h-3 w-3 text-amber-400/60" />
-      <span className="text-[12px] font-semibold text-amber-400/80">{value}</span>
+      <Minus className="mr-1 h-3 w-3 text-amber-600" />
+      <span className="text-[12px] font-semibold text-amber-700">{value}</span>
     </div>
   );
 }
@@ -55,28 +55,22 @@ export function ComparisonSection({
   subheading?: string;
 }) {
   return (
-    <section className="relative overflow-hidden py-32 md:py-40" style={{ background: "#05070A" }}>
-      <div className="pointer-events-none absolute inset-0">
-        <div
-          className="absolute left-1/2 top-[10%] h-[500px] w-[600px] -translate-x-1/2 rounded-full opacity-[0.06] blur-[140px]"
-          style={{ background: "radial-gradient(circle, rgba(52,211,153,0.4), transparent 70%)" }}
-        />
-      </div>
+    <section className="relative overflow-hidden border-t border-[#E5E5E5] bg-[#F3F6F9] py-20 md:py-28">
       <div className="relative mx-auto max-w-[900px] px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ type: "spring", damping: 18, stiffness: 70 }}
-          className="mx-auto mb-16 max-w-2xl text-center"
+          className="mx-auto mb-12 max-w-2xl text-center"
         >
-          <p className="mb-4 text-[12px] font-bold uppercase tracking-[0.14em] text-primary">
+          <p className="mb-3 text-[12px] font-bold uppercase tracking-[0.08em] text-[#0176D3]">
             Why SpineWorkspace
           </p>
-          <h2 className="text-[40px] font-semibold leading-[1.1] tracking-[-0.04em] text-white sm:text-[52px]">
+          <h2 className="text-[32px] font-semibold leading-[1.15] tracking-[-0.03em] text-[#032D60] sm:text-[40px]">
             {heading}
           </h2>
-          <p className="mt-5 text-[16px] font-medium leading-[1.6] text-white/40">
+          <p className="mt-4 text-[16px] leading-[1.6] text-[#444]">
             {subheading}
           </p>
         </motion.div>
@@ -86,21 +80,16 @@ export function ComparisonSection({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ type: "spring", damping: 18, stiffness: 70, delay: 0.1 }}
-          className="overflow-hidden rounded-2xl border border-white/[0.06]"
-          style={{
-            background: "rgba(255,255,255,0.015)",
-            backdropFilter: "blur(12px)",
-            boxShadow: "inset 0 1px 0 rgba(255,255,255,0.04)",
-          }}
+          className="overflow-hidden rounded-md border border-[#E5E5E5] bg-white shadow-[0_1px_2px_rgba(0,0,0,0.04)]"
         >
-          <div className="grid grid-cols-[1fr_auto_auto] items-center border-b border-white/[0.06] bg-white/[0.03] px-6 py-4">
-            <span className="text-[13px] font-bold uppercase tracking-[0.1em] text-white/35">
+          <div className="grid grid-cols-[1fr_auto_auto] items-center border-b border-[#E5E5E5] bg-[#F3F6F9] px-6 py-4">
+            <span className="text-[13px] font-bold uppercase tracking-[0.08em] text-[#706E6B]">
               Feature
             </span>
-            <span className="w-[100px] text-center text-[13px] font-bold text-primary">
+            <span className="w-[100px] text-center text-[13px] font-bold text-[#0176D3]">
               SpineWorkspace
             </span>
-            <span className="w-[100px] text-center text-[13px] font-bold text-white/35">
+            <span className="w-[100px] text-center text-[13px] font-bold text-[#706E6B]">
               Others
             </span>
           </div>
@@ -113,10 +102,10 @@ export function ComparisonSection({
               viewport={{ once: true }}
               transition={{ delay: i * 0.03 }}
               className={`grid grid-cols-[1fr_auto_auto] items-center px-6 py-3.5 ${
-                i % 2 === 0 ? "bg-white/[0.015]" : "bg-transparent"
-              } ${i < rows.length - 1 ? "border-b border-white/[0.04]" : ""}`}
+                i % 2 === 0 ? "bg-white" : "bg-[#FAFBFC]"
+              } border-b border-[#E5E5E5] last:border-0`}
             >
-              <span className="text-[14px] font-medium text-white/60 pr-4">
+              <span className="text-[14px] font-medium text-[#444] pr-4">
                 {row.feature}
               </span>
               <div className="flex w-[100px] justify-center">

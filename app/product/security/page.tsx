@@ -17,9 +17,9 @@ export default function ProductSecurityPage() {
   return (
     <>
       <BreadcrumbJsonLd items={[
-        { name: "Home", url: "https://integratewise.ai" },
-        { name: "Product", url: "https://integratewise.ai/product" },
-        { name: "Security", url: "https://integratewise.ai/product/security" },
+        { name: "Home", url: "https://spineworkspace.com" },
+        { name: "Product", url: "https://spineworkspace.com/product" },
+        { name: "Security", url: "https://spineworkspace.com/product/security" },
       ]} />
       <ProductSecurityContent />
     </>

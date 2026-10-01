@@ -79,68 +79,6 @@ const principles = [
 export function SecurityContent() {
   return (
     <>
-      {/* Hero */}
-      <section
-        className="relative overflow-hidden bg-dark-section"
-      >
-        <div className="mx-auto max-w-[1200px] px-6 pt-[160px] pb-[100px] md:px-16">
-          <div className="mx-auto max-w-3xl text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                type: "spring",
-                damping: 16,
-                mass: 1,
-                stiffness: 52,
-                delay: 0.2,
-              }}
-              className="mb-6 inline-flex items-center gap-2.5 rounded-full border border-white/10 px-4 py-1.5"
-              style={{ background: "rgba(255,255,255,0.03)", backdropFilter: "blur(12px)" }}
-            >
-              <span
-                className="h-2 w-2 rounded-full"
-                style={{ background: "var(--gradient-primary-icon)" }}
-              />
-              <span className="text-[14px] font-semibold tracking-[-0.03em] text-white/60">
-                Security
-              </span>
-            </motion.div>
-
-            <motion.h1
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                type: "spring",
-                damping: 16,
-                mass: 1,
-                stiffness: 52,
-                delay: 0.4,
-              }}
-              className="text-[48px] font-semibold leading-[1em] tracking-[-0.05em] text-white sm:text-[54px] lg:text-[64px]"
-            >
-              Security isn&apos;t a feature.{" "}
-              <span className="text-primary">It&apos;s the architecture.</span>
-            </motion.h1>
-
-            <motion.p
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                type: "spring",
-                damping: 16,
-                mass: 1,
-                stiffness: 52,
-                delay: 0.6,
-              }}
-              className="mx-auto mt-8 max-w-2xl text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-white/55"
-            >
-              AI never acts without approval, data never moves without encryption, every action has an audit trail.
-            </motion.p>
-          </div>
-        </div>
-      </section>
-
       {/* Security Features Grid */}
       <section className="arvio-section dark-section">
         <div className="mx-auto max-w-[1100px]">
@@ -234,7 +172,7 @@ export function SecurityContent() {
 
       {/* Security CTA */}
       <section
-        className="arvio-section dark-section bg-dark-section"
+        className="arvio-section dark-section bg-white"
       >
         <div className="mx-auto max-w-[800px] text-center">
           <motion.div

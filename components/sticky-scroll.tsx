@@ -46,17 +46,8 @@ export function StickyScroll({
   if (!activeItem) return null;
 
   return (
-    <section ref={containerRef} className="relative bg-dark-section" style={{ height: `${(items.length + 1) * 100}vh`, position: "relative" }}>
+    <section ref={containerRef} className="relative bg-[#F3F6F9]" style={{ height: `${(items.length + 1) * 100}vh`, position: "relative" }}>
       <div className="sticky top-0 h-screen overflow-hidden">
-        <div className="pointer-events-none absolute inset-0">
-          <motion.div
-            className="absolute left-[10%] top-[20%] h-[500px] w-[500px] rounded-full blur-[200px]"
-            animate={{ background: `radial-gradient(circle, ${activeItem.color}15, transparent 70%)` }}
-            transition={{ duration: 0.8 }}
-          />
-          <div className="absolute right-[15%] bottom-[20%] h-[300px] w-[300px] rounded-full blur-[160px]" style={{ background: "rgba(139,92,246,0.04)" }} />
-        </div>
-
         <div className="relative mx-auto flex h-full max-w-[1200px] items-center px-6">
           <div className="grid w-full gap-12 lg:grid-cols-2 lg:gap-20">
             <div className="flex flex-col justify-center">
@@ -64,17 +55,17 @@ export function StickyScroll({
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                className="mb-3 text-[12px] font-bold uppercase tracking-[0.12em] text-primary"
+                className="mb-3 text-[12px] font-bold uppercase tracking-[0.08em] text-[#0176D3]"
               >
                 {tag}
               </motion.p>
 
-              <h2 className="text-[36px] font-semibold leading-[1.12] tracking-[-0.04em] text-white sm:text-[44px]">
+              <h2 className="text-[32px] font-semibold leading-[1.15] tracking-[-0.03em] text-[#032D60] sm:text-[40px]">
                 {heading}
               </h2>
 
               {subheading && (
-                <p className="mt-4 max-w-md text-[15px] font-medium leading-[1.6] text-white/45">
+                <p className="mt-4 max-w-md text-[15px] leading-[1.6] text-[#444]">
                   {subheading}
                 </p>
               )}
@@ -93,30 +84,28 @@ export function StickyScroll({
                         const targetScroll = top + (i / items.length) * totalH;
                         window.scrollTo({ top: targetScroll, behavior: "smooth" });
                       }}
-                      className={`group flex items-center gap-3 rounded-xl px-4 py-3 text-left transition-all ${
+                      className={`group flex items-center gap-3 rounded-md px-4 py-3 text-left transition-all ${
                         isActive
-                          ? "border border-white/[0.1] bg-white/[0.06]"
-                          : "border border-transparent hover:bg-white/[0.03]"
+                          ? "border border-[#E5E5E5] bg-white shadow-[0_1px_2px_rgba(0,0,0,0.04)]"
+                          : "border border-transparent hover:bg-white/60"
                       }`}
                     >
                       <div
-                        className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg transition-all ${
-                          isActive ? "scale-110" : "opacity-50"
+                        className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-md transition-all ${
+                          isActive ? "scale-110 bg-[#F3F6F9]" : "opacity-60 bg-[#E5E5E5]/50"
                         }`}
-                        style={{ background: isActive ? `${item.color}20` : "rgba(255,255,255,0.06)" }}
                       >
-                        {item.icon && <item.icon className="h-4 w-4" style={{ color: isActive ? item.color : "rgba(255,255,255,0.4)" }} />}
+                        {item.icon && <item.icon className="h-4 w-4" style={{ color: isActive ? "#0176D3" : "#706E6B" }} />}
                       </div>
                       <div>
-                        <span className={`text-[13px] font-semibold tracking-[-0.02em] transition-colors ${isActive ? "text-white" : "text-white/40"}`}>
+                        <span className={`text-[13px] font-semibold tracking-[-0.02em] transition-colors ${isActive ? "text-[#032D60]" : "text-[#706E6B]"}`}>
                           {item.tag}
                         </span>
                       </div>
                       {isActive && (
                         <motion.div
                           layoutId="sticky-scroll-indicator"
-                          className="ml-auto h-1.5 w-1.5 rounded-full"
-                          style={{ background: item.color }}
+                          className="ml-auto h-1.5 w-1.5 rounded-full bg-[#0176D3]"
                           transition={{ type: "spring", bounce: 0.2, duration: 0.4 }}
                         />
                       )}
@@ -137,30 +126,23 @@ export function StickyScroll({
                 {activeItem.visual ? (
                   activeItem.visual
                 ) : (
-                  <div className="relative overflow-hidden rounded-2xl border border-white/[0.08] bg-gradient-to-b from-white/[0.05] to-white/[0.01]">
-                    <div
-                      className="absolute inset-x-0 top-0 h-[2px]"
-                      style={{ background: `linear-gradient(90deg, transparent, ${activeItem.color}60, transparent)` }}
-                    />
+                  <div className="relative overflow-hidden rounded-md border border-[#E5E5E5] bg-white shadow-[0_1px_2px_rgba(0,0,0,0.04)]">
+                    <div className="border-b border-[#E5E5E5] bg-[#F3F6F9] px-6 py-3">
+                      <p className="text-[11px] font-bold uppercase tracking-[0.08em] text-[#0176D3]">
+                        {activeItem.tag}
+                      </p>
+                    </div>
                     <div className="p-8 sm:p-10">
                       <div className="flex items-center gap-3 mb-6">
-                        <div
-                          className="flex h-12 w-12 items-center justify-center rounded-2xl"
-                          style={{ background: `${activeItem.color}18`, boxShadow: `0 0 40px ${activeItem.color}15` }}
-                        >
-                          {ActiveIcon && <ActiveIcon className="h-6 w-6" style={{ color: activeItem.color }} />}
+                        <div className="flex h-12 w-12 items-center justify-center rounded-md bg-[#F3F6F9]">
+                          {ActiveIcon && <ActiveIcon className="h-6 w-6 text-[#0176D3]" />}
                         </div>
-                        <div>
-                          <p className="text-[11px] font-bold uppercase tracking-[0.1em]" style={{ color: `${activeItem.color}90` }}>
-                            {activeItem.tag}
-                          </p>
-                          <h3 className="text-[18px] font-semibold tracking-[-0.03em] text-white">
-                            {activeItem.title}
-                          </h3>
-                        </div>
+                        <h3 className="text-[18px] font-semibold tracking-[-0.03em] text-[#032D60]">
+                          {activeItem.title}
+                        </h3>
                       </div>
 
-                      <p className="text-[14px] font-medium leading-[1.65] text-white/50 mb-6">
+                      <p className="text-[14px] leading-[1.65] text-[#444] mb-6">
                         {activeItem.description}
                       </p>
 
@@ -172,10 +154,10 @@ export function StickyScroll({
                               initial={{ opacity: 0, x: -12 }}
                               animate={{ opacity: 1, x: 0 }}
                               transition={{ delay: fi * 0.08 }}
-                              className="flex items-center gap-3 rounded-lg border border-white/[0.06] bg-white/[0.03] px-4 py-2.5"
+                              className="flex items-center gap-3 rounded-md border border-[#E5E5E5] bg-[#F3F6F9] px-4 py-2.5"
                             >
-                              <div className="h-1.5 w-1.5 rounded-full shrink-0" style={{ background: activeItem.color }} />
-                              <span className="text-[13px] font-medium text-white/55">{feat}</span>
+                              <div className="h-1.5 w-1.5 rounded-full shrink-0 bg-[#0176D3]" />
+                              <span className="text-[13px] font-medium text-[#444]">{feat}</span>
                             </motion.div>
                           ))}
                         </div>
@@ -195,7 +177,7 @@ export function StickyScroll({
               className="h-1 rounded-full transition-all duration-300"
               style={{
                 width: i === activeIndex ? 24 : 8,
-                background: i === activeIndex ? activeItem.color : "rgba(255,255,255,0.15)",
+                background: i === activeIndex ? "#0176D3" : "#C9C9C9",
               }}
             />
           ))}

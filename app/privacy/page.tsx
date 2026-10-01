@@ -18,8 +18,8 @@ export default function PrivacyPage() {
   return (
     <div className="min-h-screen bg-background">
       <BreadcrumbJsonLd items={[
-        { name: "Home", url: "https://integratewise.ai" },
-        { name: "Privacy Policy", url: "https://integratewise.ai/privacy" },
+        { name: "Home", url: "https://spineworkspace.com" },
+        { name: "Privacy Policy", url: "https://spineworkspace.com/privacy" },
       ]} />
       <Header />
       <main id="main">
@@ -55,7 +55,7 @@ export default function PrivacyPage() {
 
             <div>
               <h2 className="text-[18px] font-semibold tracking-[-0.03em] text-foreground">6. Your rights</h2>
-              <p className="mt-3">You can request access to, correction of, or deletion of your personal data at any time by contacting us at <a href="mailto:connect@integratewise.ai" className="text-primary hover:underline">connect@integratewise.ai</a>.</p>
+              <p className="mt-3">You can request access to, correction of, or deletion of your personal data at any time by contacting us at <a href="mailto:connect@spineworkspace.com" className="text-primary hover:underline">connect@spineworkspace.com</a>.</p>
             </div>
 
             <div>
@@ -65,7 +65,7 @@ export default function PrivacyPage() {
 
             <div>
               <h2 className="text-[18px] font-semibold tracking-[-0.03em] text-foreground">8. Contact</h2>
-              <p className="mt-3">For privacy-related questions, contact us at <a href="mailto:connect@integratewise.ai" className="text-primary hover:underline">connect@integratewise.ai</a>.</p>
+              <p className="mt-3">For privacy-related questions, contact us at <a href="mailto:connect@spineworkspace.com" className="text-primary hover:underline">connect@spineworkspace.com</a>.</p>
             </div>
           </div>
         </section>

@@ -185,7 +185,7 @@ const useCases = [
   {
     num: "02",
     title: "Duplicate detection at ingest",
-    desc: "New records scored against existing entities before entering the Spine.",
+    desc: "New records scored against existing entities before entering Spine Fabric.",
   },
   {
     num: "03",
@@ -202,7 +202,7 @@ const useCases = [
 export function AccountSuccessContent() {
   return (
     <>
-      <section className="relative overflow-hidden bg-dark-section">
+      <section className="relative overflow-hidden bg-white">
         <div
           className="pointer-events-none absolute inset-0"
           style={{
@@ -315,7 +315,7 @@ export function AccountSuccessContent() {
         </div>
       </section>
 
-      <section className="arvio-section dark-section bg-dark-section">
+      <section className="arvio-section dark-section bg-white">
         <div className="mx-auto max-w-[1100px]">
           <motion.div {...fade()} className="mx-auto max-w-2xl text-center">
             <h2 className="text-[40px] font-semibold tracking-[-0.05em] leading-[1.15] text-white sm:text-[48px]">

@@ -34,11 +34,11 @@ export const metadata: Metadata = {
 
 export default function PricingPage() {
   return (
-    <div className="min-h-screen bg-dark-section">
+    <div className="min-h-screen bg-white">
       <FAQPageJsonLd questions={pricingFAQData} />
       <BreadcrumbJsonLd items={[
-        { name: "Home", url: "https://integratewise.ai" },
-        { name: "Pricing", url: "https://integratewise.ai/pricing" },
+        { name: "Home", url: "https://spineworkspace.com" },
+        { name: "Pricing", url: "https://spineworkspace.com/pricing" },
       ]} />
       <Header />
       <main id="main">

@@ -49,7 +49,7 @@ const painItems = [
 ];
 
 const answerNodes = [
-  { label: "Spine", icon: Layers, color: "#1BA784" },
+  { label: "Spine Fabric", icon: Layers, color: "#0176D3" },
   { label: "Workspace", icon: Brain, color: "#3b82f6" },
   { label: "Twin", icon: Zap, color: "#8b5cf6" },
   { label: "Govern Gate", icon: ShieldCheck, color: "#f59e0b" },

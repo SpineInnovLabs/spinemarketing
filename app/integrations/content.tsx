@@ -1,81 +1,71 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import Link from "next/link"
-import { Marquee } from "@/components/ui/marquee"
-import Image from "next/image"
+import { motion } from "framer-motion";
+import { Marquee } from "@/components/ui/marquee";
+import { AppLogo } from "@/components/marketing/app-logo";
+import { EnterpriseButton } from "@/components/marketing/enterprise";
+import { INTEGRATION_CATALOG, TOTAL_CONNECTORS, FEATURED_INTEGRATION_LOGOS } from "@/lib/integration-logos";
 
-const catalog: { category: string; connectors: string[] }[] = [
-  { category: "CRM", connectors: ["Salesforce", "HubSpot", "Pipedrive", "Zoho CRM", "Freshsales", "Close"] },
-  { category: "Support", connectors: ["Zendesk", "Freshdesk", "Intercom", "Front", "Help Scout", "Kustomer", "Freshworks CRM", "WhatsApp Business", "Twilio"] },
-  { category: "Billing", connectors: ["Stripe", "Chargebee", "Paddle", "QuickBooks", "Xero", "FreshBooks"] },
-  { category: "Marketing", connectors: ["HubSpot Marketing", "Mailchimp", "Marketo", "Braze", "Segment", "SendGrid", "Customer.io", "ActiveCampaign"] },
-  { category: "Analytics", connectors: ["Google Analytics", "Mixpanel", "Amplitude", "Heap", "Tableau", "Metabase"] },
-  { category: "Communication", connectors: ["Gmail", "Outlook", "Slack", "Microsoft Teams", "Discord", "Zoom", "Google Calendar"] },
-  { category: "Productivity", connectors: ["Notion", "Google Drive", "Dropbox", "OneDrive", "Airtable", "Calendly", "Confluence"] },
-  { category: "Project Management", connectors: ["Jira", "Asana", "Linear", "Monday.com", "ClickUp", "Trello"] },
-  { category: "Engineering", connectors: ["GitHub", "GitLab", "Bitbucket"] },
-  { category: "Commerce", connectors: ["Shopify", "WooCommerce", "BigCommerce"] },
-  { category: "AI", connectors: ["OpenAI", "MCP", "AI Chat"] },
-  { category: "HR", connectors: ["BambooHR"] },
-]
-
-const totalConnectors = catalog.reduce((sum, c) => sum + c.connectors.length, 0)
-
-const marqueeLogos = [
-  { name: "Salesforce", src: "/logos/salesforce.svg" },
-  { name: "HubSpot", src: "/logos/hubspot.svg" },
-  { name: "Stripe", src: "/logos/stripe.svg" },
-  { name: "Slack", src: "/logos/slack.svg" },
-  { name: "Jira", src: "/logos/jira.svg" },
-  { name: "Zendesk", src: "/logos/zendesk.svg" },
-  { name: "Gmail", src: "/logos/gmail.svg" },
-  { name: "Notion", src: "/logos/notion.svg" },
-  { name: "Shopify", src: "/logos/shopify.svg" },
-  { name: "GitHub", src: "/logos/github.svg" },
-  { name: "Asana", src: "/logos/asana.svg" },
-  { name: "Intercom", src: "/logos/intercom.svg" },
-]
+const fade = (delay = 0) => ({
+  initial: { opacity: 0, y: 16 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, margin: "-60px" },
+  transition: { type: "spring" as const, damping: 20, stiffness: 60, delay },
+});
 
 export function IntegrationsContent() {
   return (
     <>
-      {/* Hero */}
-      <section className="relative overflow-hidden bg-dark-section">
-        <div className="mx-auto max-w-[1200px] px-6 pt-[160px] pb-[100px] md:px-16">
-          <div className="mx-auto max-w-3xl text-center">
-            <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ type: "spring", damping: 16, mass: 1, stiffness: 52, delay: 0.2 }} className="mb-6 inline-flex items-center gap-2.5 rounded-full border border-white/10 px-4 py-1.5" style={{ background: "rgba(255,255,255,0.03)", backdropFilter: "blur(12px)" }}>
-              <span className="h-2 w-2 rounded-full" style={{ background: "var(--gradient-primary-icon)" }} />
-              <span className="text-[14px] font-semibold tracking-[-0.03em] text-white/60">Integrations</span>
-            </motion.div>
-            <motion.h1 initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ type: "spring", damping: 16, mass: 1, stiffness: 52, delay: 0.4 }} className="text-[48px] font-semibold leading-[1em] tracking-[-0.05em] text-white sm:text-[54px] lg:text-[64px]">
-              70+ integrations. 13 categories.{" "}<span className="text-primary">One Spine.</span>
-            </motion.h1>
-            <motion.p initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ type: "spring", damping: 16, mass: 1, stiffness: 52, delay: 0.6 }} className="mx-auto mt-8 max-w-2xl text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-white/55">
-              Connect via OAuth in minutes — no migration, no engineering team needed.
-            </motion.p>
-          </div>
-
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8, duration: 0.6 }} className="mt-16">
-            <Marquee pauseOnHover className="[--duration:35s] [--gap:1.5rem]">
-              {marqueeLogos.map((item) => (
-                <div key={item.name} className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-5 py-3 backdrop-blur-sm">
-                  <Image src={item.src} alt={item.name} width={24} height={24} />
-                  <span className="whitespace-nowrap text-[15px] font-semibold tracking-[-0.02em] text-white/70">{item.name}</span>
-                </div>
-              ))}
-            </Marquee>
+      <section className="border-b border-[#E5E5E5] bg-white pt-[120px] pb-16">
+        <div className="mx-auto max-w-[880px] px-6 text-center md:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ type: "spring", damping: 16, stiffness: 52, delay: 0.1 }}
+            className="mb-5 inline-flex items-center gap-2 rounded-md border border-[#E5E5E5] bg-[#F3F6F9] px-3 py-1 text-[12px] font-semibold uppercase tracking-[0.06em] text-[#032D60]"
+          >
+            <span className="h-1.5 w-1.5 rounded-full bg-[#0176D3]" />
+            Integrations
           </motion.div>
+          <motion.h1
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ type: "spring", damping: 16, stiffness: 52, delay: 0.2 }}
+            className="text-[36px] font-semibold leading-[1.1] tracking-[-0.03em] text-[#032D60] sm:text-[48px]"
+          >
+            {TOTAL_CONNECTORS}+ integrations. One Spine Fabric.
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ type: "spring", damping: 16, stiffness: 52, delay: 0.35 }}
+            className="mx-auto mt-4 max-w-2xl text-[17px] leading-[1.6] text-[#444]"
+          >
+            Connect via OAuth in minutes — no migration, no engineering team needed. Every app flows into governed business context.
+          </motion.p>
         </div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5, duration: 0.5 }}
+          className="mx-auto mt-12 max-w-[1120px] px-6 md:px-8"
+        >
+          <Marquee pauseOnHover className="[--duration:38s] [--gap:1rem]">
+            {FEATURED_INTEGRATION_LOGOS.map((logo) => (
+              <AppLogo key={logo.id} name={logo.name} src={logo.src} size="md" showLabel animate />
+            ))}
+          </Marquee>
+        </motion.div>
       </section>
 
-      {/* Every app becomes part of the picture */}
-      <section className="arvio-section dark-section">
-        <div className="mx-auto max-w-[900px]">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ type: "spring", bounce: 0.2, duration: 0.6 }} className="mx-auto max-w-2xl text-center">
-            <h2 className="section-heading">Every app becomes <span className="text-primary">part of the picture</span></h2>
-            <p className="mt-4 text-[17px] font-medium leading-[1.7] text-muted-foreground">
+      <section className="border-b border-[#E5E5E5] bg-[#F3F6F9] py-16">
+        <div className="mx-auto max-w-[900px] px-6 md:px-8">
+          <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center">
+            <h2 className="text-[28px] font-semibold tracking-[-0.03em] text-[#032D60]">
+              Every app becomes part of the picture
+            </h2>
+            <p className="mt-4 text-[16px] leading-[1.65] text-[#444]">
               Connected apps flow into Entity 360. The Twin reads it all and surfaces insights for your approval.
             </p>
           </motion.div>
@@ -85,36 +75,45 @@ export function IntegrationsContent() {
               { label: "Context", desc: "Emails, chats, and docs enrich each entity." },
               { label: "Session Summaries", desc: "Only approved AI outputs become knowledge." },
             ].map(({ label, desc }, i) => (
-              <motion.div key={label} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1, type: "spring", bounce: 0.2, duration: 0.6 }} className="arvio-card p-6 text-center">
-                <h3 className="text-[14px] font-bold uppercase tracking-[0.1em] text-primary">{label}</h3>
-                <p className="mt-2 text-[13px] font-medium text-muted-foreground">{desc}</p>
+              <motion.div
+                key={label}
+                {...fade(i * 0.08)}
+                className="rounded-md border border-[#E5E5E5] bg-white p-6 text-center shadow-[0_1px_2px_rgba(0,0,0,0.04)] transition-shadow hover:shadow-[0_4px_12px_rgba(1,118,211,0.06)]"
+              >
+                <h3 className="text-[13px] font-bold uppercase tracking-[0.08em] text-[#0176D3]">{label}</h3>
+                <p className="mt-2 text-[14px] leading-[1.5] text-[#444]">{desc}</p>
               </motion.div>
             ))}
           </div>
-          <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.3, duration: 0.6 }} className="mx-auto mt-6 max-w-xl text-center text-[14px] font-semibold text-foreground">
-            Connect once. The Spine keeps everything aligned.
+          <motion.p {...fade(0.2)} className="mx-auto mt-6 max-w-xl text-center text-[14px] font-semibold text-[#032D60]">
+            Connect once. Spine Fabric keeps everything aligned.
           </motion.p>
         </div>
       </section>
 
-      {/* Catalog */}
-      <section className="arvio-section dark-section">
-        <div className="mx-auto max-w-[1100px]">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ type: "spring", bounce: 0.2, duration: 0.6 }} className="mx-auto max-w-2xl text-center">
-            <h2 className="section-heading">Full{" "}<span className="text-primary">catalog</span></h2>
-            <p className="mt-4 text-[15px] font-medium text-muted-foreground">{totalConnectors} connectors across {catalog.length} categories.</p>
+      <section className="py-16">
+        <div className="mx-auto max-w-[1100px] px-6 md:px-8">
+          <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center">
+            <h2 className="text-[28px] font-semibold tracking-[-0.03em] text-[#032D60]">Full catalog</h2>
+            <p className="mt-4 text-[15px] text-[#444]">
+              {TOTAL_CONNECTORS} connectors across {INTEGRATION_CATALOG.length} categories.
+            </p>
           </motion.div>
 
-          <div className="mt-12 space-y-8">
-            {catalog.map(({ category, connectors }) => (
-              <motion.div key={category} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}>
-                <div className="flex items-center gap-3 mb-3">
-                  <h3 className="text-[13px] font-bold uppercase tracking-[0.1em] text-primary">{category}</h3>
-                  <span className="text-[12px] font-semibold text-muted-foreground">{connectors.length}</span>
+          <div className="mt-12 space-y-10">
+            {INTEGRATION_CATALOG.map(({ category, connectors }, catIndex) => (
+              <motion.div key={category} {...fade(catIndex * 0.04)}>
+                <div className="mb-4 flex items-center gap-3">
+                  <h3 className="text-[13px] font-bold uppercase tracking-[0.08em] text-[#0176D3]">{category}</h3>
+                  <span className="text-[12px] font-semibold text-[#706E6B]">{connectors.length}</span>
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {connectors.map((name) => (
-                    <span key={name} className="rounded-lg border border-white/10 bg-white/5 px-3 py-1.5 text-[13px] font-semibold tracking-[-0.02em] text-white/60">
+                    <span
+                      key={name}
+                      className="inline-flex items-center gap-2 rounded-md border border-[#E5E5E5] bg-white px-3 py-2 text-[13px] font-medium text-[#032D60] shadow-[0_1px_2px_rgba(0,0,0,0.03)] transition-colors hover:border-[#0176D3]"
+                    >
+                      <AppLogo name={name} size="sm" bare />
                       {name}
                     </span>
                   ))}
@@ -123,30 +122,41 @@ export function IntegrationsContent() {
             ))}
           </div>
 
-          <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ type: "spring", bounce: 0.2, duration: 0.6 }} className="mt-12 rounded-xl border border-border/50 bg-muted/50 p-6">
-            <h3 className="text-[14px] font-bold uppercase tracking-[0.1em] text-primary">India & UAE connectors — coming soon</h3>
-            <div className="mt-3 flex flex-wrap gap-2">
-              {["Tally", "Razorpay", "PhonePe", "Vyapar", "Khatabook", "Shiprocket", "Zoho Books", "PayTabs", "Network International", "Noon Seller", "Aramex"].map((name) => (
-                <span key={name} className="rounded-lg border border-white/10 bg-white/5 px-3 py-1.5 text-[13px] font-medium text-white/50">
-                  {name}
-                </span>
-              ))}
+          <motion.div
+            {...fade(0.1)}
+            className="mt-12 rounded-md border border-[#E5E5E5] bg-[#F3F6F9] p-6"
+          >
+            <h3 className="text-[13px] font-bold uppercase tracking-[0.08em] text-[#032D60]">
+              India & UAE connectors — coming soon
+            </h3>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {["Tally", "Razorpay", "PhonePe", "Vyapar", "Khatabook", "Shiprocket", "Zoho Books", "PayTabs", "Network International", "Noon Seller", "Aramex"].map(
+                (name) => (
+                  <span
+                    key={name}
+                    className="inline-flex items-center gap-2 rounded-md border border-dashed border-[#C9C9C9] bg-white/60 px-3 py-2 text-[13px] font-medium text-[#706E6B]"
+                  >
+                    <AppLogo name={name} size="sm" bare />
+                    {name}
+                  </span>
+                )
+              )}
             </div>
           </motion.div>
 
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ type: "spring", bounce: 0.2, duration: 0.6 }} className="mt-12 text-center">
-            <div className="arvio-card mx-auto max-w-2xl p-8">
-              <h3 className="text-[18px] font-semibold tracking-[-0.03em]">Connect your stack in minutes</h3>
-              <p className="mt-2 text-[15px] font-medium leading-[1.5] text-muted-foreground">
+          <motion.div {...fade(0.15)} className="mt-12 text-center">
+            <div className="mx-auto max-w-2xl rounded-md border border-[#E5E5E5] bg-white p-8 shadow-[0_1px_2px_rgba(0,0,0,0.04)]">
+              <h3 className="text-[20px] font-semibold tracking-[-0.02em] text-[#032D60]">Connect your stack in minutes</h3>
+              <p className="mt-2 text-[15px] leading-[1.5] text-[#444]">
                 OAuth setup per app. No engineering needed. Custom connectors available.
               </p>
-              <Button className="mt-6 h-[42px] rounded-xl px-4 text-[15px] font-semibold" style={{ background: "var(--gradient-primary)", boxShadow: "var(--shadow-button)" }} asChild>
-                <Link href="/contact?intent=demo">See all integrations in a demo</Link>
-              </Button>
+              <div className="mt-6">
+                <EnterpriseButton href="/contact?intent=demo">See all integrations in a demo</EnterpriseButton>
+              </div>
             </div>
           </motion.div>
         </div>
       </section>
     </>
-  )
+  );
 }

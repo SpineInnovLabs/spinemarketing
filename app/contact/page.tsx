@@ -1,3 +1,4 @@
+import { Suspense } from "react"
 import { Metadata } from "next"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
@@ -19,14 +20,16 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen bg-dark-section">
+    <div className="min-h-screen bg-white">
       <BreadcrumbJsonLd items={[
-        { name: "Home", url: "https://integratewise.ai" },
-        { name: "Contact", url: "https://integratewise.ai/contact" },
+        { name: "Home", url: "https://spineworkspace.com" },
+        { name: "Contact", url: "https://spineworkspace.com/contact" },
       ]} />
       <Header />
       <main id="main">
-        <ContactContent defaultIntent="contact" />
+        <Suspense fallback={null}>
+          <ContactContent defaultIntent="contact" />
+        </Suspense>
         <ContactOnboardingGather />
       </main>
       <Footer />

@@ -139,7 +139,7 @@ export function CampaignGalleryContent() {
 
   return (
     <>
-      <section className="relative overflow-hidden bg-dark-section">
+      <section className="relative overflow-hidden bg-white">
         <div
           className="pointer-events-none absolute inset-0"
           style={{
@@ -175,7 +175,7 @@ export function CampaignGalleryContent() {
         </div>
       </section>
 
-      <section className="bg-dark-section px-6 pt-8 pb-16 md:px-16">
+      <section className="bg-white px-6 pt-8 pb-16 md:px-16">
         <div className="mx-auto max-w-[1200px]">
           <motion.div {...fade()} className="mb-8 flex items-center gap-3">
             <h2 className="text-[22px] font-semibold tracking-[-0.03em] text-white">
@@ -186,7 +186,7 @@ export function CampaignGalleryContent() {
             </span>
           </motion.div>
           <motion.p {...fade(0.05)} className="mb-10 max-w-3xl text-[15px] font-medium leading-[1.6] text-white/45">
-            The Spine sits at the center — connecting Salesforce, HubSpot, Slack, Stripe, Zendesk, and every other tool into a single source of truth. AI thinks using the Spine and governs via policy, but a human must approve every action.
+            Spine Fabric sits at the center — connecting Salesforce, HubSpot, Slack, Stripe, Zendesk, and every other tool into a single source of truth. AI reasons over Spine Fabric context and governs via policy, but a human must approve every action.
           </motion.p>
 
           <div className="grid gap-6 sm:grid-cols-2">
@@ -266,7 +266,7 @@ export function CampaignGalleryContent() {
         </div>
       </section>
 
-      <section className="bg-dark-section px-6 pb-24 md:px-16">
+      <section className="bg-white px-6 pb-24 md:px-16">
         <div className="mx-auto max-w-[1200px]">
           <div className="mb-10 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
 
@@ -375,7 +375,7 @@ export function CampaignGalleryContent() {
         </div>
       </section>
 
-      <section className="arvio-section dark-section bg-dark-section">
+      <section className="arvio-section dark-section bg-white">
         <div className="mx-auto max-w-3xl text-center">
           <motion.h2 {...fade()} className="section-heading">
             Ready to see it{" "}

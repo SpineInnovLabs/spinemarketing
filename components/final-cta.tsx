@@ -1,39 +1,37 @@
 "use client"
 
-import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { motion } from "framer-motion"
+import { EnterpriseButton } from "@/components/marketing/enterprise"
 
 export function FinalCTA() {
   return (
-    <section className="relative overflow-hidden" style={{ backgroundColor: "rgb(8, 7, 14)" }}>
-      <div className="mx-auto max-w-[1100px] px-6 py-[100px] md:px-16">
-        <div className="pointer-events-none absolute inset-0 rounded-[50px]" style={{ background: "radial-gradient(50% 50% at 50% 50%, rgba(27,167,132,0.08) 0%, transparent 100%)" }} />
+    <section className="border-t border-[#E5E5E5] bg-[#032D60]">
+      <div className="mx-auto max-w-[1100px] px-6 py-20 md:px-16 md:py-24">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-          className="relative mx-auto max-w-2xl text-center"
+          className="mx-auto max-w-2xl text-center"
         >
-          <h2 className="text-[40px] font-semibold tracking-[-0.05em] leading-[1.2] text-white sm:text-[48px] lg:text-[52px]">
-            Give your people a{" "}
-            <span className="text-primary">Twin.</span>{" "}
-            Give your business{" "}
-            <span className="text-primary">continuity.</span>
+          <h2 className="text-[32px] font-semibold tracking-[-0.03em] leading-[1.2] text-white sm:text-[40px]">
+            Ready to bring context into{" "}
+            <span className="text-[#7EC3F0]">one workspace?</span>
           </h2>
-          <p className="mt-6 text-[16px] font-medium leading-[1.6] text-white/40">
-            One spine. Every operation. Governed.
+          <p className="mt-5 text-[16px] leading-[1.6] text-white/70">
+            Spine InnovLabs builds SpineWorkspace — where humans and AI work from the same business context.
           </p>
-          <div className="mt-10 flex flex-col items-center justify-center gap-2.5 sm:flex-row">
-            <Button
-              size="lg"
-              className="h-[42px] rounded-xl px-6 text-[15px] font-semibold tracking-[-0.3px]"
-              style={{ background: "var(--gradient-primary)", border: "2px solid rgba(248,248,250,0.12)", boxShadow: "var(--shadow-button)" }}
-              asChild
+          <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <Link
+              href="/contact?intent=demo"
+              className="inline-flex h-10 items-center justify-center rounded-md bg-white px-5 text-[14px] font-semibold text-[#032D60] hover:bg-[#F3F6F9]"
             >
-              <Link href="/contact?intent=demo">Book a demo</Link>
-            </Button>
+              Book a demo
+            </Link>
+            <EnterpriseButton href="/spineworkspace" variant="secondary">
+              Explore SpineWorkspace
+            </EnterpriseButton>
           </div>
         </motion.div>
       </div>

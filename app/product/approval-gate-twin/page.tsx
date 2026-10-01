@@ -20,11 +20,11 @@ export const metadata: Metadata = {
 
 export default function ApprovalGateTwinPage() {
   return (
-    <div className="min-h-screen bg-dark-section">
+    <div className="min-h-screen bg-white">
       <BreadcrumbJsonLd items={[
-        { name: "Home", url: "https://integratewise.ai" },
-        { name: "Product", url: "https://integratewise.ai/product" },
-        { name: "Governance & Twin", url: "https://integratewise.ai/product/approval-gate-twin" },
+        { name: "Home", url: "https://spineworkspace.com" },
+        { name: "Product", url: "https://spineworkspace.com/product" },
+        { name: "Governance & Twin", url: "https://spineworkspace.com/product/approval-gate-twin" },
       ]} />
       <Header />
       <main id="main">

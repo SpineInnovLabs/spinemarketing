@@ -25,9 +25,9 @@ export function SoftwareApplicationJsonLd() {
     name: "SpineWorkspace",
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
-    url: "https://integratewise.ai",
+    url: "https://spineworkspace.com",
     description:
-      "The self-organizing Knowledge Workspace where people and AI work from the same live business context. Built by IntegrateWise — the operational continuity platform.",
+      "SpineWorkspace helps humans and AI work toward the same business goals using shared business context, adaptive capability resolution, and persistent continuity. Built by Spine InnovLabs.",
     offers: {
       "@type": "Offer",
       price: "49",
@@ -83,7 +83,7 @@ export function WebPageJsonLd({
     isPartOf: {
       "@type": "WebSite",
       name: "SpineWorkspace",
-      url: "https://integratewise.ai",
+      url: "https://spineworkspace.com",
     },
   }
 

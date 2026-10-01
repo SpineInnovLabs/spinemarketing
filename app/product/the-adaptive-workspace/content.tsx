@@ -84,7 +84,7 @@ export function TheAdaptiveWorkspaceContent() {
 
   return (
     <>
-      <section className="relative overflow-hidden pb-28 pt-40 bg-dark-section">
+      <section className="relative overflow-hidden pb-28 pt-40 bg-white">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute -top-32 left-1/4 w-[700px] h-[700px] rounded-full blur-[220px]" style={{ background: "rgba(27,167,132,0.07)" }} />
         </div>
@@ -101,7 +101,7 @@ export function TheAdaptiveWorkspaceContent() {
             className="text-[44px] font-semibold leading-[1.08] tracking-[-0.05em] text-white sm:text-[64px]"
           >
             Your daily surface{" "}
-            <span className="text-primary">on top of the Spine.</span>
+            <span className="text-primary">on top of Spine Fabric.</span>
           </motion.h1>
           <motion.p
             {...heroFade(0.38)}
@@ -224,7 +224,7 @@ export function TheAdaptiveWorkspaceContent() {
         </div>
       </section>
 
-      <section className="arvio-section dark-section bg-dark-section">
+      <section className="arvio-section dark-section bg-white">
         <div className="mx-auto max-w-[680px] px-4 text-center">
           <motion.div {...fade(0)}>
             <Cpu className="mx-auto mb-4 h-7 w-7 text-primary" />

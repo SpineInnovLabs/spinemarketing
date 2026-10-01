@@ -18,7 +18,6 @@ export function StickyGather({
   centerLabel,
   centerDescription,
   items,
-  glowColor = "rgba(27,167,132,0.15)",
 }: {
   tag?: string;
   heading: ReactNode;
@@ -26,7 +25,6 @@ export function StickyGather({
   centerLabel: string;
   centerDescription?: string;
   items: GatherItem[];
-  glowColor?: string;
 }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -37,7 +35,6 @@ export function StickyGather({
   const gatherProgress = useTransform(scrollYProgress, [0.1, 0.5], [0, 1]);
   const centerScale = useTransform(scrollYProgress, [0.2, 0.45], [0.7, 1]);
   const centerOpacity = useTransform(scrollYProgress, [0.15, 0.4], [0, 1]);
-  const bgGlowOpacity = useTransform(scrollYProgress, [0.2, 0.5], [0, 0.3]);
 
   if (!items || items.length === 0) return null;
 
@@ -45,52 +42,34 @@ export function StickyGather({
   const radius = 220;
 
   return (
-    <section ref={containerRef} className="relative bg-dark-section overflow-hidden py-32 md:py-44" style={{ position: "relative" }}>
-      <div className="pointer-events-none absolute inset-0">
-        <motion.div
-          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-[200px]"
-          style={{ background: glowColor, opacity: bgGlowOpacity }}
-        />
-      </div>
-
+    <section ref={containerRef} className="relative overflow-hidden border-t border-[#E5E5E5] bg-white py-24 md:py-32" style={{ position: "relative" }}>
       <div className="relative mx-auto max-w-[1200px] px-6">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ type: "spring", damping: 18, stiffness: 70 }}
-          className="mx-auto max-w-2xl text-center mb-20"
+          className="mx-auto max-w-2xl text-center mb-16"
         >
-          <p className="mb-3 text-[12px] font-bold uppercase tracking-[0.12em] text-primary">{tag}</p>
-          <h2 className="text-[36px] font-semibold leading-[1.12] tracking-[-0.04em] text-white sm:text-[44px]">
+          <p className="mb-3 text-[12px] font-bold uppercase tracking-[0.08em] text-[#0176D3]">{tag}</p>
+          <h2 className="text-[32px] font-semibold leading-[1.15] tracking-[-0.03em] text-[#032D60] sm:text-[40px]">
             {heading}
           </h2>
           {subheading && (
-            <p className="mt-4 text-[15px] font-medium leading-[1.6] text-white/45">{subheading}</p>
+            <p className="mt-4 text-[15px] leading-[1.6] text-[#444]">{subheading}</p>
           )}
         </motion.div>
 
-        <div className="relative mx-auto" style={{ height: 520, maxWidth: 600 }}>
+        <div className="relative mx-auto hidden md:block" style={{ height: 520, maxWidth: 600 }}>
           <motion.div
             className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20"
             style={{ scale: centerScale, opacity: centerOpacity }}
           >
-            <div
-              className="flex flex-col items-center justify-center w-[160px] h-[160px] rounded-full border border-primary/30"
-              style={{
-                background: "radial-gradient(circle, rgba(27,167,132,0.12) 0%, rgba(27,167,132,0.03) 70%)",
-                boxShadow: "0 0 80px rgba(27,167,132,0.15), inset 0 0 40px rgba(27,167,132,0.05)",
-              }}
-            >
-              <span className="text-[14px] font-bold text-primary tracking-[-0.02em]">{centerLabel}</span>
+            <div className="flex flex-col items-center justify-center w-[160px] h-[160px] rounded-full border border-[#E5E5E5] bg-[#F3F6F9] shadow-[0_1px_2px_rgba(0,0,0,0.04)]">
+              <span className="text-[14px] font-bold text-[#032D60] tracking-[-0.02em]">{centerLabel}</span>
               {centerDescription && (
-                <span className="mt-1 text-[11px] font-medium text-white/40 text-center px-4">{centerDescription}</span>
+                <span className="mt-1 text-[11px] font-medium text-[#706E6B] text-center px-4">{centerDescription}</span>
               )}
-              <motion.div
-                className="absolute inset-0 rounded-full border border-primary/20"
-                animate={{ scale: [1, 1.15, 1], opacity: [0.5, 0, 0.5] }}
-                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-              />
             </div>
           </motion.div>
 
@@ -116,7 +95,7 @@ export function StickyGather({
           })}
         </div>
 
-        <div className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((item, i) => (
             <motion.div
               key={item.label}
@@ -124,18 +103,15 @@ export function StickyGather({
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ delay: i * 0.06, type: "spring", damping: 18, stiffness: 70 }}
-              className="rounded-2xl border border-white/[0.08] bg-white/[0.03] p-6 transition-all hover:border-white/[0.14] hover:-translate-y-0.5"
+              className="rounded-md border border-[#E5E5E5] bg-white p-5 shadow-[0_1px_2px_rgba(0,0,0,0.04)]"
             >
               <div className="flex items-center gap-3 mb-3">
-                <div
-                  className="flex h-10 w-10 items-center justify-center rounded-xl"
-                  style={{ background: `${item.color}18`, boxShadow: `0 0 24px ${item.color}12` }}
-                >
-                  {item.icon && <item.icon className="h-5 w-5" style={{ color: item.color }} />}
+                <div className="flex h-10 w-10 items-center justify-center rounded-md bg-[#F3F6F9]">
+                  {item.icon && <item.icon className="h-5 w-5 text-[#0176D3]" />}
                 </div>
-                <h3 className="text-[15px] font-semibold tracking-[-0.02em] text-white">{item.label}</h3>
+                <h3 className="text-[15px] font-semibold tracking-[-0.02em] text-[#032D60]">{item.label}</h3>
               </div>
-              <p className="text-[13px] font-medium leading-[1.65] text-white/45">{item.description}</p>
+              <p className="text-[13px] leading-[1.65] text-[#444]">{item.description}</p>
             </motion.div>
           ))}
         </div>
@@ -170,13 +146,10 @@ function GatherNode({
       style={{ x, y, opacity, scale, translateX: "-50%", translateY: "-50%" }}
     >
       <div className="flex flex-col items-center gap-2">
-        <div
-          className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/[0.08]"
-          style={{ background: `${item.color}12`, boxShadow: `0 0 30px ${item.color}10` }}
-        >
-          {item.icon && <item.icon className="h-6 w-6" style={{ color: item.color }} />}
+        <div className="flex h-14 w-14 items-center justify-center rounded-md border border-[#E5E5E5] bg-white shadow-[0_1px_2px_rgba(0,0,0,0.04)]">
+          {item.icon && <item.icon className="h-6 w-6 text-[#0176D3]" />}
         </div>
-        <span className="text-[11px] font-bold text-white/60 whitespace-nowrap">{item.label}</span>
+        <span className="text-[11px] font-bold text-[#706E6B] whitespace-nowrap">{item.label}</span>
       </div>
     </motion.div>
   );

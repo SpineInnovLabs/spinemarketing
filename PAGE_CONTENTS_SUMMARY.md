@@ -1,7 +1,7 @@
-# IntegrateWise Complete Page Contents
+# Spine InnovLabs Complete Page Contents
 
 ## Overview
-This document contains the structure and metadata for all pages in the IntegrateWise application.
+This document contains the structure and metadata for all pages in the Spine InnovLabs application.
 
 ---
 
@@ -20,8 +20,8 @@ This document contains the structure and metadata for all pages in the Integrate
 - **Background**: #05070A (dark)
 
 ### 2. About (/about)
-- **Title**: About | IntegrateWise
-- **Description**: Born from a real $8M account save. One Spine. One Workspace. You stay in control.
+- **Title**: About | Spine InnovLabs
+- **Description**: Born from a real $8M account save. One Spine Fabric. One Workspace. You stay in control.
 - **Components**:
   - AboutContent
   - AboutJourneyScroll (sticky)
@@ -32,7 +32,7 @@ This document contains the structure and metadata for all pages in the Integrate
   - Footer
 
 ### 3. Product (/product)
-- **Title**: Product | IntegrateWise
+- **Title**: Product | Spine InnovLabs
 - **Description**: One workspace. AI surfaces what matters. You approve what happens.
 - **Components**:
   - ProductContent
@@ -45,7 +45,7 @@ This document contains the structure and metadata for all pages in the Integrate
   - Footer
 
 ### 4. Pricing (/pricing)
-- **Title**: Pricing | IntegrateWise
+- **Title**: Pricing | Spine InnovLabs
 - **Description**: Simple pricing. Start at ₹999/$49/mo. Scale to enterprise governance.
 - **Components**:
   - PricingHero
@@ -67,7 +67,7 @@ This document contains the structure and metadata for all pages in the Integrate
   - What happens to my data if I cancel?
 
 ### 5. Platform (/platform)
-- **Title**: Platform | IntegrateWise
+- **Title**: Platform | Spine InnovLabs
 - **Description**: The Adaptive Spine. Connects every app. Governs every AI action. Nothing happens without your approval.
 - **Components**:
   - PlatformContent
@@ -81,8 +81,8 @@ This document contains the structure and metadata for all pages in the Integrate
   - Footer
 
 ### 6. Solutions (/solutions)
-- **Title**: Solutions | IntegrateWise
-- **Description**: One Spine. Workspace for daily work, Cognitive Layer for AI. Built for every function, industry, and role.
+- **Title**: Solutions | Spine InnovLabs
+- **Description**: One Spine Fabric. Workspace for daily work, Cognitive Layer for AI. Built for every function, industry, and role.
 - **Components**:
   - SolutionsContent
   - StatsBar (6 industries, 6 roles, 3 function workspaces, 1 unified Spine)
@@ -92,7 +92,7 @@ This document contains the structure and metadata for all pages in the Integrate
   - Footer
 
 ### 7. Contact (/contact)
-- **Title**: Contact | IntegrateWise
+- **Title**: Contact | Spine InnovLabs
 - **Description**: Book a demo or request a connector. We connect your tools live.
 - **Components**:
   - ContactContent (with defaultIntent="contact")
@@ -100,8 +100,8 @@ This document contains the structure and metadata for all pages in the Integrate
   - Footer
 
 ### 8. Integrations (/integrations)
-- **Title**: Integrations | IntegrateWise
-- **Description**: 70+ apps connected into one Spine. Salesforce, HubSpot, Slack, Stripe, and more.
+- **Title**: Integrations | Spine InnovLabs
+- **Description**: 70+ apps connected through Spine Fabric. Salesforce, HubSpot, Slack, Stripe, and more.
 - **Components**:
   - IntegrationsContent
   - StatsBar (70+ app connectors, 3 connector types, <100ms sync latency, 0 code required)
@@ -109,9 +109,9 @@ This document contains the structure and metadata for all pages in the Integrate
   - FinalCTA
   - Footer
 
-### 9. Why IntegrateWise (/why)
-- **Title**: Why IntegrateWise | One Spine. One Workspace. Governed AI.
-- **Description**: Apps are fragmented. AI lacks context. IntegrateWise unifies everything under your control.
+### 9. Why Spine InnovLabs (/why)
+- **Title**: Why Spine InnovLabs | One Spine Fabric. One Workspace. Governed AI.
+- **Description**: Apps are fragmented. AI lacks context. Spine InnovLabs unifies everything under your control.
 - **Components**:
   - WhyContent
   - WhyPainScroll (sticky)
@@ -122,7 +122,7 @@ This document contains the structure and metadata for all pages in the Integrate
   - Footer
 
 ### 10. Services (/services)
-- **Title**: Services | IntegrateWise
+- **Title**: Services | Spine InnovLabs
 - **Description**: Implementation, onboarding, and managed operations. We get you to truth faster.
 - **Components**:
   - ServicesContent
@@ -132,8 +132,8 @@ This document contains the structure and metadata for all pages in the Integrate
   - Footer
 
 ### 11. Resources (/resources)
-- **Title**: Resources | IntegrateWise
-- **Description**: Guides, use cases, and tools to help you get the most from IntegrateWise.
+- **Title**: Resources | Spine InnovLabs
+- **Description**: Guides, use cases, and tools to help you get the most from Spine InnovLabs.
 - **Components**:
   - ResourcesContent
   - ResourcesScroll (sticky)
@@ -141,8 +141,8 @@ This document contains the structure and metadata for all pages in the Integrate
   - Footer
 
 ### 12. The Twin - AI (/ai)
-- **Title**: The Twin | IntegrateWise
-- **Description**: The Twin reads Truth, Context, and Session Summaries through the Spine. Surfaces signals in the Cognitive Layer and waits for your approval.
+- **Title**: The Twin | Spine InnovLabs
+- **Description**: The Twin reads Truth, Context, and Session Summaries through Spine Fabric. Surfaces signals in the Cognitive Layer and waits for your approval.
 - **Components**:
   - AIContent
   - BentoShowcase (watch the Twin work)
@@ -152,7 +152,7 @@ This document contains the structure and metadata for all pages in the Integrate
   - Footer
 
 ### 13. Business Ops (/business-ops)
-- **Title**: Business Ops — 12 Tabs → One Workspace | IntegrateWise
+- **Title**: Business Ops — 12 Tabs → One Workspace | Spine InnovLabs
 - **Description**: Stop toggling between 12 tabs to find context. Cross-system visibility with AI that handles the busywork.
 - **Components**:
   - BusinessOpsContent
@@ -160,7 +160,7 @@ This document contains the structure and metadata for all pages in the Integrate
   - Footer
 
 ### 14. Personal Ops (/personal-ops)
-- **Title**: Personal Ops — Your Morning, Auto-Organized | IntegrateWise
+- **Title**: Personal Ops — Your Morning, Auto-Organized | Spine InnovLabs
 - **Description**: Replace 45 minutes of app-hopping with a single morning brief. A calm workspace above all your apps.
 - **Components**:
   - PersonalOpsContent
@@ -168,7 +168,7 @@ This document contains the structure and metadata for all pages in the Integrate
   - Footer
 
 ### 15. Spine & Intelligence (/spine)
-- **Title**: Spine & Intelligence | IntegrateWise
+- **Title**: Spine & Intelligence | Spine InnovLabs
 - **Description**: Vendor-neutral data backbone. Unifies every app. AI reasons with evidence. You approve.
 - **Components**:
   - SpineContent
@@ -176,7 +176,7 @@ This document contains the structure and metadata for all pages in the Integrate
   - Footer
 
 ### 16. Account Success (/account-success)
-- **Title**: Account Success — One Customer, One Record | IntegrateWise
+- **Title**: Account Success — One Customer, One Record | Spine InnovLabs
 - **Description**: Detect churn signals across 4+ tools before it's too late. Cross-tool entity matching, confidence scoring, and human-approved merges.
 - **Components**:
   - AccountSuccessContent
@@ -184,7 +184,7 @@ This document contains the structure and metadata for all pages in the Integrate
   - Footer
 
 ### 17. Security (/security)
-- **Title**: Security | IntegrateWise
+- **Title**: Security | Spine InnovLabs
 - **Description**: Enterprise-grade security, governance, and compliance. SOC 2 aligned, encrypted at rest and in transit, with complete audit trails.
 - **Components**:
   - SecurityContent
@@ -195,8 +195,8 @@ This document contains the structure and metadata for all pages in the Integrate
   - Footer
 
 ### 18. Privacy Policy (/privacy)
-- **Title**: Privacy Policy | IntegrateWise
-- **Description**: How IntegrateWise collects, uses, and protects your data.
+- **Title**: Privacy Policy | Spine InnovLabs
+- **Description**: How Spine InnovLabs collects, uses, and protects your data.
 - **Sections**:
   1. Information we collect
   2. How we use your information
@@ -205,11 +205,11 @@ This document contains the structure and metadata for all pages in the Integrate
   5. Security
   6. Your rights
   7. Cookies and analytics
-  8. Contact: connect@integratewise.ai
+  8. Contact: connect@spineworkspace.com
 
 ### 19. Terms & Conditions (/terms)
-- **Title**: Terms & Conditions | IntegrateWise
-- **Description**: Terms of service for using IntegrateWise.
+- **Title**: Terms & Conditions | Spine InnovLabs
+- **Description**: Terms of service for using Spine InnovLabs.
 - **Sections**:
   1. Acceptance of terms
   2. Service description
@@ -219,30 +219,30 @@ This document contains the structure and metadata for all pages in the Integrate
   6. Payment and billing
   7. Limitation of liability
   8. Termination
-  9. Contact: connect@integratewise.ai
+  9. Contact: connect@spineworkspace.com
 
 ### 20. Documentation (/docs)
-- **Title**: Documentation | IntegrateWise
+- **Title**: Documentation | Spine InnovLabs
 - **Description**: Set up connectors, configure your workspace, and use AI features.
 - **Status**: Coming soon
-- **Contact**: connect@integratewise.ai
+- **Contact**: connect@spineworkspace.com
 
 ### 21. Blog (/blog)
-- **Title**: Blog | IntegrateWise
+- **Title**: Blog | Spine InnovLabs
 - **Description**: Insights on connected workspaces, AI governance, and operational intelligence.
 - **Blog Posts**:
   1. "Stop being the human API between your tools" (4 min read)
-     - Author: IntegrateWise Team
+     - Author: Spine InnovLabs Team
      - Date: 2026-04-12
      - Tags: Product, Workspace
   2. "Why AI needs your approval — every single time" (3 min read)
-     - Author: IntegrateWise Team
+     - Author: Spine InnovLabs Team
      - Date: 2026-04-10
      - Tags: AI, Trust
 
 ### 22. Changelog (/changelog)
-- **Title**: Changelog | IntegrateWise
-- **Description**: What's new in IntegrateWise — product updates, new connectors, and improvements.
+- **Title**: Changelog | Spine InnovLabs
+- **Description**: What's new in Spine InnovLabs — product updates, new connectors, and improvements.
 - **Format**: Timeline with dated entries and feature items
 
 ---
@@ -250,7 +250,7 @@ This document contains the structure and metadata for all pages in the Integrate
 ## Platform Sub-Pages (5 pages)
 
 ### 1. Platform How it Works (/platform/how-it-works)
-- **Title**: How it Works | IntegrateWise Platform
+- **Title**: How it Works | Spine InnovLabs Platform
 - **Description**: Data flows, identity resolution, knowledge base, and the triage mechanism that powers the Adaptive Spine.
 - **Components**:
   - PlatformHowItWorksContent
@@ -259,8 +259,8 @@ This document contains the structure and metadata for all pages in the Integrate
   - Footer
 
 ### 2. Platform Integrations (/platform/integrations)
-- **Title**: Integrations | IntegrateWise Platform
-- **Description**: SaaS APIs, MCP, webhooks, and file drops — all through one normalization pipeline into the Spine.
+- **Title**: Integrations | Spine InnovLabs Platform
+- **Description**: SaaS APIs, MCP, webhooks, and file drops — all through one normalization pipeline into Spine Fabric.
 - **Components**:
   - PlatformIntegrationsContent
   - StatsBar (60+ SaaS connectors, 4 protocol types, <5 min average setup, 99.9% uptime)
@@ -270,7 +270,7 @@ This document contains the structure and metadata for all pages in the Integrate
   - Footer
 
 ### 3. Platform The Adaptive Spine (/platform/the-adaptive-spine)
-- **Title**: The Adaptive Spine | IntegrateWise Platform
+- **Title**: The Adaptive Spine | Spine InnovLabs Platform
 - **Description**: Vendor-neutral data layer converting fragmented SaaS into one versioned source of truth.
 - **Components**:
   - TheAdaptiveSpineContent
@@ -281,13 +281,13 @@ This document contains the structure and metadata for all pages in the Integrate
   - Footer
 
 ### 4. Platform Infrastructure (/platform/infrastructure)
-- **Title**: Infrastructure — IntegrateWise
+- **Title**: Infrastructure — Spine InnovLabs
 - **Description**: Multi-region infrastructure, encryption, and operational resilience powering the Adaptive Spine.
 - **Components**:
   - InfrastructureContent
 
 ### 5. Platform Security (/platform/security)
-- **Title**: Security — IntegrateWise Platform
+- **Title**: Security — Spine InnovLabs Platform
 - **Description**: Enterprise-grade security architecture for the Adaptive Spine — encryption, access control, and audit trails.
 - **Components**:
   - PlatformSecurityContent
@@ -297,7 +297,7 @@ This document contains the structure and metadata for all pages in the Integrate
 ## Product Sub-Pages (4 pages)
 
 ### 1. Product How it Works (/product/how-it-works)
-- **Title**: How it Works | IntegrateWise Product
+- **Title**: How it Works | Spine InnovLabs Product
 - **Description**: The Cognitive Layer — proactive signals, morning briefs, pattern detection, and evidence-backed reasoning.
 - **Components**:
   - ProductHowItWorksContent
@@ -306,13 +306,13 @@ This document contains the structure and metadata for all pages in the Integrate
   - Footer
 
 ### 2. Product Security (/product/security)
-- **Title**: Security — IntegrateWise Product
+- **Title**: Security — Spine InnovLabs Product
 - **Description**: Security controls built into the product — approval gates, audit logs, and governance by design.
 - **Components**:
   - ProductSecurityContent
 
 ### 3. Product The Adaptive Workspace (/product/the-adaptive-workspace)
-- **Title**: The Adaptive Workspace | IntegrateWise Product
+- **Title**: The Adaptive Workspace | Spine InnovLabs Product
 - **Description**: Role-based views built on Entity 360. Nine workspace views, one canonical truth.
 - **Components**:
   - TheAdaptiveWorkspaceContent
@@ -321,7 +321,7 @@ This document contains the structure and metadata for all pages in the Integrate
   - Footer
 
 ### 4. Product Approval Gate & Twin (/product/approval-gate-twin)
-- **Title**: Approval Gate & Twin in Action | IntegrateWise Product
+- **Title**: Approval Gate & Twin in Action | Spine InnovLabs Product
 - **Description**: AI proposes, you approve. Governed approval queues, tiered routing, Twin scoring, and 24-hour rollback.
 - **Components**:
   - ApprovalGateTwinContent
@@ -335,62 +335,62 @@ This document contains the structure and metadata for all pages in the Integrate
 ## Solutions Pages (13 pages)
 
 ### 1. Finance (/solutions/finance)
-- **Title**: Finance | IntegrateWise Solutions
+- **Title**: Finance | Spine InnovLabs Solutions
 - **Description**: Revenue, risk, collections, cash — the financial picture that finance leaders actually need.
 - **Components**: FinanceIndustryContent, FinalCTA, Footer
 
 ### 2. Customer Success (/solutions/customer-success)
-- **Title**: Customer Success & Account Managers | IntegrateWise
+- **Title**: Customer Success & Account Managers | Spine InnovLabs
 - **Description**: Save at-risk accounts. Accelerate renewals. Surface expansion signals.
 - **Components**: CustomerSuccessRoleContent, FinalCTA, Footer
 
 ### 3. SaaS (/solutions/saas)
-- **Title**: SaaS | IntegrateWise Solutions
+- **Title**: SaaS | Spine InnovLabs Solutions
 - **Description**: Renewals, expansion, adoption — connected in one account view.
 - **Components**: SaasContent, FinalCTA, Footer
 
 ### 4. RevOps (/solutions/revops)
-- **Title**: RevOps & Business Operations | IntegrateWise
+- **Title**: RevOps & Business Operations | Spine InnovLabs
 - **Description**: Pipelines, headcount, projects, exceptions — connected and actionable.
 - **Components**: RevOpsContent, FinalCTA, Footer
 
 ### 5. Operations (/solutions/operations)
-- **Title**: Operations & Delivery Leaders | IntegrateWise
+- **Title**: Operations & Delivery Leaders | Spine InnovLabs
 - **Description**: Utilisation, delivery, exceptions, escalations — the live view that keeps projects on track.
 - **Components**: OperationsContent, FinalCTA, Footer
 
 ### 6. Founders & CXOs (/solutions/founders)
-- **Title**: Founders & CXOs | IntegrateWise
+- **Title**: Founders & CXOs | Spine InnovLabs
 - **Description**: Monday brief. Revenue movement. Board pack — available in seconds.
 - **Components**: FoundersContent, FinalCTA, Footer
 
 ### 7. Retail & Ecommerce (/solutions/retail)
-- **Title**: Retail & Ecommerce | IntegrateWise Solutions
+- **Title**: Retail & Ecommerce | Spine InnovLabs Solutions
 - **Description**: Stock, orders, returns, support — every signal connected so teams act before problems become complaints.
 - **Components**: RetailContent, FinalCTA, Footer
 
 ### 8. Manufacturing & Trade (/solutions/manufacturing)
-- **Title**: Manufacturing & Trade | IntegrateWise Solutions
+- **Title**: Manufacturing & Trade | Spine InnovLabs Solutions
 - **Description**: Orders, shipments, payments — live across ERP, CRM, and logistics.
 - **Components**: ManufacturingContent, FinalCTA, Footer
 
 ### 9. Individual Professionals (/solutions/individual)
-- **Title**: Individual Professionals | IntegrateWise
+- **Title**: Individual Professionals | Spine InnovLabs
 - **Description**: Morning brief, session memory, task queue — your day, organized.
 - **Components**: IndividualContent, FinalCTA, Footer
 
 ### 10. Finance Leaders (/solutions/finance-leaders)
-- **Title**: Finance Leaders | IntegrateWise
+- **Title**: Finance Leaders | Spine InnovLabs
 - **Description**: Cash, collections, runway — accounting, billing, and CRM unified.
 - **Components**: FinanceLeadersContent, FinalCTA, Footer
 
 ### 11. Professional Services (/solutions/professional-services)
-- **Title**: Professional Services | IntegrateWise Solutions
+- **Title**: Professional Services | Spine InnovLabs Solutions
 - **Description**: Engagements, deliverables, billing, relationships — the full account view.
 - **Components**: ProfessionalServicesContent, FinalCTA, Footer
 
 ### 12. Services & Agencies (/solutions/services)
-- **Title**: Services & Agencies | IntegrateWise Solutions
+- **Title**: Services & Agencies | Spine InnovLabs Solutions
 - **Description**: Projects, utilisation, invoices, client health — the full engagement picture.
 - **Components**: ServicesContent, FinalCTA, Footer
 
@@ -399,7 +399,7 @@ This document contains the structure and metadata for all pages in the Integrate
 ## Resources Sub-Pages (1 page)
 
 ### 1. Campaign Gallery (/resources/campaign)
-- **Title**: Campaign Gallery — Architecture & Creatives | IntegrateWise
+- **Title**: Campaign Gallery — Architecture & Creatives | Spine InnovLabs
 - **Description**: Architecture blueprints showing the Adaptive Spine + 36 campaign designs (LinkedIn & WhatsApp) for Account Success, Business Ops, Personal Ops
 - **Components**: CampaignGalleryContent, Footer
 - **Gallery Items**: 36 campaign designs
@@ -458,13 +458,13 @@ This document contains the structure and metadata for all pages in the Integrate
 - Breadcrumb navigation on all pages
 
 ### Contact Information
-- **Email**: connect@integratewise.ai
+- **Email**: connect@spineworkspace.com
 - **Demo CTA**: Book a demo (button at /contact?intent=demo)
 
 ### Branding
-- **Company Name**: IntegrateWise
+- **Company Name**: Spine InnovLabs
 - **Tagline**: "Stop being the human API between your apps"
-- **Domain**: integratewise.ai
+- **Domain**: spineworkspace.com
 - **Dark Mode**: Most pages use #05070A background
 
 ---

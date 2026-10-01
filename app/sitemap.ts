@@ -5,14 +5,19 @@ import { posts } from "@/content/blog"
 
 export const dynamic = "force-static"
 
-const BASE_URL = "https://integratewise.ai"
+const BASE_URL = "https://spineworkspace.com"
 
 const PRIORITY_MAP: Record<string, number> = {
   "/": 1.0,
-  "/product": 0.9,
-  "/platform": 0.9,
-  "/pricing": 0.9,
-  "/solutions": 0.9,
+  "/spineworkspace": 0.95,
+  "/twin": 0.9,
+  "/business-context": 0.9,
+  "/proof": 0.9,
+  "/solutions": 0.92,
+  "/use-cases": 0.85,
+  "/platform": 0.85,
+  "/developers": 0.85,
+  "/pricing": 0.8,
 }
 
 const CHANGE_FREQ_MAP: Record<string, "weekly" | "monthly" | "yearly"> = {

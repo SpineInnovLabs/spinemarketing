@@ -12,12 +12,12 @@ const fade = (delay = 0) => ({
 
 export function PricingTrustBar() {
   return (
-    <section className="relative overflow-hidden bg-dark-section py-20 px-6">
+    <section className="relative overflow-hidden border-t border-[#E5E5E5] bg-[#F3F6F9] py-16 px-6">
       <div className="mx-auto max-w-[1100px]">
-        <motion.div {...fade(0)} className="mx-auto max-w-lg text-center mb-12">
-          <h2 className="text-[28px] font-semibold tracking-[-0.04em] text-white">
+        <motion.div {...fade(0)} className="mx-auto max-w-lg text-center mb-10">
+          <h2 className="text-[24px] font-semibold tracking-[-0.03em] text-[#032D60]">
             Every plan includes{" "}
-            <span className="text-primary">governance by design.</span>
+            <span className="text-[#0176D3]">governance by design.</span>
           </h2>
         </motion.div>
 
@@ -31,14 +31,14 @@ export function PricingTrustBar() {
             <motion.div
               key={label}
               {...fade(i * 0.06)}
-              className="flex items-center gap-3 rounded-xl border border-white/[0.06] bg-white/[0.02] p-4 transition-all hover:border-white/[0.12]"
+              className="flex items-center gap-3 rounded-md border border-[#E5E5E5] bg-white p-4 shadow-[0_1px_2px_rgba(0,0,0,0.04)]"
             >
-              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary/10">
-                <Icon className="h-4 w-4 text-primary" />
+              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-[#F3F6F9]">
+                <Icon className="h-4 w-4 text-[#0176D3]" />
               </div>
               <div>
-                <div className="text-[13px] font-semibold text-white">{label}</div>
-                <div className="text-[11px] text-white/35">{desc}</div>
+                <div className="text-[13px] font-semibold text-[#032D60]">{label}</div>
+                <div className="text-[11px] text-[#706E6B]">{desc}</div>
               </div>
             </motion.div>
           ))}

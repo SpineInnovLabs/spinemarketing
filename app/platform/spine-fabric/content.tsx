@@ -81,7 +81,7 @@ const pipeline = [
 export function SpineFabricContent() {
   return (
     <>
-      <section className="relative overflow-hidden pb-28 pt-40 bg-dark-section">
+      <section className="relative overflow-hidden pb-28 pt-40 bg-white">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute -top-32 left-1/4 w-[700px] h-[700px] rounded-full blur-[220px]" style={{ background: "rgba(27,167,132,0.07)" }} />
         </div>
@@ -108,7 +108,7 @@ export function SpineFabricContent() {
           </motion.p>
           <motion.div {...heroFade(0.5)} className="mt-9 flex flex-wrap items-center justify-center gap-3">
             <Link href="/contact?intent=demo" className="inline-flex h-11 items-center rounded-full bg-primary px-6 text-[14px] font-semibold tracking-[-0.02em] text-white transition-opacity hover:opacity-90">
-              See the Spine live →
+              See Spine Fabric live →
             </Link>
             <Link href="/platform/how-it-works" className="inline-flex h-11 items-center rounded-full border border-white/15 px-6 text-[14px] font-semibold tracking-[-0.02em] text-white/60 transition-colors hover:border-white/30 hover:text-white">
               How it works →
@@ -117,7 +117,7 @@ export function SpineFabricContent() {
         </div>
       </section>
 
-      <section className="py-8 bg-dark-section">
+      <section className="py-8 bg-white">
         <div className="mx-auto max-w-[1000px] px-4">
           <div className="grid grid-cols-3 gap-6 text-center">
             {[
@@ -138,7 +138,7 @@ export function SpineFabricContent() {
         <div className="mx-auto max-w-[1100px]">
           <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center mb-12">
             <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">Core Functions</p>
-            <h2 className="section-heading">Four things the Spine does <span className="text-primary">that nothing else does</span></h2>
+            <h2 className="section-heading">Four things Spine Fabric does <span className="text-primary">that nothing else does</span></h2>
           </motion.div>
           <div className="grid gap-5 sm:grid-cols-2">
             {coreFunctions.map(({ icon: Icon, title, body }, i) => (
@@ -224,7 +224,7 @@ export function SpineFabricContent() {
         </div>
       </section>
 
-      <section className="arvio-section dark-section bg-dark-section">
+      <section className="arvio-section dark-section bg-white">
         <div className="mx-auto max-w-[680px] px-4 text-center">
           <motion.div {...fade(0)}>
             <Database className="mx-auto mb-4 h-7 w-7 text-primary" />

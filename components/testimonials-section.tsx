@@ -5,7 +5,7 @@ import { Star } from "lucide-react";
 
 const defaultTestimonials = [
   {
-    quote: "We went from 7 dashboards to one screen. The Spine connected everything our team needed.",
+    quote: "We went from 7 dashboards to one screen. Spine Fabric connected everything our team needed.",
     name: "Priya Sharma",
     role: "VP Customer Success",
     company: "TechScale India",
@@ -44,25 +44,19 @@ export function TestimonialsSection({
   tag?: string;
 }) {
   return (
-    <section className="relative overflow-hidden py-32 md:py-40" style={{ background: "#05070A" }}>
-      <div className="pointer-events-none absolute inset-0">
-        <div
-          className="absolute right-[15%] top-[20%] h-[500px] w-[600px] rounded-full opacity-[0.07] blur-[140px]"
-          style={{ background: "radial-gradient(circle, rgba(139,92,246,0.4), transparent 70%)" }}
-        />
-      </div>
+    <section className="relative overflow-hidden border-t border-[#E5E5E5] bg-white py-20 md:py-28">
       <div className="relative mx-auto max-w-[1100px] px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ type: "spring", damping: 18, stiffness: 70 }}
-          className="mx-auto mb-16 max-w-2xl text-center"
+          className="mx-auto mb-14 max-w-2xl text-center"
         >
-          <p className="mb-4 text-[12px] font-bold uppercase tracking-[0.14em] text-primary">
+          <p className="mb-3 text-[12px] font-bold uppercase tracking-[0.08em] text-[#0176D3]">
             {tag}
           </p>
-          <h2 className="text-[40px] font-semibold leading-[1.1] tracking-[-0.04em] text-white sm:text-[52px]">
+          <h2 className="text-[32px] font-semibold leading-[1.15] tracking-[-0.03em] text-[#032D60] sm:text-[40px]">
             {heading}
           </h2>
         </motion.div>
@@ -75,35 +69,25 @@ export function TestimonialsSection({
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ type: "spring", damping: 18, stiffness: 70, delay: i * 0.08 }}
-              className="group relative overflow-hidden rounded-2xl border border-white/[0.06] p-6 transition-all hover:border-white/[0.12] hover:-translate-y-0.5"
-              style={{
-                background: "rgba(255,255,255,0.02)",
-                backdropFilter: "blur(12px)",
-                boxShadow: "inset 0 1px 0 rgba(255,255,255,0.04)",
-              }}
+              className="rounded-md border border-[#E5E5E5] bg-white p-6 shadow-[0_1px_2px_rgba(0,0,0,0.04)] transition-shadow hover:shadow-[0_2px_8px_rgba(0,0,0,0.06)]"
             >
-              <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
-
               <div className="mb-4 flex gap-0.5">
                 {[...Array(5)].map((_, si) => (
-                  <Star key={si} className="h-3.5 w-3.5 fill-primary/80 text-primary/80" />
+                  <Star key={si} className="h-3.5 w-3.5 fill-[#0176D3] text-[#0176D3]" />
                 ))}
               </div>
 
-              <p className="text-[15px] font-medium leading-[1.7] text-white/60">
+              <p className="text-[15px] font-medium leading-[1.7] text-[#444]">
                 &ldquo;{t.quote}&rdquo;
               </p>
 
-              <div className="mt-6 flex items-center gap-3 border-t border-white/[0.06] pt-5">
-                <div
-                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-[13px] font-bold text-white"
-                  style={{ background: "linear-gradient(135deg, rgba(52,211,153,0.3), rgba(139,92,246,0.3))" }}
-                >
+              <div className="mt-6 flex items-center gap-3 border-t border-[#E5E5E5] pt-5">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#F3F6F9] text-[13px] font-bold text-[#032D60]">
                   {t.avatar}
                 </div>
                 <div>
-                  <div className="text-[14px] font-semibold text-white">{t.name}</div>
-                  <div className="text-[12px] font-medium text-white/35">
+                  <div className="text-[14px] font-semibold text-[#032D60]">{t.name}</div>
+                  <div className="text-[12px] font-medium text-[#706E6B]">
                     {t.role} · {t.company}
                   </div>
                 </div>

@@ -2,7 +2,7 @@
 
 /**
  * Wordmark SVG extracted from the published Figma Make bundle at
- * https://figma.integratewise.ai/ (component i1). Uses currentColor for fills.
+ * https://figma.spineworkspace.com/ (component i1). Uses currentColor for fills.
  */
 export function SpineWorkspaceWordmark({ className = "" }: { className?: string }) {
   return (

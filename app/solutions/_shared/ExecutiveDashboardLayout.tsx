@@ -2,8 +2,10 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import React from "react";
 import { ArrowRight, Shield, TrendingDown, TrendingUp } from "lucide-react";
+import { PageHero } from "@/components/marketing/page-hero";
+import { Section, SectionHeader } from "@/components/marketing/section";
+import { KpiBlock } from "@/components/marketing/enterprise";
 
 export interface BeforeAfterItem {
   label: string;
@@ -39,17 +41,10 @@ const fade = (delay = 0) => ({
   transition: { type: "spring" as const, damping: 18, stiffness: 70, delay },
 });
 
-const heroFade = (delay = 0) => ({
-  initial: { opacity: 0, y: 14 } as const,
-  animate: { opacity: 1, y: 0 } as const,
-  transition: { type: "spring" as const, damping: 16, mass: 1, stiffness: 52, delay },
-});
-
 export function ExecutiveDashboardLayout({
   role,
   headline,
   subheadline,
-  accentColor = "rgba(251,191,36,0.5)",
   ctaLabel = "Book a demo",
   ctaHref = "/contact?intent=demo",
   beforeAfter,
@@ -62,190 +57,110 @@ export function ExecutiveDashboardLayout({
 }: ExecutiveDashboardProps) {
   return (
     <>
-      <section className="relative overflow-hidden" style={{ background: "#05070A" }}>
-        <div className="pointer-events-none absolute inset-0">
-          <div className="absolute left-1/2 top-[18%] h-[500px] w-[800px] -translate-x-1/2 rounded-full opacity-[0.06] blur-[140px]" style={{ background: `radial-gradient(circle, ${accentColor}, transparent 70%)` }} />
-        </div>
-        <div className="relative mx-auto max-w-[900px] px-6 pb-20 pt-[160px] text-center md:px-16">
-          <motion.div
-            {...heroFade(0.08)}
-            className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/[0.08] px-4 py-1.5 text-[13px] font-semibold text-white/50"
-            style={{ background: "rgba(255,255,255,0.03)", backdropFilter: "blur(12px)" }}
-          >
-            <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-            {role}
-          </motion.div>
-          <motion.h1 {...heroFade(0.22)} className="text-[48px] font-semibold leading-[1.05] tracking-[-0.05em] text-white sm:text-[60px] lg:text-[72px]">
-            {headline}
-          </motion.h1>
-          <motion.p {...heroFade(0.4)} className="mx-auto mt-7 max-w-2xl text-[17px] font-medium leading-[1.6] tracking-[-0.02em] text-white/45">
-            {subheadline}
-          </motion.p>
-          <motion.div {...heroFade(0.52)} className="mt-10 flex flex-wrap items-center justify-center gap-3">
-            <Link href={ctaHref} className="inline-flex h-12 items-center gap-2 rounded-full px-7 text-[14px] font-semibold tracking-[-0.02em] text-white transition-all hover:opacity-90" style={{ background: "var(--gradient-primary)", boxShadow: "0 0 30px rgba(27,167,132,0.15)" }}>
-              {ctaLabel} <ArrowRight className="h-4 w-4" />
-            </Link>
-          </motion.div>
-        </div>
+      <PageHero
+        badge={role}
+        headline={headline}
+        subhead={subheadline}
+        primaryCta={{ label: ctaLabel, href: ctaHref }}
+      />
 
-        {outcomes?.length ? (
-          <div className="relative mx-auto max-w-[1100px] px-6 pb-28">
-            <motion.div {...heroFade(0.62)} className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-              {outcomes.map((o, i) => (
-                <div key={i} className="rounded-xl border border-white/[0.06] px-4 py-5 text-center" style={{ background: "rgba(255,255,255,0.02)", backdropFilter: "blur(12px)" }}>
-                  <p className="text-[28px] font-bold tracking-[-0.03em] text-primary sm:text-[36px]">{o.stat}</p>
-                  <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.08em] text-white/30">{o.label}</p>
+      <Section variant="muted">
+        <SectionHeader label="The shift" headline="From fragmented signals to executive clarity" />
+        <div className="space-y-4">
+          {beforeAfter.map((item, i) => (
+            <motion.div key={i} {...fade(i * 0.08)} className="rounded-md border border-[#E5E5E5] bg-white p-5">
+              <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[#0176D3]">{item.label}</p>
+              <div className="mt-3 grid gap-4 sm:grid-cols-2">
+                <div className="flex items-start gap-2">
+                  <TrendingDown className="mt-0.5 h-4 w-4 shrink-0 text-red-500" />
+                  <p className="text-[14px] leading-[1.6] text-[#444]">{item.before}</p>
                 </div>
-              ))}
+                <div className="flex items-start gap-2">
+                  <TrendingUp className="mt-0.5 h-4 w-4 shrink-0 text-[#0176D3]" />
+                  <p className="text-[14px] leading-[1.6] text-[#444]">{item.after}</p>
+                </div>
+              </div>
             </motion.div>
-          </div>
-        ) : null}
-      </section>
+          ))}
+        </div>
+      </Section>
 
-      <section className="border-t border-white/[0.04] py-24 md:py-32" style={{ background: "#05070A" }}>
-        <div className="mx-auto max-w-[1100px] px-6">
-          <motion.div {...fade(0)} className="mb-14 text-center">
-            <p className="mb-4 text-[12px] font-bold uppercase tracking-[0.14em] text-primary">The shift</p>
-            <h2 className="text-[36px] font-semibold leading-[1.1] tracking-[-0.04em] text-white sm:text-[48px]">
-              From <span className="text-red-400/80">guesswork</span> to <span className="text-primary">clarity</span>
-            </h2>
-          </motion.div>
-          <div className="overflow-hidden rounded-2xl border border-white/[0.06]">
-            <div className="grid grid-cols-[1fr_1fr_1fr] gap-px text-center" style={{ background: "rgba(255,255,255,0.02)" }}>
-              <div className="px-4 py-3 text-[12px] font-bold uppercase tracking-[0.1em] text-white/30" style={{ background: "#080b10" }}>&nbsp;</div>
-              <div className="flex items-center justify-center gap-1.5 px-4 py-3" style={{ background: "rgba(239,68,68,0.04)" }}>
-                <TrendingDown className="h-3.5 w-3.5 text-red-400/50" />
-                <span className="text-[12px] font-bold uppercase tracking-[0.1em] text-red-400/60">Before</span>
-              </div>
-              <div className="flex items-center justify-center gap-1.5 px-4 py-3" style={{ background: "rgba(45,212,191,0.04)" }}>
-                <TrendingUp className="h-3.5 w-3.5 text-primary/60" />
-                <span className="text-[12px] font-bold uppercase tracking-[0.1em] text-primary/70">After</span>
-              </div>
-            </div>
-            {beforeAfter.map((item, i) => (
-              <motion.div key={i} {...fade(i * 0.06)} className="grid grid-cols-[1fr_1fr_1fr] gap-px border-t border-white/[0.04]">
-                <div className="flex items-center px-5 py-4" style={{ background: "#080b10" }}>
-                  <p className="text-[13px] font-semibold tracking-[-0.01em] text-white/60">{item.label}</p>
-                </div>
-                <div className="px-5 py-4" style={{ background: "rgba(239,68,68,0.03)" }}>
-                  <p className="text-[13px] font-medium leading-[1.5] text-white/40">{item.before}</p>
-                </div>
-                <div className="px-5 py-4" style={{ background: "rgba(45,212,191,0.03)" }}>
-                  <p className="text-[13px] font-medium leading-[1.5] text-white/55">{item.after}</p>
-                </div>
-              </motion.div>
+      {outcomes?.length ? (
+        <Section>
+          <div className="grid gap-4 sm:grid-cols-3">
+            {outcomes.map((o, i) => (
+              <KpiBlock key={i} label={o.label} value={o.stat} detail="" />
             ))}
           </div>
-        </div>
-      </section>
+        </Section>
+      ) : null}
 
-      <section className="border-t border-white/[0.04] py-24 md:py-32" style={{ background: "#05070A" }}>
-        <div className="mx-auto max-w-[1100px] px-6">
-          <motion.div {...fade(0)} className="mb-14 text-center">
-            <p className="mb-4 text-[12px] font-bold uppercase tracking-[0.14em] text-primary">Your dashboard</p>
-            <h2 className="text-[36px] font-semibold leading-[1.1] tracking-[-0.04em] text-white sm:text-[48px]">
-              Everything on <span className="text-primary">one screen</span>
-            </h2>
-          </motion.div>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {dashboardCards.map(({ title, desc }, i) => (
-              <motion.div
-                key={i}
-                {...fade(i * 0.07)}
-                className="group rounded-2xl border border-white/[0.06] p-6 transition-all hover:border-white/[0.12] hover:-translate-y-0.5"
-                style={{ background: "rgba(255,255,255,0.02)", backdropFilter: "blur(12px)", boxShadow: "inset 0 1px 0 rgba(255,255,255,0.04)" }}
-              >
-                <div className="mb-4 flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10">
-                  <span className="text-[14px] font-bold text-primary">{String(i + 1).padStart(2, "0")}</span>
-                </div>
-                <h3 className="text-[16px] font-semibold tracking-[-0.02em] text-white">{title}</h3>
-                <p className="mt-2 text-[14px] font-medium leading-[1.7] text-white/40">{desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {deepDives.length > 0 && (
-        <section className="border-t border-white/[0.04] py-24 md:py-32" style={{ background: "#05070A" }}>
-          <div className="mx-auto max-w-[900px] px-6">
-            <motion.div {...fade(0)} className="mb-14">
-              <p className="mb-4 text-[12px] font-bold uppercase tracking-[0.14em] text-primary">Deep dive</p>
-              <h2 className="text-[36px] font-semibold leading-[1.1] tracking-[-0.04em] text-white sm:text-[48px]">
-                How each piece <span className="text-primary">works for you</span>
-              </h2>
+      <Section>
+        <SectionHeader label="Your dashboard" headline="What you see every morning" />
+        <div className="grid gap-4 sm:grid-cols-2">
+          {dashboardCards.map(({ title, desc }, i) => (
+            <motion.div key={i} {...fade(i * 0.08)} className="rounded-md border border-[#E5E5E5] bg-white p-5 shadow-[0_1px_2px_rgba(0,0,0,0.04)]">
+              <h3 className="text-[16px] font-semibold text-[#032D60]">{title}</h3>
+              <p className="mt-2 text-[14px] leading-[1.7] text-[#444]">{desc}</p>
             </motion.div>
-            <div className="space-y-6">
-              {deepDives.map(({ title, desc }, i) => (
-                <motion.div
-                  key={i}
-                  {...fade(i * 0.08)}
-                  className="rounded-2xl border border-white/[0.06] px-7 py-6"
-                  style={{ background: "rgba(255,255,255,0.015)" }}
-                >
-                  <h3 className="text-[17px] font-semibold tracking-[-0.02em] text-white">{title}</h3>
-                  <p className="mt-2 text-[14px] font-medium leading-[1.7] text-white/45">{desc}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
+          ))}
+        </div>
+      </Section>
 
-      <section className="border-t border-white/[0.04] py-16" style={{ background: "#05070A" }}>
-        <div className="mx-auto max-w-[900px] px-6">
-          <motion.div
-            {...fade(0)}
-            className="flex items-start gap-4 rounded-2xl border border-primary/15 px-8 py-7"
-            style={{ background: "linear-gradient(135deg, rgba(45,212,191,0.04), rgba(139,92,246,0.03))", backdropFilter: "blur(12px)" }}
-          >
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10">
-              <Shield className="h-5 w-5 text-primary" />
+      <Section variant="muted">
+        <SectionHeader label="Deep dives" headline="Drill into what matters" />
+        <div className="space-y-3">
+          {deepDives.map(({ title, desc }, i) => (
+            <motion.div key={i} {...fade(i * 0.06)} className="rounded-md border border-[#E5E5E5] bg-white p-5">
+              <h3 className="text-[15px] font-semibold text-[#032D60]">{title}</h3>
+              <p className="mt-1 text-[14px] leading-[1.6] text-[#444]">{desc}</p>
+            </motion.div>
+          ))}
+        </div>
+      </Section>
+
+      <Section>
+        <div className="rounded-md border border-[#E5E5E5] bg-[#F3F6F9] p-6 md:p-8">
+          <div className="flex items-start gap-4">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-white">
+              <Shield className="h-5 w-5 text-[#0176D3]" />
             </div>
             <div>
-              <h3 className="text-[15px] font-bold uppercase tracking-[0.08em] text-primary">Full visibility. Full control.</h3>
-              <p className="mt-2 text-[15px] font-medium leading-[1.7] text-white/50">{governance}</p>
+              <h3 className="text-[15px] font-bold uppercase tracking-[0.08em] text-[#0176D3]">AI thinks. You approve.</h3>
+              <p className="mt-2 text-[15px] leading-[1.7] text-[#444]">{governance}</p>
+            </div>
+          </div>
+        </div>
+        <div className="mt-10 grid gap-12 sm:grid-cols-2">
+          <motion.div {...fade(0)}>
+            <p className="mb-3 text-[12px] font-bold uppercase tracking-[0.08em] text-[#0176D3]">Connects with</p>
+            <div className="flex flex-wrap gap-2">
+              {connectors.map((c) => (
+                <span key={c} className="rounded-md border border-[#E5E5E5] bg-[#F3F6F9] px-3 py-1.5 text-[13px] font-medium text-[#444]">{c}</span>
+              ))}
+            </div>
+          </motion.div>
+          <motion.div {...fade(0.08)}>
+            <p className="mb-3 text-[12px] font-bold uppercase tracking-[0.08em] text-[#0176D3]">KPIs tracked</p>
+            <div className="flex flex-wrap gap-2">
+              {metrics.map((m) => (
+                <span key={m} className="rounded-md border border-[#E5E5E5] bg-[#F3F6F9] px-3 py-1.5 text-[13px] font-medium text-[#444]">{m}</span>
+              ))}
             </div>
           </motion.div>
         </div>
-      </section>
+      </Section>
 
-      <section className="border-t border-white/[0.04] pb-20 pt-16" style={{ background: "#05070A" }}>
-        <div className="mx-auto max-w-[1100px] px-6">
-          <div className="grid gap-12 sm:grid-cols-2">
-            <motion.div {...fade(0)}>
-              <p className="mb-3 text-[12px] font-bold uppercase tracking-[0.14em] text-primary">Connects with</p>
-              <div className="flex flex-wrap gap-2">
-                {connectors.map((c) => (
-                  <span key={c} className="rounded-lg border border-white/[0.06] px-3 py-1.5 text-[13px] font-semibold text-white/45" style={{ background: "rgba(255,255,255,0.02)" }}>{c}</span>
-                ))}
-              </div>
-            </motion.div>
-            <motion.div {...fade(0.08)}>
-              <p className="mb-3 text-[12px] font-bold uppercase tracking-[0.14em] text-primary">KPIs tracked</p>
-              <div className="flex flex-wrap gap-2">
-                {metrics.map((m) => (
-                  <span key={m} className="rounded-lg border border-white/[0.06] px-3 py-1.5 text-[13px] font-semibold text-white/45" style={{ background: "rgba(255,255,255,0.02)" }}>{m}</span>
-                ))}
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      <section className="relative overflow-hidden py-28" style={{ background: "#05070A" }}>
-        <div className="pointer-events-none absolute inset-0">
-          <div className="absolute left-1/2 top-1/2 h-[400px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-[0.06] blur-[120px]" style={{ background: `radial-gradient(circle, ${accentColor}, transparent 70%)` }} />
-        </div>
-        <div className="relative mx-auto max-w-[700px] px-6 text-center">
-          <motion.h2 {...fade(0)} className="text-[36px] font-semibold leading-[1.1] tracking-[-0.04em] text-white sm:text-[48px]">
-            See the full picture <span className="text-primary">for yourself</span>
+      <section className="border-t border-[#E5E5E5] bg-[#032D60] py-16">
+        <div className="mx-auto max-w-[700px] px-6 text-center">
+          <motion.h2 {...fade(0)} className="text-[28px] font-semibold leading-[1.15] text-white sm:text-[36px]">
+            See your executive view live
           </motion.h2>
-          <motion.p {...fade(0.08)} className="mx-auto mt-5 max-w-lg text-[16px] font-medium leading-[1.6] text-white/45">
-            20 minutes. Your tools connected. A live dashboard built from your actual data.
+          <motion.p {...fade(0.08)} className="mx-auto mt-4 max-w-lg text-[16px] leading-[1.6] text-white/70">
+            Book a walkthrough with your actual tools connected.
           </motion.p>
           <motion.div {...fade(0.16)} className="mt-8">
-            <Link href="/contact?intent=demo" className="inline-flex h-12 items-center gap-2 rounded-full px-8 text-[15px] font-semibold text-white transition-all hover:opacity-90" style={{ background: "var(--gradient-primary)", boxShadow: "0 0 30px rgba(27,167,132,0.15)" }}>
+            <Link href="/contact?intent=demo" className="inline-flex h-10 items-center gap-2 rounded-md bg-white px-5 text-[14px] font-semibold text-[#032D60] hover:bg-[#F3F6F9]">
               Book a demo <ArrowRight className="h-4 w-4" />
             </Link>
           </motion.div>

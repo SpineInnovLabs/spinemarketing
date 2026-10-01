@@ -20,19 +20,26 @@ export const metadata: Metadata = {
 
 export default function BlogPage() {
   return (
-    <div className="min-h-screen bg-dark-section">
+    <div className="min-h-screen bg-white">
       <BreadcrumbJsonLd items={[
-        { name: "Home", url: "https://integratewise.ai" },
-        { name: "Blog", url: "https://integratewise.ai/blog" },
+        { name: "Home", url: "https://spineworkspace.com" },
+        { name: "Blog", url: "https://spineworkspace.com/blog" },
       ]} />
       <Header />
       <main id="main">
-        <section className="relative overflow-hidden bg-dark-section">
+        <section className="relative overflow-hidden bg-white">
           <div className="mx-auto max-w-[1100px] px-6 pt-[160px] pb-[80px] md:px-16">
             <h1 className="text-[40px] font-semibold tracking-[-0.05em] leading-[1.1] text-white sm:text-[52px]">Blog</h1>
             <p className="mt-4 max-w-xl text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-white/55">
-              Insights on connected workspaces, AI that waits for your approval, and how teams are fixing their morning routines.
+              Thinking on business context, human–AI work, and adaptive workspaces.
             </p>
+            <div className="mt-6 flex flex-wrap gap-2">
+              {["Product", "Business context", "Human–AI work", "Governance and trust", "Host-connected environments", "Company updates"].map((cat) => (
+                <span key={cat} className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-[12px] font-semibold text-white/40">
+                  {cat}
+                </span>
+              ))}
+            </div>
           </div>
         </section>
 

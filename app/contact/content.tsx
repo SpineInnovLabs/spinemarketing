@@ -1,8 +1,9 @@
 "use client";
 
-import React from "react";
+import React, { useMemo } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { LeadForm, type LeadIntent } from "@/components/lead-form";
 import { FAQSection } from "@/components/faq-section";
 import { Mail, MapPin, MessageSquare, ArrowRight } from "lucide-react";
@@ -40,10 +41,21 @@ const contactFAQs = [
     answer: (
       <span>
         Yes. AES-256 encryption at rest, TLS 1.3 in transit, SOC 2 aligned practices, full audit trails, and non-bypassable human approval on every AI action. Learn more on our{" "}
-        <Link href="/security" className="text-primary underline underline-offset-2 hover:text-primary/80">Security page</Link>.
+        <Link href="/security" className="text-[#0176D3] underline underline-offset-2 hover:text-[#0B5CAB]">Security page</Link>.
       </span>
     ),
   },
+];
+
+const VALID_INTENTS: LeadIntent[] = [
+  "contact",
+  "demo",
+  "pricing",
+  "design-partner",
+  "partnership",
+  "media",
+  "careers",
+  "security",
 ];
 
 export function ContactContent({
@@ -51,38 +63,43 @@ export function ContactContent({
 }: {
   defaultIntent?: LeadIntent;
 }) {
+  const searchParams = useSearchParams();
+  const intentFromUrl = searchParams.get("intent");
+  const resolvedIntent = useMemo(() => {
+    if (intentFromUrl && VALID_INTENTS.includes(intentFromUrl as LeadIntent)) {
+      return intentFromUrl as LeadIntent;
+    }
+    return defaultIntent;
+  }, [intentFromUrl, defaultIntent]);
+
   return (
     <>
-      <section className="relative overflow-hidden pt-[160px] pb-28" style={{ background: "#05070A" }}>
-        <div className="pointer-events-none absolute inset-0">
-          <div className="absolute left-1/2 top-[25%] h-[600px] w-[800px] -translate-x-1/2 rounded-full opacity-[0.07] blur-[140px]" style={{ background: "radial-gradient(circle, rgba(52,211,153,0.4), transparent 70%)" }} />
-        </div>
+      <section className="border-b border-[#E5E5E5] bg-white pt-[120px] pb-16">
         <div className="relative mx-auto max-w-[900px] px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ type: "spring", damping: 16, stiffness: 52, delay: 0.2 }}
-            className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/[0.08] px-4 py-1.5 text-[13px] font-semibold text-white/50"
-            style={{ background: "rgba(255,255,255,0.03)", backdropFilter: "blur(12px)" }}
+            transition={{ type: "spring", damping: 16, stiffness: 52, delay: 0.1 }}
+            className="mb-6 inline-flex items-center gap-2 rounded-md border border-[#E5E5E5] bg-[#F3F6F9] px-3 py-1 text-[12px] font-semibold uppercase tracking-[0.06em] text-[#032D60]"
           >
-            <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+            <span className="h-1.5 w-1.5 rounded-full bg-[#0176D3]" />
             Contact
           </motion.div>
 
           <motion.h1
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ type: "spring", damping: 16, stiffness: 52, delay: 0.4 }}
-            className="text-[48px] font-semibold leading-[1.05] tracking-[-0.05em] text-white sm:text-[64px] lg:text-[72px]"
+            transition={{ type: "spring", damping: 16, stiffness: 52, delay: 0.2 }}
+            className="text-[40px] font-semibold leading-[1.1] tracking-[-0.03em] text-[#032D60] sm:text-[48px]"
           >
-            Let&apos;s <span className="text-primary">talk.</span>
+            Talk to <span className="text-[#0176D3]">Spine InnovLabs.</span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ type: "spring", damping: 16, stiffness: 52, delay: 0.6 }}
-            className="mx-auto mt-7 max-w-2xl text-[17px] font-medium leading-[1.6] text-white/45"
+            transition={{ type: "spring", damping: 16, stiffness: 52, delay: 0.35 }}
+            className="mx-auto mt-5 max-w-2xl text-[17px] leading-[1.6] text-[#444]"
           >
             Whether you want a demo, have a question, or want to explore how
             SpineWorkspace fits your apps — we&apos;re here.
@@ -90,7 +107,7 @@ export function ContactContent({
         </div>
       </section>
 
-      <section className="py-28 px-6 md:px-16" style={{ background: "#05070A" }}>
+      <section className="border-t border-[#E5E5E5] bg-[#F3F6F9] py-20 px-6 md:px-16">
         <div className="mx-auto max-w-[1100px]">
           <div className="mx-auto grid max-w-4xl gap-5 sm:grid-cols-3">
             {[
@@ -115,53 +132,42 @@ export function ContactContent({
                 title: "Visit us",
                 desc: "Based in India, serving teams globally. Available for in-person meetings by appointment.",
                 cta: "Get directions",
-                href: "mailto:connect@integratewise.ai?subject=Meeting%20Request",
+                href: "mailto:connect@spineworkspace.com?subject=Meeting%20Request",
                 external: true,
               },
             ].map(({ icon: Icon, title, desc, cta, href, external }, i) => (
               <motion.div
                 key={i}
                 {...fade(i * 0.1)}
-                className="group flex h-full flex-col items-center overflow-hidden rounded-2xl border border-white/[0.06] p-8 text-center transition-all hover:border-primary/20 hover:-translate-y-0.5"
-                style={{
-                  background: "rgba(255,255,255,0.02)",
-                  backdropFilter: "blur(12px)",
-                  boxShadow: "inset 0 1px 0 rgba(255,255,255,0.04)",
-                }}
+                className="group flex h-full flex-col items-center rounded-md border border-[#E5E5E5] bg-white p-8 text-center shadow-[0_1px_2px_rgba(0,0,0,0.04)] transition-shadow hover:shadow-[0_2px_8px_rgba(0,0,0,0.06)]"
               >
-                <div
-                  className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/[0.10]"
-                  style={{ boxShadow: "0 0 25px rgba(52,211,153,0.12)" }}
-                >
-                  <Icon className="h-5 w-5 text-primary" />
+                <div className="flex h-12 w-12 items-center justify-center rounded-md bg-[#F3F6F9]">
+                  <Icon className="h-5 w-5 text-[#0176D3]" />
                 </div>
-                <h3 className="mt-5 text-[17px] font-semibold tracking-[-0.03em] text-white">
+                <h3 className="mt-5 text-[17px] font-semibold tracking-[-0.03em] text-[#032D60]">
                   {title}
                 </h3>
-                <p className="mt-3 flex-1 text-[14px] font-medium leading-[1.6] text-white/40">
+                <p className="mt-3 flex-1 text-[14px] leading-[1.6] text-[#444]">
                   {desc}
                 </p>
                 {external ? (
                   <a
                     href={href}
-                    className="mt-6 inline-flex h-11 items-center gap-2 rounded-full px-6 text-[13px] font-semibold text-white transition-all hover:opacity-90"
-                    style={{ background: "var(--gradient-primary)", boxShadow: "0 0 20px rgba(27,167,132,0.12)" }}
+                    className="mt-6 inline-flex h-10 items-center gap-2 rounded-md bg-[#0176D3] px-5 text-[13px] font-semibold text-white hover:bg-[#0B5CAB]"
                   >
                     {cta} <ArrowRight className="h-3.5 w-3.5" />
                   </a>
                 ) : href.startsWith("#") ? (
                   <a
                     href={href}
-                    className="mt-6 inline-flex h-11 items-center gap-2 rounded-full px-6 text-[13px] font-semibold text-white transition-all hover:opacity-90"
-                    style={{ background: "var(--gradient-primary)", boxShadow: "0 0 20px rgba(27,167,132,0.12)" }}
+                    className="mt-6 inline-flex h-10 items-center gap-2 rounded-md bg-[#0176D3] px-5 text-[13px] font-semibold text-white hover:bg-[#0B5CAB]"
                   >
                     {cta} <ArrowRight className="h-3.5 w-3.5" />
                   </a>
                 ) : (
                   <Link
                     href={href}
-                    className="mt-6 inline-flex h-11 items-center gap-2 rounded-full px-6 text-[13px] font-semibold text-white transition-all hover:opacity-90"
-                    style={{ background: "var(--gradient-primary)", boxShadow: "0 0 20px rgba(27,167,132,0.12)" }}
+                    className="mt-6 inline-flex h-10 items-center gap-2 rounded-md bg-[#0176D3] px-5 text-[13px] font-semibold text-white hover:bg-[#0B5CAB]"
                   >
                     {cta} <ArrowRight className="h-3.5 w-3.5" />
                   </Link>
@@ -171,7 +177,7 @@ export function ContactContent({
           </div>
 
           <div id="contact-form" className="mx-auto mt-16 max-w-lg scroll-mt-28">
-            <LeadForm defaultIntent={defaultIntent} />
+            <LeadForm defaultIntent={resolvedIntent} />
           </div>
         </div>
       </section>

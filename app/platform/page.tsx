@@ -2,19 +2,15 @@ import { Metadata } from "next"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { FinalCTA } from "@/components/final-cta"
-import { PlatformContent } from "./content"
+import { PlatformHubIntro } from "./hub"
 import { PlatformFAQ } from "./faq"
-import { StatsBar } from "@/components/stats-bar"
-import { BentoShowcase } from "@/components/bento-showcase"
-import { ComparisonSection } from "@/components/comparison-section"
-import { TestimonialsSection } from "@/components/testimonials-section"
 import { PlatformStickyScroll } from "./sticky-sections"
 import { BreadcrumbJsonLd, SoftwareApplicationJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
-  title: "Platform | SpineWorkspace",
+  title: "Platform — The platform behind SpineWorkspace",
   description:
-    "The Spine Fabric. Connects every app. Governs every AI action. Nothing happens without your approval.",
+    "Architecture for adaptive business-context workspaces: Spine Fabric, Runtime, Marketplace, and governed execution.",
   alternates: { canonical: "/platform" },
   openGraph: {
     title: "Platform | SpineWorkspace",
@@ -25,24 +21,16 @@ export const metadata: Metadata = {
 
 export default function PlatformPage() {
   return (
-    <div className="min-h-screen bg-dark-section">
+    <div className="min-h-screen bg-white">
       <SoftwareApplicationJsonLd />
       <BreadcrumbJsonLd items={[
-        { name: "Home", url: "https://integratewise.ai" },
-        { name: "Platform", url: "https://integratewise.ai/platform" },
+        { name: "Home", url: "https://spineworkspace.com" },
+        { name: "Platform", url: "https://spineworkspace.com/platform" },
       ]} />
       <Header />
       <main id="main">
-        <PlatformContent />
-        <StatsBar />
+        <PlatformHubIntro />
         <PlatformStickyScroll />
-        <BentoShowcase
-          tag="The Workspace"
-          heading="See it all. Act on what matters."
-          subheading="The Workspace shows your accounts. The Twin surfaces what you'd miss."
-        />
-        <ComparisonSection />
-        <TestimonialsSection />
         <PlatformFAQ />
         <FinalCTA />
       </main>

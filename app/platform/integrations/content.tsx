@@ -92,7 +92,7 @@ const services = [
 export function PlatformIntegrationsContent() {
   return (
     <>
-      <section className="relative overflow-hidden pb-28 pt-40 bg-dark-section">
+      <section className="relative overflow-hidden pb-28 pt-40 bg-white">
         <div className="mx-auto max-w-[820px] px-4 text-center">
           <motion.div
             {...heroFade(0.1)}
@@ -196,7 +196,7 @@ export function PlatformIntegrationsContent() {
         </div>
       </section>
 
-      <section className="arvio-section dark-section bg-dark-section">
+      <section className="arvio-section dark-section bg-white">
         <div className="mx-auto max-w-[680px] px-4 text-center">
           <motion.div {...fade(0)}>
             <Plug className="mx-auto mb-4 h-7 w-7 text-primary" />

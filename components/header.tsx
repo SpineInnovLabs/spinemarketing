@@ -4,130 +4,11 @@ import { useState, useRef, useCallback, useEffect } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { SpineLogo } from "@/components/spine-logo";
-import {
-  Menu,
-  X,
-  ChevronDown,
-  Users,
-  BarChart3,
-  Sparkles,
-  Plug,
-  Brain,
-  ShieldCheck,
-  Building2,
-  Mail,
-  Cloud,
-  Wrench,
-  Package,
-  ShoppingCart,
-  Briefcase,
-  TrendingUp,
-  UserCheck,
-  Telescope,
-  Settings2,
-  Truck,
-  DollarSign,
-  User,
-  BookOpen,
-  GitMerge,
-  HelpCircle,
-  Database,
-  Cpu,
-  GitBranch,
-  Eye,
-  Globe,
-  Server,
-} from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
+import { headerNavigation, type NavItem, type NavItemChild } from "@/lib/navigation";
 import { motion, useScroll, useSpring } from "framer-motion";
 
-type NavItemChild = {
-  name: string;
-  href: string;
-  icon: React.ComponentType<{ className?: string }>;
-  desc?: string;
-};
-
-type NavGroup = {
-  label: string;
-  items: NavItemChild[];
-};
-
-type NavItem = {
-  label: string;
-  href: string;
-  items?: NavItemChild[];
-  groups?: NavGroup[];
-};
-
-const navigation: NavItem[] = [
-  {
-    label: "Platform",
-    href: "/platform",
-    items: [
-      { name: "Spine Fabric", href: "/platform/spine-fabric", icon: Database },
-      { name: "How it Works", href: "/platform/how-it-works", icon: GitBranch },
-      { name: "Integrations", href: "/platform/integrations", icon: Plug },
-      { name: "Security", href: "/platform/security", icon: ShieldCheck },
-      { name: "Infrastructure", href: "/platform/infrastructure", icon: Server },
-    ],
-  },
-  {
-    label: "Product",
-    href: "/product",
-    items: [
-      { name: "The Workspace", href: "/product/the-adaptive-workspace", icon: Cpu },
-      { name: "How it Works", href: "/product/how-it-works", icon: TrendingUp },
-      { name: "Governance & Twin", href: "/product/approval-gate-twin", icon: UserCheck },
-      { name: "Security", href: "/product/security", icon: ShieldCheck },
-    ],
-  },
-  {
-    label: "Solutions",
-    href: "/solutions",
-    groups: [
-      {
-        label: "By Function",
-        items: [
-          { name: "Resolution", href: "/account-success", icon: Users, desc: "Entity matching and dedup" },
-          { name: "Business Ops", href: "/business-ops", icon: BarChart3, desc: "The live operating picture" },
-          { name: "Personal Ops", href: "/personal-ops", icon: Sparkles, desc: "Your workspace, your context" },
-        ],
-      },
-      {
-        label: "By Industry",
-        items: [
-          { name: "SaaS", href: "/solutions/saas", icon: Cloud, desc: "Renewals, expansion, adoption" },
-          { name: "Services & Agencies", href: "/solutions/services", icon: Wrench, desc: "Projects, utilisation, billing" },
-          { name: "Manufacturing & Trade", href: "/solutions/manufacturing", icon: Package, desc: "Orders, shipments, exceptions" },
-          { name: "Retail & Ecommerce", href: "/solutions/retail", icon: ShoppingCart, desc: "Stock, orders, returns, support" },
-          { name: "Professional Services", href: "/solutions/professional-services", icon: Briefcase, desc: "Engagements, billing, relationships" },
-          { name: "Finance", href: "/solutions/finance", icon: TrendingUp, desc: "Revenue, risk, collections, cash" },
-        ],
-      },
-      {
-        label: "By Role",
-        items: [
-          { name: "Customer Success & TAMs", href: "/solutions/customer-success", icon: UserCheck, desc: "Save accounts, accelerate renewals" },
-          { name: "Founders & CXOs", href: "/solutions/founders", icon: Telescope, desc: "Monday brief, board pack, full view" },
-          { name: "Rev / Business Ops", href: "/solutions/revops", icon: Settings2, desc: "Pipeline, headcount, risk — connected" },
-          { name: "Operations & Delivery", href: "/solutions/operations", icon: Truck, desc: "Projects, utilisation, exceptions" },
-          { name: "Finance Leaders", href: "/solutions/finance-leaders", icon: DollarSign, desc: "Cash, collections, runway" },
-          { name: "Individual Professionals", href: "/solutions/individual", icon: User, desc: "Morning brief, session memory" },
-        ],
-      },
-    ],
-  },
-  { label: "Pricing", href: "/pricing" },
-  {
-    label: "Company",
-    href: "/about",
-    items: [
-      { name: "Why SpineWorkspace", href: "/why", icon: HelpCircle, desc: "The problem we exist to solve" },
-      { name: "About", href: "/about", icon: Building2, desc: "Our story and what we stand for" },
-      { name: "Resources", href: "/resources", icon: BookOpen, desc: "Blog, guides, and playbooks" },
-    ],
-  },
-];
+const navigation = headerNavigation;
 
 const ENTER_DELAY = 150;
 const LEAVE_DELAY = 300;
@@ -153,19 +34,19 @@ function DropdownItem({ item }: { item: NavItemChild }) {
   return (
     <Link
       href={item.href}
-      className="group flex items-start gap-3 rounded-xl px-3 py-2.5 transition-colors hover:bg-white/[0.06] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
+      className="group flex items-start gap-3 rounded-md px-3 py-2.5 transition-colors hover:bg-[#F3F6F9] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0176D3]/40"
     >
       <div
-        className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white/[0.06] transition-all group-hover:bg-primary/20 group-hover:scale-105"
+        className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-[#F3F6F9] group-hover:bg-[#E8F4FD]"
       >
-        <Icon className="h-[15px] w-[15px] text-white/60 group-hover:text-primary" />
+        <Icon className="h-[15px] w-[15px] text-[#0176D3]" />
       </div>
       <div className="flex flex-col justify-center">
-        <span className="text-[14px] font-semibold tracking-[-0.03em] text-white/80 leading-tight group-hover:text-white">
+        <span className="text-[14px] font-semibold leading-tight text-[#032D60]">
           {item.name}
         </span>
         {item.desc && (
-          <span className="text-[12px] font-medium text-white/30 mt-0.5">
+          <span className="text-[12px] text-[#706E6B] mt-0.5">
             {item.desc}
           </span>
         )}
@@ -205,11 +86,9 @@ function MegaDropdown({
       }}
     >
       <div
-        className="overflow-hidden rounded-2xl border border-white/[0.08] p-3 backdrop-blur-2xl"
+        className="overflow-hidden rounded-md border border-[#E5E5E5] bg-white p-3"
         style={{
-          background: "rgba(8, 10, 14, 0.92)",
-          boxShadow:
-            "0 20px 60px -15px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.04), 0 0 80px rgba(27,167,132,0.04)",
+          boxShadow: "0 8px 24px rgba(3, 45, 96, 0.08)",
         }}
       >
         {isGrouped && nav.groups && (
@@ -260,12 +139,23 @@ function NavTrigger({
   const hasDropdown = !!(nav.items || nav.groups);
 
   if (!hasDropdown) {
+    const linkClass =
+      "rounded-md px-3 py-2 text-[14px] font-medium text-[#444] transition-colors hover:text-[#032D60] focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-[#0176D3]/40";
+    if (nav.external) {
+      return (
+        <a
+          href={nav.href}
+          className={linkClass}
+          onMouseEnter={onLeave}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {nav.label}
+        </a>
+      );
+    }
     return (
-      <Link
-        href={nav.href}
-        className="rounded-md px-3 py-2 text-[15px] font-medium tracking-[-0.02em] text-white/50 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-primary/50"
-        onMouseEnter={onLeave}
-      >
+      <Link href={nav.href} className={linkClass} onMouseEnter={onLeave}>
         {nav.label}
       </Link>
     );
@@ -283,8 +173,8 @@ function NavTrigger({
         aria-haspopup="true"
         aria-controls={isOpen ? menuId : undefined}
         id={`${menuId}-trigger`}
-        className={`flex items-center gap-1 rounded-md px-3 py-2 text-[15px] font-medium tracking-[-0.02em] transition-colors focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-primary/50 ${
-          isOpen ? "text-white" : "text-white/50 hover:text-white"
+        className={`flex items-center gap-1 rounded-md px-3 py-2 text-[14px] font-medium transition-colors focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-[#0176D3]/40 ${
+          isOpen ? "text-[#032D60]" : "text-[#444] hover:text-[#032D60]"
         }`}
       >
         {nav.label}
@@ -404,7 +294,7 @@ export function Header({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.2 }}
-          className="fixed inset-0 z-40 bg-black/40 backdrop-blur-[3px]"
+          className="fixed inset-0 z-40 bg-[#032D60]/20"
           onMouseEnter={handleLeave}
         />
       )}
@@ -416,11 +306,11 @@ export function Header({
         animate={heroRevealed ? { y: 0, opacity: 1 } : { y: "-100%", opacity: 0 }}
         transition={{ type: "spring", damping: 22, stiffness: 200, mass: 0.8 }}
         style={{
-          background: "rgba(5, 7, 10, 0.75)",
-          backdropFilter: "blur(20px) saturate(1.4)",
-          WebkitBackdropFilter: "blur(20px) saturate(1.4)",
-          borderBottom: "1px solid rgba(255, 255, 255, 0.06)",
-          boxShadow: "0 4px 30px rgba(0, 0, 0, 0.3)",
+          background: "rgba(255, 255, 255, 0.96)",
+          backdropFilter: "blur(12px)",
+          WebkitBackdropFilter: "blur(12px)",
+          borderBottom: "1px solid #E5E5E5",
+          boxShadow: "0 1px 2px rgba(0,0,0,0.04)",
         }}
       >
         <motion.div
@@ -434,9 +324,9 @@ export function Header({
             href="/"
             className="flex shrink-0 items-center gap-2.5 rounded-lg focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-primary/50"
           >
-            <SpineLogo className="h-8 w-8 shrink-0" variant="on-dark" />
-            <span className="text-[17px] font-semibold tracking-[-0.04em] text-white">
-              Spine<span className="text-primary">Workspace</span>
+            <SpineLogo className="h-8 w-8 shrink-0 text-[#032D60]" variant="on-light" />
+            <span className="text-[17px] font-semibold tracking-[-0.04em] text-[#032D60]">
+              Spine<span className="text-[#0176D3]">Workspace</span>
             </span>
           </Link>
 
@@ -453,15 +343,10 @@ export function Header({
           </div>
 
           <div className="hidden shrink-0 items-center gap-2 lg:flex">
-            <Button
-              className="h-[38px] rounded-xl px-4 text-[14px] font-semibold tracking-[-0.02em] text-white"
-              style={{
-                background: "var(--gradient-primary)",
-                border: "1px solid rgba(52,211,153,0.2)",
-                boxShadow: "0 0 20px rgba(27,167,132,0.15), var(--shadow-button)",
-              }}
-              asChild
-            >
+            <Link href="/login" className="rounded-md px-3 py-2 text-[14px] font-semibold text-[#032D60] hover:bg-[#F3F6F9]">
+              Sign in
+            </Link>
+            <Button className="h-9 rounded-md bg-[#0176D3] px-4 text-[14px] font-semibold text-white hover:bg-[#0B5CAB]" asChild>
               <Link href="/contact?intent=demo">Book a demo</Link>
             </Button>
           </div>
@@ -469,7 +354,7 @@ export function Header({
           <button
             ref={menuButtonRef}
             type="button"
-            className="rounded-md p-1.5 lg:hidden text-white/60 hover:text-white focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-primary/50"
+            className="rounded-md p-1.5 text-[#032D60] lg:hidden focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-[#0176D3]/40"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileMenuOpen}
@@ -490,8 +375,7 @@ export function Header({
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             transition={{ duration: 0.2, ease: "easeInOut" }}
-            className="max-h-[82vh] overflow-y-auto border-t border-white/[0.06] lg:hidden"
-            style={{ background: "rgba(5, 7, 10, 0.95)", backdropFilter: "blur(20px)" }}
+            className="max-h-[82vh] overflow-y-auto border-t border-[#E5E5E5] bg-white lg:hidden"
             role="dialog"
             aria-modal="true"
             aria-label="Site navigation"
@@ -506,13 +390,25 @@ export function Header({
                     className="border-b border-white/[0.06] last:border-0"
                   >
                     <div className="flex items-center justify-between py-3">
-                      <Link
-                        href={nav.href}
-                        className="text-[15px] font-semibold tracking-[-0.03em] text-white/80"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        {nav.label}
-                      </Link>
+                      {nav.external ? (
+                        <a
+                          href={nav.href}
+                          className="text-[15px] font-semibold text-[#032D60]"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
+                          {nav.label}
+                        </a>
+                      ) : (
+                        <Link
+                          href={nav.href}
+                          className="text-[15px] font-semibold text-[#032D60]"
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
+                          {nav.label}
+                        </Link>
+                      )}
                       {hasDropdown && (
                         <button
                           type="button"
@@ -574,6 +470,13 @@ export function Header({
               })}
 
               <div className="mt-4 flex flex-col gap-2 pb-4">
+                <Link
+                  href="/login"
+                  className="flex h-10 items-center justify-center rounded-md border border-[#C9C9C9] text-[14px] font-semibold text-[#032D60]"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Sign in
+                </Link>
                 <Button
                   className="w-full rounded-xl font-semibold text-white"
                   style={{

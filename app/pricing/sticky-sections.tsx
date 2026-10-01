@@ -21,7 +21,7 @@ const valueItems = [
     title: "See everything in one place from day one.",
     description: "Connect your apps, get the Workspace, and see every customer as an Entity 360 — unified across all your tools.",
     icon: Zap,
-    color: "#1BA784",
+    color: "#0176D3",
     features: ["Unlimited connectors", "Entity 360 views", "Workspace access"],
   },
   {
@@ -51,7 +51,7 @@ const valueItems = [
 ];
 
 const includedNodes = [
-  { label: "Spine", icon: Database, color: "#1BA784", description: "Canonical data layer" },
+  { label: "Spine Fabric", icon: Database, color: "#0176D3", description: "Canonical data fabric layer" },
   { label: "Workspace", icon: Layers, color: "#3b82f6", description: "Daily operating surface" },
   { label: "Entity 360", icon: Eye, color: "#06b6d4", description: "Unified entity views" },
   { label: "The Twin", icon: Brain, color: "#8b5cf6", description: "AI-powered insights" },

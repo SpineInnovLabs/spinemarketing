@@ -34,7 +34,6 @@ export function SecurityGather() {
       centerLabel="TruthBoundary"
       centerDescription="Security core"
       items={items}
-      glowColor="rgba(239,68,68,0.10)"
     />
   );
 }

@@ -6,7 +6,7 @@ import { CampaignGalleryContent } from "./content"
 export const metadata: Metadata = {
   title: "Campaign Gallery — Architecture & Creatives | SpineWorkspace",
   description:
-    "Architecture blueprints showing the Spine Fabric at the center of every tool, plus 36 campaign designs across LinkedIn and WhatsApp — for Account Success, Business Ops, and Personal Ops.",
+    "Architecture blueprints showing Spine Fabric at the center of every tool, plus 36 campaign designs across LinkedIn and WhatsApp — for Account Success, Business Ops, and Personal Ops.",
   alternates: { canonical: "/resources/campaign" },
   openGraph: {
     title: "Campaign Gallery — Architecture & Creatives | SpineWorkspace",
@@ -30,11 +30,11 @@ const jsonLd = {
   name: "SpineWorkspace Campaign Gallery",
   description:
     "36 campaign designs across LinkedIn and WhatsApp — crafted for Account Success, Business Ops, and Personal Ops professionals.",
-  url: "https://integratewise.ai/resources/campaign",
+  url: "https://spineworkspace.com/resources/campaign",
   publisher: {
     "@type": "Organization",
     name: "SpineWorkspace",
-    url: "https://integratewise.ai",
+    url: "https://spineworkspace.com",
   },
   mainEntity: {
     "@type": "ImageGallery",
@@ -50,7 +50,7 @@ const jsonLd = {
 
 export default function CampaignGalleryPage() {
   return (
-    <div className="min-h-screen bg-dark-section">
+    <div className="min-h-screen bg-white">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

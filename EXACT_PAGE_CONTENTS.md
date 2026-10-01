@@ -1,6 +1,6 @@
-# IntegrateWise - Exact Page Contents
+# Spine InnovLabs - Exact Page Contents
 
-This document contains the complete text content from all 45 pages of the IntegrateWise website.
+This document contains the complete text content from all 45 pages of the Spine InnovLabs website.
 
 ---
 
@@ -17,9 +17,9 @@ This document contains the complete text content from all 45 pages of the Integr
 **HERO SECTION**
 - **Badge**: "The Founder Story"
 - **Headline**: "How a red account and 13 years of plumbing led to a new category of software."
-- **Subheadline**: "Nirmal Prince J · Founder & CEO, IntegrateWise LLP · Bengaluru, India"
+- **Subheadline**: "Nirmal Prince J · Founder & CEO, Spine InnovLabs · Bengaluru, India"
 
-**CHAPTER 1: The man who built the plumbing**
+**CHAPTER 1: The architect who built the data fabric**
 - **Quote**: "The thing that kept me up at night wasn't a broken API. It was watching smart people make the wrong decisions because their tools couldn't talk to each other."
 - **Description**: "13 years wiring enterprise systems. His job: make disconnected tools speak the same language."
 - **Problem**: "The tools were connected. The data flowed. But nobody could assemble it for the human making the decision."
@@ -42,33 +42,33 @@ This document contains the complete text content from all 45 pages of the Integr
 - **Impact**: "Written off as lost. Saved — because one person manually connected every signal."
 - **Quote**: "I saved it. But it nearly killed me to do it by hand. That's when I knew: this should never require one person to do alone. And I was going to build the system that made sure it didn't."
 
-**CHAPTER 4: The birth of IntegrateWise**
+**CHAPTER 4: The birth of Spine InnovLabs**
 - **Foundation**: "Not a whiteboard exercise. A lived experience — signals visible only through manual integration."
 - **Vision**: "He set out to automate what he did by hand: cross-referencing, signal discovery, context building."
-- **Mission**: "He had spent 13 years building the plumbing. Now he was going to build the intelligence layer."
+- **Mission**: "He had spent 13 years building integration layers. Now he was going to build the intelligence layer."
 
-**What IntegrateWise Actually Solves**:
-1. "Connect every app into the Spine — one source of truth."
+**What Spine InnovLabs Actually Solves**:
+1. "Connect every app into Spine Fabric — one source of truth."
 2. "Three data ecosystems — Truth, Context, AI Sessions — merge into Entity 360."
 3. "The cognitive loop: Think. Act. Govern. Repeat. Adjust."
 4. "AI thinks. You approve or deny. AI works. Knowledge compounds."
 5. "Human approval required before anything executes."
 
-**Key Panel**: "A Knowledge Workspace over the Spine — the Workspace is where you work, the Cognitive Layer is where AI serves you. This is IntegrateWise."
+**Key Panel**: "A Knowledge Workspace over Spine Fabric — the Workspace is where you work, the Cognitive Layer is where AI serves you. This is Spine InnovLabs."
 
 **TIMELINE - The Journey**:
 - 2014: "Soft Dev" — "Started in software development. Learning the craft of building systems from scratch."
 - 2018: "Integration Dev" — "Moved into enterprise integration. Wiring systems across five industries."
 - "Expert": "MuleSoft Architect" — "India's leading MuleSoft architect. API-led connectivity. 13+ years wiring enterprise systems."
-- "CSM Era": "Customer Success at Salesforce" — "MuleSoft enterprise CSM. Saw plumbing failures at the human layer."
+- "CSM Era": "Customer Success at Salesforce" — "MuleSoft enterprise CSM. Saw integration failures at the human layer."
 - "The Crisis": "The Red Account" — "$8M account at 100% attrition risk. Zero handover."
 - "The Discovery": "Two Hidden Signals" — "Unsigned contract. Hidden conflicts. Invisible to every dashboard."
 - "The Save": "$8M Renewed" — "Both signals resolved. Full renewal. Account saved."
-- 2025: "Founded IntegrateWise LLP" — "Built in Bengaluru. Automates what was done manually."
-- 2026: "Knowledge Workspace over the Spine" — "Workspace + Cognitive Layer. Three data ecosystems. You stay in control."
+- 2025: "Founded Spine InnovLabs" — "Built in Bengaluru. Automates what was done manually."
+- 2026: "Knowledge Workspace over Spine Fabric" — "Workspace + Cognitive Layer. Three data ecosystems. You stay in control."
 
 **CLOSING SECTION**
-- **Quote**: "The Spine connected support, product usage, billing, and relationship data across 12 systems. The team intervened early and saved an $8M customer."
+- **Quote**: "Spine Fabric connected support, product usage, billing, and relationship data across 12 systems. The team intervened early and saved an $8M customer."
 
 **STATS**:
 - $8M — Customer protected
@@ -85,7 +85,7 @@ This document contains the complete text content from all 45 pages of the Integr
 
 **HERO SECTION**
 - **Headline**: "See, review, and act on canonical truth."
-- **Description**: "The Product layer is how your teams see, review, and act on the Spine's canonical truth. The Workspace, Cognitive Layer, Twin, and Approval Gate work together — the Spine cleans and unifies data; the Product turns that into a daily surface, an always-on detection engine, and a governed execution path that never bypasses human judgment."
+- **Description**: "The Product layer is how your teams see, review, and act on Spine Fabric's canonical truth. The Workspace, Cognitive Layer, Twin, and Approval Gate work together — the Spine cleans and unifies data; the Product turns that into a daily surface, an always-on detection engine, and a governed execution path that never bypasses human judgment."
 - **CTAs**: "Book a demo" | "See how it works"
 
 **STAT STRIP**:
@@ -127,7 +127,7 @@ This document contains the complete text content from all 45 pages of the Integr
 
 **PRICING SECTION**
 - **Tagline**: "Value per connected truth, not seat sprawl."
-- **Description**: "Plans scale with entity volume and connected tools. Start by wiring a few high-leverage systems into the Spine and expand coverage over time. The same Product stack stays consistent as you grow from a single team pilot to organization-wide rollout."
+- **Description**: "Plans scale with entity volume and connected tools. Start by wiring a few high-leverage systems into Spine Fabric and expand coverage over time. The same Product stack stays consistent as you grow from a single team pilot to organization-wide rollout."
 - **CTAs**: "View pricing →" | "Book a demo →"
 
 ---
@@ -147,7 +147,7 @@ This document contains the complete text content from all 45 pages of the Integr
    **A**: Yes. You can upgrade or downgrade at any time. When upgrading, you get immediate access to the new tier's features. When downgrading, changes take effect at your next billing cycle.
 
 2. **Q**: Is there a free trial?
-   **A**: We offer guided demos where you can see IntegrateWise working with your actual tools and data. Book a demo and we'll walk you through a personalized setup.
+   **A**: We offer guided demos where you can see Spine InnovLabs working with your actual tools and data. Book a demo and we'll walk you through a personalized setup.
 
 3. **Q**: What counts as a 'connector'?
    **A**: Each app you connect counts as one connector — for example, Salesforce is one connector, Slack is another. Connecting multiple instances of the same app (e.g., two Salesforce orgs) counts as two connectors.
@@ -201,7 +201,7 @@ This document contains the complete text content from all 45 pages of the Integr
 
 **HERO SECTION**
 - **Headline**: "Built for how you actually work."
-- **Description**: "Every team has different tools, different metrics, and different daily priorities. IntegrateWise connects them all and shows each person exactly what they need to see."
+- **Description**: "Every team has different tools, different metrics, and different daily priorities. Spine InnovLabs connects them all and shows each person exactly what they need to see."
 
 **HOW IT WORKS STRIP**:
 - Connect — "Link the apps your team already uses."
@@ -237,10 +237,10 @@ This document contains the complete text content from all 45 pages of the Integr
 **HERO SECTION**
 - **Headline**: "Contact"
 - **Tagline**: "Let's talk."
-- **Description**: "Whether you want a demo, have a question, or want to explore how IntegrateWise fits your apps — we're here."
+- **Description**: "Whether you want a demo, have a question, or want to explore how Spine InnovLabs fits your apps — we're here."
 
 **CONTACT OPTIONS**:
-1. **Book a demo** — "See IntegrateWise in action with a live walkthrough tailored to your use case."
+1. **Book a demo** — "See Spine InnovLabs in action with a live walkthrough tailored to your use case."
 2. **Email us** — "General questions, partnership inquiries, or anything else — we respond within 24 hours."
 3. **Visit us** — "Based in India, serving teams globally. Available for in-person meetings by appointment."
 
@@ -270,7 +270,7 @@ This document contains the complete text content from all 45 pages of the Integr
 ### 8. INTEGRATIONS PAGE (/integrations)
 
 **HERO SECTION**
-- **Headline**: "70+ apps connected into one Spine. Salesforce, HubSpot, Slack, Stripe, and more."
+- **Headline**: "70+ apps connected through Spine Fabric. Salesforce, HubSpot, Slack, Stripe, and more."
 
 **STATS**:
 - 70+ App connectors
@@ -286,7 +286,7 @@ This document contains the complete text content from all 45 pages of the Integr
 ### 9. WHY PAGE (/why)
 
 **HERO SECTION**
-- **Headline**: "Why IntegrateWise"
+- **Headline**: "Why Spine InnovLabs"
 - **Subheadline**: "The apps problem is not fragmentation."
 - **Description**: "Signal is scattered. AI has no context. Actions bypass governance."
 
@@ -312,7 +312,7 @@ This document contains the complete text content from all 45 pages of the Integr
 3. **Isolated copilots** — "Each copilot reasons on one tool. Blind to every other app."
 
 **SOLUTION SECTION**
-- **Tagline**: "One Spine. One workspace. Governed AI."
+- **Tagline**: "One Spine Fabric. One workspace. Governed AI."
 - **Description**: "The Spine accumulates your data. The product renders insights. You approve. Knowledge compounds."
 
 **CTAs**: "Book a demo" | "How the Spine works"
@@ -324,7 +324,7 @@ This document contains the complete text content from all 45 pages of the Integr
 **HERO SECTION**
 - **Headline**: "Services"
 - **Tagline**: "We get you to truth faster. Then we keep you there."
-- **Description**: "Implementation, managed ops, custom connectors, and advisory — from the team that built the Spine."
+- **Description**: "Implementation, managed ops, custom connectors, and advisory — from the team that built Spine Fabric."
 
 **SERVICE OFFERINGS**:
 
@@ -371,7 +371,7 @@ This document contains the complete text content from all 45 pages of the Integr
 **HERO SECTION**
 - **Headline**: "Resources"
 - **Tagline**: "Learn, evaluate, adopt."
-- **Description**: "Guides, playbooks, and deep dives to help you understand IntegrateWise."
+- **Description**: "Guides, playbooks, and deep dives to help you understand Spine InnovLabs."
 
 **START HERE**:
 - **Tagline**: "Three places to begin."
@@ -385,7 +385,7 @@ This document contains the complete text content from all 45 pages of the Integr
 - **Security & governance** — "AES-256 encryption, SOC 2 alignment, full audit trails."
 - **The Adaptive Workspace** — "Nine role-based views from one canonical record."
 - **Approval Gate & Twin** — "Governed AI that proposes with evidence. You approve."
-- **Why IntegrateWise** — "The problem we exist to solve. Signal, context, governance."
+- **Why Spine InnovLabs** — "The problem we exist to solve. Signal, context, governance."
 - **Integrations** — "70+ connectors. REST, GraphQL, webhooks, MCP."
 
 ---
@@ -395,7 +395,7 @@ This document contains the complete text content from all 45 pages of the Integr
 **HERO SECTION**
 - **Headline**: "The Twin"
 - **Tagline**: "Your AI copilot attached to the detection layer."
-- **Description**: "Assembles evidence, explains why a signal exists, proposes concrete actions. Operates on the Spine's truth, not screen-scraped guesses. Always shows its reasoning before asking for approval."
+- **Description**: "Assembles evidence, explains why a signal exists, proposes concrete actions. Operates on Spine Fabric's truth, not screen-scraped guesses. Always shows its reasoning before asking for approval."
 
 **THE TWIN READS THREE LAYERS**:
 1. **Truth** — "Structured data from 70+ connected apps"
@@ -444,7 +444,7 @@ This document contains the complete text content from all 45 pages of the Integr
 **THE PROBLEM**:
 - "Your business runs on Slack, Sheets, and WhatsApp. Nothing talks to anything."
 - "Revenue, invoices, tickets, projects — all in different tools. You're the one connecting them."
-- "That's not running a business. That's data plumbing."
+- "That's not running a business. That's disconnected data fabric."
 
 **SOLUTION FRAMING**:
 - **Tagline**: "One workspace. Two layers. Full business intelligence."
@@ -455,7 +455,7 @@ This document contains the complete text content from all 45 pages of the Integr
 
 **BEFORE/AFTER**:
 - "Every other dashboard shows you a department."
-- "IntegrateWise shows you the business."
+- "Spine InnovLabs shows you the business."
 
 **ROLE LENSES**:
 - **Tagline**: "Same workspace. Different lenses."
@@ -465,7 +465,7 @@ This document contains the complete text content from all 45 pages of the Integr
 **HOW IT WORKS**:
 - **Tagline**: "Four steps. Your entire business, fully connected."
 - **Step 01** — "Connect" — "Plug in the apps your business runs on"
-- **Step 02** — "Build the Spine" — "Three data flows. One complete picture."
+- **Step 02** — "Build Spine Fabric" — "Three data flows. One complete picture."
 - **Step 03** — "Daily Workspace" — "Your operating view — always current."
 - **Step 04** — "Cognitive Layer" — "AI proposes. You decide."
 
@@ -535,7 +535,7 @@ This document contains the complete text content from all 45 pages of the Integr
 - "Truth, Context, and Session Summaries unified into one intelligence layer."
 
 **Cards**:
-1. **Structured data flows** — "CRM, billing, support, and usage data flowing into the Spine."
+1. **Structured data flows** — "CRM, billing, support, and usage data flowing into Spine Fabric."
 2. **Unstructured context** — "Emails, transcripts, and conversations indexed alongside records."
 3. **Session Summaries** — "Auditable AI outputs stored as first-class data."
 4. **Entity-level unification** — "Every data point linked to the right entity across apps."
@@ -635,7 +635,7 @@ This document contains the complete text content from all 45 pages of the Integr
    - Usage data: connected tools, workspace activity, feature usage
 
 2. **How we use your information**
-   - Provide and improve IntegrateWise
+   - Provide and improve Spine InnovLabs
    - Communicate about your account
    - Send product updates (with consent)
    - Ensure security and prevent fraud
@@ -660,21 +660,21 @@ This document contains the complete text content from all 45 pages of the Integr
    - Every action logged for audit
 
 6. **Your rights**
-   - Request access, correction, or deletion at connect@integratewise.ai
+   - Request access, correction, or deletion at connect@spineworkspace.com
 
 7. **Cookies and analytics**
    - Firebase Analytics for anonymous usage data
    - No advertising cookies or trackers
 
 8. **Contact**
-   - connect@integratewise.ai
+   - connect@spineworkspace.com
 
 ---
 
 ### 19. TERMS & CONDITIONS PAGE (/terms)
 
 **SECTIONS**:
-1. **Acceptance of terms** — By accessing IntegrateWise, you agree to be bound by these terms.
+1. **Acceptance of terms** — By accessing Spine InnovLabs, you agree to be bound by these terms.
 2. **Service description** — Knowledge workspace connecting business tools with AI-assisted insights and human approval.
 3. **Your account** — You are responsible for security of credentials and accuracy of information.
 4. **Your data** — You retain ownership of all data. We don't claim ownership of your business data.
@@ -682,7 +682,7 @@ This document contains the complete text content from all 45 pages of the Integr
 6. **Payment and billing** — Billed according to pricing terms. 30 days notice for price changes. Case-by-case refunds.
 7. **Limitation of liability** — Service provided "as is" without warranties. No liability for indirect or consequential damages.
 8. **Termination** — Either party may terminate anytime. Data available for export for 30 days after termination.
-9. **Contact** — connect@integratewise.ai
+9. **Contact** — connect@spineworkspace.com
 
 ---
 
@@ -702,17 +702,17 @@ This document contains the complete text content from all 45 pages of the Integr
 
 1. **"Stop being the human API between your tools"**
    - **Date**: April 12, 2026
-   - **Author**: IntegrateWise Team
+   - **Author**: Spine InnovLabs Team
    - **Read Time**: 4 min read
    - **Tags**: Product, Workspace
    - **Description**: "Every founder, operator, and account manager starts their day the same way: open 12 tabs, copy-paste context, and lose an hour before real work begins."
 
 2. **"Why AI needs your approval — every single time"**
    - **Date**: April 10, 2026
-   - **Author**: IntegrateWise Team
+   - **Author**: Spine InnovLabs Team
    - **Read Time**: 3 min read
    - **Tags**: AI, Trust
-   - **Description**: "Most AI tools act first and ask questions later. We built IntegrateWise the opposite way, and here's why that matters."
+   - **Description**: "Most AI tools act first and ask questions later. We built Spine InnovLabs the opposite way, and here's why that matters."
 
 ---
 
@@ -973,7 +973,7 @@ This document contains the complete text content from all 45 pages of the Integr
 
 **FINAL CTA**:
 - "Intelligence that compounds daily."
-- "The more you use IntegrateWise, the sharper its signals become."
+- "The more you use Spine InnovLabs, the sharper its signals become."
 - "Approval Gate & Twin in Action →"
 
 ---
@@ -1391,14 +1391,14 @@ This document contains the complete text content from all 45 pages of the Integr
 
 **FINAL CTA SECTION**:
 - "Ready to see it in action?"
-- "These are real campaign designs showing real IntegrateWise capabilities. Book a demo to see the Workspace live."
+- "These are real campaign designs showing real Spine InnovLabs capabilities. Book a demo to see the Workspace live."
 - **CTAs**: "Book a demo" | "See pricing"
 
 ---
 
 ## KEY CONTACT INFORMATION
 
-**Email**: connect@integratewise.ai
+**Email**: connect@spineworkspace.com
 **Demo CTA**: Book a demo (usually directs to /contact?intent=demo)
 **Location**: Bengaluru, India (serving teams globally)
 
@@ -1406,12 +1406,12 @@ This document contains the complete text content from all 45 pages of the Integr
 
 ## BRANDING ELEMENTS
 
-**Company Name**: IntegrateWise
+**Company Name**: Spine InnovLabs
 **Full Tagline**: "Stop being the human API between your apps."
 **Founder**: Nirmal Prince J
 **Founded**: 2025
-**Incorporated**: IntegrateWise LLP
-**Domain**: integratewise.ai
+**Incorporated**: Spine InnovLabs
+**Domain**: spineworkspace.com
 
 **Key Brand Concepts**:
 - The Adaptive Spine (data layer)

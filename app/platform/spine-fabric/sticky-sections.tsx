@@ -26,7 +26,7 @@ const items = [
   {
     tag: "Schema Normalization",
     title: "Upstream changes absorbed in the mapping layer",
-    description: "When Salesforce renames a field or HubSpot adds a property, the Spine adapts. Your downstream never breaks.",
+    description: "When Salesforce renames a field or HubSpot adds a property, Spine Fabric adapts. Your downstream never breaks.",
     icon: Layers,
     color: "#8b5cf6",
     features: [
@@ -39,11 +39,11 @@ const items = [
   {
     tag: "Vendor Neutrality",
     title: "Survive CRM migrations without data loss",
-    description: "Switch from Salesforce to HubSpot — or use both. The Spine is the truth layer. Your tools are just connectors.",
+    description: "Switch from Salesforce to HubSpot — or use both. Spine Fabric is the truth layer. Your tools are just connectors.",
     icon: RefreshCw,
     color: "#fbbf24",
     features: [
-      "No vendor lock-in — data lives in the Spine",
+      "No vendor lock-in — data lives in Spine Fabric",
       "Parallel-run migrations with data comparison",
       "Connector swap without downstream disruption",
       "Full data export in standard formats anytime",
@@ -82,7 +82,7 @@ export function SpineStickyScroll() {
     <StickyScroll
       tag="Architecture Deep Dive"
       heading={<>Five pillars of the <span className="text-primary">Spine Fabric.</span></>}
-      subheading="Scroll to explore how the Spine maintains one truth across all your connected tools."
+      subheading="Scroll to explore how Spine Fabric maintains one truth across all your connected tools."
       items={items}
     />
   );

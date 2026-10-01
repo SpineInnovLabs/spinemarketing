@@ -19,12 +19,12 @@ export default function ChangelogPage() {
   return (
     <div className="min-h-screen bg-background">
       <BreadcrumbJsonLd items={[
-        { name: "Home", url: "https://integratewise.ai" },
-        { name: "Changelog", url: "https://integratewise.ai/changelog" },
+        { name: "Home", url: "https://spineworkspace.com" },
+        { name: "Changelog", url: "https://spineworkspace.com/changelog" },
       ]} />
       <Header />
       <main id="main">
-        <section className="relative overflow-hidden bg-dark-section">
+        <section className="relative overflow-hidden bg-white">
           <div className="mx-auto max-w-[800px] px-6 pt-[160px] pb-[80px] md:px-16">
             <h1 className="text-[40px] font-semibold tracking-[-0.05em] leading-[1.1] text-white sm:text-[52px]">Changelog</h1>
             <p className="mt-4 max-w-xl text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-white/55">

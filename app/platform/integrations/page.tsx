@@ -11,22 +11,22 @@ import { BreadcrumbJsonLd } from "@/components/structured-data"
 export const metadata: Metadata = {
   title: "Integrations | SpineWorkspace Platform",
   description:
-    "SaaS APIs, MCP, webhooks, and file drops — all through one normalization pipeline into the Spine.",
+    "SaaS APIs, MCP, webhooks, and file drops — all through one normalization pipeline into Spine Fabric.",
   alternates: { canonical: "/platform/integrations" },
   openGraph: {
     title: "Integrations | SpineWorkspace Platform",
-    description: "SaaS APIs, MCP, webhooks, and file drops — all through one normalization pipeline into the Spine.",
+    description: "SaaS APIs, MCP, webhooks, and file drops — all through one normalization pipeline into Spine Fabric.",
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "SpineWorkspace" }],
   },
 }
 
 export default function PlatformIntegrationsPage() {
   return (
-    <div className="min-h-screen bg-dark-section">
+    <div className="min-h-screen bg-white">
       <BreadcrumbJsonLd items={[
-        { name: "Home", url: "https://integratewise.ai" },
-        { name: "Platform", url: "https://integratewise.ai/platform" },
-        { name: "Integrations", url: "https://integratewise.ai/platform/integrations" },
+        { name: "Home", url: "https://spineworkspace.com" },
+        { name: "Platform", url: "https://spineworkspace.com/platform" },
+        { name: "Integrations", url: "https://spineworkspace.com/platform/integrations" },
       ]} />
       <Header />
       <main id="main">

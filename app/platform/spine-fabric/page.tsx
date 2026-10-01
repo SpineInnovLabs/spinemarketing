@@ -22,11 +22,11 @@ export const metadata: Metadata = {
 
 export default function SpineFabricPage() {
   return (
-    <div className="min-h-screen bg-dark-section">
+    <div className="min-h-screen bg-white">
       <BreadcrumbJsonLd items={[
-        { name: "Home", url: "https://integratewise.ai" },
-        { name: "Platform", url: "https://integratewise.ai/platform" },
-        { name: "Spine Fabric", url: "https://integratewise.ai/platform/spine-fabric" },
+        { name: "Home", url: "https://spineworkspace.com" },
+        { name: "Platform", url: "https://spineworkspace.com/platform" },
+        { name: "Spine Fabric", url: "https://spineworkspace.com/platform/spine-fabric" },
       ]} />
       <Header />
       <main id="main">
@@ -36,7 +36,7 @@ export default function SpineFabricPage() {
           tag="Works With Everything"
           heading={<>Your tools, <span className="text-primary">unified.</span></>}
         />
-        <TestimonialsSection heading="Why teams trust the Spine." />
+        <TestimonialsSection heading="Why teams trust Spine Fabric." />
         <FinalCTA />
       </main>
       <Footer />

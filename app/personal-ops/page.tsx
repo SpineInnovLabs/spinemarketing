@@ -25,10 +25,10 @@ export const metadata: Metadata = {
 
 export default function PersonalOpsPage() {
   return (
-    <div className="min-h-screen bg-dark-section">
+    <div className="min-h-screen bg-white">
       <BreadcrumbJsonLd items={[
-        { name: "Home", url: "https://integratewise.ai" },
-        { name: "Personal Ops", url: "https://integratewise.ai/personal-ops" },
+        { name: "Home", url: "https://spineworkspace.com" },
+        { name: "Personal Ops", url: "https://spineworkspace.com/personal-ops" },
       ]} />
       <Header />
       <main id="main">

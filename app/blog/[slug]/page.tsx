@@ -66,11 +66,11 @@ export default async function BlogPostPage({
   if (!post) notFound();
 
   return (
-    <div className="min-h-screen bg-dark-section">
+    <div className="min-h-screen bg-white">
       <Header />
       <main id="main">
         <section
-          className="relative overflow-hidden bg-dark-section"
+          className="relative overflow-hidden bg-white"
         >
           <div className="mx-auto max-w-[800px] px-6 pt-[160px] pb-[80px] md:px-16">
             <Link

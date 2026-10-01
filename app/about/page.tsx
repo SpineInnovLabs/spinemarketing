@@ -11,21 +11,21 @@ import { BreadcrumbJsonLd } from "@/components/structured-data"
 export const metadata: Metadata = {
   title: "About | SpineWorkspace",
   description:
-    "Born from a real $8M account save. One Spine. One Workspace. You stay in control.",
+    "Born from a real $8M account save. One Spine Fabric. One Workspace. You stay in control.",
   alternates: { canonical: "/about" },
   openGraph: {
     title: "About | SpineWorkspace",
-    description: "Born from a real $8M account save. One Spine. One Workspace. You stay in control.",
+    description: "Born from a real $8M account save. One Spine Fabric. One Workspace. You stay in control.",
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "SpineWorkspace" }],
   },
 }
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-dark-section">
+    <div className="min-h-screen bg-white">
       <BreadcrumbJsonLd items={[
-        { name: "Home", url: "https://integratewise.ai" },
-        { name: "About", url: "https://integratewise.ai/about" },
+        { name: "Home", url: "https://spineworkspace.com" },
+        { name: "About", url: "https://spineworkspace.com/about" },
       ]} />
       <Header />
       <main id="main">

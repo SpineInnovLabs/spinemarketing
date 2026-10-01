@@ -76,7 +76,7 @@ export function ServicesContent() {
   return (
     <>
       <section
-        className="relative overflow-hidden pb-28 pt-40 bg-dark-section"
+        className="relative overflow-hidden pb-28 pt-40 bg-white"
       >
         <div className="mx-auto max-w-[780px] px-4 text-center">
           <motion.div
@@ -101,7 +101,7 @@ export function ServicesContent() {
             {...heroFade(0.38)}
             className="mx-auto mt-7 max-w-xl text-[17px] font-medium leading-[1.55] tracking-[-0.02em] text-white/50"
           >
-            Implementation, managed ops, custom connectors, and advisory — from the team that built the Spine.
+            Implementation, managed ops, custom connectors, and advisory — from the team that built Spine Fabric.
           </motion.p>
 
           <motion.div
@@ -164,7 +164,7 @@ export function ServicesContent() {
       </section>
 
       <section
-        className="arvio-section dark-section bg-dark-section"
+        className="arvio-section dark-section bg-white"
       >
         <div className="mx-auto max-w-[1100px]">
           <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center">

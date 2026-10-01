@@ -10,21 +10,21 @@ import { BreadcrumbJsonLd } from "@/components/structured-data"
 export const metadata: Metadata = {
   title: "Integrations | SpineWorkspace",
   description:
-    "70+ apps connected into one Spine. Salesforce, HubSpot, Slack, Stripe, and more.",
+    "70+ apps connected through Spine Fabric. Salesforce, HubSpot, Slack, Stripe, and more.",
   alternates: { canonical: "/integrations" },
   openGraph: {
     title: "Integrations | SpineWorkspace",
-    description: "70+ apps connected into one Spine. Salesforce, HubSpot, Slack, Stripe, and more.",
+    description: "70+ apps connected through Spine Fabric. Salesforce, HubSpot, Slack, Stripe, and more.",
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "SpineWorkspace" }],
   },
 }
 
 export default function IntegrationsPage() {
   return (
-    <div className="min-h-screen bg-dark-section">
+    <div className="min-h-screen bg-white">
       <BreadcrumbJsonLd items={[
-        { name: "Home", url: "https://integratewise.ai" },
-        { name: "Integrations", url: "https://integratewise.ai/integrations" },
+        { name: "Home", url: "https://spineworkspace.com" },
+        { name: "Integrations", url: "https://spineworkspace.com/integrations" },
       ]} />
       <Header />
       <main id="main">
@@ -38,7 +38,7 @@ export default function IntegrationsPage() {
           ]}
         />
         <TestimonialsSection
-          heading="Teams connected through the Spine."
+          heading="Teams connected through Spine Fabric."
           tag="Integration Stories"
         />
         <FinalCTA />

@@ -61,7 +61,7 @@ export function PersonalOpsContent() {
     <>
       {/* Hero */}
       <section
-        className="relative overflow-hidden bg-dark-section"
+        className="relative overflow-hidden bg-white"
       >
         <div className="mx-auto max-w-[1200px] px-6 pt-[160px] pb-[100px] md:px-16">
           <div className="mx-auto max-w-3xl text-center">

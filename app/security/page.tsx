@@ -2,6 +2,7 @@ import { Metadata } from "next"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { FinalCTA } from "@/components/final-cta"
+import { SecurityNarrativeIntro } from "./narrative-intro"
 import { SecurityContent } from "./content"
 import { StatsBar } from "@/components/stats-bar"
 import { ComparisonSection } from "@/components/comparison-section"
@@ -22,13 +23,14 @@ export const metadata: Metadata = {
 
 export default function SecurityPage() {
   return (
-    <div className="min-h-screen bg-dark-section">
+    <div className="min-h-screen bg-white">
       <BreadcrumbJsonLd items={[
-        { name: "Home", url: "https://integratewise.ai" },
-        { name: "Security", url: "https://integratewise.ai/security" },
+        { name: "Home", url: "https://spineworkspace.com" },
+        { name: "Security", url: "https://spineworkspace.com/security" },
       ]} />
       <Header />
       <main id="main">
+        <SecurityNarrativeIntro />
         <SecurityContent />
         <StatsBar
           stats={[

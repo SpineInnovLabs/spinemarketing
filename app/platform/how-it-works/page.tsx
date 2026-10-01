@@ -9,22 +9,22 @@ import { BreadcrumbJsonLd } from "@/components/structured-data"
 export const metadata: Metadata = {
   title: "How it Works | SpineWorkspace Platform",
   description:
-    "Data flows, identity resolution, knowledge base, and the triage mechanism that powers the Spine Fabric.",
+    "Data flows, identity resolution, knowledge base, and the triage mechanism that powers Spine Fabric.",
   alternates: { canonical: "/platform/how-it-works" },
   openGraph: {
     title: "How it Works | SpineWorkspace Platform",
-    description: "Data flows, identity resolution, knowledge base, and the triage mechanism that powers the Spine Fabric.",
+    description: "Data flows, identity resolution, knowledge base, and the triage mechanism that powers Spine Fabric.",
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "SpineWorkspace" }],
   },
 }
 
 export default function PlatformHowItWorksPage() {
   return (
-    <div className="min-h-screen bg-dark-section">
+    <div className="min-h-screen bg-white">
       <BreadcrumbJsonLd items={[
-        { name: "Home", url: "https://integratewise.ai" },
-        { name: "Platform", url: "https://integratewise.ai/platform" },
-        { name: "How it Works", url: "https://integratewise.ai/platform/how-it-works" },
+        { name: "Home", url: "https://spineworkspace.com" },
+        { name: "Platform", url: "https://spineworkspace.com/platform" },
+        { name: "How it Works", url: "https://spineworkspace.com/platform/how-it-works" },
       ]} />
       <Header />
       <main id="main">

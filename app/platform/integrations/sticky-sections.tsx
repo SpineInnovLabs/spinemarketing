@@ -13,7 +13,7 @@ const items = [
   {
     tag: "SaaS Connectors",
     title: "OAuth connect in minutes. 60+ supported.",
-    description: "Salesforce, HubSpot, Stripe, Zendesk, Jira, Slack — connect once and the Spine handles schema changes automatically.",
+    description: "Salesforce, HubSpot, Stripe, Zendesk, Jira, Slack — connect once and Spine Fabric handles schema changes automatically.",
     icon: Cloud,
     color: "#3b82f6",
     features: [
@@ -26,7 +26,7 @@ const items = [
   {
     tag: "MCP Protocol",
     title: "AI-native bidirectional data flow",
-    description: "Model Context Protocol enables AI systems to read and write through the Spine with full governance controls.",
+    description: "Model Context Protocol enables AI systems to read and write through Spine Fabric with full governance controls.",
     icon: GitBranch,
     color: "#8b5cf6",
     features: [
@@ -82,7 +82,7 @@ export function IntegrationsStickyScroll() {
     <StickyScroll
       tag="Connector Deep Dive"
       heading={<>Four paths in. <span className="text-primary">One canonical format out.</span></>}
-      subheading="Scroll to explore each integration method and how data flows into the Spine."
+      subheading="Scroll to explore each integration method and how data flows into Spine Fabric."
       items={items}
     />
   );

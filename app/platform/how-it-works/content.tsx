@@ -105,7 +105,7 @@ const truthLayerCards = [
 export function PlatformHowItWorksContent() {
   return (
     <>
-      <section className="relative overflow-hidden pb-28 pt-40 bg-dark-section">
+      <section className="relative overflow-hidden pb-28 pt-40 bg-white">
         <div className="mx-auto max-w-[820px] px-4 text-center">
           <motion.div
             {...heroFade(0.1)}
@@ -171,7 +171,7 @@ export function PlatformHowItWorksContent() {
         <div className="mx-auto max-w-[1100px]">
           <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center mb-12">
             <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">System Data Flows</p>
-            <h2 className="section-heading">Two loops. <span className="text-primary">One Spine.</span></h2>
+            <h2 className="section-heading">Two loops. <span className="text-primary">One Spine Fabric.</span></h2>
           </motion.div>
           <div className="grid gap-6 lg:grid-cols-2">
             {[
@@ -283,7 +283,7 @@ export function PlatformHowItWorksContent() {
         </div>
       </section>
 
-      <section className="arvio-section dark-section bg-dark-section">
+      <section className="arvio-section dark-section bg-white">
         <div className="mx-auto max-w-[680px] px-4 text-center">
           <motion.div {...fade(0)}>
             <Zap className="mx-auto mb-4 h-7 w-7 text-primary" />

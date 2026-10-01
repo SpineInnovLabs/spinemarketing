@@ -17,7 +17,7 @@ import {
 
 const journeyItems = [
   {
-    tag: "The plumbing years",
+    tag: "The integration years",
     title: "13 years connecting enterprise systems.",
     description: "APIs, middleware, data pipelines. The infrastructure worked — but the humans making decisions still couldn't see the full picture.",
     icon: Wrench,
@@ -51,7 +51,7 @@ const journeyItems = [
 ];
 
 const platformNodes = [
-  { label: "Spine", icon: Database, color: "#1BA784", description: "Canonical data layer connecting every source" },
+  { label: "Spine Fabric", icon: Database, color: "#0176D3", description: "Canonical data fabric layer connecting every source" },
   { label: "Workspace", icon: Layers, color: "#3b82f6", description: "Your daily operating surface" },
   { label: "Twin", icon: Brain, color: "#8b5cf6", description: "AI-powered pattern detection" },
   { label: "The Twin", icon: Eye, color: "#06b6d4", description: "Cognitive overlay for recommendations" },
@@ -74,7 +74,7 @@ export function AboutPlatformGather() {
     <StickyGather
       tag="What We Built"
       heading="Every piece born from that one save."
-      centerLabel="IntegrateWise"
+      centerLabel="Spine InnovLabs"
       items={platformNodes}
     />
   );

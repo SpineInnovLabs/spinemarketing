@@ -566,7 +566,7 @@ const howItWorksSteps: StickyScrollStep[] = [
     visual: <OpsConnectVisual />,
   },
   {
-    label: "Step 02 \u2014 Build the Spine",
+    label: "Step 02 \u2014 Build Spine Fabric",
     title: "Three data flows. One complete picture.",
     description:
       "Revenue, pipeline, and costs sync as Truth. Context and sessions converge in your Workspace.",
@@ -623,7 +623,7 @@ export function BusinessOpsContent() {
     <>
       {/* ── HERO ─────────────────────────────────────────── */}
       <section
-        className="relative overflow-hidden bg-dark-section"
+        className="relative overflow-hidden bg-white"
       >
         <div
           className="pointer-events-none absolute inset-0"
@@ -781,7 +781,7 @@ export function BusinessOpsContent() {
                 Revenue, invoices, tickets, projects — all in different tools. You&apos;re the one connecting them.
                 </p>
                 <p className="text-foreground font-semibold">
-                  That&apos;s not running a business. That&apos;s data plumbing.
+                  That&apos;s not running a business. That&apos;s disconnected data integration.
                 </p>
               </div>
             </motion.div>
@@ -835,7 +835,7 @@ export function BusinessOpsContent() {
 
       {/* ── THE SHIFT — Before vs After ──────────────────── */}
       <section
-        className="arvio-section dark-section bg-dark-section"
+        className="arvio-section dark-section bg-white"
       >
         <div className="mx-auto max-w-[1100px]">
           <motion.div

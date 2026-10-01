@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://integratewise.ai/sitemap.xml
+Sitemap: https://spineworkspace.com/sitemap.xml

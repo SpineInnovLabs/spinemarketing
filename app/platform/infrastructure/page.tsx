@@ -17,9 +17,9 @@ export default function InfrastructurePage() {
   return (
     <>
       <BreadcrumbJsonLd items={[
-        { name: "Home", url: "https://integratewise.ai" },
-        { name: "Platform", url: "https://integratewise.ai/platform" },
-        { name: "Infrastructure", url: "https://integratewise.ai/platform/infrastructure" },
+        { name: "Home", url: "https://spineworkspace.com" },
+        { name: "Platform", url: "https://spineworkspace.com/platform" },
+        { name: "Infrastructure", url: "https://spineworkspace.com/platform/infrastructure" },
       ]} />
       <InfrastructureContent />
     </>

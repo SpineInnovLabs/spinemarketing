@@ -115,7 +115,7 @@ export function PlatformStickyScroll() {
       <StickyGather
         tag="How It Assembles"
         heading={<>Scattered tools. <span className="text-primary">One unified architecture.</span></>}
-        subheading="Every component converges into the Spine — your single source of operational truth."
+        subheading="Every component converges into Spine Fabric — your single source of operational truth."
         centerLabel="The Spine"
         centerDescription="Adaptive core"
         items={gatherItems}

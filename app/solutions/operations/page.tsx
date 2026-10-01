@@ -19,11 +19,11 @@ export const metadata: Metadata = {
 
 export default function OperationsPage() {
   return (
-    <div className="min-h-screen bg-dark-section">
+    <div className="min-h-screen bg-white">
       <BreadcrumbJsonLd items={[
-        { name: "Home", url: "https://integratewise.ai" },
-        { name: "Solutions", url: "https://integratewise.ai/solutions" },
-        { name: "Operations", url: "https://integratewise.ai/solutions/operations" },
+        { name: "Home", url: "https://spineworkspace.com" },
+        { name: "Solutions", url: "https://spineworkspace.com/solutions" },
+        { name: "Operations", url: "https://spineworkspace.com/solutions/operations" },
       ]} />
       <Header />
       <main id="main">
