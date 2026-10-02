@@ -21,9 +21,9 @@ export default function RevOpsPage() {
   return (
     <div className="min-h-screen bg-white">
       <BreadcrumbJsonLd items={[
-        { name: "Home", url: "https://spineworkspace.com" },
-        { name: "Solutions", url: "https://spineworkspace.com/solutions" },
-        { name: "RevOps", url: "https://spineworkspace.com/solutions/revops" },
+        { name: "Home", url: "https://spineinnovlabs.com" },
+        { name: "Solutions", url: "https://spineinnovlabs.com/solutions" },
+        { name: "RevOps", url: "https://spineinnovlabs.com/solutions/revops" },
       ]} />
       <Header />
       <main id="main">

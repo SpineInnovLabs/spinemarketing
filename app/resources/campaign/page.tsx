@@ -13,14 +13,14 @@ export const metadata: Metadata = {
     description:
       "The Spine Fabric connects every tool into one source of truth. Architecture blueprints and 36 campaign designs.",
     images: [
-      { url: "/images/architecture/spine-architecture.png", width: 1200, height: 1200, alt: "SpineWorkspace — The Spine Fabric Architecture" },
+      { url: "/images/campaign/Post-Spine.jpg", width: 1080, height: 1080, alt: "SpineWorkspace — The Spine Fabric Architecture" },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Campaign Gallery — Architecture & Creatives | SpineWorkspace",
     description: "The Spine Fabric connects every tool into one source of truth.",
-    images: ["/images/architecture/spine-architecture.png"],
+    images: ["/images/campaign/Post-Spine.jpg"],
   },
 }
 
@@ -30,11 +30,11 @@ const jsonLd = {
   name: "SpineWorkspace Campaign Gallery",
   description:
     "36 campaign designs across LinkedIn and WhatsApp — crafted for Account Success, Business Ops, and Personal Ops professionals.",
-  url: "https://spineworkspace.com/resources/campaign",
+  url: "https://spineinnovlabs.com/resources/campaign",
   publisher: {
     "@type": "Organization",
     name: "SpineWorkspace",
-    url: "https://spineworkspace.com",
+    url: "https://spineinnovlabs.com",
   },
   mainEntity: {
     "@type": "ImageGallery",
@@ -50,7 +50,7 @@ const jsonLd = {
 
 export default function CampaignGalleryPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#032D60]">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

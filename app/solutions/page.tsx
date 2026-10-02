@@ -24,8 +24,8 @@ export default function SolutionsPage() {
   return (
     <div className="min-h-screen bg-white">
       <BreadcrumbJsonLd items={[
-        { name: "Home", url: "https://spineworkspace.com" },
-        { name: "Solutions", url: "https://spineworkspace.com/solutions" },
+        { name: "Home", url: "https://spineinnovlabs.com" },
+        { name: "Solutions", url: "https://spineinnovlabs.com/solutions" },
       ]} />
       <Header />
       <main id="main">
@@ -42,7 +42,10 @@ export default function SolutionsPage() {
           tag="Why SpineWorkspace"
           heading="Same Spine. Every context."
         />
-        <TestimonialsSection heading="Teams already using SpineWorkspace." />
+        <TestimonialsSection
+          heading="Illustrative solution scenarios"
+          tag="Demonstration, not customer quotes"
+        />
         <FinalCTA />
       </main>
       <Footer />

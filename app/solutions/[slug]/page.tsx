@@ -5,7 +5,7 @@ import {
 } from "@/lib/solution-taxonomy";
 import { createFunctionalSolutionRoute } from "@/lib/create-functional-solution-route";
 
-/** Slugs with dedicated custom marketing pages (static routes take precedence) */
+/** Slugs with a dedicated page.tsx. generateStaticParams covers the rest of PUBLIC_SOLUTIONS so each catalogue path is built once. */
 const CUSTOM_PAGE_SLUGS = new Set([
   "customer-success",
   "finance",

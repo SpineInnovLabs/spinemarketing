@@ -22,9 +22,9 @@ export default function TheAdaptiveWorkspacePage() {
   return (
     <div className="min-h-screen bg-white">
       <BreadcrumbJsonLd items={[
-        { name: "Home", url: "https://spineworkspace.com" },
-        { name: "Product", url: "https://spineworkspace.com/product" },
-        { name: "The Adaptive Workspace", url: "https://spineworkspace.com/product/the-adaptive-workspace" },
+        { name: "Home", url: "https://spineinnovlabs.com" },
+        { name: "Product", url: "https://spineinnovlabs.com/product" },
+        { name: "The Adaptive Workspace", url: "https://spineinnovlabs.com/product/the-adaptive-workspace" },
       ]} />
       <Header />
       <main id="main">

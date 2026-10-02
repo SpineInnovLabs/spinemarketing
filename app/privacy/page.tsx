@@ -18,8 +18,8 @@ export default function PrivacyPage() {
   return (
     <div className="min-h-screen bg-background">
       <BreadcrumbJsonLd items={[
-        { name: "Home", url: "https://spineworkspace.com" },
-        { name: "Privacy Policy", url: "https://spineworkspace.com/privacy" },
+        { name: "Home", url: "https://spineinnovlabs.com" },
+        { name: "Privacy Policy", url: "https://spineinnovlabs.com/privacy" },
       ]} />
       <Header />
       <main id="main">

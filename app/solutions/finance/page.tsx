@@ -22,9 +22,9 @@ export default function FinancePage() {
   return (
     <div className="min-h-screen bg-white">
       <BreadcrumbJsonLd items={[
-        { name: "Home", url: "https://spineworkspace.com" },
-        { name: "Solutions", url: "https://spineworkspace.com/solutions" },
-        { name: "Finance", url: "https://spineworkspace.com/solutions/finance" },
+        { name: "Home", url: "https://spineinnovlabs.com" },
+        { name: "Solutions", url: "https://spineinnovlabs.com/solutions" },
+        { name: "Finance", url: "https://spineinnovlabs.com/solutions/finance" },
       ]} />
       <Header />
       <main id="main">

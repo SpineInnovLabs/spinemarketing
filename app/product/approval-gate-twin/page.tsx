@@ -22,9 +22,9 @@ export default function ApprovalGateTwinPage() {
   return (
     <div className="min-h-screen bg-white">
       <BreadcrumbJsonLd items={[
-        { name: "Home", url: "https://spineworkspace.com" },
-        { name: "Product", url: "https://spineworkspace.com/product" },
-        { name: "Governance & Twin", url: "https://spineworkspace.com/product/approval-gate-twin" },
+        { name: "Home", url: "https://spineinnovlabs.com" },
+        { name: "Product", url: "https://spineinnovlabs.com/product" },
+        { name: "Governance & Twin", url: "https://spineinnovlabs.com/product/approval-gate-twin" },
       ]} />
       <Header />
       <main id="main">

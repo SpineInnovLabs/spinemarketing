@@ -203,7 +203,7 @@ export function TheAdaptiveWorkspaceContent() {
           </motion.div>
           <div className="grid gap-4 sm:grid-cols-2">
             {[
-              { icon: Clock, title: "Real-Time Sync", desc: "Sub-100ms entity state updates to every client." },
+              { icon: Clock, title: "Real-Time Sync", desc: "Near real-time entity state updates to every client." },
               { icon: GitBranch, title: "Cross-Tool Context", desc: "See CRM, billing, and support data side by side." },
               { icon: AlertTriangle, title: "Exception Surfacing", desc: "Anomalies flagged automatically with evidence." },
               { icon: CheckCircle2, title: "Action-Ready", desc: "Proposed Actions attached to every entity view." },

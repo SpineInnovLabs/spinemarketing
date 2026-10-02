@@ -22,8 +22,8 @@ export default function ResourcesPage() {
   return (
     <div className="min-h-screen bg-white">
       <BreadcrumbJsonLd items={[
-        { name: "Home", url: "https://spineworkspace.com" },
-        { name: "Resources", url: "https://spineworkspace.com/resources" },
+        { name: "Home", url: "https://spineinnovlabs.com" },
+        { name: "Resources", url: "https://spineinnovlabs.com/resources" },
       ]} />
       <Header />
       <main id="main">

@@ -22,9 +22,9 @@ export default function FoundersPage() {
   return (
     <div className="min-h-screen bg-white">
       <BreadcrumbJsonLd items={[
-        { name: "Home", url: "https://spineworkspace.com" },
-        { name: "Solutions", url: "https://spineworkspace.com/solutions" },
-        { name: "Founders & CXOs", url: "https://spineworkspace.com/solutions/founders" },
+        { name: "Home", url: "https://spineinnovlabs.com" },
+        { name: "Solutions", url: "https://spineinnovlabs.com/solutions" },
+        { name: "Founders & CXOs", url: "https://spineinnovlabs.com/solutions/founders" },
       ]} />
       <Header />
       <main id="main">

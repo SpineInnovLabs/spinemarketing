@@ -21,8 +21,8 @@ export default function SpinePage() {
   return (
     <div className="min-h-screen bg-white">
       <BreadcrumbJsonLd items={[
-        { name: "Home", url: "https://spineworkspace.com" },
-        { name: "Spine & Intelligence", url: "https://spineworkspace.com/spine" },
+        { name: "Home", url: "https://spineinnovlabs.com" },
+        { name: "Spine & Intelligence", url: "https://spineinnovlabs.com/spine" },
       ]} />
       <Header />
       <main id="main">

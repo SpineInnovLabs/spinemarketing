@@ -28,8 +28,8 @@ export default function AccountSuccessPage() {
   return (
     <div className="min-h-screen bg-white">
       <BreadcrumbJsonLd items={[
-        { name: "Home", url: "https://spineworkspace.com" },
-        { name: "Account Success", url: "https://spineworkspace.com/account-success" },
+        { name: "Home", url: "https://spineinnovlabs.com" },
+        { name: "Account Success", url: "https://spineinnovlabs.com/account-success" },
       ]} />
       <Header />
       <main id="main">

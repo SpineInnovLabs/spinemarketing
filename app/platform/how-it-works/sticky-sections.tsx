@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 
 const items = [
-  { icon: Plug, label: "Ingest", description: "Data flows from 70+ connectors via OAuth, MCP, or webhook.", color: "#3b82f6" },
+  { icon: Plug, label: "Ingest", description: "Data flows from connected systems via OAuth, MCP, or webhook.", color: "#3b82f6" },
   { icon: Database, label: "Normalize", description: "8-stage pipeline resolves entities and deduplicates records.", color: "#2dd4bf" },
   { icon: Activity, label: "Detect", description: "Cross-system patterns and anomalies surfaced automatically.", color: "#8b5cf6" },
   { icon: Brain, label: "Analyze", description: "Twin scores signals with confidence and source attribution.", color: "#fbbf24" },

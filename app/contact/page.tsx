@@ -1,4 +1,3 @@
-import { Suspense } from "react"
 import { Metadata } from "next"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
@@ -22,14 +21,12 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-white">
       <BreadcrumbJsonLd items={[
-        { name: "Home", url: "https://spineworkspace.com" },
-        { name: "Contact", url: "https://spineworkspace.com/contact" },
+        { name: "Home", url: "https://spineinnovlabs.com" },
+        { name: "Contact", url: "https://spineinnovlabs.com/contact" },
       ]} />
       <Header />
       <main id="main">
-        <Suspense fallback={null}>
-          <ContactContent defaultIntent="contact" />
-        </Suspense>
+        <ContactContent defaultIntent="contact" />
         <ContactOnboardingGather />
       </main>
       <Footer />

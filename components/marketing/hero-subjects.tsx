@@ -32,6 +32,51 @@ export function DataFabricPanel() {
   );
 }
 
+const WORKFLOW_STAGES = [
+  {
+    stage: "Goal",
+    detail: "Prepare the renewal decision for Northstar Labs",
+  },
+  {
+    stage: "Connected evidence",
+    detail: "CRM status, support tickets, last email commitment, usage trends, contract terms",
+  },
+  {
+    stage: "Twin proposes",
+    detail: "Risks surfaced, follow-up drafted, each claim linked to its source",
+  },
+  {
+    stage: "Human review",
+    detail: "Account owner accepts, edits, or rejects the proposal",
+  },
+  {
+    stage: "Continuity",
+    detail: "The team resumes work later without reconstructing account context",
+  },
+] as const;
+
+export function RenewalWorkflowNarrative() {
+  return (
+    <div className="overflow-hidden rounded-[20px] border border-[#D9E4EF] bg-white shadow-[0_18px_48px_rgba(3,45,96,0.08)]">
+      <div className="border-b border-[#D9E4EF] bg-[#EAF5FC] px-6 py-4">
+        <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[#0176D3]">Illustrative workflow</p>
+        <p className="mt-1 text-[18px] font-semibold text-[#032D60]">Renewal readiness for Northstar Labs</p>
+        <p className="mt-1 text-[14px] text-[#526479]">Demonstration, not a customer result</p>
+      </div>
+      <ol className="divide-y divide-[#D9E4EF]">
+        {WORKFLOW_STAGES.map(({ stage, detail }, index) => (
+          <li key={stage} className="grid gap-2 px-6 py-4 sm:grid-cols-[minmax(0,9rem)_1fr] sm:gap-6">
+            <span className="text-[13px] font-semibold tabular-nums text-[#0176D3]">
+              {String(index + 1).padStart(2, "0")} · {stage}
+            </span>
+            <span className="text-[14px] leading-[1.6] text-[#33465B]">{detail}</span>
+          </li>
+        ))}
+      </ol>
+    </div>
+  );
+}
+
 export function RenewalReviewPanel() {
   return (
     <div className="relative min-w-0 max-w-full overflow-hidden rounded-[16px]">
@@ -210,7 +255,7 @@ export function AppCluster() {
         </div>
         {CLUSTER.map((logo, index) => (
           <div key={logo.id} className={`absolute ${CLUSTER_POSITIONS[index]}`}>
-            <AppLogo name={logo.name} src={logo.src} size="md" showLabel />
+            <AppLogo name={logo.name} src={logo.src} size="md" />
           </div>
         ))}
       </div>
@@ -220,7 +265,7 @@ export function AppCluster() {
         </li>
         {CLUSTER.map((logo) => (
           <li key={logo.id}>
-            <AppLogo name={logo.name} src={logo.src} size="sm" showLabel />
+            <AppLogo name={logo.name} src={logo.src} size="sm" />
           </li>
         ))}
       </ul>

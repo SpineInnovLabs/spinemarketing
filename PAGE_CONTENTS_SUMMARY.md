@@ -464,7 +464,7 @@ This document contains the structure and metadata for all pages in the Spine Inn
 ### Branding
 - **Company Name**: Spine InnovLabs
 - **Tagline**: "Stop being the human API between your apps"
-- **Domain**: spineworkspace.com
+- **Domain**: spineinnovlabs.com
 - **Dark Mode**: Most pages use #05070A background
 
 ---

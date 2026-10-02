@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { SpineLogo } from "@/components/spine-logo";
 import { Menu, X, ChevronDown, ArrowRight } from "lucide-react";
+import { AppearanceMenu } from "@/components/appearance-menu";
 import { IntegrationMarkGroups } from "@/components/marketing/integration-nav-marks";
 import { DOCS_URL, headerNavigation, type NavItem, type NavItemChild, type NavLink } from "@/lib/navigation";
 import { motion, useScroll, useSpring, useReducedMotion } from "framer-motion";
@@ -397,10 +398,10 @@ export function Header({
         animate={heroRevealed ? { y: 0, opacity: 1 } : { y: "-100%", opacity: 0 }}
         transition={reduce ? { duration: 0 } : { type: "spring", damping: 22, stiffness: 200, mass: 0.8 }}
         style={{
-          background: "rgba(255, 255, 255, 0.96)",
+          background: "var(--header-bg)",
           backdropFilter: "blur(12px)",
           WebkitBackdropFilter: "blur(12px)",
-          borderBottom: "1px solid #D9E4EF",
+          borderBottom: "1px solid var(--header-line)",
           boxShadow: "0 1px 2px rgba(0,0,0,0.04)",
         }}
       >
@@ -438,6 +439,7 @@ export function Header({
           </div>
 
           <div className="hidden shrink-0 items-center gap-2 lg:flex">
+            <AppearanceMenu />
             <a href={DOCS_URL} className="inline-flex h-10 items-center rounded-[10px] px-3 text-[15px] font-semibold text-[#032D60] hover:bg-[#F3F6F9] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0176D3] focus-visible:ring-offset-2" target="_blank" rel="noopener noreferrer">
               Docs
             </a>
@@ -578,6 +580,9 @@ export function Header({
               })}
 
               <div className="mt-4 flex flex-col gap-2 pb-4">
+                <div className="flex justify-end">
+                  <AppearanceMenu />
+                </div>
                 <a
                   href={DOCS_URL}
                   className="flex h-10 items-center justify-center rounded-md border border-[#D9E4EF] text-[14px] font-semibold text-[#032D60] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0176D3]"

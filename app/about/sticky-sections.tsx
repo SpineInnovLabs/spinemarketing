@@ -27,7 +27,7 @@ const journeyItems = [
   {
     tag: "The red account",
     title: "$8M at 100% attrition risk. Zero handover.",
-    description: "A colleague left. Their biggest account landed with no context. Seven systems, seven formats, seven teams — nobody could see across all of it.",
+    description: "Illustrative origin, not a customer result. A colleague left. Their biggest account landed with no context. Seven systems, seven formats, seven teams — nobody could see across all of it.",
     icon: AlertCircle,
     color: "#ef4444",
     features: ["$8M contract value", "100% attrition risk", "Zero documentation"],
@@ -43,7 +43,7 @@ const journeyItems = [
   {
     tag: "The save",
     title: "Full renewal. $8 million back from the edge.",
-    description: "Both signals resolved manually. Contract signed. Relationship rebuilt. The account renewed in full — because one person became the integration layer.",
+    description: "Illustrative outcome, not a published customer result. Both signals resolved manually. The story is how the product idea started.",
     icon: CheckCircle2,
     color: "#1BA784",
     features: ["Full $8M renewal", "Relationship restored", "Manual integration proved the concept"],
@@ -62,8 +62,8 @@ const platformNodes = [
 export function AboutJourneyScroll() {
   return (
     <StickyScroll
-      tag="The Origin Story"
-      heading="From manual save to automated platform."
+      tag="Illustrative origin story"
+      heading="How the idea started — not a customer result."
       items={journeyItems}
     />
   );

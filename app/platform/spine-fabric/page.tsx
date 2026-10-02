@@ -24,9 +24,9 @@ export default function SpineFabricPage() {
   return (
     <div className="min-h-screen bg-white">
       <BreadcrumbJsonLd items={[
-        { name: "Home", url: "https://spineworkspace.com" },
-        { name: "Platform", url: "https://spineworkspace.com/platform" },
-        { name: "Spine Fabric", url: "https://spineworkspace.com/platform/spine-fabric" },
+        { name: "Home", url: "https://spineinnovlabs.com" },
+        { name: "Platform", url: "https://spineinnovlabs.com/platform" },
+        { name: "Spine Fabric", url: "https://spineinnovlabs.com/platform/spine-fabric" },
       ]} />
       <Header />
       <main id="main">

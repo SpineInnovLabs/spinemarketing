@@ -23,7 +23,7 @@ const securityFeatures = [
   {
     icon: ShieldCheck,
     title: "SOC 2 aligned",
-    desc: "Security, availability, and confidentiality standards.",
+    desc: "Aligned practices. No certification is claimed.",
   },
   {
     icon: Eye,
@@ -83,8 +83,8 @@ export function SecurityContent() {
       <section className="arvio-section dark-section">
         <div className="mx-auto max-w-[1100px]">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ y: 20 }}
+            whileInView={{ y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
             className="mx-auto max-w-2xl text-center"
@@ -99,8 +99,8 @@ export function SecurityContent() {
             {securityFeatures.map(({ icon: Icon, title, desc }, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ y: 20 }}
+                whileInView={{ y: 0 }}
                 viewport={{ once: true }}
                 transition={{
                   type: "spring",
@@ -132,8 +132,8 @@ export function SecurityContent() {
       <section className="arvio-section dark-section">
         <div className="mx-auto max-w-[1100px]">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ y: 20 }}
+            whileInView={{ y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
             className="mx-auto max-w-2xl text-center"
@@ -147,8 +147,8 @@ export function SecurityContent() {
             {principles.map((p, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ y: 20 }}
+                whileInView={{ y: 0 }}
                 viewport={{ once: true }}
                 transition={{
                   type: "spring",
@@ -176,8 +176,8 @@ export function SecurityContent() {
       >
         <div className="mx-auto max-w-[800px] text-center">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ y: 20 }}
+            whileInView={{ y: 0 }}
             viewport={{ once: true }}
             transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
           >

@@ -4,6 +4,8 @@ import { Inter } from "next/font/google"
 import "./globals.css"
 
 import { FirebaseAnalytics } from "@/components/firebase-analytics"
+import { AppearanceSync } from "@/components/appearance-sync"
+import { APPEARANCE_BOOT_SCRIPT } from "@/lib/appearance"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 
@@ -13,26 +15,26 @@ export const metadata: Metadata = {
     canonical: "/",
     types: { "application/rss+xml": "/rss.xml" },
   },
-  title: "SpineWorkspace — Bring people, AI, and business context into the same workspace.",
+  title: "SpineWorkspace — Governed AI workspace for operational work",
   description:
-    "People and their Twin work from the same business context—across the tools your team already uses. Built by Spine InnovLabs.",
+    "Connect authorized business signals from the systems you already use. People and AI work from the same evidence. People stay in charge. Built by Spine InnovLabs.",
   icons: {
     icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
     apple: "/icon.svg",
   },
   openGraph: {
-    title: "SpineWorkspace — Bring people, AI, and business context into the same workspace.",
+    title: "SpineWorkspace — Governed AI workspace for operational work",
     description:
-      "People and their Twin work from the same business context—across the tools your team already uses. Built by Spine InnovLabs.",
+      "Connect authorized business signals from the systems you already use. People and AI work from the same evidence. People stay in charge. Built by Spine InnovLabs.",
     siteName: "SpineWorkspace",
     type: "website",
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "SpineWorkspace" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "SpineWorkspace — Bring people, AI, and business context into the same workspace.",
+    title: "SpineWorkspace — Governed AI workspace for operational work",
     description:
-      "People and their Twin work from the same business context—across the tools your team already uses. Built by Spine InnovLabs.",
+      "Connect authorized business signals from the systems you already use. People and AI work from the same evidence. People stay in charge. Built by Spine InnovLabs.",
     images: ["/og.png"],
   },
 }
@@ -45,6 +47,7 @@ export default function RootLayout({
   return (
     <html lang="en" data-scroll-behavior="smooth" suppressHydrationWarning>
       <head>
+        <script dangerouslySetInnerHTML={{ __html: APPEARANCE_BOOT_SCRIPT }} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -67,10 +70,11 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${inter.className} bg-white text-[#181818] antialiased`} suppressHydrationWarning>
+      <body className={`${inter.className} overflow-x-clip bg-white text-[#181818] antialiased`} suppressHydrationWarning>
         <a href="#main" className="skip-link">
           Skip to main content
         </a>
+        <AppearanceSync />
         {children}
         <FirebaseAnalytics />
       </body>

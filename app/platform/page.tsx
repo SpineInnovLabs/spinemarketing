@@ -24,8 +24,8 @@ export default function PlatformPage() {
     <div className="min-h-screen bg-white">
       <SoftwareApplicationJsonLd />
       <BreadcrumbJsonLd items={[
-        { name: "Home", url: "https://spineworkspace.com" },
-        { name: "Platform", url: "https://spineworkspace.com/platform" },
+        { name: "Home", url: "https://spineinnovlabs.com" },
+        { name: "Platform", url: "https://spineinnovlabs.com/platform" },
       ]} />
       <Header />
       <main id="main">

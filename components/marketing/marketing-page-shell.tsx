@@ -12,7 +12,7 @@ export function MarketingPageShell({
   initiallyHiddenHeader?: boolean;
 }) {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen overflow-x-clip bg-white">
       <BreadcrumbJsonLd items={breadcrumbs} />
       <Header initiallyHidden={initiallyHiddenHeader} />
       <main id="main">{children}</main>

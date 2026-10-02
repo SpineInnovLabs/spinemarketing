@@ -18,11 +18,11 @@ import {
 const valueItems = [
   {
     tag: "Start simple",
-    title: "See everything in one place from day one.",
-    description: "Connect your apps, get the Workspace, and see every customer as an Entity 360 — unified across all your tools.",
+    title: "See connected context in one workspace.",
+    description: "Connect the apps in scope, open the Workspace, and review those customers as an Entity 360.",
     icon: Zap,
     color: "#0176D3",
-    features: ["Unlimited connectors", "Entity 360 views", "Workspace access"],
+    features: ["Up to 5 connectors", "Entity 360 views", "Workspace access"],
   },
   {
     tag: "Add intelligence",
@@ -35,18 +35,18 @@ const valueItems = [
   {
     tag: "Scale governance",
     title: "Enterprise controls for regulated teams.",
-    description: "Tiered approvals, department isolation, custom SLA engines, and full audit trails. Your compliance team will love it.",
+    description: "Tiered approvals, department isolation, audit trail exports, and governance controls for regulated teams.",
     icon: Shield,
     color: "#f59e0b",
-    features: ["Role-based access", "Audit trail exports", "SOC 2 aligned"],
+    features: ["Role-based access", "Audit trail exports", "SOC 2 aligned practices"],
   },
   {
-    tag: "No per-seat lock-in",
-    title: "Base fee + usage. Not per-seat pricing.",
-    description: "Every tier includes unlimited users. You pay for the intelligence and governance — not for headcount.",
+    tag: "Confirm before purchase",
+    title: "The prices on this page are planning examples.",
+    description: "Starter, Growth, and Command are shown in US dollars per user. Commercial terms follow workflow scope, connectors, and governance.",
     icon: Users,
     color: "#3b82f6",
-    features: ["Unlimited users", "Predictable costs", "No hidden fees"],
+    features: ["US dollars only", "Per user, per month", "Confirm the agreement before purchase"],
   },
 ];
 

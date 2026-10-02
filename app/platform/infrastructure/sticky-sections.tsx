@@ -12,8 +12,8 @@ import {
 const items = [
   {
     tag: "Real-Time Sync",
-    title: "Sub-100ms from normalization to UI",
-    description: "Firebase real-time layer delivers changes to the Workspace instantly. No polling, no stale data.",
+    title: "Near real-time from normalization to UI",
+    description: "Firebase real-time layer delivers changes to the Workspace quickly. No polling, no stale data.",
     icon: Zap,
     color: "#fbbf24",
     features: [
@@ -64,15 +64,15 @@ const items = [
   },
   {
     tag: "Reliability",
-    title: "99.9% uptime with zero-downtime deploys",
-    description: "Blue-green deployments. Automated rollback. No maintenance windows. Your team never loses access.",
+    title: "Built for reliability with zero-downtime deploys",
+    description: "Blue-green deployments. Automated rollback. No maintenance windows. Your team keeps access during updates.",
     icon: Shield,
     color: "#ef4444",
     features: [
       "Blue-green deployment with instant rollback",
       "Zero-downtime database migrations",
       "Automated health checks every 30 seconds",
-      "99.9% SLA with credits for any breach",
+      "Health checks and automated incident escalation",
     ],
   },
 ];
@@ -82,7 +82,7 @@ export function InfrastructureStickyScroll() {
     <StickyScroll
       tag="Infrastructure Deep Dive"
       heading={<>Built for speed. <span className="text-primary">Built to last.</span></>}
-      subheading="Scroll to explore the infrastructure that powers sub-100ms sync and 99.9% uptime."
+      subheading="Scroll to explore the infrastructure that powers continuous sync and reliable delivery."
       items={items}
     />
   );

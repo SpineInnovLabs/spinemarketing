@@ -44,12 +44,12 @@ export const pages = {
       path: "/spineworkspace",
     },
     hero: {
-      badge: "The business-context workspace",
-      headline: "Move business goals forward. Together.",
+      badge: "Governed AI workspace",
+      headline: "Work from the full business story — not fragments.",
       subhead:
-        "People and their Twin work from the same business context—across the tools your team already uses.",
-      primaryCta: { label: "Book a demo", href: "/contact?intent=demo" },
-      secondaryCta: { label: "See how it works", href: "/adaptive-workspace" },
+        "SpineWorkspace brings authorized context from the systems your team already uses into a governed workspace where people and AI prepare, review, and move work forward. Your systems remain authoritative. Your people remain accountable.",
+      primaryCta: { label: "See a workflow", href: "/#renewal-workflow" },
+      secondaryCta: { label: "Book a tailored demo", href: "/contact?intent=demo" },
     },
     sections: [
       {
@@ -367,9 +367,9 @@ export const pages = {
     hero: {
       badge: "Proof",
       headline: "What the product actually does.",
-      subhead: "A map of the product. Illustrative scenarios, not customer results or certifications.",
-      primaryCta: { label: "Book a demo", href: "/contact?intent=demo" },
-      secondaryCta: { label: "See pricing", href: "/pricing" },
+      subhead: "Demonstrations show how the product operates. They are not claims of customer outcomes or certifications.",
+      primaryCta: { label: "See a workflow", href: "/#renewal-workflow" },
+      secondaryCta: { label: "Book a tailored demo", href: "/contact?intent=demo" },
     },
     sections: [],
     scenario: {
@@ -393,39 +393,58 @@ export const pages = {
   company: {
     meta: {
       title: "Company — Spine InnovLabs builds SpineWorkspace",
-      description: "Adaptive work environments for human–AI collaboration on shared business context.",
+      description:
+        "Spine InnovLabs builds SpineWorkspace — a governed AI workspace where people and AI work from the same business context.",
       path: "/company",
     },
     hero: {
       badge: "Spine InnovLabs",
-      headline: "Spine InnovLabs builds SpineWorkspace.",
-      subhead: "Spine InnovLabs builds SpineWorkspace, the business-context workspace where humans and AI work together.",
-      primaryCta: { label: "Contact us", href: "/contact" },
+      headline: "We build for the work that gets lost between systems.",
+      subhead:
+        "Spine InnovLabs builds SpineWorkspace: a governed environment where people and AI work from the same business context, while the systems teams already depend on remain authoritative.",
+      primaryCta: { label: "Speak with the team", href: "/contact" },
+      secondaryCta: { label: "See a workflow", href: "/#renewal-workflow" },
     },
     sections: [
       {
-        headline: "Building around shared business reality.",
+        headline: "Why this company exists.",
         body:
-          "Spine InnovLabs builds SpineWorkspace so people and AI can work from the same governed business context, using the tools a team already runs.",
+          "Business context fragments across CRM, mail, tickets, documents, and the people who remember what happened. Spine InnovLabs exists to solve that fragmentation — without replacing source systems or removing human authority from consequential work.",
       },
       {
-        headline: "Product family.",
+        headline: "What we ship.",
         cards: [
           {
             title: "SpineWorkspace",
-            description: "The flagship adaptive business-context workspace for teams and operators.",
+            description: "The flagship governed AI workspace for operational work — Workspace, Twin, and governed business context in one product.",
             href: "/spineworkspace",
+          },
+          {
+            title: "How we work with teams",
+            description: "Workflow-led evaluations, design partners, and implementations where your team keeps authority over approvals and source systems.",
+            href: "/pricing",
           },
         ],
       },
       {
         headline: "Principles we build by.",
-        items: ["Context", "Accountability", "Continuity", "Adaptive capability"],
+        items: [
+          "Context — shared, governed, and linked to source evidence",
+          "Accountability — people accept consequential steps; proposals stay proposals until then",
+          "Continuity — work resumes across sessions and handoffs without rebuilding the story",
+          "Adaptive capability — the workspace follows the goal, role, and evidence in front of the work",
+        ],
+      },
+      {
+        headline: "Built in Bengaluru.",
+        body:
+          "Spine InnovLabs is headquartered in Bengaluru, India. We build for global teams operating across fragmented systems — with security, documentation, and contact paths on this site.",
       },
     ],
     crossLinks: {
       related: [
-        { label: "About", href: "/about" },
+        { label: "About the founder story", href: "/about" },
+        { label: "Security", href: "/security" },
         { label: "Contact", href: "/contact" },
       ],
     },
@@ -690,18 +709,18 @@ export const ecosystemChips = [
 
 export const homeCopy = {
   meta: {
-    title: "SpineWorkspace — Bring people, AI, and business context into the same workspace",
+    title: "SpineWorkspace — Governed AI workspace for operational work",
     description:
-      "SpineWorkspace gives humans and AI the same governed understanding of goals, KPIs, work, memory, evidence, and continuity.",
+      "Connect authorized business signals from the systems you already use. People and AI work from the same evidence. People stay in charge.",
     path: "/",
   },
   hero: {
-    badge: "SpineWorkspace by Spine InnovLabs",
-    headline: "Bring people, AI, and business context into the same workspace.",
+    badge: "Governed AI workspace for operational work",
+    headline: "Your business already has the context. It is trapped across tools.",
     subhead:
-      "SpineWorkspace gives humans and AI the same governed understanding of goals, KPIs, work, memory, evidence, and continuity—so business work moves forward across the tools you already use.",
-    primaryCta: { label: "Book a demo", href: "/contact?intent=demo" },
-    secondaryCta: { label: "Explore SpineWorkspace", href: "/spineworkspace" },
+      "SpineWorkspace connects authorized signals from the systems you already use, gives people and AI the same evidence, and turns work into reviewable next steps.",
+    primaryCta: { label: "See a workflow", href: "#renewal-workflow" },
+    secondaryCta: { label: "Book a tailored demo", href: "/contact?intent=demo" },
   },
   problem: {
     label: "The problem",

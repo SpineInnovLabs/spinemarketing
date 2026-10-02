@@ -5,7 +5,7 @@ import { EnterpriseHome } from "@/components/marketing/home-enterprise"
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen overflow-x-clip bg-white">
       <Header />
       <main id="main">
         <HostLandingGate>

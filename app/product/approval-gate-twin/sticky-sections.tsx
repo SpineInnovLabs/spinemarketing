@@ -65,7 +65,7 @@ const scrollItems = [
       "Immutable append-only audit log",
       "Timestamp, user ID, and action outcome recorded",
       "Full decision chain from signal to execution",
-      "Export-ready for SOC 2 and compliance audits",
+      "Export-ready audit trails for compliance review",
     ],
   },
   {
@@ -116,7 +116,6 @@ export function ApprovalGather() {
       centerLabel="Govern Gate"
       centerDescription="Human control"
       items={gatherItems}
-      glowColor="rgba(251,191,36,0.12)"
     />
   );
 }

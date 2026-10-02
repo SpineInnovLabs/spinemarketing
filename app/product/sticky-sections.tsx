@@ -119,7 +119,6 @@ export function ProductStickySections() {
         centerLabel="Workspace"
         centerDescription="Your daily surface"
         items={gatherItems}
-        glowColor="rgba(139,92,246,0.12)"
       />
     </>
   );

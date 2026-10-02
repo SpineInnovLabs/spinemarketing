@@ -21,9 +21,9 @@ export default function RetailPage() {
   return (
     <div className="min-h-screen bg-white">
       <BreadcrumbJsonLd items={[
-        { name: "Home", url: "https://spineworkspace.com" },
-        { name: "Solutions", url: "https://spineworkspace.com/solutions" },
-        { name: "Retail", url: "https://spineworkspace.com/solutions/retail" },
+        { name: "Home", url: "https://spineinnovlabs.com" },
+        { name: "Solutions", url: "https://spineinnovlabs.com/solutions" },
+        { name: "Retail", url: "https://spineinnovlabs.com/solutions/retail" },
       ]} />
       <Header />
       <main id="main">

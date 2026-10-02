@@ -22,9 +22,9 @@ export default function IndividualPage() {
   return (
     <div className="min-h-screen bg-white">
       <BreadcrumbJsonLd items={[
-        { name: "Home", url: "https://spineworkspace.com" },
-        { name: "Solutions", url: "https://spineworkspace.com/solutions" },
-        { name: "Individual", url: "https://spineworkspace.com/solutions/individual" },
+        { name: "Home", url: "https://spineinnovlabs.com" },
+        { name: "Solutions", url: "https://spineinnovlabs.com/solutions" },
+        { name: "Individual", url: "https://spineinnovlabs.com/solutions/individual" },
       ]} />
       <Header />
       <main id="main">

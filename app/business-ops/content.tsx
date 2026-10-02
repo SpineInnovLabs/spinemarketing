@@ -952,7 +952,7 @@ export function BusinessOpsContent() {
                     <span className="text-primary">on day one</span>
                   </h2>
                   <p className="mt-4 text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">
-                    Value from day one. Not months of implementation.
+                    A first connected workflow. Not a months-long replacement project.
                   </p>
                 </motion.div>
                 <ul className="mt-8 space-y-3">

@@ -44,7 +44,7 @@ export function PlatformSecurityContent() {
         <PageHero
           badge="Platform Security"
           headline="AI acts only when you say so."
-          subhead="Encryption everywhere, RBAC, SOC 2 alignment, and an architectural mandate for human approval."
+          subhead="Encryption everywhere, RBAC, SOC 2 aligned practices with no certification claimed, and an architectural mandate for human approval."
           primaryCta={{ label: "Review the security model", href: "/contact?intent=security" }}
         />
 

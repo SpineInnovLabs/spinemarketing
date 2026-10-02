@@ -34,7 +34,6 @@ export function WorkspaceGather() {
       centerLabel="Workspace"
       centerDescription="Your daily surface"
       items={items}
-      glowColor="rgba(139,92,246,0.12)"
     />
   );
 }

@@ -41,7 +41,7 @@ export function IntegrationLogoStrip({
         <div>
           <Marquee pauseOnHover className="[--duration:42s] [--gap:1rem]">
             {logos.map((logo) => (
-              <AppLogo key={logo.id} name={logo.name} src={logo.src} size="md" showLabel animate />
+              <AppLogo key={logo.id} name={logo.name} src={logo.src} size="md" animate />
             ))}
           </Marquee>
         </div>

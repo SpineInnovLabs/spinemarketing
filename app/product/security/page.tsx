@@ -17,9 +17,9 @@ export default function ProductSecurityPage() {
   return (
     <>
       <BreadcrumbJsonLd items={[
-        { name: "Home", url: "https://spineworkspace.com" },
-        { name: "Product", url: "https://spineworkspace.com/product" },
-        { name: "Security", url: "https://spineworkspace.com/product/security" },
+        { name: "Home", url: "https://spineinnovlabs.com" },
+        { name: "Product", url: "https://spineinnovlabs.com/product" },
+        { name: "Security", url: "https://spineinnovlabs.com/product/security" },
       ]} />
       <ProductSecurityContent />
     </>

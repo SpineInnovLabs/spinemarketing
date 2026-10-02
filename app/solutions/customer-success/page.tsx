@@ -22,9 +22,9 @@ export default function CustomerSuccessRolePage() {
   return (
     <div className="min-h-screen bg-white">
       <BreadcrumbJsonLd items={[
-        { name: "Home", url: "https://spineworkspace.com" },
-        { name: "Solutions", url: "https://spineworkspace.com/solutions" },
-        { name: "Customer Success", url: "https://spineworkspace.com/solutions/customer-success" },
+        { name: "Home", url: "https://spineinnovlabs.com" },
+        { name: "Solutions", url: "https://spineinnovlabs.com/solutions" },
+        { name: "Customer Success", url: "https://spineinnovlabs.com/solutions/customer-success" },
       ]} />
       <Header />
       <main id="main">

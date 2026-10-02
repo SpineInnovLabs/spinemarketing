@@ -7,6 +7,7 @@ import { PricingFAQ } from "./faq";
 import { PricingHero } from "./pricing-hero";
 import { PricingTrustBar } from "./trust-bar";
 import { PricingComparison } from "./comparison";
+import { PricingEvaluationPath } from "./evaluation-path";
 import { PricingValueScroll, PricingIncludedGather } from "./sticky-sections";
 import { TestimonialsSection } from "@/components/testimonials-section";
 import { FAQPageJsonLd, BreadcrumbJsonLd } from "@/components/structured-data";
@@ -23,18 +24,18 @@ const pricingFAQData = [
 export const metadata: Metadata = {
   title: "Pricing | SpineWorkspace",
   description:
-    "Simple pricing. Start at ₹999/$49/mo. Scale to enterprise governance.",
+    "Commercial tiers and a scoped evaluation path. Pricing follows workflow scope, integrations, and governance needs.",
   alternates: { canonical: "/pricing" },
   openGraph: {
     title: "Pricing | SpineWorkspace",
-    description: "Simple pricing. Start at ₹999/$49/mo. Scale to enterprise governance.",
+    description: "Commercial tiers and a scoped evaluation path. Pricing follows workflow scope, integrations, and governance needs.",
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "SpineWorkspace Pricing" }],
   },
 };
 
 export default function PricingPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen overflow-x-clip bg-white">
       <FAQPageJsonLd questions={pricingFAQData} />
       <BreadcrumbJsonLd items={[
         { name: "Home", url: "https://spineinnovlabs.com" },
@@ -43,6 +44,7 @@ export default function PricingPage() {
       <Header />
       <main id="main">
         <PricingHero />
+        <PricingEvaluationPath />
         <PricingSection hideHeading />
         <PricingValueScroll />
         <PricingComparison />

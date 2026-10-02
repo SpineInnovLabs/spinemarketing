@@ -1,29 +1,32 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import Link from "next/link";
+import { integrationLogoCandidates } from "@/lib/integration-logos";
 import type { ConnectorNavMark, KindNavMark } from "@/lib/integration-nav";
 
 const tileClass =
   "flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-[#D9E4EF] bg-white text-[#0176D3] transition-colors duration-150 hover:border-[#0176D3] hover:bg-[#EAF5FC] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0176D3] focus-visible:ring-offset-2 motion-reduce:transition-none";
 
-function ConnectorMark({ name, href, src }: ConnectorNavMark) {
-  const [failed, setFailed] = useState(false);
+function ConnectorMark({ name, href }: ConnectorNavMark) {
+  const candidates = useMemo(() => integrationLogoCandidates(name), [name]);
+  const [index, setIndex] = useState(0);
+  const currentSrc = candidates[index];
 
   return (
     <Link href={href} aria-label={name} className={tileClass}>
-      {failed ? (
-        <span className="px-0.5 text-center text-[9px] font-semibold leading-[1.15] break-words text-[#032D60]">{name}</span>
-      ) : (
+      {currentSrc ? (
         <img
-          src={src}
+          src={currentSrc}
           alt=""
           width={22}
           height={22}
           className="h-5 w-5 object-contain"
           loading="lazy"
-          onError={() => setFailed(true)}
+          onError={() => setIndex((prev) => prev + 1)}
         />
+      ) : (
+        <span className="px-0.5 text-center text-[9px] font-semibold leading-[1.15] break-words text-[#032D60]">{name}</span>
       )}
     </Link>
   );

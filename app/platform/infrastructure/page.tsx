@@ -17,9 +17,9 @@ export default function InfrastructurePage() {
   return (
     <>
       <BreadcrumbJsonLd items={[
-        { name: "Home", url: "https://spineworkspace.com" },
-        { name: "Platform", url: "https://spineworkspace.com/platform" },
-        { name: "Infrastructure", url: "https://spineworkspace.com/platform/infrastructure" },
+        { name: "Home", url: "https://spineinnovlabs.com" },
+        { name: "Platform", url: "https://spineinnovlabs.com/platform" },
+        { name: "Infrastructure", url: "https://spineinnovlabs.com/platform/infrastructure" },
       ]} />
       <InfrastructureContent />
     </>

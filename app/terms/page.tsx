@@ -18,8 +18,8 @@ export default function TermsPage() {
   return (
     <div className="min-h-screen bg-background">
       <BreadcrumbJsonLd items={[
-        { name: "Home", url: "https://spineworkspace.com" },
-        { name: "Terms & Conditions", url: "https://spineworkspace.com/terms" },
+        { name: "Home", url: "https://spineinnovlabs.com" },
+        { name: "Terms & Conditions", url: "https://spineinnovlabs.com/terms" },
       ]} />
       <Header />
       <main id="main">

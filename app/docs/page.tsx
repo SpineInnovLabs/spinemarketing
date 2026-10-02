@@ -19,8 +19,8 @@ export default function DocsPage() {
   return (
     <div className="min-h-screen bg-background">
       <BreadcrumbJsonLd items={[
-        { name: "Home", url: "https://spineworkspace.com" },
-        { name: "Documentation", url: "https://spineworkspace.com/docs" },
+        { name: "Home", url: "https://spineinnovlabs.com" },
+        { name: "Documentation", url: "https://spineinnovlabs.com/docs" },
       ]} />
       <Header />
       <main id="main">

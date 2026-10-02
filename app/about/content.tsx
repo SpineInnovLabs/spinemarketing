@@ -113,6 +113,9 @@ export function AboutContent() {
       </section>
 
       <SectionBlock label="Founder story" title="The architect who built the data fabric">
+        <p className="mb-6 text-[12px] font-semibold uppercase tracking-[0.08em] text-[#706E6B]">
+          Illustrative origin story — not a customer case study
+        </p>
         <blockquote className="border-l-2 border-[#0176D3] pl-6 text-[17px] italic text-[#444]">
           &ldquo;The thing that kept me up at night wasn&apos;t a broken API. It was watching smart people make the wrong decisions because their tools couldn&apos;t talk to each other.&rdquo;
         </blockquote>
@@ -222,13 +225,16 @@ export function AboutContent() {
       <section className="border-t border-[#E5E5E5] bg-[#F3F6F9] py-16">
         <div className="mx-auto max-w-[800px] px-6">
           <motion.div {...fade(0)}>
+            <p className="mb-4 text-[12px] font-semibold uppercase tracking-[0.08em] text-[#706E6B]">
+              Illustrative origin story — not a customer quote
+            </p>
             <blockquote className="border-l-2 border-[#0176D3] pl-6 text-[18px] italic leading-[1.7] text-[#444]">
               &ldquo;The Spine connected support, product usage, billing, and relationship data across 12 systems. The team intervened early and saved an $8M customer.&rdquo;
             </blockquote>
             <div className="mt-10 grid grid-cols-3 gap-4">
               {[
                 { stat: "$8M", label: "Customer protected" },
-                { stat: "70+", label: "Systems connected" },
+                { stat: "12", label: "Systems connected" },
                 { stat: "3", label: "Data ecosystems" },
               ].map(({ stat, label }) => (
                 <KpiBlock key={label} label={label} value={stat} detail="" />

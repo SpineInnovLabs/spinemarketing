@@ -27,8 +27,8 @@ export default function BusinessOpsPage() {
   return (
     <div className="min-h-screen bg-white">
       <BreadcrumbJsonLd items={[
-        { name: "Home", url: "https://spineworkspace.com" },
-        { name: "Business Ops", url: "https://spineworkspace.com/business-ops" },
+        { name: "Home", url: "https://spineinnovlabs.com" },
+        { name: "Business Ops", url: "https://spineinnovlabs.com/business-ops" },
       ]} />
       <Header />
       <main id="main">

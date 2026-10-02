@@ -25,14 +25,9 @@ export function SoftwareApplicationJsonLd() {
     name: "SpineWorkspace",
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
-    url: "https://spineworkspace.com",
+    url: "https://spineinnovlabs.com",
     description:
-      "SpineWorkspace helps humans and AI work toward the same business goals using shared business context, adaptive capability resolution, and persistent continuity. Built by Spine InnovLabs.",
-    offers: {
-      "@type": "Offer",
-      price: "49",
-      priceCurrency: "USD",
-    },
+      "SpineWorkspace is a governed AI workspace for operational work. Connect authorized business signals from existing systems. People and AI work from the same evidence. Built by Spine InnovLabs.",
   }
 
   return (
@@ -83,7 +78,7 @@ export function WebPageJsonLd({
     isPartOf: {
       "@type": "WebSite",
       name: "SpineWorkspace",
-      url: "https://spineworkspace.com",
+      url: "https://spineinnovlabs.com",
     },
   }
 

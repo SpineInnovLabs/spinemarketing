@@ -14,7 +14,7 @@ const defaultBenefits = [
   { icon: LayoutDashboard, title: "Unified Workspace", desc: "Every tool, every signal — one screen." },
   { icon: Brain, title: "AI-Powered Insights", desc: "The Twin surfaces what matters most." },
   { icon: Shield, title: "Governed by Design", desc: "Nothing executes without your approval." },
-  { icon: Zap, title: "Real-Time Sync", desc: "Sub-100ms data flow across all connectors." },
+  { icon: Zap, title: "Real-Time Sync", desc: "Continuous data flow across connected systems." },
   { icon: TrendingUp, title: "Compounding Knowledge", desc: "Every approved session makes the system smarter." },
   { icon: Clock, title: "Time Reclaimed", desc: "Stop switching tabs. Start making decisions." },
 ];

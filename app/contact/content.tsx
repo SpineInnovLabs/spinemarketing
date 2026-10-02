@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useMemo } from "react";
+import React, { Suspense, useMemo } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
@@ -18,7 +18,7 @@ const fade = (delay = 0) => ({
 const contactFAQs = [
   {
     question: "How long does setup take?",
-    answer: "Most teams connect their first apps and see Entity 360 within a day. Full workspace setup with all integrations typically takes 1–2 weeks with our guided onboarding.",
+    answer: "A guided onboarding can show a first Entity 360 view from the apps you connect. A full workspace with every integration typically takes 1–2 weeks.",
   },
   {
     question: "Do I need an engineering team?",
@@ -40,7 +40,7 @@ const contactFAQs = [
     question: "Is my data secure?",
     answer: (
       <span>
-        Yes. AES-256 encryption at rest, TLS 1.3 in transit, SOC 2 aligned practices, full audit trails, and non-bypassable human approval on every AI action. Learn more on our{" "}
+        Yes. AES-256 encryption at rest, TLS 1.3 in transit, SOC 2 aligned practices — no certification is claimed — full audit trails, and non-bypassable human approval on every AI action. Learn more on our{" "}
         <Link href="/security" className="text-[#0176D3] underline underline-offset-2 hover:text-[#0B5CAB]">Security page</Link>.
       </span>
     ),
@@ -58,11 +58,7 @@ const VALID_INTENTS: LeadIntent[] = [
   "security",
 ];
 
-export function ContactContent({
-  defaultIntent = "contact",
-}: {
-  defaultIntent?: LeadIntent;
-}) {
+function ContactIntentForm({ defaultIntent }: { defaultIntent: LeadIntent }) {
   const searchParams = useSearchParams();
   const intentFromUrl = searchParams.get("intent");
   const resolvedIntent = useMemo(() => {
@@ -72,6 +68,14 @@ export function ContactContent({
     return defaultIntent;
   }, [intentFromUrl, defaultIntent]);
 
+  return <LeadForm defaultIntent={resolvedIntent} />;
+}
+
+export function ContactContent({
+  defaultIntent = "contact",
+}: {
+  defaultIntent?: LeadIntent;
+}) {
   return (
     <>
       <section className="border-b border-[#E5E5E5] bg-white pt-[120px] pb-16">
@@ -177,7 +181,9 @@ export function ContactContent({
           </div>
 
           <div id="contact-form" className="mx-auto mt-16 max-w-lg scroll-mt-28">
-            <LeadForm defaultIntent={resolvedIntent} />
+            <Suspense fallback={<LeadForm defaultIntent={defaultIntent} />}>
+              <ContactIntentForm defaultIntent={defaultIntent} />
+            </Suspense>
           </div>
         </div>
       </section>

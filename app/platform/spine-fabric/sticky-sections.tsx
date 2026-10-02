@@ -52,7 +52,7 @@ const items = [
   {
     tag: "Governance Layer",
     title: "Every mutation audited. Every read traced.",
-    description: "SOC 2 Type II compliant. AES-256 encryption. Role-based access with department-level isolation.",
+    description: "SOC 2 aligned practices — no certification claimed. AES-256 encryption. Role-based access with department-level isolation.",
     icon: Shield,
     color: "#ef4444",
     features: [

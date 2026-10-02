@@ -12,7 +12,7 @@ import { FinalCTA } from "@/components/final-cta";
 import { InfrastructureStickyScroll } from "./sticky-sections";
 
 const firebaseCards = [
-  { title: "Realtime Database", desc: "Sub-100ms entity state updates to every client." },
+  { title: "Realtime Database", desc: "Near real-time entity state updates to every client." },
   { title: "State Persistence", desc: "Survives refreshes, timeouts, and device switches." },
   { title: "Cloud Functions Eventing", desc: "Pure event-driven downstream processing — no polling." },
 ];
@@ -46,14 +46,14 @@ export function InfrastructureContent() {
       <main id="main">
         <PageHero
           badge="Infrastructure"
-          headline="Six services. Global edge. Sub-100ms."
+          headline="Six services. Global edge. Near real-time."
           subhead="Firebase, Cloudflare Workers, and six purpose-built microservices power every sync in SpineWorkspace."
           primaryCta={{ label: "See the architecture", href: "/contact?intent=demo" }}
         />
 
         <Section variant="muted">
           <div className="grid gap-4 sm:grid-cols-3">
-            <KpiBlock label="Normalization to UI" value="<100ms" detail="Real-time entity updates" />
+            <KpiBlock label="Normalization to UI" value="Near real-time" detail="Continuous entity updates" />
             <KpiBlock label="Purpose-built services" value="6" detail="Single-responsibility microservices" />
             <KpiBlock label="Edge distribution" value="Global" detail="Cloudflare Workers at the edge" />
           </div>

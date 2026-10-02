@@ -1,24 +1,15 @@
 "use client";
 
-import { useState } from "react";
 import { Check } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-type Region = "india" | "international" | "enterprise";
-
-const regions: { key: Region; label: string }[] = [
-  { key: "india", label: "India" },
-  { key: "international", label: "International" },
-  { key: "enterprise", label: "Enterprise" },
-];
-
 const plans = [
   {
     name: "Starter",
-    prices: { india: "₹999", international: "$49", enterprise: "Custom" },
+    price: "$49",
     period: "/user/mo",
-    description: "Unified visibility from day one.",
+    description: "Unified visibility from the apps you connect.",
     features: [
       "Connect a small set of tools and see basics clearly",
       "Manual approvals for every move keep early trust strong",
@@ -30,7 +21,7 @@ const plans = [
   },
   {
     name: "Growth",
-    prices: { india: "₹2,999", international: "$99", enterprise: "Custom" },
+    price: "$99",
     period: "/user/mo",
     description: "Governed intelligence at scale.",
     features: [
@@ -44,8 +35,8 @@ const plans = [
   },
   {
     name: "Command",
-    prices: { india: "₹7,999", international: "$199", enterprise: "Custom" },
-    period: "",
+    price: "$199",
+    period: "/user/mo",
     description: "Enterprise governance and control.",
     features: [
       "Connect the full body of tools without losing clarity",
@@ -59,8 +50,6 @@ const plans = [
 ];
 
 export function PricingSection({ hideHeading = false }: { hideHeading?: boolean } = {}) {
-  const [region, setRegion] = useState<Region>("international");
-
   return (
     <section id="pricing" className="border-t border-[#D9E4EF] bg-[#F3F6F9] py-20 md:py-24">
       <div className="mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-12">
@@ -71,6 +60,11 @@ export function PricingSection({ hideHeading = false }: { hideHeading?: boolean 
           transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
           className="mx-auto max-w-2xl text-center"
         >
+          {hideHeading && (
+            <p className="mb-6 text-[13px] leading-[1.55] text-[#526479]">
+              Illustrative tier framework for planning conversations. Confirm current commercial terms with the team before purchase.
+            </p>
+          )}
           {!hideHeading && (
             <>
               <h2 className="text-[32px] font-semibold tracking-[-0.03em] text-[#032D60]">
@@ -84,28 +78,9 @@ export function PricingSection({ hideHeading = false }: { hideHeading?: boolean 
             </>
           )}
 
-          <div className="mx-auto mt-8 grid w-full max-w-md grid-cols-3 rounded-[10px] border border-[#D9E4EF] bg-white p-1">
-            {regions.map((r) => (
-              <button
-                key={r.key}
-                onClick={() => setRegion(r.key)}
-                className={`relative rounded-[8px] px-2 py-2 text-[13px] font-semibold transition-colors sm:text-[14px] ${
-                  region === r.key
-                    ? "text-white"
-                    : "text-[#526479] hover:text-[#032D60]"
-                }`}
-              >
-                {region === r.key && (
-                  <motion.div
-                    layoutId="region-pill"
-                    className="absolute inset-0 rounded-md bg-[#0176D3]"
-                    transition={{ type: "spring", bounce: 0.2, duration: 0.4 }}
-                  />
-                )}
-                <span className="relative z-10">{r.label}</span>
-              </button>
-            ))}
-          </div>
+          <p className="mt-6 text-[13px] font-semibold tracking-[0.04em] text-[#526479]">
+            Prices in US dollars
+          </p>
         </motion.div>
 
         <div className="mx-auto mt-12 grid max-w-5xl gap-6 lg:grid-cols-3">
@@ -142,20 +117,12 @@ export function PricingSection({ hideHeading = false }: { hideHeading?: boolean 
                   {plan.description}
                 </p>
                 <div className="mt-4">
-                  <motion.span
-                    key={region}
-                    initial={{ y: 8 }}
-                    animate={{ y: 0 }}
-                    transition={{ duration: 0.2 }}
-                    className="text-[34px] font-semibold tracking-[-0.04em] text-[#032D60]"
-                  >
-                    {plan.prices[region]}
-                  </motion.span>
-                  {region !== "enterprise" && (
-                    <span className="text-[15px] text-[#706E6B]">
-                      {plan.period}
-                    </span>
-                  )}
+                  <span className="text-[34px] font-semibold tracking-[-0.04em] text-[#032D60]">
+                    {plan.price}
+                  </span>
+                  <span className="text-[15px] text-[#706E6B]">
+                    {plan.period}
+                  </span>
                 </div>
               </div>
               <ul className="mt-8 flex-1 space-y-3">

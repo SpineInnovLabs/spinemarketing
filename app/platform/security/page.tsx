@@ -17,9 +17,9 @@ export default function PlatformSecurityPage() {
   return (
     <>
       <BreadcrumbJsonLd items={[
-        { name: "Home", url: "https://spineworkspace.com" },
-        { name: "Platform", url: "https://spineworkspace.com/platform" },
-        { name: "Security", url: "https://spineworkspace.com/platform/security" },
+        { name: "Home", url: "https://spineinnovlabs.com" },
+        { name: "Platform", url: "https://spineinnovlabs.com/platform" },
+        { name: "Security", url: "https://spineinnovlabs.com/platform/security" },
       ]} />
       <PlatformSecurityContent />
     </>

@@ -24,19 +24,19 @@ export default function PlatformIntegrationsPage() {
   return (
     <div className="min-h-screen bg-white">
       <BreadcrumbJsonLd items={[
-        { name: "Home", url: "https://spineworkspace.com" },
-        { name: "Platform", url: "https://spineworkspace.com/platform" },
-        { name: "Integrations", url: "https://spineworkspace.com/platform/integrations" },
+        { name: "Home", url: "https://spineinnovlabs.com" },
+        { name: "Platform", url: "https://spineinnovlabs.com/platform" },
+        { name: "Integrations", url: "https://spineinnovlabs.com/platform/integrations" },
       ]} />
       <Header />
       <main id="main">
         <PlatformIntegrationsContent />
         <StatsBar
           stats={[
-            { value: 60, suffix: "+", label: "SaaS connectors" },
+            { value: 65, label: "Catalog connectors" },
             { value: 4, label: "Protocol types supported" },
-            { value: 5, prefix: "< ", suffix: " min", label: "Average connector setup" },
-            { value: 99, suffix: ".9%", label: "Ingestion uptime" },
+            { value: 60, label: "With brand marks" },
+            { value: 1, label: "Normalization pipeline" },
           ]}
         />
         <IntegrationsStickyScroll />

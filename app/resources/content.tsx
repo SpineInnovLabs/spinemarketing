@@ -16,8 +16,8 @@ import {
 } from "lucide-react";
 
 const fade = (delay = 0) => ({
-  initial: { opacity: 0, y: 20 },
-  whileInView: { opacity: 1, y: 0 },
+  initial: { y: 20 },
+  whileInView: { y: 0 },
   viewport: { once: true, margin: "-80px" },
   transition: { type: "spring" as const, damping: 18, stiffness: 70, delay },
 });
@@ -40,7 +40,7 @@ const featuredResources = [
   {
     icon: Calculator,
     title: "Pricing guide",
-    desc: "Transparent pricing that scales. Base fee + usage, not per-seat.",
+    desc: "Published planning prices in US dollars, per user.",
     href: "/pricing",
     cta: "View pricing",
   },
@@ -56,7 +56,7 @@ const deepDives = [
   {
     icon: Shield,
     title: "Security & governance",
-    desc: "AES-256 encryption, SOC 2 alignment, full audit trails.",
+    desc: "Access boundaries, evidence, and human review.",
     href: "/platform/security",
   },
   {
@@ -75,13 +75,13 @@ const deepDives = [
     icon: Video,
     title: "Why SpineWorkspace",
     desc: "The problem we exist to solve. Signal, context, governance.",
-    href: "/why",
+    href: "/about",
   },
   {
     icon: Download,
     title: "Integrations",
-    desc: "70+ connectors. REST, GraphQL, webhooks, MCP.",
-    href: "/platform/integrations",
+    desc: "Connectors listed on this site. Source systems stay authoritative.",
+    href: "/integrations",
   },
 ];
 

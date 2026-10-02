@@ -27,8 +27,8 @@ export default function PersonalOpsPage() {
   return (
     <div className="min-h-screen bg-white">
       <BreadcrumbJsonLd items={[
-        { name: "Home", url: "https://spineworkspace.com" },
-        { name: "Personal Ops", url: "https://spineworkspace.com/personal-ops" },
+        { name: "Home", url: "https://spineinnovlabs.com" },
+        { name: "Personal Ops", url: "https://spineinnovlabs.com/personal-ops" },
       ]} />
       <Header />
       <main id="main">

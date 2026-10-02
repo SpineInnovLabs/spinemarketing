@@ -22,8 +22,8 @@ export default function BlogPage() {
   return (
     <div className="min-h-screen bg-white">
       <BreadcrumbJsonLd items={[
-        { name: "Home", url: "https://spineworkspace.com" },
-        { name: "Blog", url: "https://spineworkspace.com/blog" },
+        { name: "Home", url: "https://spineinnovlabs.com" },
+        { name: "Blog", url: "https://spineinnovlabs.com/blog" },
       ]} />
       <Header />
       <main id="main">

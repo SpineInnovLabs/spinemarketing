@@ -19,8 +19,8 @@ export default function ChangelogPage() {
   return (
     <div className="min-h-screen bg-background">
       <BreadcrumbJsonLd items={[
-        { name: "Home", url: "https://spineworkspace.com" },
-        { name: "Changelog", url: "https://spineworkspace.com/changelog" },
+        { name: "Home", url: "https://spineinnovlabs.com" },
+        { name: "Changelog", url: "https://spineinnovlabs.com/changelog" },
       ]} />
       <Header />
       <main id="main">

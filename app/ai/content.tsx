@@ -20,7 +20,7 @@ const threeLayers = [
   {
     icon: Database,
     label: "Truth",
-    desc: "Structured data from 70+ connected apps",
+    desc: "Structured data from connected systems",
     color: "rgb(27,167,132)",
   },
   {

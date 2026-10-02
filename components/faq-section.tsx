@@ -26,7 +26,7 @@ const platformFAQs: FAQItem[] = [
   },
   {
     question: "What are the Workspace and Twin?",
-    answer: "The Workspace is where you see accounts, tasks, workflows, and engagement logs in one view. The Twin is your personal AI operator — it reads your data through Spine Fabric Fabric, spots patterns, drafts actions, and presents them with evidence. You approve everything from the Workspace.",
+    answer: "The Workspace is where you see accounts, tasks, workflows, and engagement logs in one view. The Twin is your personal AI operator — it reads your data through Spine Fabric, spots patterns, drafts actions, and presents them with evidence. You approve everything from the Workspace.",
   },
   {
     question: "How is SpineWorkspace different from a CRM or a dashboard tool?",
@@ -38,11 +38,11 @@ const platformFAQs: FAQItem[] = [
   },
   {
     question: "How many apps can I connect?",
-    answer: "Starter supports up to 5 connectors, Growth supports up to 15, and Command offers unlimited connectors. We support 70+ apps including Salesforce, HubSpot, Stripe, Slack, Jira, Zendesk, Gmail, Notion, and more.",
+    answer: "Starter supports up to 5 connectors, Growth supports up to 15, and Command offers unlimited connectors. The catalog includes Salesforce, HubSpot, Stripe, Slack, Jira, Zendesk, Gmail, Notion, and more — see the integrations page for the full list.",
   },
   {
     question: "Is my data secure?",
-    answer: "Yes. All data is encrypted at rest (AES-256) and in transit (TLS 1.3). We're SOC 2 Type II compliant. Spine Fabric reads data via OAuth with the minimum permissions required. Your data is never used to train AI models. Command tier includes SSO, RBAC with field-level permissions, and a full enterprise audit trail.",
+    answer: "Yes. All data is encrypted at rest (AES-256) and in transit (TLS 1.3). We follow SOC 2 aligned practices — no certification is claimed on this site. Spine Fabric reads data via OAuth with the minimum permissions required. Your data is never used to train AI models. Command tier includes SSO, RBAC with field-level permissions, and a full enterprise audit trail.",
   },
   {
     question: "Can I start with just the Workspace?",

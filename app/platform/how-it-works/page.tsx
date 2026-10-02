@@ -22,9 +22,9 @@ export default function PlatformHowItWorksPage() {
   return (
     <div className="min-h-screen bg-white">
       <BreadcrumbJsonLd items={[
-        { name: "Home", url: "https://spineworkspace.com" },
-        { name: "Platform", url: "https://spineworkspace.com/platform" },
-        { name: "How it Works", url: "https://spineworkspace.com/platform/how-it-works" },
+        { name: "Home", url: "https://spineinnovlabs.com" },
+        { name: "Platform", url: "https://spineinnovlabs.com/platform" },
+        { name: "How it Works", url: "https://spineinnovlabs.com/platform/how-it-works" },
       ]} />
       <Header />
       <main id="main">

@@ -18,7 +18,7 @@ const defaultRows: ComparisonRow[] = [
   { feature: "Immutable audit trail", us: true, others: "Partial" },
   { feature: "Knowledge compounds over time", us: true, others: false },
   { feature: "Works with your existing stack", us: true, others: true },
-  { feature: "Enterprise governance (SOC 2, AES-256)", us: true, others: "Varies" },
+  { feature: "Enterprise governance (audit trails, AES-256)", us: true, others: "Varies" },
   { feature: "No-code connector setup", us: true, others: true },
 ];
 

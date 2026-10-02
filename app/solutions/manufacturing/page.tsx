@@ -21,9 +21,9 @@ export default function ManufacturingPage() {
   return (
     <div className="min-h-screen bg-white">
       <BreadcrumbJsonLd items={[
-        { name: "Home", url: "https://spineworkspace.com" },
-        { name: "Solutions", url: "https://spineworkspace.com/solutions" },
-        { name: "Manufacturing", url: "https://spineworkspace.com/solutions/manufacturing" },
+        { name: "Home", url: "https://spineinnovlabs.com" },
+        { name: "Solutions", url: "https://spineinnovlabs.com/solutions" },
+        { name: "Manufacturing", url: "https://spineinnovlabs.com/solutions/manufacturing" },
       ]} />
       <Header />
       <main id="main">

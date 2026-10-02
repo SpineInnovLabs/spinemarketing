@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-const BASE = "https://spineworkspace.com";
+const BASE = "https://spineinnovlabs.com";
 
 export function createPageMetadata({
   title,

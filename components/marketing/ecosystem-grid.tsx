@@ -24,16 +24,16 @@ export function EcosystemGrid({
     <Section variant="muted">
       <SectionHeader label={label} headline={headline} body={body} />
       <motion.div
-        initial={{ opacity: 0, y: 16 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ y: 16 }}
+        whileInView={{ y: 0 }}
         viewport={{ once: true }}
         className="flex flex-wrap justify-center gap-3"
       >
         {chips.map((chip, i) => (
           <motion.span
             key={chip}
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ scale: 0.95 }}
+            whileInView={{ scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.04, type: "spring", stiffness: 300, damping: 24 }}
             whileHover={{ y: -2 }}

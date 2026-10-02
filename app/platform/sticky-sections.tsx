@@ -60,7 +60,7 @@ const scrollItems = [
   {
     tag: "Connectors",
     title: "Universal data inputs — SaaS, MCP, webhooks",
-    description: "70+ integrations. OAuth connect in minutes. Auto-upgrade when APIs change. Your tools stay where they are.",
+    description: "Broad connector catalog. OAuth where supported. Auto-upgrade when APIs change. Your tools stay where they are.",
     icon: Plug,
     color: "#3b82f6",
     features: [
@@ -73,7 +73,7 @@ const scrollItems = [
   {
     tag: "Governance",
     title: "Hard-coded human approval. Immutable audit.",
-    description: "Every action requires approval. Every decision logged. SOC 2 Type II. AES-256 encryption at rest and in transit.",
+    description: "Every action requires approval. Every decision logged. SOC 2 aligned practices — no certification claimed. AES-256 encryption at rest and in transit.",
     icon: Shield,
     color: "#ef4444",
     features: [
@@ -89,12 +89,12 @@ const gatherItems = [
   { icon: Database, label: "Truth Layer", description: "Canonical records — normalized, versioned, deduplicated.", color: "#2dd4bf" },
   { icon: Activity, label: "Context Layer", description: "Behavioral patterns and risk signals assembled automatically.", color: "#8b5cf6" },
   { icon: Brain, label: "AI Sessions", description: "Compounding knowledge from every interaction.", color: "#fbbf24" },
-  { icon: Plug, label: "Connectors", description: "70+ tools connected via OAuth, MCP, or webhook.", color: "#3b82f6" },
+  { icon: Plug, label: "Connectors", description: "Tools connected via OAuth, MCP, or webhook.", color: "#3b82f6" },
   { icon: Shield, label: "Govern Gate", description: "Non-bypassable human approval on all actions.", color: "#ef4444" },
-  { icon: Lock, label: "TruthBoundary", description: "SOC 2 Type II. AES-256. Immutable audit log.", color: "#f59e0b" },
+  { icon: Lock, label: "TruthBoundary", description: "SOC 2 aligned practices, no certification claimed. AES-256. Immutable audit log.", color: "#f59e0b" },
   { icon: Eye, label: "Workspace", description: "Entity 360s, tasks, workflows — your daily surface.", color: "#06b6d4" },
   { icon: Zap, label: "Twin", description: "AI suggests with evidence. You approve what executes.", color: "#a855f7" },
-  { icon: Server, label: "Infrastructure", description: "Firebase real-time. Sub-100ms sync.", color: "#ec4899" },
+  { icon: Server, label: "Infrastructure", description: "Firebase real-time. Continuous sync.", color: "#ec4899" },
   { icon: GitBranch, label: "MCP Protocol", description: "AI-native integration. Bidirectional data flow.", color: "#14b8a6" },
   { icon: RefreshCw, label: "Cognitive Loop", description: "Think → Act → Govern → Repeat → Adjust.", color: "#f97316" },
   { icon: Layers, label: "Spine Fabric", description: "Adaptive architecture. Survives tool migrations.", color: "#6366f1" },

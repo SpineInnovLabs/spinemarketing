@@ -99,6 +99,19 @@ function typeLabel(t: CampaignAsset["type"]) {
   return map[t] || t;
 }
 
+function typeGroupLabel(t: CampaignAsset["type"]) {
+  const map: Record<string, string> = {
+    ad: "Sponsored Ads",
+    post: "Posts",
+    banner: "Banners",
+    carousel: "Carousels",
+    status: "Status Updates",
+    share: "Share Cards",
+    catalog: "Catalogs",
+  };
+  return map[t] || `${typeLabel(t)}s`;
+}
+
 function channelColor(c: CampaignAsset["channel"]) {
   return c === "linkedin" ? "bg-blue-500/20 text-blue-400" : "bg-green-500/20 text-green-400";
 }
@@ -131,7 +144,7 @@ export function CampaignGalleryContent() {
   });
 
   const groups = filtered.reduce<Record<string, CampaignAsset[]>>((acc, a) => {
-    const key = `${a.channel === "linkedin" ? "LinkedIn" : "WhatsApp"} ${typeLabel(a.type)}s`;
+    const key = `${a.channel === "linkedin" ? "LinkedIn" : "WhatsApp"} ${typeGroupLabel(a.type)}`;
     if (!acc[key]) acc[key] = [];
     acc[key].push(a);
     return acc;
@@ -139,7 +152,7 @@ export function CampaignGalleryContent() {
 
   return (
     <>
-      <section className="relative overflow-hidden bg-white">
+      <section className="relative overflow-hidden bg-[#032D60]">
         <div
           className="pointer-events-none absolute inset-0"
           style={{
@@ -175,7 +188,7 @@ export function CampaignGalleryContent() {
         </div>
       </section>
 
-      <section className="bg-white px-6 pt-8 pb-16 md:px-16">
+      <section className="bg-[#032D60] px-6 pt-8 pb-16 md:px-16">
         <div className="mx-auto max-w-[1200px]">
           <motion.div {...fade()} className="mb-8 flex items-center gap-3">
             <h2 className="text-[22px] font-semibold tracking-[-0.03em] text-white">
@@ -192,22 +205,22 @@ export function CampaignGalleryContent() {
           <div className="grid gap-6 sm:grid-cols-2">
             {[
               {
-                src: "/images/architecture/adaptive-spine-intelligence.png",
+                src: "/images/campaign/Post-Category.jpg",
                 title: "The Spine Fabric for Enterprise Intelligence",
                 desc: "Problem vs Solution — tool sprawl and ungrounded AI risk on the left, the Spine Fabric with governed cognitive loop on the right. Three data flows (Structured, Unstructured, AI Memory) converge at the Truth Boundary.",
               },
               {
-                src: "/images/architecture/spine-architecture.png",
+                src: "/images/campaign/Post-Spine.jpg",
                 title: "The Spine — Powering Governed, Context-Rich AI",
-                desc: "Full architecture showing the Workspace, Twin, Spine Fabric as single source of truth, the Cognitive Loop (Think → Govern → Act → Adjust), and the $8M account save proof point.",
+                desc: "Full architecture showing the Workspace, Twin, Spine Fabric as single source of truth, and the Cognitive Loop (Think → Govern → Act → Adjust) — illustrative demonstration, not a customer result.",
               },
               {
-                src: "/images/architecture/governed-enterprise-ai.png",
+                src: "/images/campaign/Post-Governance.jpg",
                 title: "Cognitive Operating System for Governed Enterprise AI",
                 desc: "End-to-end data flow: scattered tools → Spine Fabric (SSOT) normalization → Governance Gate → HITL approval → measurable results. The 12×11 matrix delivers truth across functions and industries.",
               },
               {
-                src: "/images/architecture/cognitive-operating-system.png",
+                src: "/images/campaign/Carousel-BusinessOps.jpg",
                 title: "Three Planes of Data Integration",
                 desc: "Flow A (Structured Tool Data), Flow B (Document Evidence), Flow C (AI Chat History) — all feeding the Spine Fabric. The 8-Stage Normalization Pipeline, Governed Cognitive Loop, and Entity 360 View.",
               },
@@ -266,7 +279,7 @@ export function CampaignGalleryContent() {
         </div>
       </section>
 
-      <section className="bg-white px-6 pb-24 md:px-16">
+      <section className="bg-[#021B3A] px-6 pb-24 md:px-16">
         <div className="mx-auto max-w-[1200px]">
           <div className="mb-10 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
 
@@ -375,14 +388,17 @@ export function CampaignGalleryContent() {
         </div>
       </section>
 
-      <section className="arvio-section dark-section bg-white">
+      <section className="border-t border-[#E5E5E5] bg-[#EAF5FC] px-6 py-20 md:px-16">
         <div className="mx-auto max-w-3xl text-center">
-          <motion.h2 {...fade()} className="section-heading">
+          <motion.h2
+            {...fade()}
+            className="text-[32px] font-semibold leading-[1.15] tracking-[-0.03em] text-[#032D60] sm:text-[36px]"
+          >
             Ready to see it{" "}
-            <span className="text-primary">in action?</span>
+            <span className="text-[#0176D3]">in action?</span>
           </motion.h2>
-          <motion.p {...fade(0.1)} className="mt-6 text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">
-            These are real campaign designs showing real SpineWorkspace capabilities. Book a demo to see the Workspace live.
+          <motion.p {...fade(0.1)} className="mt-6 text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-[#444]">
+            Illustrative campaign designs showing how SpineWorkspace capabilities are communicated. Book a demo to see the product demonstration.
           </motion.p>
           <motion.div {...fade(0.2)} className="mt-10 flex flex-col items-center justify-center gap-2.5 sm:flex-row">
             <Button
@@ -396,7 +412,7 @@ export function CampaignGalleryContent() {
             <Button
               size="lg"
               variant="outline"
-              className="h-[42px] rounded-xl border-2 border-white/15 bg-transparent px-6 text-[15px] font-semibold text-white hover:bg-white/10"
+              className="h-[42px] rounded-xl border-2 border-[#0176D3]/30 bg-white px-6 text-[15px] font-semibold text-[#032D60] hover:bg-[#0176D3]/5"
               asChild
             >
               <Link href="/pricing">See pricing</Link>
@@ -405,7 +421,6 @@ export function CampaignGalleryContent() {
         </div>
       </section>
 
-      {/* @ts-expect-error framer-motion v11 AnimatePresence type */}
       <AnimatePresence>
         {lightbox && (
           <motion.div

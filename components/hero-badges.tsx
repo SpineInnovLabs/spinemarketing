@@ -10,7 +10,7 @@ type Badge = {
 };
 
 const defaultBadges: Badge[] = [
-  { icon: Zap, label: "Built for Speed", sublabel: "Sub-100ms sync" },
+  { icon: Zap, label: "Built for Speed", sublabel: "Continuous sync" },
   { icon: Shield, label: "Enterprise Governed", sublabel: "Every action audited" },
   { icon: Clock, label: "Zero Retraining", sublabel: "Operates immediately" },
 ];

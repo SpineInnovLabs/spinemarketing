@@ -1411,7 +1411,7 @@ This document contains the complete text content from all 45 pages of the Spine 
 **Founder**: Nirmal Prince J
 **Founded**: 2025
 **Incorporated**: Spine InnovLabs
-**Domain**: spineworkspace.com
+**Domain**: spineinnovlabs.com
 
 **Key Brand Concepts**:
 - The Adaptive Spine (data layer)

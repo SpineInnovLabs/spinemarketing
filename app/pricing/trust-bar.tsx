@@ -23,10 +23,10 @@ export function PricingTrustBar() {
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {[
-            { icon: ShieldCheck, label: "SOC 2 Type II", desc: "Enterprise-grade compliance" },
+            { icon: ShieldCheck, label: "SOC 2 aligned", desc: "Practices only — no certification claimed" },
             { icon: Lock, label: "AES-256 encryption", desc: "Data encrypted at rest" },
             { icon: Eye, label: "Full audit trail", desc: "Every action logged" },
-            { icon: Zap, label: "Sub-100ms sync", desc: "Real-time data flow" },
+            { icon: Zap, label: "Continuous sync", desc: "Near real-time data flow" },
           ].map(({ icon: Icon, label, desc }, i) => (
             <motion.div
               key={label}

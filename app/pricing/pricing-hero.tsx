@@ -19,21 +19,21 @@ export function PricingHero() {
             className="mb-6 inline-flex items-center gap-2 rounded-md border border-[#E5E5E5] bg-[#F3F6F9] px-3 py-1 text-[12px] font-semibold uppercase tracking-[0.06em] text-[#032D60]"
           >
             <span className="h-1.5 w-1.5 rounded-full bg-[#0176D3]" />
-            Transparent Pricing
+            Evaluation & pricing
           </motion.div>
 
           <motion.h1
             {...heroFade(0.2)}
             className="text-[40px] font-semibold leading-[1.1] tracking-[-0.03em] text-[#032D60] sm:text-[48px]"
           >
-            One workspace.{" "}
-            <span className="text-[#0176D3]">Three tiers.</span>
+            Start with one governed workflow.{" "}
+            <span className="text-[#0176D3]">Scale from there.</span>
           </motion.h1>
           <motion.p
             {...heroFade(0.35)}
             className="mx-auto mt-5 max-w-2xl text-[17px] leading-[1.6] text-[#444]"
           >
-            Start with the Workspace — all your accounts in one view. Add the Twin when you&apos;re ready.
+            Illustrative tiers below show how teams typically grow into SpineWorkspace. Commercial terms follow your integration scope and governance needs.
           </motion.p>
 
           <motion.div

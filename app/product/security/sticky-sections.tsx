@@ -64,13 +64,13 @@ const items = [
   },
   {
     tag: "Compliance",
-    title: "SOC 2 Type II. GDPR ready. Export anytime.",
-    description: "Independently audited controls. Data residency options. Full audit trail export for any compliance framework.",
+    title: "SOC 2 aligned. Export anytime.",
+    description: "Governance-ready controls. No certification claimed. Full audit trail export for review.",
     icon: FileCheck,
     color: "#3b82f6",
     features: [
-      "SOC 2 Type II certified controls",
-      "GDPR-compliant data handling and deletion",
+      "SOC 2 aligned practices (no certification claimed)",
+      "GDPR-aligned data handling and deletion",
       "On-demand audit trail export",
       "Data residency controls per region",
     ],
