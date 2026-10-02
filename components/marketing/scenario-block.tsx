@@ -21,16 +21,16 @@ export function ScenarioBlock({
             {steps.map((step, i) => (
               <motion.li
                 key={step}
-                initial={{ opacity: 0, x: -12 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ x: -12 }}
+                whileInView={{ x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
-                className="flex items-start gap-4 rounded-xl border border-white/[0.08] bg-white/[0.02] p-4"
+                className="flex items-start gap-4 rounded-xl border border-[#D9E4EF] bg-[#F3F6F9] p-4"
               >
-                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary/15 text-[13px] font-bold text-primary">
+                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#EAF5FC] text-[13px] font-bold text-[#0176D3]">
                   {i + 1}
                 </span>
-                <span className="pt-1 text-[15px] font-medium leading-[1.6] text-white/70">{step}</span>
+                <span className="pt-1 text-[15px] font-medium leading-[1.6] text-[#33465B]">{step}</span>
               </motion.li>
             ))}
           </ol>

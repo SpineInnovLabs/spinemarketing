@@ -28,8 +28,8 @@ export function IntegrationLogoStrip({
       <div className="mx-auto max-w-[1120px] px-6 md:px-8">
         {(title || subtitle) && (
           <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ y: 12 }}
+            whileInView={{ y: 0 }}
             viewport={{ once: true, margin: "-40px" }}
             transition={{ type: "spring", damping: 20, stiffness: 60 }}
             className="mb-6 text-center"
@@ -38,18 +38,13 @@ export function IntegrationLogoStrip({
             {subtitle && <p className="mt-1 text-[14px] text-[#444]">{subtitle}</p>}
           </motion.div>
         )}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.1, duration: 0.5 }}
-        >
+        <div>
           <Marquee pauseOnHover className="[--duration:42s] [--gap:1rem]">
             {logos.map((logo) => (
               <AppLogo key={logo.id} name={logo.name} src={logo.src} size="md" showLabel animate />
             ))}
           </Marquee>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

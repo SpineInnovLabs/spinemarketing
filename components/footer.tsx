@@ -8,7 +8,7 @@ import { footerColumns, COMPANY_TAGLINE } from "@/lib/navigation";
 export function Footer() {
   return (
     <footer className="border-t border-[#E5E5E5] bg-[#F3F6F9]">
-      <div className="mx-auto max-w-[1200px] px-6 md:px-10">
+      <div className="mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-12">
         <div className="border-t border-white/[0.06] pt-16 pb-12">
           <div className="grid gap-12 lg:grid-cols-[320px_1fr]">
             <div>
@@ -18,7 +18,7 @@ export function Footer() {
               >
                 <SpineLogo className="h-8 w-8 shrink-0 text-[#032D60]" variant="on-light" />
                 <span className="text-[18px] font-semibold tracking-[-0.04em] text-[#032D60]">
-                  Spine<span className="text-[#0176D3]">Workspace</span>
+                  Spine <span className="text-[#0176D3]">InnovLabs</span>
                 </span>
               </Link>
               <p className="mt-5 max-w-[280px] text-[14px] leading-[1.7] text-[#444]">
@@ -28,24 +28,21 @@ export function Footer() {
               <div className="mt-6 flex items-center gap-3">
                 <Link
                   href="https://twitter.com/spineworkspace"
-                  className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/[0.08] text-white/40 transition-all hover:border-white/20 hover:text-white"
-                  style={{ background: "rgba(255,255,255,0.03)" }}
+                  className="flex h-10 w-10 items-center justify-center rounded-[10px] border border-[#D9E4EF] bg-white text-[#032D60] transition-colors hover:border-[#0176D3] hover:text-[#0176D3]"
                   aria-label="Twitter"
                 >
                   <Twitter className="h-4 w-4" />
                 </Link>
                 <Link
                   href="https://linkedin.com/company/spine-innovlabs"
-                  className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/[0.08] text-white/40 transition-all hover:border-white/20 hover:text-white"
-                  style={{ background: "rgba(255,255,255,0.03)" }}
+                  className="flex h-10 w-10 items-center justify-center rounded-[10px] border border-[#D9E4EF] bg-white text-[#032D60] transition-colors hover:border-[#0176D3] hover:text-[#0176D3]"
                   aria-label="LinkedIn"
                 >
                   <Linkedin className="h-4 w-4" />
                 </Link>
                 <Link
                   href="mailto:connect@spineworkspace.com"
-                  className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/[0.08] text-white/40 transition-all hover:border-white/20 hover:text-white"
-                  style={{ background: "rgba(255,255,255,0.03)" }}
+                  className="flex h-10 w-10 items-center justify-center rounded-[10px] border border-[#D9E4EF] bg-white text-[#032D60] transition-colors hover:border-[#0176D3] hover:text-[#0176D3]"
                   aria-label="Email"
                 >
                   <Mail className="h-4 w-4" />
@@ -93,8 +90,8 @@ export function Footer() {
             © {new Date().getFullYear()} Spine InnovLabs · Built in Bengaluru
           </p>
           <div className="flex flex-wrap items-center gap-4 text-[13px] text-[#706E6B]">
-            <Link href="/security" className="hover:text-white/60">Security</Link>
-            <Link href="/pricing" className="hover:text-white/60">Pricing</Link>
+            <Link href="/security" className="hover:text-[#0176D3]">Security</Link>
+            <Link href="/pricing" className="hover:text-[#0176D3]">Pricing</Link>
           </div>
         </div>
       </div>

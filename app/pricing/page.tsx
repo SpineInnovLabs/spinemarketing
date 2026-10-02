@@ -37,8 +37,8 @@ export default function PricingPage() {
     <div className="min-h-screen bg-white">
       <FAQPageJsonLd questions={pricingFAQData} />
       <BreadcrumbJsonLd items={[
-        { name: "Home", url: "https://spineworkspace.com" },
-        { name: "Pricing", url: "https://spineworkspace.com/pricing" },
+        { name: "Home", url: "https://spineinnovlabs.com" },
+        { name: "Pricing", url: "https://spineinnovlabs.com/pricing" },
       ]} />
       <Header />
       <main id="main">
@@ -49,8 +49,8 @@ export default function PricingPage() {
         <PricingIncludedGather />
         <PricingTrustBar />
         <TestimonialsSection
-          heading="What teams say about the value."
-          tag="Customer Stories"
+          heading="Illustrative scenarios"
+          tag="Demonstration, not customer quotes"
         />
         <PricingFAQ />
         <FinalCTA />

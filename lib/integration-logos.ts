@@ -1,5 +1,5 @@
 /**
- * Integration logo registry — local SVGs in /public/logos with Simple Icons CDN fallback.
+ * Integration logo registry. Each catalog name maps to one Iconify CDN logo.
  */
 
 export type IntegrationLogo = {
@@ -8,105 +8,110 @@ export type IntegrationLogo = {
   src: string;
 };
 
-const LOCAL_LOGOS = new Set([
-  "airtable",
-  "asana",
-  "chatgpt",
-  "claude",
-  "dropbox",
-  "github",
-  "gmail",
-  "googledrive",
-  "grok",
-  "hubspot",
-  "intercom",
-  "jira",
-  "microsoft",
-  "notion",
-  "postgres",
-  "quickbooks",
-  "salesforce",
-  "shopify",
-  "slack",
-  "stripe",
-  "twilio",
-  "zapier",
-  "zendesk",
-]);
-
-/** Connector display name → Simple Icons slug (when no local asset exists). */
-const SIMPLE_ICON_SLUG: Record<string, string> = {
-  Pipedrive: "pipedrive",
-  "Zoho CRM": "zoho",
-  Freshsales: "freshworks",
-  Close: "close",
-  Freshdesk: "freshdesk",
-  Front: "front",
-  "Help Scout": "helpscout",
-  Kustomer: "kustomer",
-  "Freshworks CRM": "freshworks",
-  "WhatsApp Business": "whatsapp",
-  Chargebee: "chargebee",
-  Paddle: "paddle",
-  Xero: "xero",
-  FreshBooks: "freshbooks",
-  "HubSpot Marketing": "hubspot",
-  Mailchimp: "mailchimp",
-  Marketo: "marketo",
-  Braze: "braze",
-  Segment: "segment",
-  SendGrid: "sendgrid",
-  "Customer.io": "customerio",
-  ActiveCampaign: "activecampaign",
-  "Google Analytics": "googleanalytics",
-  Mixpanel: "mixpanel",
-  Amplitude: "amplitude",
-  Heap: "heap",
-  Tableau: "tableau",
-  Metabase: "metabase",
-  Outlook: "microsoftoutlook",
-  "Microsoft Teams": "microsoftteams",
-  Discord: "discord",
-  Zoom: "zoom",
-  "Google Calendar": "googlecalendar",
-  OneDrive: "microsoftonedrive",
-  Calendly: "calendly",
-  Confluence: "confluence",
-  Linear: "linear",
-  "Monday.com": "monday",
-  ClickUp: "clickup",
-  Trello: "trello",
-  GitLab: "gitlab",
-  Bitbucket: "bitbucket",
-  WooCommerce: "woocommerce",
-  BigCommerce: "bigcommerce",
-  OpenAI: "openai",
-  BambooHR: "bamboohr",
-  Tally: "tally",
-  Razorpay: "razorpay",
-};
-
 function localSlug(name: string): string {
-  const normalized = name.toLowerCase().replace(/[^a-z0-9]/g, "");
-  if (normalized === "googledrive" || normalized === "googledisk") return "googledrive";
-  if (normalized === "microsoftteams") return "microsoft";
-  if (normalized === "microsoftoutlook") return "microsoft";
-  if (normalized === "microsoftonedrive") return "microsoft";
-  return normalized;
+  return name.toLowerCase().replace(/[^a-z0-9]/g, "");
 }
 
+/**
+ * Exact brand marks from the logos CDN (gilbarbara/logos on jsDelivr).
+ * App-icon files are used where the default asset is a wide wordmark.
+ * Microsoft Teams, Outlook, and OneDrive are their own marks, not the Microsoft logo.
+ * Brands with no CDN file are omitted so a different company's mark is never shown.
+ */
+const BRAND_CDN = "https://cdn.jsdelivr.net/gh/gilbarbara/logos@master/logos";
+
+function brandLogo(file: string): string {
+  return `${BRAND_CDN}/${file}.svg`;
+}
+
+/** Official Simple Icons glyph in that brand's color, when the logos pack has no file. */
+function glyphLogo(slug: string, hex: string): string {
+  return `https://cdn.simpleicons.org/${slug}/${hex}`;
+}
+
+const LOGO_FILE: Record<string, string> = {
+  Salesforce: brandLogo("salesforce"),
+  HubSpot: brandLogo("hubspot"),
+  Pipedrive: brandLogo("pipedrive"),
+  "Zoho CRM": brandLogo("zoho"),
+  Close: brandLogo("close"),
+  Zendesk: brandLogo("zendesk"),
+  Intercom: brandLogo("intercom"),
+  Front: brandLogo("frontapp"),
+  "Help Scout": brandLogo("helpscout"),
+  Kustomer: brandLogo("kustomer"),
+  "WhatsApp Business": brandLogo("whatsapp"),
+  Twilio: brandLogo("twilio"),
+  Stripe: brandLogo("stripe"),
+  Chargebee: brandLogo("chargebee"),
+  Paddle: glyphLogo("paddle", "FDDD35"),
+  QuickBooks: glyphLogo("quickbooks", "2CA01C"),
+  Xero: brandLogo("xero"),
+  "HubSpot Marketing": brandLogo("hubspot"),
+  Mailchimp: brandLogo("mailchimp"),
+  Marketo: glyphLogo("marketo", "5C4C9F"),
+  Braze: brandLogo("braze"),
+  Segment: brandLogo("segment"),
+  SendGrid: brandLogo("sendgrid"),
+  "Customer.io": brandLogo("customerio"),
+  ActiveCampaign: brandLogo("active-campaign"),
+  "Google Analytics": brandLogo("google-analytics"),
+  Mixpanel: brandLogo("mixpanel"),
+  Amplitude: brandLogo("amplitude"),
+  Heap: brandLogo("heap"),
+  Tableau: brandLogo("tableau"),
+  Metabase: brandLogo("metabase"),
+  Gmail: brandLogo("google-gmail"),
+  Outlook: glyphLogo("microsoftoutlook", "0078D4"),
+  Slack: brandLogo("slack-icon"),
+  "Microsoft Teams": brandLogo("microsoft-teams"),
+  Discord: brandLogo("discord-icon"),
+  Zoom: brandLogo("zoom-icon"),
+  "Google Calendar": brandLogo("google-calendar"),
+  Notion: brandLogo("notion-icon"),
+  "Google Drive": brandLogo("google-drive"),
+  Dropbox: brandLogo("dropbox"),
+  OneDrive: brandLogo("microsoft-onedrive"),
+  Airtable: brandLogo("airtable"),
+  Calendly: glyphLogo("calendly", "006BFF"),
+  Confluence: brandLogo("confluence"),
+  Jira: brandLogo("jira"),
+  Asana: brandLogo("asana-icon"),
+  Linear: brandLogo("linear-icon"),
+  "Monday.com": brandLogo("monday-icon"),
+  ClickUp: brandLogo("clickup-icon"),
+  Trello: brandLogo("trello"),
+  GitHub: brandLogo("github-icon"),
+  GitLab: brandLogo("gitlab-icon"),
+  Bitbucket: brandLogo("bitbucket"),
+  Shopify: brandLogo("shopify"),
+  WooCommerce: brandLogo("woocommerce-icon"),
+  BigCommerce: glyphLogo("bigcommerce", "121118"),
+  OpenAI: brandLogo("openai-icon"),
+  Claude: brandLogo("claude-icon"),
+  ChatGPT: brandLogo("openai-icon"),
+  Razorpay: glyphLogo("razorpay", "0C2451"),
+  PhonePe: glyphLogo("phonepe", "5F259F"),
+  "Zoho Books": brandLogo("zoho"),
+};
+
 export function integrationLogoSrc(name: string): string {
-  const slug = localSlug(name);
-  if (LOCAL_LOGOS.has(slug)) {
-    return `/logos/${slug}.svg`;
-  }
-  const iconSlug = SIMPLE_ICON_SLUG[name] ?? slug;
-  return `https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/${iconSlug}.svg`;
+  return LOGO_FILE[name] ?? "";
 }
 
 export function integrationLogo(name: string): IntegrationLogo {
   const id = localSlug(name);
   return { id, name, src: integrationLogoSrc(name) };
+}
+
+/** Stable key so the same brand mark is listed once (HubSpot and HubSpot Marketing share a mark). */
+export function integrationMarkKey(name: string): string {
+  return LOGO_FILE[name] ?? name;
+}
+
+/** True only when this name has its own CDN logo. */
+export function hasKnownIntegrationMark(name: string): boolean {
+  return Boolean(LOGO_FILE[name]);
 }
 
 /** Curated logos for homepage / trust strips — recognizable stack coverage. */

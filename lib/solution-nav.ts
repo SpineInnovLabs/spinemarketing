@@ -37,6 +37,6 @@ export function getSolutionNavItems(): NavItemChild[] {
     name: solution.navLabel,
     href: marketingPathForSolution(solution.slug),
     icon: SOLUTION_ICONS[solution.id] ?? Briefcase,
-    desc: solution.buyerSummary.slice(0, 72) + (solution.buyerSummary.length > 72 ? "…" : ""),
+    desc: solution.buyerSummary,
   }));
 }

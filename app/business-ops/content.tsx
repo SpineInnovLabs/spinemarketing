@@ -24,23 +24,24 @@ import {
   Monitor,
   Activity,
 } from "lucide-react";
+import { integrationLogoSrc } from "@/lib/integration-logos";
 
 /* ═══════════════════════════════════════════════════════════
    DATA
    ═══════════════════════════════════════════════════════════ */
 
 const opsLogos = [
-  { name: "Salesforce", src: "/logos/salesforce.svg" },
-  { name: "HubSpot", src: "/logos/hubspot.svg" },
-  { name: "Stripe", src: "/logos/stripe.svg" },
-  { name: "QuickBooks", src: "/logos/quickbooks.svg" },
-  { name: "Jira", src: "/logos/jira.svg" },
-  { name: "Notion", src: "/logos/notion.svg" },
-  { name: "Slack", src: "/logos/slack.svg" },
-  { name: "Asana", src: "/logos/asana.svg" },
-  { name: "Gmail", src: "/logos/gmail.svg" },
-  { name: "Google Drive", src: "/logos/googledrive.svg" },
-];
+  "Salesforce",
+  "HubSpot",
+  "Stripe",
+  "QuickBooks",
+  "Jira",
+  "Notion",
+  "Slack",
+  "Asana",
+  "Gmail",
+  "Google Drive",
+].map((name) => ({ name, src: integrationLogoSrc(name) }));
 
 const comparisons = [
   {
@@ -104,29 +105,29 @@ const dayOneOutcomes = [
 function HeroBusinessOpsVisual() {
   const flows = [
     {
-      from: { name: "Salesforce", src: "/logos/salesforce.svg" },
-      to: { name: "QuickBooks", src: "/logos/quickbooks.svg" },
+      from: { name: "Salesforce", src: integrationLogoSrc("Salesforce") },
+      to: { name: "QuickBooks", src: integrationLogoSrc("QuickBooks") },
       label: "Revenue reconciled",
       status: "Live",
       statusColor: "text-emerald-400",
     },
     {
-      from: { name: "Zendesk", src: "/logos/zendesk.svg" },
-      to: { name: "Slack", src: "/logos/slack.svg" },
+      from: { name: "Zendesk", src: integrationLogoSrc("Zendesk") },
+      to: { name: "Slack", src: integrationLogoSrc("Slack") },
       label: "Escalation routed",
       status: "2m ago",
       statusColor: "text-white/40",
     },
     {
-      from: { name: "Stripe", src: "/logos/stripe.svg" },
-      to: { name: "HubSpot", src: "/logos/hubspot.svg" },
+      from: { name: "Stripe", src: integrationLogoSrc("Stripe") },
+      to: { name: "HubSpot", src: integrationLogoSrc("HubSpot") },
       label: "Pipeline updated",
       status: "Live",
       statusColor: "text-emerald-400",
     },
     {
-      from: { name: "Jira", src: "/logos/jira.svg" },
-      to: { name: "Notion", src: "/logos/notion.svg" },
+      from: { name: "Jira", src: integrationLogoSrc("Jira") },
+      to: { name: "Notion", src: integrationLogoSrc("Notion") },
       label: "Sprint synced",
       status: "5m ago",
       statusColor: "text-white/40",
@@ -151,21 +152,11 @@ function HeroBusinessOpsVisual() {
         >
           <div className="flex items-center gap-3">
             <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-white">
-              <Image
-                src={flow.from.src}
-                alt={flow.from.name}
-                width={20}
-                height={20}
-              />
+              <img src={flow.from.src} alt={flow.from.name} width={20} height={20} className="h-5 w-5 object-contain" />
             </div>
             <ArrowRight className="h-3.5 w-3.5 shrink-0 text-primary/60" />
             <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-white">
-              <Image
-                src={flow.to.src}
-                alt={flow.to.name}
-                width={20}
-                height={20}
-              />
+              <img src={flow.to.src} alt={flow.to.name} width={20} height={20} className="h-5 w-5 object-contain" />
             </div>
             <div className="ml-1 flex-1 min-w-0">
               <div className="text-[13px] font-semibold tracking-[-0.02em] text-white truncate">
@@ -242,18 +233,14 @@ function OpsConnectVisual() {
     useRef<HTMLDivElement>(null),
   ];
 
-  const left = [
-    { src: "/logos/salesforce.svg", alt: "Salesforce" },
-    { src: "/logos/stripe.svg", alt: "Stripe" },
-    { src: "/logos/jira.svg", alt: "Jira" },
-    { src: "/logos/quickbooks.svg", alt: "QuickBooks" },
-  ];
-  const right = [
-    { src: "/logos/hubspot.svg", alt: "HubSpot" },
-    { src: "/logos/slack.svg", alt: "Slack" },
-    { src: "/logos/asana.svg", alt: "Asana" },
-    { src: "/logos/gmail.svg", alt: "Gmail" },
-  ];
+  const left = ["Salesforce", "Stripe", "Jira", "QuickBooks"].map((alt) => ({
+    src: integrationLogoSrc(alt),
+    alt,
+  }));
+  const right = ["HubSpot", "Slack", "Asana", "Gmail"].map((alt) => ({
+    src: integrationLogoSrc(alt),
+    alt,
+  }));
 
   return (
     <div
@@ -267,7 +254,7 @@ function OpsConnectVisual() {
             ref={leftRefs[i]}
             className="flex h-11 w-11 items-center justify-center rounded-xl border border-border/50 bg-white shadow-sm"
           >
-            <Image src={t.src} alt={t.alt} width={22} height={22} />
+            <img src={t.src} alt={t.alt} width={22} height={22} className="h-5 w-5 object-contain" />
           </div>
         ))}
       </div>
@@ -295,7 +282,7 @@ function OpsConnectVisual() {
             ref={rightRefs[i]}
             className="flex h-11 w-11 items-center justify-center rounded-xl border border-border/50 bg-white shadow-sm"
           >
-            <Image src={t.src} alt={t.alt} width={22} height={22} />
+            <img src={t.src} alt={t.alt} width={22} height={22} className="h-5 w-5 object-contain" />
           </div>
         ))}
       </div>
@@ -323,16 +310,10 @@ function OpsConnectVisual() {
 }
 
 function OpsNormalizeVisual() {
-  const icons = [
-    { src: "/logos/salesforce.svg", alt: "Salesforce" },
-    { src: "/logos/stripe.svg", alt: "Stripe" },
-    { src: "/logos/hubspot.svg", alt: "HubSpot" },
-    { src: "/logos/quickbooks.svg", alt: "QuickBooks" },
-    { src: "/logos/jira.svg", alt: "Jira" },
-    { src: "/logos/slack.svg", alt: "Slack" },
-    { src: "/logos/asana.svg", alt: "Asana" },
-    { src: "/logos/gmail.svg", alt: "Gmail" },
-  ];
+  const icons = ["Salesforce", "Stripe", "HubSpot", "QuickBooks", "Jira", "Slack", "Asana", "Gmail"].map((alt) => ({
+    src: integrationLogoSrc(alt),
+    alt,
+  }));
 
   return (
     <div className="relative flex h-[340px] w-full max-w-[380px] items-center justify-center">
@@ -359,7 +340,7 @@ function OpsNormalizeVisual() {
             key={icon.alt}
             className="flex h-[36px] w-[36px] items-center justify-center rounded-full border border-border/50 bg-white shadow-sm"
           >
-            <Image src={icon.src} alt={icon.alt} width={20} height={20} />
+            <img src={icon.src} alt={icon.alt} width={20} height={20} className="h-5 w-5 object-contain" />
           </div>
         ))}
       </OrbitingCircles>
@@ -752,7 +733,7 @@ export function BusinessOpsContent() {
                 key={logo.name}
                 className="flex items-center gap-3 rounded-xl border border-border/50 bg-white px-5 py-3 shadow-sm"
               >
-                <Image src={logo.src} alt={logo.name} width={24} height={24} />
+                <img src={logo.src} alt={logo.name} width={24} height={24} className="h-6 w-6 object-contain" />
                 <span className="whitespace-nowrap text-[15px] font-semibold tracking-[-0.02em] text-foreground/70">
                   {logo.name}
                 </span>

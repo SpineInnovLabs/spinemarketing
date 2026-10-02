@@ -1,7 +1,8 @@
 "use client";
 
 import { PageHero } from "./page-hero";
-import { ContentSection } from "./content-section";
+import { AppCluster, CheckpointPanel, DataFabricPanel, ExampleWork, GovernancePanel, RecordsPanel, RoleViewPanel, TwinReviewPanel } from "./hero-subjects";
+import { ContentSections } from "./content-section";
 import { CrossLinkStrip } from "./cross-link-strip";
 import { ScenarioBlock } from "./scenario-block";
 import { ProofCardGrid } from "./proof-card-grid";
@@ -13,15 +14,39 @@ import { proofCards, useCaseHubCards } from "@/lib/site-copy";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
+function heroExtras(path: string) {
+  switch (path) {
+    case "/spineworkspace":
+      return { tone: "ice" as const, art: <DataFabricPanel />, work: <ExampleWork variant="strip" /> };
+    case "/business-context":
+      return { art: <RecordsPanel /> };
+    case "/twin":
+      return { art: <TwinReviewPanel /> };
+    case "/adaptive-workspace":
+      return { art: <RoleViewPanel /> };
+    case "/host-connected-environment":
+      return { art: <AppCluster /> };
+    case "/governance":
+      return { art: <GovernancePanel /> };
+    case "/continuity":
+      return { art: <CheckpointPanel /> };
+    case "/proof":
+      return { principle: "Illustrative product scenarios. Not measured customer outcomes." };
+    default:
+      return {};
+  }
+}
+
 export function NarrativePageContent({ page, showProofCards }: { page: NarrativePageCopy; showProofCards?: boolean }) {
   return (
     <>
-      <PageHero {...page.hero} />
-      {page.sections.map((section, i) => (
-        <ContentSection key={`${section.headline}-${i}`} section={section} index={i} />
-      ))}
+      <PageHero {...page.hero} {...heroExtras(page.meta.path)} />
+      <ContentSections sections={page.sections} />
       {showProofCards && (
         <Section variant="muted">
+          <p className="mb-6 text-[12px] font-bold uppercase tracking-[0.08em] text-[#526479]">
+            Demonstration · not measured customer outcomes
+          </p>
           <ProofCardGrid cards={proofCards} />
         </Section>
       )}
@@ -30,22 +55,22 @@ export function NarrativePageContent({ page, showProofCards }: { page: Narrative
       )}
       {page.crossLinks && <CrossLinkStrip {...page.crossLinks} />}
       {page.finalCta ? (
-        <section className="border-t border-[#E5E5E5] bg-[#032D60]">
+        <section className="border-t border-[#D9E4EF] bg-[#EAF5FC]">
           <div className="mx-auto max-w-[1100px] px-6 py-20 md:px-16">
             <div className="relative mx-auto max-w-2xl text-center">
-              <h2 className="text-[32px] font-semibold tracking-[-0.03em] leading-[1.2] text-white sm:text-[40px]">
+              <h2 className="text-[32px] font-semibold tracking-[-0.03em] leading-[1.2] text-[#032D60] sm:text-[40px]">
                 {page.finalCta.headline}
               </h2>
               <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
                 <Button
                   size="lg"
-                  className="h-10 rounded-md bg-white px-5 font-semibold text-[#032D60] hover:bg-[#F3F6F9]"
+                  className="h-10 rounded-md bg-[#0176D3] px-5 font-semibold text-white hover:bg-[#0B5CAB]"
                   asChild
                 >
                   <Link href={page.finalCta.primaryCta.href}>{page.finalCta.primaryCta.label}</Link>
                 </Button>
                 {page.finalCta.secondaryCta && (
-                  <Button size="lg" variant="outline" className="h-10 rounded-md border-[#C9C9C9] bg-transparent text-white/90 hover:bg-white/10" asChild>
+                  <Button size="lg" variant="outline" className="h-10 rounded-md border-[#D9E4EF] bg-white text-[#032D60] hover:bg-[#F3F6F9]" asChild>
                     <Link href={page.finalCta.secondaryCta.href}>{page.finalCta.secondaryCta.label}</Link>
                   </Button>
                 )}
@@ -64,6 +89,9 @@ export function UseCasePageContent({ page }: { page: UseCasePageCopy }) {
   return (
     <>
       <PageHero {...page.hero} />
+      {page.scenario && (
+        <ScenarioBlock headline={page.scenario.headline} body={page.scenario.body} steps={page.scenario.steps} />
+      )}
       <Section>
         <div className="grid gap-4 sm:grid-cols-2">
           {page.topics.map((topic, i) => (
@@ -112,9 +140,7 @@ export function DevelopersHubContent({ page }: { page: NarrativePageCopy }) {
   return (
     <>
       <PageHero {...page.hero} />
-      {page.sections.map((section, i) => (
-        <ContentSection key={`${section.headline}-${i}`} section={section} index={i} />
-      ))}
+      <ContentSections sections={page.sections} />
       <FinalCTA />
     </>
   );

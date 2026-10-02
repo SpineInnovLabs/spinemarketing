@@ -1,43 +1,42 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Star } from "lucide-react";
 
 const defaultTestimonials = [
   {
-    quote: "We went from 7 dashboards to one screen. Spine Fabric connected everything our team needed.",
-    name: "Priya Sharma",
-    role: "VP Customer Success",
-    company: "TechScale India",
-    avatar: "PS",
+    quote: "A customer team stops rebuilding the account story before every renewal conversation.",
+    name: "Illustrative scenario",
+    role: "Account team",
+    company: "Not a customer quote",
+    avatar: "Ex",
   },
   {
-    quote: "The Twin caught a renewal risk 45 days before we would have seen it. That's real intelligence.",
-    name: "David Chen",
-    role: "Head of RevOps",
-    company: "CloudFirst",
-    avatar: "DC",
+    quote: "A revenue lead reviews a proposed next step before anything is sent.",
+    name: "Illustrative scenario",
+    role: "Revenue team",
+    company: "Not a customer quote",
+    avatar: "Ex",
   },
   {
-    quote: "Finally — AI that shows its evidence and waits for my approval. No black-box magic.",
-    name: "Sarah Mitchell",
-    role: "COO",
-    company: "ServicePro",
-    avatar: "SM",
+    quote: "An operator sees the evidence behind a suggestion and decides whether it stands.",
+    name: "Illustrative scenario",
+    role: "Operator",
+    company: "Not a customer quote",
+    avatar: "Ex",
   },
   {
-    quote: "The governance layer alone justified the investment. Every action is auditable.",
-    name: "Arjun Patel",
-    role: "CTO",
-    company: "FinanceFlow",
-    avatar: "AP",
+    quote: "A leader checks that consequential work still waits for a person.",
+    name: "Illustrative scenario",
+    role: "Leader",
+    company: "Not a customer quote",
+    avatar: "Ex",
   },
 ];
 
 export function TestimonialsSection({
   testimonials = defaultTestimonials,
-  heading = "What teams are saying.",
-  tag = "Testimonials",
+  heading = "Illustrative scenarios",
+  tag = "Demonstration, not customer quotes",
 }: {
   testimonials?: typeof defaultTestimonials;
   heading?: string;
@@ -47,8 +46,8 @@ export function TestimonialsSection({
     <section className="relative overflow-hidden border-t border-[#E5E5E5] bg-white py-20 md:py-28">
       <div className="relative mx-auto max-w-[1100px] px-6">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ y: 10 }}
+          whileInView={{ y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ type: "spring", damping: 18, stiffness: 70 }}
           className="mx-auto mb-14 max-w-2xl text-center"
@@ -65,17 +64,13 @@ export function TestimonialsSection({
           {testimonials.map((t, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ y: 10 }}
+              whileInView={{ y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ type: "spring", damping: 18, stiffness: 70, delay: i * 0.08 }}
-              className="rounded-md border border-[#E5E5E5] bg-white p-6 shadow-[0_1px_2px_rgba(0,0,0,0.04)] transition-shadow hover:shadow-[0_2px_8px_rgba(0,0,0,0.06)]"
+              className="rounded-md border border-[#E5E5E5] bg-white p-6 shadow-[0_1px_2px_rgba(0,0,0,0.04)]"
             >
-              <div className="mb-4 flex gap-0.5">
-                {[...Array(5)].map((_, si) => (
-                  <Star key={si} className="h-3.5 w-3.5 fill-[#0176D3] text-[#0176D3]" />
-                ))}
-              </div>
+              <p className="text-[12px] font-bold uppercase tracking-[0.06em] text-[#526479]">Illustrative scenario</p>
 
               <p className="text-[15px] font-medium leading-[1.7] text-[#444]">
                 &ldquo;{t.quote}&rdquo;

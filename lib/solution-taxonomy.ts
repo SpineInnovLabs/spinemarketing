@@ -71,7 +71,7 @@ export const PUBLIC_SOLUTIONS: PublicSolution[] = [
     navLabel: "Account Success",
     headline: "Carry customer context across every interaction.",
     description: "Health, risk, renewal context, and relationship memory in one governed workspace.",
-    buyerSummary: "For CSMs, TAMs, and account teams who need one live picture of every customer.",
+    buyerSummary: "Bring the customer story into every next step.",
     workspaceAssociations: [
       { host: "account-success.spineworkspace.com", label: "Account Success Workbench", primary: true },
       { host: "technical-account-success.spineworkspace.com", label: "Technical Account Success" },
@@ -84,7 +84,7 @@ export const PUBLIC_SOLUTIONS: PublicSolution[] = [
     navLabel: "Finance & Business Ops",
     headline: "Revenue, risk, and operations in one context.",
     description: "Finance, business operations, and cross-functional execution connected to live business context.",
-    buyerSummary: "For finance leaders and business operators who need governed visibility across systems.",
+    buyerSummary: "Connect financial context to business decisions.",
     workspaceAssociations: [
       { host: "finance.spineworkspace.com", label: "Finance Workbench", primary: true },
       { host: "businessops.spineworkspace.com", label: "Business Ops" },
@@ -97,8 +97,8 @@ export const PUBLIC_SOLUTIONS: PublicSolution[] = [
     name: "Sales",
     navLabel: "Sales",
     headline: "Keep revenue work connected.",
-    description: "Pipeline, commitments, deal memory, and next actions grounded in shared business context.",
-    buyerSummary: "For revenue teams who need pipeline truth without rebuilding context every week.",
+    description: "Account commitments, deal memory, and next actions grounded in shared business context.",
+    buyerSummary: "Carry account context through the pipeline.",
     workspaceAssociations: [{ host: "sales.spineworkspace.com", label: "Sales Workbench", primary: true }],
   },
   {
@@ -108,7 +108,7 @@ export const PUBLIC_SOLUTIONS: PublicSolution[] = [
     navLabel: "Marketing",
     headline: "Campaigns connected to business outcomes.",
     description: "Programs, launches, and performance signals linked to goals, customers, and evidence.",
-    buyerSummary: "For marketing teams aligning execution to revenue and customer reality.",
+    buyerSummary: "Coordinate work around business goals.",
     workspaceAssociations: [{ host: "marketing.spineworkspace.com", label: "Marketing Workbench", primary: true }],
   },
   {
@@ -118,7 +118,7 @@ export const PUBLIC_SOLUTIONS: PublicSolution[] = [
     navLabel: "Content",
     headline: "Content work with full business context.",
     description: "Briefs, assets, and publishing connected to goals, audiences, and approved evidence.",
-    buyerSummary: "For content teams producing governed, context-aware work at scale.",
+    buyerSummary: "Create with the context behind the brief.",
     workspaceAssociations: [{ host: "content.spineworkspace.com", label: "Content Workbench", primary: true }],
   },
   {
@@ -128,7 +128,7 @@ export const PUBLIC_SOLUTIONS: PublicSolution[] = [
     navLabel: "Customer Support",
     headline: "Support with the full customer story.",
     description: "Tickets, history, and commitments in one workspace—not another disconnected queue.",
-    buyerSummary: "For support and service teams resolving issues with complete customer context.",
+    buyerSummary: "Resolve issues with the customer story in view.",
     workspaceAssociations: [
       { host: "support.spineworkspace.com", label: "Support Workbench", primary: true },
       { host: "service.spineworkspace.com", label: "Service Workbench" },
@@ -141,7 +141,7 @@ export const PUBLIC_SOLUTIONS: PublicSolution[] = [
     navLabel: "Product & Engineering",
     headline: "Ship with shared product context.",
     description: "Roadmap, delivery, and customer signals connected for product and engineering teams.",
-    buyerSummary: "For product and engineering leaders aligning build decisions to business evidence.",
+    buyerSummary: "Connect product decisions to business priorities.",
     workspaceAssociations: [
       { host: "productengineering.spineworkspace.com", label: "Product & Engineering Workbench", primary: true },
     ],
@@ -153,7 +153,7 @@ export const PUBLIC_SOLUTIONS: PublicSolution[] = [
     navLabel: "Individual",
     headline: "Your workspace, your context.",
     description: "Personal operating picture with continuity across tools, hosts, and AI sessions.",
-    buyerSummary: "For operators and professionals who need a governed personal workbench.",
+    buyerSummary: "Keep personal work and context connected.",
     workspaceAssociations: [{ host: "personal.spineworkspace.com", label: "Personal Workbench", primary: true }],
   },
   {
@@ -163,7 +163,7 @@ export const PUBLIC_SOLUTIONS: PublicSolution[] = [
     navLabel: "Human Resources",
     headline: "People operations with organizational context.",
     description: "Hiring, onboarding, and people programs connected to goals and governance boundaries.",
-    buyerSummary: "For HR teams running people programs with shared business memory.",
+    buyerSummary: "Coordinate people decisions with relevant context.",
     workspaceAssociations: [{ host: "humanresources.spineworkspace.com", label: "HR Workbench", primary: true }],
   },
   {
@@ -173,7 +173,7 @@ export const PUBLIC_SOLUTIONS: PublicSolution[] = [
     navLabel: "Legal",
     headline: "Legal work with evidence and authority.",
     description: "Contracts, reviews, and obligations linked to customers, deals, and approved decisions.",
-    buyerSummary: "For legal teams operating with governed context and clear approval boundaries.",
+    buyerSummary: "Review obligations with the records behind them.",
     workspaceAssociations: [{ host: "legal.spineworkspace.com", label: "Legal Workbench", primary: true }],
   },
   {
@@ -183,7 +183,7 @@ export const PUBLIC_SOLUTIONS: PublicSolution[] = [
     navLabel: "Founders & CXOs",
     headline: "See goals, KPIs, decisions, and execution in one context.",
     description: "Executive visibility, decision traceability, and organizational memory.",
-    buyerSummary: "For founders and leaders who need one governed operating picture.",
+    buyerSummary: "See goals, decisions, and execution in one picture.",
     workspaceAssociations: [{ host: "founderops.spineworkspace.com", label: "Founder Ops Workbench", primary: true }],
   },
   {
@@ -193,7 +193,7 @@ export const PUBLIC_SOLUTIONS: PublicSolution[] = [
     navLabel: "Memory & Knowledge",
     headline: "Organizational memory that compounds.",
     description: "Knowledge, portfolio context, and durable business memory—governed and evidence-linked.",
-    buyerSummary: "For teams building institutional memory without losing provenance.",
+    buyerSummary: "Keep organizational memory connected to its evidence.",
     workspaceAssociations: [
       { host: "orgmemory.spineworkspace.com", label: "Organizational Memory", primary: true },
       { host: "portfolio.spineworkspace.com", label: "Portfolio Context" },
@@ -255,7 +255,7 @@ export const INTERNAL_SURFACES: InternalSurface[] = [
   { host: "docs.spineworkspace.com", label: "Docs", note: "Link from header/footer Docs; not a solution page." },
   { host: "brandstore.spineworkspace.com", label: "Brand Store", note: "Internal only." },
   { host: "changelog.spineworkspace.com", label: "Changelog", note: "Internal/product updates." },
-  { host: "blog.spineworkspace.com", label: "Blog", note: "Marketing blog stays on spineworkspace.com/blog." },
+  { host: "blog.spineworkspace.com", label: "Blog", note: "Marketing blog stays on spineinnovlabs.com/blog." },
   { host: "admin.spineworkspace.com", label: "Admin", note: "Control surface; not buyer-facing." },
 ];
 

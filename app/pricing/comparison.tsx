@@ -76,11 +76,11 @@ function CellValue({ value }: { value: boolean | string }) {
 
 export function PricingComparison() {
   return (
-    <section className="relative overflow-hidden border-t border-[#E5E5E5] bg-white py-20 md:py-28">
-      <div className="relative mx-auto max-w-[1000px] px-6">
+    <section className="relative overflow-x-clip border-t border-[#D9E4EF] bg-white py-20 md:py-24">
+      <div className="relative mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-12">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ y: 20 }}
+          whileInView={{ y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ type: "spring", damping: 18, stiffness: 70 }}
           className="mx-auto mb-12 max-w-2xl text-center"
@@ -97,13 +97,13 @@ export function PricingComparison() {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ y: 24 }}
+          whileInView={{ y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ type: "spring", damping: 18, stiffness: 70, delay: 0.1 }}
-          className="overflow-hidden rounded-md border border-[#E5E5E5] bg-white shadow-[0_1px_2px_rgba(0,0,0,0.04)]"
+          className="overflow-hidden rounded-[20px] border border-[#D9E4EF] bg-white shadow-[0_1px_2px_rgba(3,45,96,0.04)]"
         >
-          <div className="grid grid-cols-[1fr_90px_90px_90px] items-center border-b border-[#E5E5E5] bg-[#F3F6F9] px-5 py-4">
+          <div className="grid grid-cols-[minmax(0,1fr)_3.25rem_3.25rem_3.25rem] items-center border-b border-[#D9E4EF] bg-[#F3F6F9] px-3 py-4 sm:grid-cols-[minmax(0,1fr)_90px_90px_90px] sm:px-5">
             <span className="text-[13px] font-bold text-[#706E6B]" />
             <span className="text-center text-[12px] font-bold text-[#444]">Starter</span>
             <span className="text-center text-[12px] font-bold text-[#0176D3]">Growth</span>
@@ -112,7 +112,7 @@ export function PricingComparison() {
 
           {planFeatures.map((category) => (
             <div key={category.category}>
-              <div className="border-b border-[#E5E5E5] bg-[#F3F6F9] px-5 py-3">
+              <div className="border-b border-[#D9E4EF] bg-[#F3F6F9] px-3 py-3 sm:px-5">
                 <span className="text-[12px] font-bold uppercase tracking-[0.08em] text-[#032D60]">
                   {category.category}
                 </span>
@@ -120,11 +120,11 @@ export function PricingComparison() {
               {category.features.map((feature, fi) => (
                 <div
                   key={feature.name}
-                  className={`grid grid-cols-[1fr_90px_90px_90px] items-center px-5 py-3 ${
-                    fi % 2 === 0 ? "bg-white" : "bg-[#FAFBFC]"
-                  } border-b border-[#E5E5E5]`}
+                  className={`grid grid-cols-[minmax(0,1fr)_3.25rem_3.25rem_3.25rem] items-center px-3 py-3 sm:grid-cols-[minmax(0,1fr)_90px_90px_90px] sm:px-5 ${
+                    fi % 2 === 0 ? "bg-white" : "bg-[#F3F6F9]"
+                  } border-b border-[#D9E4EF]`}
                 >
-                  <span className="text-[13px] font-medium text-[#444] pr-4">{feature.name}</span>
+                  <span className="min-w-0 pr-2 text-[13px] font-medium text-[#33465B]">{feature.name}</span>
                   <div className="flex justify-center"><CellValue value={feature.starter} /></div>
                   <div className="flex justify-center"><CellValue value={feature.growth} /></div>
                   <div className="flex justify-center"><CellValue value={feature.command} /></div>
@@ -135,11 +135,11 @@ export function PricingComparison() {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ y: 20 }}
+          whileInView={{ y: 0 }}
           viewport={{ once: true }}
           transition={{ type: "spring", damping: 18, stiffness: 70, delay: 0.2 }}
-          className="mt-10 rounded-md border border-[#E5E5E5] bg-[#F3F6F9] p-6 text-center"
+          className="mt-10 rounded-[20px] border border-[#D9E4EF] bg-[#F3F6F9] p-5 text-center"
         >
           <h3 className="text-[18px] font-semibold text-[#032D60]">Still deciding?</h3>
           <p className="mt-2 text-[14px] text-[#444]">

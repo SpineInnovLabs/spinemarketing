@@ -4,16 +4,16 @@ import { motion } from "framer-motion";
 import { ShieldCheck, Lock, Eye, Zap } from "lucide-react";
 
 const fade = (delay = 0) => ({
-  initial: { opacity: 0, y: 16 },
-  whileInView: { opacity: 1, y: 0 },
+  initial: { y: 16 },
+  whileInView: { y: 0 },
   viewport: { once: true, margin: "-80px" },
   transition: { type: "spring" as const, damping: 18, stiffness: 70, delay },
 });
 
 export function PricingTrustBar() {
   return (
-    <section className="relative overflow-hidden border-t border-[#E5E5E5] bg-[#F3F6F9] py-16 px-6">
-      <div className="mx-auto max-w-[1100px]">
+    <section className="relative overflow-x-clip border-t border-[#D9E4EF] bg-[#F3F6F9] py-20 md:py-24">
+      <div className="mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-12">
         <motion.div {...fade(0)} className="mx-auto max-w-lg text-center mb-10">
           <h2 className="text-[24px] font-semibold tracking-[-0.03em] text-[#032D60]">
             Every plan includes{" "}
@@ -31,7 +31,7 @@ export function PricingTrustBar() {
             <motion.div
               key={label}
               {...fade(i * 0.06)}
-              className="flex items-center gap-3 rounded-md border border-[#E5E5E5] bg-white p-4 shadow-[0_1px_2px_rgba(0,0,0,0.04)]"
+              className="flex h-full items-center gap-3 rounded-[20px] border border-[#D9E4EF] bg-white p-5 shadow-[0_1px_2px_rgba(3,45,96,0.04)]"
             >
               <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-[#F3F6F9]">
                 <Icon className="h-4 w-4 text-[#0176D3]" />

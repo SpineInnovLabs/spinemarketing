@@ -62,11 +62,11 @@ export function PricingSection({ hideHeading = false }: { hideHeading?: boolean 
   const [region, setRegion] = useState<Region>("international");
 
   return (
-    <section id="pricing" className="border-t border-[#E5E5E5] bg-[#F3F6F9] py-20 md:py-28">
-      <div className="mx-auto max-w-[1100px] px-6">
+    <section id="pricing" className="border-t border-[#D9E4EF] bg-[#F3F6F9] py-20 md:py-24">
+      <div className="mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-12">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ y: 20 }}
+          whileInView={{ y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
           className="mx-auto max-w-2xl text-center"
@@ -84,15 +84,15 @@ export function PricingSection({ hideHeading = false }: { hideHeading?: boolean 
             </>
           )}
 
-          <div className="mt-8 inline-flex items-center rounded-md border border-[#E5E5E5] bg-white p-1">
+          <div className="mx-auto mt-8 grid w-full max-w-md grid-cols-3 rounded-[10px] border border-[#D9E4EF] bg-white p-1">
             {regions.map((r) => (
               <button
                 key={r.key}
                 onClick={() => setRegion(r.key)}
-                className={`relative rounded-md px-5 py-2 text-[14px] font-semibold transition-all ${
+                className={`relative rounded-[8px] px-2 py-2 text-[13px] font-semibold transition-colors sm:text-[14px] ${
                   region === r.key
                     ? "text-white"
-                    : "text-[#706E6B] hover:text-[#032D60]"
+                    : "text-[#526479] hover:text-[#032D60]"
                 }`}
               >
                 {region === r.key && (
@@ -112,8 +112,8 @@ export function PricingSection({ hideHeading = false }: { hideHeading?: boolean 
           {plans.map((plan, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ y: 20 }}
+              whileInView={{ y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{
                 type: "spring",
@@ -121,10 +121,10 @@ export function PricingSection({ hideHeading = false }: { hideHeading?: boolean 
                 duration: 0.6,
                 delay: i * 0.1,
               }}
-              className={`relative flex flex-col rounded-md border p-8 ${
+              className={`relative flex h-full flex-col rounded-[20px] border p-5 ${
                 plan.highlighted
                   ? "border-[#0176D3] bg-white shadow-[0_2px_8px_rgba(1,118,211,0.12)]"
-                  : "border-[#E5E5E5] bg-white shadow-[0_1px_2px_rgba(0,0,0,0.04)]"
+                  : "border-[#D9E4EF] bg-white shadow-[0_1px_2px_rgba(3,45,96,0.04)]"
               }`}
             >
               {plan.highlighted && (
@@ -144,8 +144,8 @@ export function PricingSection({ hideHeading = false }: { hideHeading?: boolean 
                 <div className="mt-4">
                   <motion.span
                     key={region}
-                    initial={{ opacity: 0, y: 8 }}
-                    animate={{ opacity: 1, y: 0 }}
+                    initial={{ y: 8 }}
+                    animate={{ y: 0 }}
                     transition={{ duration: 0.2 }}
                     className="text-[34px] font-semibold tracking-[-0.04em] text-[#032D60]"
                   >
@@ -185,8 +185,8 @@ export function PricingSection({ hideHeading = false }: { hideHeading?: boolean 
         </div>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ y: 20 }}
+          whileInView={{ y: 0 }}
           viewport={{ once: true }}
           transition={{
             type: "spring",

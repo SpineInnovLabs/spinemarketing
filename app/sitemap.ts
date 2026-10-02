@@ -2,10 +2,12 @@ import { MetadataRoute } from "next"
 import fs from "fs"
 import path from "path"
 import { posts } from "@/content/blog"
+import { PUBLIC_SOLUTIONS, marketingPathForSolution } from "@/lib/solution-taxonomy"
+import { SITEMAP_EXCLUSIONS } from "@/lib/route-policy"
 
 export const dynamic = "force-static"
 
-const BASE_URL = "https://spineworkspace.com"
+const BASE_URL = "https://spineinnovlabs.com"
 
 const PRIORITY_MAP: Record<string, number> = {
   "/": 1.0,
@@ -18,6 +20,8 @@ const PRIORITY_MAP: Record<string, number> = {
   "/platform": 0.85,
   "/developers": 0.85,
   "/pricing": 0.8,
+  "/integrations": 0.85,
+  "/governance": 0.85,
 }
 
 const CHANGE_FREQ_MAP: Record<string, "weekly" | "monthly" | "yearly"> = {
@@ -29,20 +33,28 @@ const CHANGE_FREQ_MAP: Record<string, "weekly" | "monthly" | "yearly"> = {
   "/terms": "yearly",
 }
 
-function discoverRoutes(dir: string, basePath: string = ""): string[] {
+function assertPublishable(route: string) {
+  if (route.includes("(") || route.includes(")") || route.includes("[") || route.includes("]")) {
+    throw new Error(`Sitemap route is unresolved: ${route}`)
+  }
+}
+
+function discoverRoutes(dir: string, basePath = ""): string[] {
   const routes: string[] = []
+  if (!fs.existsSync(dir)) return routes
   const entries = fs.readdirSync(dir, { withFileTypes: true })
 
   for (const entry of entries) {
     if (!entry.isDirectory()) continue
-    if (entry.name.startsWith("_") || entry.name.startsWith("[") || entry.name.startsWith(".")) continue
+    if (entry.name.startsWith("_") || entry.name.startsWith(".") || entry.name.startsWith("[")) continue
 
     const fullPath = path.join(dir, entry.name)
-    const routePath = `${basePath}/${entry.name}`
+    const isGroup = entry.name.startsWith("(") && entry.name.endsWith(")")
+    const routePath = isGroup ? basePath : `${basePath}/${entry.name}`
 
-    const hasPage = fs.existsSync(path.join(fullPath, "page.tsx")) || fs.existsSync(path.join(fullPath, "page.ts"))
-    if (hasPage) {
-      routes.push(routePath)
+    if (!isGroup) {
+      const hasPage = fs.existsSync(path.join(fullPath, "page.tsx")) || fs.existsSync(path.join(fullPath, "page.ts"))
+      if (hasPage) routes.push(routePath)
     }
 
     routes.push(...discoverRoutes(fullPath, routePath))
@@ -63,46 +75,44 @@ function getChangeFrequency(route: string): "weekly" | "monthly" | "yearly" {
   return CHANGE_FREQ_MAP[route] || "monthly"
 }
 
-function getLastModified(filePath: string): string {
-  try {
-    const stats = fs.statSync(filePath)
-    return stats.mtime.toISOString()
-  } catch {
-    return new Date().toISOString()
-  }
-}
-
 export default function sitemap(): MetadataRoute.Sitemap {
   const appDir = path.join(process.cwd(), "app")
+  const routes = new Set<string>()
 
-  const hasRootPage = fs.existsSync(path.join(appDir, "page.tsx")) || fs.existsSync(path.join(appDir, "page.ts"))
-  const discoveredRoutes = discoverRoutes(appDir)
-  if (hasRootPage) {
-    discoveredRoutes.unshift("/")
+  if (fs.existsSync(path.join(appDir, "page.tsx")) || fs.existsSync(path.join(appDir, "page.ts"))) {
+    routes.add("/")
   }
 
-  const staticEntries = discoveredRoutes.map((route) => {
-    const routeDir = route === "/"
-      ? appDir
-      : path.join(appDir, ...route.split("/").filter(Boolean))
-    const pageFile = fs.existsSync(path.join(routeDir, "page.tsx"))
-      ? path.join(routeDir, "page.tsx")
-      : path.join(routeDir, "page.ts")
+  for (const route of discoverRoutes(appDir)) routes.add(route)
+  for (const solution of PUBLIC_SOLUTIONS) routes.add(marketingPathForSolution(solution.slug))
 
-    return {
-      url: `${BASE_URL}${route}`,
-      lastModified: getLastModified(pageFile),
+  for (const route of [...routes]) {
+    if (SITEMAP_EXCLUSIONS.has(route)) routes.delete(route)
+  }
+
+  const byUrl = new Map<string, MetadataRoute.Sitemap[number]>()
+
+  for (const route of routes) {
+    assertPublishable(route)
+    const url = route === "/" ? BASE_URL : `${BASE_URL}${route}`
+    byUrl.set(url, {
+      url,
       changeFrequency: getChangeFrequency(route),
       priority: getPriority(route),
-    }
-  })
+    })
+  }
 
-  const blogEntries = posts.map((post) => ({
-    url: `${BASE_URL}/blog/${post.slug}`,
-    lastModified: post.date,
-    changeFrequency: "monthly" as const,
-    priority: 0.7,
-  }))
+  for (const post of posts) {
+    const route = `/blog/${post.slug}`
+    assertPublishable(route)
+    const url = `${BASE_URL}${route}`
+    byUrl.set(url, {
+      url,
+      lastModified: post.date,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    })
+  }
 
-  return [...staticEntries, ...blogEntries]
+  return [...byUrl.values()]
 }
