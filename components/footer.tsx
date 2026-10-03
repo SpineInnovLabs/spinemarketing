@@ -87,7 +87,7 @@ export function Footer() {
 
         <div className="flex flex-col items-center justify-between gap-4 border-t border-white/[0.06] py-8 sm:flex-row">
           <p className="text-[13px] text-[#706E6B]">
-            © {new Date().getFullYear()} Spine InnovLabs · Built in Bengaluru
+            © {new Date().getFullYear()} Spine InnovLabs · Built in Coimbatore, Tamilnadu, India
           </p>
           <div className="flex flex-wrap items-center gap-4 text-[13px] text-[#706E6B]">
             <Link href="/security" className="hover:text-[#0176D3]">Security</Link>

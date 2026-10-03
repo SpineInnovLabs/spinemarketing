@@ -438,9 +438,9 @@ export const pages = {
         ],
       },
       {
-        headline: "Built in Bengaluru.",
+        headline: "Built in Coimbatore, Tamilnadu, India.",
         body:
-          "Spine InnovLabs is headquartered in Bengaluru, India. We build for global teams operating across fragmented systems — with security, documentation, and contact paths on this site.",
+          "Spine InnovLabs is headquartered in Coimbatore, Tamilnadu, India. We build for global teams operating across fragmented systems — with security, documentation, and contact paths on this site.",
       },
     ],
     crossLinks: {

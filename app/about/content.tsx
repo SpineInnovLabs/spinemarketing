@@ -20,7 +20,7 @@ const timeline = [
   { year: "The Crisis", title: "The Red Account", desc: "$8M account at 100% attrition risk. Zero handover." },
   { year: "The Discovery", title: "Two Hidden Signals", desc: "Unsigned contract. Hidden conflicts. Invisible to every dashboard." },
   { year: "The Save", title: "$8M Renewed", desc: "Both signals resolved. Full renewal. Account saved." },
-  { year: "2025", title: "Founded Spine InnovLabs", desc: "Built in Bengaluru. Automates what was done manually." },
+  { year: "2025", title: "Founded Spine InnovLabs", desc: "Built in Coimbatore, Tamilnadu, India. Automates what was done manually." },
   { year: "2026", title: "Knowledge Workspace over SpineWorkspace", desc: "Workspace + Twin. Three data ecosystems. You stay in control." },
 ];
 
@@ -252,7 +252,7 @@ export function AboutContent() {
               <span className="text-[#0176D3]">Now it saves you.</span>&rdquo;
             </blockquote>
             <p className="mt-6 text-[15px] text-[#706E6B]">
-              Nirmal Prince J &middot; Founder &amp; CEO &middot; Spine InnovLabs &middot; Bengaluru, India
+              Nirmal Prince J &middot; Founder &amp; CEO &middot; Spine InnovLabs &middot; Coimbatore, Tamilnadu, India
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Link
