@@ -43,6 +43,9 @@ jobs:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
       - name: Download the static site
         uses: actions/download-artifact@v4
         with:
@@ -57,4 +60,4 @@ jobs:
       - name: Publish
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-        run: npx --yes netlify-cli deploy --prod --dir=out --site=1dcc6e7f-9049-403b-8ee4-117899570ec0 --message "Publish ${{ github.sha }}"
+        run: npx --yes netlify-cli deploy --prod --dir=out --no-build --site=1dcc6e7f-9049-403b-8ee4-117899570ec0 --message "Publish ${{ github.sha }}"
