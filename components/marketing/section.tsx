@@ -10,10 +10,10 @@ type SectionProps = {
 };
 
 export function Section({ children, className = "", id, variant = "dark" }: SectionProps) {
-  const bg = variant === "muted" ? "#F3F6F9" : "#FFFFFF";
+  const bg = variant === "muted" ? "bg-[#F3F6F9]" : "bg-white";
 
   return (
-    <section id={id} className={`relative -mt-px border-t border-[#D9E4EF] py-20 md:py-24 ${className}`} style={{ background: bg }}>
+    <section id={id} className={`relative -mt-px border-t border-[#D9E4EF] py-20 md:py-24 ${bg} ${className}`}>
       <div className="relative mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-12">{children}</div>
     </section>
   );

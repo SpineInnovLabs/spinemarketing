@@ -22,15 +22,15 @@ interface FAQSectionProps {
 const platformFAQs: FAQItem[] = [
   {
     question: "What is the Spine Fabric?",
-    answer: "Spine Fabric is the shared contextual operating layer underneath SpineWorkspace. It connects to your apps via OAuth, normalizes records from every system into a unified model, and preserves them with provenance. Think of it as a live, governed context layer — not a data warehouse. It's what makes Entity 360 views, AI reasoning, and cross-app actions possible.",
+    answer: "Spine Fabric connects the systems you already run. Truth stays in those systems of record. Context for a person and a task is assembled from the evidence they are allowed to use. Spine Fabric is not a data warehouse and it does not replace the source system.",
   },
   {
     question: "What are the Workspace and Twin?",
-    answer: "The Workspace is where you see accounts, tasks, workflows, and engagement logs in one view. The Twin is your personal AI operator — it reads your data through Spine Fabric, spots patterns, drafts actions, and presents them with evidence. You approve everything from the Workspace.",
+    answer: "The Workspace is where you see the truth for an account, the context for this task, and the proposal waiting for review. Twin prepares that proposal from the evidence it is allowed to use. A person accepts, edits, or rejects it. The source system stays authoritative.",
   },
   {
     question: "How is SpineWorkspace different from a CRM or a dashboard tool?",
-    answer: "CRMs store your sales data. Dashboard tools visualize metrics. SpineWorkspace connects all your tools — CRM, support, billing, project management — into one live workspace where AI reasons across the full picture and proposes actions with evidence. Nothing happens without your approval.",
+    answer: "A CRM, a billing system, or a ticket tool holds the truth. SpineWorkspace does not replace that record. It assembles the context for this person and this task, and Twin prepares a proposal. Nothing becomes a decision until a person accepts it.",
   },
   {
     question: "What does 'human-in-the-loop' actually mean?",
@@ -46,11 +46,11 @@ const platformFAQs: FAQItem[] = [
   },
   {
     question: "Can I start with just the Workspace?",
-    answer: "Absolutely. Our Starter tier gives you the Workspace with full Entity 360 views, unified tasks, workflows, and basic health signals. When you're ready, upgrade to Growth to unlock the Twin and it starts reasoning across your data.",
+    answer: "Yes. Starter includes the Workspace, where you see the truth from connected systems and the context for the current task. Growth adds Twin, which prepares proposals for a person to review.",
   },
   {
     question: "What are Session Summaries?",
-    answer: "When you interact with the Twin, each conversation generates a Session Summary — a structured record of what was discussed, what was proposed, and what was approved. These summaries pass through Governance before entering Spine Fabric's knowledge, ensuring your system's memory is always accurate and human-verified.",
+    answer: "When you work with Twin, a session summary records what was discussed, what was proposed, and what a person accepted. A summary is context for later work. It does not replace the system of record.",
   },
 ];
 

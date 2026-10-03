@@ -69,13 +69,14 @@ export const ROUTE_DECISIONS: RouteDecision[] = [
   },
   {
     path: "/product/how-it-works",
-    action: "keep",
-    reason: "Buyer walkthrough of Twin signals and briefs. Distinct from technical /platform/how-it-works.",
+    action: "redirect",
+    destination: "/platform/how-it-works",
+    reason: "Older Twin walkthrough. One explanation now lives at /platform/how-it-works.",
   },
   {
     path: "/platform/how-it-works",
     action: "keep",
-    reason: "Technical data-flow and identity page. Distinct from the buyer Twin walkthrough.",
+    reason: "Public explanation of truth, context, proposal, and decision.",
   },
   {
     path: "/security",

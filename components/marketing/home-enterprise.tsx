@@ -17,35 +17,50 @@ const rise = {
 };
 
 const steps = [
-  ["See the work", "Goals and evidence sit in one workspace, drawn from the tools you already use.", "/business-context"],
-  ["Work with Twin", "Your Twin proposes a next step. A person reviews it.", "/twin"],
+  ["See the work", "The goal sits with authoritative truth and the context assembled for this task.", "/business-context"],
+  ["Work with Twin", "Twin prepares a proposal from that truth and context. A person reviews it.", "/twin"],
   ["Keep going", "The same work resumes later, without rebuilding the story.", "/continuity"],
 ];
 
 const productModel = [
   {
     name: "Workspace",
-    body: "A shared place for goals, evidence, decisions, and next actions — built from the systems you already run.",
+    body: "Brings together authoritative business truth from connected systems, and governed context from evidence, documents, messages, and recent work.",
     href: "/spineworkspace",
   },
   {
     name: "Twin",
-    body: "Your AI counterpart inside the workspace. It prepares evidence-backed proposals from authorized context and waits for review.",
+    body: "Uses that governed context to prepare a proposal. The proposal is not the system of record until a person reviews it.",
     href: "/twin",
   },
   {
     name: "Coworker",
-    body: "The context-gathering layer behind Twin. It finds and normalizes only what this person is allowed to use.",
+    body: "Gathers and normalizes only the truth and context this person is allowed to use for this workflow.",
     href: "/twin#coworker",
   },
 ];
 
+const truthContext = [
+  {
+    name: "Truth",
+    body: "What the business has already confirmed: customer records, contracts, ticket state, billing status, approvals, and other governed facts in the systems of record.",
+  },
+  {
+    name: "Context",
+    body: "What helps someone act wisely right now: the latest email, an open escalation, a meeting note, a document, a usage trend, or a recent decision connected to the work.",
+  },
+  {
+    name: "Proposal",
+    body: "What Twin prepares from that truth and context. It stays a proposal until an authorized person accepts or rejects it.",
+  },
+];
+
 const governanceChecks = [
-  "AI sees only context the current user or approved workflow can access.",
-  "Every proposal can be traced to underlying source evidence.",
-  "Source systems remain the system of record.",
+  "AI sees only the truth and context the current user or approved workflow can access.",
+  "Every proposal can be traced to source evidence and the authoritative records behind it.",
+  "Source systems remain the system of record. SpineWorkspace assembles context, governs proposals, and records decisions.",
   "Meaningful actions stay pending until an authorized person approves them.",
-  "Personal, session, and organizational memory stay separate.",
+  "Personal, session, work, and organizational memory remain separate.",
 ];
 
 export function EnterpriseHome() {
@@ -57,9 +72,9 @@ export function EnterpriseHome() {
       <PageHero
         tone="ice"
         badge="Governed AI workspace for operational work"
-        headline="Your business already has the context. It is trapped across tools."
-        subhead="SpineWorkspace connects authorized signals from the systems you already use, gives people and AI the same evidence, and turns work into reviewable next steps."
-        principle="No black-box automation. No rebuilt context. People stay in charge."
+        headline={"Your business already has the truth.\nThe context is trapped across tools."}
+        subhead="SpineWorkspace connects authorized evidence from the systems you already use, so people and AI can work from the same truth and the context for this task. Source systems remain authoritative."
+        principle="SpineWorkspace does not replace truth. It brings truth and context together for work."
         primaryCta={{ label: "See a workflow", href: "#renewal-workflow" }}
         secondaryCta={{ label: "Book a tailored demo", href: "/contact?intent=demo" }}
         art={<RenewalReviewPanel />}
@@ -69,34 +84,52 @@ export function EnterpriseHome() {
       <section className="border-b border-[#D9E4EF] bg-white py-10">
         <div className="mx-auto max-w-[720px] px-5 text-center sm:px-8">
           <p className="text-[17px] leading-[1.65] text-[#33465B]">
-            <span className="font-semibold text-[#032D60]">SpineWorkspace</span> is a governed AI workspace for operational work — connecting your existing tools so teams and AI work from the same live context. Your systems remain authoritative. Your people remain accountable.
+            <span className="font-semibold text-[#032D60]">SpineWorkspace</span> does not replace truth. It is the governed place where truth, context, proposals, and decisions meet. Your systems remain authoritative. Your people remain accountable.
           </p>
+        </div>
+      </section>
+
+      <section className="py-20 md:py-24">
+        <div className="mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-12">
+          <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[#0176D3]">How SpineWorkspace thinks about work</p>
+          <h2 className="mt-3 max-w-xl text-[32px] font-semibold tracking-[-0.03em] text-[#032D60] sm:text-[36px]">Truth and Context</h2>
+          <p className="mt-4 max-w-2xl text-[16px] leading-[1.7] text-[#33465B]">
+            SpineWorkspace does not replace truth. It brings truth and context together so a person can review what Twin proposes.
+          </p>
+          <ul className="mt-8 grid gap-4 lg:grid-cols-3">
+            {truthContext.map(({ name, body }) => (
+              <li key={name} className="rounded-[20px] border border-[#D9E4EF] bg-[#F3F6F9] p-6">
+                <p className="text-[18px] font-semibold text-[#032D60]">{name}</p>
+                <p className="mt-2 text-[14px] leading-[1.6] text-[#33465B]">{body}</p>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
       <section className="bg-[#F3F6F9] py-20 md:py-24">
         <div className="mx-auto grid max-w-[1280px] items-start gap-10 px-5 sm:px-8 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:px-12">
           <motion.div {...rise}>
-            <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[#0176D3]">Fragmented context</p>
+            <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[#0176D3]">Truth and context, apart</p>
             <h2 className="mt-3 text-[32px] font-semibold tracking-[-0.03em] text-[#032D60] sm:text-[36px]">
               Turn scattered signals into reviewed next steps.
             </h2>
             <p className="mt-4 text-[16px] leading-[1.7] text-[#33465B]">
-              Customer history, commitments, and next steps live in different tools. Each handoff asks someone to rebuild the story. SpineWorkspace gives people and their Twin the same governed context so renewal, escalation, and follow-through do not depend on memory.
+              The account record, the last commitment, and the open ticket live in different tools. Each handoff asks someone to rebuild the story. SpineWorkspace gives people and their Twin the same governed truth and context, so renewal and follow-through do not depend on memory.
             </p>
           </motion.div>
           <div className="relative lg:-mr-8 lg:translate-y-6">
             <div className="rounded-[20px] border border-[#D9E4EF] bg-white p-6 shadow-[0_24px_50px_rgba(3,45,96,0.12)] lg:-mb-8">
-              <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[#00A2DF]">CRM</p>
+              <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[#00A2DF]">CRM · Truth</p>
               <p className="mt-2 text-[22px] font-semibold text-[#032D60]">The account record</p>
               <ul className="mt-5 divide-y divide-[#D9E4EF] border-t border-[#D9E4EF]">
                 {[
-                  ["Mail", "The last commitment"],
-                  ["Tickets", "What is still open"],
-                  ["Documents", "The evidence"],
-                ].map(([tool, detail]) => (
+                  ["Mail", "Context", "The last commitment"],
+                  ["Tickets", "Truth", "What is still open"],
+                  ["Documents", "Context", "The evidence"],
+                ].map(([tool, kind, detail]) => (
                   <li key={tool} className="flex items-baseline justify-between gap-4 py-3">
-                    <span className="text-[12px] font-bold uppercase tracking-[0.08em] text-[#526479]">{tool}</span>
+                    <span className="text-[12px] font-bold uppercase tracking-[0.08em] text-[#526479]">{tool} · {kind}</span>
                     <span className="text-right text-[15px] font-semibold text-[#032D60]">{detail}</span>
                   </li>
                 ))}
@@ -114,7 +147,7 @@ export function EnterpriseHome() {
               From fragmented systems to a reviewed decision
             </h2>
             <p className="mt-4 text-[16px] leading-[1.7] text-[#33465B]">
-              Account Success is the clearest place to see the model: renewal readiness, escalation briefs, and handoffs where losing context has immediate cost.
+              Account Success is the clearest place to see the model: renewal readiness, escalation briefs, and handoffs where truth and context get split.
             </p>
           </div>
           <div className="mt-10">
@@ -161,7 +194,7 @@ export function EnterpriseHome() {
             <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[#0176D3]">Shared Work</p>
             <h2 className="mt-3 text-[32px] font-semibold tracking-[-0.03em] text-[#032D60] sm:text-[36px]">Humans and Twin share the work</h2>
             <p className="mt-4 text-[16px] leading-[1.7] text-[#33465B]">
-              Twin is your AI counterpart inside the workspace. It proposes next steps with evidence. Each step stays a proposal until someone with authority accepts it.
+              Twin prepares a proposal from governed truth and context. Each proposal stays a proposal until someone with authority accepts or rejects it.
             </p>
           </div>
           <SharedWorkPanel />
@@ -189,14 +222,14 @@ export function EnterpriseHome() {
 
       <IntegrationLogoStrip
         title="Bring your systems together — without replacing them"
-        subtitle="Connectors bring context in. Source systems stay authoritative."
+        subtitle="Connectors bring truth and context in. Source systems stay authoritative."
       />
 
       <section className="py-20 md:py-24">
         <div className="mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-12">
           <h2 className="text-[13px] font-bold uppercase tracking-[0.08em] text-[#032D60]">Start with Account Success</h2>
           <p className="mt-3 max-w-2xl text-[16px] leading-[1.65] text-[#33465B]">
-            Renewal readiness, escalations, and handoffs — where fragmented context has immediate cost. Other solution paths follow the same governed model.
+            Renewal readiness, escalations, and handoffs — where truth and context are split. Other solution paths follow the same governed model.
           </p>
           <ul className="mt-8 overflow-hidden rounded-[20px] border border-[#D9E4EF]">
             {accountSuccess && (
@@ -305,7 +338,7 @@ export function EnterpriseHome() {
           <div>
             <h2 className="text-[24px] font-semibold tracking-[-0.02em] text-white">See SpineWorkspace on your work.</h2>
             <p className="mt-1 max-w-xl text-[15px] text-white/80">
-              One workspace, shared business context, governed AI assistance, and continuity across people and handoffs.
+              One workspace where truth, context, proposals, and decisions meet. Source systems stay authoritative.
             </p>
           </div>
           <div className="flex flex-col gap-3 sm:flex-row">

@@ -1,6 +1,6 @@
 "use client";
 
-import { FileText, Flag, MessageSquare, MousePointer2, SquareCheck, Target } from "lucide-react";
+import { FileText, Flag, Inbox, Landmark, MessageSquare, MousePointer2, SquareCheck, Target } from "lucide-react";
 import { AppLogo } from "@/components/marketing/app-logo";
 import { heroGlassClass } from "@/components/marketing/page-hero";
 import { integrationLogo } from "@/lib/integration-logos";
@@ -38,8 +38,8 @@ const WORKFLOW_STAGES = [
     detail: "Prepare the renewal decision for Northstar Labs",
   },
   {
-    stage: "Connected evidence",
-    detail: "CRM status, support tickets, last email commitment, usage trends, contract terms",
+    stage: "Truth and context",
+    detail: "Truth from CRM status, ticket state, and contract terms. Context from the last email, usage trend, and recent notes.",
   },
   {
     stage: "Twin proposes",
@@ -110,15 +110,15 @@ export function TwinReviewPanel() {
   return (
     <div className="rounded-2xl border border-[#D9E4EF] bg-white p-5 shadow-[0_1px_2px_rgba(3,45,96,0.04)]">
       <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[#526479]">Spine Twin</p>
-      <h2 className="mt-2 text-[18px] font-semibold text-[#032D60]">Gathered context</h2>
+      <h2 className="mt-2 text-[18px] font-semibold text-[#032D60]">Truth and context</h2>
       <ul className="mt-3 space-y-2 text-[14px] text-[#33465B]">
-        <li>Goal: prepare the next customer step</li>
-        <li>Evidence from the tools already connected</li>
-        <li>Coworker assembled only what this person may see</li>
+        <li>Truth: account status from the system of record</li>
+        <li>Context: the evidence Coworker assembled for this person and this step</li>
+        <li>Proposal: a follow-up, waiting for a person</li>
       </ul>
       <div className="mt-4 rounded-xl border border-[#D9E4EF] bg-[#F3F6F9] p-4">
         <p className="text-[12px] font-bold uppercase tracking-[0.06em] text-[#0176D3]">Proposed next step</p>
-        <p className="mt-1 text-[14px] text-[#032D60]">Draft the follow-up from the shared context.</p>
+        <p className="mt-1 text-[14px] text-[#032D60]">Draft the follow-up from the truth and the context for this step.</p>
         <p className="mt-2 text-[13px] font-semibold text-[#526479]">Awaiting review</p>
       </div>
     </div>
@@ -135,7 +135,7 @@ export function SharedWorkPanel() {
       </div>
       <div className="relative z-20 -mt-5 mr-4 rounded-2xl border border-[#D9E4EF] bg-[#EAF5FC] p-5 shadow-[0_18px_40px_rgba(1,118,211,0.16)] sm:mr-8">
         <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[#0176D3]">Twin</p>
-        <p className="mt-2 text-[14px] leading-[1.55] text-[#032D60]">Proposes the follow-up from shared context. Coworker gathered only what this person may see.</p>
+        <p className="mt-2 text-[14px] leading-[1.55] text-[#032D60]">Prepares a proposal from the truth and context this person may see. The proposal is not the system of record.</p>
       </div>
       <div className="relative z-10 -mt-3 ml-8 rounded-2xl border border-[#D9E4EF] bg-[#F3F6F9] p-5 shadow-[0_8px_24px_rgba(3,45,96,0.05)] sm:ml-14">
         <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[#526479]">Shared Work</p>
@@ -152,8 +152,12 @@ export function RecordsPanel() {
       <h2 className="mt-2 text-[18px] font-semibold text-[#032D60]">Records, evidence, provenance</h2>
       <dl className="mt-4 space-y-3 text-[14px]">
         <div>
-          <dt className="font-semibold text-[#032D60]">Record</dt>
-          <dd className="text-[#33465B]">Customer onboarding note, as held in the source system.</dd>
+          <dt className="font-semibold text-[#032D60]">Truth</dt>
+          <dd className="text-[#33465B]">Account status, as held in the source system.</dd>
+        </div>
+        <div>
+          <dt className="font-semibold text-[#032D60]">Context</dt>
+          <dd className="text-[#33465B]">The note assembled for this task. Not a new system of record.</dd>
         </div>
         <div>
           <dt className="font-semibold text-[#032D60]">Evidence</dt>
@@ -201,7 +205,7 @@ export function GovernancePanel() {
       <ul className="mt-4 space-y-2 text-[14px] text-[#33465B]">
         <li className="rounded-lg bg-[#F3F6F9] px-3 py-2"><span className="font-semibold text-[#032D60]">Personal memory</span> stays with the person</li>
         <li className="rounded-lg bg-[#F3F6F9] px-3 py-2"><span className="font-semibold text-[#032D60]">Session memory</span> stays with that sitting</li>
-        <li className="rounded-lg bg-[#EAF5FC] px-3 py-2"><span className="font-semibold text-[#032D60]">Organizational memory</span> is shared business context</li>
+        <li className="rounded-lg bg-[#EAF5FC] px-3 py-2"><span className="font-semibold text-[#032D60]">Organizational memory</span> is shared context. It is not the system of record.</li>
       </ul>
     </div>
   );
@@ -238,7 +242,7 @@ export function CheckpointPanel() {
       <ul className="mt-4 space-y-2 text-[14px] text-[#33465B]">
         <li>Personal memory stays with the person</li>
         <li>Session memory stays with that sitting</li>
-        <li>Organizational memory is shared business context</li>
+        <li>Organizational memory is shared context, not the system of record</li>
       </ul>
       <p className="mt-4 text-[13px] font-semibold text-[#032D60]">Checkpoint: Awaiting review</p>
     </div>
@@ -250,7 +254,7 @@ export function AppCluster() {
     <div>
       <div className="relative mx-auto hidden h-[440px] max-w-[560px] lg:block">
         <div className="absolute left-1/2 top-1/2 z-10 w-[220px] -translate-x-1/2 -translate-y-1/2 rounded-2xl border border-[#D9E4EF] bg-[#032D60] px-4 py-5 text-center text-white shadow-[0_8px_24px_rgba(3,45,96,0.12)]">
-          <p className="text-[11px] font-bold uppercase tracking-[0.08em] text-[#00A2DF]">Shared context</p>
+          <p className="text-[11px] font-bold uppercase tracking-[0.08em] text-[#00A2DF]">Truth and context</p>
           <p className="mt-1 text-[16px] font-semibold">SpineWorkspace</p>
         </div>
         {CLUSTER.map((logo, index) => (
@@ -275,9 +279,11 @@ export function AppCluster() {
 
 const STRIP_FACTS: { icon: typeof Flag; label: string; title: string; detail?: string }[] = [
   { icon: Flag, label: "Goal", title: "Prepare the next step" },
-  { icon: FileText, label: "Evidence", title: "Customer context", detail: "3 sources" },
+  { icon: Landmark, label: "Truth", title: "Account status", detail: "Renewal date, contract, open tickets" },
+  { icon: Inbox, label: "Context", title: "Last email commitment", detail: "Escalation, usage dip, QBR notes" },
+  { icon: FileText, label: "Evidence", title: "3 linked sources" },
   { icon: MessageSquare, label: "Recent decisions", title: "2 mentions" },
-  { icon: SquareCheck, label: "Next action", title: "1 suggestion" },
+  { icon: SquareCheck, label: "Next action", title: "1 reviewed proposal" },
 ];
 
 export function ExampleWorkspaceStrip() {
@@ -301,7 +307,7 @@ export function ExampleWorkspaceStrip() {
             Awaiting review
           </p>
         </div>
-        <ul className="mt-4 grid grid-cols-1 gap-4 border-t border-[#E3EEF6] pt-4 sm:grid-cols-2 lg:grid-cols-5">
+        <ul className="mt-4 grid grid-cols-1 gap-4 border-t border-[#E3EEF6] pt-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {STRIP_FACTS.map(({ icon: Icon, label, title, detail }) => (
             <li key={label} className="flex min-w-0 items-start gap-2.5">
               <Icon className="mt-0.5 h-4 w-4 shrink-0 text-[#0176D3]" aria-hidden />

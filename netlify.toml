@@ -33,6 +33,12 @@
   status = 301
   force = true
 
+[[redirects]]
+  from = "/product/how-it-works"
+  to = "/platform/how-it-works"
+  status = 301
+  force = true
+
 [[headers]]
   for = "/*"
   [headers.values]

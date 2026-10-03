@@ -1,38 +1,13 @@
-import { Metadata } from "next"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
-import { FinalCTA } from "@/components/final-cta"
-import { ProductHowItWorksContent } from "./content"
-import { IntelligenceStickyScroll } from "./sticky-sections"
-import { BreadcrumbJsonLd } from "@/components/structured-data"
+import type { Metadata } from "next";
+import { RedirectPage } from "@/components/redirect-page";
 
 export const metadata: Metadata = {
-  title: "How it Works | SpineWorkspace Product",
+  title: "How it works | SpineWorkspace",
   description:
-    "The Twin — proactive signals, morning briefs, pattern detection, and evidence-backed reasoning.",
-  alternates: { canonical: "/product/how-it-works" },
-  openGraph: {
-    title: "How it Works | SpineWorkspace Product",
-    description: "The Twin — proactive signals, morning briefs, pattern detection, and evidence-backed reasoning.",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "SpineWorkspace" }],
-  },
-}
+    "Truth stays in the tools you already run. Context is gathered for this person and this task. Twin prepares a proposal. A person decides.",
+  alternates: { canonical: "/platform/how-it-works" },
+};
 
 export default function ProductHowItWorksPage() {
-  return (
-    <div className="min-h-screen bg-white">
-      <BreadcrumbJsonLd items={[
-        { name: "Home", url: "https://spineinnovlabs.com" },
-        { name: "Product", url: "https://spineinnovlabs.com/product" },
-        { name: "How it Works", url: "https://spineinnovlabs.com/product/how-it-works" },
-      ]} />
-      <Header />
-      <main id="main">
-        <ProductHowItWorksContent />
-        <IntelligenceStickyScroll />
-        <FinalCTA />
-      </main>
-      <Footer />
-    </div>
-  )
+  return <RedirectPage to="/platform/how-it-works" />;
 }
