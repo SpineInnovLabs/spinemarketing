@@ -18,14 +18,49 @@ const rise = {
 
 const productModel = [
   {
-    name: "Workspace",
-    body: "Shows this role the Northstar Labs renewal: the records, the evidence for the decision, and the proposal waiting for a person.",
+    name: "SpineWorkspace",
+    body: "The workspace where a person sees the work and decides.",
     href: "/spineworkspace",
   },
   {
-    name: "Twin",
-    body: "Opens when someone asks. Coworker gathers the records and evidence this person may use. Twin then prepares the proposal. Coworker is how Twin gets its evidence. It is not a separate place you open.",
+    name: "Spine Platform",
+    body: "The platform the Spine products run with.",
+    href: "/platform",
+  },
+  {
+    name: "Spine Fabric",
+    body: "One connection to the tools that keep the record.",
+    href: "/platform/spine-fabric",
+  },
+  {
+    name: "Spine Twin",
+    body: "Prepares a proposal when someone asks. A person decides.",
+    href: "/twin",
+  },
+  {
+    name: "Spine Coworker",
+    body: "Gathers the records and evidence this person may use.",
     href: "/twin#coworker",
+  },
+  {
+    name: "Spine Context Assembler",
+    body: "Assembles the context for this task. The tools keep the record.",
+    href: "/business-context",
+  },
+  {
+    name: "Spine Adaptive Auto Tuner",
+    body: "Fits the workspace to the role and the task.",
+    href: "/adaptive-workspace#adaptive-autotuner",
+  },
+  {
+    name: "Spine Triage Bot",
+    body: "Sorts what just arrived so a person sees what needs a decision.",
+    href: "/triage-bot",
+  },
+  {
+    name: "Spine Folder Monitor",
+    body: "Watches the folders the business already uses. The file stays in the folder.",
+    href: "/folder-monitor",
   },
 ];
 
@@ -150,14 +185,14 @@ export function EnterpriseHome() {
 
       <section className="bg-[#F3F6F9] py-20 md:py-24">
         <div className="mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-12">
-          <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[#0176D3]">The product</p>
+          <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[#0176D3]">Spine InnovLabs</p>
           <h2 className="mt-3 max-w-xl text-[32px] font-semibold tracking-[-0.03em] text-[#032D60] sm:text-[36px]">
-            Workspace and Twin
+            The products
           </h2>
           <p className="mt-4 max-w-2xl text-[16px] leading-[1.7] text-[#33465B]">
-            Two places a person opens. The workspace shows the renewal. Twin prepares the proposal when asked.
+            SpineWorkspace, Spine Platform, Spine Fabric, Spine Twin, Spine Coworker, Spine Context Assembler, Spine Adaptive Auto Tuner, Spine Triage Bot, and Spine Folder Monitor.
           </p>
-          <ul className="mt-8 grid gap-4 lg:grid-cols-2">
+          <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {productModel.map(({ name, body, href }) => (
               <li key={name}>
                 <Link

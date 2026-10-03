@@ -89,7 +89,7 @@ export function SpineFabricContent() {
             className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-[13px] font-semibold text-white/60"
           >
             <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-            Platform · One connection
+            Spine Fabric
           </motion.div>
           <motion.h1
             {...heroFade(0.22)}
