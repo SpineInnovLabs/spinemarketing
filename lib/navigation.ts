@@ -6,8 +6,12 @@ import {
   Globe,
   Layers,
   LayoutGrid,
+  BookOpen,
+  History,
+  Images,
   Mail,
   Network,
+  Newspaper,
   ShieldCheck,
   SlidersHorizontal,
   Sparkles,
@@ -52,7 +56,7 @@ export type NavItem = {
   external?: boolean;
 };
 
-export const DOCS_URL = "https://docs.spineworkspace.com/";
+export const DOCS_URL = "https://spine-innov-labs.mintlify.io/";
 
 export const headerNavigation: NavItem[] = [
   {
@@ -124,7 +128,10 @@ export const headerNavigation: NavItem[] = [
     href: "/company",
     items: [
       { name: "About Spine InnovLabs", href: "/company", icon: Building2, desc: "Why we build SpineWorkspace" },
-      { name: "Blog", href: "/blog", icon: Sparkles, desc: "Product thinking and updates" },
+      { name: "Blog", href: "/blog", icon: BookOpen, desc: "Product thinking." },
+      { name: "Updates", href: "/updates", icon: Newspaper, desc: "What changed for buyers." },
+      { name: "Changelog", href: "/changelog", icon: History, desc: "Dated product log." },
+      { name: "Portfolio", href: "/portfolio", icon: Images, desc: "Demonstrations, not customer results." },
       { name: "Contact", href: "/contact", icon: Mail, desc: "Talk to us" },
     ],
   },
@@ -181,6 +188,9 @@ export const footerColumns: FooterColumn[] = [
     links: [
       { name: "About Spine InnovLabs", href: "/company" },
       { name: "Blog", href: "/blog" },
+      { name: "Updates", href: "/updates" },
+      { name: "Changelog", href: "/changelog" },
+      { name: "Portfolio", href: "/portfolio" },
       { name: "Privacy", href: "/privacy" },
       { name: "Terms", href: "/terms" },
     ],

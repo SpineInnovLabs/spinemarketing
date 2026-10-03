@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { DOCS_URL } from "@/lib/navigation";
 import {
   BookOpen,
   FileText,
@@ -93,25 +94,52 @@ export function ResourcesContent() {
           <div className="mx-auto max-w-2xl text-center">
             <motion.div
               {...fade(0.1)}
-              className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-[13px] font-semibold text-white/60"
+              className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#D9E4EF] bg-[#F3F6F9] px-4 py-1.5 text-[13px] font-semibold text-[#032D60]"
             >
               <span className="h-1.5 w-1.5 rounded-full bg-primary" />
               Resources
             </motion.div>
             <motion.h1
               {...fade(0.2)}
-              className="text-[48px] font-semibold leading-[1.1] tracking-[-0.05em] text-white sm:text-[64px]"
+              className="text-[48px] font-semibold leading-[1.1] tracking-[-0.05em] text-[#032D60] sm:text-[64px]"
             >
               Learn, evaluate,{" "}
               <span className="text-primary">adopt.</span>
             </motion.h1>
             <motion.p
               {...fade(0.35)}
-              className="mx-auto mt-8 max-w-xl text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-white/55"
+              className="mx-auto mt-8 max-w-xl text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-[#33465B]"
             >
               Guides, playbooks, and deep dives to help you understand SpineWorkspace.
             </motion.p>
           </div>
+        </div>
+      </section>
+
+      <section className="border-y border-[#D9E4EF] bg-[#F3F6F9] py-16">
+        <div className="mx-auto max-w-[1100px] px-6">
+          <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[#0176D3]">Read</p>
+          <h2 className="mt-3 text-[28px] font-semibold tracking-[-0.03em] text-[#032D60]">Blog, updates, changelog, portfolio, docs</h2>
+          <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              ["Blog", "Product thinking.", "/blog"],
+              ["Updates", "What changed for buyers.", "/updates"],
+              ["Changelog", "The dated log.", "/changelog"],
+              ["Portfolio", "Demonstrations, not customer results.", "/portfolio"],
+              ["Documentation", "Setup and reference, on the docs site.", DOCS_URL],
+            ].map(([title, desc, href]) => (
+              <li key={title}>
+                <Link
+                  href={href}
+                  className="block h-full rounded-[16px] border border-[#D9E4EF] bg-white p-5 hover:border-[#0176D3]"
+                  {...(href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                >
+                  <p className="text-[18px] font-semibold text-[#032D60]">{title}</p>
+                  <p className="mt-2 text-[14px] leading-[1.55] text-[#33465B]">{desc}</p>
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 

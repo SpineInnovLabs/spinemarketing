@@ -7,6 +7,7 @@ import { AppLogo } from "@/components/marketing/app-logo";
 import { EnterpriseButton } from "@/components/marketing/enterprise";
 import { INTEGRATION_KIND_MARKS } from "@/lib/integration-nav";
 import { CONNECTORS_WITH_MARKS, INTEGRATION_CATALOG, TOTAL_CONNECTORS } from "@/lib/integration-logos";
+import { DOCS_URL } from "@/lib/navigation";
 
 const fade = (delay = 0) => ({
   initial: { y: 10 },
@@ -23,7 +24,7 @@ export function IntegrationsContent() {
         headline="Your tools. Shared context."
         subhead="Connect the systems your team already uses. Source systems stay authoritative. SpineWorkspace assembles governed business context for people and their Twin."
         primaryCta={{ label: "Book a demo", href: "/contact?intent=demo" }}
-        secondaryCta={{ label: "Read the docs", href: "https://docs.spineworkspace.com/" }}
+        secondaryCta={{ label: "Read the docs", href: DOCS_URL }}
         art={<AppCluster />}
       />
 

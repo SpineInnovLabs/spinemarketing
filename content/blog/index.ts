@@ -31,23 +31,19 @@ Your tools are fine individually. Salesforce tracks deals. Zendesk handles ticke
 
 Every time you switch tabs, you lose context. Every time you copy-paste a customer name from one tool to another, you risk getting it wrong. Every time a new hire joins, they have to learn the same 12-tab dance from scratch.
 
-## What if your tools were already connected?
+## What if the story did not have to be rebuilt?
 
-That's what Spine InnovLabs does. You connect your tools once. We pull in your data, clean it up, remove duplicates, and organize it. You get one screen with everything: accounts, revenue, tasks, calendar, documents, messages — all assembled automatically.
+SpineWorkspace connects the tools, files, and conversations you already use. It does not create a new home for the record. The CRM, the desk, and the billing tool stay in charge. The workspace shows the view this role needs for the task in front of them.
 
-No copy-pasting. No tab-switching. Your morning briefing is ready before you are.
+## Twin waits until someone asks
 
-## AI that watches, but waits for you
+When someone asks, Twin reads the record, the evidence for this task, and earlier decisions. It prepares a proposal. Every claim points back to its source. Twin does not write the record.
 
-The system doesn't just show you data — it watches for patterns. When something needs your attention — a customer going quiet, a renewal approaching, a payment overdue — it tells you. With evidence.
+A person allows it, changes it, or stops it. An accepted change is written back through the tool that owns the record. The workspace then shows the result.
 
-But here's the key: it never acts on its own. Every suggestion comes with reasoning. You approve, modify, or dismiss. Only then does anything happen.
+## The difference
 
-## Your business gets smarter every day
-
-Every day, as you use Spine InnovLabs, your verified knowledge grows. New customer interactions, new decisions, new insights — all accumulating. The AI reads from this growing knowledge base. After a month, it knows your business better than any new hire.
-
-That's the difference between a tool and a workspace. A tool does one thing. A workspace becomes more intelligent over time.`,
+A tool does one thing. The workspace is where the record and the evidence for this task sit together, so a person can decide the next step without translating between tabs.`,
   },
   {
     slug: "why-ai-needs-your-approval",
@@ -69,19 +65,17 @@ AI is great at sounding right. It uses the same tone whether it's giving you a v
 
 Every insight comes with evidence — which data, from which tool, how recent. When Twin finds something, it proposes it first. You see what it found and where it came from. You allow it, change it, or stop it.
 
-Only what you confirm becomes part of your business knowledge.
+The proposal is not the record. It stays a proposal until a person accepts it, changes it, or rejects it.
 
-This means:
-- No hallucinated facts in your system
-- No AI inventing a customer commitment that doesn't exist
-- No conflicting memories across different AI tools
-- Full audit trail on every piece of knowledge
+That means:
+- A claim points back to the tool it came from
+- Twin does not invent a commitment the business has not accepted
+- Approval and completion stay separate
+- An accepted change is written back through the tool that owns the record
 
 ## The approval step isn't a speed bump
 
-It's the whole point. AI should augment human judgment, not replace it. The fastest way to lose trust in AI is to let it act without oversight. The fastest way to build trust is to let humans stay in control.
-
-That's why the approval layer can't be bypassed. There is no admin override. No API backdoor. No way to skip it. It's how the product is built.`,
+It's the product. Twin prepares the next step. A person decides. The tools that already hold the record stay in charge.`,
   },
   {
     slug: "spine-fabric-contextual-continuity-layer",

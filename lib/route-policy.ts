@@ -33,8 +33,8 @@ export const ROUTE_DECISIONS: RouteDecision[] = [
   {
     path: "/docs",
     action: "redirect",
-    destination: "https://docs.spineworkspace.com/",
-    reason: "Local page is a coming-soon stub. The docs site is the useful hub. Not listed in this sitemap.",
+    destination: "https://spine-innov-labs.mintlify.io/",
+    reason: "Local page redirects. Documentation lives on the Mintlify site. Not listed in this sitemap.",
   },
   {
     path: "/platform/the-adaptive-spine",
@@ -201,7 +201,17 @@ export const ROUTE_DECISIONS: RouteDecision[] = [
   {
     path: "/changelog",
     action: "keep",
-    reason: "Local changelog entries in content/changelog. Substantive on this site.",
+    reason: "Dated product log. Distinct from /updates, which is the buyer-facing note.",
+  },
+  {
+    path: "/updates",
+    action: "keep",
+    reason: "Short buyer-facing notes. The dated log stays at /changelog.",
+  },
+  {
+    path: "/portfolio",
+    action: "keep",
+    reason: "Demonstrations of the product. Not customer results, and not a duplicate of /proof.",
   },
 ];
 

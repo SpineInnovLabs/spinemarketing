@@ -9,7 +9,7 @@
 # Existing static pages would otherwise win over these moves.
 [[redirects]]
   from = "/docs"
-  to = "https://docs.spineworkspace.com/"
+  to = "https://spine-innov-labs.mintlify.io/"
   status = 301
   force = true
 

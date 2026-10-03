@@ -29,13 +29,18 @@ export default function BlogPage() {
       <main id="main">
         <section className="relative overflow-hidden bg-white">
           <div className="mx-auto max-w-[1100px] px-6 pt-[160px] pb-[80px] md:px-16">
-            <h1 className="text-[40px] font-semibold tracking-[-0.05em] leading-[1.1] text-white sm:text-[52px]">Blog</h1>
-            <p className="mt-4 max-w-xl text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-white/55">
-              Thinking on business context, human–AI work, and adaptive workspaces.
+            <h1 className="text-[40px] font-semibold tracking-[-0.05em] leading-[1.1] text-[#032D60] sm:text-[52px]">Blog</h1>
+            <p className="mt-4 max-w-xl text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-[#33465B]">
+              Product thinking. What changed is on{" "}
+              <Link href="/updates" className="font-semibold text-[#0176D3] hover:underline">Updates</Link>.
+              The dated log is the{" "}
+              <Link href="/changelog" className="font-semibold text-[#0176D3] hover:underline">changelog</Link>.
+              Demonstrations are in the{" "}
+              <Link href="/portfolio" className="font-semibold text-[#0176D3] hover:underline">portfolio</Link>.
             </p>
             <div className="mt-6 flex flex-wrap gap-2">
-              {["Product", "Business context", "Human–AI work", "Governance and trust", "The tools you already use", "Company updates"].map((cat) => (
-                <span key={cat} className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-[12px] font-semibold text-white/40">
+              {["Product", "Business context", "Governance and trust"].map((cat) => (
+                <span key={cat} className="rounded-full border border-[#D9E4EF] bg-[#F3F6F9] px-3 py-1 text-[12px] font-semibold text-[#526479]">
                   {cat}
                 </span>
               ))}

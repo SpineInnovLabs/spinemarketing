@@ -1,3 +1,5 @@
+import { DOCS_URL } from "@/lib/navigation";
+
 export type CtaLink = { label: string; href: string };
 
 export type PageHeroCopy = {
@@ -394,14 +396,14 @@ export const pages = {
     meta: {
       title: "Company — Spine InnovLabs builds SpineWorkspace",
       description:
-        "Spine InnovLabs builds SpineWorkspace — a governed AI workspace where people and AI work from the same truth and context.",
+        "Spine InnovLabs is the company. SpineWorkspace is the product — a governed AI workspace where people and AI work from the same truth and context.",
       path: "/company",
     },
     hero: {
       badge: "Spine InnovLabs",
       headline: "We build for the work that gets lost between systems.",
       subhead:
-        "Spine InnovLabs builds SpineWorkspace: a governed environment where people and AI work from the same truth and context, while the systems teams already depend on remain authoritative.",
+        "Spine InnovLabs is the company. SpineWorkspace is the product: a governed environment where people and AI work from the same truth and context, while the systems teams already depend on remain authoritative.",
       primaryCta: { label: "Speak with the team", href: "/contact" },
       secondaryCta: { label: "See a workflow", href: "/#renewal-workflow" },
     },
@@ -460,17 +462,17 @@ export const pages = {
       badge: "Developers",
       headline: "Build with SpineWorkspace.",
       subhead: "Connect the tools, files, and conversations your team already uses. The tools keep the record.",
-      primaryCta: { label: "Read the docs", href: "https://docs.spineworkspace.com/" },
+      primaryCta: { label: "Read the docs", href: DOCS_URL },
     },
     sections: [
       {
         headline: "Integration paths.",
         cards: [
           { title: "Integrations", description: "Connect the apps your team already opens.", href: "/platform/integrations" },
-          { title: "Tools already open", description: "Use the tools, files, and conversations already in front of that person.", href: "https://docs.spineworkspace.com/" },
+          { title: "Tools already open", description: "Use the tools, files, and conversations already in front of that person.", href: DOCS_URL },
           { title: "Use what is already open", description: "The work uses what is already open before it reaches for anything else.", href: "/twin" },
-          { title: "Sign-in and permission", description: "Who may sign in, and what that person is allowed to see.", href: "https://docs.spineworkspace.com/" },
-          { title: "Reference docs", description: "Full platform and product documentation.", href: "https://docs.spineworkspace.com/" },
+          { title: "Sign-in and permission", description: "Who may sign in, and what that person is allowed to see.", href: DOCS_URL },
+          { title: "Reference docs", description: "Full platform and product documentation.", href: DOCS_URL },
         ],
       },
     ],
@@ -716,10 +718,10 @@ export const homeCopy = {
   },
   hero: {
     badge: "Governed AI workspace for operational work",
-    headline: "Your business already has the truth. The context is trapped across tools.",
+    headline: "Your tools hold the records. Bring the context together. Decide the next step.",
     subhead:
-      "SpineWorkspace connects authorized evidence from the systems you already use, so people and AI can work from the same truth and the context for this task. Source systems remain authoritative.",
-    primaryCta: { label: "See a workflow", href: "#renewal-workflow" },
+      "SpineWorkspace brings authorized records, messages, documents, and recent decisions into one workspace. People and AI work from the same evidence, review proposals, and approve changes to the systems that own the record.",
+    primaryCta: { label: "See the renewal workflow", href: "#renewal-workflow" },
     secondaryCta: { label: "Book a tailored demo", href: "/contact?intent=demo" },
   },
   problem: {

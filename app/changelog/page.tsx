@@ -2,6 +2,7 @@ import { Metadata } from "next"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { entries } from "@/content/changelog"
+import Link from "next/link"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
@@ -26,9 +27,10 @@ export default function ChangelogPage() {
       <main id="main">
         <section className="relative overflow-hidden bg-white">
           <div className="mx-auto max-w-[800px] px-6 pt-[160px] pb-[80px] md:px-16">
-            <h1 className="text-[40px] font-semibold tracking-[-0.05em] leading-[1.1] text-white sm:text-[52px]">Changelog</h1>
-            <p className="mt-4 max-w-xl text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-white/55">
-              What&apos;s new in SpineWorkspace.
+            <h1 className="text-[40px] font-semibold tracking-[-0.05em] leading-[1.1] text-[#032D60] sm:text-[52px]">Changelog</h1>
+            <p className="mt-4 max-w-xl text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-[#33465B]">
+              The dated log. Shorter buyer notes are on{" "}
+              <Link href="/updates" className="font-semibold text-[#0176D3] hover:underline">Updates</Link>.
             </p>
           </div>
         </section>

@@ -252,7 +252,7 @@ export const PLATFORM_SURFACES: PlatformSurface[] = [
 
 /** Internal projections — link when appropriate; never public solution catalogue entries */
 export const INTERNAL_SURFACES: InternalSurface[] = [
-  { host: "docs.spineworkspace.com", label: "Docs", note: "Link from header/footer Docs; not a solution page." },
+  { host: "spine-innov-labs.mintlify.io", label: "Docs", note: "Link from header/footer Docs; not a solution page." },
   { host: "brandstore.spineworkspace.com", label: "Brand Store", note: "Internal only." },
   { host: "changelog.spineworkspace.com", label: "Changelog", note: "Internal/product updates." },
   { host: "blog.spineworkspace.com", label: "Blog", note: "Marketing blog stays on spineinnovlabs.com/blog." },

@@ -34,24 +34,28 @@ export function DataFabricPanel() {
 
 const WORKFLOW_STAGES = [
   {
-    stage: "Goal",
-    detail: "Prepare the renewal decision for Northstar Labs",
+    stage: "Assemble",
+    detail: "Renewal date, contract terms, account owner, and open ticket state sit with the latest commitment, the usage change, and the escalation notes.",
   },
   {
-    stage: "Truth and context",
-    detail: "Truth from CRM status, ticket state, and contract terms. Context from the last email, usage trend, and recent notes.",
+    stage: "Identify",
+    detail: "The renewal risk is named. Each point links back to its source.",
   },
   {
-    stage: "Twin proposes",
-    detail: "Risks surfaced, follow-up drafted, each claim linked to its source",
+    stage: "Propose",
+    detail: "Twin prepares one action: create a renewal follow-up task in the connected CRM, for the account owner.",
   },
   {
-    stage: "Human review",
-    detail: "Account owner accepts, edits, or rejects the proposal",
+    stage: "Review",
+    detail: "The account owner inspects the evidence, edits the follow-up, and approves it. Approved is not completed.",
   },
   {
-    stage: "Continuity",
-    detail: "The team resumes work later without reconstructing account context",
+    stage: "Execute",
+    detail: "The approved action is sent to the CRM that owns the record. The workspace then shows success, failure, or still pending.",
+  },
+  {
+    stage: "Continue",
+    detail: "The decision and the execution result stay with the work, so the team can resume without rebuilding the account.",
   },
 ] as const;
 
@@ -131,7 +135,7 @@ export function SharedWorkPanel() {
       <div className="relative z-0 ml-6 rounded-2xl border border-[#D9E4EF] bg-white p-5 shadow-[0_8px_24px_rgba(3,45,96,0.06)] sm:ml-10">
         <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[#526479]">Workbench</p>
         <h2 className="mt-2 text-[18px] font-semibold text-[#032D60]">You</h2>
-        <p className="mt-2 text-[14px] leading-[1.55] text-[#33465B]">Customer onboarding. The goal is the next step, with the evidence already in the tools this team uses.</p>
+        <p className="mt-2 text-[14px] leading-[1.55] text-[#33465B]">Northstar Labs renewal. The goal is the renewal decision, with the records and the evidence already in the tools this team uses.</p>
       </div>
       <div className="relative z-20 -mt-5 mr-4 rounded-2xl border border-[#D9E4EF] bg-[#EAF5FC] p-5 shadow-[0_18px_40px_rgba(1,118,211,0.16)] sm:mr-8">
         <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[#0176D3]">Twin</p>
@@ -278,12 +282,12 @@ export function AppCluster() {
 }
 
 const STRIP_FACTS: { icon: typeof Flag; label: string; title: string; detail?: string }[] = [
-  { icon: Flag, label: "Goal", title: "Prepare the next step" },
-  { icon: Landmark, label: "Truth", title: "Account status", detail: "Renewal date, contract, open tickets" },
-  { icon: Inbox, label: "Context", title: "Last email commitment", detail: "Escalation, usage dip, QBR notes" },
-  { icon: FileText, label: "Evidence", title: "3 linked sources" },
-  { icon: MessageSquare, label: "Recent decisions", title: "2 mentions" },
-  { icon: SquareCheck, label: "Next action", title: "1 reviewed proposal" },
+  { icon: Flag, label: "Goal", title: "Prepare the renewal decision" },
+  { icon: Landmark, label: "Truth", title: "Renewal date and contract", detail: "Account owner, open ticket state" },
+  { icon: Inbox, label: "Context", title: "Latest commitment", detail: "Usage change, escalation notes" },
+  { icon: FileText, label: "Evidence", title: "Contract, ticket, email" },
+  { icon: MessageSquare, label: "Proposal", title: "Renewal follow-up task" },
+  { icon: SquareCheck, label: "Execution", title: "Not started", detail: "Approval is still required" },
 ];
 
 export function ExampleWorkspaceStrip() {
@@ -296,15 +300,15 @@ export function ExampleWorkspaceStrip() {
               <Target className="h-5 w-5" />
             </span>
             <div className="min-w-0">
-              <p className="text-[12px] font-medium text-[#526479]">Example workspace</p>
-              <p className="text-[18px] font-semibold tracking-[-0.02em] text-[#032D60] sm:text-[20px]">Customer onboarding</p>
+              <p className="text-[12px] font-medium text-[#526479]">Example workspace · demonstration</p>
+              <p className="text-[18px] font-semibold tracking-[-0.02em] text-[#032D60] sm:text-[20px]">Northstar Labs renewal</p>
             </div>
           </div>
           <p className="inline-flex w-fit items-center gap-2 text-[14px] font-semibold text-[#33465B]">
             <span className="inline-flex h-5 w-5 items-center justify-center rounded-full border border-[#8AA0B5]" aria-hidden>
               <span className="h-1.5 w-1.5 rounded-full bg-[#526479]" />
             </span>
-            Awaiting review
+            Awaiting review · not completed
           </p>
         </div>
         <ul className="mt-4 grid grid-cols-1 gap-4 border-t border-[#E3EEF6] pt-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
