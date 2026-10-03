@@ -82,7 +82,7 @@ export function AboutContent() {
             transition={{ type: "spring", damping: 16, stiffness: 52, delay: 0.35 }}
             className="mx-auto mt-4 max-w-2xl text-[16px] leading-[1.7] text-[#444]"
           >
-            Spine InnovLabs is the company. SpineWorkspace is the product. The company exists because modern work is fragmented across software and AI interfaces—and that fragmentation costs real outcomes.
+            Spine InnovLabs is the company. The products are SpineWorkspace, Spine Platform, Spine Fabric, Spine Twin, Spine Coworker, Spine Context Assembler, Spine Adaptive Auto Tuner, Spine Triage Bot, and Spine Folder Monitor. The company exists because modern work is fragmented across software and AI interfaces—and that fragmentation costs real outcomes.
           </motion.p>
         </div>
       </section>
@@ -196,7 +196,7 @@ export function AboutContent() {
           <p className="text-[17px] font-semibold leading-[1.5] text-white">
             The workspace shows the work. Twin prepares a proposal only when asked. A person decides.
           </p>
-          <p className="mt-1 text-[15px] text-white/70">Spine InnovLabs is the company. SpineWorkspace is the product.</p>
+          <p className="mt-1 text-[15px] text-white/70">Spine InnovLabs is the company. The products are SpineWorkspace, Spine Platform, Spine Fabric, Spine Twin, Spine Coworker, Spine Context Assembler, Spine Adaptive Auto Tuner, Spine Triage Bot, and Spine Folder Monitor.</p>
         </div>
       </SectionBlock>
 

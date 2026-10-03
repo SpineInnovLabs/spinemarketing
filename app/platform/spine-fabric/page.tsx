@@ -9,12 +9,12 @@ import { SpineStickyScroll } from "./sticky-sections"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
-  title: "One connection | SpineWorkspace",
+  title: "Spine Fabric | Spine InnovLabs",
   description:
-    "The tools keep the record. SpineWorkspace shows the work. Twin proposes only when asked. A person decides.",
+    "Spine Fabric is a Spine InnovLabs product. The tools keep the record. SpineWorkspace shows the work.",
   alternates: { canonical: "/platform/spine-fabric" },
   openGraph: {
-    title: "One connection | SpineWorkspace",
+    title: "Spine Fabric | Spine InnovLabs",
     description: "The tools keep the record. SpineWorkspace shows the work. Twin proposes only when asked. A person decides.",
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "SpineWorkspace" }],
   },
@@ -26,7 +26,7 @@ export default function SpineFabricPage() {
       <BreadcrumbJsonLd items={[
         { name: "Home", url: "https://spineinnovlabs.com" },
         { name: "Platform", url: "https://spineinnovlabs.com/platform" },
-        { name: "One connection", url: "https://spineinnovlabs.com/platform/spine-fabric" },
+        { name: "Spine Fabric", url: "https://spineinnovlabs.com/platform/spine-fabric" },
       ]} />
       <Header />
       <main id="main">

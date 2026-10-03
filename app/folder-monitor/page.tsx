@@ -1,0 +1,6 @@
+import { createNarrativeRoute } from "@/lib/create-narrative-route";
+import { pages } from "@/lib/site-copy";
+
+const { metadata, Page } = createNarrativeRoute(pages.folderMonitor);
+export { metadata };
+export default Page;
