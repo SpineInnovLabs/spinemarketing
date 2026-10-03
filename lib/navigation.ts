@@ -94,9 +94,9 @@ export const headerNavigation: NavItem[] = [
       label: "Platform",
       items: [
         { name: "How it works", href: "/platform/how-it-works", icon: GitBranch },
-        { name: "Data Fabric", href: "/business-context#data-fabric", icon: Network },
-        { name: "Adaptive Autotuner", href: "/adaptive-workspace#adaptive-autotuner", icon: SlidersHorizontal },
-        { name: "Host Connected Environment", href: "/host-connected-environment", icon: Globe },
+        { name: "The record", href: "/business-context#data-fabric", icon: Network },
+        { name: "The view for this role", href: "/adaptive-workspace#adaptive-autotuner", icon: SlidersHorizontal },
+        { name: "The tools you already use", href: "/host-connected-environment", icon: Globe },
         { name: "Continuity", href: "/continuity", icon: GitBranch },
       ],
     },

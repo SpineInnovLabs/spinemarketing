@@ -20,62 +20,60 @@ const heroFade = (delay = 0) => ({
 const coreFunctions = [
   {
     icon: Zap,
-    title: "Unified Adaptive Connectivity",
-    body: "Every tool feeds one adaptive normalization layer.",
+    title: "One connection",
+    body: "The tools, files, and conversations you already use stay themselves. SpineWorkspace does not become a new home for the record.",
   },
   {
     icon: Shield,
-    title: "Contextual Firewalling",
-    body: "Data filtered by department before reaching users.",
+    title: "The evidence stays evidence",
+    body: "Email, notes, files, and conversations are for this person and this task. They are not written into the record.",
   },
   {
     icon: RefreshCw,
-    title: "Data Normalization",
-    body: "Raw outputs converted to universal schema automatically.",
+    title: "The view follows the role",
+    body: "Sales, operations, and leadership open the same work and see what they need.",
   },
   {
     icon: GitBranch,
-    title: "Entity 360 Assembly",
-    body: "CRM, billing, and support unified into canonical records.",
+    title: "A person decides",
+    body: "Twin prepares a draft. It is not the record until a person accepts, edits, or rejects it.",
   },
 ];
 
 const capabilities = [
   {
     icon: Database,
-    title: "Knowledge Memory",
-    desc: "In constant readiness — zero retraining needed.",
-    stat: "Zero retraining",
+    title: "The record stays put",
+    desc: "Customers, tickets, billing, contracts, and approvals stay in the tools that own them.",
+    stat: "The tools",
   },
   {
     icon: GitMerge,
-    title: "Canonical Entities",
-    desc: "Vendor-neutral objects that survive CRM migrations.",
-    stat: "Vendor-neutral",
+    title: "The evidence is for this task",
+    desc: "Only what this person may use for this task is brought into the workspace.",
+    stat: "This task",
   },
   {
     icon: Clock,
-    title: "Temporal Truth",
-    desc: "Point-in-time reconstruction of any entity state.",
-    stat: "Full history",
+    title: "Earlier decisions stay available",
+    desc: "What a person already accepted can be read again. It is not mixed into a new record.",
+    stat: "Decisions",
   },
   {
     icon: Shield,
-    title: "Schema Drift Immunity",
-    desc: "Upstream API changes handled in the mapping layer.",
-    stat: "Always stable",
+    title: "Open is not allowed",
+    desc: "A tool being available is not permission to use it. The person's role decides.",
+    stat: "Permission",
   },
 ];
 
 const pipeline = [
-  { step: "01", name: "Ingest", desc: "APIs, webhooks, streaming, files" },
-  { step: "02", name: "Validate", desc: "Schema and auth checks" },
-  { step: "03", name: "Parse", desc: "Extract from vendor formats" },
-  { step: "04", name: "Normalize", desc: "Map to canonical schema" },
-  { step: "05", name: "Deduplicate", desc: "Golden record creation" },
-  { step: "06", name: "Enrich", desc: "Metadata, timestamps, relations" },
-  { step: "07", name: "Persist", desc: "D1/PostgreSQL with versioning" },
-  { step: "08", name: "Emit", desc: "Trigger downstream views" },
+  { step: "01", name: "Connect", desc: "The tools you already run" },
+  { step: "02", name: "Separate", desc: "Record, evidence, draft, and person" },
+  { step: "03", name: "Show", desc: "The view this role needs" },
+  { step: "04", name: "Ask", desc: "Twin opens only when asked" },
+  { step: "05", name: "Decide", desc: "A person allows, changes, or stops it" },
+  { step: "06", name: "Write back", desc: "The original tool is updated" },
 ];
 
 export function SpineFabricContent() {
@@ -91,24 +89,24 @@ export function SpineFabricContent() {
             className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-[13px] font-semibold text-white/60"
           >
             <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-            Platform · The Spine Fabric
+            Platform · One connection
           </motion.div>
           <motion.h1
             {...heroFade(0.22)}
             className="text-[44px] font-semibold leading-[1.08] tracking-[-0.05em] text-white sm:text-[64px]"
           >
-            The canonical record{" "}
-            <span className="text-primary">everything maps to.</span>
+            The tools keep the record.{" "}
+            <span className="text-primary">The workspace shows the work.</span>
           </motion.h1>
           <motion.p
             {...heroFade(0.38)}
             className="mx-auto mt-7 max-w-xl text-[17px] font-medium leading-[1.55] tracking-[-0.02em] text-white/50"
           >
-            The shared contextual operating layer. Spine Fabric unifies entities, events, evidence, and decisions from every connected tool — one versioned source of truth that humans and AI both work from.
+            SpineWorkspace connects the tools, files, and conversations you already use. It does not become a new home for the record. Twin proposes only when asked. A person decides.
           </motion.p>
           <motion.div {...heroFade(0.5)} className="mt-9 flex flex-wrap items-center justify-center gap-3">
             <Link href="/contact?intent=demo" className="inline-flex h-11 items-center rounded-full bg-primary px-6 text-[14px] font-semibold tracking-[-0.02em] text-white transition-opacity hover:opacity-90">
-              See Spine Fabric live →
+              Book a tailored demo →
             </Link>
             <Link href="/platform/how-it-works" className="inline-flex h-11 items-center rounded-full border border-white/15 px-6 text-[14px] font-semibold tracking-[-0.02em] text-white/60 transition-colors hover:border-white/30 hover:text-white">
               How it works →
@@ -121,9 +119,9 @@ export function SpineFabricContent() {
         <div className="mx-auto max-w-[1000px] px-4">
           <div className="grid grid-cols-3 gap-6 text-center">
             {[
-              { value: "8-Stage", label: "Normalization pipeline" },
-              { value: "<100ms", label: "Normalization to UI" },
-              { value: "100%", label: "Schema-stable" },
+              { value: "Record", label: "Stays in the original tool" },
+              { value: "Evidence", label: "For this person and this task" },
+              { value: "Draft", label: "Not the record until a person decides" },
             ].map((s) => (
               <motion.div key={s.label} {...fade(0)} className="rounded-2xl border border-white/8 bg-white/[0.03] py-8">
                 <div className="text-3xl font-bold text-primary mb-1">{s.value}</div>
@@ -138,7 +136,7 @@ export function SpineFabricContent() {
         <div className="mx-auto max-w-[1100px]">
           <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center mb-12">
             <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">Core Functions</p>
-            <h2 className="section-heading">Four things Spine Fabric does <span className="text-primary">that nothing else does</span></h2>
+            <h2 className="section-heading">Four things that stay <span className="text-primary">in their place</span></h2>
           </motion.div>
           <div className="grid gap-5 sm:grid-cols-2">
             {coreFunctions.map(({ icon: Icon, title, body }, i) => (
@@ -157,8 +155,8 @@ export function SpineFabricContent() {
       <section className="arvio-section dark-section">
         <div className="mx-auto max-w-[1100px]">
           <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center mb-12">
-            <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">Spine Capabilities</p>
-            <h2 className="section-heading">Architectural <span className="text-primary">guarantees</span></h2>
+            <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">What stays separate</p>
+            <h2 className="section-heading">The work stays <span className="text-primary">understandable</span></h2>
           </motion.div>
           <div className="grid gap-5 sm:grid-cols-2">
             {capabilities.map((c, i) => (
@@ -187,8 +185,8 @@ export function SpineFabricContent() {
       <section className="arvio-section dark-section">
         <div className="mx-auto max-w-[1100px]">
           <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center mb-10">
-            <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">8-Stage Normalization</p>
-            <h2 className="section-heading">Raw data → <span className="text-primary">Spine truth</span></h2>
+            <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">The loop</p>
+            <h2 className="section-heading">From the tools you have to <span className="text-primary">a decision you can stand behind</span></h2>
           </motion.div>
           <motion.div
             {...fade(0.1)}
@@ -199,8 +197,8 @@ export function SpineFabricContent() {
                 <Layers className="w-5 h-5 text-primary" />
               </div>
               <div>
-                <h3 className="text-2xl font-bold text-white">Normalization Pipeline</h3>
-                <p className="text-white/45 text-sm">Every record follows the same governed path.</p>
+                <h3 className="text-2xl font-bold text-white">The same path every time</h3>
+                <p className="text-white/45 text-sm">Connect, keep each kind of information apart, then let a person decide.</p>
               </div>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -218,7 +216,7 @@ export function SpineFabricContent() {
           </motion.div>
           <motion.div {...fade(0.2)} className="mt-6 text-center">
             <p className="text-[13px] font-medium text-muted-foreground">
-              By stage 8, scattered data becomes <strong className="text-foreground">queryable canonical truth</strong> in under 100ms.
+              An accepted change is written back through the tool that owns the record. The workspace then shows the result.
             </p>
           </motion.div>
         </div>
@@ -229,10 +227,10 @@ export function SpineFabricContent() {
           <motion.div {...fade(0)}>
             <Database className="mx-auto mb-4 h-7 w-7 text-primary" />
             <h2 className="text-[32px] font-semibold tracking-[-0.05em] text-white">
-              Not a cache. <span className="text-primary">The system of record.</span>
+              Not a new home for the record. <span className="text-primary">The tools stay in charge.</span>
             </h2>
             <p className="mx-auto mt-4 text-[15px] font-medium leading-[1.6] text-white/40">
-              Your canonical truth survives vendor changes and API deprecations.
+              SpineWorkspace shows the work. It does not replace the record.
             </p>
             <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
               <Link href="/platform/how-it-works" className="inline-flex h-10 items-center rounded-full border border-white/15 px-5 text-[13px] font-semibold text-white/60 hover:border-white/30 hover:text-white transition-colors">

@@ -10,11 +10,11 @@ import { BreadcrumbJsonLd, SoftwareApplicationJsonLd } from "@/components/struct
 export const metadata: Metadata = {
   title: "Platform — The platform behind SpineWorkspace",
   description:
-    "Architecture for adaptive business-context workspaces: Spine Fabric, Runtime, Marketplace, and governed execution.",
+    "The tools keep the record. The workspace shows the work. Twin proposes only when asked. A person decides.",
   alternates: { canonical: "/platform" },
   openGraph: {
     title: "Platform | SpineWorkspace",
-    description: "The Spine Fabric. Connects every app. Governs every AI action. Nothing happens without your approval.",
+    description: "One connection to the tools you already use. The tools keep the record. A person decides.",
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "SpineWorkspace" }],
   },
 }

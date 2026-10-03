@@ -4,7 +4,7 @@ import { RedirectPage } from "@/components/redirect-page";
 export const metadata: Metadata = {
   title: "How it works | SpineWorkspace",
   description:
-    "Truth stays in the tools you already run. Context is gathered for this person and this task. Twin prepares a proposal. A person decides.",
+    "The tools keep the record. The workspace shows the work. Twin proposes only when asked. A person decides, and an accepted change goes back to the original tool.",
   alternates: { canonical: "/platform/how-it-works" },
 };
 

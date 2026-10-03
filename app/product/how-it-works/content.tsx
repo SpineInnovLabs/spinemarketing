@@ -40,7 +40,7 @@ const exceptionItems = [
 const evidenceItems = [
   { icon: GitMerge, color: "text-purple-400", title: "Chain-of-Thought Tracing", desc: "Step-by-step AI reasoning traced to Spine records." },
   { icon: Database, color: "text-cyan-400", title: "Dual Context Mapping", desc: "System impact alongside business impact, side by side." },
-  { icon: Zap, color: "text-emerald-400", title: "Source Attribution", desc: "Every insight links back to canonical Spine records." },
+  { icon: Zap, color: "text-emerald-400", title: "Source Attribution", desc: "Every claim points back to its source." },
 ];
 
 const intelligenceFeatures = [

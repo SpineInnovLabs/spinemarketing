@@ -54,7 +54,7 @@ export function getConnectorNavMarks(): ConnectorNavMark[] {
 
 /** Categories SpineWorkspace connects. Icons only — not product claims or counts. */
 export const INTEGRATION_KIND_MARKS: KindNavMark[] = [
-  { name: "MCP", icon: Cable },
+  { name: "Connections", icon: Cable },
   { name: "Plugins", icon: Puzzle },
   { name: "Tools", icon: Wrench },
   { name: "Skills", icon: Sparkles },
@@ -63,6 +63,6 @@ export const INTEGRATION_KIND_MARKS: KindNavMark[] = [
   { name: "Schedules", icon: CalendarClock },
   { name: "Tasks", icon: ListChecks },
   { name: "Product tools", icon: Boxes },
-  { name: "AI agents", icon: Bot },
-  { name: "AI hosts", icon: Server },
+  { name: "Assistants", icon: Bot },
+  { name: "Places you work", icon: Server },
 ].map((item) => ({ ...item, href: INTEGRATIONS_HREF }));

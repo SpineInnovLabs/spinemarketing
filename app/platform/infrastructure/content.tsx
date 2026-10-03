@@ -18,7 +18,7 @@ const firebaseCards = [
 ];
 
 const services = [
-  { icon: Database, name: "Spine Service", desc: "Core SSOT, entity resolution, schema governance." },
+  { icon: Database, name: "Spine Service", desc: "Core the record, entity resolution, schema governance." },
   { icon: Layers, name: "Context Service", desc: "Real-time view assembly and conflict detection." },
   { icon: Zap, name: "Twin Service", desc: "AI reasoning engine and signal detection." },
   { icon: Globe, name: "Approval Service", desc: "Governance enforcement and human-in-the-loop routing logic." },

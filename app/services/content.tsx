@@ -22,11 +22,11 @@ const services = [
     icon: Wrench,
     label: "Implementation",
     headline: "From signed to live in 14 days",
-    body: "We map your tools, configure connectors, and deliver a normalized Entity 360.",
+    body: "We connect the tools you already use and open one view of the customer. The tools keep the record.",
     bullets: [
-      "Connector setup and authentication",
-      "Schema mapping and field normalization",
-      "Deduplication and golden record config",
+      "Connect the apps and confirm who may use them",
+      "The record stays in the tool that owns it",
+      "The same customer is not shown as several people",
       "Workspace customization",
       "Team onboarding",
     ],
@@ -34,25 +34,25 @@ const services = [
   {
     icon: Settings2,
     label: "Managed Data Ops",
-    headline: "We run the Loader so you don't have to",
-    body: "Ongoing pipeline management — ingestion health, schema drift, entity quality.",
+    headline: "We keep the connection working",
+    body: "We watch the tools you connected, notice when one stops updating, and keep the record in the tool that owns it.",
     bullets: [
-      "Continuous ingestion monitoring",
-      "API change detection and re-mapping",
-      "Entity quality audits",
-      "Quarterly truth health reviews",
-      "Incident response for broken flows",
+      "Watch that each connection is still working",
+      "Notice when a tool changes",
+      "Check that the customer view still matches the record",
+      "A regular look at whether the record and the evidence still agree",
+      "Help when a connection breaks",
     ],
   },
   {
     icon: Plug,
     label: "Custom Connectors",
     headline: "If we don't have it, we build it",
-    body: "Legacy ERPs, internal tools, flat files — normalized through the same pipeline.",
+    body: "Older systems, internal tools, and files come through the same connection. They do not become a new home for the record.",
     bullets: [
-      "Scoping and feasibility assessment",
-      "Connector development and testing",
-      "Normalization rule authoring",
+      "A look at whether the tool can be connected",
+      "Build the connection and try it",
+      "Agree how the record and the evidence stay apart",
       "Documentation and handoff",
       "Optional maintenance retainer",
     ],
@@ -61,9 +61,9 @@ const services = [
     icon: Users,
     label: "Strategic Advisory",
     headline: "Revenue operations that run on truth",
-    body: "We design your Entity 360 architecture and Twin configuration.",
+    body: "We design the view this role needs, and how Twin prepares a proposal.",
     bullets: [
-      "Data strategy and SSOT design",
+      "Where the record stays, and what evidence this task needs",
       "RevOps and CS workflow design",
       "Governance configuration",
       "Twin training and calibration",
@@ -101,7 +101,7 @@ export function ServicesContent() {
             {...heroFade(0.38)}
             className="mx-auto mt-7 max-w-xl text-[17px] font-medium leading-[1.55] tracking-[-0.02em] text-white/50"
           >
-            Implementation, managed ops, custom connectors, and advisory — from the team that built Spine Fabric.
+            Implementation, managed ops, custom connectors, and advisory — from the team that built SpineWorkspace.
           </motion.p>
 
           <motion.div
@@ -242,7 +242,7 @@ export function ServicesContent() {
                   Implementation guides and playbooks
                 </p>
                 <p className="text-[13px] font-medium text-muted-foreground">
-                  Templates, connector docs, and Entity 360 setup guides.
+                  Templates, connector docs, and Customer view setup guides.
                 </p>
               </div>
             </div>

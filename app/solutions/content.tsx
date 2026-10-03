@@ -83,7 +83,7 @@ export function SolutionsContent() {
             Platform & entry surfaces
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-center text-[14px] text-[#444]">
-            Auth, onboarding, marketplace, and MCP are platform projections—not functional solution catalogue entries.
+            Sign-in, setup, and the catalogue of tools are not solution pages.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-3">
             {PLATFORM_SURFACES.map((surface) => (

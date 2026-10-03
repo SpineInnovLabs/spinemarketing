@@ -13,20 +13,20 @@ const items = [
   {
     tag: "SaaS Connectors",
     title: "OAuth connect in minutes. 60+ supported.",
-    description: "Salesforce, HubSpot, Stripe, Zendesk, Jira, Slack — connect once and Spine Fabric handles schema changes automatically.",
+    description: "Salesforce, HubSpot, Stripe, Zendesk, Jira, Slack — connect once and SpineWorkspace handles schema changes automatically.",
     icon: Cloud,
     color: "#3b82f6",
     features: [
       "One-click OAuth flow for major platforms",
       "Auto-refresh tokens with retry logic",
-      "Schema drift detection and auto-adaptation",
+      "A renamed field in the original tool does not create a new record",
       "Rate-limiting awareness with backoff queuing",
     ],
   },
   {
-    tag: "MCP Protocol",
+    tag: "Connected tools",
     title: "AI-native bidirectional data flow",
-    description: "Model Context Protocol enables AI systems to read and write through Spine Fabric with full governance controls.",
+    description: "the tools you already use enables AI systems to read and write through SpineWorkspace with full governance controls.",
     icon: GitBranch,
     color: "#8b5cf6",
     features: [
@@ -52,7 +52,7 @@ const items = [
   {
     tag: "File Drops",
     title: "CSV, JSON, XML — parsed and normalized",
-    description: "Bulk data imports through file drops. Format detection, validation, and merge into existing canonical records.",
+    description: "Bulk data imports through file drops. Format detection, validation, and merge into existing records the tools already keep.",
     icon: FileInput,
     color: "#fbbf24",
     features: [
@@ -65,7 +65,7 @@ const items = [
   {
     tag: "Governance",
     title: "Every connector governed by the same rules",
-    description: "Regardless of ingestion method, all data flows through the same normalization and governance pipeline.",
+    description: "Apps, files, and conversations come in through one connection. The record, the evidence, and the draft stay apart.",
     icon: Shield,
     color: "#ef4444",
     features: [
@@ -81,8 +81,8 @@ export function IntegrationsStickyScroll() {
   return (
     <StickyScroll
       tag="Connector Deep Dive"
-      heading={<>Four paths in. <span className="text-primary">One canonical format out.</span></>}
-      subheading="Scroll to explore each integration method and how data flows into Spine Fabric."
+      heading={<>Four paths in. <span className="text-primary">One one shared shape out.</span></>}
+      subheading="Scroll to explore each integration method and how data flows into SpineWorkspace."
       items={items}
     />
   );

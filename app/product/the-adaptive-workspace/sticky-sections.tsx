@@ -14,7 +14,7 @@ import {
 } from "lucide-react";
 
 const items = [
-  { icon: LayoutDashboard, label: "Entity 360", description: "Complete account view with cross-system timeline.", color: "#2dd4bf" },
+  { icon: LayoutDashboard, label: "Customer view", description: "Complete account view with cross-system timeline.", color: "#2dd4bf" },
   { icon: BarChart3, label: "Portfolio Health", description: "All accounts at a glance — health, risk, expansion.", color: "#3b82f6" },
   { icon: Bell, label: "Morning Brief", description: "Overnight changes ranked by business impact.", color: "#8b5cf6" },
   { icon: Mail, label: "Unified Inbox", description: "Email, Slack, calendar — one communication stream.", color: "#06b6d4" },

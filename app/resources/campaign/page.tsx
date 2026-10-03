@@ -6,20 +6,20 @@ import { CampaignGalleryContent } from "./content"
 export const metadata: Metadata = {
   title: "Campaign Gallery — Architecture & Creatives | SpineWorkspace",
   description:
-    "Architecture blueprints showing Spine Fabric at the center of every tool, plus 36 campaign designs across LinkedIn and WhatsApp — for Account Success, Business Ops, and Personal Ops.",
+    "Architecture blueprints showing SpineWorkspace at the center of every tool, plus 36 campaign designs across LinkedIn and WhatsApp — for Account Success, Business Ops, and Personal Ops.",
   alternates: { canonical: "/resources/campaign" },
   openGraph: {
     title: "Campaign Gallery — Architecture & Creatives | SpineWorkspace",
     description:
-      "The Spine Fabric connects every tool into one source of truth. Architecture blueprints and 36 campaign designs.",
+      "The SpineWorkspace connects every tool into the record the tools already keep. Architecture blueprints and 36 campaign designs.",
     images: [
-      { url: "/images/campaign/Post-Spine.jpg", width: 1080, height: 1080, alt: "SpineWorkspace — The Spine Fabric Architecture" },
+      { url: "/images/campaign/Post-Spine.jpg", width: 1080, height: 1080, alt: "SpineWorkspace — The SpineWorkspace Architecture" },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Campaign Gallery — Architecture & Creatives | SpineWorkspace",
-    description: "The Spine Fabric connects every tool into one source of truth.",
+    description: "The SpineWorkspace connects every tool into the record the tools already keep.",
     images: ["/images/campaign/Post-Spine.jpg"],
   },
 }

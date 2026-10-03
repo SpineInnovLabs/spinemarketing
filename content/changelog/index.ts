@@ -7,13 +7,13 @@ export type ChangelogEntry = {
 export const entries: ChangelogEntry[] = [
   {
     date: "September 2026",
-    title: "Terminology aligned with Spine Fabric architecture",
+    title: "The site now speaks in product language",
     items: [
-      "“Adaptive Spine” renamed to “Spine Fabric” across the site, matching docs.spineworkspace.com",
-      "New Spine Fabric page at /platform/spine-fabric (old URL redirects automatically)",
-      "Positioning updated to “the contextual continuity layer for human + AI work”",
-      "The Twin page now introduces the Spine Agent Network — one intelligence, not a menu of bots",
-      "New blog post: “Spine Fabric: the contextual continuity layer for human and AI work”",
+      "The public story is the record, the evidence, the draft, and the person",
+      "The tools keep the record. The workspace shows the work.",
+      "Twin opens only when asked, and a person allows, changes, or stops it",
+      "An accepted change is written back through the tool that owns the record",
+      "Blog: “The tools keep the record. The workspace shows the work.”",
     ],
   },
   {

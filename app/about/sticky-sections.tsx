@@ -19,10 +19,10 @@ const journeyItems = [
   {
     tag: "The integration years",
     title: "13 years connecting enterprise systems.",
-    description: "APIs, middleware, data pipelines. The infrastructure worked — but the humans making decisions still couldn't see the full picture.",
+    description: "The tools were connected. The people making decisions still could not see the whole story.",
     icon: Wrench,
     color: "#3b82f6",
-    features: ["Enterprise integration architecture", "API-led connectivity", "Cross-system data flows"],
+    features: ["The tools stayed themselves", "The record stayed in those tools", "The person still had to rebuild the story"],
   },
   {
     tag: "The red account",
@@ -51,12 +51,12 @@ const journeyItems = [
 ];
 
 const platformNodes = [
-  { label: "Spine Fabric", icon: Database, color: "#0176D3", description: "Canonical data fabric layer connecting every source" },
-  { label: "Workspace", icon: Layers, color: "#3b82f6", description: "Your daily operating surface" },
-  { label: "Twin", icon: Brain, color: "#8b5cf6", description: "AI-powered pattern detection" },
-  { label: "The Twin", icon: Eye, color: "#06b6d4", description: "Cognitive overlay for recommendations" },
-  { label: "Govern Gate", icon: ShieldCheck, color: "#f59e0b", description: "Human-in-the-loop approval" },
-  { label: "Entity 360", icon: Users, color: "#ef4444", description: "Complete view of every entity" },
+  { label: "One connection", icon: Database, color: "#0176D3", description: "The tools you already use" },
+  { label: "Workspace", icon: Layers, color: "#3b82f6", description: "The view this role needs" },
+  { label: "Twin", icon: Brain, color: "#8b5cf6", description: "A proposal, only when asked" },
+  { label: "The evidence", icon: Eye, color: "#06b6d4", description: "For this person and this task" },
+  { label: "Review", icon: ShieldCheck, color: "#f59e0b", description: "A person decides" },
+  { label: "The record", icon: Users, color: "#ef4444", description: "Stays in the original tool" },
 ];
 
 export function AboutJourneyScroll() {

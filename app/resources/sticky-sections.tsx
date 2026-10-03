@@ -19,7 +19,7 @@ const resourceItems = [
   },
   {
     tag: "Platform guides",
-    title: "Understand Spine Fabric, Workspace, and Twin.",
+    title: "Understand SpineWorkspace, Workspace, and Twin.",
     description: "Deep-dive guides on how data flows, how intelligence surfaces, and how governance works.",
     icon: FileText,
     color: "#3b82f6",

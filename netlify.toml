@@ -2,6 +2,10 @@
   command = "npm run build"
   publish = "out"
 
+[build.environment]
+  # Match the GitHub Actions build. An unpinned Netlify Node failed the last git deploy.
+  NODE_VERSION = "22"
+
 # Existing static pages would otherwise win over these moves.
 [[redirects]]
   from = "/docs"

@@ -49,7 +49,7 @@ const featuredResources = [
 const deepDives = [
   {
     icon: Layers,
-    title: "The Spine Fabric",
+    title: "The SpineWorkspace",
     desc: "How the data architecture unifies fragmented SaaS.",
     href: "/platform/spine-fabric",
   },
@@ -62,7 +62,7 @@ const deepDives = [
   {
     icon: Users,
     title: "The Adaptive Workspace",
-    desc: "Nine role-based views from one canonical record.",
+    desc: "Nine role-based views from one record.",
     href: "/product/the-adaptive-workspace",
   },
   {

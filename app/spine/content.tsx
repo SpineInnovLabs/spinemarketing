@@ -18,7 +18,7 @@ const spineCapabilities = [
   {
     icon: Database,
     title: "Structured data flows",
-    desc: "CRM, billing, support, and usage data flowing into Spine Fabric.",
+    desc: "CRM, billing, support, and usage data flowing into SpineWorkspace.",
   },
   {
     icon: MessageSquare,
@@ -40,11 +40,11 @@ const spineCapabilities = [
 const hitlSteps = [
   {
     label: "Signal detected",
-    desc: "Cross-system pattern surfaces from Spine Fabric.",
+    desc: "Cross-system pattern surfaces from SpineWorkspace.",
   },
   {
     label: "AI reasons with evidence",
-    desc: "Full-context analysis with confidence and alternatives.",
+    desc: "The record, the evidence, and the other options.",
   },
   {
     label: "Surfaced in the Twin",
@@ -52,7 +52,7 @@ const hitlSteps = [
   },
   {
     label: "You approve",
-    desc: "Nothing executes until you approve. Govern Gate is structural.",
+    desc: "Nothing executes until you approve. Review is structural.",
   },
   {
     label: "Action executes in the Workspace",
@@ -78,8 +78,8 @@ const differentiators = [
   },
   {
     icon: CheckSquare,
-    title: "HITL by architecture",
-    desc: "Govern Gate cannot be bypassed by any workflow or API.",
+    title: "A person decides",
+    desc: "Review cannot be bypassed by any workflow or API.",
   },
   {
     icon: History,
@@ -88,8 +88,8 @@ const differentiators = [
   },
   {
     icon: Zap,
-    title: "Live entity state",
-    desc: "Real-time view of every entity across all apps.",
+    title: "The view for this role",
+    desc: "Sales, operations, and leadership see the same work in the view they need.",
   },
 ];
 
@@ -130,7 +130,7 @@ export function SpineContent() {
         </div>
       </section>
 
-      {/* What Spine Fabric does */}
+      {/* What SpineWorkspace does */}
       <section className="arvio-section dark-section">
         <div className="mx-auto max-w-[1100px]">
           <motion.div
@@ -176,7 +176,7 @@ export function SpineContent() {
         </div>
       </section>
 
-      {/* HITL flow */}
+      {/* a person flow */}
       <section
         className="arvio-section dark-section bg-white"
       >
@@ -193,7 +193,7 @@ export function SpineContent() {
               <span className="text-primary">not a setting.</span>
             </h2>
             <p className="mt-4 text-[17px] font-medium leading-[1.5] text-white/55">
-              The Govern Gate is built into the execution path. Nothing bypasses it.
+              The Review is built into the execution path. Nothing bypasses it.
             </p>
           </motion.div>
           <div className="relative mx-auto mt-16 max-w-3xl">
@@ -239,7 +239,7 @@ export function SpineContent() {
             className="mx-auto max-w-2xl text-center"
           >
             <h2 className="section-heading">
-              What makes Spine Fabric{" "}
+              What makes SpineWorkspace{" "}
               <span className="text-primary">different</span>
             </h2>
           </motion.div>

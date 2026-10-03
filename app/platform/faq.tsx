@@ -6,7 +6,7 @@ export function PlatformFAQ() {
   return (
     <FAQSection
       heading="Platform questions"
-      subheading="Understanding the Spine Fabric Architecture and how SpineWorkspace works."
+      subheading="The tools keep the record. The workspace shows the work. A person decides."
       items={defaultFAQs}
     />
   );

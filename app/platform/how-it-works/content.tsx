@@ -1,26 +1,56 @@
+import Link from "next/link";
 import { PageHero } from "@/components/marketing/page-hero";
 import { Section, SectionHeader } from "@/components/marketing/section";
 
-const steps = [
+const arrivals = [
+  {
+    title: "The record",
+    body: "Customers, tickets, billing, contracts, and approvals stay in the tools that already own them. SpineWorkspace reads them. It does not become a second record.",
+  },
+  {
+    title: "The evidence",
+    body: "Email, notes, files, and conversations are gathered for this person and this task. They explain the work. They do not replace the record.",
+  },
+  {
+    title: "The draft",
+    body: "What Twin suggests stays a draft until a person accepts, edits, or rejects it. A draft is not the record.",
+  },
+  {
+    title: "The person",
+    body: "Role, workspace, and permission decide what someone may see and what they may approve. Availability is not permission.",
+  },
+];
+
+const loop = [
   {
     n: "01",
-    title: "Truth stays in the tools you already run.",
-    body: "CRM, tickets, billing, contracts, and approvals remain the system of record. SpineWorkspace reads what this person is allowed to see. It does not become the record.",
+    title: "Connect the tools you already run.",
+    body: "One connection reaches the systems, files, and conversations the business already uses. People do not move their work into a new home for the record.",
   },
   {
     n: "02",
-    title: "Context is gathered only for this person and this task.",
-    body: "Email, notes, escalations, usage, and recent decisions are assembled for the work in front of them. Context is evidence for this task. It is not a second system of record.",
+    title: "Keep each kind of information in its place.",
+    body: "The confirmed record, the evidence for this task, the draft, and the person’s permission stay distinct. Nothing is blended into one pile.",
   },
   {
     n: "03",
-    title: "Twin prepares a proposal, with each claim linked to its source.",
-    body: "The proposal is built from that truth and that context. Every claim points back to the system it came from. The proposal is not the system of record.",
+    title: "Show the view this role needs.",
+    body: "The same work opens differently for sales, operations, and leadership. Each person sees the record, the evidence, and the decision that is waiting.",
   },
   {
     n: "04",
-    title: "A person accepts, edits, or rejects.",
-    body: "An authorized person decides. If they accept a change, it is written back through the source system. That system stays authoritative.",
+    title: "Ask Twin when you want a next step.",
+    body: "Twin looks at the record, the evidence, and earlier decisions, then prepares a proposal. Every claim points back to where it came from. Twin does not write the record.",
+  },
+  {
+    n: "05",
+    title: "A person allows it, changes it, or stops it.",
+    body: "Consequential work waits. An authorized person accepts, edits, or rejects the proposal.",
+  },
+  {
+    n: "06",
+    title: "The original tool is updated, then the workspace catches up.",
+    body: "An accepted change is written back through the tool that owns the record. The workspace shows that result, so the next person does not rebuild the story.",
   },
 ];
 
@@ -30,8 +60,8 @@ export function PlatformHowItWorksContent() {
       <PageHero
         badge="How it works"
         tone="ice"
-        headline={"Truth stays in your tools.\nContext is assembled for the task."}
-        subhead="Twin prepares a proposal from that truth and context. A person accepts, edits, or rejects it."
+        headline={"The tools keep the record.\nThe workspace shows the work."}
+        subhead="People see the confirmed record and the evidence for this task. Twin proposes only when asked. A person decides. The original tool stays in charge."
         principle="SpineWorkspace does not replace truth. Source systems stay authoritative."
         primaryCta={{ label: "See a workflow", href: "/#renewal-workflow" }}
         secondaryCta={{ label: "Book a tailored demo", href: "/contact?intent=demo" }}
@@ -39,19 +69,45 @@ export function PlatformHowItWorksContent() {
       <Section>
         <SectionHeader
           align="left"
-          label="The sequence"
-          headline="Four steps. The record does not move."
-          body="SpineWorkspace brings the confirmed record and the evidence for this task together, then waits for a person."
+          label="What comes in"
+          headline="Four things arrive. They are not the same thing."
+          body="A customer status, a last email, a suggested follow-up, and a person’s permission answer different questions. SpineWorkspace keeps them apart."
+        />
+        <ul className="grid gap-4 md:grid-cols-2">
+          {arrivals.map((item) => (
+            <li key={item.title} className="rounded-2xl border border-[#D9E4EF] bg-[#F3F6F9] p-6">
+              <h3 className="text-[20px] font-semibold leading-[1.3] tracking-[-0.02em] text-[#032D60]">{item.title}</h3>
+              <p className="mt-3 text-[15px] leading-[1.65] text-[#33465B]">{item.body}</p>
+            </li>
+          ))}
+        </ul>
+      </Section>
+      <Section variant="muted">
+        <SectionHeader
+          align="left"
+          label="The loop"
+          headline="From the tools you have to a decision you can stand behind."
+          body="The workspace is where people review the work. The tools they already run remain the record."
         />
         <ol className="grid gap-4 md:grid-cols-2">
-          {steps.map((step) => (
-            <li key={step.n} className="rounded-2xl border border-[#D9E4EF] bg-[#F3F6F9] p-6">
+          {loop.map((step) => (
+            <li key={step.n} className="rounded-2xl border border-[#D9E4EF] bg-white p-6">
               <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[#0176D3]">{step.n}</p>
               <h3 className="mt-3 text-[20px] font-semibold leading-[1.3] tracking-[-0.02em] text-[#032D60]">{step.title}</h3>
               <p className="mt-3 text-[15px] leading-[1.65] text-[#33465B]">{step.body}</p>
             </li>
           ))}
         </ol>
+        <p className="mt-8 text-[15px] leading-[1.6] text-[#33465B]">
+          <Link href="/governance" className="font-semibold text-[#0176D3] hover:underline">
+            Governance
+          </Link>{" "}
+          is who may decide.{" "}
+          <Link href="/twin" className="font-semibold text-[#0176D3] hover:underline">
+            Twin
+          </Link>{" "}
+          is who prepares the proposal.
+        </p>
       </Section>
     </>
   );

@@ -165,12 +165,12 @@ const matchStages = [
     icon: Layers,
     color: "text-blue-400",
     title: "Cross-Tool Unification",
-    desc: "One canonical entity across every connected tool.",
+    desc: "One view of the customer, across the tools you already use.",
   },
 ];
 
 const comparisons = [
-  { before: "Same customer, 6 different records", after: "One canonical entity" },
+  { before: "Same customer, 6 different records", after: "One view of the customer" },
   { before: "Manual spreadsheet dedup", after: "Automatic confidence-scored matching" },
   { before: "Duplicates silently corrupt reports", after: "Every merge human-approved" },
   { before: "No idea which record is truth", after: "0–100 confidence on every match" },
@@ -185,7 +185,7 @@ const useCases = [
   {
     num: "02",
     title: "Duplicate detection at ingest",
-    desc: "New records scored against existing entities before entering Spine Fabric.",
+    desc: "New records scored against existing entities before entering SpineWorkspace.",
   },
   {
     num: "03",
@@ -195,7 +195,7 @@ const useCases = [
   {
     num: "04",
     title: "Canonical entity assembly",
-    desc: "Approved matches merge into one Entity 360 view across every tool.",
+    desc: "Approved matches merge into one customer view across every tool.",
   },
 ];
 
@@ -323,7 +323,7 @@ export function AccountSuccessContent() {
               <span className="text-white/40">duplicates.</span>
             </h2>
             <p className="mt-4 text-[17px] font-semibold leading-[1.5] text-primary">
-              Resolution shows you canonical truth.
+              Resolution shows you the record.
             </p>
           </motion.div>
 
@@ -455,7 +455,7 @@ export function AccountSuccessContent() {
               <span className="text-primary">Resolve it.</span>
             </h2>
             <p className="mt-6 text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">
-              Confidence-scored matching. Human-approved merges. One canonical truth.
+              Confidence-scored matching. Human-approved merges. One the record.
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-2.5 sm:flex-row">
               <Button

@@ -11,7 +11,7 @@ import {
 
 const items = [
   {
-    tag: "Govern Gate",
+    tag: "Review",
     title: "Non-bypassable human approval",
     description: "Every AI-proposed action sits in a governed approval queue. No shortcut to execution. No auto-approve option.",
     icon: ShieldCheck,

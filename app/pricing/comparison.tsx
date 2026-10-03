@@ -8,11 +8,11 @@ const planFeatures = [
   {
     category: "Core Platform",
     features: [
-      { name: "Spine Fabric data unification", starter: true, growth: true, command: true },
-      { name: "OAuth connectors", starter: "5", growth: "15", command: "Unlimited" },
-      { name: "Entity 360 views", starter: true, growth: true, command: true },
-      { name: "Truth + Context data flows", starter: true, growth: true, command: true },
-      { name: "AI Session data flow", starter: false, growth: true, command: true },
+      { name: "One connection to the tools you already use", starter: true, growth: true, command: true },
+      { name: "Connected apps", starter: "5", growth: "15", command: "Unlimited" },
+      { name: "The view for this role", starter: true, growth: true, command: true },
+      { name: "The record and the evidence stay apart", starter: true, growth: true, command: true },
+      { name: "Earlier conversations stay with that sitting", starter: false, growth: true, command: true },
     ],
   },
   {
@@ -27,11 +27,11 @@ const planFeatures = [
   {
     category: "Twin",
     features: [
-      { name: "Twin Chat", starter: false, growth: true, command: true },
-      { name: "Morning Brief", starter: false, growth: true, command: true },
-      { name: "Action proposals with evidence", starter: false, growth: true, command: true },
-      { name: "Session summaries linked to entities", starter: false, growth: true, command: true },
-      { name: "Confidence scores", starter: false, growth: true, command: true },
+      { name: "Ask Twin", starter: false, growth: true, command: true },
+      { name: "The view for this morning", starter: false, growth: true, command: true },
+      { name: "A proposal that points back to its source", starter: false, growth: true, command: true },
+      { name: "A summary of what a person accepted", starter: false, growth: true, command: true },
+      { name: "Every claim points back to its source", starter: false, growth: true, command: true },
     ],
   },
   {
@@ -39,7 +39,7 @@ const planFeatures = [
     features: [
       { name: "Basic risk alerts", starter: true, growth: true, command: true },
       { name: "Governance", starter: false, growth: true, command: true },
-      { name: "Govern Gate (immutable log)", starter: false, growth: false, command: true },
+      { name: "A record of what a person decided", starter: false, growth: false, command: true },
       { name: "SSO & RBAC", starter: false, growth: false, command: true },
       { name: "Enterprise audit trail", starter: false, growth: false, command: true },
     ],

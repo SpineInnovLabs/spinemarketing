@@ -9,13 +9,13 @@ import { SpineStickyScroll } from "./sticky-sections"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
-  title: "Spine Fabric | SpineWorkspace Platform",
+  title: "One connection | SpineWorkspace",
   description:
-    "Spine Fabric — the shared contextual operating layer unifying entities, events, evidence, and decisions from every connected tool.",
+    "The tools keep the record. SpineWorkspace shows the work. Twin proposes only when asked. A person decides.",
   alternates: { canonical: "/platform/spine-fabric" },
   openGraph: {
-    title: "Spine Fabric | SpineWorkspace Platform",
-    description: "Spine Fabric — the shared contextual operating layer unifying entities, events, evidence, and decisions from every connected tool.",
+    title: "One connection | SpineWorkspace",
+    description: "The tools keep the record. SpineWorkspace shows the work. Twin proposes only when asked. A person decides.",
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "SpineWorkspace" }],
   },
 }
@@ -26,7 +26,7 @@ export default function SpineFabricPage() {
       <BreadcrumbJsonLd items={[
         { name: "Home", url: "https://spineinnovlabs.com" },
         { name: "Platform", url: "https://spineinnovlabs.com/platform" },
-        { name: "Spine Fabric", url: "https://spineinnovlabs.com/platform/spine-fabric" },
+        { name: "One connection", url: "https://spineinnovlabs.com/platform/spine-fabric" },
       ]} />
       <Header />
       <main id="main">
@@ -34,9 +34,9 @@ export default function SpineFabricPage() {
         <SpineStickyScroll />
         <IntegrationShowcase
           tag="Works With Everything"
-          heading={<>Your tools, <span className="text-primary">unified.</span></>}
+          heading={<>Your tools, <span className="text-primary">still in charge.</span></>}
         />
-        <TestimonialsSection heading="Why teams trust Spine Fabric." />
+        <TestimonialsSection heading="Why teams keep the record in their tools." />
         <FinalCTA />
       </main>
       <Footer />

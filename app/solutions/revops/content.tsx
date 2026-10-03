@@ -6,7 +6,7 @@ export function RevOpsContent() {
   return (
     <SignalStoryLayout
       category="RevOps & Business Operations"
-      headline="One source of truth. No more spreadsheet wars."
+      headline="One the record the tools already keep. No more spreadsheet wars."
       subheadline="Pipeline, bookings, billings, and churn — all connected and traceable. Stop reconciling five systems and start operating from one."
       ctaLabel="See Business Ops →"
       ctaHref="/business-ops"

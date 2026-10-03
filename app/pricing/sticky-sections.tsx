@@ -19,10 +19,10 @@ const valueItems = [
   {
     tag: "Start simple",
     title: "See connected context in one workspace.",
-    description: "Connect the apps in scope, open the Workspace, and review those customers as an Entity 360.",
+    description: "Connect the apps in scope, open the Workspace, and review those customers in one view of the customer.",
     icon: Zap,
     color: "#0176D3",
-    features: ["Up to 5 connectors", "Entity 360 views", "Workspace access"],
+    features: ["Up to 5 connectors", "Customer views", "Workspace access"],
   },
   {
     tag: "Add intelligence",
@@ -51,11 +51,11 @@ const valueItems = [
 ];
 
 const includedNodes = [
-  { label: "Spine Fabric", icon: Database, color: "#0176D3", description: "Canonical data fabric layer" },
-  { label: "Workspace", icon: Layers, color: "#3b82f6", description: "Daily operating surface" },
-  { label: "Entity 360", icon: Eye, color: "#06b6d4", description: "Unified entity views" },
-  { label: "The Twin", icon: Brain, color: "#8b5cf6", description: "AI-powered insights" },
-  { label: "Govern Gate", icon: ShieldCheck, color: "#f59e0b", description: "Human-in-the-loop approval" },
+  { label: "One connection", icon: Database, color: "#0176D3", description: "The tools you already use" },
+  { label: "Workspace", icon: Layers, color: "#3b82f6", description: "The view this role needs" },
+  { label: "Customer view", icon: Eye, color: "#06b6d4", description: "The customer, in one view" },
+  { label: "The Twin", icon: Brain, color: "#8b5cf6", description: "A proposal, only when asked" },
+  { label: "Review", icon: ShieldCheck, color: "#f59e0b", description: "A person decides" },
   { label: "Analytics", icon: BarChart3, color: "#ef4444", description: "Cross-system reporting" },
 ];
 

@@ -112,7 +112,7 @@ export function TwinReviewPanel() {
       <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[#526479]">Spine Twin</p>
       <h2 className="mt-2 text-[18px] font-semibold text-[#032D60]">Truth and context</h2>
       <ul className="mt-3 space-y-2 text-[14px] text-[#33465B]">
-        <li>Truth: account status from the system of record</li>
+        <li>Truth: account status from the tools that keep it</li>
         <li>Context: the evidence Coworker assembled for this person and this step</li>
         <li>Proposal: a follow-up, waiting for a person</li>
       </ul>
@@ -135,7 +135,7 @@ export function SharedWorkPanel() {
       </div>
       <div className="relative z-20 -mt-5 mr-4 rounded-2xl border border-[#D9E4EF] bg-[#EAF5FC] p-5 shadow-[0_18px_40px_rgba(1,118,211,0.16)] sm:mr-8">
         <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[#0176D3]">Twin</p>
-        <p className="mt-2 text-[14px] leading-[1.55] text-[#032D60]">Prepares a proposal from the truth and context this person may see. The proposal is not the system of record.</p>
+        <p className="mt-2 text-[14px] leading-[1.55] text-[#032D60]">Prepares a proposal from the record and the evidence this person may see. The proposal is not the record.</p>
       </div>
       <div className="relative z-10 -mt-3 ml-8 rounded-2xl border border-[#D9E4EF] bg-[#F3F6F9] p-5 shadow-[0_8px_24px_rgba(3,45,96,0.05)] sm:ml-14">
         <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[#526479]">Shared Work</p>
@@ -157,11 +157,11 @@ export function RecordsPanel() {
         </div>
         <div>
           <dt className="font-semibold text-[#032D60]">Context</dt>
-          <dd className="text-[#33465B]">The note assembled for this task. Not a new system of record.</dd>
+          <dd className="text-[#33465B]">The note assembled for this task. Not a new home for the record.</dd>
         </div>
         <div>
           <dt className="font-semibold text-[#032D60]">Evidence</dt>
-          <dd className="text-[#33465B]">Linked, not copied into a new system of record.</dd>
+          <dd className="text-[#33465B]">Linked, not copied into a new home for the record.</dd>
         </div>
         <div>
           <dt className="font-semibold text-[#032D60]">Provenance</dt>
@@ -205,7 +205,7 @@ export function GovernancePanel() {
       <ul className="mt-4 space-y-2 text-[14px] text-[#33465B]">
         <li className="rounded-lg bg-[#F3F6F9] px-3 py-2"><span className="font-semibold text-[#032D60]">Personal memory</span> stays with the person</li>
         <li className="rounded-lg bg-[#F3F6F9] px-3 py-2"><span className="font-semibold text-[#032D60]">Session memory</span> stays with that sitting</li>
-        <li className="rounded-lg bg-[#EAF5FC] px-3 py-2"><span className="font-semibold text-[#032D60]">Organizational memory</span> is shared context. It is not the system of record.</li>
+        <li className="rounded-lg bg-[#EAF5FC] px-3 py-2"><span className="font-semibold text-[#032D60]">Organizational memory</span> is shared context. It is not the record.</li>
       </ul>
     </div>
   );
@@ -242,7 +242,7 @@ export function CheckpointPanel() {
       <ul className="mt-4 space-y-2 text-[14px] text-[#33465B]">
         <li>Personal memory stays with the person</li>
         <li>Session memory stays with that sitting</li>
-        <li>Organizational memory is shared context, not the system of record</li>
+        <li>Organizational memory is shared context, not the record</li>
       </ul>
       <p className="mt-4 text-[13px] font-semibold text-[#032D60]">Checkpoint: Awaiting review</p>
     </div>

@@ -142,10 +142,10 @@ export function IndustriesShowcase({
         <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center mb-14">
           <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">{tag}</p>
           <h2 className="section-heading">
-            {heading || <>Every industry. <span className="text-primary">One Spine Fabric.</span></>}
+            {heading || <>Every industry. <span className="text-primary">One SpineWorkspace.</span></>}
           </h2>
           <p className="mt-5 text-[16px] font-medium leading-[1.55] text-white/50 max-w-xl mx-auto">
-            The same canonical data architecture, shaped for your industry&apos;s reality.
+            The same story, shaped for your industry.
           </p>
         </motion.div>
 

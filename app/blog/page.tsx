@@ -34,7 +34,7 @@ export default function BlogPage() {
               Thinking on business context, human–AI work, and adaptive workspaces.
             </p>
             <div className="mt-6 flex flex-wrap gap-2">
-              {["Product", "Business context", "Human–AI work", "Governance and trust", "Host-connected environments", "Company updates"].map((cat) => (
+              {["Product", "Business context", "Human–AI work", "Governance and trust", "The tools you already use", "Company updates"].map((cat) => (
                 <span key={cat} className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-[12px] font-semibold text-white/40">
                   {cat}
                 </span>

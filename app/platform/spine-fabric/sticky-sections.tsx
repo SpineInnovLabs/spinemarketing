@@ -11,68 +11,68 @@ import {
 
 const items = [
   {
-    tag: "Entity Resolution",
-    title: "One canonical record per entity",
-    description: "Duplicate contacts, orphaned accounts, and conflicting fields resolved automatically. Every entity links to one versioned truth.",
+    tag: "The record",
+    title: "The tools keep the record",
+    description: "Customers, tickets, billing, contracts, and approvals stay in the tools that already own them. SpineWorkspace does not create a new home for the record.",
     icon: Database,
     color: "#2dd4bf",
     features: [
-      "Cross-system dedup via deterministic + fuzzy matching",
-      "Conflict resolution with source priority rules",
-      "Merge audit trail — see what was combined and why",
-      "Manual override with version rollback",
+      "The original tool stays in charge",
+      "A copy in the workspace is not a new record",
+      "You can see what was combined, and why",
+      "A person can undo a mistaken change",
     ],
   },
   {
-    tag: "Schema Normalization",
-    title: "Upstream changes absorbed in the mapping layer",
-    description: "When Salesforce renames a field or HubSpot adds a property, Spine Fabric adapts. Your downstream never breaks.",
+    tag: "The evidence",
+    title: "Evidence is for this person and this task",
+    description: "Email, notes, files, and conversations stay evidence. They help this person with this task. They do not become the record.",
     icon: Layers,
     color: "#8b5cf6",
     features: [
-      "Auto-detect schema drift on connected tools",
-      "Mapping layer absorbs field renames and type changes",
-      "Zero downtime during upstream API version upgrades",
-      "Schema version history with diff view",
+      "Only what this person may see",
+      "Tied to this task, not to every task",
+      "Every claim points back to its source",
+      "The note is not written into the record",
     ],
   },
   {
-    tag: "Vendor Neutrality",
-    title: "Survive CRM migrations without data loss",
-    description: "Switch from Salesforce to HubSpot — or use both. Spine Fabric is the truth layer. Your tools are just connectors.",
+    tag: "The tools",
+    title: "Each tool stays itself",
+    description: "Use Salesforce, the desk, and the files you already have. They do not have to talk to each other directly.",
     icon: RefreshCw,
     color: "#fbbf24",
     features: [
-      "No vendor lock-in — data lives in Spine Fabric",
-      "Parallel-run migrations with data comparison",
-      "Connector swap without downstream disruption",
-      "Full data export in standard formats anytime",
+      "No new home for the record",
+      "The tools you already run stay in place",
+      "Swap a tool without rebuilding the story",
+      "Take your information with you when you leave",
     ],
   },
   {
-    tag: "Governance Layer",
-    title: "Every mutation audited. Every read traced.",
-    description: "SOC 2 aligned practices — no certification claimed. AES-256 encryption. Role-based access with department-level isolation.",
+    tag: "The person",
+    title: "A person allows it, changes it, or stops it",
+    description: "Twin can prepare a draft. Availability is not permission. A person with the right role decides.",
     icon: Shield,
     color: "#ef4444",
     features: [
-      "Immutable append-only audit log",
-      "Role-based access control per entity type",
-      "Department isolation with contextual firewalling",
-      "Data residency controls per region",
+      "What was decided stays on the record of the decision",
+      "The role decides what someone may see",
+      "A team sees its own work",
+      "No certification is claimed on this site",
     ],
   },
   {
-    tag: "Protocol Support",
-    title: "SaaS, MCP, Webhooks — all normalized",
-    description: "Three ingestion paths converge into one canonical format. No matter where data enters, it's structured the same way.",
+    tag: "One connection",
+    title: "The tools, files, and conversations you already use",
+    description: "One connection brings them into the workspace. The record, the evidence, the draft, and the person stay apart.",
     icon: GitBranch,
     color: "#3b82f6",
     features: [
-      "OAuth-based SaaS connectors with auto-refresh",
-      "Model Context Protocol for AI-native integration",
-      "Webhook ingestion with schema auto-detection",
-      "File drops with format detection and parsing",
+      "The apps your team already opens",
+      "The files and conversations already in use",
+      "Updates when something changes",
+      "Nothing is assumed that is not connected",
     ],
   },
 ];
@@ -80,9 +80,9 @@ const items = [
 export function SpineStickyScroll() {
   return (
     <StickyScroll
-      tag="Architecture Deep Dive"
-      heading={<>Five pillars of the <span className="text-primary">Spine Fabric.</span></>}
-      subheading="Scroll to explore how Spine Fabric maintains one truth across all your connected tools."
+      tag="How the connection works"
+      heading={<>Five things that stay <span className="text-primary">in their place.</span></>}
+      subheading="The record, the evidence, the tools, the person, and one connection between them."
       items={items}
     />
   );

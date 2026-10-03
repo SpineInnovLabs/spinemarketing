@@ -38,7 +38,7 @@ const ASIDES: Record<string, Aside> = {
       { term: "Stays in place", detail: "SpineWorkspace does not replace the tools already in the stack." },
     ],
   },
-  "Truth and context first. Capability second.": {
+  "The record and the evidence first. Then a proposal.": {
     kicker: "Before a response",
     title: "What the Twin uses",
     rows: [
@@ -52,7 +52,7 @@ const ASIDES: Record<string, Aside> = {
     title: "Twin",
     rows: [
       { term: "One counterpart", detail: "Twin is the user-facing AI counterpart." },
-      { term: "Capability", detail: "It uses the capability the task needs." },
+      { term: "What is already open", detail: "Twin uses the tools already open for this task." },
       { term: "Not in the product", detail: "No second chat product and no model picker." },
     ],
   },
@@ -72,12 +72,20 @@ const ASIDES: Record<string, Aside> = {
       { term: "Stays with it", detail: "The goal, the evidence, and the status." },
     ],
   },
-  "What a Host Connected Environment includes.": {
-    kicker: "In the host",
-    title: "Present in that environment",
+  "What stays with the tools you already use.": {
+    kicker: "Already open",
+    title: "The tools stay themselves",
     rows: [
-      { term: "Native to the host", detail: "Models, tools, MCP servers, plugins, skills, apps, workflows, and connections." },
-      { term: "When connected", detail: "Spine tools and Spine Fabric." },
+      { term: "Already in use", detail: "Tools, files, conversations, and workflows already open for that person." },
+      { term: "When connected", detail: "SpineWorkspace connects to them. It does not replace them." },
+    ],
+  },
+  "Work continues across the tools you already use.": {
+    kicker: "What carries",
+    title: "The story continues",
+    rows: [
+      { term: "What travels", detail: "The record, the evidence, and earlier decisions." },
+      { term: "Continue", detail: "Work started in one tool can continue in another without rebuilding the story." },
     ],
   },
   "Authority is a person, not a model.": {
@@ -126,16 +134,16 @@ const ASIDES: Record<string, Aside> = {
     title: "Truth, context, then a proposal",
     rows: [
       { term: "Spine Coworker", detail: "Gathers the truth and context this person may use for this workflow." },
-      { term: "Spine Twin", detail: "Prepares a proposal. The proposal is not the system of record." },
+      { term: "Spine Twin", detail: "Prepares a proposal. The proposal is not the record." },
       { term: "A person", detail: "Reviews the proposal." },
       { term: "Model selection", detail: "Stays behind Twin. There is no model catalogue and no second chat product." },
     ],
   },
-  "Keep truth, context, and memory distinct.": {
-    kicker: "Spine Data Fabric",
+  "Keep the record, the evidence, and the person apart.": {
+    kicker: "The record",
     title: "Distinct memory scopes",
     rows: [
-      { term: "Business Context", detail: "Where context for the current task is assembled. Not the system of record." },
+      { term: "Business Context", detail: "Where context for the current task is assembled. Not the record." },
       { term: "Personal memory", detail: "Stays with the person." },
       { term: "Session memory", detail: "Stays with that sitting." },
       { term: "Organizational memory", detail: "Shared context for the organization. Not blended with the other scopes." },
@@ -143,7 +151,7 @@ const ASIDES: Record<string, Aside> = {
     ],
   },
   "Adapt the environment around the work.": {
-    kicker: "Spine Adaptive Autotuner",
+    kicker: "The view for this role",
     title: "The view follows the role",
     rows: [
       { term: "Around the work", detail: "The workspace changes around the person, the task, and the role." },

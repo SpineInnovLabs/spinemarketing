@@ -17,9 +17,10 @@ const rise = {
 };
 
 const steps = [
-  ["See the work", "The goal sits with authoritative truth and the context assembled for this task.", "/business-context"],
-  ["Work with Twin", "Twin prepares a proposal from that truth and context. A person reviews it.", "/twin"],
-  ["Keep going", "The same work resumes later, without rebuilding the story.", "/continuity"],
+  ["See the work", "The record and the evidence for this task sit with the goal. They stay distinct.", "/business-context"],
+  ["Ask Twin", "Twin prepares a proposal only when someone asks. The proposal is not the record.", "/twin"],
+  ["A person decides", "An authorized person accepts, edits, or rejects it.", "/governance"],
+  ["The tools catch up", "An accepted change is written back to the tool that owns the record. The workspace shows the result.", "/platform/how-it-works"],
 ];
 
 const productModel = [
@@ -30,12 +31,12 @@ const productModel = [
   },
   {
     name: "Twin",
-    body: "Uses that governed context to prepare a proposal. The proposal is not the system of record until a person reviews it.",
+    body: "Opens when someone asks. It reads the record, the evidence for this task, and earlier decisions, then prepares a proposal. The proposal is not the record.",
     href: "/twin",
   },
   {
     name: "Coworker",
-    body: "Gathers and normalizes only the truth and context this person is allowed to use for this workflow.",
+    body: "Gathers only the record and the evidence this person is allowed to use for this task.",
     href: "/twin#coworker",
   },
 ];
@@ -43,7 +44,7 @@ const productModel = [
 const truthContext = [
   {
     name: "Truth",
-    body: "What the business has already confirmed: customer records, contracts, ticket state, billing status, approvals, and other governed facts in the systems of record.",
+    body: "What the business has already confirmed: customer records, contracts, ticket state, billing status, approvals, and other governed facts in the tools that keep the record.",
   },
   {
     name: "Context",
@@ -58,7 +59,7 @@ const truthContext = [
 const governanceChecks = [
   "AI sees only the truth and context the current user or approved workflow can access.",
   "Every proposal can be traced to source evidence and the authoritative records behind it.",
-  "Source systems remain the system of record. SpineWorkspace assembles context, governs proposals, and records decisions.",
+  "Source systems keep the record. SpineWorkspace assembles context, governs proposals, and records decisions.",
   "Meaningful actions stay pending until an authorized person approves them.",
   "Personal, session, work, and organizational memory remain separate.",
 ];
@@ -169,7 +170,7 @@ export function EnterpriseHome() {
             Workspace and Twin — explained plainly
           </h2>
           <p className="mt-4 max-w-2xl text-[16px] leading-[1.7] text-[#33465B]">
-            Humans govern the business. AI helps the business work. Platform concepts like Data Fabric and Adaptive Autotuner support this model — they are not separate products you buy first.
+            Humans govern the business. AI helps the business work. You start from the workspace and Twin, not from a stack of platform pieces.
           </p>
           <ul className="mt-8 grid gap-4 lg:grid-cols-3">
             {productModel.map(({ name, body, href }) => (
@@ -204,11 +205,11 @@ export function EnterpriseHome() {
       <section className="bg-[#F3F6F9] py-20 md:py-24">
         <div className="mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-12">
           <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[#0176D3]">How it works</p>
-          <h2 className="mt-3 max-w-xl text-[32px] font-semibold tracking-[-0.03em] text-[#032D60] sm:text-[36px]">Three moves. Then a person decides.</h2>
+          <h2 className="mt-3 max-w-xl text-[32px] font-semibold tracking-[-0.03em] text-[#032D60] sm:text-[36px]">The work, then a decision, then the tools.</h2>
           <p className="mt-4 max-w-2xl text-[16px] leading-[1.7] text-[#33465B]">Source systems stay authoritative. People stay in charge.</p>
-          <ol className="mt-8 grid overflow-hidden rounded-[20px] border border-[#D9E4EF] bg-white shadow-[0_18px_48px_rgba(3,45,96,0.08)] lg:grid-cols-3">
+          <ol className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {steps.map(([title, body, href], index) => (
-              <li key={title} className={index === 0 ? "" : "border-t border-[#D9E4EF] lg:border-l lg:border-t-0"}>
+              <li key={title} className="rounded-[20px] border border-[#D9E4EF] bg-white shadow-[0_8px_24px_rgba(3,45,96,0.06)]">
                 <Link href={href} className="flex h-full flex-col p-6 transition-colors hover:bg-[#EAF5FC]">
                   <span className="text-[13px] font-semibold tabular-nums text-[#0176D3]">{String(index + 1).padStart(2, "0")}</span>
                   <span className="mt-3 text-[18px] font-semibold text-[#032D60]">{title}</span>

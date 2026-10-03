@@ -15,14 +15,14 @@ const trustDashboard = [
 ];
 
 const sovereigntyControls = [
-  { title: "Your Data, Your Rules", desc: "Complete ownership of ontological models and canonical data." },
+  { title: "Your Data, Your Rules", desc: "You keep the record. SpineWorkspace does not become a new home for it." },
   { title: "Regional Data Residency", desc: "Select India, EU, or US. No cross-border transfer." },
   { title: "Retention Policies", desc: "Per-entity-type retention settings for records and logs." },
 ];
 
 const auditFeatures = [
   { icon: FileText, title: "Immutable Decision Log", desc: "Complete history of who approved what and when." },
-  { icon: Eye, title: "Session Replay", desc: "Reconstruct exact Entity 360 state at any approval time." },
+  { icon: Eye, title: "Session Replay", desc: "Reconstruct exact Customer view state at any approval time." },
   { icon: RotateCcw, title: "Reversal Tracking", desc: "Full log of rolled-back actions with reason codes." },
 ];
 

@@ -24,7 +24,7 @@ const governanceFeatures = [
   {
     icon: Eye,
     title: "Proposed Action Queue",
-    desc: "AI suggestions await approval with full Entity 360 context and evidence links.",
+    desc: "AI suggestions await approval with full Customer view context and evidence links.",
   },
   {
     icon: AlertTriangle,

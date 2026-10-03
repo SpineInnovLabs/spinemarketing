@@ -17,10 +17,10 @@ type Step = {
 };
 
 const defaultSteps: Step[] = [
-  { num: "01", title: "Connect your tools", desc: "Link SaaS, webhooks, and MCP sources in minutes. No custom code required." },
-  { num: "02", title: "Spine normalizes everything", desc: "Raw data flows through 8-stage normalization into canonical Entity 360 records." },
-  { num: "03", title: "Twin surfaces signals", desc: "The Twin detects patterns and proposes actions with evidence." },
-  { num: "04", title: "You approve and execute", desc: "Review AI suggestions in the approval queue. Edit, approve, or reject with full audit trail." },
+  { num: "01", title: "Connect the tools you already run", desc: "Do not move the work into a new home for the record." },
+  { num: "02", title: "Keep each kind of information in its place", desc: "The record, the evidence, the draft, and the person stay apart." },
+  { num: "03", title: "Ask Twin when you want a next step", desc: "Twin prepares a proposal. Every claim points back to its source." },
+  { num: "04", title: "A person decides", desc: "Allow it, change it, or stop it. An accepted change goes back to the original tool." },
 ];
 
 export function NumberedSteps({

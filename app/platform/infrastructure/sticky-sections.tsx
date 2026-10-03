@@ -12,7 +12,7 @@ import {
 const items = [
   {
     tag: "Real-Time Sync",
-    title: "Near real-time from normalization to UI",
+    title: "The workspace shows the result",
     description: "Firebase real-time layer delivers changes to the Workspace quickly. No polling, no stale data.",
     icon: Zap,
     color: "#fbbf24",
@@ -25,7 +25,7 @@ const items = [
   },
   {
     tag: "Data Pipeline",
-    title: "8-stage normalization pipeline",
+    title: "One connection",
     description: "Raw data flows through extraction, validation, dedup, entity resolution, enrichment, scoring, indexing, and distribution.",
     icon: Database,
     color: "#2dd4bf",

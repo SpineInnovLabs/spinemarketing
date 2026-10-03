@@ -237,9 +237,9 @@ export const PLATFORM_SURFACES: PlatformSurface[] = [
   {
     id: "mcp",
     host: "mcp.spineworkspace.com",
-    label: "MCP",
+    label: "Connections",
     marketingPath: "/developers",
-    description: "MCP and developer capability surface.",
+    description: "The tools already open for a developer.",
   },
   {
     id: "marketplace",

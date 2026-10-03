@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/solutions" },
   openGraph: {
     title: "Solutions | SpineWorkspace",
-    description: "One Spine Fabric. Workspace for daily work, Twin for AI. Built for every function, industry, and role.",
+    description: "One SpineWorkspace. Workspace for daily work, Twin for AI. Built for every function, industry, and role.",
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "SpineWorkspace" }],
   },
 }

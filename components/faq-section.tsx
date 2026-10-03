@@ -21,8 +21,8 @@ interface FAQSectionProps {
 
 const platformFAQs: FAQItem[] = [
   {
-    question: "What is the Spine Fabric?",
-    answer: "Spine Fabric connects the systems you already run. Truth stays in those systems of record. Context for a person and a task is assembled from the evidence they are allowed to use. Spine Fabric is not a data warehouse and it does not replace the source system.",
+    question: "Does SpineWorkspace replace our tools?",
+    answer: "No. The tools you already use keep the record: customers, tickets, billing, contracts, and approvals. SpineWorkspace shows the work. The evidence for this person and this task stays evidence. Twin's draft is not the record.",
   },
   {
     question: "What are the Workspace and Twin?",
@@ -33,8 +33,8 @@ const platformFAQs: FAQItem[] = [
     answer: "A CRM, a billing system, or a ticket tool holds the truth. SpineWorkspace does not replace that record. It assembles the context for this person and this task, and Twin prepares a proposal. Nothing becomes a decision until a person accepts it.",
   },
   {
-    question: "What does 'human-in-the-loop' actually mean?",
-    answer: "Every AI-generated insight, recommendation, or proposed action is presented to you with evidence from your connected apps. You review the reasoning and approve, modify, or reject. Approved actions are logged in an immutable decision record. The AI never acts autonomously.",
+    question: "Does Twin act on its own?",
+    answer: "No. Twin opens only when someone asks. It prepares a proposal, and every claim points back to its source. A person allows it, changes it, or stops it. Twin does not write the record.",
   },
   {
     question: "How many apps can I connect?",
@@ -42,7 +42,7 @@ const platformFAQs: FAQItem[] = [
   },
   {
     question: "Is my data secure?",
-    answer: "Yes. All data is encrypted at rest (AES-256) and in transit (TLS 1.3). We follow SOC 2 aligned practices — no certification is claimed on this site. Spine Fabric reads data via OAuth with the minimum permissions required. Your data is never used to train AI models. Command tier includes SSO, RBAC with field-level permissions, and a full enterprise audit trail.",
+    answer: "Yes. All data is encrypted at rest (AES-256) and in transit (TLS 1.3). We follow SOC 2 aligned practices — no certification is claimed on this site. SpineWorkspace reads data via OAuth with the minimum permissions required. Your data is never used to train AI models. Command tier includes SSO, RBAC with field-level permissions, and a full enterprise audit trail.",
   },
   {
     question: "Can I start with just the Workspace?",
@@ -50,7 +50,7 @@ const platformFAQs: FAQItem[] = [
   },
   {
     question: "What are Session Summaries?",
-    answer: "When you work with Twin, a session summary records what was discussed, what was proposed, and what a person accepted. A summary is context for later work. It does not replace the system of record.",
+    answer: "When you work with Twin, a session summary records what was discussed, what was proposed, and what a person accepted. A summary is context for later work. It does not replace the record.",
   },
 ];
 

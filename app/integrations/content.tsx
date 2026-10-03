@@ -34,7 +34,7 @@ export function IntegrationsContent() {
               Bring your systems together — without replacing them
             </h2>
             <p className="mt-4 text-[16px] leading-[1.65] text-[#33465B]">
-              Integrations are about fit, permissions, and authority — not a logo wall. SpineWorkspace reads authorized context, assembles evidence, and proposes work. Source systems stay the system of record until a person accepts a change.
+              Integrations are about fit, permissions, and authority — not a logo wall. SpineWorkspace reads authorized context, assembles evidence, and proposes work. Source systems keep the record until a person accepts a change.
             </p>
           </div>
           <div className="mt-10 overflow-x-auto">
@@ -52,7 +52,7 @@ export function IntegrationsContent() {
                   ["Support platform", "Open tickets, escalation history, risk signals", "Ticketing system owns cases"],
                   ["Email / calendar", "Recent commitments and meeting context", "Messages stay in the source mailbox"],
                   ["Document storage", "Contracts, QBR decks, plans", "Files remain governed where they live"],
-                  ["SpineWorkspace", "Context assembly, evidence links, proposals, review", "Does not become an uncontrolled system of record"],
+                  ["SpineWorkspace", "Context assembly, evidence links, proposals, review", "Does not become a new home for the record"],
                 ].map(([system, role, authority]) => (
                   <tr key={system} className="border-b border-[#D9E4EF]">
                     <td className="py-3 pr-4 font-semibold text-[#032D60]">{system}</td>

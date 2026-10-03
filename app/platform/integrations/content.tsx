@@ -20,72 +20,72 @@ const heroFade = (delay = 0) => ({
 const inputTypes = [
   {
     icon: Plug,
-    type: "SaaS Tools",
-    desc: "API-driven software feeding the normalization pipeline.",
+    type: "The apps you already open",
+    desc: "The CRM, the desk, billing, and chat stay themselves.",
     examples: ["Salesforce", "HubSpot", "Stripe", "Zendesk", "Jira", "Asana", "Slack"],
   },
   {
     icon: Zap,
-    type: "MCP (Model Context Protocol)",
-    desc: "AI-native bridge for structured data access.",
-    examples: ["Local file systems", "Internal databases", "Custom data sources", "Legacy ERPs"],
+    type: "What is already open",
+    desc: "Files and conversations already in front of that person.",
+    examples: ["Files on this computer", "The notes already open", "The tools this person may use"],
   },
   {
     icon: RefreshCw,
-    type: "Webhooks",
-    desc: "Event-driven inputs with zero polling latency.",
-    examples: ["Custom events", "Payment notifications", "Form submissions", "IoT sensors"],
+    type: "When something changes",
+    desc: "A payment, a form, or a ticket update shows up in the workspace.",
+    examples: ["Payments", "Forms", "Ticket updates"],
   },
   {
     icon: FileText,
-    type: "File Ingestion",
-    desc: "CSV, PDF, XLSX through the same normalization pipeline.",
-    examples: ["CSV / PDF / XLSX", "Batch imports", "Automatic normalization"],
+    type: "Files",
+    desc: "Spreadsheets, documents, and exports come in through the same connection.",
+    examples: ["Spreadsheets", "Documents", "Exports"],
   },
 ];
 
 const protocols = [
   {
     icon: Globe, accent: "#3b82f6", bg: "rgba(59,130,246,0.12)",
-    name: "SaaS APIs",
-    desc: "60+ tools with field-level schema registry.",
-    tags: ["60+ integrations", "Field-level schema", "Auto-mapping"],
+    name: "The apps",
+    desc: "Each app stays itself. SpineWorkspace does not become a new home for the record.",
+    tags: ["The record stays put", "The app stays in charge", "One connection"],
   },
   {
     icon: Zap, accent: "#8b5cf6", bg: "rgba(139,92,246,0.12)",
-    name: "MCP Protocol",
-    desc: "AI-native bridge for controlled data access.",
-    tags: ["AI-native bridge", "Controlled data access", "Standardized"],
+    name: "What is already open",
+    desc: "The work uses the tools already open for that person before it reaches for anything else.",
+    tags: ["This person", "This task", "Nothing assumed"],
   },
   {
     icon: RefreshCw, accent: "#a855f7", bg: "rgba(168,85,247,0.12)",
-    name: "Webhooks",
-    desc: "Real-time ingestion with idempotency keys.",
-    tags: ["Real-time events", "Idempotency keys", "Retry-safe"],
+    name: "Updates",
+    desc: "When a tool changes, the workspace can show the result.",
+    tags: ["The workspace catches up", "The original tool stays in charge"],
   },
   {
     icon: FileText, accent: "#f59e0b", bg: "rgba(245,158,11,0.12)",
-    name: "File Ingestion",
-    desc: "CSV, PDF, XLSX through the same normalization pipeline.",
-    tags: ["CSV / PDF / XLSX", "Same pipeline", "Automatic normalization"],
+    name: "Files",
+    desc: "Spreadsheets and documents stay evidence until a person accepts a change.",
+    tags: ["Evidence", "Not the record", "Until a person decides"],
   },
 ];
 
 const services = [
   {
     icon: Plug, accent: "#06b6d4", bg: "rgba(6,182,212,0.12)",
-    name: "Loader Service",
-    desc: "High-velocity ingestion with Dead Letter Queue management.",
+    name: "One connection",
+    desc: "The tools, files, and conversations you already use.",
   },
   {
     icon: Globe, accent: "#10b981", bg: "rgba(16,185,129,0.12)",
-    name: "Adapter Pattern",
-    desc: "Consistent normalization regardless of vendor swaps.",
+    name: "Each tool stays itself",
+    desc: "They do not have to talk to each other directly.",
   },
   {
     icon: Shield, accent: "#f43f5e", bg: "rgba(244,63,94,0.12)",
-    name: "Schema Registry",
-    desc: "Versioned, auditable field mappings per connector.",
+    name: "A person decides",
+    desc: "An accepted change is written back through the tool that owns the record.",
   },
 ];
 
@@ -105,14 +105,14 @@ export function PlatformIntegrationsContent() {
             {...heroFade(0.22)}
             className="text-[44px] font-semibold leading-[1.08] tracking-[-0.05em] text-white sm:text-[64px]"
           >
-            Universal{" "}
-            <span className="text-primary">data inputs</span>
+            The tools you{" "}
+            <span className="text-primary">already use</span>
           </motion.h1>
           <motion.p
             {...heroFade(0.38)}
             className="mx-auto mt-7 max-w-xl text-[17px] font-medium leading-[1.55] tracking-[-0.02em] text-white/50"
           >
-            SaaS APIs, MCP, webhooks, and file drops — all through one normalization pipeline.
+            The apps, files, and conversations you already use, through one connection.
           </motion.p>
           <motion.div {...heroFade(0.5)} className="mt-9 flex flex-wrap items-center justify-center gap-3">
             <Link href="/contact?intent=demo" className="inline-flex h-11 items-center rounded-full bg-primary px-6 text-[14px] font-semibold tracking-[-0.02em] text-white transition-opacity hover:opacity-90">
@@ -126,7 +126,7 @@ export function PlatformIntegrationsContent() {
         <div className="mx-auto max-w-[1100px]">
           <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center mb-12">
             <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">Input Types</p>
-            <h2 className="section-heading">Every source, <span className="text-primary">one pipeline</span></h2>
+            <h2 className="section-heading">What comes in, <span className="text-primary">kept apart</span></h2>
           </motion.div>
           <div className="grid gap-5 sm:grid-cols-2">
             {inputTypes.map(({ icon: Icon, type, desc, examples }, i) => (
@@ -150,8 +150,8 @@ export function PlatformIntegrationsContent() {
       <section className="arvio-section dark-section">
         <div className="mx-auto max-w-[1100px]">
           <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center mb-12">
-            <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">Protocol Support</p>
-            <h2 className="section-heading">Four protocols. <span className="text-primary">One schema.</span></h2>
+            <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">One connection</p>
+            <h2 className="section-heading">Four ways in. <span className="text-primary">The record stays put.</span></h2>
           </motion.div>
           <div className="grid gap-5 sm:grid-cols-2">
             {protocols.map((p, i) => (
@@ -179,8 +179,8 @@ export function PlatformIntegrationsContent() {
       <section className="arvio-section dark-section">
         <div className="mx-auto max-w-[900px]">
           <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center mb-12">
-            <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">Architecture</p>
-            <h2 className="section-heading">Integration <span className="text-primary">services</span></h2>
+            <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">What this connection does</p>
+            <h2 className="section-heading">Connect. Keep apart. <span className="text-primary">Let a person decide.</span></h2>
           </motion.div>
           <div className="grid gap-5 sm:grid-cols-3">
             {services.map((s, i) => (
@@ -201,14 +201,14 @@ export function PlatformIntegrationsContent() {
           <motion.div {...fade(0)}>
             <Plug className="mx-auto mb-4 h-7 w-7 text-primary" />
             <h2 className="text-[32px] font-semibold tracking-[-0.05em] text-white">
-              Connect once. <span className="text-primary">Never re-plumb.</span>
+              Connect once. <span className="text-primary">The tools stay in charge.</span>
             </h2>
             <p className="mx-auto mt-4 text-[15px] font-medium leading-[1.6] text-white/40">
-              Auto-upgrade when APIs change. Schema drift handled in the mapping layer.
+              An accepted change is written back through the tool that owns the record.
             </p>
             <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
               <Link href="/platform/spine-fabric" className="inline-flex h-10 items-center rounded-full border border-white/15 px-5 text-[13px] font-semibold text-white/60 hover:border-white/30 hover:text-white transition-colors">
-                The Spine Fabric →
+                How the connection works →
               </Link>
             </div>
           </motion.div>

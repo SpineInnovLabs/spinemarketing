@@ -27,7 +27,7 @@ const viewCategories = [
     category: "Customer & Revenue",
     icon: Users,
     views: [
-      { view: "Account Success", desc: "Entity 360 cards, renewal risk, QBR prep", icon: TrendingUp, accent: true },
+      { view: "Account Success", desc: "Customer view cards, renewal risk, QBR prep", icon: TrendingUp, accent: true },
       { view: "Customer Success", desc: "Health heatmaps, churn mitigation, sponsor tracking", icon: Users },
       { view: "RevOps", desc: "Quote-to-Cash velocity, SLA grids, forecasts", icon: BarChart3 },
     ],
@@ -101,7 +101,7 @@ export function TheAdaptiveWorkspaceContent() {
             className="text-[44px] font-semibold leading-[1.08] tracking-[-0.05em] text-white sm:text-[64px]"
           >
             Your daily surface{" "}
-            <span className="text-primary">on top of Spine Fabric.</span>
+            <span className="text-primary">on top of SpineWorkspace.</span>
           </motion.h1>
           <motion.p
             {...heroFade(0.38)}
@@ -159,7 +159,7 @@ export function TheAdaptiveWorkspaceContent() {
       <section className="arvio-section dark-section">
         <div className="mx-auto max-w-[1100px]">
           <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center mb-12">
-            <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">Entity 360</p>
+            <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">Customer view</p>
             <h2 className="section-heading">Every record. <span className="text-primary">Every source.</span></h2>
             <p className="mt-4 text-[16px] font-medium leading-[1.55] text-muted-foreground">
               Canonical objects assembled from every connected tool.
@@ -232,7 +232,7 @@ export function TheAdaptiveWorkspaceContent() {
               Your workspace. <span className="text-primary">Your context.</span>
             </h2>
             <p className="mx-auto mt-4 text-[15px] font-medium leading-[1.6] text-white/40">
-              Every role gets a purpose-built view of the same canonical truth.
+              Every role gets a purpose-built view of the same the record.
             </p>
             <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
               <Link href="/product/approval-gate-twin" className="inline-flex h-10 items-center rounded-full border border-white/15 px-5 text-[13px] font-semibold text-white/60 hover:border-white/30 hover:text-white transition-colors">

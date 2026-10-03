@@ -18,7 +18,7 @@ const fade = (delay = 0) => ({
 const contactFAQs = [
   {
     question: "How long does setup take?",
-    answer: "A guided onboarding can show a first Entity 360 view from the apps you connect. A full workspace with every integration typically takes 1–2 weeks.",
+    answer: "A guided onboarding can show a first customer view from the apps you connect. A full workspace with every integration typically takes 1–2 weeks.",
   },
   {
     question: "Do I need an engineering team?",

@@ -44,16 +44,16 @@ const painItems = [
     description: "CS has one dashboard, sales has another, finance has a spreadsheet. Three versions of the same customer.",
     icon: Unplug,
     color: "#3b82f6",
-    features: ["One canonical record", "Role-based views", "Shared context layer"],
+    features: ["One the record", "Role-based views", "Shared context layer"],
   },
 ];
 
 const answerNodes = [
-  { label: "Spine Fabric", icon: Layers, color: "#0176D3" },
+  { label: "SpineWorkspace", icon: Layers, color: "#0176D3" },
   { label: "Workspace", icon: Brain, color: "#3b82f6" },
   { label: "Twin", icon: Zap, color: "#8b5cf6" },
-  { label: "Govern Gate", icon: ShieldCheck, color: "#f59e0b" },
-  { label: "Entity 360", icon: Eye, color: "#06b6d4" },
+  { label: "Review", icon: ShieldCheck, color: "#f59e0b" },
+  { label: "Customer view", icon: Eye, color: "#06b6d4" },
   { label: "Audit Trail", icon: ShieldAlert, color: "#ef4444" },
 ];
 

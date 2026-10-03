@@ -97,7 +97,7 @@ const gatherItems = [
   { icon: Clock, label: "Activity Timeline", description: "Every touchpoint across every system, threaded.", color: "#f59e0b" },
   { icon: BarChart3, label: "Portfolio Views", description: "Health, renewals, expansion — at a glance.", color: "#ec4899" },
   { icon: Sparkles, label: "Knowledge Memory", description: "Compounding intelligence from every decision.", color: "#14b8a6" },
-  { icon: CheckCircle2, label: "Govern Gate", description: "Non-bypassable human approval layer.", color: "#f97316" },
+  { icon: CheckCircle2, label: "Review", description: "A person decides before anything is written back.", color: "#f97316" },
 ];
 
 export function ProductStickySections() {

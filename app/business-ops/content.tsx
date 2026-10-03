@@ -547,7 +547,7 @@ const howItWorksSteps: StickyScrollStep[] = [
     visual: <OpsConnectVisual />,
   },
   {
-    label: "Step 02 \u2014 Build Spine Fabric",
+    label: "Step 02 \u2014 Build SpineWorkspace",
     title: "Three data flows. One complete picture.",
     description:
       "Revenue, pipeline, and costs sync as Truth. Context and sessions converge in your Workspace.",
@@ -1104,7 +1104,7 @@ export function BusinessOpsContent() {
           >
             <h2 className="section-heading">
               Your business deserves{" "}
-              <span className="text-primary">one source of truth.</span>
+              <span className="text-primary">the record the tools already keep.</span>
             </h2>
             <p className="mt-6 text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">
               One workspace. Full business picture. AI that waits for your approval.

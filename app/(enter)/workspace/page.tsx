@@ -46,7 +46,7 @@ export default function WorkspacePage() {
         This overview is the first structured view of your setup draft. Context, work, and the Twin stay unavailable until a real workspace is provisioned.
       </div>
       <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
-        <KpiBlock label="Source" value={connectionLabel} detail="No system of record is linked." />
+        <KpiBlock label="Source" value={connectionLabel} detail="No tool that keeps the record is linked." />
         <KpiBlock label="Provisioning" value="Pending" detail="No workspace service has accepted this draft." />
         <KpiBlock label="Authority" value="Human" detail="Approvals stay with people. The Twin is not active." />
         <KpiBlock label="Objective" value={draft.objective ? "Set" : "Missing"} detail={draft.objective || "No launch objective captured."} />

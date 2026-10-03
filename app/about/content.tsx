@@ -15,13 +15,13 @@ const fade = (delay = 0) => ({
 const timeline = [
   { year: "2014", title: "Soft Dev", desc: "Started in software development. Learning the craft of building systems from scratch." },
   { year: "2018", title: "Integration Dev", desc: "Moved into enterprise integration. Wiring systems across five industries." },
-  { year: "Expert", title: "MuleSoft Architect", desc: "India's leading MuleSoft architect. API-led connectivity. 13+ years wiring enterprise systems." },
-  { year: "CSM Era", title: "Customer Success at Salesforce", desc: "MuleSoft enterprise CSM. Saw integration failures at the human layer." },
+  { year: "Expert", title: "Connected the tools by hand", desc: "13 years helping enterprise teams work across the tools they already had." },
+  { year: "CSM Era", title: "Customer Success at Salesforce", desc: "Saw the work fail when the tools did not share the story." },
   { year: "The Crisis", title: "The Red Account", desc: "$8M account at 100% attrition risk. Zero handover." },
   { year: "The Discovery", title: "Two Hidden Signals", desc: "Unsigned contract. Hidden conflicts. Invisible to every dashboard." },
   { year: "The Save", title: "$8M Renewed", desc: "Both signals resolved. Full renewal. Account saved." },
   { year: "2025", title: "Founded Spine InnovLabs", desc: "Built in Bengaluru. Automates what was done manually." },
-  { year: "2026", title: "Knowledge Workspace over Spine Fabric", desc: "Workspace + Twin. Three data ecosystems. You stay in control." },
+  { year: "2026", title: "Knowledge Workspace over SpineWorkspace", desc: "Workspace + Twin. Three data ecosystems. You stay in control." },
 ];
 
 function SectionBlock({
@@ -112,16 +112,16 @@ export function AboutContent() {
         </div>
       </section>
 
-      <SectionBlock label="Founder story" title="The architect who built the data fabric">
+      <SectionBlock label="Founder story" title="The person who connected the tools by hand">
         <p className="mb-6 text-[12px] font-semibold uppercase tracking-[0.08em] text-[#706E6B]">
           Illustrative origin story — not a customer case study
         </p>
         <blockquote className="border-l-2 border-[#0176D3] pl-6 text-[17px] italic text-[#444]">
-          &ldquo;The thing that kept me up at night wasn&apos;t a broken API. It was watching smart people make the wrong decisions because their tools couldn&apos;t talk to each other.&rdquo;
+          &ldquo;The thing that kept me up at night wasn&apos;t a broken connection. It was watching smart people make the wrong decisions because their tools couldn&apos;t talk to each other.&rdquo;
         </blockquote>
         <div className="mt-6 space-y-4 text-[16px] leading-[1.7] text-[#444]">
-          <p>13 years wiring enterprise systems. His job: make disconnected tools speak the same language.</p>
-          <p>The tools were connected. The data flowed. But nobody could assemble it for the human making the decision.</p>
+          <p>13 years connecting the tools companies already used. The job was to help those tools share the work.</p>
+          <p>The tools were connected. The record moved. But nobody could put the evidence next to it for the person making the decision.</p>
         </div>
       </SectionBlock>
 
@@ -169,16 +169,16 @@ export function AboutContent() {
         <div className="space-y-4 text-[16px] leading-[1.7] text-[#444]">
           <p>Not a whiteboard exercise. A lived experience — signals visible only through manual integration.</p>
           <p>He set out to automate what he did by hand: cross-referencing, signal discovery, context building.</p>
-          <p className="font-semibold text-[#032D60]">He had spent 13 years building integration layers. Now he was going to build the intelligence layer on Spine Fabric.</p>
+          <p className="font-semibold text-[#032D60]">He had spent 13 years building integration layers. Now he was going to build the intelligence layer on SpineWorkspace.</p>
         </div>
         <h3 className="mt-10 text-[20px] font-semibold text-[#032D60]">What Spine InnovLabs actually solves</h3>
         <div className="mt-6 space-y-3">
           {[
-            "Connect every app into Spine Fabric — one source of truth.",
-            "Three data ecosystems — Truth, Context, AI Sessions — merge into Entity 360.",
-            "The cognitive loop: Think. Act. Govern. Repeat. Adjust.",
-            "AI thinks. You approve or deny. AI works. Knowledge compounds.",
-            "Human approval required before anything executes.",
+            "One connection to the tools, files, and conversations you already use.",
+            "The record, the evidence, the draft, and the person stay apart.",
+            "The workspace shows the view this role needs.",
+            "Twin opens only when asked, and every claim points back to its source.",
+            "A person allows it, changes it, or stops it. Twin does not write the record.",
           ].map((item, i) => (
             <motion.div
               key={i}
@@ -194,7 +194,7 @@ export function AboutContent() {
         </div>
         <div className="mt-10 rounded-md border border-[#0176D3]/20 bg-[#032D60] p-6">
           <p className="text-[17px] font-semibold leading-[1.5] text-white">
-            A Knowledge Workspace over Spine Fabric — the Workspace is where you work, the Twin is where AI serves you.
+            The workspace shows the work. Twin prepares a proposal only when asked. A person decides.
           </p>
           <p className="mt-1 text-[15px] text-white/70">This is Spine InnovLabs.</p>
         </div>

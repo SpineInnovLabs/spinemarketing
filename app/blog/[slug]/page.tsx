@@ -112,7 +112,7 @@ export default async function BlogPostPage({
         <section className="mx-auto max-w-[800px] px-6 pb-16 md:px-16">
           <div className="rounded-2xl border border-border/50 bg-muted/30 p-8 text-center">
             <p className="text-[18px] font-semibold tracking-[-0.03em]">
-              Ready to stop being the human API?
+              Ready to stop translating between your tools?
             </p>
             <p className="mt-2 text-[15px] font-medium text-muted-foreground">
               See SpineWorkspace in action.

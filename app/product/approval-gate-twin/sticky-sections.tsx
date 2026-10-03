@@ -84,7 +84,7 @@ const scrollItems = [
 ];
 
 const gatherItems = [
-  { icon: ShieldCheck, label: "Govern Gate", description: "Non-bypassable human approval on all AI actions.", color: "#2dd4bf" },
+  { icon: ShieldCheck, label: "Review", description: "A person decides before anything is written back.", color: "#2dd4bf" },
   { icon: Eye, label: "Evidence Panel", description: "Source data and confidence on every suggestion.", color: "#8b5cf6" },
   { icon: GitBranch, label: "Routing Engine", description: "Impact-based escalation and multi-approver flows.", color: "#3b82f6" },
   { icon: Activity, label: "Twin Scoring", description: "0-100 confidence with historical accuracy tracking.", color: "#fbbf24" },
@@ -112,8 +112,8 @@ export function ApprovalGather() {
     <StickyGather
       tag="Governance Architecture"
       heading={<>Ten safeguards. <span className="text-primary">One approval surface.</span></>}
-      subheading="Every governance capability converges into the Govern Gate — your control layer."
-      centerLabel="Govern Gate"
+      subheading="Every governance capability converges into the Review — your control layer."
+      centerLabel="Review"
       centerDescription="Human control"
       items={gatherItems}
     />

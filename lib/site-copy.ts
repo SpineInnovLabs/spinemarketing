@@ -71,11 +71,11 @@ export const pages = {
         ],
       },
       {
-        headline: "Built from adaptive primitives.",
+        headline: "What you work with.",
         cards: [
-          { title: "Workbench", description: "Same offering as Spine Workspace: role-aware views of goals, truth, context, and work" },
-          { title: "Twin", description: "Prepares a proposal from governed truth and context, then waits for review", href: "/twin" },
-          { title: "Spine Fabric", description: "Connects systems without claiming source authority", href: "/platform/spine-fabric" },
+          { title: "Workbench", description: "The workspace: the view this role needs of the record, the evidence, and the work" },
+          { title: "Twin", description: "Opens when someone asks. Prepares a proposal from the record and the evidence. The proposal is not the record.", href: "/twin" },
+          { title: "One connection", description: "Connects the tools you already use. Does not become a new home for the record.", href: "/platform/spine-fabric" },
           { title: "Your tools", description: "Connectors bring truth and context in. Source systems stay authoritative.", href: "/integrations" },
           { title: "Review", description: "A person accepts consequential steps. Proposals stay proposals until then.", href: "/governance" },
         ],
@@ -99,7 +99,7 @@ export const pages = {
     hero: {
       badge: "Spine Twin",
       headline: "Your Twin starts from the work, not a blank chat.",
-      subhead: "Coworker gathers authorized truth and context. Twin prepares a proposal. A person reviews it.",
+      subhead: "Twin opens when someone asks. It prepares a proposal from the record and the evidence for this task. A person reviews it.",
       primaryCta: { label: "Book a demo", href: "/contact?intent=demo" },
       secondaryCta: { label: "See governance", href: "/governance" },
     },
@@ -109,10 +109,10 @@ export const pages = {
         label: "Spine Coworker",
         headline: "Coworker gathers truth and context. Twin prepares the proposal.",
         body:
-          "Spine Coworker gathers the truth and context this person is allowed to use for this workflow. Spine Twin prepares a proposal from that. A person reviews it. The proposal is not the system of record. Model selection stays behind Twin: there is no model catalogue and no second chat product.",
+          "Spine Coworker gathers the record and the evidence this person is allowed to use for this task. Twin prepares a proposal from that, and only when someone asks. A person reviews it. The proposal is not the record. There is no model catalogue and no second chat product.",
       },
       {
-        headline: "Truth and context first. Capability second.",
+        headline: "The record and the evidence first. Then a proposal.",
         body:
           "Before Twin responds, it uses authoritative records and the context assembled for this task: goals, active work, customer history, prior decisions, and evidence. The proposal stays a proposal until a person reviews it.",
       },
@@ -161,16 +161,16 @@ export const pages = {
       badge: "Business Context",
       headline: "One governed picture of the work.",
       subhead:
-        "Business Context is where context for the current task is assembled. Source systems remain the system of record.",
+        "Business Context is where context for the current task is assembled. Source systems keep the record.",
       primaryCta: { label: "See how work is shown", href: "/adaptive-workspace" },
     },
     sections: [
       {
         id: "data-fabric",
-        label: "Spine Data Fabric",
-        headline: "Keep truth, context, and memory distinct.",
+        label: "The record",
+        headline: "Keep the record, the evidence, and the person apart.",
         body:
-          "Spine Data Fabric connects records without replacing them. Personal memory stays with the person. Session memory stays with that sitting. Organizational memory is shared context for the organization. Those scopes stay distinct. Source systems retain authority over their records.",
+          "The tools you already use keep the record. Personal notes stay with the person. What happened in this sitting stays with this sitting. What the organization has already decided is shared. Those stay apart. SpineWorkspace does not become a new home for the record.",
       },
       {
         headline: "What business context includes.",
@@ -184,7 +184,7 @@ export const pages = {
       {
         headline: "Connect truth and context—without claiming source authority.",
         body:
-          "Spine connects to your existing tools and assembles what this task needs. It does not replace your CRM or ERP as the system of record. Business Context is the governed layer above them.",
+          "SpineWorkspace connects to the tools you already use and gathers what this task needs. The CRM, the desk, and the billing tool keep the record. Business Context is where the evidence for this task is brought together.",
       },
       {
         headline: "Proposals do not become business truth.",
@@ -213,7 +213,7 @@ export const pages = {
     sections: [
       {
         id: "adaptive-autotuner",
-        label: "Spine Adaptive Autotuner",
+        label: "The view for this role",
         headline: "Adapt the environment around the work.",
         body:
           "The workspace changes around the person, the task, and the role. One piece of Work stays the same. The view follows who is looking at it.",
@@ -236,43 +236,43 @@ export const pages = {
       },
     ],
     crossLinks: {
-      next: { label: "Host Connected Environment", href: "/host-connected-environment" },
+      next: { label: "The tools you already use", href: "/host-connected-environment" },
     },
   },
 
   hostConnectedEnvironment: {
     meta: {
-      title: "Host Connected Environment — Independent hosts, shared truth and context",
+      title: "The tools you already use — Each tool stays itself",
       description:
-        "Each host is independent. Spine connects into each host's environment without creating a host-to-host mesh.",
+        "Each tool stays itself. SpineWorkspace shares the record and the evidence for the work. The tools do not have to talk to each other directly.",
       path: "/host-connected-environment",
     },
     hero: {
-      badge: "Host Connected Environment",
-      headline: "Your tools. Shared truth and context. Work that moves forward.",
+      badge: "The tools you already use",
+      headline: "Your tools stay themselves. The work still moves.",
       subhead:
-        "Each host stays independent. SpineWorkspace shares truth and the context for the work with that host. Hosts do not execute work for each other.",
-      primaryCta: { label: "See host continuity", href: "/continuity" },
+        "Each tool stays itself. SpineWorkspace shares the record and the evidence for the work. The tools do not have to do each other's jobs.",
+      primaryCta: { label: "See how work continues", href: "/continuity" },
     },
     sections: [
       {
-        headline: "What a Host Connected Environment includes.",
+        headline: "What stays with the tools you already use.",
         body:
-          "A host's native models, tools, MCP servers, plugins, skills, apps, workflows, and connections—plus Spine tools and Spine Fabric when connected.",
+          "The tools, files, conversations, and workflows already open for that person. SpineWorkspace connects to them. It does not replace them.",
       },
       {
-        headline: "Spine discovers what's actually present and healthy.",
+        headline: "SpineWorkspace sees what is actually connected.",
         body:
-          "No assumed integrations. SpineWorkspace inventories the host estate—what models, tools, and connections are available right now.",
+          "It does not assume a connection that is not there. It sees which tools are available and working right now.",
       },
       {
-        headline: "Host-first capability resolution.",
-        body: "Use the current host's capabilities first. Fall back to Spine or managed services only when needed.",
+        headline: "Use what is already open.",
+        body: "The work uses the tools already open for that person before it reaches for anything else.",
       },
       {
-        headline: "Work continues across hosts.",
+        headline: "Work continues across the tools you already use.",
         body:
-          "Because Spine carries the truth, the context, the work, and the checkpoints, an objective started in one host can resume in another without rebuilding the story.",
+          "The record, the evidence, and earlier decisions travel with the work. Something started in one tool can continue in another without rebuilding the story.",
       },
     ],
     crossLinks: {
@@ -299,7 +299,7 @@ export const pages = {
       },
       {
         headline: "Three memory scopes.",
-        body: "Personal memory stays with the person. Session memory stays with that sitting. Organizational memory is shared context for the organization. None of them replaces the system of record. They are not blended.",
+        body: "Personal memory stays with the person. Session memory stays with that sitting. Organizational memory is shared context for the organization. None of them replaces the record. They are not blended.",
         items: ["Personal memory", "Session memory", "Organizational memory"],
       },
       {
@@ -344,11 +344,11 @@ export const pages = {
       },
     ],
     scenario: {
-      headline: "One objective. Two hosts. The story continues.",
-      body: "A renewal risk signal surfaces in one host. The team opens another host to draft outreach. Spine carries the truth and the context for that work—goals, evidence, prior decisions—so work resumes without rebuilding the story.",
+      headline: "One objective. Two tools. The story continues.",
+      body: "A renewal risk shows up in one tool. The team opens another tool to draft the note. SpineWorkspace carries the record and the evidence for that work, so the story does not have to be rebuilt.",
       steps: [
-        "Renewal risk detected in Host A",
-        "Truth and context carry to Host B with goals and evidence",
+        "Renewal risk shows up in the tool that holds the account",
+        "The record and the evidence travel with the work to the tool used for the note",
         "A person accepts, edits, or rejects the proposal",
         "Outcome reconciled in Workbench",
       ],
@@ -373,13 +373,13 @@ export const pages = {
     },
     sections: [],
     scenario: {
-      headline: "One business objective. Multiple hosts. The story continues.",
+      headline: "One piece of work. More than one tool. The story continues.",
       body:
-        "Renewal risk detected in Host A → truth and context carry to Host B → a person decides → outcome reconciled in Workbench. The business story never breaks.",
+        "Renewal risk shows up in one tool. The record and the evidence travel with the work. A person decides. The original tool is updated. The story does not have to be rebuilt.",
       steps: [
         "Risk signal surfaces with linked evidence",
         "Twin prepares a proposal within governance bounds",
-        "Work continues in a different host with the same truth and context",
+        "Work continues in another tool with the same record and the same evidence",
         "Results observed and reconciled against the source record",
       ],
     },
@@ -453,23 +453,23 @@ export const pages = {
   developers: {
     meta: {
       title: "Developers — Build with SpineWorkspace",
-      description: "Integrate your tools, MCP servers, and capabilities into Spine Fabric ecosystem.",
+      description: "Connect the tools, files, and conversations your team already uses.",
       path: "/developers",
     },
     hero: {
       badge: "Developers",
       headline: "Build with SpineWorkspace.",
-      subhead: "Integrate your tools, MCP servers, and capabilities into Spine Fabric ecosystem.",
+      subhead: "Connect the tools, files, and conversations your team already uses. The tools keep the record.",
       primaryCta: { label: "Read the docs", href: "https://docs.spineworkspace.com/" },
     },
     sections: [
       {
         headline: "Integration paths.",
         cards: [
-          { title: "Integrations", description: "Connect SaaS apps and data sources into Spine Fabric.", href: "/platform/integrations" },
-          { title: "MCP and plugins", description: "Extend host environments with MCP servers and plugins.", href: "https://docs.spineworkspace.com/" },
-          { title: "Capability resolution", description: "How Spine selects models, tools, and workflows for a task.", href: "/twin" },
-          { title: "APIs and auth", description: "Authentication, scopes, and API access patterns.", href: "https://docs.spineworkspace.com/" },
+          { title: "Integrations", description: "Connect the apps your team already opens.", href: "/platform/integrations" },
+          { title: "Tools already open", description: "Use the tools, files, and conversations already in front of that person.", href: "https://docs.spineworkspace.com/" },
+          { title: "Use what is already open", description: "The work uses what is already open before it reaches for anything else.", href: "/twin" },
+          { title: "Sign-in and permission", description: "Who may sign in, and what that person is allowed to see.", href: "https://docs.spineworkspace.com/" },
           { title: "Reference docs", description: "Full platform and product documentation.", href: "https://docs.spineworkspace.com/" },
         ],
       },
@@ -486,16 +486,16 @@ export const pages = {
       badge: "Platform",
       headline: "The platform behind SpineWorkspace.",
       subhead: "Architecture that keeps truth in source systems and assembles context for the task.",
-      primaryCta: { label: "Spine Fabric", href: "/platform/spine-fabric" },
+      primaryCta: { label: "One connection", href: "/platform/spine-fabric" },
     },
     sections: [
       {
-        headline: "Platform components.",
+        headline: "What the platform is for.",
         cards: [
-          { title: "Spine Fabric", description: "Connects systems so truth stays in the source and context can be assembled.", href: "/platform/spine-fabric" },
-          { title: "How it works", description: "Truth stays in source systems. Context is assembled. A person decides.", href: "/platform/how-it-works" },
-          { title: "Marketplace", description: "Capabilities, plugins, and integrations.", href: "/platform/integrations" },
-          { title: "Host Connected Environment", description: "Independent hosts that share truth and context for the work.", href: "/host-connected-environment" },
+          { title: "One connection", description: "Connects the tools you already use. The tools keep the record.", href: "/platform/spine-fabric" },
+          { title: "How it works", description: "The tools keep the record. The workspace shows the work. A person decides, and an accepted change goes back.", href: "/platform/how-it-works" },
+          { title: "Integrations", description: "The apps, files, and conversations already in use.", href: "/platform/integrations" },
+          { title: "The tools you already use", description: "Each tool stays itself. They do not have to talk to each other directly.", href: "/host-connected-environment" },
           { title: "Observation and reconciliation", description: "Results observed, not blindly trusted.", href: "/governance" },
           { title: "Security and governance", description: "Access, auditability, and execution controls.", href: "/security" },
         ],
@@ -522,7 +522,7 @@ export const pages = {
       },
       {
         headline: "Access and authorization.",
-        body: "Role-based access, scoped permissions, and host-aware capability resolution keep actions within organizational policy.",
+        body: "Role-based access, scoped permissions, and the person's permission keep actions within organizational policy.",
       },
       {
         headline: "Evidence and auditability.",
@@ -534,7 +534,7 @@ export const pages = {
       },
       {
         headline: "Data boundaries.",
-        body: "Spine assembles context from connected systems without replacing those systems of record. Data handling aligns with your governance requirements.",
+        body: "Spine assembles context from connected systems without replacing the tools that keep the record. Data handling aligns with your governance requirements.",
       },
     ],
   },
@@ -557,16 +557,16 @@ export const pages = {
 
 export const proofCards: ProofCardCopy[] = [
   {
-    title: "Host Connected Environment",
-    description: "Independent hosts share truth and context through Spine—not a host-to-host mesh.",
+    title: "The tools you already use",
+    description: "Each tool stays itself. SpineWorkspace shares the record and the evidence for the work. The tools do not have to talk to each other directly.",
   },
   {
-    title: "Estate discovery and normalization",
-    description: "Spine inventories what's present and healthy in each host environment.",
+    title: "What is actually connected",
+    description: "SpineWorkspace sees which tools are available and working. It does not assume a connection that is not there.",
   },
   {
-    title: "Host-first capability resolution",
-    description: "Current host capabilities are used before Spine or managed fallback.",
+    title: "Use what is already there",
+    description: "The work uses the tools already open for that person before it reaches for anything else.",
   },
   {
     title: "Governance boundary",
@@ -698,7 +698,7 @@ export const useCasePages: Record<string, UseCasePageCopy> = {
 
 export const ecosystemChips = [
   "SaaS apps",
-  "MCP servers",
+  "tools already open",
   "Plugins",
   "Tools",
   "Skills",
@@ -740,7 +740,7 @@ export const homeCopy = {
     cards: [
       { title: "Workbench", description: "Role-aware views of goals, truth, context, and work", href: "/adaptive-workspace" },
       { title: "Twin", description: "Prepares a proposal from governed truth and context, then waits for review", href: "/twin" },
-      { title: "Spine Fabric", description: "Connects systems without claiming source authority", href: "/platform/spine-fabric" },
+      { title: "SpineWorkspace", description: "Connects systems without claiming source authority", href: "/platform/spine-fabric" },
       { title: "Governance", description: "Humans approve. AI proposes. Nothing executes without authority.", href: "/governance" },
       { title: "Continuity", description: "Work, memory, and evidence persist across sessions and hosts", href: "/continuity" },
     ],
@@ -749,14 +749,14 @@ export const homeCopy = {
     label: "Your environment",
     headline: "Connect what you already use. Discover what's available.",
     body:
-      "SpineWorkspace works inside your Host Connected Environment—your models, MCP servers, plugins, skills, apps, and workflows. Spine discovers what's present, resolves the right capability, and carries truth and context forward.",
+      "SpineWorkspace connects the tools, files, and conversations you already use. It sees what is actually open, and it carries the record and the evidence forward.",
     cta: { label: "See how hosts connect", href: "/host-connected-environment" },
   },
   proofTeaser: {
     label: "Proof",
     headline: "Independent hosts. Shared truth and context. Governed work.",
     body:
-      "SpineWorkspace is built from proven primitives—host discovery, capability resolution, governance boundaries, and continuity across independent environments.",
+      "SpineWorkspace sees which tools are open, keeps the record and the evidence apart, and waits for a person to decide.",
     cta: { label: "See the proof", href: "/proof" },
   },
   finalCta: {
@@ -771,6 +771,6 @@ export const blogCategories = [
   "Business context",
   "Human–AI work",
   "Governance and trust",
-  "Host-connected environments",
+  "The tools you already use",
   "Company updates",
 ];

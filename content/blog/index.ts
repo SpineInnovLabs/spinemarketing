@@ -13,7 +13,7 @@ export type BlogPost = {
 export const posts: BlogPost[] = [
   {
     slug: "stop-being-the-human-api",
-    title: "Stop being the human API between your tools",
+    title: "Stop being the translator between your tools",
     description:
       "Every founder, operator, and account manager starts their day the same way: open 12 tabs, copy-paste context, and lose an hour before real work begins.",
     date: "2026-04-12",
@@ -23,7 +23,7 @@ export const posts: BlogPost[] = [
     category: "Product",
     body: `Every founder, operator, and account manager starts their day the same way: open Salesforce, check Slack, look at Stripe, scan Jira, read emails, update the spreadsheet. By the time they have context, an hour is gone.
 
-You are the bridge. The human API. And it's exhausting.
+You are the bridge. The person who carries the story from one tool to the next. And it's exhausting.
 
 ## The problem isn't your tools
 
@@ -67,7 +67,7 @@ AI is great at sounding right. It uses the same tone whether it's giving you a v
 
 ## How Spine InnovLabs handles this differently
 
-Every insight comes with evidence — which data, from which tool, how recent. When AI discovers something about your business, it proposes it to you first. You see what it found, where it came from, and how confident it is. You approve, reject, or edit.
+Every insight comes with evidence — which data, from which tool, how recent. When Twin finds something, it proposes it first. You see what it found and where it came from. You allow it, change it, or stop it.
 
 Only what you confirm becomes part of your business knowledge.
 
@@ -85,48 +85,38 @@ That's why the approval layer can't be bypassed. There is no admin override. No 
   },
   {
     slug: "spine-fabric-contextual-continuity-layer",
-    title: "Spine Fabric: the contextual continuity layer for human and AI work",
+    title: "The tools keep the record. The workspace shows the work.",
     description:
-      "Work is fragmented across tools. AI is fragmented across models. Spine InnovLabs builds the missing layer that connects both — Spine Fabric, the shared contextual operating layer.",
+      "Four kinds of information stay apart: the record, the evidence, the draft, and the person. Twin proposes only when asked. A person decides.",
     date: "2026-09-02",
     author: "Spine InnovLabs Team",
     readTime: "5 min read",
-    tags: ["Product", "Spine Fabric", "Architecture"],
+    tags: ["Product", "The record", "The workspace"],
     category: "Business context",
-    body: `Every company now runs two operating layers, and both are broken.
+    body: `The work is already in the tools you use. The customer is in the CRM. The ticket is in the desk. The bill is in billing. The promise is in email. The person who has to act is the one piecing that together.
 
-The human layer is fragmented across tools. Customer success lives in the CRM, commitments live in email and Slack, delivery lives in the project tracker, and the full picture lives — briefly, expensively — in someone's head.
+SpineWorkspace does not create a new home for that record. It connects the tools, files, and conversations you already use, and it keeps four kinds of information apart.
 
-The AI layer is fragmented too. Every SaaS product ships its own copilot. Every copilot sees a slice. None of them share context, and none of them remember. You end up with many intelligent fragments and zero organizational intelligence.
+## Four things, kept apart
 
-## The missing layer
+**The record.** Customers, tickets, billing, contracts, and approvals. The tools that own them keep them.
 
-Spine InnovLabs builds the contextual continuity layer that connects human work and AI work. We call it Spine Fabric.
+**The evidence.** Email, notes, files, and conversations for this person and this task. Evidence is not the record.
 
-Spine Fabric is a shared contextual operating layer underneath your tools. It unifies four things every connected system produces — entities, events, evidence, and decisions — into one governed, versioned picture of the business. Source systems stay the systems of record; Spine Fabric holds the canonical state that both humans and AI work from.
+**The draft.** What Twin suggests when someone asks. It is not the record until a person accepts it, changes it, or rejects it.
 
-That's the difference between a data warehouse and a fabric. A warehouse stores history for analysts. Spine Fabric assembles live context for workers — and increasingly, for the AI that works alongside them.
+**The person.** Their role, their workspace, and their permission. A tool being open is not permission to use it.
 
-## The loop that makes it trustworthy
+## What happens when someone asks
 
-Context alone isn't the product. Continuity is. Every action in SpineWorkspace follows the same governed loop:
+The workspace shows the view this role needs. Sales sees the next customer step. Operations sees the handoff. Leadership sees the decision that is still waiting.
 
-**Assemble → Propose → Approve → Execute → Receipt → Remember.**
+Twin opens only when asked. It reads the record, the evidence, and earlier decisions, and it prepares a proposal. Every claim points back to its source. Twin does not write the record.
 
-The Twin assembles context and proposes work with evidence. Governance checks authority before anything consequential moves. Approved actions execute through governed capabilities — and every one returns a receipt: what was attempted, what actually changed, verified against the source system. What you approve becomes durable business memory. What the AI infers stays bounded operational memory until a human promotes it.
+A person allows it, changes it, or stops it. An accepted change is written back through the tool that owns the record. The workspace then shows the result.
 
-No action without authority. No completion claim without verification. No memory without provenance.
+## Why this is the product
 
-## One Twin, one network
-
-You experience all of this through a single collaborator: your Twin — a personal AI operator grounded in your business, not a chat window bolted onto a dashboard. Behind the Twin runs the Spine Agent Network: core agents for discovery, connection, and governance; domain agents that project SpineWorkspace capabilities into each function's workbench; and your tools themselves.
-
-It works like a cognitive ESB. Agents and tools discover each other through a shared substrate instead of point-to-point integrations — the network moves understanding, not packets.
-
-## Why this compounds
-
-Every governed action strengthens the context available for the next one. New hires inherit the decisions, not just the data. AI assists from the same picture you see. Tools get replaced; the fabric persists.
-
-Humans govern. AI helps. Spine preserves continuity. That's the whole thesis — and it's the layer we think every company will run on.`,
+People should not have to rebuild the story every time they change tools. Twin should not invent a record the business has not accepted. And the tools you already trust should stay in charge.`,
   },
 ]
