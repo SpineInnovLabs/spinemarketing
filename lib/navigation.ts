@@ -75,7 +75,7 @@ export const headerNavigation: NavItem[] = [
         name: "Business Context",
         href: "/business-context",
         icon: Layers,
-        desc: "Governed context from the systems you already use.",
+        desc: "Where context for the task is assembled. Source systems stay the record.",
       },
       {
         name: "Adaptive Workspace",
@@ -188,7 +188,7 @@ export const footerColumns: FooterColumn[] = [
 ];
 
 export const COMPANY_TAGLINE =
-  "Spine InnovLabs builds SpineWorkspace, the business-context workspace where humans and AI work together.";
+  "Spine InnovLabs builds SpineWorkspace, where people and AI work from truth and context together.";
 
 export const PRODUCT_ONELINER =
-  "SpineWorkspace is a governed AI workspace for operational work — connecting your existing tools so teams and AI work from the same live context.";
+  "SpineWorkspace is a governed AI workspace for operational work — connecting your existing tools so teams and AI work from the same truth and the context for this task.";

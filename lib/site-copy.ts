@@ -38,16 +38,16 @@ export type UseCasePageCopy = NarrativePageCopy & {
 export const pages = {
   spineworkspace: {
     meta: {
-      title: "SpineWorkspace — The adaptive business-context workspace",
+      title: "SpineWorkspace — Truth and context in one governed workspace",
       description:
-        "SpineWorkspace is the adaptive business-context workspace where humans and AI work together on shared goals, work, memory, and evidence.",
+        "SpineWorkspace brings authoritative truth and the context for the current task together. Source systems stay authoritative.",
       path: "/spineworkspace",
     },
     hero: {
       badge: "Governed AI workspace",
       headline: "Work from the full business story — not fragments.",
       subhead:
-        "SpineWorkspace brings authorized context from the systems your team already uses into a governed workspace where people and AI prepare, review, and move work forward. Your systems remain authoritative. Your people remain accountable.",
+        "SpineWorkspace brings authorized truth and the context for this task into one governed workspace. People and AI prepare, review, and move work forward. Your systems remain authoritative. Your people remain accountable.",
       primaryCta: { label: "See a workflow", href: "/#renewal-workflow" },
       secondaryCta: { label: "Book a tailored demo", href: "/contact?intent=demo" },
     },
@@ -55,7 +55,7 @@ export const pages = {
       {
         headline: "A workspace for the business, not another tool in the stack.",
         body:
-          "SpineWorkspace sits above your existing systems. It doesn't replace your CRM, email, or project tools—it connects them into shared business context that humans and AI both work from. Spine Workspace and Spine Workbench are the same offering.",
+          "SpineWorkspace sits above your existing systems. It does not replace your CRM, email, or project tools. It brings their truth together with the context for the current task. Spine Workspace and Spine Workbench are the same offering.",
       },
       {
         headline: "Everything that matters to how work gets done.",
@@ -65,7 +65,7 @@ export const pages = {
         headline: "Understand. Coordinate. Preserve. Reconcile.",
         cards: [
           { title: "Understand work", description: "See goals, status, and risk in one place" },
-          { title: "Coordinate action", description: "Humans and AI work from the same context" },
+          { title: "Coordinate action", description: "Humans and AI work from the same truth and context" },
           { title: "Preserve continuity", description: "Memory and evidence survive every handoff" },
           { title: "Reconcile results", description: "Observe outcomes; don't blindly trust model output" },
         ],
@@ -73,10 +73,10 @@ export const pages = {
       {
         headline: "Built from adaptive primitives.",
         cards: [
-          { title: "Workbench", description: "Same offering as Spine Workspace: role-aware views of goals, KPIs, work, and context" },
-          { title: "Twin", description: "A context-aware coworker that gathers business context before helping", href: "/twin" },
+          { title: "Workbench", description: "Same offering as Spine Workspace: role-aware views of goals, truth, context, and work" },
+          { title: "Twin", description: "Prepares a proposal from governed truth and context, then waits for review", href: "/twin" },
           { title: "Spine Fabric", description: "Connects systems without claiming source authority", href: "/platform/spine-fabric" },
-          { title: "Your tools", description: "Connectors bring context in. Source systems stay authoritative.", href: "/integrations" },
+          { title: "Your tools", description: "Connectors bring truth and context in. Source systems stay authoritative.", href: "/integrations" },
           { title: "Review", description: "A person accepts consequential steps. Proposals stay proposals until then.", href: "/governance" },
         ],
       },
@@ -92,14 +92,14 @@ export const pages = {
 
   twin: {
     meta: {
-      title: "The Twin — A coworker that starts with context",
-      description: "The Twin gathers relevant business context before helping—not just your latest prompt.",
+      title: "The Twin — A proposal from truth and context",
+      description: "Coworker gathers the truth and context this person may use. Twin prepares a proposal. A person reviews it.",
       path: "/twin",
     },
     hero: {
       badge: "Spine Twin",
       headline: "Your Twin starts from the work, not a blank chat.",
-      subhead: "Coworker gathers authorized context. Twin proposes a next step. A person reviews it.",
+      subhead: "Coworker gathers authorized truth and context. Twin prepares a proposal. A person reviews it.",
       primaryCta: { label: "Book a demo", href: "/contact?intent=demo" },
       secondaryCta: { label: "See governance", href: "/governance" },
     },
@@ -107,14 +107,14 @@ export const pages = {
       {
         id: "coworker",
         label: "Spine Coworker",
-        headline: "Coworker gathers the context. Twin coordinates the work.",
+        headline: "Coworker gathers truth and context. Twin prepares the proposal.",
         body:
-          "Spine Coworker is the Context Gatherer. It gathers authorized business context before help starts. Spine Twin coordinates authorized Work and proposes a next step. A person reviews it. Model selection stays behind Twin: there is no model catalogue and no second chat product.",
+          "Spine Coworker gathers the truth and context this person is allowed to use for this workflow. Spine Twin prepares a proposal from that. A person reviews it. The proposal is not the system of record. Model selection stays behind Twin: there is no model catalogue and no second chat product.",
       },
       {
-        headline: "Context first. Capability second.",
+        headline: "Truth and context first. Capability second.",
         body:
-          "Before the Twin responds, it pulls from shared business context: goals, active work, customer history, prior decisions, and evidence. You get help grounded in how your business actually works.",
+          "Before Twin responds, it uses authoritative records and the context assembled for this task: goals, active work, customer history, prior decisions, and evidence. The proposal stays a proposal until a person reviews it.",
       },
       {
         headline: "Not a chat agent. A coworker.",
@@ -126,7 +126,7 @@ export const pages = {
           right: {
             title: "The Twin",
             items: [
-              "Starts from business context",
+              "Starts from truth and governed context",
               "Knows goals, KPIs, work state",
               "Selects the right capability silently",
               "Respects permissions and evidence",
@@ -161,35 +161,35 @@ export const pages = {
       badge: "Business Context",
       headline: "One governed picture of the work.",
       subhead:
-        "Source systems stay authoritative. SpineWorkspace holds a governed canonical Business Context that people and their Twin work from.",
+        "Business Context is where context for the current task is assembled. Source systems remain the system of record.",
       primaryCta: { label: "See how work is shown", href: "/adaptive-workspace" },
     },
     sections: [
       {
         id: "data-fabric",
         label: "Spine Data Fabric",
-        headline: "Keep business context, memory, and evidence connected.",
+        headline: "Keep truth, context, and memory distinct.",
         body:
-          "Spine Data Fabric preserves governed Business Context. Personal memory stays with the person. Session memory stays with that sitting. Organizational memory is shared business context. Those scopes stay distinct. Source systems retain authority over their records.",
+          "Spine Data Fabric connects records without replacing them. Personal memory stays with the person. Session memory stays with that sitting. Organizational memory is shared context for the organization. Those scopes stay distinct. Source systems retain authority over their records.",
       },
       {
         headline: "What business context includes.",
         items: ["Goals", "KPIs", "Customers", "Relationships", "Work", "Decisions", "Evidence", "History", "Outcomes"],
       },
       {
-        headline: "Without shared context, everyone rebuilds the story.",
+        headline: "Without truth and context together, everyone rebuilds the story.",
         body:
-          "Every tool handoff, every AI session, every new team member starts from zero. Business context is what lets humans and AI work toward the same goals without re-explaining everything.",
+          "Every tool handoff, every AI session, every new team member starts from zero. Bringing the record and the context for this task together lets people and AI work toward the same goals without re-explaining everything.",
       },
       {
-        headline: "Connect context across systems—without claiming source authority.",
+        headline: "Connect truth and context—without claiming source authority.",
         body:
-          "Spine connects to your existing tools and normalizes what matters. It doesn't replace your CRM or ERP as the system of record. It governs the context layer that sits above them.",
+          "Spine connects to your existing tools and assembles what this task needs. It does not replace your CRM or ERP as the system of record. Business Context is the governed layer above them.",
       },
       {
         headline: "Proposals do not become business truth.",
         body:
-          "Source systems stay authoritative. Model output and agent suggestions remain proposals until a person with authority accepts them into the governed canonical Business Context.",
+          "Source systems stay authoritative. A proposal does not become truth until a person with authority accepts it.",
       },
     ],
     crossLinks: {
@@ -228,7 +228,7 @@ export const pages = {
       },
       {
         headline: "Twin uses the same Work.",
-        body: "Coworker gathers authorized context. Twin proposes a next step. There is no model catalogue and no second chat.",
+        body: "Coworker gathers authorized truth and context. Twin prepares a proposal. There is no model catalogue and no second chat.",
       },
       {
         headline: "A person still decides.",
@@ -242,16 +242,16 @@ export const pages = {
 
   hostConnectedEnvironment: {
     meta: {
-      title: "Host Connected Environment — Independent hosts, shared business context",
+      title: "Host Connected Environment — Independent hosts, shared truth and context",
       description:
         "Each host is independent. Spine connects into each host's environment without creating a host-to-host mesh.",
       path: "/host-connected-environment",
     },
     hero: {
       badge: "Host Connected Environment",
-      headline: "Your tools. Shared context. Work that moves forward.",
+      headline: "Your tools. Shared truth and context. Work that moves forward.",
       subhead:
-        "Each host stays independent. SpineWorkspace shares business context with that host. Hosts do not execute work for each other.",
+        "Each host stays independent. SpineWorkspace shares truth and the context for the work with that host. Hosts do not execute work for each other.",
       primaryCta: { label: "See host continuity", href: "/continuity" },
     },
     sections: [
@@ -272,7 +272,7 @@ export const pages = {
       {
         headline: "Work continues across hosts.",
         body:
-          "Because Spine carries context, Work, evidence, and checkpoints, an objective started in one host can resume in another without losing the business story.",
+          "Because Spine carries the truth, the context, the work, and the checkpoints, an objective started in one host can resume in another without rebuilding the story.",
       },
     ],
     crossLinks: {
@@ -295,11 +295,11 @@ export const pages = {
     sections: [
       {
         headline: "Authority is a person, not a model.",
-        body: "Availability is not authority. Twin can propose. A person with the right scope accepts consequential work into governed context.",
+        body: "Availability is not authority. Twin can propose. A person with the right scope accepts or rejects the proposal. The source system stays the record.",
       },
       {
         headline: "Three memory scopes.",
-        body: "Personal memory stays with the person. Session memory stays with that sitting. Organizational memory is shared business context. They are not blended.",
+        body: "Personal memory stays with the person. Session memory stays with that sitting. Organizational memory is shared context for the organization. None of them replaces the system of record. They are not blended.",
         items: ["Personal memory", "Session memory", "Organizational memory"],
       },
       {
@@ -330,7 +330,7 @@ export const pages = {
     },
     sections: [
       {
-        headline: "Every tool handoff loses context.",
+        headline: "Every tool handoff splits truth from context.",
         body: "Switching between CRM, email, chat, and project tools forces people and AI to reconstruct what happened, why it matters, and what comes next.",
       },
       {
@@ -344,12 +344,12 @@ export const pages = {
       },
     ],
     scenario: {
-      headline: "One objective. Two hosts. Continuous context.",
-      body: "A renewal risk signal surfaces in one host. The team opens another host to draft outreach. Spine carries the full business story—goals, evidence, prior decisions—so work resumes without rebuilding context.",
+      headline: "One objective. Two hosts. The story continues.",
+      body: "A renewal risk signal surfaces in one host. The team opens another host to draft outreach. Spine carries the truth and the context for that work—goals, evidence, prior decisions—so work resumes without rebuilding the story.",
       steps: [
         "Renewal risk detected in Host A",
-        "Context carries to Host B with goals and evidence",
-        "Human approves the recommended action",
+        "Truth and context carry to Host B with goals and evidence",
+        "A person accepts, edits, or rejects the proposal",
         "Outcome reconciled in Workbench",
       ],
     },
@@ -373,14 +373,14 @@ export const pages = {
     },
     sections: [],
     scenario: {
-      headline: "One business objective. Multiple hosts. Continuous context.",
+      headline: "One business objective. Multiple hosts. The story continues.",
       body:
-        "Renewal risk detected in Host A → context carries to Host B → human approves action → outcome reconciled in Workbench. The business story never breaks.",
+        "Renewal risk detected in Host A → truth and context carry to Host B → a person decides → outcome reconciled in Workbench. The business story never breaks.",
       steps: [
         "Risk signal surfaces with linked evidence",
-        "Twin proposes next actions within governance bounds",
-        "Work continues in a different host with full context",
-        "Results observed and reconciled against the governed business context",
+        "Twin prepares a proposal within governance bounds",
+        "Work continues in a different host with the same truth and context",
+        "Results observed and reconciled against the source record",
       ],
     },
     finalCta: {
@@ -394,14 +394,14 @@ export const pages = {
     meta: {
       title: "Company — Spine InnovLabs builds SpineWorkspace",
       description:
-        "Spine InnovLabs builds SpineWorkspace — a governed AI workspace where people and AI work from the same business context.",
+        "Spine InnovLabs builds SpineWorkspace — a governed AI workspace where people and AI work from the same truth and context.",
       path: "/company",
     },
     hero: {
       badge: "Spine InnovLabs",
       headline: "We build for the work that gets lost between systems.",
       subhead:
-        "Spine InnovLabs builds SpineWorkspace: a governed environment where people and AI work from the same business context, while the systems teams already depend on remain authoritative.",
+        "Spine InnovLabs builds SpineWorkspace: a governed environment where people and AI work from the same truth and context, while the systems teams already depend on remain authoritative.",
       primaryCta: { label: "Speak with the team", href: "/contact" },
       secondaryCta: { label: "See a workflow", href: "/#renewal-workflow" },
     },
@@ -409,14 +409,14 @@ export const pages = {
       {
         headline: "Why this company exists.",
         body:
-          "Business context fragments across CRM, mail, tickets, documents, and the people who remember what happened. Spine InnovLabs exists to solve that fragmentation — without replacing source systems or removing human authority from consequential work.",
+          "Truth sits in CRM, billing, and tickets. Context sits in mail, documents, and the people who remember what happened. Spine InnovLabs exists to bring those together — without replacing source systems or removing human authority from consequential work.",
       },
       {
         headline: "What we ship.",
         cards: [
           {
             title: "SpineWorkspace",
-            description: "The flagship governed AI workspace for operational work — Workspace, Twin, and governed business context in one product.",
+            description: "The flagship governed AI workspace — truth, context, proposals, and decisions in one product.",
             href: "/spineworkspace",
           },
           {
@@ -429,7 +429,7 @@ export const pages = {
       {
         headline: "Principles we build by.",
         items: [
-          "Context — shared, governed, and linked to source evidence",
+          "Truth stays in source systems. Context is assembled for the work and linked to evidence",
           "Accountability — people accept consequential steps; proposals stay proposals until then",
           "Continuity — work resumes across sessions and handoffs without rebuilding the story",
           "Adaptive capability — the workspace follows the goal, role, and evidence in front of the work",
@@ -479,23 +479,23 @@ export const pages = {
   platformHub: {
     meta: {
       title: "Platform — The platform behind SpineWorkspace",
-      description: "Architecture for adaptive business-context workspaces.",
+      description: "Architecture for workspaces that keep truth in source systems and assemble context for the task.",
       path: "/platform",
     },
     hero: {
       badge: "Platform",
       headline: "The platform behind SpineWorkspace.",
-      subhead: "Architecture for adaptive business-context workspaces.",
+      subhead: "Architecture that keeps truth in source systems and assembles context for the task.",
       primaryCta: { label: "Spine Fabric", href: "/platform/spine-fabric" },
     },
     sections: [
       {
         headline: "Platform components.",
         cards: [
-          { title: "Spine Fabric", description: "Context layer connecting systems without claiming source authority.", href: "/platform/spine-fabric" },
-          { title: "Runtime", description: "Governed execution with scoped authority.", href: "/platform/how-it-works" },
+          { title: "Spine Fabric", description: "Connects systems so truth stays in the source and context can be assembled.", href: "/platform/spine-fabric" },
+          { title: "How it works", description: "Truth stays in source systems. Context is assembled. A person decides.", href: "/platform/how-it-works" },
           { title: "Marketplace", description: "Capabilities, plugins, and integrations.", href: "/platform/integrations" },
-          { title: "Host Connected Environment", description: "Independent hosts with shared business context.", href: "/host-connected-environment" },
+          { title: "Host Connected Environment", description: "Independent hosts that share truth and context for the work.", href: "/host-connected-environment" },
           { title: "Observation and reconciliation", description: "Results observed, not blindly trusted.", href: "/governance" },
           { title: "Security and governance", description: "Access, auditability, and execution controls.", href: "/security" },
         ],
@@ -534,7 +534,7 @@ export const pages = {
       },
       {
         headline: "Data boundaries.",
-        body: "Spine connects context across systems without replacing source-of-record systems. Data handling aligns with your governance requirements.",
+        body: "Spine assembles context from connected systems without replacing those systems of record. Data handling aligns with your governance requirements.",
       },
     ],
   },
@@ -558,7 +558,7 @@ export const pages = {
 export const proofCards: ProofCardCopy[] = [
   {
     title: "Host Connected Environment",
-    description: "Independent hosts share business context through Spine—not a host-to-host mesh.",
+    description: "Independent hosts share truth and context through Spine—not a host-to-host mesh.",
   },
   {
     title: "Estate discovery and normalization",
@@ -578,15 +578,15 @@ export const proofCards: ProofCardCopy[] = [
   },
   {
     title: "Continuity across hosts",
-    description: "Objectives resume across hosts with full business context.",
+    description: "Objectives resume across hosts with the same truth and context.",
   },
 ];
 
 export const useCaseHubCards: HubCardCopy[] = [
   { title: "Sales", description: "Keep revenue work connected.", href: "/use-cases/sales" },
-  { title: "Customer Success", description: "Carry customer context across every interaction.", href: "/use-cases/customer-success" },
+  { title: "Customer Success", description: "Carry the customer record and the context for each interaction.", href: "/use-cases/customer-success" },
   { title: "Operations", description: "Coordinate work across fragmented systems.", href: "/use-cases/operations" },
-  { title: "Founders and Leaders", description: "See goals, KPIs, decisions, and execution in one context.", href: "/use-cases/founders-and-leaders" },
+  { title: "Founders and Leaders", description: "See goals, KPIs, decisions, and execution together.", href: "/use-cases/founders-and-leaders" },
   { title: "Teams", description: "One workspace for shared work and shared memory.", href: "/use-cases/teams" },
 ];
 
@@ -600,15 +600,15 @@ export const useCasePages: Record<string, UseCasePageCopy> = {
     hero: {
       badge: "Sales",
       headline: "Keep revenue work connected.",
-      subhead: "Pipeline, commitments, and customer context—without rebuilding the story every Monday.",
+      subhead: "Pipeline and commitments from the record, with the context for this deal—without rebuilding the story every Monday.",
       primaryCta: { label: "Book a demo", href: "/contact?intent=demo" },
     },
     sections: [],
     topics: [
-      { title: "Accounts", description: "Full account context across CRM, email, and support—not scattered tabs." },
+      { title: "Accounts", description: "The account record and the context around it—CRM, email, and support—not scattered tabs." },
       { title: "Pipeline", description: "Deals linked to evidence, activity, and risk signals." },
       { title: "Commitments", description: "What was promised, to whom, and whether it's on track." },
-      { title: "Follow-ups", description: "Next actions grounded in business context, not guesswork." },
+      { title: "Follow-ups", description: "Next actions grounded in the record and the context for this deal, not guesswork." },
       { title: "Deal memory", description: "History and decisions preserved across handoffs." },
       { title: "Next actions", description: "Twin surfaces what matters; you approve what executes." },
       { title: "KPI risk", description: "Revenue and pipeline KPIs connected to live work state." },
@@ -616,20 +616,20 @@ export const useCasePages: Record<string, UseCasePageCopy> = {
   },
   "customer-success": {
     meta: {
-      title: "Customer Success — Carry customer context across every interaction",
-      description: "Health, risk, renewal context, and relationship memory in one workspace.",
+      title: "Customer Success — Carry the customer record and the context for each interaction",
+      description: "Health, risk, renewal records, and relationship memory in one workspace.",
       path: "/use-cases/customer-success",
     },
     hero: {
       badge: "Customer Success",
-      headline: "Carry customer context across every interaction.",
+      headline: "Carry the customer record and the context for each interaction.",
       primaryCta: { label: "Book a demo", href: "/contact?intent=demo" },
     },
     sections: [],
     topics: [
       { title: "Health", description: "Usage, engagement, and support signals in one view." },
       { title: "Risk", description: "Early warning with evidence—not renewal-day surprises." },
-      { title: "Renewal context", description: "Contract terms, history, and commitments linked to the account." },
+      { title: "Renewal", description: "Contract terms, history, and commitments linked to the account." },
       { title: "Support history", description: "Tickets and resolutions inform every customer conversation." },
       { title: "Relationship memory", description: "Champions, stakeholders, and prior decisions preserved." },
       { title: "Commitments", description: "What the team owes—and what's been delivered." },
@@ -648,22 +648,22 @@ export const useCasePages: Record<string, UseCasePageCopy> = {
     },
     sections: [],
     topics: [
-      { title: "Cross-functional processes", description: "Work flows across teams with shared context." },
-      { title: "Handoffs", description: "Context survives every transition—not lost in Slack threads." },
+      { title: "Cross-functional processes", description: "Work flows across teams from the same truth and context." },
+      { title: "Handoffs", description: "Truth and context survive every transition—not lost in Slack threads." },
       { title: "Execution", description: "Governed actions with approval boundaries." },
       { title: "Evidence", description: "Every step linked to source data and decisions." },
-      { title: "Reconciliation", description: "Outcomes checked against the governed business context." },
+      { title: "Reconciliation", description: "Outcomes checked against the source record." },
     ],
   },
   "founders-and-leaders": {
     meta: {
-      title: "Founders and Leaders — Goals, KPIs, and execution in one context",
+      title: "Founders and Leaders — Goals, KPIs, and execution together",
       description: "Strategic visibility, decision traceability, and organizational memory.",
       path: "/use-cases/founders-and-leaders",
     },
     hero: {
       badge: "Founders and Leaders",
-      headline: "See goals, KPIs, decisions, and execution in one context.",
+      headline: "See goals, KPIs, decisions, and execution together.",
       primaryCta: { label: "Book a demo", href: "/contact?intent=demo" },
     },
     sections: [],
@@ -671,7 +671,7 @@ export const useCasePages: Record<string, UseCasePageCopy> = {
       { title: "Strategic visibility", description: "Goals and KPIs connected to live execution—not stale dashboards." },
       { title: "Decision traceability", description: "What was decided, why, and with what evidence." },
       { title: "Organizational memory", description: "Institutional knowledge that compounds over time." },
-      { title: "Continuity", description: "Leadership context survives team changes and tool switches." },
+      { title: "Continuity", description: "The leadership picture survives team changes and tool switches." },
     ],
   },
   teams: {
@@ -687,7 +687,7 @@ export const useCasePages: Record<string, UseCasePageCopy> = {
     },
     sections: [],
     topics: [
-      { title: "Human–AI collaboration", description: "Twin assists from shared context; team members stay aligned." },
+      { title: "Human–AI collaboration", description: "Twin prepares proposals from shared truth and context; team members stay aligned." },
       { title: "Work queues", description: "Prioritized work linked to goals and evidence." },
       { title: "Approvals", description: "Governed execution—nothing consequential runs without authority." },
       { title: "Visibility", description: "Everyone sees the same business story." },
@@ -716,9 +716,9 @@ export const homeCopy = {
   },
   hero: {
     badge: "Governed AI workspace for operational work",
-    headline: "Your business already has the context. It is trapped across tools.",
+    headline: "Your business already has the truth. The context is trapped across tools.",
     subhead:
-      "SpineWorkspace connects authorized signals from the systems you already use, gives people and AI the same evidence, and turns work into reviewable next steps.",
+      "SpineWorkspace connects authorized evidence from the systems you already use, so people and AI can work from the same truth and the context for this task. Source systems remain authoritative.",
     primaryCta: { label: "See a workflow", href: "#renewal-workflow" },
     secondaryCta: { label: "Book a tailored demo", href: "/contact?intent=demo" },
   },
@@ -736,10 +736,10 @@ export const homeCopy = {
   product: {
     label: "SpineWorkspace",
     headline: "One workspace around the business—not another app.",
-    body: "SpineWorkspace connects your existing tools and gives humans and AI the same governed business context.",
+    body: "SpineWorkspace connects your existing tools so people and AI work from the same truth and the context for this task.",
     cards: [
-      { title: "Workbench", description: "Role-aware views of goals, KPIs, work, and context", href: "/adaptive-workspace" },
-      { title: "Twin", description: "A context-aware coworker that gathers business context before helping", href: "/twin" },
+      { title: "Workbench", description: "Role-aware views of goals, truth, context, and work", href: "/adaptive-workspace" },
+      { title: "Twin", description: "Prepares a proposal from governed truth and context, then waits for review", href: "/twin" },
       { title: "Spine Fabric", description: "Connects systems without claiming source authority", href: "/platform/spine-fabric" },
       { title: "Governance", description: "Humans approve. AI proposes. Nothing executes without authority.", href: "/governance" },
       { title: "Continuity", description: "Work, memory, and evidence persist across sessions and hosts", href: "/continuity" },
@@ -749,18 +749,18 @@ export const homeCopy = {
     label: "Your environment",
     headline: "Connect what you already use. Discover what's available.",
     body:
-      "SpineWorkspace works inside your Host Connected Environment—your models, MCP servers, plugins, skills, apps, and workflows. Spine discovers what's present, resolves the right capability, and carries context forward.",
+      "SpineWorkspace works inside your Host Connected Environment—your models, MCP servers, plugins, skills, apps, and workflows. Spine discovers what's present, resolves the right capability, and carries truth and context forward.",
     cta: { label: "See how hosts connect", href: "/host-connected-environment" },
   },
   proofTeaser: {
     label: "Proof",
-    headline: "Independent hosts. Shared business context. Governed work.",
+    headline: "Independent hosts. Shared truth and context. Governed work.",
     body:
       "SpineWorkspace is built from proven primitives—host discovery, capability resolution, governance boundaries, and continuity across independent environments.",
     cta: { label: "See the proof", href: "/proof" },
   },
   finalCta: {
-    headline: "Ready to bring context into one workspace?",
+    headline: "Ready to bring truth and context into one workspace?",
     primaryCta: { label: "Book a demo", href: "/contact?intent=demo" },
     secondaryCta: { label: "Explore SpineWorkspace", href: "/spineworkspace" },
   },

@@ -58,7 +58,7 @@ export function PageHero({ badge, headline, subhead, primaryCta, secondaryCta, a
             ) : null}
             <motion.h1
               {...rise}
-              className={`max-w-full text-balance text-[#032D60] ${ice ? "text-[clamp(2.05rem,4.6vw,3.65rem)] font-bold leading-[1.08] tracking-[-0.03em]" : "text-[clamp(2rem,4.4vw,3.5rem)] font-semibold leading-[1.12] tracking-[-0.03em]"}`}
+              className={`max-w-full whitespace-pre-line text-balance text-[#032D60] ${ice ? "text-[clamp(2.05rem,4.6vw,3.65rem)] font-bold leading-[1.08] tracking-[-0.03em]" : "text-[clamp(2rem,4.4vw,3.5rem)] font-semibold leading-[1.12] tracking-[-0.03em]"}`}
             >
               {headline}
             </motion.h1>

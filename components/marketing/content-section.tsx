@@ -30,20 +30,21 @@ type Aside = { kicker: string; title: string; rows: { term: string; detail: stri
 /** Structured readings of approved section copy. No new metrics or proof claims. */
 const ASIDES: Record<string, Aside> = {
   "A workspace for the business, not another tool in the stack.": {
-    kicker: "Context layer",
-    title: "Shared business context",
+    kicker: "Above the tools",
+    title: "Truth stays in source systems",
     rows: [
       { term: "Sits above", detail: "Existing systems, including CRM, email, and project tools." },
-      { term: "Connects", detail: "Those tools become context humans and AI both work from." },
+      { term: "Brings together", detail: "Authoritative truth and the context for the current task." },
       { term: "Stays in place", detail: "SpineWorkspace does not replace the tools already in the stack." },
     ],
   },
-  "Context first. Capability second.": {
+  "Truth and context first. Capability second.": {
     kicker: "Before a response",
-    title: "What the Twin pulls",
+    title: "What the Twin uses",
     rows: [
-      { term: "From shared context", detail: "Goals, active work, customer history, prior decisions, and evidence." },
-      { term: "Grounded in", detail: "How the business actually works." },
+      { term: "Truth", detail: "Authoritative records the person is allowed to use." },
+      { term: "Context", detail: "Goals, active work, customer history, prior decisions, and evidence for this task." },
+      { term: "Proposal", detail: "Stays a proposal until a person reviews it." },
     ],
   },
   "One counterpart. No model catalogue.": {
@@ -55,12 +56,12 @@ const ASIDES: Record<string, Aside> = {
       { term: "Not in the product", detail: "No second chat product and no model picker." },
     ],
   },
-  "Without shared context, everyone rebuilds the story.": {
+  "Without truth and context together, everyone rebuilds the story.": {
     kicker: "The gap",
     title: "Starting from zero",
     rows: [
       { term: "Rebuilds happen", detail: "At every tool handoff, AI session, and new team member." },
-      { term: "Shared context", detail: "Humans and AI can work toward the same goals without re-explaining everything." },
+      { term: "Together", detail: "The record and the context for this task let people and AI work without re-explaining everything." },
     ],
   },
   "One piece of Work.": {
@@ -84,7 +85,7 @@ const ASIDES: Record<string, Aside> = {
     title: "Availability is not authority",
     rows: [
       { term: "Twin", detail: "Can propose." },
-      { term: "A person", detail: "With the right scope accepts consequential work into governed context." },
+      { term: "A person", detail: "With the right scope accepts or rejects the proposal. The source system stays the record." },
     ],
   },
   "Pending review is the default.": {
@@ -95,7 +96,7 @@ const ASIDES: Record<string, Aside> = {
       { term: "Evidence", detail: "Stays linked to the source system." },
     ],
   },
-  "Every tool handoff loses context.": {
+  "Every tool handoff splits truth from context.": {
     kicker: "What breaks",
     title: "The story gets rebuilt",
     rows: [
@@ -120,24 +121,24 @@ const ASIDES: Record<string, Aside> = {
       { term: "Availability", detail: "Does not grant authority to use a capability." },
     ],
   },
-  "Coworker gathers the context. Twin coordinates the work.": {
-    kicker: "Context Gatherer",
-    title: "Before Twin helps",
+  "Coworker gathers truth and context. Twin prepares the proposal.": {
+    kicker: "Before Twin helps",
+    title: "Truth, context, then a proposal",
     rows: [
-      { term: "Spine Coworker", detail: "Gathers authorized business context." },
-      { term: "Spine Twin", detail: "Coordinates authorized Work and proposes a next step." },
-      { term: "A person", detail: "Reviews the step." },
+      { term: "Spine Coworker", detail: "Gathers the truth and context this person may use for this workflow." },
+      { term: "Spine Twin", detail: "Prepares a proposal. The proposal is not the system of record." },
+      { term: "A person", detail: "Reviews the proposal." },
       { term: "Model selection", detail: "Stays behind Twin. There is no model catalogue and no second chat product." },
     ],
   },
-  "Keep business context, memory, and evidence connected.": {
+  "Keep truth, context, and memory distinct.": {
     kicker: "Spine Data Fabric",
     title: "Distinct memory scopes",
     rows: [
-      { term: "Business Context", detail: "Governed context people and their Twin work from." },
+      { term: "Business Context", detail: "Where context for the current task is assembled. Not the system of record." },
       { term: "Personal memory", detail: "Stays with the person." },
       { term: "Session memory", detail: "Stays with that sitting." },
-      { term: "Organizational memory", detail: "Shared business context. Not blended with the other scopes." },
+      { term: "Organizational memory", detail: "Shared context for the organization. Not blended with the other scopes." },
       { term: "Source systems", detail: "Retain authority over their records." },
     ],
   },

@@ -3,17 +3,16 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { FinalCTA } from "@/components/final-cta"
 import { PlatformHowItWorksContent } from "./content"
-import { HowItWorksGather } from "./sticky-sections"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
-  title: "How it Works | SpineWorkspace Platform",
+  title: "How it works | SpineWorkspace",
   description:
-    "Data flows, identity resolution, knowledge base, and the triage mechanism that powers Spine Fabric.",
+    "Truth stays in the tools you already run. Context is gathered for this person and this task. Twin prepares a proposal. A person decides.",
   alternates: { canonical: "/platform/how-it-works" },
   openGraph: {
-    title: "How it Works | SpineWorkspace Platform",
-    description: "Data flows, identity resolution, knowledge base, and the triage mechanism that powers Spine Fabric.",
+    title: "How it works | SpineWorkspace",
+    description: "Truth stays in the tools you already run. Context is gathered for this person and this task. Twin prepares a proposal. A person decides.",
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "SpineWorkspace" }],
   },
 }
@@ -29,7 +28,6 @@ export default function PlatformHowItWorksPage() {
       <Header />
       <main id="main">
         <PlatformHowItWorksContent />
-        <HowItWorksGather />
         <FinalCTA />
       </main>
       <Footer />

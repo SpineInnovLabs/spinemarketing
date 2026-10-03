@@ -16,11 +16,11 @@ export function FinalCTA() {
           className="mx-auto max-w-2xl text-center"
         >
           <h2 className="text-[32px] font-semibold tracking-[-0.03em] leading-[1.2] text-[#032D60] sm:text-[40px]">
-            Ready to bring context into{" "}
+            Ready to bring truth and context into{" "}
             <span className="text-[#0176D3]">one workspace?</span>
           </h2>
           <p className="mt-5 text-[16px] leading-[1.6] text-[#33465B]">
-            Spine InnovLabs builds SpineWorkspace — where humans and AI work from the same business context.
+            Spine InnovLabs builds SpineWorkspace — where people and AI work from truth and context together. Source systems stay authoritative.
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Link
