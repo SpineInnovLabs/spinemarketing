@@ -9,7 +9,7 @@ export const entries: ChangelogEntry[] = [
     date: "October 2026",
     title: "Docs, updates, and one renewal story",
     items: [
-      "Documentation links open the Mintlify docs site",
+      "Documentation links open docs.spineworkspace.com",
       "Updates, changelog, blog, and portfolio are separate",
       "The homepage follows the Northstar Labs renewal through to the result in the CRM",
       "Approval and execution are shown as different states",

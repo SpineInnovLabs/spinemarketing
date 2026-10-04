@@ -56,7 +56,7 @@ export type NavItem = {
   external?: boolean;
 };
 
-export const DOCS_URL = "https://spine-innov-labs.mintlify.io/";
+export const DOCS_URL = "https://docs.spineworkspace.com/";
 
 export const headerNavigation: NavItem[] = [
   {

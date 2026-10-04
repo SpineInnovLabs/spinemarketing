@@ -48,4 +48,4 @@ Reference
 
 Wire orphan MDX files currently on disk into navigation. Remove or fix 58 broken SpineWorkspace-tab links.
 
-Marketing site links to `https://spine-innov-labs.mintlify.io/` from header and footer.
+Marketing site links to `https://docs.spineworkspace.com/` from header and footer.
