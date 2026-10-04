@@ -33,8 +33,8 @@ export const ROUTE_DECISIONS: RouteDecision[] = [
   {
     path: "/docs",
     action: "redirect",
-    destination: "https://spine-innov-labs.mintlify.io/",
-    reason: "Local page redirects. Documentation lives on the Mintlify site. Not listed in this sitemap.",
+    destination: "https://docs.spineworkspace.com/",
+    reason: "Local page redirects. Documentation lives at docs.spineworkspace.com. Not listed in this sitemap.",
   },
   {
     path: "/platform/the-adaptive-spine",

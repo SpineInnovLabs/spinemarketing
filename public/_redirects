@@ -1,5 +1,5 @@
 # Same moves as netlify.toml. Redirects win over the static pages Next still exports.
-/docs https://spine-innov-labs.mintlify.io/ 301
+/docs https://docs.spineworkspace.com/ 301
 /platform/the-adaptive-spine /platform/spine-fabric 301
 /ai /twin 301
 /why /about 301
