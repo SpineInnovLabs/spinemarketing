@@ -1,6 +1,11 @@
 // Run with: npx tsx scripts/generate-rss.ts
 // Or add to build: "build": "tsx scripts/generate-rss.ts && next build"
 import { writeFileSync } from "fs"
+
+try {
+  process.loadEnvFile(".env.local")
+} catch {}
+
 import { getContentRepository } from "../lib/content"
 import { absoluteUrl } from "../lib/site-url"
 
