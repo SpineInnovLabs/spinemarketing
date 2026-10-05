@@ -88,7 +88,21 @@ If Sanity variables are unset, the build falls back to legacy `content/blog/` wi
 
 Datadog: build/deploy steps are wrapped with `datadog-ci trace`; production/dev/test deploys emit **DORA deployment** events for service `spineinnovlabs-marketing`. Connect the CircleCI integration in Datadog (**Software Delivery → CI Visibility**) to view pipelines.
 
-Deploy jobs **unset `CLOUDFLARE_API_TOKEN`** and use **Wrangler OAuth** (`WRANGLER_OAUTH_TOKEN` + `WRANGLER_REFRESH_TOKEN`), matching local `wrangler login`. Re-copy tokens after re-login if deploy auth fails.
+Deploy jobs **unset `CLOUDFLARE_API_TOKEN`** and use **Wrangler OAuth** (`WRANGLER_OAUTH_TOKEN` + `WRANGLER_REFRESH_TOKEN`), matching local `wrangler login`. 
+
+**Note: OAuth tokens expire after a few hours.** When CircleCI deploys fail with auth errors:
+
+```bash
+# 1. Get fresh OAuth tokens locally
+npm run wrangler:login
+npm run wrangler:whoami  # verify it works
+
+# 2. Copy the new tokens from ~/.wrangler/config/default.toml to CircleCI
+circleci envvar set WRANGLER_OAUTH_TOKEN <value_from_oauth_token>
+circleci envvar set WRANGLER_REFRESH_TOKEN <value_from_refresh_token>
+
+# 3. Trigger a new build (or push an empty commit)
+```
 
 ### GitHub Actions
 
