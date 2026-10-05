@@ -1,4 +1,5 @@
 import { Metadata } from "next"
+import { absoluteUrl } from "@/lib/site-url"
 import { InfrastructureContent } from "./content"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 
@@ -17,9 +18,9 @@ export default function InfrastructurePage() {
   return (
     <>
       <BreadcrumbJsonLd items={[
-        { name: "Home", url: "https://spineinnovlabs.com" },
-        { name: "Platform", url: "https://spineinnovlabs.com/platform" },
-        { name: "Infrastructure", url: "https://spineinnovlabs.com/platform/infrastructure" },
+        { name: "Home", url: absoluteUrl("/") },
+        { name: "Platform", url: absoluteUrl("/platform") },
+        { name: "Infrastructure", url: absoluteUrl("/platform/infrastructure") },
       ]} />
       <InfrastructureContent />
     </>

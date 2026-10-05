@@ -1,6 +1,8 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
-  "name": "spineworkspace",
+  "account_id": "a1bbbb12a32cdbb68dd170b09fe8b5f3",
+  "name": "spineinnovlabs-marketing",
+  "main": "worker/index.ts",
   "compatibility_date": "2026-10-03",
   "observability": {
     "enabled": true,
@@ -10,7 +12,32 @@
   },
   "assets": {
     "directory": "./out",
+    "binding": "ASSETS",
     "html_handling": "auto-trailing-slash",
     "not_found_handling": "404-page"
+  },
+  "env": {
+    "dev": {
+      "name": "spineinnovlabs-marketing-dev",
+      "workers_dev": true
+    },
+    "test": {
+      "name": "spineinnovlabs-marketing-test",
+      "workers_dev": true
+    },
+    "prod": {
+      "name": "spineinnovlabs-marketing",
+      "routes": [
+        {
+          "pattern": "spineinnovlabs.spineworkspace.com",
+          "custom_domain": true
+        }
+      ],
+      "vars": {
+        "CANONICAL_REDIRECTS_ENABLED": "false",
+        "CANONICAL_SITE_URL": "https://spineinnovlabs.com",
+        "LEGACY_REDIRECT_HOSTS": "spineinnovlabs.spineworkspace.com,www.spineinnovlabs.com"
+      }
+    }
   }
 }

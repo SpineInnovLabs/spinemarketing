@@ -1,4 +1,5 @@
 import { Metadata } from "next"
+import { absoluteUrl } from "@/lib/site-url"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { CampaignGalleryContent } from "./content"
@@ -30,11 +31,11 @@ const jsonLd = {
   name: "SpineWorkspace Campaign Gallery",
   description:
     "36 campaign designs across LinkedIn and WhatsApp — crafted for Account Success, Business Ops, and Personal Ops professionals.",
-  url: "https://spineinnovlabs.com/resources/campaign",
+  url: absoluteUrl("/resources/campaign"),
   publisher: {
     "@type": "Organization",
     name: "SpineWorkspace",
-    url: "https://spineinnovlabs.com",
+    url: absoluteUrl("/"),
   },
   mainEntity: {
     "@type": "ImageGallery",

@@ -1,4 +1,5 @@
 import { Metadata } from "next"
+import { absoluteUrl } from "@/lib/site-url"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { ContactContent } from "./content"
@@ -21,8 +22,8 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-white">
       <BreadcrumbJsonLd items={[
-        { name: "Home", url: "https://spineinnovlabs.com" },
-        { name: "Contact", url: "https://spineinnovlabs.com/contact" },
+        { name: "Home", url: absoluteUrl("/") },
+        { name: "Contact", url: absoluteUrl("/contact") },
       ]} />
       <Header />
       <main id="main">

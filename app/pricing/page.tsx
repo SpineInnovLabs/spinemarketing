@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { absoluteUrl } from "@/lib/site-url"
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { FinalCTA } from "@/components/final-cta";
@@ -38,8 +39,8 @@ export default function PricingPage() {
     <div className="min-h-screen overflow-x-clip bg-white">
       <FAQPageJsonLd questions={pricingFAQData} />
       <BreadcrumbJsonLd items={[
-        { name: "Home", url: "https://spineinnovlabs.com" },
-        { name: "Pricing", url: "https://spineinnovlabs.com/pricing" },
+        { name: "Home", url: absoluteUrl("/") },
+        { name: "Pricing", url: absoluteUrl("/pricing") },
       ]} />
       <Header />
       <main id="main">

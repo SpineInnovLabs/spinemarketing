@@ -1,3 +1,5 @@
+import { absoluteUrl, publicSiteUrl } from "@/lib/site-url";
+
 export function BreadcrumbJsonLd({ items }: { items: { name: string; url: string }[] }) {
   const data = {
     "@context": "https://schema.org",
@@ -25,7 +27,7 @@ export function SoftwareApplicationJsonLd() {
     name: "SpineWorkspace",
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
-    url: "https://spineinnovlabs.com",
+    url: publicSiteUrl,
     description:
       "SpineWorkspace is a governed AI workspace for operational work. Connect authorized business signals from existing systems. People and AI work from the same evidence. Built by Spine InnovLabs.",
   }
@@ -78,7 +80,7 @@ export function WebPageJsonLd({
     isPartOf: {
       "@type": "WebSite",
       name: "SpineWorkspace",
-      url: "https://spineinnovlabs.com",
+      url: publicSiteUrl,
     },
   }
 

@@ -1,0 +1,171 @@
+# Spine InnovLabs marketing — CircleCI + Datadog CI Visibility
+# Project env (CircleCI UI): DD_API_KEY, DD_SITE, CLOUDFLARE_API_TOKEN, CLOUDFLARE_ACCOUNT_ID
+
+version: 2.1
+
+orbs:
+  node: circleci/node@7.1.0
+
+executors:
+  node-executor:
+    docker:
+      - image: cimg/node:22.11
+
+commands:
+  export-datadog-git-env:
+    description: Git metadata for Datadog CI Visibility
+    steps:
+      - run:
+          name: Export Datadog git/env variables
+          command: |
+            {
+              echo "export DD_SERVICE=spineinnovlabs-marketing"
+              echo "export DD_GIT_REPOSITORY_URL=${CIRCLE_REPOSITORY_URL}"
+              echo "export DD_GIT_COMMIT_SHA=${CIRCLE_SHA1}"
+              echo "export DD_GIT_BRANCH=${CIRCLE_BRANCH}"
+              echo "export DATADOG_API_KEY=${DATADOG_API_KEY:-${DD_API_KEY:-}}"
+              echo "export DATADOG_SITE=${DATADOG_SITE:-${DD_SITE:-datadoghq.com}}"
+            } >> "$BASH_ENV"
+
+  datadog-trace:
+    description: Run a command with Datadog CI trace (no-op if DD_API_KEY unset)
+    parameters:
+      step_name:
+        type: string
+      command:
+        type: string
+    steps:
+      - run:
+          name: << parameters.step_name >>
+          command: |
+            if [ -z "${DATADOG_API_KEY:-}" ]; then
+              echo "DATADOG_API_KEY / DD_API_KEY not set; running without Datadog trace"
+              bash -lc '<< parameters.command >>'
+            else
+              npx --yes @datadog/datadog-ci@2 trace --name "<< parameters.step_name >>" -- bash -lc '<< parameters.command >>'
+            fi
+
+  report-dora-deployment:
+    description: Send deployment event to Datadog DORA metrics
+    parameters:
+      env:
+        type: string
+    steps:
+      - run:
+          name: Datadog DORA deployment (<< parameters.env >>)
+          command: |
+            if [ -z "${DATADOG_API_KEY:-}" ]; then
+              echo "DATADOG_API_KEY / DD_API_KEY not set; skipping DORA deployment"
+              exit 0
+            fi
+            npx --yes @datadog/datadog-ci@2 dora deployment \
+              --service spineinnovlabs-marketing \
+              --env "<< parameters.env >>" \
+              --started-at "$(date -u +%Y-%m-%dT%H:%M:%SZ)" \
+              --git-commit-sha "${CIRCLE_SHA1}" \
+              --git-repository-url "${CIRCLE_REPOSITORY_URL}"
+
+jobs:
+  build:
+    executor: node-executor
+    environment:
+      NEXT_PUBLIC_SITE_URL: https://spineinnovlabs.spineworkspace.com
+    steps:
+      - checkout
+      - export-datadog-git-env
+      - node/install-packages:
+          pkg-manager: npm
+      - datadog-trace:
+          step_name: lint
+          command: npm run lint
+      - datadog-trace:
+          step_name: build
+          command: npm run build
+      - persist_to_workspace:
+          root: .
+          paths:
+            - out
+
+  deploy:
+    executor: node-executor
+    parameters:
+      wrangler_env:
+        type: enum
+        enum: [dev, test, prod]
+      datadog_env:
+        type: string
+    steps:
+      - checkout
+      - attach_workspace:
+          at: .
+      - export-datadog-git-env
+      - node/install-packages:
+          pkg-manager: npm
+      - datadog-trace:
+          step_name: deploy-<< parameters.wrangler_env >>
+          command: npx wrangler deploy --env << parameters.wrangler_env >>
+      - report-dora-deployment:
+          env: << parameters.datadog_env >>
+
+  preview:
+    executor: node-executor
+    steps:
+      - checkout
+      - attach_workspace:
+          at: .
+      - export-datadog-git-env
+      - node/install-packages:
+          pkg-manager: npm
+      - datadog-trace:
+          step_name: deploy-preview
+          command: |
+            PR_NUM="${CIRCLE_PULL_REQUEST##*/}"
+            if [ -z "$PR_NUM" ] || [ "$PR_NUM" = "$CIRCLE_PULL_REQUEST" ]; then
+              PR_NUM="local-${CIRCLE_BUILD_NUM}"
+            fi
+            npx wrangler versions upload --name "pr-${PR_NUM}"
+
+workflows:
+  build-test-deploy:
+    jobs:
+      - build:
+          filters:
+            branches:
+              ignore: []
+
+      - deploy:
+          name: deploy-production
+          wrangler_env: prod
+          datadog_env: production
+          requires:
+            - build
+          filters:
+            branches:
+              only: main
+
+      - deploy:
+          name: deploy-dev
+          wrangler_env: dev
+          datadog_env: development
+          requires:
+            - build
+          filters:
+            branches:
+              only: dev
+
+      - deploy:
+          name: deploy-test
+          wrangler_env: test
+          datadog_env: staging
+          requires:
+            - build
+          filters:
+            branches:
+              only: test
+
+      - preview:
+          requires:
+            - build
+          filters:
+            branches:
+              ignore: [/main/, /dev/, /test/]

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { absoluteUrl } from "@/lib/site-url"
 import Link from "next/link";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
@@ -33,8 +34,8 @@ export default function UpdatesPage() {
     <div className="min-h-screen bg-white">
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://spineinnovlabs.com" },
-          { name: "Updates", url: "https://spineinnovlabs.com/updates" },
+          { name: "Home", url: absoluteUrl("/") },
+          { name: "Updates", url: absoluteUrl("/updates") },
         ]}
       />
       <Header />

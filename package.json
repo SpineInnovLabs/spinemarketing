@@ -3,10 +3,14 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "next build --webpack",
+    "build": "tsx scripts/generate-rss.ts && next build --webpack",
     "dev": "next dev -p 5000 -H 0.0.0.0",
     "lint": "eslint .",
-    "start": "next start -p 5000 -H 0.0.0.0"
+    "start": "next start -p 5000 -H 0.0.0.0",
+    "deploy:dev": "wrangler deploy --env dev",
+    "deploy:test": "wrangler deploy --env test",
+    "deploy:prod": "wrangler deploy --env prod",
+    "preview": "wrangler versions upload"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "1.2.2",

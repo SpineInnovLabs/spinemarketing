@@ -1,4 +1,5 @@
 import { Metadata } from "next"
+import { absoluteUrl } from "@/lib/site-url"
 import { PlatformSecurityContent } from "./content"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 
@@ -17,9 +18,9 @@ export default function PlatformSecurityPage() {
   return (
     <>
       <BreadcrumbJsonLd items={[
-        { name: "Home", url: "https://spineinnovlabs.com" },
-        { name: "Platform", url: "https://spineinnovlabs.com/platform" },
-        { name: "Security", url: "https://spineinnovlabs.com/platform/security" },
+        { name: "Home", url: absoluteUrl("/") },
+        { name: "Platform", url: absoluteUrl("/platform") },
+        { name: "Security", url: absoluteUrl("/platform/security") },
       ]} />
       <PlatformSecurityContent />
     </>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { absoluteUrl } from "@/lib/site-url"
 import Link from "next/link";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
@@ -42,8 +43,8 @@ export default function PortfolioPage() {
     <div className="min-h-screen bg-white">
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: "https://spineinnovlabs.com" },
-          { name: "Portfolio", url: "https://spineinnovlabs.com/portfolio" },
+          { name: "Home", url: absoluteUrl("/") },
+          { name: "Portfolio", url: absoluteUrl("/portfolio") },
         ]}
       />
       <Header />

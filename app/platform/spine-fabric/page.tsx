@@ -1,4 +1,5 @@
 import { Metadata } from "next"
+import { absoluteUrl } from "@/lib/site-url"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { FinalCTA } from "@/components/final-cta"
@@ -24,9 +25,9 @@ export default function SpineFabricPage() {
   return (
     <div className="min-h-screen bg-white">
       <BreadcrumbJsonLd items={[
-        { name: "Home", url: "https://spineinnovlabs.com" },
-        { name: "Platform", url: "https://spineinnovlabs.com/platform" },
-        { name: "Spine Fabric", url: "https://spineinnovlabs.com/platform/spine-fabric" },
+        { name: "Home", url: absoluteUrl("/") },
+        { name: "Platform", url: absoluteUrl("/platform") },
+        { name: "Spine Fabric", url: absoluteUrl("/platform/spine-fabric") },
       ]} />
       <Header />
       <main id="main">

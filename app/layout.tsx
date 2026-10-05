@@ -6,11 +6,12 @@ import "./globals.css"
 import { FirebaseAnalytics } from "@/components/firebase-analytics"
 import { AppearanceSync } from "@/components/appearance-sync"
 import { APPEARANCE_BOOT_SCRIPT } from "@/lib/appearance"
+import { absoluteUrl, publicSiteUrl } from "@/lib/site-url"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://spineinnovlabs.com"),
+  metadataBase: new URL(publicSiteUrl),
   alternates: {
     canonical: "/",
     types: { "application/rss+xml": "/rss.xml" },
@@ -56,8 +57,8 @@ export default function RootLayout({
               "@type": "Organization",
               name: "Spine InnovLabs",
               alternateName: "SpineWorkspace",
-              url: "https://spineinnovlabs.com",
-              logo: "https://spineinnovlabs.com/icon.svg",
+              url: publicSiteUrl,
+              logo: absoluteUrl("/icon.svg"),
               sameAs: [],
               contactPoint: [
                 {

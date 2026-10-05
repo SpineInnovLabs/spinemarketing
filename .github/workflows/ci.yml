@@ -1,13 +1,14 @@
-name: CI
+# Optional PR feedback on GitHub; primary CI/CD is CircleCI (.circleci/config.yml).
+name: CI (PR build only)
 
 on:
   pull_request:
-  push:
-    branches:
-      - main
 
 permissions:
   contents: read
+
+env:
+  NEXT_PUBLIC_SITE_URL: https://spineinnovlabs.spineworkspace.com
 
 jobs:
   build:
@@ -26,88 +27,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Lint
+        run: npm run lint
+
       - name: Build
         run: npm run build
-
-      - name: Upload the static site
-        uses: actions/upload-artifact@v4
-        with:
-          name: site
-          path: out
-          retention-days: 1
-
-  deploy-cloudflare:
-    name: Publish to Cloudflare
-    needs: build
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out the repository
-        uses: actions/checkout@v4
-
-      - name: Download the static site
-        uses: actions/download-artifact@v4
-        with:
-          name: site
-          path: out
-
-      - name: Publish
-        uses: cloudflare/wrangler-action@v4
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          packageManager: npm
-          command: deploy
-
-  preview-cloudflare:
-    name: Preview on Cloudflare
-    needs: build
-    if: github.event_name == 'pull_request'
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      deployments: write
-    steps:
-      - name: Check out the repository
-        uses: actions/checkout@v4
-
-      - name: Download the static site
-        uses: actions/download-artifact@v4
-        with:
-          name: site
-          path: out
-
-      - name: Publish preview
-        uses: cloudflare/wrangler-action@v4
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          packageManager: npm
-          command: preview --name pr-${{ github.event.pull_request.number }}
-          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-
-  deploy:
-    name: Publish to Netlify
-    needs: build
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    continue-on-error: true
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out the repository
-        uses: actions/checkout@v4
-
-      - name: Download the static site
-        uses: actions/download-artifact@v4
-        with:
-          name: site
-          path: out
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22
-
-      - name: Publish
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-        run: npx --yes netlify-cli deploy --prod --dir=out --no-build --site=1dcc6e7f-9049-403b-8ee4-117899570ec0 --message "Publish ${{ github.sha }}"

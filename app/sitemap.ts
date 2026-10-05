@@ -4,10 +4,9 @@ import path from "path"
 import { posts } from "@/content/blog"
 import { PUBLIC_SOLUTIONS, marketingPathForSolution } from "@/lib/solution-taxonomy"
 import { SITEMAP_EXCLUSIONS } from "@/lib/route-policy"
+import { absoluteUrl, publicSiteUrl } from "@/lib/site-url"
 
 export const dynamic = "force-static"
-
-const BASE_URL = "https://spineinnovlabs.com"
 
 const PRIORITY_MAP: Record<string, number> = {
   "/": 1.0,
@@ -94,7 +93,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   for (const route of routes) {
     assertPublishable(route)
-    const url = route === "/" ? BASE_URL : `${BASE_URL}${route}`
+    const url = route === "/" ? publicSiteUrl : absoluteUrl(route)
     byUrl.set(url, {
       url,
       changeFrequency: getChangeFrequency(route),
@@ -105,7 +104,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   for (const post of posts) {
     const route = `/blog/${post.slug}`
     assertPublishable(route)
-    const url = `${BASE_URL}${route}`
+    const url = absoluteUrl(route)
     byUrl.set(url, {
       url,
       lastModified: post.date,

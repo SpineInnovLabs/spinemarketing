@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-
-const BASE = "https://spineinnovlabs.com";
+import { absoluteUrl, publicSiteUrl } from "@/lib/site-url";
 
 export function createPageMetadata({
   title,
@@ -29,8 +28,8 @@ export function createPageMetadata({
 
 export function breadcrumb(path: string, name: string, parents: { name: string; path: string }[] = []) {
   return [
-    { name: "Home", url: BASE },
-    ...parents.map((p) => ({ name: p.name, url: `${BASE}${p.path}` })),
-    { name, url: `${BASE}${path}` },
+    { name: "Home", url: publicSiteUrl },
+    ...parents.map((p) => ({ name: p.name, url: absoluteUrl(p.path) })),
+    { name, url: absoluteUrl(path) },
   ];
 }

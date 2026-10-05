@@ -1,4 +1,5 @@
 import { Metadata } from "next"
+import { absoluteUrl } from "@/lib/site-url"
 import { ProductSecurityContent } from "./content"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 
@@ -17,9 +18,9 @@ export default function ProductSecurityPage() {
   return (
     <>
       <BreadcrumbJsonLd items={[
-        { name: "Home", url: "https://spineinnovlabs.com" },
-        { name: "Product", url: "https://spineinnovlabs.com/product" },
-        { name: "Security", url: "https://spineinnovlabs.com/product/security" },
+        { name: "Home", url: absoluteUrl("/") },
+        { name: "Product", url: absoluteUrl("/product") },
+        { name: "Security", url: absoluteUrl("/product/security") },
       ]} />
       <ProductSecurityContent />
     </>

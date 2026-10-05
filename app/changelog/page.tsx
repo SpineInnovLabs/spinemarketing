@@ -1,4 +1,5 @@
 import { Metadata } from "next"
+import { absoluteUrl } from "@/lib/site-url"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { entries } from "@/content/changelog"
@@ -20,8 +21,8 @@ export default function ChangelogPage() {
   return (
     <div className="min-h-screen bg-background">
       <BreadcrumbJsonLd items={[
-        { name: "Home", url: "https://spineinnovlabs.com" },
-        { name: "Changelog", url: "https://spineinnovlabs.com/changelog" },
+        { name: "Home", url: absoluteUrl("/") },
+        { name: "Changelog", url: absoluteUrl("/changelog") },
       ]} />
       <Header />
       <main id="main">

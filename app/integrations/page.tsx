@@ -1,4 +1,5 @@
 import { Metadata } from "next"
+import { absoluteUrl } from "@/lib/site-url"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { FinalCTA } from "@/components/final-cta"
@@ -22,8 +23,8 @@ export default function IntegrationsPage() {
   return (
     <div className="min-h-screen bg-white">
       <BreadcrumbJsonLd items={[
-        { name: "Home", url: "https://spineinnovlabs.com" },
-        { name: "Integrations", url: "https://spineinnovlabs.com/integrations" },
+        { name: "Home", url: absoluteUrl("/") },
+        { name: "Integrations", url: absoluteUrl("/integrations") },
       ]} />
       <Header />
       <main id="main">

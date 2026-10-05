@@ -1,4 +1,5 @@
 import { Metadata } from "next"
+import { absoluteUrl } from "@/lib/site-url"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
@@ -18,8 +19,8 @@ export default function TermsPage() {
   return (
     <div className="min-h-screen bg-background">
       <BreadcrumbJsonLd items={[
-        { name: "Home", url: "https://spineinnovlabs.com" },
-        { name: "Terms & Conditions", url: "https://spineinnovlabs.com/terms" },
+        { name: "Home", url: absoluteUrl("/") },
+        { name: "Terms & Conditions", url: absoluteUrl("/terms") },
       ]} />
       <Header />
       <main id="main">
