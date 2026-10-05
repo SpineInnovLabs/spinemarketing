@@ -1,5 +1,6 @@
 # Spine InnovLabs marketing — CircleCI + Datadog CI Visibility
 # Project env: WRANGLER_OAUTH_TOKEN, WRANGLER_REFRESH_TOKEN (from wrangler login), DD_API_KEY, DD_SITE
+# Content: SANITY_PROJECT_ID, SANITY_DATASET, SANITY_API_READ_TOKEN (build-time CMS fetch)
 
 version: 2.1
 
@@ -89,6 +90,8 @@ jobs:
     executor: node-executor
     environment:
       NEXT_PUBLIC_SITE_URL: https://spineinnovlabs.spineworkspace.com
+      CONTENT_PROVIDER: sanity
+      SANITY_DATASET: production
     steps:
       - checkout
       - export-datadog-git-env

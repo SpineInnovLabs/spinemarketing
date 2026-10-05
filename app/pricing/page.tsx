@@ -23,13 +23,13 @@ const pricingFAQData = [
 ];
 
 export const metadata: Metadata = {
-  title: "Pricing | SpineWorkspace",
+  title: "Pricing | SpineWorkspace — Governed renewal workflow pricing",
   description:
-    "Commercial tiers and a scoped evaluation path. Pricing follows workflow scope, integrations, and governance needs.",
+    "For VP Customer Success, CCO, or COO: pricing follows connectors and governance scope for renewal workflows. Start with a scoped pilot, then expand.",
   alternates: { canonical: "/pricing" },
   openGraph: {
-    title: "Pricing | SpineWorkspace",
-    description: "Commercial tiers and a scoped evaluation path. Pricing follows workflow scope, integrations, and governance needs.",
+    title: "Pricing | SpineWorkspace — Governed renewal workflow pricing",
+    description: "Pricing follows connectors and governance scope for renewal workflows. Start with a scoped pilot, then expand.",
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "SpineWorkspace Pricing" }],
   },
 };

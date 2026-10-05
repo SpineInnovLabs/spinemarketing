@@ -1,11 +1,14 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useReducedMotion } from "framer-motion";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import type { PageHeroCopy } from "@/lib/site-copy";
+import { getBuyerLens, mergeBuyerHero } from "@/lib/buyer-clarity";
+import { BuyerClarityBand } from "@/components/marketing/buyer-clarity-band";
 import type { ReactNode } from "react";
 
 type PageHeroProps = PageHeroCopy & {
@@ -13,6 +16,10 @@ type PageHeroProps = PageHeroCopy & {
   work?: ReactNode;
   principle?: string;
   tone?: "default" | "ice";
+  /** When false, skips the five-point buyer clarity strip (e.g. homepage). Default true. */
+  buyerClarity?: boolean;
+  /** Override route used for buyer copy merge (defaults to current pathname). */
+  buyerPath?: string;
 };
 
 /** Shared glass frame for marketing hero art. Buttons stay solid and are not included. */
@@ -31,7 +38,39 @@ function HeroWash() {
   );
 }
 
-export function PageHero({ badge, headline, subhead, primaryCta, secondaryCta, art, work, principle, tone = "default" }: PageHeroProps) {
+export function PageHero({
+  badge,
+  headline,
+  subhead,
+  primaryCta,
+  secondaryCta,
+  art,
+  work,
+  principle: principleProp,
+  tone = "default",
+  buyerClarity = true,
+  buyerPath,
+}: PageHeroProps) {
+  const pathname = usePathname() ?? "/";
+  const path = buyerPath ?? pathname;
+  const merged = mergeBuyerHero(path, {
+    badge,
+    headline,
+    subhead,
+    primaryCta,
+    secondaryCta,
+    principle: principleProp,
+  });
+  const lens = getBuyerLens(path);
+  const {
+    badge: mergedBadge,
+    headline: mergedHeadline,
+    subhead: mergedSubhead,
+    primaryCta: mergedPrimary,
+    secondaryCta: mergedSecondary,
+    principle,
+  } = merged;
+
   const reduce = useReducedMotion();
   const ice = tone === "ice";
   const rise = reduce
@@ -39,6 +78,7 @@ export function PageHero({ badge, headline, subhead, primaryCta, secondaryCta, a
     : { initial: { y: 10 }, animate: { y: 0 }, transition: { duration: 0.4, ease: "easeOut" as const } };
 
   return (
+    <>
     <section className={ice
       ? "relative overflow-x-clip border-b border-[#D9E4EF] bg-white pt-[88px] pb-14 sm:pb-16 lg:pt-[108px] lg:pb-20"
       : "relative overflow-x-clip border-b border-[#D9E4EF] bg-white pt-[96px] pb-12 lg:pt-[108px] lg:pb-16"}>
@@ -46,56 +86,56 @@ export function PageHero({ badge, headline, subhead, primaryCta, secondaryCta, a
       <div className={`mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-12 ${ice ? "relative" : ""}`}>
         <div className={art ? "grid items-center gap-10 lg:grid-cols-[minmax(0,0.45fr)_minmax(0,0.55fr)] lg:items-center lg:gap-12" : "max-w-[880px]"}>
           <div className="min-w-0 text-left">
-            {badge && ice ? (
+            {mergedBadge && ice ? (
               <motion.p {...rise} className="mb-5 text-[12px] font-bold uppercase tracking-[0.14em] text-[#0176D3]">
-                {badge}
+                {mergedBadge}
               </motion.p>
-            ) : badge ? (
+            ) : mergedBadge ? (
               <motion.p {...rise} className="mb-4 inline-flex items-center gap-2 rounded-md border border-[#D9E4EF] bg-[#F3F6F9] px-3 py-1 text-[12px] font-semibold uppercase tracking-[0.06em] text-[#032D60]">
                 <span className="h-1.5 w-1.5 rounded-full bg-[#0176D3]" />
-                {badge}
+                {mergedBadge}
               </motion.p>
             ) : null}
             <motion.h1
               {...rise}
               className={`max-w-full whitespace-pre-line text-balance text-[#032D60] ${ice ? "text-[clamp(2.05rem,4.6vw,3.65rem)] font-bold leading-[1.08] tracking-[-0.03em]" : "text-[clamp(2rem,4.4vw,3.5rem)] font-semibold leading-[1.12] tracking-[-0.03em]"}`}
             >
-              {headline}
+              {mergedHeadline}
             </motion.h1>
-            {subhead && (
+            {mergedSubhead && (
               <motion.p {...rise} className={`max-w-xl leading-[1.6] text-[#33465B] ${ice ? "mt-5 text-[16px] sm:text-[17px]" : "mt-4 text-[17px]"}`}>
-                {subhead}
+                {mergedSubhead}
               </motion.p>
             )}
             {principle && !ice && (
               <p className="mt-4 text-[14px] font-semibold text-[#032D60]">{principle}</p>
             )}
-            {(primaryCta || secondaryCta) && (
+            {(mergedPrimary || mergedSecondary) && (
               <div className={`mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-start ${ice ? "items-start" : "items-stretch"}`}>
-                {primaryCta && (
+                {mergedPrimary && (
                   <Button
                     size="lg"
                     className={ice ? "h-11 rounded-[10px] bg-[#0176D3] px-5 text-[14px] font-semibold text-white hover:bg-[#0B5CAB]" : "h-10 rounded-[10px] bg-[#0176D3] px-5 text-[14px] font-semibold text-white hover:bg-[#0B5CAB]"}
                     asChild
                   >
-                    <Link href={primaryCta.href}>
-                      {primaryCta.label}
+                    <Link href={mergedPrimary.href}>
+                      {mergedPrimary.label}
                       {ice ? null : <ArrowRight className="ml-2 h-4 w-4" />}
                     </Link>
                   </Button>
                 )}
-                {secondaryCta && (
+                {mergedSecondary && (
                   <Button
                     size="lg"
                     variant="outline"
                     className={ice ? "h-11 rounded-[10px] border-[#C5D4E4] bg-white px-5 text-[14px] font-semibold text-[#032D60] hover:bg-[#F3F6F9]" : "h-10 rounded-[10px] border-[#D9E4EF] bg-white px-5 text-[14px] font-semibold text-[#032D60] hover:bg-[#F3F6F9]"}
                     asChild
                   >
-                    {secondaryCta.href.startsWith("http") ? (
-                      <a href={secondaryCta.href} target="_blank" rel="noopener noreferrer">{secondaryCta.label}</a>
+                    {mergedSecondary.href.startsWith("http") ? (
+                      <a href={mergedSecondary.href} target="_blank" rel="noopener noreferrer">{mergedSecondary.label}</a>
                     ) : (
-                      <Link href={secondaryCta.href}>
-                        {secondaryCta.label}
+                      <Link href={mergedSecondary.href}>
+                        {mergedSecondary.label}
                         {ice ? <ArrowRight className="h-4 w-4" aria-hidden /> : null}
                       </Link>
                     )}
@@ -123,5 +163,7 @@ export function PageHero({ badge, headline, subhead, primaryCta, secondaryCta, a
         {work ? <div className="relative z-10 mt-8 lg:-mt-16">{work}</div> : null}
       </div>
     </section>
+    {buyerClarity ? <BuyerClarityBand lens={lens} /> : null}
+    </>
   );
 }

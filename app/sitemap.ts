@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next"
 import fs from "fs"
 import path from "path"
-import { posts } from "@/content/blog"
+import { getContentRepository } from "@/lib/content"
 import { PUBLIC_SOLUTIONS, marketingPathForSolution } from "@/lib/solution-taxonomy"
 import { SITEMAP_EXCLUSIONS } from "@/lib/route-policy"
 import { absoluteUrl, publicSiteUrl } from "@/lib/site-url"
@@ -74,7 +74,7 @@ function getChangeFrequency(route: string): "weekly" | "monthly" | "yearly" {
   return CHANGE_FREQ_MAP[route] || "monthly"
 }
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const appDir = path.join(process.cwd(), "app")
   const routes = new Set<string>()
 
@@ -101,13 +101,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })
   }
 
-  for (const post of posts) {
+  const repo = getContentRepository()
+  const articles = await repo.listArticles({ kind: "blog", status: "published" })
+  for (const post of articles) {
     const route = `/blog/${post.slug}`
     assertPublishable(route)
     const url = absoluteUrl(route)
     byUrl.set(url, {
       url,
-      lastModified: post.date,
+      lastModified: post.updatedAt ?? post.publishedAt,
       changeFrequency: "monthly",
       priority: 0.7,
     })

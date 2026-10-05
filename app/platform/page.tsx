@@ -9,14 +9,14 @@ import { PlatformStickyScroll } from "./sticky-sections"
 import { BreadcrumbJsonLd, SoftwareApplicationJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
-  title: "Platform — The platform behind SpineWorkspace",
+  title: "Platform | SpineWorkspace — Platform for governed renewal workflows",
   description:
-    "The tools keep the record. The workspace shows the work. Twin proposes only when asked. A person decides.",
+    "Deploy governed renewal workflows first, then expand. Platform connects your stack, runs Renewal Decision Workspace, keeps approval model consistent.",
   alternates: { canonical: "/platform" },
   openGraph: {
-    title: "Platform | SpineWorkspace",
-    description: "One connection to the tools you already use. The tools keep the record. A person decides.",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "SpineWorkspace" }],
+    title: "Platform | SpineWorkspace — Platform for governed renewal workflows",
+    description: "Deploy renewals first, then expand. Platform connects your stack, runs Renewal Decision Workspace, keeps approval model consistent.",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "SpineWorkspace Platform" }],
   },
 }
 

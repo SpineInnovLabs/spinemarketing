@@ -1,3 +1,4 @@
+/** @deprecated Legacy source — used only by lib/content/legacy and scripts/migrate-blog-to-sanity. */
 export type BlogPost = {
   slug: string
   title: string

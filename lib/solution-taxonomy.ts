@@ -69,9 +69,10 @@ export const PUBLIC_SOLUTIONS: PublicSolution[] = [
     slug: "customer-success",
     name: "Account Success",
     navLabel: "Account Success",
-    headline: "Carry the customer record and the context for each interaction.",
-    description: "Health, risk, renewal records, and relationship memory in one governed workspace.",
-    buyerSummary: "Bring the customer story into every next step.",
+    headline: "Stop rebuilding the customer story before every renewal decision.",
+    description:
+      "Assemble CRM, support, email, document, and finance context into an evidence-backed renewal decision packet—review, approve, and execute with control.",
+    buyerSummary: "Renewal reviews from a source-linked decision packet—not six tabs and a spreadsheet.",
     workspaceAssociations: [
       { host: "account-success.spineworkspace.com", label: "Account Success Workbench", primary: true },
       { host: "technical-account-success.spineworkspace.com", label: "Technical Account Success" },

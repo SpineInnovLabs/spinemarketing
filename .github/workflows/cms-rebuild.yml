@@ -1,0 +1,29 @@
+# Optional: trigger a CircleCI pipeline when Sanity fires repository_dispatch.
+# Configure Sanity webhook → GitHub dispatches with event_type: sanity-publish
+# Set repo secret CIRCLECI_TOKEN (project API token) and vars CIRCLECI_PROJECT_SLUG (org/project).
+
+name: CMS publish rebuild
+
+on:
+  repository_dispatch:
+    types: [sanity-publish]
+  workflow_dispatch:
+
+jobs:
+  trigger-circleci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger CircleCI pipeline
+        env:
+          CIRCLECI_TOKEN: ${{ secrets.CIRCLECI_TOKEN }}
+          CIRCLECI_PROJECT_SLUG: ${{ vars.CIRCLECI_PROJECT_SLUG }}
+        run: |
+          if [ -z "${CIRCLECI_TOKEN}" ] || [ -z "${CIRCLECI_PROJECT_SLUG}" ]; then
+            echo "Set CIRCLECI_TOKEN and CIRCLECI_PROJECT_SLUG to enable automatic rebuilds."
+            exit 0
+          fi
+          curl -sSf -X POST \
+            -H "Circle-Token: ${CIRCLECI_TOKEN}" \
+            -H "Content-Type: application/json" \
+            -d '{"branch":"main","parameters":{}}' \
+            "https://circleci.com/api/v2/project/gh/${CIRCLECI_PROJECT_SLUG}/pipeline"

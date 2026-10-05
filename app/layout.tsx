@@ -16,26 +16,26 @@ export const metadata: Metadata = {
     canonical: "/",
     types: { "application/rss+xml": "/rss.xml" },
   },
-  title: "SpineWorkspace — Governed AI workspace for operational work",
+  title: "SpineWorkspace — Renewal decisions from the full customer story",
   description:
-    "Connect authorized business signals from the systems you already use. People and AI work from the same evidence. People stay in charge. Built by Spine InnovLabs.",
+    "For customer-success and revenue teams: assemble CRM, support, email, document, and finance context into an evidence-backed renewal proposal your team reviews, approves, and executes—with control.",
   icons: {
     icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
     apple: "/icon.svg",
   },
   openGraph: {
-    title: "SpineWorkspace — Governed AI workspace for operational work",
+    title: "SpineWorkspace — Renewal decisions from the full customer story",
     description:
-      "Connect authorized business signals from the systems you already use. People and AI work from the same evidence. People stay in charge. Built by Spine InnovLabs.",
+      "For customer-success and revenue teams: evidence-backed renewal decision packets, human approval, and execution in your existing systems of record.",
     siteName: "SpineWorkspace",
     type: "website",
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "SpineWorkspace" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "SpineWorkspace — Governed AI workspace for operational work",
+    title: "SpineWorkspace — Renewal decisions from the full customer story",
     description:
-      "Connect authorized business signals from the systems you already use. People and AI work from the same evidence. People stay in charge. Built by Spine InnovLabs.",
+      "For customer-success and revenue teams: evidence-backed renewal decision packets, human approval, and execution in your existing systems of record.",
     images: ["/og.png"],
   },
 }

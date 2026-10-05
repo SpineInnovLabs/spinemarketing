@@ -10,14 +10,14 @@ import { TestimonialsSection } from "@/components/testimonials-section"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
-  title: "Solutions — Functional workbenches for every team",
+  title: "Solutions | SpineWorkspace — Renewal workflows by function",
   description:
-    "Public marketing pages for SpineWorkspace functional solutions. Each maps to authenticated workbench projections on spineworkspace.com.",
+    "Start with the Renewal Decision Workspace for customer-success and RevOps. Each functional solution describes the operational job and first workflow to deploy.",
   alternates: { canonical: "/solutions" },
   openGraph: {
-    title: "Solutions | SpineWorkspace",
-    description: "One SpineWorkspace. Workspace for daily work, Twin for AI. Built for every function, industry, and role.",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "SpineWorkspace" }],
+    title: "Solutions | SpineWorkspace — Renewal workflows by function",
+    description: "Most teams begin with Renewal Decision Workspace for CS and RevOps, then expand to other functions.",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "SpineWorkspace Solutions" }],
   },
 }
 

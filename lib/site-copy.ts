@@ -8,6 +8,7 @@ export type PageHeroCopy = {
   subhead?: string;
   primaryCta?: CtaLink;
   secondaryCta?: CtaLink;
+  principle?: string;
 };
 
 export type ContentSectionCopy = {

@@ -20,6 +20,8 @@ NEXT_PUBLIC_SITE_URL=https://spineinnovlabs.spineworkspace.com npm run build
 
 `NEXT_PUBLIC_SITE_URL` (or `PUBLIC_SITE_URL`) drives canonical URLs, sitemap, robots, RSS, Open Graph base, and JSON-LD.
 
+Blog and feed URLs are populated at **build time** from Sanity via `getContentRepository()` (see [CONTENT.md](./CONTENT.md)). Static export does not call Sanity at runtime on Cloudflare.
+
 Output directory: `out/` (Next.js `output: 'export'`).
 
 ## Wrangler environments
@@ -76,8 +78,13 @@ Build uses `NEXT_PUBLIC_SITE_URL=https://spineinnovlabs.spineworkspace.com`.
 | `CLOUDFLARE_ACCOUNT_ID` | Optional; `account_id` is in `wrangler.jsonc` |
 | `DD_API_KEY` | Datadog API key for CI Visibility + DORA |
 | `DD_SITE` | Datadog site (e.g. `datadoghq.com`, `datadoghq.eu`) |
+| `SANITY_PROJECT_ID` | Sanity project for blog content (build-time fetch) |
+| `SANITY_DATASET` | Usually `production` |
+| `SANITY_API_READ_TOKEN` | Read token for published documents (never expose in client bundle) |
 
 If `DD_API_KEY` is unset, builds and deploys still run; Datadog steps are skipped.
+
+If Sanity variables are unset, the build falls back to legacy `content/blog/` with a console warning. Production should always set Sanity secrets so CI matches the CMS.
 
 Datadog: build/deploy steps are wrapped with `datadog-ci trace`; production/dev/test deploys emit **DORA deployment** events for service `spineinnovlabs-marketing`. Connect the CircleCI integration in Datadog (**Software Delivery → CI Visibility**) to view pipelines.
 

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Zap, Shield, Brain } from "lucide-react";
+import { PageHero } from "@/components/marketing/page-hero";
 
 const heroFade = (delay = 0) => ({
   initial: { opacity: 0, y: 12 },
@@ -11,7 +12,16 @@ const heroFade = (delay = 0) => ({
 
 export function PricingHero() {
   return (
-    <section className="border-b border-[#E5E5E5] bg-white pt-[120px] pb-16">
+    <>
+      <PageHero
+        buyerPath="/pricing"
+        badge="For renewal workflow sponsors"
+        headline="Start with one governed renewal workflow."
+        subhead="Pricing follows connectors and governance scope for renewals—not seat-based mystery. Most teams begin with a scoped pilot, then expand."
+        primaryCta={{ label: "Book a workflow review", href: "/contact?intent=workflow-review" }}
+        secondaryCta={{ label: "See a renewal decision packet", href: "/#renewal-decision-packet" }}
+      />
+      <section className="border-b border-[#E5E5E5] bg-white pb-16">
       <div className="relative mx-auto max-w-[900px] px-6">
         <div className="mx-auto max-w-3xl text-center">
           <motion.div
@@ -64,5 +74,6 @@ export function PricingHero() {
         </div>
       </div>
     </section>
+    </>
   );
 }

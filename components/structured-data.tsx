@@ -91,3 +91,52 @@ export function WebPageJsonLd({
     />
   )
 }
+
+export function ArticleJsonLd({
+  title,
+  description,
+  url,
+  publishedAt,
+  updatedAt,
+  authorName,
+  imageUrl,
+}: {
+  title: string
+  description: string
+  url: string
+  publishedAt: string
+  updatedAt?: string
+  authorName: string
+  imageUrl?: string
+}) {
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: title,
+    description,
+    url,
+    datePublished: publishedAt,
+    dateModified: updatedAt ?? publishedAt,
+    author: {
+      "@type": "Person",
+      name: authorName,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Spine InnovLabs",
+      url: publicSiteUrl,
+    },
+    ...(imageUrl ? { image: [imageUrl] } : {}),
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": url,
+    },
+  }
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  )
+}

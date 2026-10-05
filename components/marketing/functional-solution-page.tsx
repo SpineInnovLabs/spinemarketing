@@ -4,44 +4,72 @@ import { PageHero } from "./page-hero";
 import { Section, SectionHeader } from "./section";
 import { WorkspaceProjectionCta } from "./workspace-projection-cta";
 import { FinalCTA } from "@/components/final-cta";
+import { solutionHeroFromPublic } from "@/lib/buyer-clarity";
 import type { PublicSolution } from "@/lib/solution-taxonomy";
 
 export function FunctionalSolutionPage({ solution }: { solution: PublicSolution }) {
+  const hero = solutionHeroFromPublic(solution);
+  const path = `/solutions/${solution.slug}`;
+
   return (
     <>
       <PageHero
-        badge={solution.name}
-        headline={solution.headline}
-        subhead={solution.description}
-        primaryCta={{ label: "Book a demo", href: "/contact?intent=demo" }}
-        secondaryCta={{ label: "See practical scenarios", href: "/use-cases" }}
+        buyerPath={path}
+        badge={hero.badge}
+        headline={hero.headline}
+        subhead={hero.subhead}
+        principle={hero.principle}
+        primaryCta={hero.primaryCta}
+        secondaryCta={hero.secondaryCta}
         art={
           <div className="rounded-2xl border border-[#D9E4EF] bg-white p-5">
-            <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[#526479]">Example scenario · demonstration data</p>
+            <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[#526479]">
+              Sample decision packet · demonstration
+            </p>
             <h2 className="mt-2 text-[18px] font-semibold text-[#032D60]">{solution.name}</h2>
             <dl className="mt-4 space-y-3 text-[14px]">
               <div>
-                <dt className="font-semibold text-[#032D60]">Goal</dt>
-                <dd className="text-[#33465B]">{solution.headline}</dd>
+                <dt className="font-semibold text-[#032D60]">Account review trigger</dt>
+                <dd className="text-[#33465B]">{solution.buyerSummary}</dd>
               </div>
               <div>
-                <dt className="font-semibold text-[#032D60]">Evidence</dt>
-                <dd className="text-[#33465B]">Records this team already keeps. Source systems stay authoritative.</dd>
+                <dt className="font-semibold text-[#032D60]">Evidence assembled</dt>
+                <dd className="text-[#33465B]">CRM, support, email, documents—source-linked, not merged into a new record.</dd>
               </div>
               <div>
-                <dt className="font-semibold text-[#032D60]">Next action</dt>
+                <dt className="font-semibold text-[#032D60]">Recommended next-best action</dt>
                 <dd className="text-[#33465B]">{solution.description}</dd>
               </div>
               <div>
-                <dt className="font-semibold text-[#032D60]">Human decision</dt>
-                <dd className="font-semibold text-[#0176D3]">Awaiting review</dd>
+                <dt className="font-semibold text-[#032D60]">Approval state</dt>
+                <dd className="font-semibold text-[#0176D3]">Awaiting renewal owner review</dd>
               </div>
             </dl>
           </div>
         }
       />
       <Section variant="muted">
-        <SectionHeader headline={`The ${solution.name} job`} body={solution.buyerSummary} />
+        <SectionHeader
+          label="The job to be done"
+          headline={`What ${solution.name} teams stop doing manually`}
+          body={solution.buyerSummary}
+        />
+        <div className="mt-8 grid gap-6 lg:grid-cols-2">
+          <div className="rounded-[20px] border border-[#D9E4EF] bg-white p-6">
+            <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[#526479]">Before Spine</p>
+            <p className="mt-3 text-[15px] leading-[1.65] text-[#33465B]">
+              Operators jump between systems to reconstruct context before every review—then debate recommendations without
+              a shared evidence packet.
+            </p>
+          </div>
+          <div className="rounded-[20px] border border-[#0176D3]/25 bg-[#EAF5FC] p-6">
+            <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[#0176D3]">With Spine</p>
+            <p className="mt-3 text-[15px] leading-[1.65] text-[#33465B]">
+              One governed decision packet, explicit approval, and write-back to the system that owns the record—starting
+              with renewals where {solution.name} intersects customer revenue.
+            </p>
+          </div>
+        </div>
       </Section>
       <WorkspaceProjectionCta solution={solution} />
       <FinalCTA />
