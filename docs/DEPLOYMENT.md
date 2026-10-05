@@ -44,6 +44,10 @@ If `spineworkspace.com` is unavailable, attach a fallback in `wrangler.jsonc` un
 
 Primary pipeline: [`.circleci/config.yml`](../.circleci/config.yml).
 
+**GitHub:** `SpineInnovLabs/spinemarketing` (org repo; required for CircleCI GitHub App on Spine InnovLabs).
+
+**CircleCI project:** `spinemarketing` under org **Spine InnovLabs** (`circleci/BjAMH4EEyfd6462okS8HdH/...`, linked in `.circleci/info.yml`).
+
 | Trigger | Jobs |
 | --- | --- |
 | All branches | `build` (lint + static export) |
