@@ -1,5 +1,18 @@
 # Content operations (Sanity + static export)
 
+## Quick Start (One-Time Setup)
+
+1. **Create Sanity project**: Go to [https://www.sanity.io/manage](https://www.sanity.io/manage) → Create Project → Note the **Project ID**
+2. **Create dataset**: In your project, create dataset `production`
+3. **Get tokens**: In project settings → API → Create a read token and a write token
+4. **Set CircleCI env vars**:
+   - `SANITY_PROJECT_ID` = your project ID
+   - `SANITY_DATASET` = `production`
+   - `SANITY_API_READ_TOKEN` = read token from step 3
+5. **Deploy schema**: `npx sanity schema deploy`
+6. **Migrate content**: `SANITY_API_WRITE_TOKEN=xxx npm run content:migrate`
+7. **Verify build**: Push to main, CircleCI will fetch CMS content
+
 ## Roles
 
 | System | Role |
@@ -81,7 +94,9 @@ See [`.env.example`](../.env.example).
 2. Sanity **webhook** triggers a rebuild (recommended: GitHub `repository_dispatch` or CircleCI pipeline API on `main`).
 3. CircleCI runs `npm run build` → fetches CMS → deploys Worker with new `out/`.
 
-### Webhook (GitHub dispatch example)
+### Webhook (CircleCI example)
+
+The repo includes [`.github/workflows/cms-rebuild.yml`](../.github/workflows/cms-rebuild.yml) which triggers a CircleCI pipeline on `repository_dispatch` with type `sanity-publish`.
 
 In Sanity: **API → Webhooks** → URL:
 
@@ -93,9 +108,9 @@ Body:
 { "event_type": "sanity-publish", "client_payload": { "source": "sanity" } }
 ```
 
-Add a GitHub Actions workflow or CircleCI trigger that listens for `sanity-publish` and runs the pipeline (or push an empty commit to `main` if you use a small Action).
+This triggers the CircleCI workflow which runs the full build and deploy. Requires a GitHub token with `repo` scope in CircleCI (set as `GITHUB_TOKEN` project env var for the workflow to authenticate with GitHub).
 
-Filter webhook on `_type == "article"` and `status == "published"` when possible.
+Filter webhook on `_type == "article"` and `status == "published"` when possible to avoid unnecessary builds.
 
 ## Phase roadmap
 

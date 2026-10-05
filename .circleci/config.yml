@@ -1,6 +1,7 @@
 # Spine InnovLabs marketing — CircleCI + Datadog CI Visibility
 # Project env: WRANGLER_OAUTH_TOKEN, WRANGLER_REFRESH_TOKEN (from wrangler login), DD_API_KEY, DD_SITE
 # Content: SANITY_PROJECT_ID, SANITY_DATASET, SANITY_API_READ_TOKEN (build-time CMS fetch)
+# Migration: SANITY_API_WRITE_TOKEN (one-time for content:migrate and sanity deploy)
 
 version: 2.1
 
