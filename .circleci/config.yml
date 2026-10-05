@@ -1,5 +1,5 @@
 # Spine InnovLabs marketing — CircleCI + Datadog CI Visibility
-# Project env (CircleCI UI): DD_API_KEY, DD_SITE, CLOUDFLARE_API_TOKEN, CLOUDFLARE_ACCOUNT_ID
+# Project env: WRANGLER_OAUTH_TOKEN, WRANGLER_REFRESH_TOKEN (from wrangler login), DD_API_KEY, DD_SITE
 
 version: 2.1
 
@@ -44,6 +44,25 @@ commands:
             else
               npx --yes @datadog/datadog-ci@2 trace --name "<< parameters.step_name >>" -- << parameters.command >>
             fi
+
+  setup-wrangler-auth:
+    description: Use Wrangler OAuth in CI (same as local wrangler login)
+    steps:
+      - run:
+          name: Configure Wrangler OAuth for deploy
+          command: |
+            if [ -z "${WRANGLER_OAUTH_TOKEN:-}" ] || [ -z "${WRANGLER_REFRESH_TOKEN:-}" ]; then
+              echo "WRANGLER_OAUTH_TOKEN and WRANGLER_REFRESH_TOKEN must be set in CircleCI project env"
+              exit 1
+            fi
+            mkdir -p "$HOME/.wrangler/config"
+            printf '%s\n' \
+              "oauth_token = \"${WRANGLER_OAUTH_TOKEN}\"" \
+              "refresh_token = \"${WRANGLER_REFRESH_TOKEN}\"" \
+              > "$HOME/.wrangler/config/default.toml"
+            chmod 600 "$HOME/.wrangler/config/default.toml"
+            unset CLOUDFLARE_API_TOKEN
+            npx wrangler whoami
 
   report-dora-deployment:
     description: Send deployment event to Datadog DORA metrics
@@ -96,6 +115,7 @@ jobs:
       - attach_workspace:
           at: .
       - export-datadog-git-env
+      - setup-wrangler-auth
       - node/install-packages:
           pkg-manager: npm
       - datadog-trace:
@@ -111,6 +131,7 @@ jobs:
       - attach_workspace:
           at: .
       - export-datadog-git-env
+      - setup-wrangler-auth
       - node/install-packages:
           pkg-manager: npm
       - datadog-trace:

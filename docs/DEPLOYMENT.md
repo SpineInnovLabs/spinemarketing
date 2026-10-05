@@ -62,8 +62,9 @@ Build uses `NEXT_PUBLIC_SITE_URL=https://spineinnovlabs.spineworkspace.com`.
 
 | Variable | Purpose |
 | --- | --- |
-| `CLOUDFLARE_API_TOKEN` | Account API token (Workers Scripts Edit) |
-| `CLOUDFLARE_ACCOUNT_ID` | `a1bbbb12a32cdbb68dd170b09fe8b5f3` |
+| `WRANGLER_OAUTH_TOKEN` | From `~/.wrangler/config/default.toml` after `wrangler login` |
+| `WRANGLER_REFRESH_TOKEN` | Same file (Wrangler refreshes access in CI) |
+| `CLOUDFLARE_ACCOUNT_ID` | Optional; `account_id` is in `wrangler.jsonc` |
 | `DD_API_KEY` | Datadog API key for CI Visibility + DORA |
 | `DD_SITE` | Datadog site (e.g. `datadoghq.com`, `datadoghq.eu`) |
 
@@ -71,7 +72,7 @@ If `DD_API_KEY` is unset, builds and deploys still run; Datadog steps are skippe
 
 Datadog: build/deploy steps are wrapped with `datadog-ci trace`; production/dev/test deploys emit **DORA deployment** events for service `spineinnovlabs-marketing`. Connect the CircleCI integration in Datadog (**Software Delivery → CI Visibility**) to view pipelines.
 
-Cloudflare token must be a **Cloudflare Account API Token** (not an OAuth `cfut_` user token).
+Deploy jobs **unset `CLOUDFLARE_API_TOKEN`** and use **Wrangler OAuth** (`WRANGLER_OAUTH_TOKEN` + `WRANGLER_REFRESH_TOKEN`), matching local `wrangler login`. Re-copy tokens after re-login if deploy auth fails.
 
 ### GitHub Actions
 
