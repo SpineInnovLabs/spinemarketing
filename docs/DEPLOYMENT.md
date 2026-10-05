@@ -36,6 +36,15 @@ npm run deploy:test
 npm run deploy:prod   # requires built ./out
 ```
 
+Local Wrangler uses **OAuth** (`~/.wrangler/config/default.toml`). If `wrangler login` says you are logged in with an API token, your shell has `CLOUDFLARE_API_TOKEN` set (often from Infisical or IDE env). Use:
+
+```bash
+npm run wrangler:login
+npm run wrangler:whoami
+```
+
+Deploy scripts unset `CLOUDFLARE_API_TOKEN` automatically.
+
 ### Fallback hostname
 
 If `spineworkspace.com` is unavailable, attach a fallback in `wrangler.jsonc` under `env.prod.routes` (for example `spineinnovlabs.integratewise.xyz`). Do **not** rename the worker.
