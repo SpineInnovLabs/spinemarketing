@@ -1,7 +1,0 @@
-# Same moves as netlify.toml. Redirects win over the static pages Next still exports.
-/docs https://docs.spineworkspace.com/ 301
-/platform/the-adaptive-spine /platform/spine-fabric 301
-/ai /twin 301
-/why /about 301
-/product /spineworkspace 301
-/product/how-it-works /platform/how-it-works 301
