@@ -53,15 +53,6 @@ commands:
       - run:
           name: Configure Wrangler OAuth for deploy
           command: |
-            echo "WRANGLER_OAUTH_TOKEN length: ${#WRANGLER_OAUTH_TOKEN}"
-            echo "WRANGLER_REFRESH_TOKEN length: ${#WRANGLER_REFRESH_TOKEN}"
-            if [ -z "${WRANGLER_OAUTH_TOKEN:-}" ] || [ -z "${WRANGLER_REFRESH_TOKEN:-}" ]; then
-              echo "ERROR: WRANGLER_OAUTH_TOKEN or WRANGLER_REFRESH_TOKEN is empty"
-              echo "These must be set as CircleCI project environment variables"
-              echo "Run locally: npm run wrangler:login to get fresh tokens"
-              echo "Then: circleci envvar set WRANGLER_OAUTH_TOKEN <token>"
-              exit 1
-            fi
             mkdir -p "$HOME/.wrangler/config"
             printf '%s\n' \
               "oauth_token = \"${WRANGLER_OAUTH_TOKEN}\"" \
@@ -69,7 +60,6 @@ commands:
               > "$HOME/.wrangler/config/default.toml"
             chmod 600 "$HOME/.wrangler/config/default.toml"
             unset CLOUDFLARE_API_TOKEN
-            echo "Testing Wrangler auth..."
             npx wrangler whoami
 
   report-dora-deployment:
