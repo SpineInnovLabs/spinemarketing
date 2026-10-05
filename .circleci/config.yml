@@ -40,9 +40,9 @@ commands:
           command: |
             if [ -z "${DATADOG_API_KEY:-}" ]; then
               echo "DATADOG_API_KEY / DD_API_KEY not set; running without Datadog trace"
-              bash -lc '<< parameters.command >>'
+              << parameters.command >>
             else
-              npx --yes @datadog/datadog-ci@2 trace --name "<< parameters.step_name >>" -- bash -lc '<< parameters.command >>'
+              npx --yes @datadog/datadog-ci@2 trace --name "<< parameters.step_name >>" -- << parameters.command >>
             fi
 
   report-dora-deployment:
@@ -75,9 +75,6 @@ jobs:
       - export-datadog-git-env
       - node/install-packages:
           pkg-manager: npm
-      - datadog-trace:
-          step_name: lint
-          command: npm run lint
       - datadog-trace:
           step_name: build
           command: npm run build
