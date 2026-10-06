@@ -1,7 +1,7 @@
 import { Header } from "@/components/header-client"
 import { Footer } from "@/components/footer"
 import { HostLandingGate } from "@/components/marketing/host-landing"
-import { EnterpriseHome } from "@/components/marketing/home-enterprise"
+import { EnterpriseHome } from "@/components/marketing/home-v1"
 
 export default function Home() {
   return (
