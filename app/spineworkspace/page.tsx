@@ -1,6 +1,8 @@
-import { createNarrativeRoute } from "@/lib/create-narrative-route";
-import { pages } from "@/lib/site-copy";
+import { redirect } from "next/navigation";
 
-const { metadata, Page } = createNarrativeRoute(pages.spineworkspace);
-export { metadata };
-export default Page;
+import { SPINE_WORKSPACE_APEX } from "@/lib/site-urls";
+
+/** Spine Workspace marketing lives on the product apex, not the parent host. */
+export default function SpineWorkspaceProductRedirect() {
+  redirect(SPINE_WORKSPACE_APEX);
+}

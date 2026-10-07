@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 import { getConnectorNavMarks, INTEGRATION_KIND_MARKS, INTEGRATIONS_HREF, type ConnectorNavMark, type KindNavMark } from "@/lib/integration-nav";
 import { getSolutionNavItems } from "@/lib/solution-nav";
+import { SPINE_WORKSPACE_APEX } from "@/lib/site-urls";
 
 export type NavItemChild = {
   name: string;
@@ -61,12 +62,14 @@ export const DOCS_URL = "https://docs.spineworkspace.com/";
 export const headerNavigation: NavItem[] = [
   {
     label: "Product",
-    href: "/spineworkspace",
+    href: SPINE_WORKSPACE_APEX,
+    external: true,
     featured: {
       name: "SpineWorkspace",
-      href: "/spineworkspace",
+      href: SPINE_WORKSPACE_APEX,
       icon: LayoutGrid,
       desc: "A Spine InnovLabs product. The workspace where a person sees the work and decides.",
+      external: true,
     },
     items: [
       {
@@ -160,7 +163,7 @@ export const footerColumns: FooterColumn[] = [
   {
     heading: "Product",
     links: [
-      { name: "SpineWorkspace", href: "/spineworkspace" },
+      { name: "SpineWorkspace", href: SPINE_WORKSPACE_APEX, external: true },
       { name: "Spine Platform", href: "/platform" },
       { name: "Spine Fabric", href: "/platform/spine-fabric" },
       { name: "Spine Twin", href: "/twin" },

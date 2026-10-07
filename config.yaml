@@ -1,0 +1,46 @@
+# Mirror of spineworkspace-live/config/public-sites.yaml (keep in sync until shared package).
+# Trace: SPINE-OPS · public marketing routes
+
+version: 1
+
+environments:
+  prod:
+    spine_innovlabs:
+      public_url: https://spineinnovlabs.spineworkspace.com
+      canonical_url: https://spineinnovlabs.com
+      legacy_redirect_hosts:
+        - spineinnovlabs.spineworkspace.com
+        - www.spineinnovlabs.com
+    spine_workspace:
+      apex: https://spineworkspace.com
+      app: https://app.spineworkspace.com
+      auth: https://auth.spineworkspace.com
+      domain_root: spineworkspace.com
+
+  test:
+    spine_innovlabs:
+      public_url: https://spineinnovlabs.spineworkspace.com
+      canonical_url: https://spineinnovlabs.com
+    spine_workspace:
+      apex: https://spineworkspace.com
+      app: https://app.spineworkspace.com
+      auth: https://auth.spineworkspace.com
+      domain_root: spineworkspace.com
+
+  dev:
+    spine_innovlabs:
+      public_url: https://spineinnovlabs-marketing-dev.workers.dev
+      canonical_url: https://spineinnovlabs.com
+    spine_workspace:
+      apex: https://spineworkspace.com
+      app: https://app.spineworkspace.com
+      auth: https://auth.spineworkspace.com
+      domain_root: spineworkspace.com
+
+navigation:
+  innovlabs_product_cta: spine_workspace.apex
+  workspace_footer_parent: spine_innovlabs.public_url
+
+build:
+  # NEXT_PUBLIC_SITE_URL at build time should match spine_innovlabs.public_url for the target env
+  prod_site_url: https://spineinnovlabs.spineworkspace.com
