@@ -51,18 +51,18 @@ export function LeadForm({ defaultIntent = "contact" }: { defaultIntent?: LeadIn
   const [email, setEmail] = useState("")
   const [company, setCompany] = useState("")
   const [message, setMessage] = useState("")
-  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle")
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "prepared" | "error">("idle")
   const [errorMessage, setErrorMessage] = useState("")
 
   const endpoint = process.env.NEXT_PUBLIC_CONTACT_FORM_ACTION?.trim()
 
   const mailtoFallback = useCallback(() => {
-    const subject = encodeURIComponent(`[${intentLabel(intent)}] ${company || "SpineWorkspace"}`)
+    const subject = encodeURIComponent(`[Spine InnovLabs: ${intentLabel(intent)}] ${company || "Inquiry"}`)
     const body = encodeURIComponent(
       `Name: ${name}\nEmail: ${email}\nCompany: ${company}\nIntent: ${intentLabel(intent)}\n\n${message}`,
     )
     window.location.href = `mailto:${MAIL}?subject=${subject}&body=${body}`
-    setStatus("success")
+    setStatus("prepared")
   }, [name, email, company, message, intent])
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -92,7 +92,7 @@ export function LeadForm({ defaultIntent = "contact" }: { defaultIntent?: LeadIn
           company: company.trim(),
           message: message.trim(),
           intent: intentLabel(intent),
-          _subject: `[SpineWorkspace] ${intentLabel(intent)} — ${name.trim()}`,
+          _subject: `[Spine InnovLabs] ${intentLabel(intent)} — ${name.trim()}`,
         }),
       })
       if (!res.ok) {
@@ -115,14 +115,20 @@ export function LeadForm({ defaultIntent = "contact" }: { defaultIntent?: LeadIn
       <CardHeader>
         <CardTitle className="text-xl">Send a message</CardTitle>
         <CardDescription>
-          Tell us what you need — we&apos;ll get back within one business day.
+          Tell us about your question or project. We will use your details to respond.
         </CardDescription>
       </CardHeader>
 
       <CardContent>
         {status === "success" && (
           <div className="mb-4 rounded-lg border border-primary/30 bg-primary/5 px-4 py-3 text-sm font-medium text-foreground">
-            {endpoint ? "Thanks — we received your message." : "Your email client should open with your message ready to send."}
+            Your submission was accepted by the contact service.
+          </div>
+        )}
+
+        {status === "prepared" && (
+          <div role="status" className="mb-4 rounded-lg border border-primary/30 bg-primary/5 px-4 py-3 text-sm font-medium text-foreground">
+            Your email application should open with the message prepared. Please send it there; this website has not submitted it.
           </div>
         )}
 
