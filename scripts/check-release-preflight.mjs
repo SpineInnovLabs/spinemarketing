@@ -69,10 +69,12 @@ function routeExists(route) {
   if (routes.has(route) || existsSync("public" + route)) return true;
   return [...routes].some((pattern) => {
     if (!pattern.includes("[")) return false;
-    const expression = "^" + pattern
-      .replace(/[.*+?^$\{\}()|[\]\\]/g, "\\$&")
-      .replace(/\\\[\[?[^\]]+\\\]\\?\]/g, "[^/]+") + "$";
-    try { return new RegExp(expression).test(route); } catch { return false; }
+    const expected = pattern.split("/");
+    const actual = route.split("/");
+    return expected.length === actual.length && expected.every((segment, i) =>
+      segment === actual[i] ||
+      (segment.startsWith("[") && segment.endsWith("]") && actual[i].length > 0)
+    );
   });
 }
 const inspected = [
