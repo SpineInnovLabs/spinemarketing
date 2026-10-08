@@ -1,0 +1,24 @@
+{
+  "note": "Repository-side documented settings for Cloudflare Workers Builds. Cloudflare dashboard owns the actual Git integration, secrets, and build triggers.",
+  "worker": "spineinnovlabs-marketing",
+  "account": "a1bbbb12a32cdbb68dd170b09fe8b5f3",
+  "repository": "SpineInnovLabs/spinemarketing",
+  "productionBranch": "main",
+  "rootDirectory": ".",
+  "buildCommand": "npm run build:cloudflare",
+  "deployCommand": "npm run deploy:cloudflare",
+  "previewBuilds": "disabled until production validated; if enabled later use separate dev worker, never a production custom domain",
+  "buildVariables": {
+    "NEXT_PUBLIC_SITE_URL": "https://spineinnovlabs.spineworkspace.com",
+    "CONTENT_PROVIDER": "sanity",
+    "SANITY_DATASET": "production",
+    "NODE_VERSION": "22"
+  },
+  "buildSecrets": [
+    "SANITY_PROJECT_ID",
+    "SANITY_API_READ_TOKEN (if dataset private)"
+  ],
+  "runtimeWorkerEnvironment": "prod",
+  "managedAuthentication": "Cloudflare Workers Builds generates an API token upon Git connection; do not store expiring Wrangler OAuth tokens or CircleCI credentials",
+  "productionSmokeTest": "Worker's live corporate homepage must contain 'more connected business'"
+}
