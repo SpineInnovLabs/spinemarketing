@@ -71,6 +71,9 @@ jobs:
       - checkout
       - install-dependencies
       - run:
+          name: Validate CircleCI YAML and release contract
+          command: node scripts/check-circleci-config.mjs
+      - run:
           name: Build Next.js static export
           command: |
             npm run build
