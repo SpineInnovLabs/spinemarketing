@@ -1,6 +1,9 @@
+import type { Metadata } from "next";
 import { Header } from "@/components/header-client"
 import { Footer } from "@/components/footer"
 import { InnovLabsHome } from "@/components/marketing/innovlabs-home"
+
+export const metadata: Metadata = { alternates: { canonical: "/" } };
 
 export default function Home() {
   return (
