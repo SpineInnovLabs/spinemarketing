@@ -1,157 +1,96 @@
-# Spine InnovLabs marketing — Cloudflare deployment
+# Spine InnovLabs — direct Cloudflare Workers Builds deployment
 
-## Architecture
+## Hosting ownership
 
-| Layer | Identity |
+| Concern | Owner |
 | --- | --- |
-| Worker (production) | `spineinnovlabs-marketing` |
-| Runtime | Cloudflare Workers + Static Assets (`./out` from Next.js static export) |
-| Temporary production hostname | `spineinnovlabs.spineworkspace.com` |
-| Future canonical hostname | `spineinnovlabs.com` (and `www` → apex redirect) |
+| Corporate marketing Git source | `SpineInnovLabs/spinemarketing` → `main` |
+| CI/CD (production) | **Cloudflare Workers Builds**, connected to the above GitHub repository |
+| Worker name | `spineinnovlabs-marketing` |
+| Cloudflare account | The account ID in `wrangler.jsonc` |
+| Live corporate hostname | `spineinnovlabs.spineworkspace.com` |
+| Product public website | **Separate** `spineworkspace-live/apps/marketing`, `spineworkspace.com` |
+| Authenticated workspace | **Separate** `app.spineworkspace.com` |
+| Sign-in / sign-up | **Separate** `auth.spineworkspace.com` |
 
-Domains are routing configuration on a **stable** worker. The application does not embed the temporary hostname.
+**CircleCI is retired from this repository.** Cloudflare Workers Builds is the only automated deployment authority for the corporate Worker. Do not re-enable `.circleci/config.yml`, introduce another deployment provider, or point the product apex to this company Worker.
 
-## Build and offline preflight
+## Cloudflare Workers Builds — one-time dashboard connection
 
-```bash
-npm ci
-npm run lint              # No network or CircleCI credits needed after checkout
-npm run check:ci          # CircleCI YAML/release invariants, requires npm ci
-npm run typecheck
-NEXT_PUBLIC_SITE_URL=https://spineinnovlabs.spineworkspace.com npm run build
-npm start                 # Serve compiled ./out with local Wrangler
-```
+Existing Worker: **Workers & Pages** → `spineinnovlabs-marketing` → **Settings** → **Builds** → **Connect**.
 
-`package-lock.json` is canonical; `pnpm-lock.yaml` and pnpm-only `.npmrc` have been removed. `npm run lint` is a repository-specific preflight (lock, routes, assets, deployment config and approved corporate homepage). It does not run ESLint.
+1. Authorize Cloudflare's GitHub App for **SpineInnovLabs/spinemarketing**, if not already authorized.
+2. Connect **the existing Worker** `spineinnovlabs-marketing` rather than creating a second production Worker. Git-linked Worker names must match the `name` in the Wrangler configuration.
+3. Set production branch to `main`, root directory to `.` (repo root), and **enable production builds**.
+4. Set **Build command** to `npm run build:cloudflare`.
+5. Set **Deploy command** to `npm run deploy:cloudflare`.
+6. Keep non-production preview builds disabled during initial migration. Later, use an isolated non-production Worker/preview command only after review; never bind previews to the production custom domain.
+7. Set build variables (public, used during build): `NODE_VERSION=22`, `NEXT_PUBLIC_SITE_URL=https://spineinnovlabs.spineworkspace.com`, `CONTENT_PROVIDER=sanity`, `SANITY_DATASET=production`.
+8. Set build secrets through Cloudflare settings (never commit): `SANITY_PROJECT_ID`; `SANITY_API_READ_TOKEN` if required for the configured dataset. The actual Sanity connection must be verified before accepting blog freshness. Inspect `docs/CONTENT.md` for fallback behavior.
+9. Cloudflare Workers Builds manages a deployment token; you **do not need a CircleCI token or personal Wrangler OAuth credentials**. If overriding the token, use appropriately scoped Cloudflare credentials **inside Cloudflare**, not source code.
+10. Review `wrangler.jsonc`: production worker is `spineinnovlabs-marketing`, binds `./out`, and owns only `spineinnovlabs.spineworkspace.com`. `CANONICAL_REDIRECTS_ENABLED=false` until an approved move to `spineinnovlabs.com`.
 
-`NEXT_PUBLIC_SITE_URL` (or `PUBLIC_SITE_URL`) drives canonical URLs, sitemap, robots, RSS, Open Graph base, and JSON-LD.
+Configuration reference: [`config/cloudflare-builds.json`](../config/cloudflare-builds.json). **This file documents dashboard settings; it does not automatically connect GitHub or provision Cloudflare account resources.**
 
-Blog and feed URLs are populated at **build time** from Sanity via `getContentRepository()` (see [CONTENT.md](./CONTENT.md)). Static export does not call Sanity at runtime on Cloudflare.
-
-Output directory: `out/` (Next.js `output: 'export'`).
-
-## Wrangler environments
-
-| Environment | Worker name | Hostname |
-| --- | --- | --- |
-| `dev` | `spineinnovlabs-marketing-dev` | `*.workers.dev` |
-| `test` | `spineinnovlabs-marketing-test` | `*.workers.dev` |
-| `prod` | `spineinnovlabs-marketing` | `spineinnovlabs.spineworkspace.com` |
-
-```bash
-npm run deploy:dev
-npm run deploy:test
-npm run deploy:prod   # requires built ./out
-```
-
-Local development may use Wrangler OAuth. **CircleCI deploys must use a scoped Cloudflare API token**, since interactive OAuth is unsuitable for long-lived non-interactive deployment automation.
-
-```bash
-# Local only
-npm run wrangler:login
-npm run wrangler:whoami
-```
-
-For CI, set `CLOUDFLARE_API_TOKEN` in CircleCI project environment variables. An optional `CLOUDFLARE_ACCOUNT_ID` must match `account_id` in `wrangler.jsonc`. Do not commit secrets or reuse personal OAuth refresh tokens in CircleCI.
-
-### Fallback hostname
-
-If `spineworkspace.com` is unavailable, attach a fallback in `wrangler.jsonc` under `env.prod.routes` (for example `spineinnovlabs.integratewise.xyz`). Do **not** rename the worker.
-
-## CI/CD (CircleCI + Datadog)
-
-Primary pipeline: [`.circleci/config.yml`](../.circleci/config.yml).
-
-**GitHub:** `SpineInnovLabs/spinemarketing` (org repo; required for CircleCI GitHub App on Spine InnovLabs).
-
-**CircleCI project:** `spinemarketing` under org **Spine InnovLabs** (`circleci/BjAMH4EEyfd6462okS8HdH/...`, linked in `.circleci/info.yml`).
-
-| Trigger | Jobs |
-| --- | --- |
-| Every branch | `build` (locked install, Next.js static export, HTML/sitemap validation) |
-| `main` | `deploy-production` → `wrangler deploy --env prod` → live-domain smoke test |
-| `dev` | `deploy-dev` → `wrangler deploy --env dev` |
-| `test` | `deploy-test` → `wrangler deploy --env test` |
-| Feature branches | `build` only (no access to deployment credentials needed) |
-
-The production job requires the exact `out/` artifact from the successful build. The post-deploy smoke test checks the public hostname for the **new Spine InnovLabs corporate hero** and fails the job when an old or missing page is returned.
-
-The build stage restores and saves the `~/.npm` download cache by `package-lock.json` checksum. The deployment stage restores the same cache and uses `npm ci --prefer-offline`; node_modules and generated builds are **not** reused as mutable caches. The deployment still reuses exactly the `out/` artifact from the successful build job.
-
-**CircleCI credit exhaustion is not a build error:** A stopped/pending pipeline may simply have no execution credits. Do not repeatedly rerun it until credits are available. On upgrade, execute the current `main` pipeline and require green build, deploy-production, and live hostname smoke test.
-
-**Stale pipeline control:** The new config rejects a `main` pipeline whose `CIRCLE_SHA1` is no longer the remote `main` HEAD, before package installation and again before deployment. Older jobs created *before* this guard was merged do not have the protection; cancel or stop outdated pending workflows in CircleCI before spending restored credits. Turn on **auto-cancel redundant workflows** in CircleCI project settings if available. The correct deployment SHA must match the latest `main` commit.
-
-### CircleCI project environment variables
-
-| Variable | Purpose |
-| --- | --- |
-| `CLOUDFLARE_API_TOKEN` | **Required secret:** scoped Cloudflare token with Workers deploy permission for this account and domain |
-| `CLOUDFLARE_ACCOUNT_ID` | Optional identifier; also supplied by `wrangler.jsonc` |
-| `DD_API_KEY` | Optional Datadog reporting (never gates deployment) |
-| `DD_SITE` | Datadog region if reporting is enabled |
-| `SANITY_PROJECT_ID` | Sanity project for blog content at build time |
-| `SANITY_DATASET` | Usually `production` |
-| `SANITY_API_READ_TOKEN` | CMS read token for private datasets; use a secret, never client-side |
- 
-If Sanity variables are unset, the content repository may fall back to legacy content. Production should be configured to use the intended CMS source. Datadog is informational and cannot turn a successful Cloudflare deployment into a failed deployment.
-
-**CircleCI project setup (required outside the repository):**
-
-1. Open CircleCI → **spinemarketing** → Project Settings → **Environment Variables**. Create `CLOUDFLARE_API_TOKEN` with minimum necessary Workers permissions. `WRANGLER_OAUTH_TOKEN` and `WRANGLER_REFRESH_TOKEN` are no longer used.
-2. Open **Project Setup** and confirm the GitHub App has `SpineInnovLabs/spinemarketing` as the config and checkout source, with config file `.circleci/config.yml`.
-3. Open **Triggers** and ensure pushes to `main` trigger this pipeline. Without a configured trigger, GitHub can show a pending CircleCI status while no deployment occurs.
-4. Trigger a fresh `main` pipeline after adding the API token. Only mark the release complete when **build**, **deploy-production**, and the hostname smoke test are green.
-
-**Failure interpretation:**
-
-- No CircleCI workflow for the commit: verify GitHub App installation, pipeline definition, and push triggers in CircleCI Project Setup.
-- `CLOUDFLARE_API_TOKEN is missing`: provide the project secret; do not put it in GitHub.
-- Wrangler auth rejected: reissue a scoped Cloudflare API token and confirm account permissions.
-- `out/index.html` or hero missing: static build or branch/content mismatch; deployment is blocked.
-- Live hostname shows old banner: deployment smoke test fails. Verify DNS/Worker route, CDN caching, and that the expected Worker `spineinnovlabs-marketing` owns the host.
-
-### GitHub Actions
-
-Optional **manual-only** QA (`.github/workflows/ci.yml` using `workflow_dispatch`). Automatic PR GitHub Actions builds were disabled to prevent redundant startup failures and build consumption while CircleCI is the authoritative release pipeline. Deployments run in CircleCI only.
+### Required run order
 
 ```text
-feature branch → CircleCI build + artifact checks
-main → CircleCI build → Cloudflare deploy → live-host verification
-dev / test → CircleCI build → Cloudflare deploy
+GitHub (main)
+  → Cloudflare Workers Builds
+      → npm install from package-lock.json (Cloudflare managed)
+      → npm run build:cloudflare
+          → npm run lint
+          → npm run audit:site
+          → npm run check:cloudflare
+          → npm run typecheck
+          → npm run build (Next.js static export)
+          → npm run verify:artifact
+      → npm run deploy:cloudflare
+          → npm run verify:artifact
+          → wrangler deploy --env prod
+          → npm run verify:live (public corporate hero smoke test)
 ```
 
-### Custom domain DNS
+If dependency installation is not performed automatically in your selected Workers Builds builder, configure the build command to `npm ci --no-audit --no-fund && npm run build:cloudflare` instead. Do not use `npm install` with an unlocked dependency tree. **Cloudflare's build log, Worker deployment history, and live hostname validation are the release evidence.** A merged PR alone is not.
 
-After `deploy --env prod`, Cloudflare provisions TLS for the worker custom domain. The `spineworkspace.com` zone must be on the same account; Wrangler `custom_domain: true` creates the DNS record when the zone is present.
+### Build and deploy manually (without any CI)
 
-## Security and caching
-
-- Static asset headers: `public/_headers` (immutable cache for hashed `_next/static`, short TTL / revalidate for HTML)
-- Edge headers: `worker/index.ts` (HSTS on HTTPS, `X-Content-Type-Options`, `Referrer-Policy`, `Permissions-Policy`, `X-Frame-Options`)
-- Preview / `workers.dev` URLs: `X-Robots-Tag: noindex` via `_headers`
-
-Redirects from `public/_redirects` are served by Workers Static Assets.
-
-## Future cutover to `spineinnovlabs.com`
-
-No hosting migration. Same worker and artifact pipeline.
-
-1. Add custom domains in Cloudflare: `spineinnovlabs.com` and `www.spineinnovlabs.com` on worker `spineinnovlabs-marketing`.
-2. Configure `www.spineinnovlabs.com` → `https://spineinnovlabs.com` (Cloudflare redirect rule or worker).
-3. Set build env `NEXT_PUBLIC_SITE_URL=https://spineinnovlabs.com` and redeploy (metadata/sitemap/robots/RSS).
-4. On prod worker, set vars (or `wrangler.jsonc`):
-   - `CANONICAL_REDIRECTS_ENABLED=true`
-   - `CANONICAL_SITE_URL=https://spineinnovlabs.com`
-   - `LEGACY_REDIRECT_HOSTS=spineinnovlabs.spineworkspace.com,spineinnovlabs.nirmalprince.com,www.spineinnovlabs.com`
-5. Verify TLS, sitemap, robots, canonical tags, and Search Console / analytics (outside repo).
-
-After cutover, legacy hostnames 301 to apex with path and query preserved (`worker/index.ts`).
-
-## Local preview of static output
+With Cloudflare credentials supplied to Wrangler in the local environment:
 
 ```bash
-npx wrangler dev --env prod --local
+npm ci --no-audit --no-fund
+export NEXT_PUBLIC_SITE_URL=https://spineinnovlabs.spineworkspace.com
+export CONTENT_PROVIDER=sanity
+export SANITY_DATASET=production
+# Set SANITY_PROJECT_ID and SANITY_API_READ_TOKEN securely if applicable.
+npm run build:cloudflare
+npm run deploy:cloudflare
 ```
 
-Requires `out/` from a production build.
+`CLOUDFLARE_API_TOKEN` may be supplied to Wrangler locally, or use local `wrangler login`; don't commit any secrets. No CircleCI account or credits are required.
+
+### CMS / Sanity rebuilds
+
+Prefer **Sanity Publish webhook → Cloudflare Workers Builds Deploy Hook**:
+
+1. In Cloudflare Worker → Settings → Builds → **Deploy Hooks**, create a hook for `main`.
+2. Store the full secret URL in Sanity's webhook configuration; call it using HTTP POST on relevant publish, update and unpublish events.
+3. If keeping the former Sanity → GitHub `repository_dispatch: sanity-publish` workflow, configure **`CLOUDFLARE_WORKERS_DEPLOY_HOOK`** as a GitHub Actions repository secret. `.github/workflows/cms-rebuild.yml` now POSTs that hook instead of triggering CircleCI.
+4. A Deploy Hook URL is effectively a password: never expose it in the client bundle, public webhook log, or git.
+
+### DNS and production safety
+
+Do **not** change the `spineworkspace.com` / `www.spineworkspace.com` product host, `auth.spineworkspace.com`, or `app.spineworkspace.com` during corporate migration. Those are separate applications. Fix their ownership via the `spineworkspace-live` repository and the Cloudflare account.
+
+Do **not** turn on the future `spineinnovlabs.com` canonical redirect without verifying the new DNS, certificates and published URLs; `wrangler.jsonc` intentionally has redirect disabled.
+
+### Acceptance and troubleshooting
+
+- If **no Cloudflare build starts**, check that the Git integration is connected to the **existing** Worker and the latest `main` push is visible in Settings → Builds. This cannot be resolved by committing a Wrangler file alone.
+- If **build fails**, inspect the Cloudflare build log. The site must pass route/brand checks, TypeScript, static export, and HTML/sitemap validation.
+- If **deploy fails**, check Cloudflare Builds' deploy token permissions, correct Worker name, account, and custom-domain ownership. No CircleCI credentials are involved.
+- If **site still serves old content**, check which Worker/custom domain owns `spineinnovlabs.spineworkspace.com`. A successful Wrangler upload to a different Worker is **not** a release. `verify:live` fails when the corporate hero is absent or the final hostname redirects away.
+- If **Sanity posts are stale**, verify configured build secrets and rerun a Deploy Hook after a content publication.
+- **Only declare production success** once the Cloudflare build and deployment complete and the live page contains `more connected business`.
+
+References: [Cloudflare Workers Builds](https://developers.cloudflare.com/workers/ci-cd/builds/), [Build settings](https://developers.cloudflare.com/workers/ci-cd/builds/configuration/), and [Deploy Hooks](https://developers.cloudflare.com/workers/ci-cd/builds/deploy-hooks/).
