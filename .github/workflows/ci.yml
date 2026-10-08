@@ -31,6 +31,9 @@ jobs:
       - name: Repository preflight
         run: npm run lint
 
+      - name: Audit corporate routes and claims
+        run: npm run audit:site
+
       - name: Validate CircleCI contract
         run: npm run check:ci
 
