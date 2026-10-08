@@ -1,98 +1,40 @@
 "use client";
 
 import Link from "next/link";
-import { Linkedin, Twitter, Mail } from "lucide-react";
+import { ArrowUpRight, Mail } from "lucide-react";
 import { SpineLogo } from "@/components/spine-logo";
-import { footerColumns, COMPANY_TAGLINE } from "@/lib/navigation";
+import { footerColumns } from "@/lib/navigation";
 
 export function Footer() {
   return (
-    <footer className="border-t border-[#E5E5E5] bg-[#F3F6F9]">
-      <div className="mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-12">
-        <div className="border-t border-[#DDE6F2] pt-16 pb-12">
-          <div className="grid gap-12 lg:grid-cols-[320px_1fr]">
-            <div>
-              <Link
-                href="/"
-                className="inline-flex items-center gap-2.5 rounded-lg focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-white/40"
-              >
-                <SpineLogo className="h-8 w-8 shrink-0 text-[#032D60]" variant="on-light" />
-                <span className="text-[18px] font-semibold tracking-[-0.04em] text-[#032D60]">
-                  Spine <span className="text-[#0176D3]">InnovLabs</span>
-                </span>
-              </Link>
-              <p className="mt-5 max-w-[280px] text-[14px] leading-[1.7] text-[#444]">
-                {COMPANY_TAGLINE}
-              </p>
-
-              <div className="mt-6 flex items-center gap-3">
-                <Link
-                  href="https://twitter.com/spineworkspace"
-                  className="flex h-10 w-10 items-center justify-center rounded-[10px] border border-[#D9E4EF] bg-white text-[#032D60] transition-colors hover:border-[#0176D3] hover:text-[#0176D3]"
-                  aria-label="Twitter"
-                >
-                  <Twitter className="h-4 w-4" />
-                </Link>
-                <Link
-                  href="https://linkedin.com/company/spine-innovlabs"
-                  className="flex h-10 w-10 items-center justify-center rounded-[10px] border border-[#D9E4EF] bg-white text-[#032D60] transition-colors hover:border-[#0176D3] hover:text-[#0176D3]"
-                  aria-label="LinkedIn"
-                >
-                  <Linkedin className="h-4 w-4" />
-                </Link>
-                <Link
-                  href="mailto:connect@spineworkspace.com"
-                  className="flex h-10 w-10 items-center justify-center rounded-[10px] border border-[#D9E4EF] bg-white text-[#032D60] transition-colors hover:border-[#0176D3] hover:text-[#0176D3]"
-                  aria-label="Email"
-                >
-                  <Mail className="h-4 w-4" />
-                </Link>
-              </div>
-            </div>
-
-            <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-              {footerColumns.map((col) => (
-                <div key={col.heading}>
-                  <h3 className="text-[12px] font-bold uppercase tracking-[0.08em] text-[#032D60]">
-                    {col.heading}
-                  </h3>
-                  <ul className="mt-4 space-y-2.5">
-                    {col.links.map((link) => (
-                      <li key={link.name}>
-                        {link.external ? (
-                          <a
-                            href={link.href}
-                            className="text-[14px] text-[#444] transition-colors hover:text-[#0176D3]"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            {link.name}
-                          </a>
-                        ) : (
-                          <Link
-                            href={link.href}
-                            className="text-[14px] text-[#444] transition-colors hover:text-[#0176D3]"
-                          >
-                            {link.name}
-                          </Link>
-                        )}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
+    <footer className="bg-[#07152F] text-[#D6E2F5]">
+      <div className="mx-auto max-w-[1320px] px-5 sm:px-8 lg:px-12">
+        <div className="grid gap-12 border-b border-white/15 py-16 lg:grid-cols-[.85fr_1.15fr] lg:gap-20 lg:py-20">
+          <div>
+            <Link href="/" className="inline-flex items-center gap-3 rounded-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#9EC4FF]">
+              <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-white p-2"><SpineLogo className="h-7 w-7 text-[#103366]" variant="on-light"/></span>
+              <span className="text-[21px] font-semibold tracking-[-.055em] text-white">Spine <span className="text-[#A1C2FA]">InnovLabs</span></span>
+            </Link>
+            <h2 className="mt-8 max-w-[420px] text-[clamp(1.8rem,3vw,2.8rem)] font-semibold leading-[1.2] tracking-[-.05em] text-white">Building the intelligence behind connected business.</h2>
+            <p className="mt-5 max-w-[400px] text-[14px] leading-[1.85] text-[#9EAFCE]">Connected systems. Shared context. Governed intelligence. Building Spine Workspace for humans and AI to work together with business context.</p>
+            <Link href="/contact" className="mt-7 inline-flex items-center gap-2 text-[14px] font-semibold text-[#B5D0FF] transition hover:text-white">Talk to Spine InnovLabs <ArrowUpRight className="h-4 w-4"/></Link>
           </div>
+          <nav aria-label="Footer navigation" className="grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-4">
+            {footerColumns.map((col) => <div key={col.heading}>
+              <h3 className="text-[11px] font-semibold uppercase tracking-[.18em] text-white">{col.heading}</h3>
+              <ul className="mt-6 space-y-3.5">
+                {col.links.map((link) => <li key={link.href}>
+                  {link.external ?
+                    <a href={link.href} target="_blank" rel="noopener noreferrer" className="text-[13px] leading-6 text-[#ACBDDA] transition hover:text-white">{link.name}</a> :
+                    <Link href={link.href} className="text-[13px] leading-6 text-[#ACBDDA] transition hover:text-white">{link.name}</Link>}
+                </li>)}
+              </ul>
+            </div>)}
+          </nav>
         </div>
-
-        <div className="flex flex-col items-center justify-between gap-4 border-t border-[#DDE6F2] py-8 sm:flex-row">
-          <p className="text-[13px] text-[#706E6B]">
-            © {new Date().getFullYear()} Spine InnovLabs · Built in India
-          </p>
-          <div className="flex flex-wrap items-center gap-4 text-[13px] text-[#706E6B]">
-            <Link href="/security" className="hover:text-[#0176D3]">Security</Link>
-            <Link href="/privacy" className="hover:text-[#0176D3]">Privacy</Link>
-          </div>
+        <div className="flex flex-wrap items-center justify-between gap-4 py-7">
+          <p className="text-[12px] text-[#8EA5C7]">© {new Date().getFullYear()} Spine InnovLabs. Built in India.</p>
+          <a href="mailto:connect@spineworkspace.com" className="inline-flex items-center gap-2 text-[12px] text-[#A9BEE0] transition hover:text-white"><Mail className="h-3.5 w-3.5"/> connect@spineworkspace.com</a>
         </div>
       </div>
     </footer>
