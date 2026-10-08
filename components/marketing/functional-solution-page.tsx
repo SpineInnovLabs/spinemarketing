@@ -58,15 +58,13 @@ export function FunctionalSolutionPage({ solution }: { solution: PublicSolution 
           <div className="rounded-[20px] border border-[#D9E4EF] bg-white p-6">
             <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[#526479]">Without shared context</p>
             <p className="mt-3 text-[15px] leading-[1.65] text-[#33465B]">
-              Operators jump between systems to reconstruct context before every review—then debate recommendations without
-              a shared evidence packet.
+              Teams reconstruct decisions from fragmented systems, unclear ownership and incomplete evidence before moving work forward.
             </p>
           </div>
           <div className="rounded-[20px] border border-[#0176D3]/25 bg-[#EAF5FC] p-6">
             <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[#0176D3]">With contextual design</p>
             <p className="mt-3 text-[15px] leading-[1.65] text-[#33465B]">
-              One governed decision packet, explicit approval, and write-back to the system that owns the record—starting
-              with renewals where {solution.name} intersects customer revenue.
+              A governed view of the relevant facts and work, with proposed steps subject to policy, approvals and verified execution where connected capabilities support them.
             </p>
           </div>
         </div>
