@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     canonical: "/",
     types: { "application/rss+xml": "/rss.xml" },
   },
-  title: "SpineWorkspace — Renewal decisions from the full customer story",
+  title: "Spine InnovLabs | Intelligence for Connected Business",
   description:
     "For customer-success and revenue teams: assemble CRM, support, email, document, and finance context into an evidence-backed renewal proposal your team reviews, approves, and executes—with control.",
   icons: {
@@ -24,12 +24,12 @@ export const metadata: Metadata = {
     apple: "/icon.svg",
   },
   openGraph: {
-    title: "SpineWorkspace — Renewal decisions from the full customer story",
+    title: "Spine InnovLabs | Intelligence for Connected Business",
     description:
       "For customer-success and revenue teams: evidence-backed renewal decision packets, human approval, and execution in your existing systems of record.",
-    siteName: "SpineWorkspace",
+    siteName: "Spine InnovLabs",
     type: "website",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "SpineWorkspace" }],
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Spine InnovLabs" }],
   },
   twitter: {
     card: "summary_large_image",
@@ -56,7 +56,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Organization",
               name: "Spine InnovLabs",
-              alternateName: "SpineWorkspace",
+              description: "Technology and AI innovation company behind Spine Workspace",
               url: publicSiteUrl,
               logo: absoluteUrl("/icon.svg"),
               sameAs: [],
