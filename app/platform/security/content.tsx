@@ -8,25 +8,24 @@ import Link from "next/link";
 import { PageHero } from "@/components/marketing/page-hero";
 import { Section, SectionHeader } from "@/components/marketing/section";
 import { FinalCTA } from "@/components/final-cta";
-import { SecurityGather } from "./sticky-sections";
 
 const dataProtection = [
-  { icon: Lock, title: "AES-256 Encryption at Rest", desc: "Per-tenant keys, rotated on configurable schedule." },
-  { icon: ShieldCheck, title: "TLS 1.3 in Transit", desc: "No unencrypted data paths in the platform." },
-  { icon: FileText, title: "Field-Level Encryption", desc: "PII and financial data encrypted separately." },
-  { icon: Globe, title: "Regional Data Residency", desc: "Data stays in your selected region — no cross-border transfer." },
+  { icon: Lock, title: "Storage protection", desc: "Encryption, key management and rotation must be reviewed against configured providers." },
+  { icon: ShieldCheck, title: "Transport security", desc: "Protected transport paths should be validated using actual deployment evidence." },
+  { icon: FileText, title: "Sensitive-field boundaries", desc: "Sensitive-field treatment depends on data classification and integration policy." },
+  { icon: Globe, title: "Data location", desc: "Storage regions and cross-border flows require contract and infrastructure verification." },
 ];
 
 const accessControl = [
-  { icon: Users, title: "RBAC", desc: "Field-level permissions per user role." },
-  { icon: Globe, title: "SSO / SAML", desc: "Okta, Azure AD, or Google Workspace integration." },
-  { icon: ShieldCheck, title: "Contextual Firewalling", desc: "Department filters prevent unauthorized data access." },
+  { icon: Users, title: "RBAC", desc: "Access scopes must be checked against actual user role, tenant, provider and context." },
+  { icon: Globe, title: "SSO / SAML", desc: "Supported identity-provider configuration requires implementation review." },
+  { icon: ShieldCheck, title: "Contextual Firewalling", desc: "Department-scoped access must be enforced and tested at the relevant data boundaries." },
 ];
 
 const truthBoundary = [
-  { icon: Lock, title: "Hard-Coded Architectural Constraint", desc: "AI cannot write without human approval. No override exists." },
-  { icon: AlertTriangle, title: "Emergency Override Audit", desc: "Force-executions require justification with immutable logs." },
-  { icon: FileText, title: "Session Isolation", desc: "AI contexts sandboxed from production data." },
+  { icon: Lock, title: "Authority boundary", desc: "Consequential actions require authorization under governing policy and verified enforcement." },
+  { icon: AlertTriangle, title: "Emergency procedures", desc: "Exceptional operations need explicit authority, justification and reviewable evidence." },
+  { icon: FileText, title: "Context isolation", desc: "Cross-context data access must be bounded by identity, policy and tenant scope." },
 ];
 
 const fade = (delay = 0) => ({
@@ -43,13 +42,13 @@ export function PlatformSecurityContent() {
       <main id="main">
         <PageHero
           badge="Platform Security"
-          headline="AI acts only when you say so."
-          subhead="Encryption everywhere, RBAC, SOC 2 aligned practices with no certification claimed, and an architectural mandate for human approval."
+          headline="Authority is designed into the execution path."
+          subhead="An architectural view of identity, policy, data boundaries and governed execution. Verify implementation evidence before relying on any individual control."
           primaryCta={{ label: "Review the security model", href: "/contact?intent=security" }}
         />
 
         <Section variant="muted">
-          <SectionHeader label="Data Protection" headline="Encryption, transit security, regional sovereignty" />
+          <SectionHeader label="Data Protection" headline="Data protection and deployment boundaries" />
           <div className="grid gap-4 md:grid-cols-2">
             {dataProtection.map((d, i) => (
               <motion.div key={d.title} {...fade(i * 0.06)} className="rounded-md border border-[#E5E5E5] bg-white p-6 shadow-[0_1px_2px_rgba(0,0,0,0.04)]">
@@ -64,7 +63,7 @@ export function PlatformSecurityContent() {
         </Section>
 
         <Section>
-          <SectionHeader label="Access Control" headline="RBAC, SSO, and department-level firewalling" />
+          <SectionHeader label="Access Control" headline="Access scope and identity controls" />
           <div className="grid gap-4 md:grid-cols-3">
             {accessControl.map((a, i) => (
               <motion.div key={a.title} {...fade(i * 0.06)} className="rounded-md border border-[#E5E5E5] bg-white p-6 shadow-[0_1px_2px_rgba(0,0,0,0.04)]">
@@ -87,7 +86,7 @@ export function PlatformSecurityContent() {
               <h2 className="text-[20px] font-semibold text-[#032D60]">Governance Enforcement</h2>
             </div>
             <p className="mb-6 text-[14px] text-[#444]">
-              An architectural constraint — AI cannot modify systems without human approval.
+              The intended execution boundary: capability access does not by itself grant authority to act.
             </p>
             <div className="grid gap-4 md:grid-cols-3">
               {truthBoundary.map((t, i) => (
@@ -105,18 +104,17 @@ export function PlatformSecurityContent() {
 
         <section className="border-t border-[#E5E5E5] bg-white py-16">
           <div className="mx-auto max-w-3xl px-6 text-center">
-            <h2 className="text-[28px] font-semibold text-[#032D60]">Enterprise-grade from day one.</h2>
-            <p className="mt-3 text-[16px] text-[#444]">Walk through the security model in a 30-minute session.</p>
+            <h2 className="text-[28px] font-semibold text-[#032D60]">Review security claims against evidence.</h2>
+            <p className="mt-3 text-[16px] text-[#444]">Contact the team to discuss the architecture, deployment scope and control evidence.</p>
             <Link
               href="/contact?intent=demo"
               className="mt-8 inline-flex h-10 items-center gap-2 rounded-md bg-[#0176D3] px-5 text-[14px] font-semibold text-white hover:bg-[#0B5CAB]"
             >
-              Book a demo <ArrowRight className="h-4 w-4" />
+              Discuss security <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
         </section>
 
-        <SecurityGather />
         <FinalCTA />
       </main>
       <Footer />
