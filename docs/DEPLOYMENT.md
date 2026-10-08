@@ -11,12 +11,18 @@
 
 Domains are routing configuration on a **stable** worker. The application does not embed the temporary hostname.
 
-## Build
+## Build and offline preflight
 
 ```bash
 npm ci
+npm run lint              # No network or CircleCI credits needed after checkout
+npm run check:ci          # CircleCI YAML/release invariants, requires npm ci
+npm run typecheck
 NEXT_PUBLIC_SITE_URL=https://spineinnovlabs.spineworkspace.com npm run build
+npm start                 # Serve compiled ./out with local Wrangler
 ```
+
+`package-lock.json` is canonical; `pnpm-lock.yaml` and pnpm-only `.npmrc` have been removed. `npm run lint` is a repository-specific preflight (lock, routes, assets, deployment config and approved corporate homepage). It does not run ESLint.
 
 `NEXT_PUBLIC_SITE_URL` (or `PUBLIC_SITE_URL`) drives canonical URLs, sitemap, robots, RSS, Open Graph base, and JSON-LD.
 
@@ -70,10 +76,12 @@ Primary pipeline: [`.circleci/config.yml`](../.circleci/config.yml).
 
 The production job requires the exact `out/` artifact from the successful build. The post-deploy smoke test checks the public hostname for the **new Spine InnovLabs corporate hero** and fails the job when an old or missing page is returned.
 
+The build stage restores and saves the `~/.npm` download cache by `package-lock.json` checksum. The deployment stage restores the same cache and uses `npm ci --prefer-offline`; node_modules and generated builds are **not** reused as mutable caches. The deployment still reuses exactly the `out/` artifact from the successful build job.
+
+**CircleCI credit exhaustion is not a build error:** A stopped/pending pipeline may simply have no execution credits. Do not repeatedly rerun it until credits are available. On upgrade, execute the current `main` pipeline and require green build, deploy-production, and live hostname smoke test.
+
 ### CircleCI project environment variables
 
-| Variable | Purpose |
-| --- | --- |
 | Variable | Purpose |
 | --- | --- |
 | `CLOUDFLARE_API_TOKEN` | **Required secret:** scoped Cloudflare token with Workers deploy permission for this account and domain |
