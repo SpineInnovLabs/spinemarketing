@@ -12,12 +12,12 @@ import { BreadcrumbJsonLd } from "@/components/structured-data"
 export const metadata: Metadata = {
   title: "Spine Fabric | Spine InnovLabs",
   description:
-    "Spine Fabric is a Spine InnovLabs product. The tools keep the record. SpineWorkspace shows the work.",
+    "Spine Fabric is a Spine InnovLabs product. The tools keep the record. Spine Workspace shows the work.",
   alternates: { canonical: "/platform/spine-fabric" },
   openGraph: {
     title: "Spine Fabric | Spine InnovLabs",
-    description: "The tools keep the record. SpineWorkspace shows the work. Twin proposes only when asked. A person decides.",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "SpineWorkspace" }],
+    description: "The tools keep the record. Spine Workspace shows the work. Twin proposes only when asked. A person decides.",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Spine Workspace" }],
   },
 }
 
