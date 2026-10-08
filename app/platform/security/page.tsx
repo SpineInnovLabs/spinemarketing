@@ -4,13 +4,13 @@ import { PlatformSecurityContent } from "./content"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
-  title: "Security | Spine InnovLabs",
-  description: "Enterprise-grade security architecture for the Spine Workspace — encryption, access control, and audit trails.",
+  title: "Platform Security Architecture | Spine InnovLabs",
+  description: "Security architecture principles for Spine Workspace. Review actual identity, encryption, access-control and audit evidence for each deployment.",
   alternates: { canonical: "/platform/security" },
   openGraph: {
-    title: "Security | Spine InnovLabs",
-    description: "Enterprise-grade security architecture for the Spine Workspace — encryption, access control, and audit trails.",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Spine Workspace" }],
+    title: "Platform Security Architecture | Spine InnovLabs",
+    description: "Security architecture principles for Spine Workspace. Review actual identity, encryption, access-control and audit evidence for each deployment.",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Spine InnovLabs" }],
   },
 }
 
