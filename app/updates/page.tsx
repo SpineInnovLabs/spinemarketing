@@ -1,64 +1,58 @@
 import type { Metadata } from "next";
-import { absoluteUrl } from "@/lib/site-url"
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { BreadcrumbJsonLd } from "@/components/structured-data";
-
-const notes = [
-  {
-    date: "October 2026",
-    title: "One renewal, through to the result",
-    body: "The homepage now follows the Northstar Labs renewal from the first screen through execution. Approval and completion are separate states. Documentation opens on the docs site.",
-  },
-  {
-    date: "September 2026",
-    title: "The public story is the product",
-    body: "The tools keep the record. Twin proposes only when asked. A person allows, changes, or stops it. An accepted change is written back through the tool that owns the record.",
-  },
-  {
-    date: "April 2026",
-    title: "The site opened",
-    body: "Product, solutions, and pricing pages went live, with the first blog posts and this log.",
-  },
-];
+import { absoluteUrl } from "@/lib/site-url";
 
 export const metadata: Metadata = {
-  title: "Updates | SpineWorkspace",
-  description: "Short notes on what changed in SpineWorkspace for buyers. The dated log is the changelog.",
+  title: { absolute: "Company & Product Updates | Spine InnovLabs" },
+  description: "Notes from Spine InnovLabs on company direction, business context, Spine Workspace and responsible AI.",
   alternates: { canonical: "/updates" },
 };
 
+const notes = [
+  {
+    period: "October 2026",
+    category: "Company direction",
+    title: "Spine InnovLabs and Spine Workspace: two distinct roles",
+    body: "Spine InnovLabs is the company and technology identity. Spine Workspace is the flagship business-context workspace where people and AI collaborate. The corporate website introduces the company and its technology; the product website handles product-specific evaluation.",
+  },
+  {
+    period: "September 2026",
+    category: "Architecture",
+    title: "One product with a governed architecture",
+    body: "Spine Fabric, Workbench, Twin, Runtime and the Marketplace describe connected capabilities of Spine Workspace. Business context, authority and verified outcomes remain the design focus rather than separate standalone AI agents.",
+  },
+];
+
 export default function UpdatesPage() {
   return (
-    <div className="min-h-screen bg-white">
-      <BreadcrumbJsonLd
-        items={[
-          { name: "Home", url: absoluteUrl("/") },
-          { name: "Updates", url: absoluteUrl("/updates") },
-        ]}
-      />
+    <div className="min-h-screen bg-[#F7F9FC]">
+      <BreadcrumbJsonLd items={[{ name: "Home", url: absoluteUrl("/") }, { name: "Updates", url: absoluteUrl("/updates") }]} />
       <Header />
       <main id="main">
-        <section className="mx-auto max-w-[800px] px-6 pt-[140px] pb-16 md:px-16">
-          <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[#0176D3]">Company</p>
-          <h1 className="mt-3 text-[40px] font-semibold tracking-[-0.04em] text-[#032D60] sm:text-[48px]">Updates</h1>
-          <p className="mt-4 max-w-xl text-[17px] leading-[1.6] text-[#33465B]">
-            What changed for someone evaluating SpineWorkspace. Longer thinking stays on the{" "}
-            <Link href="/blog" className="font-semibold text-[#0176D3] hover:underline">blog</Link>. The dated list stays on the{" "}
-            <Link href="/changelog" className="font-semibold text-[#0176D3] hover:underline">changelog</Link>.
-          </p>
+        <section className="bg-[#0A1B38] px-5 pb-20 pt-40 text-white sm:px-8 lg:pb-28">
+          <div className="mx-auto max-w-[1130px]">
+            <p className="text-xs font-semibold uppercase tracking-[.23em] text-[#A8C6F9]">Spine InnovLabs / Journal</p>
+            <h1 className="mt-7 text-[clamp(3.2rem,6vw,6rem)] font-semibold leading-[1.08] tracking-[-.06em]">Company updates.</h1>
+            <p className="mt-7 max-w-[710px] text-[17px] leading-[1.9] text-[#CBDAEE]">Direction, architecture and meaningful progress from the company behind Spine Workspace. These editorial notes are not a production release log.</p>
+          </div>
         </section>
-        <section className="mx-auto max-w-[800px] px-6 pb-24 md:px-16">
-          <ol className="space-y-8">
+        <section className="mx-auto max-w-[1130px] px-5 py-24 sm:px-8 lg:py-32">
+          <div className="grid gap-5">
             {notes.map((note) => (
-              <li key={note.date} className="rounded-[20px] border border-[#D9E4EF] bg-[#F3F6F9] p-6">
-                <p className="text-[13px] font-semibold uppercase tracking-[0.06em] text-[#0176D3]">{note.date}</p>
-                <h2 className="mt-2 text-[22px] font-semibold tracking-[-0.03em] text-[#032D60]">{note.title}</h2>
-                <p className="mt-3 text-[15px] leading-[1.65] text-[#33465B]">{note.body}</p>
-              </li>
+              <article key={note.title} className="grid gap-6 rounded-[24px] border border-[#D7E5F5] bg-white p-8 sm:p-10 lg:grid-cols-[.3fr_1fr]">
+                <div><p className="text-xs font-semibold uppercase tracking-[.14em] text-[#2664B3]">{note.period}</p><p className="mt-3 text-sm text-[#58708C]">{note.category}</p></div>
+                <div><h2 className="max-w-2xl text-[28px] font-semibold leading-[1.25] tracking-[-.045em] text-[#112E55]">{note.title}</h2><p className="mt-6 max-w-3xl text-[16px] leading-[1.85] text-[#536B85]">{note.body}</p></div>
+              </article>
             ))}
-          </ol>
+          </div>
+          <div className="mt-12 flex flex-wrap items-center gap-6">
+            <Link href="/blog" className="inline-flex items-center gap-2 text-sm font-semibold text-[#225FAB] hover:underline">Read the blog <ArrowUpRight className="h-4 w-4" aria-hidden /></Link>
+            <Link href="/changelog" className="inline-flex items-center gap-2 text-sm font-semibold text-[#225FAB] hover:underline">Product changelog <ArrowUpRight className="h-4 w-4" aria-hidden /></Link>
+          </div>
         </section>
       </main>
       <Footer />
