@@ -80,6 +80,8 @@ The build stage restores and saves the `~/.npm` download cache by `package-lock.
 
 **CircleCI credit exhaustion is not a build error:** A stopped/pending pipeline may simply have no execution credits. Do not repeatedly rerun it until credits are available. On upgrade, execute the current `main` pipeline and require green build, deploy-production, and live hostname smoke test.
 
+**Stale pipeline control:** The new config rejects a `main` pipeline whose `CIRCLE_SHA1` is no longer the remote `main` HEAD, before package installation and again before deployment. Older jobs created *before* this guard was merged do not have the protection; cancel or stop outdated pending workflows in CircleCI before spending restored credits. Turn on **auto-cancel redundant workflows** in CircleCI project settings if available. The correct deployment SHA must match the latest `main` commit.
+
 ### CircleCI project environment variables
 
 | Variable | Purpose |
@@ -111,7 +113,7 @@ If Sanity variables are unset, the content repository may fall back to legacy co
 
 ### GitHub Actions
 
-Optional **PR-only** lint/build (`.github/workflows/ci.yml`). Deployments run in CircleCI only.
+Optional **manual-only** QA (`.github/workflows/ci.yml` using `workflow_dispatch`). Automatic PR GitHub Actions builds were disabled to prevent redundant startup failures and build consumption while CircleCI is the authoritative release pipeline. Deployments run in CircleCI only.
 
 ```text
 feature branch → CircleCI build + artifact checks
