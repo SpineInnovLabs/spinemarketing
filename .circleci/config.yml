@@ -102,6 +102,9 @@ jobs:
           name: Validate repository release hygiene
           command: npm run lint
       - run:
+          name: Audit corporate routes, navigation and trust claims
+          command: npm run audit:site
+      - run:
           name: Validate CircleCI YAML and release contract
           command: npm run check:ci
       - run:
