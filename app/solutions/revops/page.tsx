@@ -7,14 +7,14 @@ import { RevOpsContent } from "./content"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
-  title: "RevOps & Business Operations | SpineWorkspace",
+  title: "RevOps & Business Operations | Spine InnovLabs",
   description:
     "Pipelines, headcount, projects, exceptions — connected and actionable.",
   alternates: { canonical: "/solutions/revops" },
   openGraph: {
-    title: "RevOps & Business Operations | SpineWorkspace",
+    title: "RevOps & Business Operations | Spine InnovLabs",
     description: "Pipelines, headcount, projects, exceptions — connected and actionable.",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "SpineWorkspace" }],
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Spine Workspace" }],
   },
 }
 
