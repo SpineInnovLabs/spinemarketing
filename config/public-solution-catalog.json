@@ -1,0 +1,146 @@
+{
+  "version": 1,
+  "notice": "Mirrored source across spineworkspace-live and spinemarketing. Only marketing route information; no deployed capability or host authority implied.",
+  "solutions": [
+    {
+      "slug": "customer-success",
+      "name": "Account Success",
+      "description": "Assemble CRM, support, email, document, and finance context into an evidence-backed renewal decision packet—review, approve, and execute with control.",
+      "icon": "user-check",
+      "group": "function"
+    },
+    {
+      "slug": "finance",
+      "name": "Finance & Business Ops",
+      "description": "Finance, business operations, and cross-functional execution connected to the record and the context for the decision.",
+      "icon": "chart",
+      "group": "function"
+    },
+    {
+      "slug": "product-engineering",
+      "name": "Product & Engineering",
+      "description": "Roadmap, delivery, and customer signals connected for product and engineering teams.",
+      "icon": "code",
+      "group": "function"
+    },
+    {
+      "slug": "memoryandknowledge",
+      "name": "Memory & Knowledge",
+      "description": "Knowledge, portfolio context, and durable business memory—governed and evidence-linked.",
+      "icon": "book-open",
+      "group": "function"
+    },
+    {
+      "slug": "customer-support",
+      "name": "Customer Support",
+      "description": "Tickets, history, and commitments in one workspace—not another disconnected queue.",
+      "icon": "headphones",
+      "group": "function"
+    },
+    {
+      "slug": "individual",
+      "name": "Individual",
+      "description": "Personal operating picture with continuity across tools, hosts, and AI sessions.",
+      "icon": "user",
+      "group": "function"
+    },
+    {
+      "slug": "saas",
+      "name": "SaaS",
+      "description": "Renewals, expansion, adoption, and customer risk connected across systems.",
+      "icon": "cloud",
+      "group": "industry"
+    },
+    {
+      "slug": "services",
+      "name": "Services & Agencies",
+      "description": "Projects, utilization, delivery, and billing connected in one operating picture.",
+      "icon": "wrench",
+      "group": "industry"
+    },
+    {
+      "slug": "manufacturing",
+      "name": "Manufacturing & Trade",
+      "description": "Orders, shipments, exceptions, and customer commitments connected end to end.",
+      "icon": "package",
+      "group": "industry"
+    },
+    {
+      "slug": "retail",
+      "name": "Retail & Ecommerce",
+      "description": "Inventory, orders, returns, and support signals in one governed workspace.",
+      "icon": "shopping-cart",
+      "group": "industry"
+    },
+    {
+      "slug": "professional-services",
+      "name": "Professional Services",
+      "description": "Engagements, scope, relationships, time, and billing with shared context.",
+      "icon": "briefcase",
+      "group": "industry"
+    },
+    {
+      "slug": "founders",
+      "name": "Founders & CXOs",
+      "description": "Executive visibility, decision traceability, and organizational memory.",
+      "icon": "telescope",
+      "group": "role"
+    },
+    {
+      "slug": "revops",
+      "name": "Revenue Operations",
+      "description": "Pipeline, forecast, handoffs, and data quality with source-level traceability.",
+      "icon": "settings",
+      "group": "role"
+    },
+    {
+      "slug": "operations",
+      "name": "Operations & Delivery",
+      "description": "Capacity, delivery, exceptions, and service risk before they become escalations.",
+      "icon": "truck",
+      "group": "role"
+    },
+    {
+      "slug": "finance-leaders",
+      "name": "Finance Leaders",
+      "description": "Cash, revenue exposure, collections, and audit context ready for decisions.",
+      "icon": "dollar",
+      "group": "role"
+    },
+    {
+      "slug": "sales",
+      "name": "Sales",
+      "description": "Account commitments, deal memory, and next actions grounded in the record and the context around the deal.",
+      "icon": "chart",
+      "group": "function"
+    },
+    {
+      "slug": "marketing",
+      "name": "Marketing",
+      "description": "Programs, launches, and performance signals linked to goals, customers, and evidence.",
+      "icon": "sparkles",
+      "group": "function"
+    },
+    {
+      "slug": "content",
+      "name": "Content",
+      "description": "Briefs, assets, and publishing connected to goals, audiences, and approved evidence.",
+      "icon": "book-open",
+      "group": "function"
+    },
+    {
+      "slug": "human-resources",
+      "name": "Human Resources",
+      "description": "Hiring, onboarding, and people programs connected to goals and governance boundaries.",
+      "icon": "users",
+      "group": "function"
+    },
+    {
+      "slug": "legal",
+      "name": "Legal",
+      "description": "Contracts, reviews, and obligations linked to customers, deals, and approved decisions.",
+      "icon": "briefcase",
+      "group": "function"
+    }
+  ]
+}
