@@ -7,14 +7,14 @@ import { ContactOnboardingGather } from "./sticky-sections"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
-  title: "Contact | SpineWorkspace",
+  title: "Contact | Spine InnovLabs",
   description:
     "Book a demo or request a connector. We connect your tools live.",
   alternates: { canonical: "/contact" },
   openGraph: {
-    title: "Contact | SpineWorkspace",
+    title: "Contact | Spine InnovLabs",
     description: "Book a demo or request a connector. We connect your tools live.",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "SpineWorkspace" }],
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Spine Workspace" }],
   },
 }
 
