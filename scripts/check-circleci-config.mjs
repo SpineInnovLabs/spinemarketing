@@ -27,5 +27,7 @@ requireCondition(production.filters?.branches?.only === "main", "production must
 requireCondition(file.includes("CLOUDFLARE_API_TOKEN"), "API token must be used for CI");
 requireCondition(!file.includes("WRANGLER_OAUTH_TOKEN:-"), "CI must not fall back to expiring OAuth");
 requireCondition(file.includes("Verify production hostname shows new hero"), "deployment must verify the public homepage");
+requireCondition(file.includes("reject-superseded-main-commit"), "stale main commits must be rejected before build/deploy");
+requireCondition(file.includes("restore_cache") && file.includes("save_cache"), "npm download cache must be restored and saved");
 
 console.log("CircleCI YAML and gated-deployment contract are valid.");
