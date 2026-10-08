@@ -1,258 +1,87 @@
-"use client";
-
-import { motion } from "framer-motion";
 import Link from "next/link";
-import { Wrench, Plug, Settings2, Users, BookOpen, ArrowRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Network, ShieldCheck, Waypoints, Workflow } from "lucide-react";
 
-const fade = (delay = 0) => ({
-  initial: { opacity: 0, y: 16 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: "-80px" },
-  transition: { type: "spring" as const, damping: 18, stiffness: 70, delay },
-});
-
-const heroFade = (delay = 0) => ({
-  initial: { opacity: 0, y: 12 },
-  animate: { opacity: 1, y: 0 },
-  transition: { type: "spring" as const, damping: 16, mass: 1, stiffness: 52, delay },
-});
-
-const services = [
+const capabilities = [
   {
-    icon: Wrench,
-    label: "Implementation",
-    headline: "From signed to live in 14 days",
-    body: "We connect the tools you already use and open one view of the customer. The tools keep the record.",
-    bullets: [
-      "Connect the apps and confirm who may use them",
-      "The record stays in the tool that owns it",
-      "The same customer is not shown as several people",
-      "Workspace customization",
-      "Team onboarding",
-    ],
+    icon: Network,
+    number: "01",
+    title: "Connected systems",
+    description: "Understand the applications, APIs, data sources and capability boundaries relevant to a specific business workflow.",
+    activities: ["Integration discovery", "Source and schema assessment", "Connector strategy", "Technical architecture"],
   },
   {
-    icon: Settings2,
-    label: "Managed Data Ops",
-    headline: "We keep the connection working",
-    body: "We watch the tools you connected, notice when one stops updating, and keep the record in the tool that owns it.",
-    bullets: [
-      "Watch that each connection is still working",
-      "Notice when a tool changes",
-      "Check that the customer view still matches the record",
-      "A regular look at whether the record and the evidence still agree",
-      "Help when a connection breaks",
-    ],
+    icon: Waypoints,
+    number: "02",
+    title: "Business-context design",
+    description: "Map the relationships between customers, goals, responsibilities, decisions, work, signals and evidence.",
+    activities: ["Entity and relationship modelling", "Goals and KPI context", "Relevant work surfaces", "Context provenance"],
   },
   {
-    icon: Plug,
-    label: "Custom Connectors",
-    headline: "If we don't have it, we build it",
-    body: "Older systems, internal tools, and files come through the same connection. They do not become a new home for the record.",
-    bullets: [
-      "A look at whether the tool can be connected",
-      "Build the connection and try it",
-      "Agree how the record and the evidence stay apart",
-      "Documentation and handoff",
-      "Optional maintenance retainer",
-    ],
+    icon: ShieldCheck,
+    number: "03",
+    title: "Governed AI workflows",
+    description: "Explore how AI can gather context, prepare proposals and act only through authorized capabilities and approvals.",
+    activities: ["Capability and authority mapping", "Human approval design", "Execution boundaries", "Verification and reconciliation"],
   },
   {
-    icon: Users,
-    label: "Strategic Advisory",
-    headline: "Revenue operations that run on truth",
-    body: "We design the view this role needs, and how Twin prepares a proposal.",
-    bullets: [
-      "Where the record stays, and what evidence this task needs",
-      "RevOps and CS workflow design",
-      "Governance configuration",
-      "Twin training and calibration",
-      "Playbook documentation",
-    ],
+    icon: Workflow,
+    number: "04",
+    title: "Implementation planning",
+    description: "Translate an architecture into a practical, bounded proof of concept with observable outcomes and clear responsibilities.",
+    activities: ["Readiness assessment", "Pilot planning", "Integration sequencing", "Review and handover"],
   },
 ];
 
 export function ServicesContent() {
   return (
     <>
-      <section
-        className="relative overflow-hidden pb-28 pt-40 bg-white"
-      >
-        <div className="mx-auto max-w-[780px] px-4 text-center">
-          <motion.div
-            {...heroFade(0.1)}
-            className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-[13px] font-semibold text-white/60"
-          >
-            <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-            Services
-          </motion.div>
-
-          <motion.h1
-            {...heroFade(0.22)}
-            className="text-[44px] font-semibold leading-[1.08] tracking-[-0.05em] text-white sm:text-[64px]"
-          >
-            We get you to{" "}
-            <span className="text-primary">truth faster.</span>
-            <br />
-            Then we keep you there.
-          </motion.h1>
-
-          <motion.p
-            {...heroFade(0.38)}
-            className="mx-auto mt-7 max-w-xl text-[17px] font-medium leading-[1.55] tracking-[-0.02em] text-white/50"
-          >
-            Implementation, managed ops, custom connectors, and advisory — from the team that built SpineWorkspace.
-          </motion.p>
-
-          <motion.div
-            {...heroFade(0.5)}
-            className="mt-9 flex flex-wrap items-center justify-center gap-3"
-          >
-            <Link
-              href="/contact?intent=demo"
-              className="inline-flex h-11 items-center rounded-full bg-primary px-6 text-[14px] font-semibold tracking-[-0.02em] text-white transition-opacity hover:opacity-90"
-            >
-              Book a demo →
-            </Link>
-          </motion.div>
+      <section className="relative overflow-hidden bg-[#091833] px-5 pb-24 pt-40 text-white sm:px-8 lg:pb-32">
+        <div className="pointer-events-none absolute -right-20 -top-48 h-[620px] w-[620px] rounded-full bg-[#346CD0]/25 blur-[110px]" aria-hidden />
+        <div className="relative mx-auto max-w-[1220px]">
+          <p className="text-xs font-semibold uppercase tracking-[.23em] text-[#B2CCF9]">Spine InnovLabs / Capabilities</p>
+          <h1 className="mt-7 max-w-[1050px] text-[clamp(3.2rem,6vw,6.1rem)] font-semibold leading-[1.08] tracking-[-.065em]">
+            Technology strategy grounded in <span className="text-[#A8CAFF]">business context.</span>
+          </h1>
+          <p className="mt-8 max-w-[770px] text-[18px] leading-[1.9] text-[#C4D3E9]">
+            We work at the intersection of enterprise connectivity, context-aware workspaces and responsible AI. Every engagement starts by understanding the existing systems, business goal and authority boundaries.
+          </p>
+          <Link href="/contact?intent=partnership" className="mt-9 inline-flex min-h-12 items-center gap-2 rounded-full bg-[#B1CFFF] px-6 text-sm font-semibold text-[#0D2B54] transition hover:bg-white">
+            Discuss a project <ArrowRight className="h-4 w-4" aria-hidden />
+          </Link>
         </div>
       </section>
-
-      <section className="arvio-section dark-section">
-        <div className="mx-auto max-w-[1100px]">
-          <div className="grid gap-6 lg:grid-cols-2">
-            {services.map(({ icon: Icon, label, headline, body, bullets }, i) => (
-              <motion.div
-                key={label}
-                {...fade(i * 0.07)}
-                className="arvio-card flex flex-col p-8"
-              >
-                <div className="mb-5 flex items-start gap-4">
-                  <div
-                    className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl"
-                    style={{ background: "var(--gradient-primary-icon)" }}
-                  >
-                    <Icon className="h-5 w-5 text-white" />
-                  </div>
-                  <div>
-                    <div className="text-[11px] font-bold uppercase tracking-[0.1em] text-primary mb-0.5">
-                      {label}
-                    </div>
-                    <h3 className="text-[18px] font-semibold tracking-[-0.04em] text-foreground leading-tight">
-                      {headline}
-                    </h3>
-                  </div>
+      <section className="bg-[#F7F9FC] px-5 py-24 sm:px-8 lg:py-32">
+        <div className="mx-auto max-w-[1220px]">
+          <p className="text-xs font-semibold uppercase tracking-[.21em] text-[#2360BC]">What we focus on</p>
+          <h2 className="mt-6 max-w-[850px] text-[clamp(2.5rem,4.7vw,4.6rem)] font-semibold leading-[1.13] tracking-[-.055em] text-[#10294D]">Architecture, collaboration and governed execution.</h2>
+          <div className="mt-12 grid gap-5 md:grid-cols-2">
+            {capabilities.map(({ icon: Icon, number, title, description, activities }) => (
+              <article key={number} className="rounded-[26px] border border-[#D9E5F3] bg-white p-8 sm:p-10">
+                <div className="flex items-center justify-between">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#E9F2FF] text-[#1C58AB]"><Icon className="h-6 w-6" aria-hidden /></span>
+                  <span className="font-mono text-xs text-[#7394C2]">{number}</span>
                 </div>
-                <p className="text-[14px] font-medium leading-[1.7] text-muted-foreground">
-                  {body}
-                </p>
-                <ul className="mt-5 space-y-2">
-                  {bullets.map((b) => (
-                    <li
-                      key={b}
-                      className="flex items-start gap-2.5 text-[13px] font-medium text-muted-foreground"
-                    >
-                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/50" />
-                      {b}
-                    </li>
-                  ))}
+                <h3 className="mt-8 text-[29px] font-semibold tracking-[-.045em] text-[#122F58]">{title}</h3>
+                <p className="mt-4 max-w-xl text-[16px] leading-[1.8] text-[#566D88]">{description}</p>
+                <ul className="mt-7 grid gap-3 border-t border-[#E3EAF4] pt-6 sm:grid-cols-2">
+                  {activities.map((activity) => <li key={activity} className="flex items-start gap-2 text-[14px] leading-6 text-[#29466D]"><span className="mt-[9px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#447CCC]" aria-hidden />{activity}</li>)}
                 </ul>
-              </motion.div>
+              </article>
             ))}
           </div>
         </div>
       </section>
-
-      <section
-        className="arvio-section dark-section bg-white"
-      >
-        <div className="mx-auto max-w-[1100px]">
-          <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center">
-            <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">
-              How we engage
-            </p>
-            <h2 className="text-[40px] font-semibold leading-[1.15] tracking-[-0.05em] text-white sm:text-[48px]">
-              Scoped. Delivered.{" "}
-              <span className="text-primary">Handed off.</span>
-            </h2>
-          </motion.div>
-
-          <div className="mt-12 grid gap-4 sm:grid-cols-3">
-            {[
-              {
-                num: "01",
-                title: "Discovery call",
-                body: "We map your tools, data flows, and top use cases.",
-              },
-              {
-                num: "02",
-                title: "Scoped proposal",
-                body: "Fixed-scope SOW with timeline and deliverables.",
-              },
-              {
-                num: "03",
-                title: "Delivery and handoff",
-                body: "We build, test, document, and train your team.",
-              },
-            ].map(({ num, title, body }, i) => (
-              <motion.div
-                key={num}
-                {...fade(i * 0.08)}
-                className="rounded-2xl border border-white/[0.06] bg-white/[0.03] p-6"
-              >
-                <div className="mb-3 text-[28px] font-bold tracking-[-0.04em] text-primary/30">
-                  {num}
-                </div>
-                <h3 className="text-[15px] font-semibold tracking-[-0.03em] text-white">
-                  {title}
-                </h3>
-                <p className="mt-2 text-[13px] font-medium leading-[1.65] text-white/45">
-                  {body}
-                </p>
-              </motion.div>
-            ))}
+      <section className="bg-[#E9F1FC] px-5 py-20 sm:px-8 lg:py-28">
+        <div className="mx-auto grid max-w-[1220px] items-center gap-10 lg:grid-cols-[1.2fr_.8fr]">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[.21em] text-[#2360BC]">Scope first</p>
+            <h2 className="mt-5 text-[clamp(2.2rem,4vw,4rem)] font-semibold leading-[1.12] tracking-[-.05em] text-[#10294D]">An engagement should be defined by evidence, not an arbitrary timeline.</h2>
+            <p className="mt-6 text-[16px] leading-[1.85] text-[#526A85]">Implementation scope and timing depend on the systems, data access, security controls and business outcome. We assess those constraints before making delivery commitments.</p>
           </div>
-
-          <motion.div {...fade(0.2)} className="mt-8 text-center">
-            <Link
-              href="/contact?intent=demo"
-              className="inline-flex items-center gap-1.5 text-[14px] font-semibold text-primary hover:opacity-80"
-            >
-              Book a demo <ArrowRight className="h-4 w-4" />
-            </Link>
-          </motion.div>
-        </div>
-      </section>
-
-      <section className="arvio-section dark-section">
-        <div className="mx-auto max-w-[1100px]">
-          <motion.div
-            {...fade(0)}
-            className="arvio-card flex flex-col items-start gap-5 p-8 sm:flex-row sm:items-center sm:justify-between"
-          >
-            <div className="flex items-center gap-4">
-              <div
-                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl"
-                style={{ background: "var(--gradient-primary-icon)" }}
-              >
-                <BookOpen className="h-5 w-5 text-white" />
-              </div>
-              <div>
-                <p className="text-[15px] font-semibold tracking-[-0.03em] text-foreground">
-                  Implementation guides and playbooks
-                </p>
-                <p className="text-[13px] font-medium text-muted-foreground">
-                  Templates, connector docs, and Customer view setup guides.
-                </p>
-              </div>
-            </div>
-            <Link
-              href="/resources"
-              className="inline-flex shrink-0 h-10 items-center rounded-full border border-border px-5 text-[13px] font-semibold text-foreground hover:bg-muted transition-colors"
-            >
-              Visit resources →
-            </Link>
-          </motion.div>
+          <div className="flex flex-col gap-3">
+            <Link href="/contact" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#112E59] px-6 text-sm font-semibold text-white transition hover:bg-[#2659A0]">Contact Spine InnovLabs <ArrowRight className="h-4 w-4" aria-hidden /></Link>
+            <a href="https://spineworkspace.com/" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-[#BDD0EA] bg-white px-6 text-sm font-semibold text-[#112E59] transition hover:border-[#2659A0]">Explore Spine Workspace <ArrowUpRight className="h-4 w-4" aria-hidden /></a>
+          </div>
         </div>
       </section>
     </>
