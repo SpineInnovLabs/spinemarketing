@@ -8,14 +8,14 @@ import { FoundersContent } from "./content"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
-  title: "Founders & CXOs | SpineWorkspace",
+  title: "Founders & CXOs | Spine InnovLabs",
   description:
     "Monday brief. Revenue movement. Board pack — available in seconds.",
   alternates: { canonical: "/solutions/founders" },
   openGraph: {
-    title: "Founders & CXOs | SpineWorkspace",
+    title: "Founders & CXOs | Spine InnovLabs",
     description: "Monday brief. Revenue movement. Board pack — available in seconds.",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "SpineWorkspace" }],
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Spine Workspace" }],
   },
 }
 
