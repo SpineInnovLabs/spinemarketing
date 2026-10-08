@@ -18,7 +18,8 @@
     "sanity:deploy": "sanity deploy",
     "typecheck": "tsc --noEmit",
     "check:ci": "node scripts/check-circleci-config.mjs",
-    "check": "npm run lint && npm run check:ci && npm run typecheck"
+    "check": "npm run lint && npm run audit:site && npm run check:ci && npm run typecheck",
+    "audit:site": "node scripts/audit-corporate-site.mjs"
   },
   "dependencies": {
     "@portabletext/react": "^8.0.1",
