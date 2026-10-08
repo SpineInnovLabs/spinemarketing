@@ -1,8 +1,9 @@
-# Optional PR feedback on GitHub; primary CI/CD is CircleCI (.circleci/config.yml).
-name: CI (PR build only)
+# Manual fallback QA only; CircleCI is authoritative for deployments.
+# Keeping this opt-in avoids duplicate builds when CircleCI credits are restored.
+name: Manual marketing QA
 
 on:
-  pull_request:
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -12,10 +13,10 @@ env:
 
 jobs:
   build:
-    name: Build static site
+    name: Static release verification
     runs-on: ubuntu-latest
     steps:
-      - name: Check out the repository
+      - name: Checkout current commit
         uses: actions/checkout@v4
 
       - name: Set up Node.js
@@ -24,8 +25,17 @@ jobs:
           node-version: 22
           cache: npm
 
-      - name: Install dependencies
-        run: npm ci
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
 
-      - name: Build
+      - name: Repository preflight
+        run: npm run lint
+
+      - name: Validate CircleCI contract
+        run: npm run check:ci
+
+      - name: TypeScript check
+        run: npm run typecheck
+
+      - name: Static export
         run: npm run build
