@@ -1,63 +1,46 @@
 # Spine InnovLabs — Corporate Website
 
-Source for the **Spine InnovLabs** company website, including the company story, technology, solutions, resources and the Spine Workspace product relationship.
+The official company website for **Spine InnovLabs**, builder of **Spine Workspace**. This repository contains company, technology, solutions, resources and corporate marketing pages.
 
-- **Production:** https://spineinnovlabs.spineworkspace.com/
-- **Repository:** `SpineInnovLabs/spinemarketing`
-- **Deployment:** CircleCI → Cloudflare Workers Static Assets
-- **Worker:** `spineinnovlabs-marketing`
-- **Framework:** Next.js 16 static export (`output: 'export'`), React 19, TypeScript
-- **Content:** Sanity at build time (with an explicit legacy-content fallback)
-- **Product site:** https://spineworkspace.com/
-
-Vercel/v0 is **not** the production deployment path. `vercel.json` has Git-based Vercel deployments disabled.
+- **Corporate site:** https://spineinnovlabs.spineworkspace.com/
+- **Source:** `SpineInnovLabs/spinemarketing`, `main`
+- **Host:** Cloudflare Workers + Static Assets
+- **Production Worker:** `spineinnovlabs-marketing`
+- **Deployment:** **Cloudflare Workers Builds (GitHub integration)** — no CircleCI dependency
+- **Framework:** Next.js 16 static export, npm + `package-lock.json`
+- **Content:** Sanity at build time (with a legacy-content fallback)
+- **Spine Workspace product site:** https://spineworkspace.com/ — **different application and deployment**
 
 ## Local development
 
-Requires Node.js 22 and npm. **npm is the only supported package manager for this repository.** `package-lock.json` is the single lockfile.
+Node.js 22 and npm:
 
 ```bash
 npm ci
 npm run dev
 ```
 
-Local development normally runs at http://localhost:5010.
-
-## Release verification without CircleCI credits
+## Release checks
 
 ```bash
 npm ci
-npm run lint          # Fast offline release preflight
-npm run audit:site    # All route sources, primary links, brand and trust checks
-npm run check:ci      # CircleCI YAML and release-gate validation
-npm run typecheck     # TypeScript
-npm run build         # Full static export, including the Sanity-backed blog
-npm start             # Preview generated ./out using local Cloudflare Wrangler
+npm run check              # Repository audit, Cloudflare config, typecheck
+npm run build:cloudflare   # All checks + static export + artifact validation
+npm run deploy:cloudflare  # Wrangler prod deploy + live corporate smoke test
 ```
 
-The `lint` task is the repository-specific static preflight, not ESLint. Run `npm run check` for all checks except the full production build.
+The last command **requires Cloudflare credentials and a successful build**. Never publish by skipping failed checks. Cloudflare Workers Builds runs build and deploy automatically when the Cloudflare dashboard has been connected to GitHub.
 
-**Note:** The preflight and TypeScript checks alone do not establish a successful deploy. The production release requires a successful CircleCI build, Cloudflare deployment, and smoke test for the live corporate hero.
+The legacy CircleCI workflow and its repository configuration have been retired. To finish the one-time connection, follow [Cloudflare deployment instructions](docs/DEPLOYMENT.md) and the exact dashboard settings in [`config/cloudflare-builds.json`](config/cloudflare-builds.json). Cloudflare account setup, deployment completion, and the public route must still be verified separately.
 
-## Deployment
+## Repository layout
 
-CircleCI uses `.circleci/config.yml`. A push to `main` builds the static export, attaches the `out/` artifact to `deploy-production`, deploys via Wrangler with `CLOUDFLARE_API_TOKEN`, and checks that the expected banner is visible on the public hostname. Other supported release branches are `dev` and `test`.
+- `app/` — static Next.js marketing pages and metadata routes
+- `components/` — corporate brand, navigation and content
+- `content/`, `lib/content/` — legacy and Sanity content sources
+- `config/` — cross-site marketing and Cloudflare builds reference
+- `worker/`, `wrangler.jsonc` — production Cloudflare Worker and static assets
+- `scripts/` — source, build, and live verification
+- `docs/audit/CORPORATE-WEBSITE-2026-10-08.md` — 71-route corporate source audit
 
-The pipeline caches **npm download tarballs**, never a stale `node_modules` directory. This reduces repeated package downloads while retaining a deterministic `npm ci` installation. The Cloudflare API token is a CircleCI secret and must never be committed.
-
-If CircleCI is out of credits, GitHub status may remain pending. After credits are restored, verify that `main` push triggers are enabled, the required secrets exist, and all build/deploy/hostname gates pass. **Do not infer build success from a merged pull request.**
-
-See [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) for exact environment variables, runbook, and troubleshooting, and [docs/CONTENT.md](docs/CONTENT.md) for the CMS contract.
-
-## Structure
-
-- `app/` — marketing pages and static metadata routes
-- `components/` — shared layouts, navigation and visual content
-- `lib/` — branding, routing, data/content sources
-- `content/` — legacy local content fallback
-- `public/` — static brand assets and marketing images
-- `scripts/` — release checks, CMS migration, RSS generation
-- `worker/`, `wrangler.jsonc` — Cloudflare Worker and hosting config
-- `.circleci/` — authoritative production CI/CD configuration
-
-Do not replace the corporate homepage with the Spine Workspace product homepage. Spine InnovLabs builds Spine Workspace; the product's website and application are independently deployed.
+Vercel and the authenticated Workbench are **not** the deployment target for this website. `vercel.json` disables Git-based Vercel deployments.
