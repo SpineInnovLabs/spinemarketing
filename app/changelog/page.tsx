@@ -7,13 +7,13 @@ import Link from "next/link"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
-  title: "Changelog | SpineWorkspace",
-  description: "What's new in SpineWorkspace — product updates, new connectors, and improvements.",
+  title: "Changelog | Spine InnovLabs",
+  description: "What's new in Spine Workspace — product updates, new connectors, and improvements.",
   alternates: { canonical: "/changelog" },
   openGraph: {
-    title: "Changelog | SpineWorkspace",
-    description: "What's new in SpineWorkspace — product updates, new connectors, and improvements.",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "SpineWorkspace" }],
+    title: "Changelog | Spine InnovLabs",
+    description: "What's new in Spine Workspace — product updates, new connectors, and improvements.",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Spine Workspace" }],
   },
 }
 
