@@ -25,6 +25,25 @@ commands:
             npm --version
             npm ci --prefer-offline --no-audit --no-fund
 
+  reject-superseded-main-commit:
+    steps:
+      - run:
+          name: Reject superseded main pipeline
+          command: |
+            if [ "${CIRCLE_BRANCH:-}" != "main" ]; then
+              exit 0
+            fi
+            LATEST_MAIN_SHA="$(git ls-remote origin refs/heads/main | awk '{print $1}')"
+            if [ -z "$LATEST_MAIN_SHA" ]; then
+              echo "ERROR: Cannot verify current main SHA; refusing production release." >&2
+              exit 1
+            fi
+            if [ "$LATEST_MAIN_SHA" != "$CIRCLE_SHA1" ]; then
+              echo "ERROR: This main pipeline is superseded by commit $LATEST_MAIN_SHA. Skipping stale build/deploy." >&2
+              exit 1
+            fi
+            echo "Current main revision confirmed: $CIRCLE_SHA1."
+
   require-cloudflare-token:
     steps:
       - run:
@@ -73,6 +92,7 @@ jobs:
       SANITY_DATASET: production
     steps:
       - checkout
+      - reject-superseded-main-commit
       - install-dependencies
       - save_cache:
           key: v1-marketing-npm-{{ arch }}-{{ checksum "package-lock.json" }}
@@ -112,6 +132,7 @@ jobs:
         type: string
     steps:
       - checkout
+      - reject-superseded-main-commit
       - attach_workspace:
           at: .
       - install-dependencies
