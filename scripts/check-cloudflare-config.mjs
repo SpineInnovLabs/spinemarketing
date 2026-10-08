@@ -30,7 +30,11 @@ assert(/output:\s*['"]export['"]/.test(next), "Next.js must remain static export
 assert(worker.includes("env.ASSETS.fetch(request)"), "Worker must serve static asset binding");
 assert(build.repository === "SpineInnovLabs/spinemarketing" && build.productionBranch === "main", "build repo/branch mismatch");
 assert(build.rootDirectory === ".", "Cloudflare Builds must use repository root");
-assert(pkg.scripts?.["build:cloudflare"] === build.buildCommand.replace(/^npm run /, "npm run ").replace(/^npm run build:cloudflare$/, "npm run lint && npm run audit:site && npm run check:cloudflare && npm run typecheck && npm run build && npm run verify:artifact") || pkg.scripts?.["build:cloudflare"]?.includes("npm run verify:artifact"), "build must verify static export");
+assert(build.buildCommand === "npm run build:cloudflare", "Cloudflare Build command mismatch");
+const pipeline = pkg.scripts?.["build:cloudflare"] ?? "";
+for (const gate of ["npm run lint", "npm run audit:site", "npm run check:cloudflare", "npm run typecheck", "npm run build", "npm run verify:artifact"]) {
+  assert(pipeline.includes(gate), `Cloudflare build is missing gate: ${gate}`);
+}
 assert(build.deployCommand === "npm run deploy:cloudflare", "Cloudflare Deploy command mismatch");
 assert(pkg.scripts?.["deploy:cloudflare"]?.includes("wrangler deploy --env prod"), "Cloudflare deploy must target prod");
 assert(pkg.scripts?.["deploy:cloudflare"]?.includes("verify:live"), "deployment must verify public hostname");
