@@ -1,30 +1,62 @@
-# SaaS landing page
+# Spine InnovLabs — Corporate Website
 
-*Automatically synced with your [v0.app](https://v0.app) deployments*
+Source for the **Spine InnovLabs** company website, including the company story, technology, solutions, resources and the Spine Workspace product relationship.
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/integratewize/v0-saa-s-landing-page)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/h1NJMO7AFYO)
+- **Production:** https://spineinnovlabs.spineworkspace.com/
+- **Repository:** `SpineInnovLabs/spinemarketing`
+- **Deployment:** CircleCI → Cloudflare Workers Static Assets
+- **Worker:** `spineinnovlabs-marketing`
+- **Framework:** Next.js 16 static export (`output: 'export'`), React 19, TypeScript
+- **Content:** Sanity at build time (with an explicit legacy-content fallback)
+- **Product site:** https://spineworkspace.com/
 
-## Overview
+Vercel/v0 is **not** the production deployment path. `vercel.json` has Git-based Vercel deployments disabled.
 
-This repository will stay in sync with your deployed chats on [v0.app](https://v0.app).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.app](https://v0.app).
+## Local development
+
+Requires Node.js 22 and npm. **npm is the only supported package manager for this repository.** `package-lock.json` is the single lockfile.
+
+```bash
+npm ci
+npm run dev
+```
+
+Local development normally runs at http://localhost:5010.
+
+## Release verification without CircleCI credits
+
+```bash
+npm ci
+npm run lint          # Fast offline repository, lock, route, asset, hero and deployment checks
+npm run check:ci      # CircleCI YAML and release-gate validation
+npm run typecheck     # TypeScript
+npm run build         # Full static export, including the Sanity-backed blog
+npm start             # Preview generated ./out using local Cloudflare Wrangler
+```
+
+The `lint` task is the repository-specific static preflight, not ESLint. Run `npm run check` for all checks except the full production build.
+
+**Note:** The preflight and TypeScript checks alone do not establish a successful deploy. The production release requires a successful CircleCI build, Cloudflare deployment, and smoke test for the live corporate hero.
 
 ## Deployment
 
-Your project is live at:
+CircleCI uses `.circleci/config.yml`. A push to `main` builds the static export, attaches the `out/` artifact to `deploy-production`, deploys via Wrangler with `CLOUDFLARE_API_TOKEN`, and checks that the expected banner is visible on the public hostname. Other supported release branches are `dev` and `test`.
 
-**[https://vercel.com/integratewize/v0-saa-s-landing-page](https://vercel.com/integratewize/v0-saa-s-landing-page)**
+The pipeline caches **npm download tarballs**, never a stale `node_modules` directory. This reduces repeated package downloads while retaining a deterministic `npm ci` installation. The Cloudflare API token is a CircleCI secret and must never be committed.
 
-## Build your app
+If CircleCI is out of credits, GitHub status may remain pending. After credits are restored, verify that `main` push triggers are enabled, the required secrets exist, and all build/deploy/hostname gates pass. **Do not infer build success from a merged pull request.**
 
-Continue building your app on:
+See [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) for exact environment variables, runbook, and troubleshooting, and [docs/CONTENT.md](docs/CONTENT.md) for the CMS contract.
 
-**[https://v0.app/chat/h1NJMO7AFYO](https://v0.app/chat/h1NJMO7AFYO)**
+## Structure
 
-## How It Works
+- `app/` — marketing pages and static metadata routes
+- `components/` — shared layouts, navigation and visual content
+- `lib/` — branding, routing, data/content sources
+- `content/` — legacy local content fallback
+- `public/` — static brand assets and marketing images
+- `scripts/` — release checks, CMS migration, RSS generation
+- `worker/`, `wrangler.jsonc` — Cloudflare Worker and hosting config
+- `.circleci/` — authoritative production CI/CD configuration
 
-1. Create and modify your project using [v0.app](https://v0.app)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+Do not replace the corporate homepage with the Spine Workspace product homepage. Spine InnovLabs builds Spine Workspace; the product's website and application are independently deployed.
