@@ -5,13 +5,13 @@ import { Footer } from "@/components/footer"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | SpineWorkspace",
-  description: "How SpineWorkspace collects, uses, and protects your data.",
+  title: "Privacy Policy | Spine InnovLabs",
+  description: "How Spine Workspace collects, uses, and protects your data.",
   alternates: { canonical: "/privacy" },
   openGraph: {
-    title: "Privacy Policy | SpineWorkspace",
-    description: "How SpineWorkspace collects, uses, and protects your data.",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "SpineWorkspace" }],
+    title: "Privacy Policy | Spine InnovLabs",
+    description: "How Spine Workspace collects, uses, and protects your data.",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Spine Workspace" }],
   },
 }
 
@@ -31,12 +31,12 @@ export default function PrivacyPage() {
           <div className="mt-12 space-y-10 text-[15px] font-medium leading-[1.7] text-foreground/80">
             <div>
               <h2 className="text-[18px] font-semibold tracking-[-0.03em] text-foreground">1. Information we collect</h2>
-              <p className="mt-3">We collect information you provide directly: name, email, company name, and any messages you send through our contact form. When you use SpineWorkspace, we collect usage data including connected tools, workspace activity, and feature usage to improve the product.</p>
+              <p className="mt-3">We collect information you provide directly: name, email, company name, and any messages you send through our contact form. When you use Spine Workspace, we collect usage data including connected tools, workspace activity, and feature usage to improve the product.</p>
             </div>
 
             <div>
               <h2 className="text-[18px] font-semibold tracking-[-0.03em] text-foreground">2. How we use your information</h2>
-              <p className="mt-3">We use your information to provide and improve SpineWorkspace, communicate with you about your account, send product updates (with your consent), and ensure security and prevent fraud. We do not sell your personal information to third parties.</p>
+              <p className="mt-3">We use your information to provide and improve Spine Workspace, communicate with you about your account, send product updates (with your consent), and ensure security and prevent fraud. We do not sell your personal information to third parties.</p>
             </div>
 
             <div>
