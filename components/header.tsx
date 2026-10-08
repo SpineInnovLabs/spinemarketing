@@ -443,11 +443,11 @@ export function Header({
             <a href={DOCS_URL} className="inline-flex h-10 items-center rounded-[10px] px-3 text-[15px] font-semibold text-[#032D60] hover:bg-[#F3F6F9] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0176D3] focus-visible:ring-offset-2" target="_blank" rel="noopener noreferrer">
               Docs
             </a>
-            <Link href="/login" className="inline-flex h-10 items-center rounded-[10px] px-3 text-[15px] font-semibold text-[#032D60] hover:bg-[#F3F6F9] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0176D3] focus-visible:ring-offset-2">
-              Sign in
+            <Link href="https://spineworkspace.com" className="inline-flex h-10 items-center rounded-[10px] px-3 text-[15px] font-semibold text-[#032D60] hover:bg-[#F3F6F9] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0176D3] focus-visible:ring-offset-2">
+              Spine Workspace
             </Link>
             <Button className="h-10 rounded-[10px] bg-[#0176D3] px-4 text-[14px] font-semibold text-white hover:bg-[#0B5CAB]" asChild>
-              <Link href="/contact?intent=demo">Book a demo</Link>
+              <Link href="/contact">Contact us</Link>
             </Button>
           </div>
 
@@ -593,15 +593,15 @@ export function Header({
                   Docs
                 </a>
                 <Link
-                  href="/login"
+                  href="https://spineworkspace.com"
                   className="flex h-10 items-center justify-center rounded-md border border-[#C9C9C9] text-[14px] font-semibold text-[#032D60] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0176D3]"
                   onClick={closeMobile}
                 >
-                  Sign in
-                </Link>
+              Spine Workspace
+            </Link>
                 <Button className="h-10 w-full rounded-md bg-[#0176D3] font-semibold text-white hover:bg-[#0B5CAB]" asChild>
-                  <Link href="/contact?intent=demo" onClick={closeMobile}>
-                    Book a demo
+                  <Link href="/contact" onClick={closeMobile}>
+                    Contact us
                   </Link>
                 </Button>
               </div>
