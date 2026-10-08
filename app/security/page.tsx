@@ -10,14 +10,14 @@ import { TestimonialsSection } from "@/components/testimonials-section"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
-  title: "Security | SpineWorkspace",
+  title: "Security & Governance | Spine InnovLabs",
   description:
-    "Enterprise security, governance, and auditability for SpineWorkspace. No certification is claimed on this page.",
+    "Enterprise security, governance, and auditability for Spine Workspace. No certification is claimed on this page.",
   alternates: { canonical: "/security" },
   openGraph: {
-    title: "Security | SpineWorkspace",
-    description: "Enterprise security, governance, and auditability for SpineWorkspace. No certification is claimed on this page.",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "SpineWorkspace" }],
+    title: "Security & Governance | Spine InnovLabs",
+    description: "Enterprise security, governance, and auditability for Spine Workspace. No certification is claimed on this page.",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Spine Workspace" }],
   },
 }
 
