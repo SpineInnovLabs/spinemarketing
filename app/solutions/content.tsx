@@ -1,88 +1,58 @@
-"use client";
-
-import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight, ExternalLink } from "lucide-react";
-import { PUBLIC_SOLUTIONS, PLATFORM_SURFACES, marketingPathForSolution, workspaceUrl, getPrimaryWorkspaceHost } from "@/lib/solution-taxonomy";
-import { PageHero } from "@/components/marketing/page-hero";
-const fade = (delay = 0) => ({
-  initial: { opacity: 0, y: 16 } as const,
-  whileInView: { opacity: 1, y: 0 } as const,
-  viewport: { once: true, margin: "-80px" },
-  transition: { type: "spring" as const, damping: 18, stiffness: 70, delay },
-});
+import { ArrowRight, ArrowUpRight, Layers3 } from "lucide-react";
+import { PUBLIC_SOLUTIONS, marketingPathForSolution } from "@/lib/solution-taxonomy";
 
 export function SolutionsContent() {
   return (
     <>
-      <PageHero
-        buyerPath="/solutions"
-        badge="Start with renewals"
-        headline="Renewal workflows, connected."
-        subhead="Most teams begin with the Renewal Decision Workspace for customer-success and RevOps. Each functional solution describes the operational job, the first workflow to deploy, and how it maps to authenticated workbenches."
-        primaryCta={{ label: "See a renewal decision packet", href: "/#renewal-decision-packet" }}
-        secondaryCta={{ label: "Book a workflow review", href: "/contact?intent=workflow-review" }}
-      />
-
-      <section className="bg-white pb-16">
-        <div className="mx-auto max-w-[1100px] px-6">
-          <motion.h2 {...fade(0)} className="mb-10 text-center text-[12px] font-bold uppercase tracking-[0.14em] text-primary">
-            Functional solutions for renewals
-          </motion.h2>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {PUBLIC_SOLUTIONS.map((solution, i) => {
-              const primary = getPrimaryWorkspaceHost(solution);
-              return (
-                <motion.div key={solution.id} {...fade(i * 0.04)}>
-                  <div className="flex h-full flex-col rounded-md border border-[#E5E5E5] bg-white p-5 shadow-[0_1px_2px_rgba(0,0,0,0.04)]">
-                    <h3 className="text-[16px] font-semibold text-[#032D60]">{solution.name}</h3>
-                    <p className="mt-2 flex-1 text-[14px] leading-[1.6] text-[#444]">{solution.description}</p>
-                    <p className="mt-4 text-[12px] text-[#706E6B]">
-                      Workbench: {primary.host}
-                    </p>
-                    <div className="mt-5 flex flex-wrap gap-3">
-                      <Link
-                        href={marketingPathForSolution(solution.slug)}
-                        className="inline-flex items-center gap-1 text-[13px] font-semibold text-primary hover:text-primary/80"
-                      >
-                        Learn more <ArrowRight className="h-3.5 w-3.5" />
-                      </Link>
-                      <a
-                        href={workspaceUrl(primary.host)}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 text-[13px] font-medium text-white/40 hover:text-white/70"
-                      >
-                        Open workbench <ExternalLink className="h-3 w-3" />
-                      </a>
-                    </div>
-                  </div>
-                </motion.div>
-              );
-            })}
+      <section className="relative overflow-hidden bg-[#0A1B37] px-5 pb-24 pt-40 text-white sm:px-8 lg:pb-32">
+        <div className="pointer-events-none absolute -right-20 -top-40 h-[550px] w-[550px] rounded-full bg-[#2F66C7]/25 blur-[100px]" aria-hidden />
+        <div className="relative mx-auto max-w-[1220px]">
+          <p className="text-xs font-semibold uppercase tracking-[.22em] text-[#AFCBFC]">Solutions / Spine InnovLabs</p>
+          <h1 className="mt-7 max-w-[1000px] text-[clamp(3.2rem,6vw,6.3rem)] font-semibold leading-[1.06] tracking-[-.065em]">
+            One business context. <span className="text-[#A9CAFF]">Different work.</span>
+          </h1>
+          <p className="mt-8 max-w-[790px] text-[18px] leading-[1.85] text-[#C9D8ED]">
+            Finance, customer success, product and leadership need different perspectives, not disconnected versions of business truth. Explore how the same contextual workspace can support different responsibilities, goals and decisions.
+          </p>
+          <div className="mt-9 flex flex-wrap gap-3">
+            <a href="https://spineworkspace.com/" className="inline-flex min-h-12 items-center gap-2 rounded-full bg-[#B0CEFF] px-6 text-sm font-semibold text-[#102B51] transition hover:bg-white">
+              Explore Spine Workspace <ArrowUpRight className="h-4 w-4" aria-hidden />
+            </a>
+            <Link href="/contact" className="inline-flex min-h-12 items-center gap-2 rounded-full border border-white/30 px-6 text-sm font-semibold text-white transition hover:bg-white/10">
+              Discuss your use case <ArrowRight className="h-4 w-4" aria-hidden />
+            </Link>
           </div>
         </div>
       </section>
-
-      <section className="border-t border-[#E5E5E5] bg-[#F3F6F9] py-16">
-        <div className="mx-auto max-w-[1100px] px-6">
-          <h2 className="text-center text-[12px] font-bold uppercase tracking-[0.08em] text-[#032D60]">
-            Platform & entry surfaces
-          </h2>
-          <p className="mx-auto mt-3 max-w-xl text-center text-[14px] text-[#444]">
-            Sign-in, setup, and the catalogue of tools support your renewal workflows.
+      <section className="bg-[#F7F9FC] px-5 py-24 sm:px-8 lg:py-32">
+        <div className="mx-auto max-w-[1220px]">
+          <p className="text-xs font-semibold uppercase tracking-[.22em] text-[#2461AE]">By role and function</p>
+          <h2 className="mt-5 max-w-[840px] text-[clamp(2.4rem,4.6vw,4.3rem)] font-semibold leading-[1.12] tracking-[-.055em] text-[#102D55]">Relevant views. Shared context. Clear authority.</h2>
+          <p className="mt-6 max-w-[810px] text-[16px] leading-[1.85] text-[#536A85]">
+            The categories below describe potential work lenses and solution patterns, not a promise that every connected provider or role-specific projection is deployed for every customer.
           </p>
-          <div className="mt-10 flex flex-wrap justify-center gap-3">
-            {PLATFORM_SURFACES.map((surface) => (
-              <Link
-                key={surface.id}
-                href={surface.marketingPath}
-                className="rounded-full border border-white/[0.08] bg-white/[0.02] px-4 py-2 text-[13px] font-medium text-white/50 hover:border-primary/25 hover:text-white"
-              >
-                {surface.label} → {surface.host}
-              </Link>
+          <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+            {PUBLIC_SOLUTIONS.map((solution, index) => (
+              <article key={solution.id} className="flex h-full flex-col rounded-[24px] border border-[#D8E5F2] bg-white p-7 transition-colors hover:border-[#A9C6EA] sm:p-8">
+                <div className="flex items-center justify-between">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#E9F2FF] text-[#2465B8]"><Layers3 className="h-5 w-5" aria-hidden /></span>
+                  <span className="font-mono text-xs text-[#7A98C4]">{String(index + 1).padStart(2, "0")}</span>
+                </div>
+                <h3 className="mt-9 text-[24px] font-semibold tracking-[-.04em] text-[#14345E]">{solution.name}</h3>
+                <p className="mt-4 flex-1 text-[15px] leading-[1.8] text-[#576E88]">{solution.description}</p>
+                <Link href={marketingPathForSolution(solution.slug)} className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-[#2464AF] hover:underline">
+                  Explore this context <ArrowRight className="h-4 w-4" aria-hidden />
+                </Link>
+              </article>
             ))}
           </div>
+        </div>
+      </section>
+      <section className="border-t border-[#D8E4F1] bg-[#EAF2FD] px-5 py-20 sm:px-8">
+        <div className="mx-auto grid max-w-[1220px] items-center gap-9 lg:grid-cols-[1.25fr_.75fr]">
+          <div><p className="text-xs font-semibold uppercase tracking-[.2em] text-[#2461AE]">One workspace</p><h2 className="mt-5 text-[clamp(2.3rem,4vw,4rem)] font-semibold leading-[1.12] tracking-[-.05em] text-[#102D55]">Different roles shouldn't need different truths.</h2><p className="mt-6 text-[16px] leading-[1.8] text-[#546C87]">Capabilities and views adapt to the work, while business context, policy and authority remain governed.</p></div>
+          <Link href="/company" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#153867] px-6 text-sm font-semibold text-white transition hover:bg-[#2F61A5]">Why Spine InnovLabs <ArrowRight className="h-4 w-4" aria-hidden /></Link>
         </div>
       </section>
     </>
