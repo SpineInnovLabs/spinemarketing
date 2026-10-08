@@ -38,14 +38,15 @@ npm run deploy:test
 npm run deploy:prod   # requires built ./out
 ```
 
-Local Wrangler uses **OAuth** (`~/.wrangler/config/default.toml`). If `wrangler login` says you are logged in with an API token, your shell has `CLOUDFLARE_API_TOKEN` set (often from Infisical or IDE env). Use:
+Local development may use Wrangler OAuth. **CircleCI deploys must use a scoped Cloudflare API token**, since interactive OAuth is unsuitable for long-lived non-interactive deployment automation.
 
 ```bash
+# Local only
 npm run wrangler:login
 npm run wrangler:whoami
 ```
 
-Deploy scripts unset `CLOUDFLARE_API_TOKEN` automatically.
+For CI, set `CLOUDFLARE_API_TOKEN` in CircleCI project environment variables. An optional `CLOUDFLARE_ACCOUNT_ID` must match `account_id` in `wrangler.jsonc`. Do not commit secrets or reuse personal OAuth refresh tokens in CircleCI.
 
 ### Fallback hostname
 
@@ -61,56 +62,53 @@ Primary pipeline: [`.circleci/config.yml`](../.circleci/config.yml).
 
 | Trigger | Jobs |
 | --- | --- |
-| All branches | `build` (lint + static export) |
-| `main` | `deploy-production` → `wrangler deploy --env prod` |
-| `dev` | `deploy-dev` → `--env dev` |
-| `test` | `deploy-test` → `--env test` |
-| Other branches (e.g. PR branches) | `preview` → `wrangler versions upload` |
+| Every branch | `build` (locked install, Next.js static export, HTML/sitemap validation) |
+| `main` | `deploy-production` → `wrangler deploy --env prod` → live-domain smoke test |
+| `dev` | `deploy-dev` → `wrangler deploy --env dev` |
+| `test` | `deploy-test` → `wrangler deploy --env test` |
+| Feature branches | `build` only (no access to deployment credentials needed) |
 
-Build uses `NEXT_PUBLIC_SITE_URL=https://spineinnovlabs.spineworkspace.com`.
+The production job requires the exact `out/` artifact from the successful build. The post-deploy smoke test checks the public hostname for the **new Spine InnovLabs corporate hero** and fails the job when an old or missing page is returned.
 
 ### CircleCI project environment variables
 
 | Variable | Purpose |
 | --- | --- |
-| `WRANGLER_OAUTH_TOKEN` | From `~/.wrangler/config/default.toml` after `wrangler login` |
-| `WRANGLER_REFRESH_TOKEN` | Same file (Wrangler refreshes access in CI) |
-| `CLOUDFLARE_ACCOUNT_ID` | Optional; `account_id` is in `wrangler.jsonc` |
-| `DD_API_KEY` | Datadog API key for CI Visibility + DORA |
-| `DD_SITE` | Datadog site (e.g. `datadoghq.com`, `datadoghq.eu`) |
-| `SANITY_PROJECT_ID` | Sanity project for blog content (build-time fetch) |
+| Variable | Purpose |
+| --- | --- |
+| `CLOUDFLARE_API_TOKEN` | **Required secret:** scoped Cloudflare token with Workers deploy permission for this account and domain |
+| `CLOUDFLARE_ACCOUNT_ID` | Optional identifier; also supplied by `wrangler.jsonc` |
+| `DD_API_KEY` | Optional Datadog reporting (never gates deployment) |
+| `DD_SITE` | Datadog region if reporting is enabled |
+| `SANITY_PROJECT_ID` | Sanity project for blog content at build time |
 | `SANITY_DATASET` | Usually `production` |
-| `SANITY_API_READ_TOKEN` | Read token for published documents (never expose in client bundle) |
+| `SANITY_API_READ_TOKEN` | CMS read token for private datasets; use a secret, never client-side |
+ 
+If Sanity variables are unset, the content repository may fall back to legacy content. Production should be configured to use the intended CMS source. Datadog is informational and cannot turn a successful Cloudflare deployment into a failed deployment.
 
-If `DD_API_KEY` is unset, builds and deploys still run; Datadog steps are skipped.
+**CircleCI project setup (required outside the repository):**
 
-If Sanity variables are unset, the build falls back to legacy `content/blog/` with a console warning. Production should always set Sanity secrets so CI matches the CMS.
+1. Open CircleCI → **spinemarketing** → Project Settings → **Environment Variables**. Create `CLOUDFLARE_API_TOKEN` with minimum necessary Workers permissions. `WRANGLER_OAUTH_TOKEN` and `WRANGLER_REFRESH_TOKEN` are no longer used.
+2. Open **Project Setup** and confirm the GitHub App has `SpineInnovLabs/spinemarketing` as the config and checkout source, with config file `.circleci/config.yml`.
+3. Open **Triggers** and ensure pushes to `main` trigger this pipeline. Without a configured trigger, GitHub can show a pending CircleCI status while no deployment occurs.
+4. Trigger a fresh `main` pipeline after adding the API token. Only mark the release complete when **build**, **deploy-production**, and the hostname smoke test are green.
 
-Datadog: build/deploy steps are wrapped with `datadog-ci trace`; production/dev/test deploys emit **DORA deployment** events for service `spineinnovlabs-marketing`. Connect the CircleCI integration in Datadog (**Software Delivery → CI Visibility**) to view pipelines.
+**Failure interpretation:**
 
-Deploy jobs **unset `CLOUDFLARE_API_TOKEN`** and use **Wrangler OAuth** (`WRANGLER_OAUTH_TOKEN` + `WRANGLER_REFRESH_TOKEN`), matching local `wrangler login`. 
-
-**Note: OAuth tokens expire after a few hours.** When CircleCI deploys fail with auth errors:
-
-```bash
-# 1. Get fresh OAuth tokens locally
-npm run wrangler:login
-npm run wrangler:whoami  # verify it works
-
-# 2. Copy the new tokens from ~/.wrangler/config/default.toml to CircleCI
-circleci envvar set WRANGLER_OAUTH_TOKEN <value_from_oauth_token>
-circleci envvar set WRANGLER_REFRESH_TOKEN <value_from_refresh_token>
-
-# 3. Trigger a new build (or push an empty commit)
-```
+- No CircleCI workflow for the commit: verify GitHub App installation, pipeline definition, and push triggers in CircleCI Project Setup.
+- `CLOUDFLARE_API_TOKEN is missing`: provide the project secret; do not put it in GitHub.
+- Wrangler auth rejected: reissue a scoped Cloudflare API token and confirm account permissions.
+- `out/index.html` or hero missing: static build or branch/content mismatch; deployment is blocked.
+- Live hostname shows old banner: deployment smoke test fails. Verify DNS/Worker route, CDN caching, and that the expected Worker `spineinnovlabs-marketing` owns the host.
 
 ### GitHub Actions
 
 Optional **PR-only** lint/build (`.github/workflows/ci.yml`). Deployments run in CircleCI only.
 
 ```text
-feature branch → CircleCI build → preview upload
-dev / test / main → CircleCI build → Cloudflare deploy (dev / test / prod)
+feature branch → CircleCI build + artifact checks
+main → CircleCI build → Cloudflare deploy → live-host verification
+dev / test → CircleCI build → Cloudflare deploy
 ```
 
 ### Custom domain DNS
