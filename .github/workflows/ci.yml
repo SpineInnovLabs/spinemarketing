@@ -1,5 +1,5 @@
-# Manual fallback QA only; CircleCI is authoritative for deployments.
-# Keeping this opt-in avoids duplicate builds when CircleCI credits are restored.
+# Manual fallback QA only; Cloudflare Workers Builds owns production deployment.
+# Keeping this opt-in avoids duplicate automatic GitHub builds.
 name: Manual marketing QA
 
 on:
@@ -34,11 +34,14 @@ jobs:
       - name: Audit corporate routes and claims
         run: npm run audit:site
 
-      - name: Validate CircleCI contract
-        run: npm run check:ci
+      - name: Validate Cloudflare deployment contract
+        run: npm run check:cloudflare
 
       - name: TypeScript check
         run: npm run typecheck
 
       - name: Static export
         run: npm run build
+
+      - name: Verify corporate artifact
+        run: npm run verify:artifact

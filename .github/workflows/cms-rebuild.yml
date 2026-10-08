@@ -1,29 +1,30 @@
-# Optional: trigger a CircleCI pipeline when Sanity fires repository_dispatch.
-# Configure Sanity webhook → GitHub dispatches with event_type: sanity-publish
-# Set repo secret CIRCLECI_TOKEN (project API token) and set CIRCLECI_PROJECT_SLUG as repo variable to "gh/SpineInnovLabs/spinemarketing"
-
-name: CMS publish rebuild
+# Cloudflare Workers Builds performs the actual rebuild and deployment.
+# Preferred: Sanity webhook -> Cloudflare Deploy Hook directly.
+# This optional GitHub repository_dispatch bridge exists for existing Sanity integrations.
+name: Rebuild corporate site on Cloudflare
 
 on:
   repository_dispatch:
     types: [sanity-publish]
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
-  trigger-circleci:
+  trigger-cloudflare-builds:
     runs-on: ubuntu-latest
     steps:
-      - name: Trigger CircleCI pipeline
+      - name: Trigger native Cloudflare Workers Build
         env:
-          CIRCLECI_TOKEN: ${{ secrets.CIRCLECI_TOKEN }}
-          CIRCLECI_PROJECT_SLUG: ${{ vars.CIRCLECI_PROJECT_SLUG || 'gh/SpineInnovLabs/spinemarketing' }}
+          CLOUDFLARE_WORKERS_DEPLOY_HOOK: ${{ secrets.CLOUDFLARE_WORKERS_DEPLOY_HOOK }}
         run: |
-          if [ -z "${CIRCLECI_TOKEN}" ]; then
-            echo "Set CIRCLECI_TOKEN secret to enable automatic rebuilds."
-            exit 0
+          if [ -z "$CLOUDFLARE_WORKERS_DEPLOY_HOOK" ]; then
+            echo "ERROR: Configure CLOUDFLARE_WORKERS_DEPLOY_HOOK in GitHub repository secrets or point the Sanity webhook directly at the Cloudflare hook." >&2
+            exit 1
           fi
-          curl -sSf -X POST \
-            -H "Circle-Token: ${CIRCLECI_TOKEN}" \
-            -H "Content-Type: application/json" \
-            -d '{"branch":"main","parameters":{}}' \
-            "https://circleci.com/api/v2/project/${CIRCLECI_PROJECT_SLUG}/pipeline"
+          curl --fail --silent --show-error --max-time 30 \
+            --request POST \
+            "$CLOUDFLARE_WORKERS_DEPLOY_HOOK" \
+            --output /tmp/cloudflare-build-result.json
+          node -e 'const r=require("/tmp/cloudflare-build-result.json");if(r.success!==true){console.error("Cloudflare did not accept build:",JSON.stringify(r.errors||[]));process.exit(1)}console.log("Cloudflare Workers Build accepted:",r.result?.build_uuid||"build queued")'
