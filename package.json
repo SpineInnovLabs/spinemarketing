@@ -17,9 +17,13 @@
     "sanity:dev": "sanity dev",
     "sanity:deploy": "sanity deploy",
     "typecheck": "tsc --noEmit",
-    "check:ci": "node scripts/check-circleci-config.mjs",
-    "check": "npm run lint && npm run audit:site && npm run check:ci && npm run typecheck",
-    "audit:site": "node scripts/audit-corporate-site.mjs"
+    "check": "npm run lint && npm run audit:site && npm run check:cloudflare && npm run typecheck",
+    "audit:site": "node scripts/audit-corporate-site.mjs",
+    "check:cloudflare": "node scripts/check-cloudflare-config.mjs",
+    "verify:artifact": "node scripts/verify-static-artifact.mjs",
+    "verify:live": "node scripts/verify-live-site.mjs",
+    "build:cloudflare": "npm run lint && npm run audit:site && npm run check:cloudflare && npm run typecheck && npm run build && npm run verify:artifact",
+    "deploy:cloudflare": "npm run verify:artifact && wrangler deploy --env prod && npm run verify:live"
   },
   "dependencies": {
     "@portabletext/react": "^8.0.1",
