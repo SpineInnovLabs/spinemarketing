@@ -4,19 +4,17 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { FinalCTA } from "@/components/final-cta"
 import { ServicesContent } from "./content"
-import { BenefitsGrid } from "@/components/benefits-grid"
-import { TestimonialsSection } from "@/components/testimonials-section"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
   title: "Capabilities & Services | Spine InnovLabs",
   description:
-    "Implementation, onboarding, and managed operations. We get you to truth faster.",
+    "Integration architecture, business-context design and governed AI workflow capabilities.",
   alternates: { canonical: "/services" },
   openGraph: {
     title: "Capabilities & Services | Spine InnovLabs",
-    description: "Implementation, onboarding, and managed operations. We get you to truth faster.",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Spine Workspace" }],
+    description: "Integration architecture, business-context design and governed AI workflow capabilities.",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Spine InnovLabs" }],
   },
 }
 
@@ -30,14 +28,6 @@ export default function ServicesPage() {
       <Header />
       <main id="main">
         <ServicesContent />
-        <BenefitsGrid
-          tag="Why our services"
-          heading="We get you to truth faster."
-        />
-        <TestimonialsSection
-          heading="Teams we've onboarded."
-          tag="Service Stories"
-        />
         <FinalCTA />
       </main>
       <Footer />
