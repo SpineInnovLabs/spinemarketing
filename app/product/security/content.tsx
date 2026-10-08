@@ -7,35 +7,34 @@ import { Footer } from "@/components/footer";
 import { PageHero } from "@/components/marketing/page-hero";
 import { Section, SectionHeader } from "@/components/marketing/section";
 import { FinalCTA } from "@/components/final-cta";
-import { ProductSecurityStickyScroll } from "./sticky-sections";
 
 const trustDashboard = [
-  { zone: "Green Zone", tone: "text-[#0176D3]", border: "border-[#0176D3]/20", bg: "bg-[#F3F6F9]", desc: "AI reasoning, scoring, and evidence compilation. Twin operates freely here." },
-  { zone: "Red Zone", tone: "text-red-600", border: "border-red-200", bg: "bg-red-50/50", desc: "System writes and communications. Requires explicit human approval." },
+  { zone: "Green Zone", tone: "text-[#0176D3]", border: "border-[#0176D3]/20", bg: "bg-[#F3F6F9]", desc: "Illustrative read-and-propose activities. Actual data access remains subject to policy." },
+  { zone: "Red Zone", tone: "text-red-600", border: "border-red-200", bg: "bg-red-50/50", desc: "Illustrative consequential operations requiring the correct authority and applicable approval." },
 ];
 
 const sovereigntyControls = [
-  { title: "Your Data, Your Rules", desc: "You keep the record. SpineWorkspace does not become a new home for it." },
-  { title: "Regional Data Residency", desc: "Select India, EU, or US. No cross-border transfer." },
-  { title: "Retention Policies", desc: "Per-entity-type retention settings for records and logs." },
+  { title: "Your Data, Your Rules", desc: "Source systems retain their authoritative roles; data copies and access must be governed." },
+  { title: "Data residency review", desc: "Locations and cross-border processing depend on provider deployment and contract." },
+  { title: "Retention boundaries", desc: "Applicable retention periods and controls require configuration and legal review." },
 ];
 
 const auditFeatures = [
-  { icon: FileText, title: "Immutable Decision Log", desc: "Complete history of who approved what and when." },
-  { icon: Eye, title: "Session Replay", desc: "Reconstruct exact Customer view state at any approval time." },
-  { icon: RotateCcw, title: "Reversal Tracking", desc: "Full log of rolled-back actions with reason codes." },
+  { icon: FileText, title: "Decision evidence", desc: "A reviewable trail should connect decisions with identity, authority and outcomes." },
+  { icon: Eye, title: "Context reconstruction", desc: "Reconstruction depends on available, authorized source evidence and supported logging." },
+  { icon: RotateCcw, title: "Reconciliation tracking", desc: "Record attempts, effects and reconciliation status where supported." },
 ];
 
 const rbacItems = [
-  { title: "RBAC Visualization", desc: "Field-level permission grid across all roles." },
-  { title: "Contextual Firewalling UI", desc: "Department isolation settings per team and data domain." },
-  { title: "API Key Management", desc: "Scoped, audited, and time-bounded credentials." },
+  { title: "RBAC Visualization", desc: "Permissions should reflect actual roles, attributes and provider scopes." },
+  { title: "Contextual Firewalling UI", desc: "Department and data-domain boundaries require policy enforcement." },
+  { title: "API Key Management", desc: "Scope, rotation and audit requirements should be verified per integration." },
 ];
 
 const emergencyItems = [
-  { icon: AlertTriangle, title: "Kill Switch", desc: "Immediate halt of all Twin operations. One click." },
-  { icon: Eye, title: "Breach Response", desc: "Automated access logs for forensic analysis." },
-  { icon: RotateCcw, title: "Recovery Interface", desc: "Point-in-time Spine restoration from backups." },
+  { icon: AlertTriangle, title: "Kill Switch", desc: "Emergency-stop mechanisms require deployment-specific proof and operational runbooks." },
+  { icon: Eye, title: "Breach Response", desc: "Investigation depends on retained logs, provider access and configured evidence collection." },
+  { icon: RotateCcw, title: "Recovery Interface", desc: "Recovery objectives and restore capabilities must be verified in the target environment." },
 ];
 
 const fade = (delay = 0) => ({
@@ -52,13 +51,13 @@ export function ProductSecurityContent() {
       <main id="main">
         <PageHero
           badge="Product Security"
-          headline="Governance UI. Audit logs. Compliance."
-          subhead="Visualize where AI ends and human control begins — with full forensic context in SpineWorkspace."
+          headline="Governed execution and audit design."
+          subhead="Illustrative governance concepts for Spine Workspace. These screens do not independently prove deployed controls."
           primaryCta={{ label: "Contact security team", href: "/contact?intent=security" }}
         />
 
         <Section variant="muted">
-          <SectionHeader label="Trust & Governance Dashboard" headline="Every operation is categorised into one of two zones" />
+          <SectionHeader label="Trust & Governance Dashboard" headline="Conceptual distinction between investigation and consequential action" />
           <div className="grid gap-4 md:grid-cols-2 mb-6">
             {trustDashboard.map((t) => (
               <div key={t.zone} className={`rounded-md border ${t.border} ${t.bg} p-6`}>
@@ -78,7 +77,7 @@ export function ProductSecurityContent() {
         </Section>
 
         <Section>
-          <SectionHeader label="Approval Audit Center" headline="Full forensic context on every decision" />
+          <SectionHeader label="Approval Audit Center" headline="Decision and verification evidence" />
           <div className="grid gap-4 md:grid-cols-3">
             {auditFeatures.map((a, i) => (
               <motion.div key={a.title} {...fade(i * 0.06)} className="rounded-md border border-[#E5E5E5] bg-white p-6 shadow-[0_1px_2px_rgba(0,0,0,0.04)]">
@@ -119,7 +118,6 @@ export function ProductSecurityContent() {
           </div>
         </Section>
 
-        <ProductSecurityStickyScroll />
         <FinalCTA />
       </main>
       <Footer />
