@@ -77,7 +77,7 @@ export const pages = {
         headline: "The Spine InnovLabs technology ecosystem.",
         cards: [
           { title: "Spine Workspace", description: "The workspace where a person sees the work and decides.", href: "/spineworkspace" },
-          { title: "Spine Platform", description: "The platform the Spine products run with.", href: "/platform" },
+          { title: "Spine Platform", description: "The governed architecture behind Spine Workspace.", href: "/platform" },
           { title: "Spine Fabric", description: "One connection to the tools that keep the record.", href: "/platform/spine-fabric" },
           { title: "Spine Twin", description: "Prepares a proposal when someone asks.", href: "/twin" },
           { title: "Spine Coworker", description: "Gathers the records and evidence this person may use.", href: "/twin#coworker" },
@@ -116,7 +116,7 @@ export const pages = {
         label: "Spine Coworker",
         headline: "Coworker gathers truth and context. Twin prepares the proposal.",
         body:
-          "Spine Coworker is a governed context-gathering capability. It gathers the record and the evidence this person is allowed to use for this task. Spine Twin is a Spine InnovLabs product. It prepares a proposal from that, and only when someone asks. A person reviews it. The proposal is not the record. There is no model catalogue and no model picker.",
+          "Spine Coworker is a governed context-gathering capability. It gathers the record and the evidence this person is allowed to use for this task. Spine Twin is a Spine Workspace capability. It prepares a proposal from that, and only when someone asks. A person reviews it. The proposal is not the record. There is no model catalogue and no model picker.",
       },
       {
         headline: "The record and the evidence first. Then a proposal.",
@@ -168,7 +168,7 @@ export const pages = {
       badge: "Spine Context Assembler",
       headline: "One governed picture of the work.",
       subhead:
-        "Spine Context Assembler is a Spine InnovLabs product. It assembles the context for this task. The tools keep the record.",
+        "Spine Context Assembler is a Spine Workspace capability. It assembles the context for this task. The tools keep the record.",
       primaryCta: { label: "See how work is shown", href: "/adaptive-workspace" },
     },
     sections: [
@@ -216,7 +216,7 @@ export const pages = {
       badge: "Spine Triage Bot",
       headline: "See what needs a decision.",
       subhead:
-        "Spine Triage Bot is a Spine InnovLabs product. It sorts a new message, file, or ticket so a person can see what needs attention. It does not write the record.",
+        "Spine Triage Bot is a Spine Workspace capability. It sorts a new message, file, or ticket so a person can see what needs attention. It does not write the record.",
       primaryCta: { label: "See Spine Twin", href: "/twin" },
     },
     sections: [
@@ -248,7 +248,7 @@ export const pages = {
       badge: "Spine Folder Monitor",
       headline: "A new file shows up with the work.",
       subhead:
-        "Spine Folder Monitor is a Spine InnovLabs product. It watches the folders the business already uses. When a file arrives or changes, the workspace can show it with the task. The file stays in the folder.",
+        "Spine Folder Monitor is a Spine Workspace capability. It watches the folders the business already uses. When a file arrives or changes, the workspace can show it with the task. The file stays in the folder.",
       primaryCta: { label: "See Spine Fabric", href: "/platform/spine-fabric" },
     },
     sections: [
@@ -278,7 +278,7 @@ export const pages = {
     hero: {
       badge: "Spine Adaptive Auto Tuner",
       headline: "One Work. A view that fits the role.",
-      subhead: "Spine Adaptive Auto Tuner is a Spine InnovLabs product. Sales, operations, and leadership open the same work and see what they need to decide.",
+      subhead: "Spine Adaptive Auto Tuner is a Spine Workspace capability. Sales, operations, and leadership open the same work and see what they need to decide.",
       primaryCta: { label: "Explore adaptive work", href: "/host-connected-environment" },
     },
     sections: [
@@ -465,14 +465,14 @@ export const pages = {
     meta: {
       title: "Company — Spine InnovLabs builds Spine Workspace",
       description:
-        "Spine InnovLabs is the company. The products are Spine Workspace, Spine Platform, Spine Fabric, Spine Twin, Spine Coworker, Spine Context Assembler, Spine Adaptive Auto Tuner, Spine Triage Bot, and Spine Folder Monitor.",
+        "Spine InnovLabs builds Spine Workspace. Spine Fabric, Workbench, Twin, Runtime and Marketplace describe parts of one governed business-context workspace; supporting agents and tools are capabilities, not separately marketed products.",
       path: "/company",
     },
     hero: {
       badge: "Spine InnovLabs",
       headline: "We build for the work that gets lost between systems.",
       subhead:
-        "Spine InnovLabs is the company. The products are Spine Workspace, Spine Platform, Spine Fabric, Spine Twin, Spine Coworker, Spine Context Assembler, Spine Adaptive Auto Tuner, Spine Triage Bot, and Spine Folder Monitor. The systems teams already depend on remain authoritative.",
+        "Spine InnovLabs builds Spine Workspace. Spine Fabric, Workbench, Twin, Runtime and Marketplace describe parts of one governed business-context workspace; supporting agents and tools are capabilities, not separately marketed products. The systems teams already depend on remain authoritative.",
       primaryCta: { label: "Speak with the team", href: "/contact" },
       secondaryCta: { label: "See a workflow", href: "/#renewal-workflow" },
     },
@@ -486,7 +486,7 @@ export const pages = {
         headline: "What we ship.",
         cards: [
           { title: "Spine Workspace", description: "The workspace where a person sees the work and decides.", href: "/spineworkspace" },
-          { title: "Spine Platform", description: "The platform the Spine products run with.", href: "/platform" },
+          { title: "Spine Platform", description: "The governed architecture behind Spine Workspace.", href: "/platform" },
           { title: "Spine Fabric", description: "One connection to the tools that keep the record.", href: "/platform/spine-fabric" },
           { title: "Spine Twin", description: "Prepares a proposal when someone asks.", href: "/twin" },
           { title: "Spine Coworker", description: "Gathers the records and evidence this person may use.", href: "/twin#coworker" },
@@ -549,7 +549,7 @@ export const pages = {
   platformHub: {
     meta: {
       title: "Spine Platform",
-      description: "Spine Platform is a Spine InnovLabs product. The tools keep the record. The products run with the platform.",
+      description: "Spine Platform is a Spine Workspace capability. The tools keep the record. The products run with the platform.",
       path: "/platform",
     },
     hero: {
