@@ -1,3 +1,5 @@
+import publicCatalog from "../config/public-solution-catalog.json";
+
 /**
  * Public marketing solutions vs operational workspace projections.
  *
@@ -63,7 +65,7 @@ export function workspaceUrl(host: string, path = ""): string {
  * Functional workbenches — public marketing catalogue only.
  * Do not add internal surfaces (docs, admin, orgmemory, etc.) here.
  */
-export const PUBLIC_SOLUTIONS: PublicSolution[] = [
+const EXISTING_PUBLIC_SOLUTIONS: PublicSolution[] = [
   {
     id: "customer-success",
     slug: "customer-success",
@@ -201,6 +203,24 @@ export const PUBLIC_SOLUTIONS: PublicSolution[] = [
     ],
   },
 ];
+
+/** Mirrors spineworkspace-live/config/public-solution-catalog.json. Enrichment
+ * is local to the corporate website; the published catalogue is identical
+ * across sites and does not imply that a workbench host is deployed.
+ */
+export const PUBLIC_SOLUTIONS: PublicSolution[] = publicCatalog.solutions.map((entry) => {
+  const prior = EXISTING_PUBLIC_SOLUTIONS.find((solution) => solution.slug === entry.slug);
+  return {
+    id: entry.slug,
+    slug: entry.slug,
+    name: entry.name,
+    navLabel: entry.name,
+    headline: prior?.headline ?? `${entry.name}: relevant context for the work`,
+    description: entry.description,
+    buyerSummary: prior?.buyerSummary ?? entry.description,
+    workspaceAssociations: prior?.workspaceAssociations ?? [],
+  };
+});
 
 /**
  * Platform / entry surfaces — not buyer-facing functional solutions.
