@@ -13,12 +13,11 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 export const metadata: Metadata = {
   metadataBase: new URL(publicSiteUrl),
   alternates: {
-    canonical: "/",
     types: { "application/rss+xml": "/rss.xml" },
   },
   title: {
     default: "Spine InnovLabs | Intelligence for Connected Business",
-    template: "%s | Spine InnovLabs",
+    template: "%s",
   },
   description:
     "Spine InnovLabs builds intelligent, context-aware technology for connected business — and Spine Workspace, where humans and AI work from shared business context.",
