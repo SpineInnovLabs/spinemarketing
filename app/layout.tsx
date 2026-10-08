@@ -16,9 +16,12 @@ export const metadata: Metadata = {
     canonical: "/",
     types: { "application/rss+xml": "/rss.xml" },
   },
-  title: "Spine InnovLabs | Intelligence for Connected Business",
+  title: {
+    default: "Spine InnovLabs | Intelligence for Connected Business",
+    template: "%s | Spine InnovLabs",
+  },
   description:
-    "For customer-success and revenue teams: assemble CRM, support, email, document, and finance context into an evidence-backed renewal proposal your team reviews, approves, and executes—with control.",
+    "Spine InnovLabs builds intelligent, context-aware technology for connected business — and Spine Workspace, where humans and AI work from shared business context.",
   icons: {
     icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
     apple: "/icon.svg",
@@ -26,16 +29,16 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Spine InnovLabs | Intelligence for Connected Business",
     description:
-      "For customer-success and revenue teams: evidence-backed renewal decision packets, human approval, and execution in your existing systems of record.",
+      "Technology and AI innovation for shared business context, governed action, and connected work. Meet the company behind Spine Workspace.",
     siteName: "Spine InnovLabs",
     type: "website",
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "Spine InnovLabs" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "SpineWorkspace — Renewal decisions from the full customer story",
+    title: "Spine InnovLabs | Intelligence for Connected Business",
     description:
-      "For customer-success and revenue teams: evidence-backed renewal decision packets, human approval, and execution in your existing systems of record.",
+      "Technology and AI innovation for shared business context, governed action, and connected work.",
     images: ["/og.png"],
   },
 }
