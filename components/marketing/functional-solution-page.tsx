@@ -24,25 +24,25 @@ export function FunctionalSolutionPage({ solution }: { solution: PublicSolution 
         art={
           <div className="rounded-2xl border border-[#D9E4EF] bg-white p-5">
             <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[#526479]">
-              Sample decision packet · demonstration
+              Illustrative work context · not a live customer record
             </p>
             <h2 className="mt-2 text-[18px] font-semibold text-[#032D60]">{solution.name}</h2>
             <dl className="mt-4 space-y-3 text-[14px]">
               <div>
-                <dt className="font-semibold text-[#032D60]">Account review trigger</dt>
+                <dt className="font-semibold text-[#032D60]">Business question</dt>
                 <dd className="text-[#33465B]">{solution.buyerSummary}</dd>
               </div>
               <div>
-                <dt className="font-semibold text-[#032D60]">Evidence assembled</dt>
-                <dd className="text-[#33465B]">CRM, support, email, documents—source-linked, not merged into a new record.</dd>
+                <dt className="font-semibold text-[#032D60]">Relevant source context</dt>
+                <dd className="text-[#33465B]">Relevant provider records, conversations, work history and evidence—subject to available integration and access.</dd>
               </div>
               <div>
-                <dt className="font-semibold text-[#032D60]">Recommended next-best action</dt>
+                <dt className="font-semibold text-[#032D60]">Potential next step</dt>
                 <dd className="text-[#33465B]">{solution.description}</dd>
               </div>
               <div>
-                <dt className="font-semibold text-[#032D60]">Approval state</dt>
-                <dd className="font-semibold text-[#0176D3]">Awaiting renewal owner review</dd>
+                <dt className="font-semibold text-[#032D60]">Authority boundary</dt>
+                <dd className="font-semibold text-[#0176D3]">Subject to authorized review</dd>
               </div>
             </dl>
           </div>
@@ -56,14 +56,14 @@ export function FunctionalSolutionPage({ solution }: { solution: PublicSolution 
         />
         <div className="mt-8 grid gap-6 lg:grid-cols-2">
           <div className="rounded-[20px] border border-[#D9E4EF] bg-white p-6">
-            <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[#526479]">Before Spine</p>
+            <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[#526479]">Without shared context</p>
             <p className="mt-3 text-[15px] leading-[1.65] text-[#33465B]">
               Operators jump between systems to reconstruct context before every review—then debate recommendations without
               a shared evidence packet.
             </p>
           </div>
           <div className="rounded-[20px] border border-[#0176D3]/25 bg-[#EAF5FC] p-6">
-            <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[#0176D3]">With Spine</p>
+            <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[#0176D3]">With contextual design</p>
             <p className="mt-3 text-[15px] leading-[1.65] text-[#33465B]">
               One governed decision packet, explicit approval, and write-back to the system that owns the record—starting
               with renewals where {solution.name} intersects customer revenue.
