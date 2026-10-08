@@ -55,7 +55,7 @@ Dynamic route entrypoints such as `/blog/[slug]` and `/solutions/[slug]` may gen
 | `/governance` | Technology / trust | Source/metadata audited; visual QA pending |
 | `/host-connected-environment` | Technology / trust | Source/metadata audited; visual QA pending |
 | `/integrations` | Technology / trust | Source/metadata audited; visual QA pending |
-| `/page.tsx` | Legacy / deep product narrative | Retained; editorial / visual review required |
+| `/` | Corporate core | Source/metadata audited; visual QA pending |
 | `/personal-ops` | Legacy / deep product narrative | Retained; editorial / visual review required |
 | `/platform/how-it-works` | Technology / trust | Source/metadata audited; visual QA pending |
 | `/platform/infrastructure` | Technology / trust | Source/metadata audited; visual QA pending |
