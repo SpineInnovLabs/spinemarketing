@@ -27,7 +27,8 @@ Local development normally runs at http://localhost:5010.
 
 ```bash
 npm ci
-npm run lint          # Fast offline repository, lock, route, asset, hero and deployment checks
+npm run lint          # Fast offline release preflight
+npm run audit:site    # All route sources, primary links, brand and trust checks
 npm run check:ci      # CircleCI YAML and release-gate validation
 npm run typecheck     # TypeScript
 npm run build         # Full static export, including the Sanity-backed blog

@@ -8,14 +8,14 @@ import { IndividualContent } from "./content"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
-  title: "Individual Professionals | SpineWorkspace",
+  title: "Individual Professionals | Spine InnovLabs",
   description:
     "Morning brief, session memory, task queue — your day, organized.",
   alternates: { canonical: "/solutions/individual" },
   openGraph: {
-    title: "Individual Professionals | SpineWorkspace",
+    title: "Individual Professionals | Spine InnovLabs",
     description: "Morning brief, session memory, task queue — your day, organized.",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "SpineWorkspace" }],
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Spine Workspace" }],
   },
 }
 

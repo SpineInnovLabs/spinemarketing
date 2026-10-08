@@ -7,14 +7,14 @@ import { SpineContent } from "./content"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
-  title: "Spine & Intelligence | SpineWorkspace",
+  title: "Spine & Intelligence | Spine InnovLabs",
   description:
-    "SpineWorkspace: the shared contextual layer under your business. Unifies every app. AI reasons with evidence. You approve.",
+    "Spine Workspace: the shared contextual layer under your business. Unifies every app. AI reasons with evidence. You approve.",
   alternates: { canonical: "/spine" },
   openGraph: {
-    title: "Spine & Intelligence | SpineWorkspace",
-    description: "SpineWorkspace: the shared contextual layer under your business. Unifies every app. AI reasons with evidence. You approve.",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "SpineWorkspace" }],
+    title: "Spine & Intelligence | Spine InnovLabs",
+    description: "Spine Workspace: the shared contextual layer under your business. Unifies every app. AI reasons with evidence. You approve.",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Spine Workspace" }],
   },
 }
 

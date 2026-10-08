@@ -4,13 +4,13 @@ import { InfrastructureContent } from "./content"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
-  title: "Infrastructure — SpineWorkspace",
-  description: "Multi-region infrastructure, encryption, and operational resilience powering the SpineWorkspace.",
+  title: "Infrastructure | Spine InnovLabs",
+  description: "Multi-region infrastructure, encryption, and operational resilience powering the Spine Workspace.",
   alternates: { canonical: "/platform/infrastructure" },
   openGraph: {
-    title: "Infrastructure — SpineWorkspace",
-    description: "Multi-region infrastructure, encryption, and operational resilience powering the SpineWorkspace.",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "SpineWorkspace" }],
+    title: "Infrastructure | Spine InnovLabs",
+    description: "Multi-region infrastructure, encryption, and operational resilience powering the Spine Workspace.",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Spine Workspace" }],
   },
 }
 

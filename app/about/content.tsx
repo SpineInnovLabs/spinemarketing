@@ -1,274 +1,98 @@
-"use client";
-
-import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
-import { KpiBlock } from "@/components/marketing/enterprise";
+import { ArrowRight, ArrowUpRight, GitBranch, ShieldCheck, Waypoints } from "lucide-react";
 
-const fade = (delay = 0) => ({
-  initial: { opacity: 0, y: 20 } as const,
-  whileInView: { opacity: 1, y: 0 } as const,
-  viewport: { once: true, margin: "-80px" },
-  transition: { type: "spring" as const, damping: 18, stiffness: 70, delay },
-});
-
-const timeline = [
-  { year: "2014", title: "Soft Dev", desc: "Started in software development. Learning the craft of building systems from scratch." },
-  { year: "2018", title: "Integration Dev", desc: "Moved into enterprise integration. Wiring systems across five industries." },
-  { year: "Expert", title: "Connected the tools by hand", desc: "13 years helping enterprise teams work across the tools they already had." },
-  { year: "CSM Era", title: "Customer Success at Salesforce", desc: "Saw the work fail when the tools did not share the story." },
-  { year: "The Crisis", title: "The Red Account", desc: "$8M account at 100% attrition risk. Zero handover." },
-  { year: "The Discovery", title: "Two Hidden Signals", desc: "Unsigned contract. Hidden conflicts. Invisible to every dashboard." },
-  { year: "The Save", title: "$8M Renewed", desc: "Both signals resolved. Full renewal. Account saved." },
-  { year: "2025", title: "Founded Spine InnovLabs", desc: "Built in Coimbatore, Tamilnadu, India. Automates what was done manually." },
-  { year: "2026", title: "Knowledge Workspace over SpineWorkspace", desc: "Workspace + Twin. Three data ecosystems. You stay in control." },
+const principles = [
+  {
+    number: "01",
+    title: "Start with the business question.",
+    body: "A record is useful, but its relationship to a customer, goal, decision, signal, or commitment explains why it matters.",
+  },
+  {
+    number: "02",
+    title: "Keep existing systems authoritative.",
+    body: "An intelligent workspace should make connected work understandable without pretending every source can be replaced by another database.",
+  },
+  {
+    number: "03",
+    title: "Make authority visible.",
+    body: "Knowing what could be done is different from being allowed to do it. Execution needs clear scope, approval when appropriate, and evidence.",
+  },
 ];
-
-function SectionBlock({
-  label,
-  title,
-  children,
-  variant = "white",
-}: {
-  label?: string;
-  title: string;
-  children: React.ReactNode;
-  variant?: "white" | "muted";
-}) {
-  const bg = variant === "muted" ? "bg-[#F3F6F9]" : "bg-white";
-  return (
-    <section className={`border-t border-[#E5E5E5] py-20 md:py-28 ${bg}`}>
-      <div className="mx-auto max-w-[800px] px-6">
-        <motion.div {...fade(0)}>
-          {label && (
-            <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[#0176D3]">{label}</p>
-          )}
-          <h2 className="mt-3 text-[32px] font-semibold tracking-[-0.03em] leading-[1.15] text-[#032D60] sm:text-[36px]">
-            {title}
-          </h2>
-          <div className="mt-6">{children}</div>
-        </motion.div>
-      </div>
-    </section>
-  );
-}
 
 export function AboutContent() {
   return (
     <>
-      <section className="border-b border-[#E5E5E5] bg-white pt-[120px] pb-16">
-        <div className="mx-auto max-w-[900px] px-6 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ type: "spring", damping: 16, stiffness: 52, delay: 0.1 }}
-            className="mb-6 inline-flex items-center gap-2 rounded-md border border-[#E5E5E5] bg-[#F3F6F9] px-3 py-1 text-[12px] font-semibold uppercase tracking-[0.06em] text-[#032D60]"
-          >
-            <span className="h-1.5 w-1.5 rounded-full bg-[#0176D3]" />
-            About
-          </motion.div>
-          <motion.h1
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ type: "spring", damping: 16, stiffness: 52, delay: 0.2 }}
-            className="text-[40px] font-semibold leading-[1.1] tracking-[-0.03em] text-[#032D60] sm:text-[48px]"
-          >
-            We&apos;re building the workspace around{" "}
-            <span className="text-[#0176D3]">the business.</span>
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ type: "spring", damping: 16, stiffness: 52, delay: 0.35 }}
-            className="mx-auto mt-4 max-w-2xl text-[16px] leading-[1.7] text-[#444]"
-          >
-            Spine InnovLabs is the company. The products are SpineWorkspace, Spine Platform, Spine Fabric, Spine Twin, Spine Coworker, Spine Context Assembler, Spine Adaptive Auto Tuner, Spine Triage Bot, and Spine Folder Monitor. The company exists because modern work is fragmented across software and AI interfaces—and that fragmentation costs real outcomes.
-          </motion.p>
-        </div>
-      </section>
-
-      <section className="border-t border-[#E5E5E5] bg-[#F3F6F9] py-20 md:py-28">
-        <div className="mx-auto max-w-[800px] px-6">
-          <motion.div {...fade(0)} className="space-y-12">
-            <div>
-              <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[#0176D3]">Origin</p>
-              <h2 className="mt-3 text-[28px] font-semibold tracking-[-0.03em] text-[#032D60]">Fragmented tools. Cold AI. Lost context.</h2>
-              <p className="mt-4 text-[16px] leading-[1.7] text-[#444]">
-                Teams jump between systems. AI answers prompts without business memory. Every handoff rebuilds the story from scratch.
-              </p>
-            </div>
-            <div>
-              <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[#0176D3]">Belief</p>
-              <h2 className="mt-3 text-[28px] font-semibold tracking-[-0.03em] text-[#032D60]">AI should operate with context, boundaries, and accountability.</h2>
-            </div>
-            <div>
-              <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[#0176D3]">Mission</p>
-              <h2 className="mt-3 text-[28px] font-semibold tracking-[-0.03em] text-[#032D60]">Adaptive work environments on shared business reality.</h2>
-              <p className="mt-4 text-[16px] leading-[1.7] text-[#444]">
-                Humans and AI should work toward the same goals using governed business context—not disconnected chat interfaces.
-              </p>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      <SectionBlock label="Founder story" title="The person who connected the tools by hand">
-        <p className="mb-6 text-[12px] font-semibold uppercase tracking-[0.08em] text-[#706E6B]">
-          Illustrative origin story — not a customer case study
-        </p>
-        <blockquote className="border-l-2 border-[#0176D3] pl-6 text-[17px] italic text-[#444]">
-          &ldquo;The thing that kept me up at night wasn&apos;t a broken connection. It was watching smart people make the wrong decisions because their tools couldn&apos;t talk to each other.&rdquo;
-        </blockquote>
-        <div className="mt-6 space-y-4 text-[16px] leading-[1.7] text-[#444]">
-          <p>13 years connecting the tools companies already used. The job was to help those tools share the work.</p>
-          <p>The tools were connected. The record moved. But nobody could put the evidence next to it for the person making the decision.</p>
-        </div>
-      </SectionBlock>
-
-      <SectionBlock label="Chapter 2" title="The red account — when everything went dark" variant="muted">
-        <div className="grid gap-4 sm:grid-cols-3">
-          <KpiBlock label="Status" value="RED" detail="Account flagged at risk" />
-          <KpiBlock label="Attrition risk" value="100%" detail="Renewal in jeopardy" />
-          <KpiBlock label="Contract value" value="~$8M" detail="Annual contract at stake" />
-        </div>
-        <div className="mt-8 space-y-4 text-[16px] leading-[1.7] text-[#444]">
-          <p>A fellow CSM left. Their biggest account — ~$8M — landed on his desk. No handover. No context.</p>
-          <p>Marked Red. 100% attrition risk. Nobody could explain why.</p>
-          <blockquote className="border-l-2 border-[#0176D3] pl-6 text-[17px] italic text-[#444]">
-            &ldquo;The data existed — in seven different places, seven formats, owned by seven teams. Nobody could see across all of it at once.&rdquo;
-          </blockquote>
-          <p>He became the integration layer. Weeks of cross-referencing tickets, CRM notes, emails, and Slack against contract terms.</p>
-        </div>
-        <h3 className="mt-10 text-[20px] font-semibold text-[#032D60]">The two hidden signals</h3>
-        <div className="mt-6 grid gap-4 sm:grid-cols-2">
-          {[
-            { signal: "Signal 1", title: "The unsigned contract", desc: "The $8M contract was never signed. It stalled everything — invisible to any single system." },
-            { signal: "Signal 2", title: "The hidden conflict", desc: "Interpersonal conflict between decision-makers. Buried in fragments. The kind of tension that derails renewals." },
-          ].map(({ signal, title, desc }) => (
-            <div key={signal} className="rounded-md border border-[#E5E5E5] bg-white p-5 shadow-[0_1px_2px_rgba(0,0,0,0.04)]">
-              <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[#0176D3]">{signal}</p>
-              <h4 className="mt-2 text-[16px] font-semibold text-[#032D60]">{title}</h4>
-              <p className="mt-2 text-[14px] leading-[1.6] text-[#444]">{desc}</p>
-            </div>
-          ))}
-        </div>
-      </SectionBlock>
-
-      <SectionBlock label="Chapter 3" title="The save — $8 million back from the edge">
-        <div className="space-y-4 text-[16px] leading-[1.7] text-[#444]">
-          <p>Both signals identified. Contract resolved. Relationship rebuilt from zero.</p>
-          <p className="text-[18px] font-semibold text-[#032D60]">When renewal time came — they renewed. The full $8 million.</p>
-          <p>Written off as lost. Saved — because one person manually connected every signal.</p>
-          <blockquote className="border-l-2 border-[#0176D3] pl-6 text-[17px] italic text-[#444]">
-            &ldquo;I saved it. But it nearly killed me to do it by hand. That&apos;s when I knew: this should never require one person to do alone.&rdquo;
-          </blockquote>
-        </div>
-      </SectionBlock>
-
-      <SectionBlock label="Chapter 4" title="The birth of Spine InnovLabs" variant="muted">
-        <div className="space-y-4 text-[16px] leading-[1.7] text-[#444]">
-          <p>Not a whiteboard exercise. A lived experience — signals visible only through manual integration.</p>
-          <p>He set out to automate what he did by hand: cross-referencing, signal discovery, context building.</p>
-          <p className="font-semibold text-[#032D60]">He had spent 13 years building integration layers. Now he was going to build the intelligence layer on SpineWorkspace.</p>
-        </div>
-        <h3 className="mt-10 text-[20px] font-semibold text-[#032D60]">What Spine InnovLabs actually solves</h3>
-        <div className="mt-6 space-y-3">
-          {[
-            "One connection to the tools, files, and conversations you already use.",
-            "The record, the evidence, the draft, and the person stay apart.",
-            "The workspace shows the view this role needs.",
-            "Twin opens only when asked, and every claim points back to its source.",
-            "A person allows it, changes it, or stops it. Twin does not write the record.",
-          ].map((item, i) => (
-            <motion.div
-              key={i}
-              {...fade(i * 0.06)}
-              className="flex items-start gap-3 rounded-md border border-[#E5E5E5] bg-white p-4"
-            >
-              <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#0176D3]/10 text-[12px] font-bold text-[#0176D3]">
-                {i + 1}
-              </span>
-              <span className="text-[15px] leading-[1.6] text-[#444]">{item}</span>
-            </motion.div>
-          ))}
-        </div>
-        <div className="mt-10 rounded-md border border-[#0176D3]/20 bg-[#032D60] p-6">
-          <p className="text-[17px] font-semibold leading-[1.5] text-white">
-            The workspace shows the work. Twin prepares a proposal only when asked. A person decides.
+      <section className="relative overflow-hidden bg-[#091932] px-5 pb-24 pt-40 text-white sm:px-8 lg:pb-32">
+        <div className="pointer-events-none absolute -right-24 -top-40 h-[550px] w-[550px] rounded-full bg-[#2763BC]/25 blur-[100px]" aria-hidden />
+        <div className="relative mx-auto max-w-[1220px]">
+          <p className="text-xs font-semibold uppercase tracking-[.23em] text-[#B0CDFB]">Our origin / Spine InnovLabs</p>
+          <h1 className="mt-7 max-w-[1050px] text-[clamp(3.2rem,6.2vw,6.6rem)] font-semibold leading-[1.04] tracking-[-.065em]">
+            The real gap was never just <span className="text-[#9EC5FF]">system integration.</span>
+          </h1>
+          <p className="mt-9 max-w-[770px] text-[18px] leading-[1.9] text-[#CAD7E9]">
+            Connecting systems makes information available. Helping people understand that information, act with authority and continue work across teams is a different challenge. That is the problem behind Spine InnovLabs.
           </p>
-          <p className="mt-1 text-[15px] text-white/70">Spine InnovLabs is the company. The products are SpineWorkspace, Spine Platform, Spine Fabric, Spine Twin, Spine Coworker, Spine Context Assembler, Spine Adaptive Auto Tuner, Spine Triage Bot, and Spine Folder Monitor.</p>
+          <Link href="/company" className="mt-9 inline-flex min-h-12 items-center gap-2 rounded-full bg-[#AFCBFF] px-6 text-sm font-semibold text-[#0B234A] transition hover:bg-white">
+            Meet the company <ArrowUpRight className="h-4 w-4" aria-hidden />
+          </Link>
         </div>
-      </SectionBlock>
+      </section>
 
-      <section className="border-t border-[#E5E5E5] bg-white py-20 md:py-28">
-        <div className="mx-auto max-w-[800px] px-6">
-          <motion.div {...fade(0)}>
-            <h2 className="text-[32px] font-semibold tracking-[-0.03em] text-[#032D60] sm:text-[36px]">The journey</h2>
-          </motion.div>
-          <div className="mt-12 space-y-0">
-            {timeline.map(({ year, title, desc }, i) => (
-              <motion.div
-                key={i}
-                {...fade(i * 0.05)}
-                className="relative pl-8 pb-10 last:pb-0 before:absolute before:left-0 before:top-0 before:bottom-0 before:w-px before:bg-[#E5E5E5] last:before:hidden"
-              >
-                <div className="absolute left-0 top-1 h-2.5 w-2.5 -translate-x-[calc(50%-0.5px)] rounded-full bg-[#0176D3]" />
-                <div className="text-[13px] font-bold text-[#0176D3]">{year}</div>
-                <h3 className="mt-1 text-[16px] font-semibold text-[#032D60]">{title}</h3>
-                <p className="mt-2 text-[14px] leading-[1.6] text-[#706E6B]">{desc}</p>
-              </motion.div>
+      <section className="mx-auto grid max-w-[1220px] gap-12 px-5 py-24 sm:px-8 lg:grid-cols-[.65fr_1.35fr] lg:gap-24 lg:py-32">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[.21em] text-[#2461BC]">Why we began</p>
+          <div className="mt-7 h-px w-20 bg-[#2461BC]" aria-hidden />
+        </div>
+        <div>
+          <h2 className="text-[clamp(2.3rem,4.5vw,4.3rem)] font-semibold leading-[1.12] tracking-[-.055em] text-[#102747]">Integration connected the systems. People still carried the context.</h2>
+          <p className="mt-8 text-[17px] leading-[1.95] text-[#536883]">
+            The idea took shape through experience in software engineering, integration architecture and customer-facing enterprise work. To understand one customer or decision, a person often has to move across CRM, support, documents, messages and meetings, reconstructing the same business story repeatedly.
+          </p>
+          <p className="mt-5 text-[17px] leading-[1.95] text-[#536883]">
+            This is not a story about replacing the tools organizations already trust. It is about connecting business context around goals, relationships, work and evidence so that a person or AI counterpart can understand what matters without losing the boundaries that protect the business.
+          </p>
+          <p className="mt-5 text-[17px] font-medium leading-[1.95] text-[#17375F]">
+            Our direction is simple: shared business understanding, useful collaboration between humans and AI, and governed paths from intention to verified outcome.
+          </p>
+        </div>
+      </section>
+
+      <section className="bg-[#ECF3FC] py-24 lg:py-32">
+        <div className="mx-auto max-w-[1220px] px-5 sm:px-8">
+          <p className="text-xs font-semibold uppercase tracking-[.21em] text-[#2461BC]">The engineering principles</p>
+          <h2 className="mt-5 max-w-[780px] text-[clamp(2.5rem,4.7vw,4.6rem)] font-semibold leading-[1.1] tracking-[-.055em] text-[#0C274E]">Intelligence requires more than access to data.</h2>
+          <div className="mt-12 grid gap-4 md:grid-cols-3">
+            {principles.map((point) => (
+              <article key={point.number} className="rounded-[24px] border border-[#D7E4F3] bg-white p-8 shadow-[0_20px_45px_-40px_rgba(10,38,87,.4)]">
+                <span className="font-mono text-xs text-[#5082C8]">{point.number}</span>
+                <h3 className="mt-12 text-[24px] font-semibold tracking-[-.04em] text-[#13365F]">{point.title}</h3>
+                <p className="mt-5 text-[15px] leading-[1.9] text-[#576C86]">{point.body}</p>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="border-t border-[#E5E5E5] bg-[#F3F6F9] py-16">
-        <div className="mx-auto max-w-[800px] px-6">
-          <motion.div {...fade(0)}>
-            <p className="mb-4 text-[12px] font-semibold uppercase tracking-[0.08em] text-[#706E6B]">
-              Illustrative origin story — not a customer quote
-            </p>
-            <blockquote className="border-l-2 border-[#0176D3] pl-6 text-[18px] italic leading-[1.7] text-[#444]">
-              &ldquo;The Spine connected support, product usage, billing, and relationship data across 12 systems. The team intervened early and saved an $8M customer.&rdquo;
-            </blockquote>
-            <div className="mt-10 grid grid-cols-3 gap-4">
-              {[
-                { stat: "$8M", label: "Customer protected" },
-                { stat: "12", label: "Systems connected" },
-                { stat: "3", label: "Data ecosystems" },
-              ].map(({ stat, label }) => (
-                <KpiBlock key={label} label={label} value={stat} detail="" />
-              ))}
-            </div>
-          </motion.div>
+      <section className="mx-auto grid max-w-[1220px] gap-12 px-5 py-24 sm:px-8 lg:grid-cols-2 lg:items-center lg:py-32">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[.21em] text-[#2461BC]">From vision to product</p>
+          <h2 className="mt-6 text-[clamp(2.4rem,4.4vw,4.4rem)] font-semibold leading-[1.1] tracking-[-.055em] text-[#0C274E]">Spine Workspace puts the principle to work.</h2>
+          <p className="mt-7 text-[17px] leading-[1.85] text-[#536883]">One workspace for humans and AI to understand the business, share the work, and achieve goals together. Spine Fabric, the Workbench, the Twin and Runtime are parts of that integrated direction.</p>
+          <a href="https://spineworkspace.com/" className="mt-9 inline-flex min-h-12 items-center gap-2 rounded-full bg-[#102F5B] px-6 text-sm font-semibold text-white transition hover:bg-[#2759A0]">
+            Explore Spine Workspace <ArrowRight className="h-4 w-4" aria-hidden />
+          </a>
         </div>
-      </section>
-
-      <section className="border-t border-[#E5E5E5] bg-white py-20">
-        <div className="mx-auto max-w-[800px] px-6 text-center">
-          <motion.div {...fade(0)}>
-            <blockquote className="text-[28px] font-semibold leading-[1.15] tracking-[-0.03em] text-[#032D60] sm:text-[36px]">
-              &ldquo;We built it to save ourselves.{" "}
-              <span className="text-[#0176D3]">Now it saves you.</span>&rdquo;
-            </blockquote>
-            <p className="mt-6 text-[15px] text-[#706E6B]">
-              Nirmal Prince J &middot; Founder &amp; CEO &middot; Spine InnovLabs &middot; Coimbatore, Tamilnadu, India
-            </p>
-            <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <Link
-                href="/contact?intent=demo"
-                className="inline-flex h-10 items-center gap-2 rounded-md bg-[#0176D3] px-5 text-[14px] font-semibold text-white hover:bg-[#0B5CAB]"
-              >
-                Book a demo <ArrowRight className="h-4 w-4" />
-              </Link>
-              <Link
-                href="/platform"
-                className="inline-flex h-10 items-center rounded-md border border-[#C9C9C9] bg-white px-5 text-[14px] font-semibold text-[#032D60] hover:bg-[#F3F3F3]"
-              >
-                See how it works
-              </Link>
+        <div className="grid gap-4 rounded-[26px] bg-[#09244D] p-6 text-white sm:p-9">
+          {[
+            { icon: GitBranch, title: "Context", body: "Relate goals, customers, signals, work and evidence." },
+            { icon: Waypoints, title: "Collaboration", body: "Share the right understanding with people and AI." },
+            { icon: ShieldCheck, title: "Governance", body: "Move forward through authorized actions and verified results." },
+          ].map(({ icon: Icon, title, body }) => (
+            <div key={title} className="flex gap-4 rounded-xl border border-white/15 bg-white/5 p-5">
+              <Icon className="mt-1 h-5 w-5 shrink-0 text-[#A3C7FF]" aria-hidden />
+              <div><h3 className="text-lg font-semibold">{title}</h3><p className="mt-2 text-sm leading-7 text-[#C5D5EC]">{body}</p></div>
             </div>
-          </motion.div>
+          ))}
         </div>
       </section>
     </>

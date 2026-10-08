@@ -17,62 +17,62 @@ import {
 const securityFeatures = [
   {
     icon: Lock,
-    title: "Encryption everywhere",
-    desc: "AES-256 at rest, TLS 1.3 in transit.",
+    title: "Data protection controls",
+    desc: "Encryption in transit and at rest must be verified for each deployed provider and environment.",
   },
   {
     icon: ShieldCheck,
-    title: "SOC 2 aligned",
-    desc: "Aligned practices. No certification is claimed.",
+    title: "Assurance and compliance readiness",
+    desc: "Control evidence and certification status must be independently verified; no certification is claimed.",
   },
   {
     icon: Eye,
-    title: "Complete audit trails",
-    desc: "Every access, approval, and action logged.",
+    title: "Traceable decisions",
+    desc: "Design for audit records covering requests, authority, execution and outcomes; deployment coverage requires verification.",
   },
   {
     icon: KeyRound,
     title: "Role-based access control",
-    desc: "Granular RBAC scoped to each user role.",
+    desc: "Policy and role boundaries are designed to govern which capabilities and data may be accessed.",
   },
   {
     icon: Users,
     title: "SSO & identity management",
-    desc: "SAML 2.0 and OIDC with major providers.",
+    desc: "Identity integration depends on configured providers and the product environment.",
   },
   {
     icon: Server,
     title: "Data residency",
-    desc: "Multi-region deployment options coming soon.",
+    desc: "Data location and residency depend on deployed infrastructure and agreements.",
   },
   {
     icon: FileCheck,
-    title: "Review on every Twin action",
-    desc: "Nothing changes without your approval.",
+    title: "Approval before consequential actions",
+    desc: "Consequential execution should require authorization under the relevant policy.",
   },
   {
     icon: ClipboardCheck,
-    title: "Compliance packages",
-    desc: "Pre-built GDPR and industry configurations.",
+    title: "Compliance assessment",
+    desc: "Regulatory requirements and implementation controls need a scoped review.",
   },
 ];
 
 const principles = [
   {
     title: "Read-first architecture",
-    desc: "No data migration or ownership transfer.",
+    desc: "Existing systems remain authoritative where the integration design permits.",
   },
   {
     title: "Minimal data footprint",
-    desc: "Raw data stays in your source systems.",
+    desc: "Minimize duplication and keep sensitive source data inside defined boundaries.",
   },
   {
-    title: "Zero-trust by default",
-    desc: "Every call authenticated and authorized.",
+    title: "Least-privilege design",
+    desc: "Require authentication, scoped permissions and policy checks at execution boundaries.",
   },
   {
     title: "You stay in control, always",
-    desc: "Your data, your approval, your control.",
+    desc: "Clear authority and accountability are part of the architecture.",
   },
 ];
 
@@ -90,8 +90,8 @@ export function SecurityContent() {
             className="mx-auto max-w-2xl text-center"
           >
             <h2 className="section-heading">
-              Enterprise-grade{" "}
-              <span className="text-primary">security & compliance</span>
+              Security architecture{" "}
+              <span className="text-primary">and governance principles</span>
             </h2>
           </motion.div>
 
@@ -172,7 +172,7 @@ export function SecurityContent() {
 
       {/* Security CTA */}
       <section
-        className="arvio-section dark-section bg-white"
+        className="arvio-section bg-[#EAF1FC]"
       >
         <div className="mx-auto max-w-[800px] text-center">
           <motion.div
@@ -181,12 +181,12 @@ export function SecurityContent() {
             viewport={{ once: true }}
             transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
           >
-            <h2 className="text-[32px] font-semibold tracking-[-0.04em] leading-[1.2] text-white sm:text-[40px]">
-              Security that doesn&apos;t require trust —{" "}
-              <span className="text-primary">it proves itself.</span>
+            <h2 className="text-[32px] font-semibold tracking-[-0.04em] leading-[1.2] text-[#102E55] sm:text-[40px]">
+              Security should be evaluated against{" "}
+              <span className="text-primary">implementation evidence.</span>
             </h2>
-            <p className="mt-6 text-[17px] font-medium leading-[1.5] text-white/40">
-              Every action logged. Every proposal governed. Every approval traceable.
+            <p className="mt-6 text-[17px] font-medium leading-[1.5] text-[#506783]">
+              Review actual controls, authority paths and verification evidence before depending on a security claim.
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-2.5 sm:flex-row">
               <Button
@@ -205,7 +205,7 @@ export function SecurityContent() {
               <Button
                 size="lg"
                 variant="outline"
-                className="h-[42px] rounded-xl border-2 border-white/15 bg-transparent px-6 text-[15px] font-semibold text-white hover:bg-white/10"
+                className="h-[42px] rounded-xl border-2 border-[#B2C7E8] bg-white px-6 text-[15px] font-semibold text-[#153F74] hover:bg-[#E3EDFF]"
                 asChild
               >
                 <Link href="/platform/security">Security details</Link>

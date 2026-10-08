@@ -4,13 +4,13 @@ import { ProductSecurityContent } from "./content"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
-  title: "Security — SpineWorkspace Product",
-  description: "Security controls built into the product — approval gates, audit logs, and governance by design.",
+  title: "Product Governance Concepts | Spine InnovLabs",
+  description: "Illustrative governance concepts for Spine Workspace, including approval boundaries and evidence collection; not a certification of live controls.",
   alternates: { canonical: "/product/security" },
   openGraph: {
-    title: "Security — SpineWorkspace Product",
-    description: "Security controls built into the product — approval gates, audit logs, and governance by design.",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "SpineWorkspace" }],
+    title: "Product Governance Concepts | Spine InnovLabs",
+    description: "Illustrative governance concepts for Spine Workspace, including approval boundaries and evidence collection; not a certification of live controls.",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Spine InnovLabs" }],
   },
 }
 

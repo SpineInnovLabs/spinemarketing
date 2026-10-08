@@ -13,6 +13,12 @@ export type RouteDecision = {
 
 export const ROUTE_DECISIONS: RouteDecision[] = [
   {
+    path: "/spineworkspace",
+    action: "redirect",
+    destination: "https://spineworkspace.com/",
+    reason: "Product marketing lives on its own domain; exclude the corporate-host redirect from this sitemap.",
+  },
+  {
     path: "/ai",
     action: "redirect",
     destination: "/twin",

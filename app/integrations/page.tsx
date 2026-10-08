@@ -8,14 +8,14 @@ import { TestimonialsSection } from "@/components/testimonials-section"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
-  title: "Integrations | SpineWorkspace — Renewal stack connectors",
+  title: "Connected Ecosystems & Integrations | Spine InnovLabs",
   description:
     "For renewal managers: connect CRM, support, inbox, and finance. Source systems stay authoritative. Stop re-logging into six tools for account reviews.",
   alternates: { canonical: "/integrations" },
   openGraph: {
-    title: "Integrations | SpineWorkspace — Renewal stack connectors",
+    title: "Connected Ecosystems & Integrations | Spine InnovLabs",
     description: "Connect CRM, support, inbox, and finance for renewal reviews. Source systems stay authoritative.",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "SpineWorkspace Integrations" }],
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Spine Workspace Integrations" }],
   },
 }
 

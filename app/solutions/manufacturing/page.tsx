@@ -7,14 +7,14 @@ import { ManufacturingContent } from "./content"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
-  title: "Manufacturing & Trade | SpineWorkspace Solutions",
+  title: "Manufacturing & Trade | Spine InnovLabs",
   description:
     "Orders, shipments, payments — live across ERP, CRM, and logistics.",
   alternates: { canonical: "/solutions/manufacturing" },
   openGraph: {
-    title: "Manufacturing & Trade | SpineWorkspace Solutions",
+    title: "Manufacturing & Trade | Spine InnovLabs",
     description: "Orders, shipments, payments — live across ERP, CRM, and logistics.",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "SpineWorkspace" }],
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Spine Workspace" }],
   },
 }
 

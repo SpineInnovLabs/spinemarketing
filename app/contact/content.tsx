@@ -17,31 +17,28 @@ const fade = (delay = 0) => ({
 
 const contactFAQs = [
   {
-    question: "How long does setup take?",
-    answer: "A guided onboarding can show a first customer view from the apps you connect. A full workspace with every integration typically takes 1–2 weeks.",
+    question: "What can I contact Spine InnovLabs about?",
+    answer: "Company partnerships, enterprise integrations, business-context architecture, responsible AI design and questions about our flagship product, Spine Workspace.",
   },
   {
-    question: "Do I need an engineering team?",
-    answer: "No. Every integration uses one-time OAuth setup. No code, no data migration, no engineering resources required.",
+    question: "Do we need to replace our existing tools?",
+    answer: "Our architecture is designed to work around existing systems of record. Whether an integration is possible depends on each provider's supported interfaces, permissions and your organisation's requirements.",
   },
   {
-    question: "Can I try it before committing?",
-    answer: "Yes. We run a guided POC where you connect your real apps and see your real data — including the Workspace, Twin, and the Twin working with your actual context.",
+    question: "Does discovering an AI capability authorize its use?",
+    answer: "No. Discovery shows what is available; use of a capability requires the appropriate permissions, policy and approval before consequential execution.",
   },
   {
-    question: "What if I need a connector you don't have?",
-    answer: "We build custom connectors. Our Spine architecture supports REST API, GraphQL, webhooks, and direct database connections. Request a connector and we'll scope it.",
+    question: "Can you guarantee a project timeline?",
+    answer: "Not before understanding the project. Scope and timing depend on the connected systems, data availability, security constraints, review process and acceptance criteria.",
   },
   {
-    question: "How does billing work?",
-    answer: "Monthly or annual billing. No hidden costs. You can upgrade or downgrade anytime. Implementation services are billed separately as one-time packages.",
-  },
-  {
-    question: "Is my data secure?",
+    question: "Where can I review your approach to security?",
     answer: (
       <span>
-        Yes. AES-256 encryption at rest, TLS 1.3 in transit, SOC 2 aligned practices — no certification is claimed — full audit trails, and non-bypassable human approval on every AI action. Learn more on our{" "}
-        <Link href="/security" className="text-[#0176D3] underline underline-offset-2 hover:text-[#0B5CAB]">Security page</Link>.
+        We describe our architecture and principles on the{" "}
+        <Link href="/security" className="text-[#225FAB] underline underline-offset-2">security page</Link>.
+        Specific controls and contractual commitments should be validated for each deployment.
       </span>
     ),
   },
@@ -106,7 +103,7 @@ export function ContactContent({
             className="mx-auto mt-5 max-w-2xl text-[17px] leading-[1.6] text-[#444]"
           >
             Whether you want a demo, have a question, or want to explore how
-            SpineWorkspace fits your apps — we&apos;re here.
+            Spine Workspace fits your existing environment — we&apos;re here.
           </motion.p>
         </div>
       </section>
@@ -118,7 +115,7 @@ export function ContactContent({
               {
                 icon: MessageSquare,
                 title: "Book a demo",
-                desc: "See SpineWorkspace in action with a live walkthrough tailored to your use case.",
+                desc: "Discuss Spine Workspace and arrange a relevant product walkthrough.",
                 cta: "Book a demo",
                 href: "/contact?intent=demo",
                 external: false,
@@ -126,7 +123,7 @@ export function ContactContent({
               {
                 icon: Mail,
                 title: "Email us",
-                desc: "General questions, partnership inquiries, or anything else — we respond within 24 hours.",
+                desc: "General questions, architecture discussions, partnership inquiries or project scoping.",
                 cta: "Use the form",
                 href: "#contact-form",
                 external: false,
@@ -134,8 +131,8 @@ export function ContactContent({
               {
                 icon: MapPin,
                 title: "Visit us",
-                desc: "Based in India, serving teams globally. Available for in-person meetings by appointment.",
-                cta: "Get directions",
+                desc: "Based in India. Please contact us to discuss meeting options.",
+                cta: "Request a meeting",
                 href: "mailto:connect@spineworkspace.com?subject=Meeting%20Request",
                 external: true,
               },
