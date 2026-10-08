@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, Check, ChevronRight, MoveUpRight } from "lucide-react";
+import { Activity, ArrowRight, ArrowUpRight, Check, ChevronRight, Database, MoveUpRight, Network, ShieldCheck, Sparkles, UsersRound, Waypoints } from "lucide-react";
 
 const foundation = [
   { id: "01", label: "Discover", title: "See the connected environment.", description: "Understand which applications, records, tools, agents, and capabilities are available — without confusing discovery with permission." },
@@ -39,43 +39,64 @@ function SectionLabel({ children, light = false }: { children: React.ReactNode; 
 
 function ContextConstellation() {
   return (
-    <div className="relative mx-auto w-full max-w-[560px] overflow-hidden rounded-[28px] border border-white/15 bg-[#101F43] p-5 shadow-[0_38px_90px_-38px_rgba(0,0,0,0.72)] sm:p-7" aria-label="Illustrative relationship graph connecting business context to work and outcomes">
-      <div className="flex items-center justify-between gap-3 border-b border-white/10 pb-4">
-        <div className="flex items-center gap-2"><span className="h-2 w-2 rounded-full bg-[#8DE5D7] shadow-[0_0_16px_#8DE5D7]" /><span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#D7E5FF]">Business context / connected view</span></div>
-        <span className="rounded-full border border-[#93B5FF]/30 px-2.5 py-1 text-[10px] font-medium text-[#B5C9F8]">Concept illustration</span>
-      </div>
-      <svg viewBox="0 0 520 390" className="mt-3 h-auto w-full" role="img" aria-label="Sources connect to shared business context, which connects to work, governed actions and verified outcomes">
-        <defs>
-          <linearGradient id="context-lines" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stopColor="#518AFF" stopOpacity=".8"/><stop offset="100%" stopColor="#75DCCE" stopOpacity=".75"/></linearGradient>
-          <radialGradient id="context-glow"><stop stopColor="#4B84FF" stopOpacity=".27"/><stop offset="100%" stopColor="#4B84FF" stopOpacity="0"/></radialGradient>
-        </defs>
-        <circle cx="259" cy="192" r="155" fill="url(#context-glow)"/>
-        <g fill="none" stroke="url(#context-lines)" strokeWidth="1.5" strokeOpacity=".76">
-          <path d="M95 78 C148 78 172 156 255 190"/><path d="M80 190 C154 178 187 190 255 190"/><path d="M96 300 C154 305 192 225 255 190"/>
-          <path d="M255 190 C324 141 340 85 426 78"/><path d="M255 190 C327 190 360 190 436 190"/><path d="M255 190 C323 245 357 305 427 305"/>
-          <path d="M95 78 C197 6 342 4 426 78" strokeDasharray="3 8" strokeOpacity=".2"/>
-          <path d="M96 300 C200 367 325 368 427 305" strokeDasharray="3 8" strokeOpacity=".2"/>
-        </g>
-        {[
-          {x:80,y:78,title:"SYSTEMS",detail:"Source records"},
-          {x:80,y:190,title:"PEOPLE",detail:"Knowledge & goals"},
-          {x:80,y:300,title:"SIGNALS",detail:"Events & KPIs"},
-          {x:430,y:78,title:"WORK",detail:"Responsibilities"},
-          {x:440,y:190,title:"AUTHORITY",detail:"Governed actions"},
-          {x:430,y:305,title:"OUTCOMES",detail:"Verified evidence"}
-        ].map((n) => <g key={n.title}>
-          <circle cx={n.x} cy={n.y} r="5.5" fill="#95C5FF" stroke="#17325D" strokeWidth="3"/>
-          <text x={n.x < 200 ? n.x + 13 : n.x - 13} y={n.y-11} fill="#F3F7FF" fontSize="11" fontWeight="700" letterSpacing="1" textAnchor={n.x < 200 ? "start" : "end"}>{n.title}</text>
-          <text x={n.x < 200 ? n.x + 13 : n.x - 13} y={n.y+19} fill="#8DA5CF" fontSize="10" textAnchor={n.x < 200 ? "start" : "end"}>{n.detail}</text>
-        </g>)}
-        <circle cx="255" cy="190" r="62" fill="#152E63" stroke="#7EA8FF" strokeWidth="1.5"/>
-        <circle cx="255" cy="190" r="54" fill="#1C3975" stroke="#B5D1FF" strokeOpacity=".3"/>
-        <text x="255" y="182" textAnchor="middle" fill="#FFFFFF" fontSize="16" fontWeight="700">Shared</text>
-        <text x="255" y="201" textAnchor="middle" fill="#FFFFFF" fontSize="16" fontWeight="700">Context</text>
-        <text x="255" y="221" textAnchor="middle" fill="#B8D5FF" fontSize="9" letterSpacing="1.8">SPINE FABRIC</text>
-      </svg>
-      <div className="grid grid-cols-3 gap-2 border-t border-white/10 pt-4 text-center">
-        {[["Understand", "What matters"], ["Govern", "Who may act"], ["Continue", "What happened"]].map(([a,b]) => <div key={a}><p className="text-[12px] font-semibold text-white">{a}</p><p className="mt-1 text-[10px] text-[#9EB3D9]">{b}</p></div>)}
+    <div className="relative mx-auto w-full max-w-[610px] [perspective:1000px]" aria-label="Concept illustration of connected sources, shared business context and accountable human and AI work">
+      <div className="absolute -inset-8 rounded-full bg-[#4B82FF]/15 blur-[70px]" aria-hidden="true" />
+      <div className="relative overflow-hidden rounded-[28px] border border-white/20 bg-[#12254C]/90 p-4 shadow-[0_42px_100px_-30px_rgba(1,5,22,.85)] backdrop-blur-xl sm:p-6">
+        <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#9DB8F3]/15 pb-4">
+          <div className="flex items-center gap-2">
+            <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#7CA8FF]/15 text-[#BFD4FF]"><Network className="h-4 w-4" /></span>
+            <span className="text-[11px] font-bold uppercase tracking-[.16em] text-[#D6E5FF]">The connected business</span>
+          </div>
+          <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-2.5 py-1 text-[10px] font-medium text-[#AEC6F0]"><span className="h-1.5 w-1.5 rounded-full bg-[#73DBD0]"/>Concept view</span>
+        </div>
+        <div className="relative py-6 sm:py-8">
+          <div className="pointer-events-none absolute inset-0 opacity-30 [background-image:linear-gradient(to_right,#6483b41c_1px,transparent_1px),linear-gradient(to_bottom,#6483b41c_1px,transparent_1px)] [background-size:28px_28px]" aria-hidden="true" />
+          <div className="relative grid gap-3 sm:grid-cols-[1fr_auto_1.25fr] sm:items-center">
+            <div className="grid grid-cols-3 gap-2 sm:grid-cols-1">
+              {[
+                { name: "Applications", detail: "Systems of record", icon: Database },
+                { name: "People", detail: "Teams & knowledge", icon: UsersRound },
+                { name: "Signals", detail: "Goals & events", icon: Activity },
+              ].map(({name,detail,icon:Icon}) => (
+                <div key={name} className="flex min-w-0 items-center gap-2 rounded-xl border border-white/15 bg-[#193461]/90 p-2.5 sm:p-3">
+                  <span className="hidden h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#6C9EF4]/15 text-[#A8C6FF] sm:flex"><Icon className="h-4 w-4" /></span>
+                  <div className="min-w-0"><p className="text-[10px] font-semibold text-white sm:text-[12px]">{name}</p><p className="mt-1 hidden text-[10px] text-[#9DB6D9] sm:block">{detail}</p></div>
+                </div>
+              ))}
+            </div>
+            <div className="relative hidden h-[200px] w-[26px] items-center justify-center sm:flex" aria-hidden="true">
+              <div className="h-[1px] w-full bg-gradient-to-r from-[#86B6FF] to-[#79E0DA]" />
+              <div className="absolute right-0 h-2 w-2 rotate-45 border-r border-t border-[#79E0DA]" />
+            </div>
+            <div className="rounded-[20px] border border-[#96BDFF]/40 bg-gradient-to-br from-[#2A4F9E]/95 to-[#182E61]/95 p-4 shadow-[inset_0_1px_0_#ffffff20,0_16px_42px_-15px_#020e2d] sm:p-5">
+              <div className="flex items-center justify-between gap-3">
+                <span className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[.13em] text-[#A6CCFF]"><span className="h-2 w-2 rounded-full bg-[#79E0DA]" />SPINE FABRIC</span>
+                <Waypoints className="h-4 w-4 text-[#A6CCFF]" />
+              </div>
+              <p className="mt-5 text-[23px] font-semibold leading-[1.1] tracking-[-.05em] text-white sm:text-[27px]">Shared business context</p>
+              <p className="mt-3 text-[12px] leading-[1.6] text-[#C4D7FA]">A connected understanding of what matters, why it matters and what comes next.</p>
+              <div className="mt-5 flex flex-wrap gap-1.5">
+                {["Goals", "KPIs", "Decisions", "Evidence", "Work"].map(v=><span key={v} className="rounded-md border border-white/15 bg-white/10 px-2 py-1.5 text-[10px] text-[#DCEAFF]">{v}</span>)}
+              </div>
+            </div>
+          </div>
+          <div className="relative mx-auto my-5 h-7 w-px bg-gradient-to-b from-[#89B5FF] to-[#75DFD4]" aria-hidden="true" />
+          <div className="relative grid grid-cols-2 gap-3">
+            <div className="rounded-xl border border-[#A9C4FF]/25 bg-[#1A3462] p-3 sm:p-4">
+              <p className="flex items-center gap-2 text-[11px] font-semibold text-white"><UsersRound className="h-4 w-4 text-[#9FC1FF]" /> People</p>
+              <p className="mt-2 text-[11px] leading-5 text-[#AFC5E6]">Judgment · priorities · approval</p>
+            </div>
+            <div className="rounded-xl border border-[#A9C4FF]/25 bg-[#1A3462] p-3 sm:p-4">
+              <p className="flex items-center gap-2 text-[11px] font-semibold text-white"><Sparkles className="h-4 w-4 text-[#91E0D5]" /> AI counterpart</p>
+              <p className="mt-2 text-[11px] leading-5 text-[#AFC5E6]">Context gathering · preparation</p>
+            </div>
+          </div>
+          <div className="relative mt-3 flex items-center justify-between gap-3 rounded-xl border border-[#78C9BF]/25 bg-[#153C56]/85 px-3 py-3 sm:px-4">
+            <div className="flex items-center gap-2.5"><ShieldCheck className="h-4 w-4 shrink-0 text-[#85E7D9]" /><span className="text-[11px] font-medium text-[#E0F9F3]">Authority → execution → verification</span></div>
+            <ArrowRight className="h-4 w-4 shrink-0 text-[#8DE7D9]"/>
+          </div>
+        </div>
+        <div className="border-t border-white/10 pt-3 text-[10px] leading-5 text-[#9EBAE4]">Architecture illustration. Sources remain authoritative; execution requires permission.</div>
       </div>
     </div>
   );
@@ -85,33 +106,35 @@ export function InnovLabsHome() {
   return (
     <div className="overflow-hidden bg-[#F7F9FC] text-[#111B30]">
       <section className="relative isolate overflow-hidden bg-[#08152F] text-white">
-        <div className="pointer-events-none absolute -right-40 -top-64 h-[680px] w-[680px] rounded-full bg-[#204FBB]/25 blur-[95px]" />
-        <div className="pointer-events-none absolute bottom-0 left-0 h-[460px] w-[460px] rounded-full bg-[#146D8D]/15 blur-[120px]" />
-        <div className="relative mx-auto grid max-w-[1320px] items-center gap-14 px-5 pb-24 pt-24 sm:px-8 lg:grid-cols-[1fr_1fr] lg:gap-10 lg:px-12 lg:pb-32 lg:pt-32">
-          <div>
-            <div className="mb-8 inline-flex items-center gap-2.5 rounded-full border border-[#91B6FF]/25 bg-white/[0.05] px-4 py-2 text-[12px] font-medium text-[#C4D6FF]">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#8DE5D7]" /> SPINE INNOVLABS / TECHNOLOGY & AI
+        <div className="pointer-events-none absolute inset-0 opacity-45 [background-image:radial-gradient(#6F9BEA30_1px,transparent_1px)] [background-size:28px_28px] [mask-image:linear-gradient(to_right,transparent,black_60%)]" aria-hidden="true" />
+        <div className="pointer-events-none absolute -right-48 -top-56 h-[780px] w-[780px] rounded-full bg-[#3667CB]/25 blur-[110px]" aria-hidden="true" />
+        <div className="pointer-events-none absolute -bottom-64 left-[-20%] h-[600px] w-[750px] rounded-full bg-[#137B97]/15 blur-[130px]" aria-hidden="true" />
+        <div className="relative mx-auto grid max-w-[1320px] items-center gap-14 px-5 pb-20 pt-20 sm:px-8 sm:pt-24 lg:min-h-[760px] lg:grid-cols-[1.02fr_.98fr] lg:gap-10 lg:px-12 lg:pb-24 lg:pt-24">
+          <div className="relative z-10">
+            <div className="mb-7 inline-flex flex-wrap items-center gap-3 text-[11px] font-bold uppercase tracking-[.2em] text-[#B4CDFB]">
+              <span className="h-[1px] w-7 bg-[#82E1D6]" />
+              SPINE INNOVLABS
+              <span className="font-normal tracking-[.11em] text-[#8DA6CD]">/ AI & CONNECTED SYSTEMS</span>
             </div>
-            <h1 className="max-w-[720px] text-[clamp(3.4rem,6.2vw,6.5rem)] font-semibold leading-[1.02] tracking-[-0.064em]">
-              Building the intelligence behind <span className="text-[#8FB3FF]">connected business.</span>
+            <h1 className="max-w-[730px] text-[clamp(3.2rem,5.5vw,6.05rem)] font-semibold leading-[1.035] tracking-[-0.068em]">
+              Building intelligence for a <span className="relative whitespace-normal text-[#A9C9FF]">more connected business<span className="absolute -bottom-2 left-0 h-[3px] w-[70%] bg-gradient-to-r from-[#77D8D2] to-transparent" aria-hidden="true" /></span><span className="text-white">.</span>
             </h1>
-            <p className="mt-8 max-w-[585px] text-[18px] leading-[1.8] text-[#C4D0E6]">
-              Business runs across people, applications, decisions, and AI. We build the contextual technology that helps them understand what matters, collaborate with confidence, and move work forward.
+            <p className="mt-9 max-w-[570px] text-[clamp(1rem,1.35vw,1.15rem)] leading-[1.85] text-[#C4D3ED]">
+              When information is scattered, people and AI lose the full picture. Spine InnovLabs builds the technology that turns disconnected systems, knowledge and work into shared business context.
             </p>
-            <div className="mt-10 flex flex-wrap items-center gap-3">
-              <Link href="https://spineworkspace.com" className="group inline-flex min-h-12 items-center gap-3 rounded-full bg-[#9CC2FF] px-6 text-[14px] font-semibold text-[#071A37] transition hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">
-                Explore Spine Workspace <ArrowUpRight className="h-4 w-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            <div className="mt-9 flex flex-wrap items-center gap-3">
+              <Link href="https://spineworkspace.com" className="group inline-flex min-h-12 items-center gap-3 rounded-full bg-[#A5C7FF] px-6 text-[14px] font-semibold text-[#0C2350] transition-colors hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">
+                Explore Spine Workspace <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </Link>
-              <Link href="#what-we-build" className="inline-flex min-h-12 items-center gap-2 rounded-full border border-white/30 px-6 text-[14px] font-semibold text-white transition hover:border-white hover:bg-white/10">Discover our technology <ArrowRight className="h-4 w-4" /></Link>
+              <Link href="#what-we-build" className="inline-flex min-h-12 items-center gap-2 rounded-full border border-[#B4CDFA]/40 bg-white/[.04] px-6 text-[14px] font-semibold text-white transition-colors hover:bg-white/10">
+                What we build <ArrowRight className="h-4 w-4" />
+              </Link>
             </div>
-            <p className="mt-10 text-[11px] font-medium uppercase tracking-[0.22em] text-[#7899C9]">Connected systems. Shared context. Governed intelligence.</p>
+            <div className="mt-12 grid max-w-[590px] grid-cols-3 gap-4 border-t border-white/15 pt-6">
+              {[["Systems", "Connected"],["Context", "Shared"],["Actions", "Governed"]].map(([a,b])=><div key={a}><p className="text-[11px] font-semibold uppercase tracking-[.16em] text-[#8FADDB]">{a}</p><p className="mt-1.5 text-[15px] font-medium text-[#F0F6FF]">{b}</p></div>)}
+            </div>
           </div>
           <ContextConstellation />
-        </div>
-        <div className="relative mx-auto grid max-w-[1320px] gap-5 border-t border-white/10 px-5 py-7 text-[12px] font-medium text-[#99AFD2] sm:grid-cols-3 sm:px-8 lg:px-12">
-          <span><span className="mr-2 text-[#8DE5D7]">01 /</span> Enterprise integration perspective</span>
-          <span><span className="mr-2 text-[#8DE5D7]">02 /</span> AI with operational context</span>
-          <span><span className="mr-2 text-[#8DE5D7]">03 /</span> Governance designed into the flow</span>
         </div>
       </section>
 
