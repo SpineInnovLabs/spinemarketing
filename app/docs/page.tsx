@@ -3,8 +3,8 @@ import { RedirectPage } from "@/components/redirect-page";
 import { DOCS_URL } from "@/lib/navigation";
 
 export const metadata: Metadata = {
-  title: "Documentation | SpineWorkspace",
-  description: "SpineWorkspace documentation.",
+  title: "Documentation | Spine InnovLabs",
+  description: "Spine Workspace documentation.",
 };
 
 export default function DocsPage() {
