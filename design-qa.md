@@ -35,6 +35,7 @@ The imagery is labelled as conceptual. It is not presented as actual product UI,
 | Product | Local feature navigation, six features, workflow, technology links and internal legacy alias work. The screenshot-style renewal mockup has been replaced by original product imagery. |
 | Contact | Demo intent preserved; the email fallback prepares a draft and explicitly says the website has not submitted it. No email or external customer action was sent. |
 | Palette defects | Visual review caught white secondary CTA text on light backgrounds and dark principle cards with dark headings. Both were corrected. A targeted computed contrast probe across all eight pages using the converted reference surfaces found no remaining severe contrast defects below 2:1; this is not a full accessibility certification. |
+| Visitor appearance preferences | The corporate site consistently uses the approved light design system. The previous automatic dark-mode bootstrap was removed after a browser probe showed pale headings on pale-blue surfaces under a dark OS preference. All 12 browser checks passed across the homepage, product, company and solutions pages with light OS, dark OS and previously stored dark preferences. |
 
 Browser captures wait for fonts and images in the visible viewport. Offscreen lazy images are tested when their section is visited. A header capture stabilizes Chromium's fixed-header paint before screenshots. Screenshots are unedited.
 
@@ -45,9 +46,10 @@ Browser captures wait for fonts and images in the visible viewport. Offscreen la
 - [Product detail, desktop](docs/design-review/product-desktop.png)
 - [Full solution menu](docs/design-review/solutions-menu-desktop.png)
 - [Three viewport browser results](docs/design-review/browser-results.json)
+- [Visitor appearance preference results](docs/design-review/appearance-results.json)
 
 The review package additionally contains company, Fabric, solution detail, architecture, directory and contact captures at the tested widths, plus build and HTTP results.
 
 ## Publication status
 
-GitHub publication and production verification are the remaining release steps at the time this report was written. Production browser verification is limited by the execution environment's proxy-certificate trust; no TLS verification was disabled. Live HTTP verification is recorded separately after deployment.
+Release status and live HTTP verification are tracked in [GitHub pull request 15](https://github.com/SpineInnovLabs/spinemarketing/pull/15). This report covers implementation verification. Production browser verification is limited by the execution environment's proxy-certificate trust; no TLS verification was disabled.

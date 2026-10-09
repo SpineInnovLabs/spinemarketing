@@ -4,8 +4,6 @@ import { Inter } from "next/font/google"
 import "./globals.css"
 
 import { FirebaseAnalytics } from "@/components/firebase-analytics"
-import { AppearanceSync } from "@/components/appearance-sync"
-import { APPEARANCE_BOOT_SCRIPT } from "@/lib/appearance"
 import { absoluteUrl, publicSiteUrl } from "@/lib/site-url"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
@@ -48,9 +46,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" data-scroll-behavior="smooth" suppressHydrationWarning>
+    <html lang="en" data-scroll-behavior="smooth" data-theme="light" data-appearance="light">
       <head>
-        <script dangerouslySetInnerHTML={{ __html: APPEARANCE_BOOT_SCRIPT }} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -78,7 +75,6 @@ export default function RootLayout({
         <a href="#main" className="skip-link">
           Skip to main content
         </a>
-        <AppearanceSync />
         {children}
         <FirebaseAnalytics />
       </body>
