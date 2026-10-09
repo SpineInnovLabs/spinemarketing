@@ -4,6 +4,7 @@
   "name": "spineinnovlabs-marketing",
   "main": "worker/index.ts",
   "compatibility_date": "2026-10-03",
+  "previews": {},
   "observability": {
     "enabled": true,
     "traces": {
