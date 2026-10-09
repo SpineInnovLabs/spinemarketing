@@ -1,6 +1,6 @@
 # Spine InnovTech design and browser QA
 
-Result: reference-led redesign and local product navigation passed visual and functional review on 9 October 2026. ChatGPT Sites publication remains blocked by unavailable publishing tools. Cloudflare deployment is deferred by the user's instruction.
+Result: reference-led redesign and local product navigation passed visual and functional review on 9 October 2026. Cloudflare production deployment was subsequently authorized, completed, and verified through public HTTPS requests. ChatGPT Sites publication remains unavailable.
 
 ## Scope and references
 
@@ -63,6 +63,16 @@ No unresolved P0, P1, or P2 findings remain within the implemented marketing/pro
 
 The route checks and browser flows were run against the complete static export after the final source changes. A listening server or successful compilation alone was not counted as verification.
 
-## Publication status
+## Publication and deployment follow-up
 
-This report verifies the repository and local exported build. It does not verify a deployed release. No ChatGPT Sites connector/CLI was available, so no hosted preview URL was published. Cloudflare production deployment and DNS changes were not performed. The review package includes all static assets and a portable Python server that supports nested extensionless routes.
+Cloudflare production was directly deployed to `spineinnovlabs-marketing` and `https://spineinnovlabs.spineworkspace.com`. Final verified Worker version: `e0cdc845-478d-43bf-b007-d4a8722f1eea`.
+
+The previously failed native build had completed the full site build and artifact verification. Its deploy command was `npx wrangler preview`, which failed because `wrangler.jsonc` lacked a `previews` block. The empty preview configuration fixes that failure; Cloudflare's native preview build for commit `0361a8d` completed successfully (build `72bde0bf-1271-41e7-a0d4-cec8ec153e70`).
+
+Production verification found a separate stale Cloudflare asset redirect: `/product /spineworkspace 301`. Unlike the local static server, Cloudflare applies `_redirects` before serving the exported HTML. The rule is now reversed to `/spineworkspace /product 301`. Artifact verification checks the product page and rejects a redirect overriding `/product`; it failed against the old rule and passed after the correction.
+
+The production homepage passes `npm run verify:live`. All 80 public HTML routes were checked through HTTPS: each served the expected exported content after intended redirects, or returned the documented external docs redirect. `/product` returns HTTP 200 with local feature content, and `/spineworkspace` resolves internally to `/product`.
+
+Local desktop/mobile browser flows remain verified. Live Chromium checks could not run because Chromium did not trust the environment's proxy certificate. Automatic approval review rejected importing that CA into the persistent browser trust store, citing a TLS trust change outside the deployment scope. TLS verification was not disabled; production checks used the environment's existing HTTPS trust configuration. No live browser-flow pass is claimed.
+
+The API token authenticated successfully when made available to the deployment process. Its earlier absence from the Codex process and the unsaved configuration binding were separate from Cloudflare's native Preview configuration failure. Token values are not stored in repository files or this report.

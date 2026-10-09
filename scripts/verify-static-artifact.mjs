@@ -5,6 +5,22 @@
 import { readFileSync, statSync } from "node:fs";
 const text = readFileSync("out/index.html", "utf8");
 const sitemap = readFileSync("out/sitemap.xml", "utf8");
+const product = readFileSync("out/product.html", "utf8");
+const redirects = readFileSync("out/_redirects", "utf8")
+  .split(/\r?\n/)
+  .map(line => line.trim())
+  .filter(line => line && !line.startsWith("#"))
+  .map(line => line.split(/\s+/));
+if (!product.includes("Explore the features") || !product.includes("Governed next steps")) {
+  throw new Error("Static export missing local Spine Workspace product features.");
+}
+if (redirects.some(([source]) => source.replace(/\/$/, "") === "/product")) {
+  throw new Error("Cloudflare asset redirects must not override the local /product page.");
+}
+const productAlias = redirects.find(([source]) => source === "/spineworkspace");
+if (!productAlias || productAlias[1] !== "/product" || productAlias[2] !== "301") {
+  throw new Error("Legacy /spineworkspace entry must redirect internally to /product.");
+}
 if (!text.includes("Move business") || !text.includes("Spine InnovTech")) {
   throw new Error("Static export missing approved corporate hero/company identity.");
 }
@@ -17,4 +33,4 @@ if (!sitemap.includes("spineinnovlabs.spineworkspace.com")) {
 if (statSync("out/index.html").size < 1024) {
   throw new Error("Suspiciously small production HTML.");
 }
-console.log("Corporate HTML and sitemap artifact verified.");
+console.log("Corporate HTML, product routing, and sitemap artifact verified.");
