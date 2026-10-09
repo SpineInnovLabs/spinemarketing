@@ -1843,10 +1843,21 @@ html[data-theme="dark"] .arvio-badge {
   }
 }
 .innovtech-product {
-  background-image: url("/images/workspace-ribbons.png");
+  background-color: #f0f8ff;
   background-position: center right;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.innovtech-product-illustration {
+  margin: 0;
+  min-width: 0;
+}
+.innovtech-product-illustration figcaption {
+  margin-top: 14px;
+  color: #4e607a;
+  font-size: 12px;
+  line-height: 1.8;
 }
 .innovtech-product > *,
 .innovtech-renewal {

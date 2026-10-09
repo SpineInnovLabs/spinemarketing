@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowRight,
   Database,
@@ -11,7 +12,6 @@ import {
   Users,
   Workflow,
 } from "lucide-react";
-import { RenewalReview } from "./innovlabs-home";
 
 const features = [
   {
@@ -95,11 +95,12 @@ export function SpineWorkspaceDetails() {
             SPINE WORKSPACE BY SPINE INNOVTECH
           </p>
           <h1 id="product-title">
-            Bring people, AI, and business context into the same workspace.
+            One workspace to understand the business and share the work.
           </h1>
           <p className="innovtech-hero-description">
-            Connect the tools you already use, so humans and AI can understand
-            what matters, coordinate work, and move business goals forward.
+            Bring relevant work, connected information, and governed AI
+            assistance together. Different roles can work from the same business
+            context, with the source evidence and their authority kept clear.
           </p>
           <div className="innovtech-actions">
             <Link href="/contact?intent=demo" className="innovtech-button">
@@ -116,7 +117,19 @@ export function SpineWorkspaceDetails() {
             Humans govern the business. AI helps the business work.
           </p>
         </div>
-        <RenewalReview />
+        <figure className="innovtech-product-illustration">
+          <Image
+            src="/images/product-shared-context.png"
+            alt="Original concept illustration of account, finance, and operations teams working from a shared business context with evidence beside a reviewable decision."
+            width={1387}
+            height={1134}
+            priority
+            className="h-auto w-full rounded-2xl"
+          />
+          <figcaption>
+            Concept illustration of shared work across roles.
+          </figcaption>
+        </figure>
       </section>
       <section id="features" className="innovtech-section">
         <p className="innovtech-eyebrow">THE WORKSPACE, IN DETAIL</p>

@@ -75,7 +75,13 @@ const contact = source("app/contact/content.tsx");
 const form = source("components/lead-form.tsx");
 
 check(home.includes("InnovLabsHome"), "corporate homepage component not wired");
-check(banner.includes("Move business"), "approved corporate banner absent");
+check(banner.includes("Building the intelligence behind"), "company-led corporate banner absent");
+check(source("components/header.tsx").includes("headerNavigation"), "header must render the full corporate navigation");
+for (const label of ["Company", "Technology", "Solutions", "Insights", "Developers"]) {
+  check(source("lib/navigation.ts").includes(`label: "${label}"`), `missing corporate navigation category: ${label}`);
+}
+check(source("lib/solution-nav.ts").includes("marketingPathForSolution") && !source("lib/solution-nav.ts").includes("workspaceUrl"), "solution navigation must point to local marketing detail pages");
+check(footer.includes('href="/site-map"'), "footer must expose the complete website directory");
 check(footer.includes("Spine InnovTech"), "corporate footer absent");
 check(!meta.includes('canonical: "/"'), "site-wide root canonical incorrectly points all routes to /");
 check(meta.includes('template: "%s"'), "metadata template can duplicate corporate suffixes");

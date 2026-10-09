@@ -20,7 +20,7 @@
   ],
   "runtimeWorkerEnvironment": "prod",
   "managedAuthentication": "Cloudflare Workers Builds generates an API token upon Git connection; do not store expiring Wrangler OAuth tokens or CircleCI credentials",
-  "productionSmokeTest": "Worker's live corporate homepage must contain 'Move business' and 'Spine InnovTech'",
+  "productionSmokeTest": "Worker's live corporate homepage must contain 'Building the intelligence behind' and 'Spine InnovTech'",
   "releaseTrigger": {
     "kind": "manual-redeploy-request",
     "requestedOn": "2026-10-09",

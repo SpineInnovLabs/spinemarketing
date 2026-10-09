@@ -51,7 +51,7 @@ export const pages = {
       headline: "Work from the full business story — not fragments.",
       subhead:
         "Spine Workspace brings authorized truth and the context for this task into one governed workspace. People and AI prepare, review, and move work forward. Your systems remain authoritative. Your people remain accountable.",
-      primaryCta: { label: "See a workflow", href: "/#renewal-workflow" },
+      primaryCta: { label: "See a workflow", href: "/product#how-it-works" },
       secondaryCta: { label: "Book a tailored demo", href: "/contact?intent=demo" },
     },
     sections: [
@@ -439,7 +439,7 @@ export const pages = {
       badge: "Proof",
       headline: "What the product actually does.",
       subhead: "Demonstrations show how the product operates. They are not claims of customer outcomes or certifications.",
-      primaryCta: { label: "See a workflow", href: "/#renewal-workflow" },
+      primaryCta: { label: "See a workflow", href: "/product#how-it-works" },
       secondaryCta: { label: "Book a tailored demo", href: "/contact?intent=demo" },
     },
     sections: [],
@@ -474,7 +474,7 @@ export const pages = {
       subhead:
         "Spine InnovTech builds Spine Workspace. Spine Fabric, Workbench, Twin, Runtime and Marketplace describe parts of one governed business-context workspace; supporting agents and tools are capabilities, not separately marketed products. The systems teams already depend on remain authoritative.",
       primaryCta: { label: "Speak with the team", href: "/contact" },
-      secondaryCta: { label: "See a workflow", href: "/#renewal-workflow" },
+      secondaryCta: { label: "See a workflow", href: "/product#how-it-works" },
     },
     sections: [
       {

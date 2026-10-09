@@ -1,498 +1,584 @@
-"use client";
-
-import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import {
-  ArrowRight,
-  Building2,
-  CalendarDays,
-  Check,
-  CheckCircle2,
-  ChevronDown,
-  Database,
-  FileText,
-  Flag,
-  Headphones,
-  MessageCircle,
-  MoreHorizontal,
-  MousePointer2,
-  ShieldCheck,
-  Sparkles,
-  Target,
-  Users,
-  X,
-} from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 
-const sources = [
+const approach = [
+  [
+    "Connect the environment.",
+    "Discover authorized applications, data, tools, and capabilities while keeping source systems in control of their records.",
+  ],
+  [
+    "Understand the business.",
+    "Relate goals, customers, people, decisions, events, work, evidence, and outcomes into usable business context.",
+  ],
+  [
+    "Support human and AI work.",
+    "Give each participant the relevant context for their role, responsibilities, and authority.",
+  ],
+  [
+    "Govern consequential actions.",
+    "Separate what an AI can propose from what a person or policy has authorized it to do.",
+  ],
+  [
+    "Verify and continue.",
+    "Observe execution, reconcile outcomes with source evidence, and carry the verified state forward.",
+  ],
+];
+const technology = [
   {
-    title: "Account updates",
-    detail: "Latest activity and key changes",
-    icon: FileText,
-    evidence:
-      "The account team has gathered current customer context and the latest relationship updates for this example review.",
+    name: "Spine Fabric",
+    label: "Shared business context",
+    body: "A governed context layer relating evidence, entities, goals, signals, decisions, and work across tools.",
+    href: "/platform/spine-fabric",
   },
   {
-    title: "Support history",
-    detail: "Open and resolved requests",
-    icon: Headphones,
-    evidence:
-      "Review recent support conversations alongside open questions before deciding the next customer action.",
+    name: "Spine Workbench",
+    label: "The human work surface",
+    body: "A workspace that brings the right view and capabilities to the person doing the work.",
+    href: "/product/the-adaptive-workspace",
   },
   {
-    title: "Meeting notes",
-    detail: "Recent discussions and action items",
-    icon: CalendarDays,
-    evidence:
-      "Customer commitments and agreed follow-ups stay beside the account evidence so the team can review them together.",
+    name: "Spine Twin",
+    label: "Context-aware AI",
+    body: "An AI counterpart that helps assemble context, interpret signals, prepare work, and propose actions within defined boundaries.",
+    href: "/twin",
+  },
+  {
+    name: "Spine Runtime",
+    label: "Governed execution",
+    body: "The controls for routing authorized actions, observing effects, reconciling results, and preserving an audit trail.",
+    href: "/governance",
+  },
+  {
+    name: "Spine Marketplace",
+    label: "Connected capabilities",
+    body: "A path to approved connectors, MCP servers, tools, and reusable capabilities.",
+    href: "/integrations",
   },
 ];
-
-function DemoButtons({ arrow = false }: { arrow?: boolean }) {
+const roles = [
+  [
+    "Customer Success",
+    "Understand account health, renewal signals, commitments, stakeholders, and next steps in context.",
+    "/solutions/customer-success",
+  ],
+  [
+    "Sales & Revenue Operations",
+    "Connect pipeline, customer conversations, commercial commitments, and delivery evidence.",
+    "/solutions/revops",
+  ],
+  [
+    "Finance",
+    "See how financial events relate to work, ownership, dependencies, and business decisions.",
+    "/solutions/finance",
+  ],
+  [
+    "Operations",
+    "Coordinate dependencies, approvals, and handoffs across the systems teams already use.",
+    "/solutions/operations",
+  ],
+  [
+    "Product & Engineering",
+    "Connect customer needs, incidents, roadmap work, and technical evidence.",
+    "/solutions/product-engineering",
+  ],
+  [
+    "Leadership",
+    "Examine progress toward goals with the underlying decisions and evidence alongside the metrics.",
+    "/solutions/founders",
+  ],
+];
+const principles = [
+  [
+    "Context over fragments.",
+    "Relationships between facts matter as much as the facts themselves.",
+  ],
+  [
+    "Evidence over assertion.",
+    "Know the source of a conclusion and whether the evidence is current.",
+  ],
+  [
+    "Authority before action.",
+    "Available technology does not equal permission to use it.",
+  ],
+  [
+    "People and AI together.",
+    "Humans and AI should operate on shared goals and governed context.",
+  ],
+  [
+    "Continuity by design.",
+    "Work should remain understandable as people, tools, and AI models change.",
+  ],
+];
+const container = "mx-auto max-w-[1320px] px-5 sm:px-8 lg:px-12";
+const heading =
+  "text-[clamp(2rem,4vw,3.8rem)] font-semibold leading-[1.12] tracking-[-.045em]";
+const body = "text-[17px] leading-[1.85] text-[#4E607A]";
+const button =
+  "inline-flex min-h-12 items-center gap-3 rounded-xl bg-[#006FE8] px-6 text-[14px] font-semibold text-white transition-colors hover:bg-[#0055B8] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#006FE8]";
+const secondary =
+  "inline-flex min-h-12 items-center gap-3 rounded-xl border border-[#006FE8] bg-white px-6 text-[14px] font-semibold text-[#082B5E] transition-colors hover:bg-[#EBF7FF] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#006FE8]";
+function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <div className="innovtech-actions">
-      <Link href="/contact?intent=demo" className="innovtech-button">
-        Book a demo
-      </Link>
-      <Link
-        href="#how-it-works"
-        className="innovtech-button innovtech-button-secondary"
-      >
-        See how it works {arrow && <ArrowRight size={19} />}
-      </Link>
-    </div>
+    <p className="text-[11px] font-semibold uppercase tracking-[.2em] text-[#006FE8]">
+      {children}
+    </p>
   );
 }
-
-function WorkspaceSummary({ onReview }: { onReview: () => void }) {
+function TextLink({
+  href,
+  children,
+}: {
+  href: string;
+  children: React.ReactNode;
+}) {
   return (
-    <div className="innovtech-summary">
-      <div className="innovtech-summary-header">
-        <span className="innovtech-icon-circle">
-          <Target size={27} />
-        </span>
-        <div>
-          <p className="innovtech-small-label">Example workspace</p>
-          <h2>Customer onboarding</h2>
-        </div>
-        <button className="innovtech-status" onClick={onReview}>
-          <CheckCircle2 size={18} />
-          Ready for your review
-        </button>
-      </div>
-      <div className="innovtech-summary-body">
-        <div className="innovtech-summary-goal">
-          <Flag size={21} />
-          <div>
-            <p className="innovtech-small-label">Goal</p>
-            <strong>Prepare the next step</strong>
-          </div>
-        </div>
-        <div className="innovtech-summary-evidence">
-          <p className="innovtech-small-label">Evidence</p>
-          <div className="innovtech-evidence-items">
-            {[
-              {
-                icon: FileText,
-                title: "Customer context",
-                detail: "3 sources",
-              },
-              {
-                icon: MessageCircle,
-                title: "Recent decisions",
-                detail: "2 mentions",
-              },
-              {
-                icon: CheckCircle2,
-                title: "Next action",
-                detail: "1 suggestion",
-              },
-            ].map(({ icon: Icon, title, detail }) => (
-              <button key={title} onClick={onReview}>
-                <span className="innovtech-icon-circle">
-                  <Icon size={20} />
-                </span>
-                <span>
-                  <strong>{title}</strong>
-                  <small>{detail}</small>
-                </span>
-              </button>
-            ))}
-          </div>
-        </div>
-        <div className="innovtech-collaborators">
-          <span>
-            <MousePointer2 size={30} fill="currentColor" />
-            <b>You</b>
-          </span>
-          <span>
-            <MousePointer2 size={30} fill="currentColor" />
-            <b>Twin</b>
-          </span>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-export function RenewalReview() {
-  const [expanded, setExpanded] = useState<string | null>(null);
-  const [reviewing, setReviewing] = useState(false);
-  return (
-    <div
-      className="innovtech-renewal"
-      aria-label="Interactive example renewal review"
+    <Link
+      href={href}
+      className="mt-7 inline-flex items-center gap-2 rounded-sm text-sm font-semibold text-[#006FE8] hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#006FE8]"
     >
-      <div className="innovtech-renewal-title">
-        <div>
-          <h3>Renewal review</h3>
-          <p>Example workspace</p>
-        </div>
-        <MoreHorizontal size={25} aria-hidden="true" />
-      </div>
-      <div className="innovtech-renewal-content">
-        <div className="innovtech-work-goal">
-          <span className="innovtech-icon-circle">
-            <Target size={35} />
-          </span>
-          <div>
-            <p>Work goal</p>
-            <strong>Prepare the customer review</strong>
-          </div>
-        </div>
-        <div className="innovtech-review-people">
-          <div>
-            <Image
-              src="/images/maya-account-lead.png"
-              alt="Maya, example account lead"
-              width={40}
-              height={40}
-            />
-            <span>
-              <b>Maya</b> · Account lead
-            </span>
-          </div>
-          <div>
-            <span className="innovtech-icon-circle">
-              <Sparkles size={23} />
-            </span>
-            <span>
-              <b>Twin</b> · Context ready
-            </span>
-          </div>
-        </div>
-        <div className="innovtech-account">
-          <div className="innovtech-account-heading">
-            <span className="innovtech-icon-circle">
-              <Building2 size={27} />
-            </span>
-            <div>
-              <h4>Northstar Labs</h4>
-              <p>Customer · Renewal in 45 days</p>
-            </div>
-          </div>
-          <div className="innovtech-source-list">
-            {sources.map(({ title, detail, icon: Icon, evidence }) => (
-              <div key={title}>
-                <button
-                  className="innovtech-source"
-                  onClick={() => setExpanded(expanded === title ? null : title)}
-                  aria-expanded={expanded === title}
-                >
-                  <span className="innovtech-icon-circle">
-                    <Icon size={23} />
-                  </span>
-                  <span>
-                    <strong>{title}</strong>
-                    <small>{detail}</small>
-                  </span>
-                  <ChevronDown
-                    size={17}
-                    className={expanded === title ? "rotate-180" : ""}
-                  />
-                </button>
-                {expanded === title && (
-                  <p className="innovtech-source-detail">{evidence}</p>
-                )}
-              </div>
-            ))}
-          </div>
-          <div className="innovtech-twin-note">
-            <span className="innovtech-icon-circle">
-              <Sparkles size={25} />
-            </span>
-            <div>
-              <strong>
-                I brought the latest updates together for your review.
-              </strong>
-              <p>
-                Sources: account activity, support history, and recent meetings.
-              </p>
-            </div>
-          </div>
-        </div>
-        <button
-          className="innovtech-review-action"
-          onClick={() => setReviewing(!reviewing)}
-          aria-expanded={reviewing}
-        >
-          <span className="innovtech-icon-circle innovtech-icon-navy">
-            <Check size={23} />
-          </span>
-          <span>
-            <strong>Review next step</strong>
-            <small>
-              Identify risks, confirm plan, and share with customer.
-            </small>
-          </span>
-          <span className="innovtech-status">
-            {reviewing ? "Review in progress" : "Awaiting your decision"}
-          </span>
-        </button>
-        {reviewing && (
-          <div className="innovtech-review-detail" role="status">
-            <strong>Your judgment comes first.</strong>
-            <p>
-              Review the source evidence above, resolve open questions, and
-              confirm the next step with your team. This example does not send
-              messages or take action on customer records.
-            </p>
-          </div>
-        )}
-      </div>
-    </div>
+      {children}
+      <ArrowRight className="h-4 w-4" aria-hidden />
+    </Link>
   );
 }
 
 export function InnovLabsHome() {
-  const [summaryOpen, setSummaryOpen] = useState(false);
-  const dialogRef = useRef<HTMLElement>(null);
-  useEffect(() => {
-    if (!summaryOpen) return;
-    const previousFocus = document.activeElement as HTMLElement | null;
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    const controls =
-      dialogRef.current?.querySelectorAll<HTMLElement>("button, a[href]");
-    controls?.[0]?.focus();
-    const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setSummaryOpen(false);
-      if (event.key !== "Tab" || !controls?.length) return;
-      const first = controls[0];
-      const last = controls[controls.length - 1];
-      if (event.shiftKey && document.activeElement === first) {
-        event.preventDefault();
-        last.focus();
-      } else if (!event.shiftKey && document.activeElement === last) {
-        event.preventDefault();
-        first.focus();
-      }
-    };
-    document.addEventListener("keydown", onKeyDown);
-    return () => {
-      document.removeEventListener("keydown", onKeyDown);
-      document.body.style.overflow = previousOverflow;
-      previousFocus?.focus();
-    };
-  }, [summaryOpen]);
   return (
-    <div className="innovtech-page">
-      <section className="innovtech-hero" aria-labelledby="hero-title">
-        <div className="innovtech-hero-main">
-          <div className="innovtech-hero-copy">
-            <p className="innovtech-eyebrow">THE BUSINESS-CONTEXT WORKSPACE</p>
-            <h1 id="hero-title">
-              Move business
-              <br />
-              goals forward.
-              <br />
-              Together.
+    <div className="bg-white text-[#082B5E]">
+      <section aria-labelledby="company-title" className="bg-[#F0F8FF]">
+        <div
+          className={`${container} grid items-center gap-12 py-16 sm:py-20 lg:min-h-[740px] lg:grid-cols-[1.04fr_.96fr] lg:gap-10`}
+        >
+          <div>
+            <SectionLabel>
+              SPINE INNOVTECH · TECHNOLOGY & AI INNOVATION
+            </SectionLabel>
+            <h1
+              id="company-title"
+              className="mt-6 max-w-[700px] text-[clamp(2.65rem,4.8vw,4.8rem)] font-semibold leading-[1.08] tracking-[-.05em]"
+            >
+              Building the intelligence behind{" "}
+              <span className="text-[#006FE8]">connected business.</span>
             </h1>
-            <p className="innovtech-hero-description">
-              People and their Twin work from the same business context—across
-              the tools your team already uses.
+            <p className={`${body} mt-7 max-w-[590px]`}>
+              Business already runs across people, applications, decisions, and
+              AI. The challenge is not a lack of tools. It is the missing
+              context between them.
             </p>
-            <DemoButtons />
-            <p className="innovtech-governance">
-              Humans govern the business. AI helps the business work.
+            <p className={`${body} mt-4 max-w-[590px]`}>
+              Spine InnovTech builds the technology that connects those
+              pieces—so people and AI can understand what matters, coordinate
+              work, and act with clarity and accountability.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link href="/product" className={button}>
+                Discover Spine Workspace{" "}
+                <ArrowRight className="h-4 w-4" aria-hidden />
+              </Link>
+              <Link href="/platform" className={secondary}>
+                Explore our technology
+              </Link>
+            </div>
+            <p className="mt-8 border-t border-[#CBE5FA] pt-5 text-[13px] font-medium text-[#4E607A]">
+              Connected systems. Shared context. Governed intelligence.
             </p>
           </div>
-          <div className="innovtech-hero-art">
+          <figure className="mx-auto w-full max-w-[640px]">
             <Image
-              src="/images/connected-business-context.png"
-              alt="Customers, goals, work, decisions, evidence and outcomes connected through a shared business context"
-              width={1000}
-              height={800}
+              src="/images/corporate-connected-business.png"
+              alt="Original concept illustration: source records feed shared business context; a person reviews it with AI assistance, authorizes work, and verifies the outcome."
+              width={1315}
+              height={1196}
               priority
+              className="h-auto w-full rounded-2xl"
             />
-          </div>
+            <figcaption className="mt-4 text-[12px] leading-6 text-[#4E607A]">
+              Concept illustration. Source systems remain authoritative;
+              consequential work requires authorization and verification.
+            </figcaption>
+          </figure>
         </div>
-        <WorkspaceSummary onReview={() => setSummaryOpen(true)} />
       </section>
 
       <section
-        className="innovtech-product"
-        id="product"
-        aria-labelledby="product-heading"
+        id="why-we-exist"
+        className={`${container} grid gap-10 py-20 lg:grid-cols-[.6fr_1.4fr] lg:gap-20 lg:py-28`}
       >
-        <div className="innovtech-product-copy">
-          <p className="innovtech-eyebrow">
-            SPINE WORKSPACE BY SPINE INNOVTECH
-          </p>
-          <h2 id="product-heading">
-            Bring people, AI, and business context into the same workspace.
+        <div>
+          <SectionLabel>WHY WE EXIST</SectionLabel>
+          <TextLink href="/about">Read our story</TextLink>
+        </div>
+        <div>
+          <h2 className={heading}>
+            Businesses have more software than shared understanding.
           </h2>
-          <p className="innovtech-hero-description">
-            Connect the tools you already use, so humans and AI can understand
-            what matters, coordinate work, and move business goals forward.
+          <p className={`${body} mt-7`}>
+            A customer relationship lives in CRM. A problem appears in support.
+            A financial change sits in billing. The decision is buried in a
+            meeting, a message, or someone's memory.
           </p>
-          <DemoButtons arrow />
-          <Link
-            href="/product"
-            className="innovtech-text-link innovtech-product-details-link"
-          >
-            Explore product details and features <ArrowRight size={18} />
-          </Link>
-          <p className="innovtech-governance">
-            Humans govern the business. AI helps the business work.
+          <p className={`${body} mt-4`}>
+            Each system may be accurate on its own. Yet people still spend time
+            reconstructing the whole picture, and AI often starts with an
+            incomplete one.
+          </p>
+          <p className={`${body} mt-4`}>
+            We believe the next generation of business software should solve
+            that problem—not by replacing every application, but by making
+            business context usable wherever work happens.
           </p>
         </div>
-        <RenewalReview />
       </section>
 
-      <section id="how-it-works" className="innovtech-section">
-        <p className="innovtech-eyebrow">SHARED CONTEXT. COORDINATED WORK.</p>
-        <h2>
-          A more connected business.
-          <br />
-          One thoughtful next step at a time.
-        </h2>
-        <p className="innovtech-section-intro">
-          Your systems hold the information. Spine brings the relevant context
-          together so people and AI can work from the same understanding.
-        </p>
-        <div className="innovtech-feature-grid">
-          {[
-            {
-              icon: Database,
-              title: "Connect the context",
-              body: "Bring customer records, work, conversations, and goals into view alongside their source evidence.",
-            },
-            {
-              icon: Users,
-              title: "Work together",
-              body: "People and their Twin gather understanding, prepare useful next steps, and keep decisions connected to the work.",
-            },
-            {
-              icon: ShieldCheck,
-              title: "Keep people in control",
-              body: "Review the evidence, make the decision, and authorize consequential actions. Access is always distinct from permission.",
-            },
-          ].map(({ icon: Icon, title, body }, i) => (
-            <article key={title}>
-              <span className="innovtech-icon-circle">
-                <Icon size={26} />
-              </span>
-              <p className="innovtech-step-number">0{i + 1}</p>
-              <h3>{title}</h3>
-              <p>{body}</p>
+      <section id="how-it-works" className="bg-[#EBF7FF] py-20 lg:py-28">
+        <div className={container}>
+          <SectionLabel>OUR APPROACH</SectionLabel>
+          <h2 className={`${heading} mt-5 max-w-[820px]`}>
+            From disconnected information to coordinated work.
+          </h2>
+          <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-5">
+            {approach.map(([title, description], index) => (
+              <article
+                key={title}
+                className="rounded-2xl border border-[#CBE5FA] bg-white p-6"
+              >
+                <p className="text-xs font-medium text-[#006FE8]">
+                  0{index + 1}
+                </p>
+                <h3 className="mt-6 text-xl font-semibold leading-snug tracking-[-.025em]">
+                  {title}
+                </h3>
+                <p className="mt-4 text-[14px] leading-7 text-[#4E607A]">
+                  {description}
+                </p>
+              </article>
+            ))}
+          </div>
+          <TextLink href="/platform/how-it-works">
+            See how our technology works
+          </TextLink>
+        </div>
+      </section>
+
+      <section
+        id="spine-workspace"
+        className={`${container} grid items-start gap-12 py-20 lg:grid-cols-2 lg:gap-20 lg:py-28`}
+      >
+        <div>
+          <SectionLabel>INTRODUCING SPINE WORKSPACE</SectionLabel>
+          <h2 className={`${heading} mt-5`}>
+            One workspace for humans and AI to understand the business and share
+            the work.
+          </h2>
+          <p className={`${body} mt-7`}>
+            Spine Workspace brings goals, priorities, tasks, relationships,
+            knowledge, signals, connected applications, and AI assistance into
+            one business-context workspace.
+          </p>
+          <p className={`${body} mt-4`}>
+            People see the work they need to do. The AI counterpart gathers and
+            assembles relevant context, prepares useful next steps, and works
+            within the boundaries they control. Shared work can continue across
+            teams, tools, and sessions without requiring everyone to reconstruct
+            the same story.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link href="/product" className={button}>
+              Explore Spine Workspace{" "}
+              <ArrowRight className="h-4 w-4" aria-hidden />
+            </Link>
+            <Link href="/product/how-it-works" className={secondary}>
+              View a product walkthrough
+            </Link>
+          </div>
+        </div>
+        <div className="rounded-3xl border border-[#CBE5FA] bg-[#F0F8FF] p-6 sm:p-9">
+          <p className="text-[12px] font-semibold uppercase tracking-[.15em] text-[#006FE8]">
+            WHAT IT BRINGS TOGETHER
+          </p>
+          <div className="mt-6 divide-y divide-[#CBE5FA]">
+            {[
+              ["My Work", "Priorities, tasks, approvals, and next steps."],
+              [
+                "Business Context",
+                "Connected records, relationships, signals, decisions, and evidence.",
+              ],
+              [
+                "Spine Twin",
+                "A context-aware AI counterpart for investigation, preparation, and governed assistance.",
+              ],
+              [
+                "Connected Capabilities",
+                "Access to authorized applications, connectors, MCP tools, and workflows.",
+              ],
+              [
+                "Continuity",
+                "The history and outcomes needed to resume meaningful work.",
+              ],
+            ].map(([title, description]) => (
+              <div key={title} className="py-5 first:pt-0 last:pb-0">
+                <h3 className="text-xl font-semibold">{title}</h3>
+                <p className="mt-2 text-[15px] leading-7 text-[#4E607A]">
+                  {description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="what-we-build" className="bg-[#F0F8FF] py-20 lg:py-28">
+        <div className={container}>
+          <SectionLabel>CORE TECHNOLOGY</SectionLabel>
+          <h2 className={`${heading} mt-5 max-w-[860px]`}>
+            A connected architecture, not another disconnected application.
+          </h2>
+          <figure className="mt-10">
+            <Image
+              src="/images/corporate-architecture.png"
+              alt="Original architecture illustration connecting the Spine Fabric foundation, human Workbench, Twin assistance, Runtime authorization, and existing source systems through connected capabilities."
+              width={1774}
+              height={887}
+              className="h-auto w-full rounded-2xl"
+            />
+            <figcaption className="mt-3 text-[12px] leading-6 text-[#4E607A]">
+              Conceptual architecture: complementary parts of one governed
+              workspace, connected to the systems a business already uses.
+            </figcaption>
+          </figure>
+          <div className="mt-10 grid gap-4 md:grid-cols-2">
+            {technology.map((part, index) => (
+              <Link
+                key={part.name}
+                href={part.href}
+                className={`group rounded-2xl border border-[#CBE5FA] bg-white p-7 hover:border-[#006FE8] focus-visible:outline-2 focus-visible:outline-[#006FE8] ${index === 4 ? "md:col-span-2" : ""}`}
+              >
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <p className="text-[11px] font-semibold uppercase tracking-[.14em] text-[#006FE8]">
+                      {part.label}
+                    </p>
+                    <h3 className="mt-3 text-2xl font-semibold tracking-[-.03em]">
+                      {part.name}
+                    </h3>
+                  </div>
+                  <ArrowUpRight
+                    className="h-5 w-5 shrink-0 text-[#006FE8]"
+                    aria-hidden
+                  />
+                </div>
+                <p className="mt-4 max-w-[720px] text-[15px] leading-7 text-[#4E607A]">
+                  {part.body}
+                </p>
+              </Link>
+            ))}
+          </div>
+          <p className="mt-6 text-[13px] leading-6 text-[#4E607A]">
+            These are complementary layers of the Spine Workspace architecture,
+            not separate products or independent availability commitments.
+          </p>
+          <TextLink href="/platform">Explore the architecture</TextLink>
+        </div>
+      </section>
+
+      <section
+        id="human-ai-work"
+        className={`${container} grid gap-12 py-20 lg:grid-cols-2 lg:gap-20 lg:py-28`}
+      >
+        <div>
+          <SectionLabel>THE HUMAN–AI RELATIONSHIP</SectionLabel>
+          <h2 className={`${heading} mt-5`}>
+            Intelligence should support judgment, not replace accountability.
+          </h2>
+        </div>
+        <div>
+          <p className={body}>
+            AI can investigate and prepare. People set goals, make judgments,
+            and retain authority over consequential work. Authorized automation
+            can execute within policy. The result must be checked against what
+            actually happened.
+          </p>
+          <ol
+            aria-label="From understanding to verified work"
+            className="mt-7 flex flex-wrap gap-2"
+          >
+            {[
+              "Understand",
+              "Prepare",
+              "Decide",
+              "Authorize",
+              "Execute",
+              "Verify",
+              "Continue",
+            ].map((step, i) => (
+              <li
+                key={step}
+                className="rounded-lg border border-[#CBE5FA] bg-[#EBF7FF] px-3 py-2 text-[13px] font-semibold"
+              >
+                <span className="mr-2 text-[#006FE8]">{i + 1}.</span>
+                {step}
+              </li>
+            ))}
+          </ol>
+          <p className={`${body} mt-5`}>
+            This is how shared business context becomes useful work rather than
+            another generated answer.
+          </p>
+          <TextLink href="/governance">Explore governance and runtime</TextLink>
+        </div>
+      </section>
+
+      <section id="solutions" className="bg-[#EBF7FF] py-20 lg:py-28">
+        <div className={container}>
+          <SectionLabel>WHERE THE THINKING APPLIES</SectionLabel>
+          <h2 className={`${heading} mt-5 max-w-[850px]`}>
+            Built for the reality of cross-functional business work.
+          </h2>
+          <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {roles.map(([title, description, href]) => (
+              <Link
+                key={title}
+                href={href}
+                className="rounded-2xl border border-[#CBE5FA] bg-white p-7 hover:border-[#006FE8] focus-visible:outline-2 focus-visible:outline-[#006FE8]"
+              >
+                <h3 className="text-xl font-semibold">{title}</h3>
+                <p className="mt-3 text-[15px] leading-7 text-[#4E607A]">
+                  {description}
+                </p>
+                <ArrowRight
+                  className="mt-5 h-4 w-4 text-[#006FE8]"
+                  aria-hidden
+                />
+              </Link>
+            ))}
+          </div>
+          <p className="mt-6 text-[13px] leading-6 text-[#4E607A]">
+            These are work domains supported by a shared context model—not
+            disconnected software products.
+          </p>
+          <div className="flex flex-wrap gap-x-8">
+            <TextLink href="/solutions">Explore all solutions</TextLink>
+            <TextLink href="/use-cases">Explore business use cases</TextLink>
+          </div>
+        </div>
+      </section>
+
+      <section id="principles" className={`${container} py-20 lg:py-28`}>
+        <SectionLabel>OUR PRINCIPLES</SectionLabel>
+        <h2 className={`${heading} mt-5`}>What guides our engineering.</h2>
+        <div className="mt-10 grid gap-4 md:grid-cols-2">
+          {principles.map(([title, description], index) => (
+            <article
+              key={title}
+              className="rounded-2xl border border-[#CBE5FA] bg-[#F0F8FF] p-7"
+            >
+              <p className="text-xs text-[#006FE8]">0{index + 1}</p>
+              <h3 className="mt-5 text-xl font-semibold">{title}</h3>
+              <p className="mt-3 text-[15px] leading-7 text-[#4E607A]">
+                {description}
+              </p>
             </article>
           ))}
         </div>
-      </section>
-      <section className="innovtech-company-section">
-        <div>
-          <p className="innovtech-eyebrow">
-            THE COMPANY BEHIND SPINE WORKSPACE
-          </p>
-          <h2>Spine InnovTech.</h2>
-          <p>
-            We build intelligent, context-aware technology for connected
-            business. Grounded in enterprise integration and AI engineering, our
-            work helps people see the full picture and carry informed decisions
-            forward.
-          </p>
-          <Link href="/company" className="innovtech-text-link">
-            Meet Spine InnovTech <ArrowRight size={18} />
-          </Link>
-        </div>
-        <div className="innovtech-company-links">
-          <Link href="/platform">
-            Explore the technology <ArrowRight size={20} />
-          </Link>
-          <Link href="/solutions">
-            Find your use case <ArrowRight size={20} />
-          </Link>
-          <Link href="/security">
-            Understand our approach to security <ArrowRight size={20} />
-          </Link>
-        </div>
-      </section>
-      <section className="innovtech-final-section">
-        <p className="innovtech-eyebrow">LET’S MOVE WORK FORWARD</p>
-        <h2>
-          A shared picture.
-          <br />A better next step.
-        </h2>
-        <p>See what a business-context workspace could mean for your team.</p>
-        <Link className="innovtech-button" href="/contact?intent=demo">
-          Book a demo <ArrowRight size={18} />
-        </Link>
+        <TextLink href="/company">
+          Meet the company behind the technology
+        </TextLink>
       </section>
 
-      {summaryOpen && (
-        <div
-          className="innovtech-dialog-backdrop"
-          onClick={() => setSummaryOpen(false)}
-        >
-          <section
-            ref={dialogRef}
-            className="innovtech-dialog"
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="review-dialog-title"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              className="innovtech-dialog-close"
-              aria-label="Close review"
-              onClick={() => setSummaryOpen(false)}
-            >
-              <X size={24} />
-            </button>
-            <span className="innovtech-icon-circle">
-              <Target size={30} />
-            </span>
-            <p className="innovtech-eyebrow">EXAMPLE WORKSPACE</p>
-            <h2 id="review-dialog-title">Customer onboarding</h2>
-            <p>
-              Review the customer context, recent decisions, and proposed next
-              action together before preparing the next step.
+      <section id="company" className="bg-[#F0F8FF] py-20 lg:py-28">
+        <div className={`${container} grid gap-10 lg:grid-cols-2 lg:gap-20`}>
+          <div>
+            <SectionLabel>SPINE INNOVTECH</SectionLabel>
+            <h2 className={`${heading} mt-5`}>
+              Building from India for connected teams everywhere.
+            </h2>
+          </div>
+          <div>
+            <p className={body}>
+              Spine InnovTech brings enterprise integration experience, AI
+              engineering, and a practical understanding of how work crosses
+              organizational boundaries. Our starting point is simple: valuable
+              information already exists throughout the business. The missing
+              piece is a reliable way to bring its meaning into the work.
             </p>
-            <ul>
-              <li>
-                <CheckCircle2 size={18} />
-                Customer context · 3 sources
-              </li>
-              <li>
-                <MessageCircle size={18} />
-                Recent decisions · 2 mentions
-              </li>
-              <li>
-                <FileText size={18} />
-                Next action · 1 suggestion
-              </li>
-            </ul>
-            <Link
-              href="#product"
-              className="innovtech-button"
-              onClick={() => setSummaryOpen(false)}
-            >
-              Explore the review workspace <ArrowRight size={18} />
-            </Link>
-          </section>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link href="/company" className={button}>
+                Meet Spine InnovTech{" "}
+                <ArrowRight className="h-4 w-4" aria-hidden />
+              </Link>
+              <Link href="/contact" className={secondary}>
+                Get in touch
+              </Link>
+            </div>
+          </div>
         </div>
-      )}
+      </section>
+
+      <section id="insights" className={`${container} py-20 lg:py-28`}>
+        <SectionLabel>EXPLORE THE COMPANY AND OUR WORK</SectionLabel>
+        <h2 className={`${heading} mt-5`}>
+          Ideas, engineering, and work you can inspect.
+        </h2>
+        <div className="mt-10 grid gap-4 md:grid-cols-3">
+          {[
+            [
+              "Insights & research",
+              "Perspectives on business context, enterprise systems, and governed AI.",
+              "/resources",
+            ],
+            [
+              "Portfolio & demonstrations",
+              "Illustrative workflows and the architecture behind them.",
+              "/portfolio",
+            ],
+            [
+              "For developers",
+              "Technical concepts, connected capabilities, and documentation.",
+              "/developers",
+            ],
+          ].map(([title, description, href]) => (
+            <Link
+              key={title}
+              href={href}
+              className="rounded-2xl border border-[#CBE5FA] p-7 hover:bg-[#F0F8FF]"
+            >
+              <h3 className="text-xl font-semibold">{title}</h3>
+              <p className="mt-3 text-[15px] leading-7 text-[#4E607A]">
+                {description}
+              </p>
+              <ArrowRight className="mt-5 h-4 w-4 text-[#006FE8]" aria-hidden />
+            </Link>
+          ))}
+        </div>
+        <TextLink href="/site-map">Browse every public website page</TextLink>
+      </section>
+
+      <section className="bg-[#EBF7FF] py-20 lg:py-28">
+        <div
+          className={`${container} flex flex-wrap items-end justify-between gap-10`}
+        >
+          <div>
+            <SectionLabel>BUILDING WHAT COMES NEXT</SectionLabel>
+            <h2 className={`${heading} mt-5 max-w-[830px]`}>
+              The next generation of work needs a shared understanding of the
+              business.
+            </h2>
+            <p className={`${body} mt-6`}>
+              Discover the workspace we're building around that idea.
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-3">
+            <Link href="/product" className={button}>
+              Explore Spine Workspace{" "}
+              <ArrowRight className="h-4 w-4" aria-hidden />
+            </Link>
+            <Link href="/contact" className={secondary}>
+              Contact Spine InnovTech
+            </Link>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

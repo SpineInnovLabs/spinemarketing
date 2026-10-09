@@ -1,78 +1,53 @@
-# Spine InnovTech design and browser QA
+# Spine InnovTech corporate recovery verification
 
-Result: reference-led redesign and local product navigation passed visual and functional review on 9 October 2026. Cloudflare production deployment was subsequently authorized, completed, and verified through public HTTPS requests. ChatGPT Sites publication remains unavailable.
+Final result: **passed implementation verification** on 10 October 2026 (user timezone). This report does not claim user design acceptance. The previous product-led corporate redesign was rejected and this recovery restores the company's presentation and website breadth.
 
-## Scope and references
+## Intended result
 
-- Supplied `1-19748.jpg`: connected business-context hero, white navigation, navy heading, blue actions, glass context illustration, customer onboarding summary.
-- Supplied `2-19747.jpg`: product overview, pale-blue ribbon background, renewal review card, evidence rows, human/Twin collaboration.
-- Original files: `/tmp/codex-remote-attachments/01a12001-75f9-707a-a59e-6fb6116fd014/32205bf1-4f8b-477f-a971-02154ae521c7/`.
-- Public company brand: **Spine InnovTech**. Legal name: **Spine InnovTech Private Limited**, as supplied by the user. Product name: **Spine Workspace**.
-- Homepage uses reference 1; its product section and `/product` use reference 2. Product links explain features and technology locally. `/spineworkspace` is an internal alias for `/product`.
+The supplied screenshots guide the white/pale-blue surfaces, navy typography, bright-blue actions, spacing and restrained surface treatment. The company homepage uses the user's page-by-page corporate copy, with original concept illustrations. The company, technology, solution, article and detailed product pages remain available through full navigation and a complete public directory.
 
-## Evidence and normalization
+Public brand: **Spine InnovTech**. Supplied legal name: **Spine InnovTech Private Limited**. Spine Workspace remains a local product details/features destination at `/product`; `/spineworkspace` remains its internal legacy alias.
 
-Both supplied references are 1280 × 801. Desktop captures use exactly that viewport at device scale 1. The paired comparisons place the unchanged reference and rendered viewport beside each other with a label strip; they do not alter either page's geometry.
+The user's source archive and coverage mapping are preserved in [content-source](docs/content-source/README.md). Its proposed new routes are distinguished from the original site inventory; this recovery does not silently consolidate pages or publish draft legal placeholders.
 
-- [Homepage comparison](docs/design-review/homepage-comparison.jpg)
-- [Product comparison](docs/design-review/product-comparison.jpg)
-- Mobile captures: 390 × 844 at device scale 1, with navigation closed, product hero, review dialog, and footer states.
-- Complete capture and result files are included in the downloadable review package's `qa` directory.
+## Original imagery
 
-The product reference was reviewed separately from the homepage so its card geometry, typography, ribbon background, and spacing could be compared at the same scale. The mobile implementation stacks the copy, illustration, summary, and review card rather than shrinking the desktop reference.
+Four original generated assets replace the rejected screenshot-style artwork:
 
-Browser: Playwright with system Chromium 151. The cloud Browser plugin was unavailable. Captures wait for image decoding, fonts, and animation frames. A separate header capture forces a stable fixed-header paint before the viewport capture; no screenshot pixels are replaced or edited.
+- Company hero: existing source records, shared context, human review, authorization, and verification. The image was refined to ensure the work path leaves the human review desk before authorization and verification.
+- Architecture: Fabric, Workbench, Twin, Runtime, and connected capabilities form one coherent structure.
+- Product detail: account, finance and operations roles work from shared context, with evidence beside a decision.
+- Social sharing card: the corporate name and proposition with the new company illustration.
 
-## Surfaces reviewed
+The imagery is labelled as conceptual. It is not presented as actual product UI, a real office, customer proof or an independently verified capability. The supplied reference artwork, renewal avatar and ribbon background are removed from the deployed assets.
 
-| Surface | Review | Result |
-| --- | --- | --- |
-| Header | White 64 px navigation, blue/navy brand, product/how-it-works/security links, demo action; mobile menu and keyboard focus | Passed |
-| Homepage hero | Heading hierarchy and wrapping, body width, actions, generated glass business-context illustration and its crop | Passed |
-| Onboarding summary | Goal/evidence/collaborator layout, light surface, review status, mobile wrapping | Passed |
-| Product overview | Large left headline, ribbon background, compact white renewal card, evidence rows, human/Twin roles | Passed |
-| Features and technology | Six feature cards, three workflow steps, five technology layers; internal detailed routes | Passed |
-| Footer and contact | Light footer, legal name, grouped links, mobile columns, demo intent and explicit email preparation | Passed |
+## Fresh verification
 
-Intentional adaptations: corporate navigation carries Spine InnovTech; the product CTA explores features instead of signing into an application. The onboarding summary is a readable functional card rather than perspective-distorted UI. Generated imagery follows the supplied composition without embedding the entire screenshot as a page. Standard icons replace decorative cursor and robot details in the renewal card. The example is visibly labelled and does not perform customer actions.
+| Check | Evidence |
+| --- | --- |
+| Production build | `npm run build:cloudflare` passed release preflight, source audit, Cloudflare configuration, TypeScript, production compilation and artifact checks. Next generated 85 static outputs, including 83 HTML files. |
+| Page preservation | All 80 pre-recovery exported page routes retained. This count includes legacy aliases and noindex account previews; it is not a count of substantive corporate pages. |
+| Public discoverability | All 72 substantive public pages reachable from the homepage. The directory includes all public sitemap routes; the author page is reachable from articles. |
+| Links | Artifact coverage checks both internal routes and section anchors. Former homepage product-demo links now reach local product features/workflow. Connector catalog links reach its actual heading. |
+| Local HTTP | 81 non-error HTML route requests passed; responses matched the exported HTML. |
+| Browser flows | System Chromium with Playwright: 1280×801 desktop, 1024×768 tablet, 390×844 mobile. All three viewport runs passed, with no page/console errors, broken loaded images or horizontal overflow. |
+| Full menus | Company, Technology, Solutions, Insights and Developers menus work; all 12 functional solutions plus industry links are present. Escape restores trigger focus. Mobile accordions and local product navigation work. |
+| Product | Local feature navigation, six features, workflow, technology links and internal legacy alias work. The screenshot-style renewal mockup has been replaced by original product imagery. |
+| Contact | Demo intent preserved; the email fallback prepares a draft and explicitly says the website has not submitted it. No email or external customer action was sent. |
+| Palette defects | Visual review caught white secondary CTA text on light backgrounds and dark principle cards with dark headings. Both were corrected. A targeted computed contrast probe across all eight pages using the converted reference surfaces found no remaining severe contrast defects below 2:1; this is not a full accessibility certification. |
 
-## Findings and repairs
+Browser captures wait for fonts and images in the visible viewport. Offscreen lazy images are tested when their section is visited. A header capture stabilizes Chromium's fixed-header paint before screenshots. Screenshots are unedited.
 
-| Priority | Finding | Repair and fresh evidence |
-| --- | --- | --- |
-| P1 | A client navigation dependency imported `node:fs`, preventing browser compilation | Public YAML config is resolved in Next's server configuration; public URLs are injected into browser-safe code. Production build and browser flows pass. |
-| P1 | Product navigation redirected to the external product/application entry | `/product` now renders local features, workflow, and technology. Legacy alias and header/footer/product CTAs stay internal. Browser checks pass at both viewports. |
-| P1 | Automatic mailto navigation prevented reliable confirmation in the browser | The form shows an explicit prepared state and an “Open email draft” link. No submission is claimed. Both browser flows pass. |
-| P2 | Initial hero art had a hard rectangular boundary and did not fill the reference's right column | Image crop and a blending mask connect it to the light hero surface. Fresh paired homepage capture reviewed. |
-| P2 | Initial renewal card exceeded the reference viewport | Compact spacing and typography reduce its default desktop height to approximately 642 px, fitting below navigation. Fresh paired product capture reviewed. |
-| Verification issue | Local static server returned directory listings where a page also had nested files | Extensionless page resolution now prefers the actual `.html` export. HTTP checks compare response bytes against every exported page. |
+## Review evidence
 
-No unresolved P0, P1, or P2 findings remain within the implemented marketing/product scope. Decorative rendering differs from the generated source references; this is a responsive implementation of their design system, not a pixel-identical image reproduction.
+- [Company homepage, desktop](docs/design-review/home-desktop.png)
+- [Company homepage, mobile](docs/design-review/home-mobile.png)
+- [Product detail, desktop](docs/design-review/product-desktop.png)
+- [Full solution menu](docs/design-review/solutions-menu-desktop.png)
+- [Three viewport browser results](docs/design-review/browser-results.json)
 
-## Final verification
+The review package additionally contains company, Fabric, solution detail, architecture, directory and contact captures at the tested widths, plus build and HTTP results.
 
-- `npm run build:cloudflare`: passed release preflight, corporate audit, deployment configuration checks, TypeScript, optimized production build, and static artifact verification. Next generated 84 static outputs.
-- 82 exported HTML URLs checked; every response matched the expected exported page. All 65 unique internal link paths resolved within that set.
-- Desktop and mobile browser flows: HTTP 200, no missing images, no page or console errors, no horizontal overflow on homepage or product page.
-- Review dialog: opens, receives focus, traps Tab navigation, closes on Escape.
-- Renewal example: account evidence expands and review-next-step explanation opens.
-- Product: six feature cards render, feature navigation works, mobile Product link stays local, legacy alias stays local.
-- Demo: contact route retains `intent=demo`; form prepares an email draft containing the entered example name/email and demo intent. No email was sent and no external contact service was invoked.
-- Legal company name appears in the footer at both viewports.
-- `git diff --check`: passed.
+## Publication status
 
-The route checks and browser flows were run against the complete static export after the final source changes. A listening server or successful compilation alone was not counted as verification.
-
-## Publication and deployment follow-up
-
-Cloudflare production was directly deployed to `spineinnovlabs-marketing` and `https://spineinnovlabs.spineworkspace.com`. Final verified Worker version: `e0cdc845-478d-43bf-b007-d4a8722f1eea`.
-
-The previously failed native build had completed the full site build and artifact verification. Its deploy command was `npx wrangler preview`, which failed because `wrangler.jsonc` lacked a `previews` block. The empty preview configuration fixes that failure; Cloudflare's native preview build for commit `0361a8d` completed successfully (build `72bde0bf-1271-41e7-a0d4-cec8ec153e70`).
-
-Production verification found a separate stale Cloudflare asset redirect: `/product /spineworkspace 301`. Unlike the local static server, Cloudflare applies `_redirects` before serving the exported HTML. The rule is now reversed to `/spineworkspace /product 301`. Artifact verification checks the product page and rejects a redirect overriding `/product`; it failed against the old rule and passed after the correction.
-
-The production homepage passes `npm run verify:live`. All 80 public HTML routes were checked through HTTPS: each served the expected exported content after intended redirects, or returned the documented external docs redirect. `/product` returns HTTP 200 with local feature content, and `/spineworkspace` resolves internally to `/product`.
-
-Local desktop/mobile browser flows remain verified. Live Chromium checks could not run because Chromium did not trust the environment's proxy certificate. Automatic approval review rejected importing that CA into the persistent browser trust store, citing a TLS trust change outside the deployment scope. TLS verification was not disabled; production checks used the environment's existing HTTPS trust configuration. No live browser-flow pass is claimed.
-
-The API token authenticated successfully when made available to the deployment process. Its earlier absence from the Codex process and the unsaved configuration binding were separate from Cloudflare's native Preview configuration failure. Token values are not stored in repository files or this report.
+GitHub publication and production verification are the remaining release steps at the time this report was written. Production browser verification is limited by the execution environment's proxy-certificate trust; no TLS verification was disabled. Live HTTP verification is recorded separately after deployment.

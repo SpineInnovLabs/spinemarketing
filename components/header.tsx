@@ -1,83 +1,761 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useCallback, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { SpineLogo } from "@/components/spine-logo";
+import { Menu, X, ChevronDown, ArrowRight } from "lucide-react";
+import { IntegrationMarkGroups } from "@/components/marketing/integration-nav-marks";
+import {
+  DOCS_URL,
+  headerNavigation,
+  type NavItem,
+  type NavItemChild,
+  type NavLink,
+} from "@/lib/navigation";
+import { motion, useScroll, useSpring, useReducedMotion } from "framer-motion";
 
-const links = [
-  { label: "Product", href: "/product" },
-  { label: "How it works", href: "/product#how-it-works" },
-  { label: "Security", href: "/security" },
-];
+const navigation = headerNavigation;
+
+const ENTER_DELAY = 150;
+const LEAVE_DELAY = 280;
+
+function menuIdFor(label: string) {
+  return `mega-${label.replace(/\s+/g, "-").toLowerCase()}`;
+}
+
+function hasMenu(nav: NavItem) {
+  return Boolean(
+    nav.items ||
+    nav.groups ||
+    nav.featured ||
+    nav.supporting ||
+    nav.menuFooter ||
+    nav.connectorMarks?.length ||
+    nav.kindMarks?.length,
+  );
+}
+
+function isWideMenu(nav: NavItem) {
+  return Boolean(
+    nav.featured ||
+    nav.supporting ||
+    nav.menuFooter ||
+    nav.connectorMarks?.length,
+  );
+}
+
+const entryClass =
+  "group flex h-full items-start gap-3 rounded-xl border border-transparent p-3 transition-colors duration-150 hover:border-[#D9E4EF] hover:bg-[#EBF7FF] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006FE8] focus-visible:ring-offset-2 motion-reduce:transition-none";
+
+function MenuEntry({
+  item,
+  featured = false,
+}: {
+  item: NavItemChild;
+  featured?: boolean;
+}) {
+  const Icon = item.icon;
+  return (
+    <Link href={item.href} className={`${entryClass} ${featured ? "p-4" : ""}`}>
+      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#F3F6F9] text-[#006FE8] group-hover:bg-white">
+        <Icon className="h-5 w-5" strokeWidth={1.75} aria-hidden />
+      </span>
+      <span className="min-w-0">
+        <span
+          className={`block font-semibold leading-snug text-[#082B5E] ${featured ? "text-[18px]" : "text-[16px]"}`}
+        >
+          {item.name}
+        </span>
+        {item.desc && (
+          <span className="mt-1 block text-[13px] leading-5 text-[#33465B]">
+            {item.desc}
+          </span>
+        )}
+      </span>
+    </Link>
+  );
+}
+
+function FooterLinks({
+  links,
+  onNavigate,
+}: {
+  links: NavLink[];
+  onNavigate?: () => void;
+}) {
+  return (
+    <ul className="flex flex-wrap gap-x-5 gap-y-2">
+      {links.map((link) => (
+        <li key={link.href}>
+          <Link
+            href={link.href}
+            onClick={onNavigate}
+            className="inline-flex items-center gap-1.5 rounded-md text-[14px] font-semibold leading-5 text-[#006FE8] transition-colors duration-150 hover:text-[#0055B8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006FE8] focus-visible:ring-offset-2 motion-reduce:transition-none"
+          >
+            {link.name}
+            <ArrowRight className="h-4 w-4" aria-hidden />
+          </Link>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+function WidePanel({
+  nav,
+  menuId,
+  onNavigate,
+}: {
+  nav: NavItem;
+  menuId: string;
+  onNavigate: () => void;
+}) {
+  const reduce = useReducedMotion();
+  const productEntries = nav.items ?? [];
+
+  return (
+    <motion.div
+      id={menuId}
+      aria-label={`${nav.label}`}
+      initial={reduce ? false : { y: 6 }}
+      animate={{ y: 0 }}
+      transition={
+        reduce ? { duration: 0 } : { duration: 0.15, ease: "easeOut" }
+      }
+      className="absolute left-1/2 top-full z-50 w-[min(960px,calc(100vw-32px))] -translate-x-1/2 px-0 pt-2"
+      onClick={(event) => {
+        if ((event.target as HTMLElement).closest("a")) onNavigate();
+      }}
+    >
+      <div className="flex max-h-[calc(100dvh-88px)] w-full flex-col rounded-2xl border border-[#D9E4EF] bg-white shadow-[0_8px_24px_rgba(3,45,96,0.08)]">
+        <div className="min-h-0 overflow-x-hidden overflow-y-auto p-5 md:p-6">
+          {nav.connectorMarks && nav.connectorMarks.length > 0 ? (
+            <IntegrationMarkGroups
+              connectors={nav.connectorMarks}
+              kinds={nav.kindMarks}
+            />
+          ) : nav.featured ? (
+            <ul className="grid grid-cols-2 gap-4">
+              <li className="col-span-2">
+                <MenuEntry item={nav.featured} featured />
+              </li>
+              {productEntries.map((item) => (
+                <li key={item.name}>
+                  <MenuEntry item={item} />
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <ul className="grid grid-cols-2 gap-4 xl:grid-cols-3">
+              {productEntries.map((item) => (
+                <li key={item.name}>
+                  <MenuEntry item={item} />
+                </li>
+              ))}
+            </ul>
+          )}
+          {nav.supporting && (
+            <div className="mt-5 border-t border-[#D9E4EF] pt-4">
+              <p
+                id={`${menuId}-supporting`}
+                className="text-[13px] font-semibold leading-5 text-[#082B5E]"
+              >
+                {nav.supporting.label}
+              </p>
+              <ul
+                aria-labelledby={`${menuId}-supporting`}
+                className="mt-2 flex flex-wrap gap-1"
+              >
+                {nav.supporting.items.map((item) => (
+                  <li key={item.name}>
+                    <Link
+                      href={item.href}
+                      className="inline-flex items-center rounded-lg px-2.5 py-1.5 text-[13px] font-medium leading-5 text-[#33465B] transition-colors duration-150 hover:bg-[#EBF7FF] hover:text-[#082B5E] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006FE8] focus-visible:ring-offset-2 motion-reduce:transition-none"
+                    >
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+        {nav.menuFooter && nav.menuFooter.length > 0 && (
+          <div className="mt-0 shrink-0 border-t border-[#D9E4EF] px-5 py-4 md:px-6">
+            <FooterLinks links={nav.menuFooter} />
+          </div>
+        )}
+      </div>
+    </motion.div>
+  );
+}
+
+function CompactPanel({
+  nav,
+  menuId,
+  onNavigate,
+}: {
+  nav: NavItem;
+  menuId: string;
+  onNavigate: () => void;
+}) {
+  if (!nav.items?.length) return null;
+  return (
+    <div
+      id={menuId}
+      aria-label={nav.label}
+      className="absolute right-0 top-full z-50 w-[min(340px,calc(100vw-32px))] pt-2"
+      onClick={(event) => {
+        if ((event.target as HTMLElement).closest("a")) onNavigate();
+      }}
+    >
+      <div className="rounded-2xl border border-[#D9E4EF] bg-white p-3 shadow-[0_8px_24px_rgba(3,45,96,0.08)]">
+        <ul className="flex flex-col gap-1">
+          {nav.items.map((item) => (
+            <li key={item.name}>
+              <MenuEntry item={item} />
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+}
+
+function NavTrigger({
+  nav,
+  activeMenu,
+  onEnter,
+  onLeave,
+  onToggle,
+  triggerRef,
+}: {
+  nav: NavItem;
+  activeMenu: string | null;
+  onEnter: (label: string) => void;
+  onLeave: () => void;
+  onToggle: (label: string) => void;
+  triggerRef: (node: HTMLButtonElement | null) => void;
+}) {
+  const isOpen = activeMenu === nav.label;
+  const menuId = menuIdFor(nav.label);
+  const wide = isWideMenu(nav);
+  const hasDropdown = hasMenu(nav);
+
+  if (!hasDropdown) {
+    const linkClass =
+      "inline-flex h-10 items-center rounded-[10px] px-3 text-[15px] font-medium text-[#33465B] transition-colors duration-150 hover:text-[#082B5E] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006FE8] focus-visible:ring-offset-2 motion-reduce:transition-none";
+    if (nav.external) {
+      return (
+        <a
+          href={nav.href}
+          className={linkClass}
+          onMouseEnter={onLeave}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {nav.label}
+        </a>
+      );
+    }
+    return (
+      <Link href={nav.href} className={linkClass} onMouseEnter={onLeave}>
+        {nav.label}
+      </Link>
+    );
+  }
+
+  return (
+    <div
+      className={wide ? "static" : "relative"}
+      onMouseEnter={() => onEnter(nav.label)}
+      onMouseLeave={onLeave}
+    >
+      <button
+        ref={triggerRef}
+        type="button"
+        aria-expanded={isOpen}
+        aria-controls={menuId}
+        id={`${menuId}-trigger`}
+        onClick={() => onToggle(nav.label)}
+        className={`inline-flex h-10 items-center gap-1 rounded-[10px] px-3 text-[15px] font-medium transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006FE8] focus-visible:ring-offset-2 motion-reduce:transition-none ${
+          isOpen ? "text-[#082B5E]" : "text-[#33465B] hover:text-[#082B5E]"
+        }`}
+      >
+        {nav.label}
+        <ChevronDown
+          className={`h-3.5 w-3.5 transition-transform duration-200 motion-reduce:transition-none ${isOpen ? "rotate-180" : ""}`}
+          aria-hidden
+        />
+      </button>
+      {isOpen && wide && (
+        <WidePanel
+          nav={nav}
+          menuId={menuId}
+          onNavigate={() => onToggle(nav.label)}
+        />
+      )}
+      {isOpen && !wide && (
+        <CompactPanel
+          nav={nav}
+          menuId={menuId}
+          onNavigate={() => onToggle(nav.label)}
+        />
+      )}
+    </div>
+  );
+}
+
+function MobileItemLink({
+  item,
+  onNavigate,
+}: {
+  item: NavItemChild;
+  onNavigate: () => void;
+}) {
+  const Icon = item.icon;
+  return (
+    <Link
+      href={item.href}
+      onClick={onNavigate}
+      className="flex items-start gap-3 rounded-xl px-2 py-2.5 text-[#082B5E] hover:bg-[#EBF7FF] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006FE8]"
+    >
+      <Icon
+        className="mt-0.5 h-5 w-5 shrink-0 text-[#006FE8]"
+        strokeWidth={1.75}
+        aria-hidden
+      />
+      <span className="min-w-0">
+        <span className="block text-[15px] font-semibold leading-snug">
+          {item.name}
+        </span>
+        {item.desc && (
+          <span className="mt-0.5 block text-[13px] leading-5 text-[#33465B]">
+            {item.desc}
+          </span>
+        )}
+      </span>
+    </Link>
+  );
+}
 
 export function Header({
-  initiallyHidden: _initiallyHidden = false,
+  initiallyHidden = false,
 }: {
   initiallyHidden?: boolean;
 }) {
-  const [open, setOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeMenu, setActiveMenu] = useState<string | null>(null);
+  const [heroRevealed, setHeroRevealed] = useState(!initiallyHidden);
+  const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
+  const enterTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const leaveTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const hoverCapable = useRef(false);
+  const mobilePanelRef = useRef<HTMLDivElement>(null);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const triggerRefs = useRef<Record<string, HTMLButtonElement | null>>({});
+  const reduce = useReducedMotion();
+
+  useEffect(() => {
+    const mq = window.matchMedia("(hover: hover) and (pointer: fine)");
+    const sync = () => {
+      hoverCapable.current = mq.matches;
+    };
+    sync();
+    mq.addEventListener("change", sync);
+    return () => mq.removeEventListener("change", sync);
+  }, []);
+
+  useEffect(() => {
+    if (!initiallyHidden) return;
+    const handler = () => setHeroRevealed(true);
+    window.addEventListener("heroPhaseChange", handler);
+    return () => window.removeEventListener("heroPhaseChange", handler);
+  }, [initiallyHidden]);
+
+  const clearTimers = useCallback(() => {
+    if (enterTimer.current) {
+      clearTimeout(enterTimer.current);
+      enterTimer.current = null;
+    }
+    if (leaveTimer.current) {
+      clearTimeout(leaveTimer.current);
+      leaveTimer.current = null;
+    }
+  }, []);
+
+  const closeDesktopMenu = useCallback((restoreFocus: boolean) => {
+    setActiveMenu((current) => {
+      if (restoreFocus && current) triggerRefs.current[current]?.focus();
+      return null;
+    });
+  }, []);
+
+  const handleEnter = useCallback(
+    (label: string) => {
+      if (!hoverCapable.current) return;
+      clearTimers();
+      if (activeMenu && activeMenu !== label) {
+        setActiveMenu(label);
+        return;
+      }
+      enterTimer.current = setTimeout(() => setActiveMenu(label), ENTER_DELAY);
+    },
+    [activeMenu, clearTimers],
+  );
+
+  const handleLeave = useCallback(() => {
+    if (!hoverCapable.current) return;
+    clearTimers();
+    leaveTimer.current = setTimeout(() => setActiveMenu(null), LEAVE_DELAY);
+  }, [clearTimers]);
+
+  const handleToggle = useCallback(
+    (label: string) => {
+      clearTimers();
+      setActiveMenu((current) => (current === label ? null : label));
+    },
+    [clearTimers],
+  );
+
+  useEffect(() => {
+    return () => clearTimers();
+  }, [clearTimers]);
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key !== "Escape") return;
+      if (activeMenu) {
+        const label = activeMenu;
+        setActiveMenu(null);
+        triggerRefs.current[label]?.focus();
+      }
+      if (mobileMenuOpen) {
+        setMobileMenuOpen(false);
+        menuButtonRef.current?.focus();
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [activeMenu, mobileMenuOpen]);
+
+  useEffect(() => {
+    if (!mobileMenuOpen) return;
+    const id = requestAnimationFrame(() => {
+      const first =
+        mobilePanelRef.current?.querySelector<HTMLElement>("a[href], button");
+      first?.focus();
+    });
+    return () => cancelAnimationFrame(id);
+  }, [mobileMenuOpen]);
+
+  useEffect(() => {
+    if (!mobileMenuOpen) return;
+    const panel = mobilePanelRef.current;
+    if (!panel) return;
+    const handler = (e: KeyboardEvent) => {
+      if (e.key !== "Tab") return;
+      const focusables = [
+        ...panel.querySelectorAll<HTMLElement>(
+          "a[href], button:not([disabled])",
+        ),
+      ].filter((el) => !el.closest("[hidden]"));
+      if (focusables.length === 0) return;
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        menuButtonRef.current?.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        menuButtonRef.current?.focus();
+      }
+    };
+    panel.addEventListener("keydown", handler);
+    return () => panel.removeEventListener("keydown", handler);
+  }, [mobileMenuOpen]);
+
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 300,
+    damping: 30,
+    restDelta: 0.001,
+  });
+
+  const closeMobile = () => setMobileMenuOpen(false);
+
   return (
-    <header className="innovtech-header">
-      <div className="innovtech-nav">
-        <Link
-          href="/"
-          className="innovtech-brand"
-          aria-label="Spine InnovTech home"
-          onClick={() => setOpen(false)}
-        >
-          <SpineLogo className="h-9 w-9" />
-          <span>
-            Spine<span>InnovTech</span>
-          </span>
-        </Link>
-        <nav className="innovtech-desktop-nav" aria-label="Main navigation">
-          {links.map((link) => (
-            <Link key={link.label} href={link.href}>
-              {link.label}
-            </Link>
-          ))}
-          <Link className="innovtech-button" href="/contact?intent=demo">
-            Book a demo
-          </Link>
-        </nav>
-        <button
-          className="innovtech-menu-toggle"
-          onClick={() => setOpen(!open)}
-          aria-expanded={open}
-          aria-controls="mobile-navigation"
-          aria-label={open ? "Close navigation" : "Open navigation"}
-        >
-          {open ? <X size={24} /> : <Menu size={24} />}
-        </button>
-      </div>
-      {open && (
-        <nav
-          id="mobile-navigation"
-          className="innovtech-mobile-nav"
-          aria-label="Mobile navigation"
-        >
-          {links.map((link) => (
-            <Link
-              key={link.label}
-              href={link.href}
-              onClick={() => setOpen(false)}
-            >
-              {link.label}
-            </Link>
-          ))}
-          <Link href="/company" onClick={() => setOpen(false)}>
-            Company
-          </Link>
-          <Link
-            className="innovtech-button"
-            href="/contact?intent=demo"
-            onClick={() => setOpen(false)}
-          >
-            Book a demo
-          </Link>
-        </nav>
+    <>
+      {activeMenu && heroRevealed && (
+        <div
+          className="fixed inset-0 z-40 bg-[#082B5E]/20"
+          onMouseEnter={handleLeave}
+          onClick={() => closeDesktopMenu(false)}
+        />
       )}
-    </header>
+
+      <motion.header
+        suppressHydrationWarning
+        className="fixed top-0 left-0 right-0 z-50"
+        initial={
+          initiallyHidden ? { y: "-100%", opacity: 0 } : { y: 0, opacity: 1 }
+        }
+        animate={
+          heroRevealed ? { y: 0, opacity: 1 } : { y: "-100%", opacity: 0 }
+        }
+        transition={
+          reduce
+            ? { duration: 0 }
+            : { type: "spring", damping: 22, stiffness: 200, mass: 0.8 }
+        }
+        style={{
+          background: "var(--header-bg)",
+          backdropFilter: "blur(12px)",
+          WebkitBackdropFilter: "blur(12px)",
+          borderBottom: "1px solid var(--header-line)",
+          boxShadow: "0 1px 2px rgba(0,0,0,0.04)",
+        }}
+      >
+        <motion.div
+          className="absolute bottom-0 left-0 right-0 h-[2px] origin-left"
+          style={{ scaleX, background: "var(--gradient-primary)" }}
+          suppressHydrationWarning
+        />
+
+        <nav className="relative mx-auto flex h-16 max-w-[1440px] items-center justify-between px-5 sm:px-8 lg:px-12">
+          <Link
+            href="/"
+            className="inline-flex h-10 shrink-0 items-center gap-2.5 rounded-[10px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006FE8] focus-visible:ring-offset-2"
+          >
+            <SpineLogo
+              className="h-8 w-8 shrink-0 text-[#082B5E]"
+              variant="on-light"
+            />
+            <span className="text-[17px] font-semibold leading-none tracking-[-0.04em] text-[#082B5E]">
+              Spine <span className="text-[#006FE8]">InnovTech</span>
+            </span>
+          </Link>
+
+          <div className="hidden items-center gap-0 lg:flex">
+            {navigation.map((nav) => (
+              <NavTrigger
+                key={nav.label}
+                nav={nav}
+                activeMenu={activeMenu}
+                onEnter={handleEnter}
+                onLeave={handleLeave}
+                onToggle={handleToggle}
+                triggerRef={(node) => {
+                  triggerRefs.current[nav.label] = node;
+                }}
+              />
+            ))}
+          </div>
+
+          <div className="hidden shrink-0 items-center gap-2 lg:flex">
+            <Link
+              href="/product"
+              className="inline-flex h-10 items-center rounded-[10px] px-3 text-[15px] font-semibold text-[#082B5E] hover:bg-[#F3F6F9] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006FE8] focus-visible:ring-offset-2"
+            >
+              Spine Workspace
+            </Link>
+            <Button
+              className="h-10 rounded-[10px] bg-[#006FE8] px-4 text-[14px] font-semibold text-white hover:bg-[#0055B8]"
+              asChild
+            >
+              <Link href="/contact">Contact us</Link>
+            </Button>
+          </div>
+
+          <button
+            ref={menuButtonRef}
+            type="button"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-[10px] text-[#082B5E] lg:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006FE8] focus-visible:ring-offset-2"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-nav-panel"
+          >
+            {mobileMenuOpen ? (
+              <X className="h-5 w-5" />
+            ) : (
+              <Menu className="h-5 w-5" />
+            )}
+          </button>
+        </nav>
+
+        {mobileMenuOpen && (
+          <motion.div
+            id="mobile-nav-panel"
+            ref={mobilePanelRef}
+            initial={reduce ? false : { height: 0 }}
+            animate={{ height: "auto" }}
+            transition={
+              reduce ? { duration: 0 } : { duration: 0.2, ease: "easeInOut" }
+            }
+            className="max-h-[calc(100dvh-64px)] overflow-x-hidden overflow-y-auto border-t border-[#D9E4EF] bg-white lg:hidden"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Site navigation"
+          >
+            <div className="flex flex-col px-4 py-3">
+              {navigation.map((nav) => {
+                const hasDropdown = hasMenu(nav);
+                const isExpanded = mobileExpanded === nav.label;
+                const panelId = `mobile-${menuIdFor(nav.label)}`;
+                const entries = [
+                  ...(nav.featured ? [nav.featured] : []),
+                  ...(nav.items ?? []),
+                ];
+                return (
+                  <div
+                    key={nav.label}
+                    className="border-b border-[#E5E5E5] last:border-0"
+                  >
+                    <div className="flex items-center justify-between py-3">
+                      {nav.external ? (
+                        <a
+                          href={nav.href}
+                          className="text-[15px] font-semibold text-[#082B5E]"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={closeMobile}
+                        >
+                          {nav.label}
+                        </a>
+                      ) : (
+                        <Link
+                          href={nav.href}
+                          className="rounded-md text-[15px] font-semibold text-[#082B5E] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006FE8]"
+                          onClick={closeMobile}
+                        >
+                          {nav.label}
+                        </Link>
+                      )}
+                      {hasDropdown && (
+                        <button
+                          type="button"
+                          className="rounded-md p-1.5 text-[#082B5E] hover:bg-[#EBF7FF] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006FE8]"
+                          onClick={() =>
+                            setMobileExpanded(isExpanded ? null : nav.label)
+                          }
+                          aria-expanded={isExpanded}
+                          aria-controls={panelId}
+                          aria-label={
+                            isExpanded
+                              ? `Collapse ${nav.label}`
+                              : `Expand ${nav.label}`
+                          }
+                        >
+                          <ChevronDown
+                            className={`h-4 w-4 transition-transform duration-200 motion-reduce:transition-none ${isExpanded ? "rotate-180" : ""}`}
+                            aria-hidden
+                          />
+                        </button>
+                      )}
+                    </div>
+
+                    {hasDropdown && (
+                      <div id={panelId} hidden={!isExpanded} className="mb-3">
+                        {nav.connectorMarks && nav.connectorMarks.length > 0 ? (
+                          <IntegrationMarkGroups
+                            connectors={nav.connectorMarks}
+                            kinds={nav.kindMarks}
+                          />
+                        ) : entries.length > 0 ? (
+                          <ul className="flex flex-col">
+                            {entries.map((item) => (
+                              <li key={`${item.name}-${item.href}`}>
+                                <MobileItemLink
+                                  item={item}
+                                  onNavigate={closeMobile}
+                                />
+                              </li>
+                            ))}
+                          </ul>
+                        ) : null}
+                        {nav.supporting && (
+                          <div className="mt-2 border-t border-[#E5E5E5] pt-2">
+                            <p className="px-2 py-1 text-[13px] font-semibold text-[#082B5E]">
+                              {nav.supporting.label}
+                            </p>
+                            <ul>
+                              {nav.supporting.items.map((item) => (
+                                <li key={item.name}>
+                                  <Link
+                                    href={item.href}
+                                    onClick={closeMobile}
+                                    className="block rounded-lg px-2 py-2 text-[14px] font-medium leading-5 text-[#33465B] hover:bg-[#EBF7FF] hover:text-[#082B5E] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006FE8]"
+                                  >
+                                    {item.name}
+                                  </Link>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        )}
+                        {nav.groups?.map((group) => (
+                          <div key={group.label} className="mt-2">
+                            <p className="px-2 py-1 text-[13px] font-semibold text-[#082B5E]">
+                              {group.label}
+                            </p>
+                            <ul>
+                              {group.items.map((item) => (
+                                <li key={item.name}>
+                                  <MobileItemLink
+                                    item={item}
+                                    onNavigate={closeMobile}
+                                  />
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        ))}
+                        {nav.menuFooter && nav.menuFooter.length > 0 && (
+                          <div className="mt-2 border-t border-[#E5E5E5] px-2 pt-3">
+                            <FooterLinks
+                              links={nav.menuFooter}
+                              onNavigate={closeMobile}
+                            />
+                          </div>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+
+              <div className="mt-4 flex flex-col gap-2 pb-4">
+                <a
+                  href={DOCS_URL}
+                  className="flex h-10 items-center justify-center rounded-md border border-[#D9E4EF] text-[14px] font-semibold text-[#082B5E] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006FE8]"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={closeMobile}
+                >
+                  Docs
+                </a>
+                <Link
+                  href="/product"
+                  className="flex h-10 items-center justify-center rounded-md border border-[#C9C9C9] text-[14px] font-semibold text-[#082B5E] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006FE8]"
+                  onClick={closeMobile}
+                >
+                  Spine Workspace
+                </Link>
+                <Button
+                  className="h-10 w-full rounded-md bg-[#006FE8] font-semibold text-white hover:bg-[#0055B8]"
+                  asChild
+                >
+                  <Link href="/contact" onClick={closeMobile}>
+                    Contact us
+                  </Link>
+                </Button>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </motion.header>
+    </>
   );
 }

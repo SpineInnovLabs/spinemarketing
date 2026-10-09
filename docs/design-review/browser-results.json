@@ -1,0 +1,32 @@
+[
+  {
+    "device": "desktop",
+    "width": 1280,
+    "height": 801,
+    "hero": "Building the intelligence behind connected business.",
+    "checks": "corporate content; full menus; local solution and product links; directory; technical and solution detail; six product features; alias; honest contact fallback; layout and images",
+    "passed": true,
+    "pageErrors": [],
+    "consoleErrors": []
+  },
+  {
+    "device": "tablet",
+    "width": 1024,
+    "height": 768,
+    "hero": "Building the intelligence behind connected business.",
+    "checks": "corporate content; full menus; local solution and product links; directory; technical and solution detail; six product features; alias; honest contact fallback; layout and images",
+    "passed": true,
+    "pageErrors": [],
+    "consoleErrors": []
+  },
+  {
+    "device": "mobile",
+    "width": 390,
+    "height": 844,
+    "hero": "Building the intelligence behind connected business.",
+    "checks": "corporate content; full menus; local solution and product links; directory; technical and solution detail; six product features; alias; honest contact fallback; layout and images",
+    "passed": true,
+    "pageErrors": [],
+    "consoleErrors": []
+  }
+]

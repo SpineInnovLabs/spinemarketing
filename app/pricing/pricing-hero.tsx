@@ -19,7 +19,7 @@ export function PricingHero() {
         headline="Start with one governed renewal workflow."
         subhead="Pricing follows connectors and governance scope for renewals—not seat-based mystery. Most teams begin with a scoped pilot, then expand."
         primaryCta={{ label: "Book a workflow review", href: "/contact?intent=workflow-review" }}
-        secondaryCta={{ label: "See a renewal decision packet", href: "/#renewal-decision-packet" }}
+        secondaryCta={{ label: "See a renewal decision packet", href: "/product#features" }}
       />
       <section className="border-b border-[#E5E5E5] bg-white pb-16">
       <div className="relative mx-auto max-w-[900px] px-6">

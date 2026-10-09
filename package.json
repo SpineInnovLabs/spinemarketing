@@ -20,7 +20,7 @@
     "check": "npm run lint && npm run audit:site && npm run check:cloudflare && npm run typecheck",
     "audit:site": "node scripts/audit-corporate-site.mjs",
     "check:cloudflare": "node scripts/check-cloudflare-config.mjs",
-    "verify:artifact": "node scripts/verify-static-artifact.mjs",
+    "verify:artifact": "node scripts/verify-static-artifact.mjs && node scripts/verify-corporate-coverage.mjs",
     "verify:live": "node scripts/verify-live-site.mjs",
     "build:cloudflare": "npm run lint && npm run audit:site && npm run check:cloudflare && npm run typecheck && npm run build && npm run verify:artifact",
     "deploy:cloudflare": "npm run verify:artifact && wrangler deploy --env prod && npm run verify:live"

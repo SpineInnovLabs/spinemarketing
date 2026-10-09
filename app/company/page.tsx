@@ -42,8 +42,8 @@ export default function CompanyPage() {
             <h1 className="mt-7 max-w-[1050px] text-[clamp(3.4rem,7vw,7rem)] font-semibold leading-[1.02] tracking-[-.065em]">Technology should understand the <span className="text-[#0072E5]">business it serves.</span></h1>
             <p className="mt-8 max-w-[770px] text-[19px] leading-[1.85] text-[#4C5C73]">Spine InnovTech is a technology and AI innovation company focused on a fundamental problem in modern work: information is everywhere, but shared business understanding is not.</p>
             <div className="mt-10 flex flex-wrap gap-3">
-              <Link href="/#what-we-build" className="inline-flex min-h-12 items-center gap-2 rounded-full bg-[#A6C9FF] px-6 text-sm font-semibold text-[#082045] transition hover:bg-white">What we build <ArrowUpRight className="h-4 w-4"/></Link>
-              <Link href="/contact" className="inline-flex min-h-12 items-center gap-2 rounded-full border border-white/35 px-6 text-sm font-semibold text-white transition hover:bg-white/10">Get in touch <ArrowRight className="h-4 w-4"/></Link>
+              <Link href="/#what-we-build" className="inline-flex min-h-12 items-center gap-2 rounded-full bg-[#006FE8] px-6 text-sm font-semibold text-white transition hover:bg-[#0055B8]">What we build <ArrowUpRight className="h-4 w-4"/></Link>
+              <Link href="/contact" className="inline-flex min-h-12 items-center gap-2 rounded-full border border-[#006FE8] bg-white px-6 text-sm font-semibold text-[#082B5E] transition hover:bg-[#EBF7FF]">Get in touch <ArrowRight className="h-4 w-4"/></Link>
             </div>
           </div>
         </section>
@@ -85,12 +85,12 @@ export default function CompanyPage() {
           </div>
         </section>
 
-        <section className="bg-[#F0F8FF] py-24 text-[#052858] lg:py-32 innovtech-reference-surface">
+        <section id="principles" className="bg-[#F0F8FF] py-24 text-[#052858] lg:py-32 innovtech-reference-surface">
           <div className="mx-auto max-w-[1240px] px-5 sm:px-8">
             <p className="text-[11px] font-semibold uppercase tracking-[.24em] text-[#4C5C73]">OUR PRINCIPLES</p>
             <h2 className="mt-6 max-w-[800px] text-[clamp(2.5rem,4.6vw,4.8rem)] font-semibold leading-[1.08] tracking-[-.055em]">Useful AI starts with responsibility.</h2>
             <div className="mt-12 grid gap-px overflow-hidden rounded-[22px] border border-white/15 bg-white/10 md:grid-cols-2">
-              {beliefs.map((b)=><div key={b.n} className="bg-[#102447] p-8 sm:p-10"><p className="font-mono text-xs text-[#4C5C73]">{b.n} / PRINCIPLE</p><h3 className="mt-6 text-[25px] font-semibold tracking-[-.04em]">{b.title}</h3><p className="mt-4 max-w-[490px] text-[15px] leading-[1.85] text-[#4C5C73]">{b.text}</p></div>)}
+              {beliefs.map((b)=><div key={b.n} className="bg-white p-8 sm:p-10"><p className="font-mono text-xs text-[#4C5C73]">{b.n} / PRINCIPLE</p><h3 className="mt-6 text-[25px] font-semibold tracking-[-.04em]">{b.title}</h3><p className="mt-4 max-w-[490px] text-[15px] leading-[1.85] text-[#4C5C73]">{b.text}</p></div>)}
             </div>
           </div>
         </section>

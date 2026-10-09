@@ -21,8 +21,12 @@ const productAlias = redirects.find(([source]) => source === "/spineworkspace");
 if (!productAlias || productAlias[1] !== "/product" || productAlias[2] !== "301") {
   throw new Error("Legacy /spineworkspace entry must redirect internally to /product.");
 }
-if (!text.includes("Move business") || !text.includes("Spine InnovTech")) {
-  throw new Error("Static export missing approved corporate hero/company identity.");
+if (!text.includes("Building the intelligence behind") || !text.includes("Spine InnovTech")) {
+  throw new Error("Static export missing company-led corporate hero/company identity.");
+}
+const header = text.match(/<header\b[\s\S]*?<\/header>/)?.[0] ?? "";
+for (const category of ["Company", "Technology", "Solutions", "Insights", "Developers"]) {
+  if (!header.includes(category)) throw new Error(`Corporate navigation category missing: ${category}`);
 }
 if (text.includes("Good morning, Operator") || text.includes("Customer Zero")) {
   throw new Error("Authenticated/demo workspace content must not become public corporate homepage.");

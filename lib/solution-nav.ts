@@ -15,9 +15,8 @@ import {
   Wallet,
 } from "lucide-react";
 import {
-  getPrimaryWorkspaceHost,
   PUBLIC_SOLUTIONS,
-  workspaceUrl,
+  marketingPathForSolution,
 } from "@/lib/solution-taxonomy";
 import type { NavItemChild } from "@/lib/navigation";
 
@@ -38,13 +37,11 @@ const SOLUTION_ICONS: Record<string, LucideIcon> = {
 
 export function getSolutionNavItems(): NavItemChild[] {
   return PUBLIC_SOLUTIONS.map((solution) => {
-    const primary = getPrimaryWorkspaceHost(solution);
     return {
       name: solution.navLabel,
-      href: workspaceUrl(primary.host),
+      href: marketingPathForSolution(solution.slug),
       icon: SOLUTION_ICONS[solution.id] ?? Briefcase,
       desc: solution.buyerSummary,
-      external: true,
     };
   });
 }
