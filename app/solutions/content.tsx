@@ -5,21 +5,21 @@ import { PUBLIC_SOLUTIONS, marketingPathForSolution } from "@/lib/solution-taxon
 export function SolutionsContent() {
   return (
     <>
-      <section className="relative overflow-hidden bg-[#0A1B37] px-5 pb-24 pt-40 text-white sm:px-8 lg:pb-32">
+      <section className="relative overflow-hidden bg-[#F0F8FF] px-5 pb-24 pt-40 text-[#052858] sm:px-8 lg:pb-32 innovtech-reference-surface">
         <div className="pointer-events-none absolute -right-20 -top-40 h-[550px] w-[550px] rounded-full bg-[#2F66C7]/25 blur-[100px]" aria-hidden />
         <div className="relative mx-auto max-w-[1220px]">
-          <p className="text-xs font-semibold uppercase tracking-[.22em] text-[#AFCBFC]">Solutions / Spine InnovLabs</p>
+          <p className="text-xs font-semibold uppercase tracking-[.22em] text-[#4C5C73]">Solutions / Spine InnovTech</p>
           <h1 className="mt-7 max-w-[1000px] text-[clamp(3.2rem,6vw,6.3rem)] font-semibold leading-[1.06] tracking-[-.065em]">
-            One business context. <span className="text-[#A9CAFF]">Different work.</span>
+            One business context. <span className="text-[#0072E5]">Different work.</span>
           </h1>
-          <p className="mt-8 max-w-[790px] text-[18px] leading-[1.85] text-[#C9D8ED]">
+          <p className="mt-8 max-w-[790px] text-[18px] leading-[1.85] text-[#4C5C73]">
             Finance, customer success, product and leadership need different perspectives, not disconnected versions of business truth. Explore how the same contextual workspace can support different responsibilities, goals and decisions.
           </p>
           <div className="mt-9 flex flex-wrap gap-3">
-            <a href="https://spineworkspace.com/" className="inline-flex min-h-12 items-center gap-2 rounded-full bg-[#B0CEFF] px-6 text-sm font-semibold text-[#102B51] transition hover:bg-white">
+            <a href="/product" className="inline-flex min-h-12 items-center gap-2 rounded-full bg-[#B0CEFF] px-6 text-sm font-semibold text-[#102B51] transition hover:bg-white">
               Explore Spine Workspace <ArrowUpRight className="h-4 w-4" aria-hidden />
             </a>
-            <Link href="/contact" className="inline-flex min-h-12 items-center gap-2 rounded-full border border-white/30 px-6 text-sm font-semibold text-white transition hover:bg-white/10">
+            <Link href="/contact" className="inline-flex min-h-12 items-center gap-2 rounded-full border border-[#006FE8] bg-white px-6 text-sm font-semibold text-[#082B5E] transition hover:bg-[#EBF7FF]">
               Discuss your use case <ArrowRight className="h-4 w-4" aria-hidden />
             </Link>
           </div>
@@ -52,7 +52,7 @@ export function SolutionsContent() {
       <section className="border-t border-[#D8E4F1] bg-[#EAF2FD] px-5 py-20 sm:px-8">
         <div className="mx-auto grid max-w-[1220px] items-center gap-9 lg:grid-cols-[1.25fr_.75fr]">
           <div><p className="text-xs font-semibold uppercase tracking-[.2em] text-[#2461AE]">One workspace</p><h2 className="mt-5 text-[clamp(2.3rem,4vw,4rem)] font-semibold leading-[1.12] tracking-[-.05em] text-[#102D55]">Different roles shouldn't need different truths.</h2><p className="mt-6 text-[16px] leading-[1.8] text-[#546C87]">Capabilities and views adapt to the work, while business context, policy and authority remain governed.</p></div>
-          <Link href="/company" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#153867] px-6 text-sm font-semibold text-white transition hover:bg-[#2F61A5]">Why Spine InnovLabs <ArrowRight className="h-4 w-4" aria-hidden /></Link>
+          <Link href="/company" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#153867] px-6 text-sm font-semibold text-white transition hover:bg-[#2F61A5]">Why Spine InnovTech <ArrowRight className="h-4 w-4" aria-hidden /></Link>
         </div>
       </section>
     </>

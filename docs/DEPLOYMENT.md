@@ -1,4 +1,4 @@
-# Spine InnovLabs — direct Cloudflare Workers Builds deployment
+# Spine InnovTech — direct Cloudflare Workers Builds deployment
 
 ## Hosting ownership
 
@@ -91,6 +91,12 @@ Do **not** turn on the future `spineinnovlabs.com` canonical redirect without ve
 - If **deploy fails**, check Cloudflare Builds' deploy token permissions, correct Worker name, account, and custom-domain ownership. No CircleCI credentials are involved.
 - If **site still serves old content**, check which Worker/custom domain owns `spineinnovlabs.spineworkspace.com`. A successful Wrangler upload to a different Worker is **not** a release. `verify:live` fails when the corporate hero is absent or the final hostname redirects away.
 - If **Sanity posts are stale**, verify configured build secrets and rerun a Deploy Hook after a content publication.
-- **Only declare production success** once the Cloudflare build and deployment complete and the live page contains `more connected business`.
+- **Only declare production success** once the Cloudflare build and deployment complete and the live page contains `Move business` and `Spine InnovTech`.
 
 References: [Cloudflare Workers Builds](https://developers.cloudflare.com/workers/ci-cd/builds/), [Build settings](https://developers.cloudflare.com/workers/ci-cd/builds/configuration/), and [Deploy Hooks](https://developers.cloudflare.com/workers/ci-cd/builds/deploy-hooks/).
+
+### Feature-branch Preview failure (9 October 2026)
+
+Cloudflare successfully built commit `711cb8a`, then its feature-branch trigger ran `npx wrangler preview`. Deployment failed because the Wrangler configuration had no `previews` block. The configuration now includes an empty top-level `previews` object, as required by Wrangler's Preview command. This is distinct from production deployment, which uses `wrangler deploy --env prod` and verifies the production hostname.
+
+A Codex environment secret is not evidence of runtime authentication: verify the binding status and `wrangler whoami` in the actual process. The token supplied for this deployment authenticated successfully to the configured account. Keep token values out of source files, reports, and logs.

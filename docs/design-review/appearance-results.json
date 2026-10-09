@@ -1,0 +1,122 @@
+[
+  {
+    "preference": "light OS",
+    "path": "/",
+    "theme": "light",
+    "scheme": "light",
+    "color": "rgb(8, 43, 94)",
+    "h1": "Building the intelligence behind connected business.",
+    "stored": null,
+    "passed": true
+  },
+  {
+    "preference": "light OS",
+    "path": "/product",
+    "theme": "light",
+    "scheme": "light",
+    "color": "rgb(5, 40, 88)",
+    "h1": "One workspace to understand the business and share the work.",
+    "stored": null,
+    "passed": true
+  },
+  {
+    "preference": "light OS",
+    "path": "/company",
+    "theme": "light",
+    "scheme": "light",
+    "color": "rgb(5, 40, 88)",
+    "h1": "Technology should understand the business it serves.",
+    "stored": null,
+    "passed": true
+  },
+  {
+    "preference": "light OS",
+    "path": "/solutions",
+    "theme": "light",
+    "scheme": "light",
+    "color": "rgb(5, 40, 88)",
+    "h1": "One business context. Different work.",
+    "stored": null,
+    "passed": true
+  },
+  {
+    "preference": "dark OS",
+    "path": "/",
+    "theme": "light",
+    "scheme": "light",
+    "color": "rgb(8, 43, 94)",
+    "h1": "Building the intelligence behind connected business.",
+    "stored": null,
+    "passed": true
+  },
+  {
+    "preference": "dark OS",
+    "path": "/product",
+    "theme": "light",
+    "scheme": "light",
+    "color": "rgb(5, 40, 88)",
+    "h1": "One workspace to understand the business and share the work.",
+    "stored": null,
+    "passed": true
+  },
+  {
+    "preference": "dark OS",
+    "path": "/company",
+    "theme": "light",
+    "scheme": "light",
+    "color": "rgb(5, 40, 88)",
+    "h1": "Technology should understand the business it serves.",
+    "stored": null,
+    "passed": true
+  },
+  {
+    "preference": "dark OS",
+    "path": "/solutions",
+    "theme": "light",
+    "scheme": "light",
+    "color": "rgb(5, 40, 88)",
+    "h1": "One business context. Different work.",
+    "stored": null,
+    "passed": true
+  },
+  {
+    "preference": "stored dark preference",
+    "path": "/",
+    "theme": "light",
+    "scheme": "light",
+    "color": "rgb(8, 43, 94)",
+    "h1": "Building the intelligence behind connected business.",
+    "stored": "dark",
+    "passed": true
+  },
+  {
+    "preference": "stored dark preference",
+    "path": "/product",
+    "theme": "light",
+    "scheme": "light",
+    "color": "rgb(5, 40, 88)",
+    "h1": "One workspace to understand the business and share the work.",
+    "stored": "dark",
+    "passed": true
+  },
+  {
+    "preference": "stored dark preference",
+    "path": "/company",
+    "theme": "light",
+    "scheme": "light",
+    "color": "rgb(5, 40, 88)",
+    "h1": "Technology should understand the business it serves.",
+    "stored": "dark",
+    "passed": true
+  },
+  {
+    "preference": "stored dark preference",
+    "path": "/solutions",
+    "theme": "light",
+    "scheme": "light",
+    "color": "rgb(5, 40, 88)",
+    "h1": "One business context. Different work.",
+    "stored": "dark",
+    "passed": true
+  }
+]

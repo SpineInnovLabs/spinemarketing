@@ -399,13 +399,13 @@ export function EnterpriseHome() {
         </div>
       </section>
 
-      <section className="bg-[#032D60] py-20 md:py-24">
+      <section className="bg-[#F0F8FF] py-20 md:py-24 innovtech-reference-surface">
         <div className="mx-auto flex max-w-[1280px] flex-col items-start justify-between gap-4 px-5 sm:px-8 lg:flex-row lg:items-center lg:px-12">
           <div>
-            <h2 className="text-[24px] font-semibold tracking-[-0.02em] text-white">
+            <h2 className="text-[24px] font-semibold tracking-[-0.02em] text-[#052858]">
               Make every renewal decision from the full customer story.
             </h2>
-            <p className="mt-1 max-w-xl text-[15px] text-white/80">
+            <p className="mt-1 max-w-xl text-[15px] text-[#4C5C73]/80">
               Evidence-backed proposals, explicit approvals, and execution in the systems your team already trusts.
             </p>
           </div>

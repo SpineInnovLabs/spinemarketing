@@ -1,239 +1,584 @@
-"use client";
-
 import Link from "next/link";
-import { Activity, ArrowRight, ArrowUpRight, Check, ChevronRight, Database, MoveUpRight, Network, ShieldCheck, Sparkles, UsersRound, Waypoints } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 
-const foundation = [
-  { id: "01", label: "Discover", title: "See the connected environment.", description: "Understand which applications, records, tools, agents, and capabilities are available — without confusing discovery with permission." },
-  { id: "02", label: "Contextualize", title: "Assemble the business story.", description: "Relate goals, KPIs, customers, people, events, decisions, work, and evidence instead of treating every record as an isolated fact." },
-  { id: "03", label: "Collaborate", title: "Give people and AI shared context.", description: "Present the relevant work to each person and help AI gather the context needed to prepare useful next steps." },
-  { id: "04", label: "Govern", title: "Put authority before action.", description: "Separate investigation and proposals from authorized execution, with explicit approval where consequential work requires it." },
-  { id: "05", label: "Continue", title: "Carry verified outcomes forward.", description: "Observe what happened, reconcile it with source evidence, and preserve the decisions and handoffs that make the next step intelligible." },
+const approach = [
+  [
+    "Connect the environment.",
+    "Discover authorized applications, data, tools, and capabilities while keeping source systems in control of their records.",
+  ],
+  [
+    "Understand the business.",
+    "Relate goals, customers, people, decisions, events, work, evidence, and outcomes into usable business context.",
+  ],
+  [
+    "Support human and AI work.",
+    "Give each participant the relevant context for their role, responsibilities, and authority.",
+  ],
+  [
+    "Govern consequential actions.",
+    "Separate what an AI can propose from what a person or policy has authorized it to do.",
+  ],
+  [
+    "Verify and continue.",
+    "Observe execution, reconcile outcomes with source evidence, and carry the verified state forward.",
+  ],
 ];
-
 const technology = [
-  { number: "01", name: "Spine Fabric", eyebrow: "CONTEXT FOUNDATION", description: "The governed fabric that connects business entities, relationships, signals, decisions, evidence, and continuity.", href: "/platform/spine-fabric" },
-  { number: "02", name: "Spine Workbench", eyebrow: "HUMAN WORK SURFACE", description: "An adaptive workspace that brings relevant priorities, work, and context to the person responsible.", href: "https://spineworkspace.com" },
-  { number: "03", name: "Spine Twin", eyebrow: "AI COUNTERPART", description: "A context-aware AI counterpart for gathering understanding, preparing work, and proposing governed next steps.", href: "/twin" },
-  { number: "04", name: "Spine Runtime", eyebrow: "EXECUTION & ASSURANCE", description: "The orchestration and governance layer for authorized execution, observation, and reconciliation.", href: "/governance" },
-  { number: "05", name: "Spine Marketplace", eyebrow: "CONNECTED CAPABILITIES", description: "A governed ecosystem for tools, connectors, MCP servers, plugins, and reusable capabilities.", href: "/integrations" },
+  {
+    name: "Spine Fabric",
+    label: "Shared business context",
+    body: "A governed context layer relating evidence, entities, goals, signals, decisions, and work across tools.",
+    href: "/platform/spine-fabric",
+  },
+  {
+    name: "Spine Workbench",
+    label: "The human work surface",
+    body: "A workspace that brings the right view and capabilities to the person doing the work.",
+    href: "/product/the-adaptive-workspace",
+  },
+  {
+    name: "Spine Twin",
+    label: "Context-aware AI",
+    body: "An AI counterpart that helps assemble context, interpret signals, prepare work, and propose actions within defined boundaries.",
+    href: "/twin",
+  },
+  {
+    name: "Spine Runtime",
+    label: "Governed execution",
+    body: "The controls for routing authorized actions, observing effects, reconciling results, and preserving an audit trail.",
+    href: "/governance",
+  },
+  {
+    name: "Spine Marketplace",
+    label: "Connected capabilities",
+    body: "A path to approved connectors, MCP servers, tools, and reusable capabilities.",
+    href: "/integrations",
+  },
 ];
-
-const teams = [
-  { label: "Customer Success", detail: "Bring account relationships, health signals, commitments, and renewal work into focus.", href: "/solutions/customer-success" },
-  { label: "Sales & RevOps", detail: "Connect pipeline decisions, customer conversations, and commercial follow-through.", href: "/solutions/revops" },
-  { label: "Finance & Operations", detail: "See dependencies, financial signals, approvals, and work across systems.", href: "/solutions/finance" },
-  { label: "Leadership", detail: "Understand progress against goals with the evidence behind priorities and decisions.", href: "/solutions/founders" },
+const roles = [
+  [
+    "Customer Success",
+    "Understand account health, renewal signals, commitments, stakeholders, and next steps in context.",
+    "/solutions/customer-success",
+  ],
+  [
+    "Sales & Revenue Operations",
+    "Connect pipeline, customer conversations, commercial commitments, and delivery evidence.",
+    "/solutions/revops",
+  ],
+  [
+    "Finance",
+    "See how financial events relate to work, ownership, dependencies, and business decisions.",
+    "/solutions/finance",
+  ],
+  [
+    "Operations",
+    "Coordinate dependencies, approvals, and handoffs across the systems teams already use.",
+    "/solutions/operations",
+  ],
+  [
+    "Product & Engineering",
+    "Connect customer needs, incidents, roadmap work, and technical evidence.",
+    "/solutions/product-engineering",
+  ],
+  [
+    "Leadership",
+    "Examine progress toward goals with the underlying decisions and evidence alongside the metrics.",
+    "/solutions/founders",
+  ],
 ];
-
 const principles = [
-  ["Context over fragments", "The relationships between facts matter as much as the facts themselves."],
-  ["Evidence over assertion", "Important conclusions need sources, provenance, and clearly marked gaps."],
-  ["Authority before action", "Access to a capability is not permission to execute it."],
-  ["Humans and AI together", "AI helps people understand and act; people retain judgment and accountability."],
+  [
+    "Context over fragments.",
+    "Relationships between facts matter as much as the facts themselves.",
+  ],
+  [
+    "Evidence over assertion.",
+    "Know the source of a conclusion and whether the evidence is current.",
+  ],
+  [
+    "Authority before action.",
+    "Available technology does not equal permission to use it.",
+  ],
+  [
+    "People and AI together.",
+    "Humans and AI should operate on shared goals and governed context.",
+  ],
+  [
+    "Continuity by design.",
+    "Work should remain understandable as people, tools, and AI models change.",
+  ],
 ];
-
-function SectionLabel({ children, light = false }: { children: React.ReactNode; light?: boolean }) {
-  return <p className={`text-[11px] font-semibold uppercase tracking-[0.24em] ${light ? "text-[#AFC7FF]" : "text-[#235FCE]"}`}>{children}</p>;
-}
-
-function ContextConstellation() {
+const container = "mx-auto max-w-[1320px] px-5 sm:px-8 lg:px-12";
+const heading =
+  "text-[clamp(2rem,4vw,3.8rem)] font-semibold leading-[1.12] tracking-[-.045em]";
+const body = "text-[17px] leading-[1.85] text-[#4E607A]";
+const button =
+  "inline-flex min-h-12 items-center gap-3 rounded-xl bg-[#006FE8] px-6 text-[14px] font-semibold text-white transition-colors hover:bg-[#0055B8] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#006FE8]";
+const secondary =
+  "inline-flex min-h-12 items-center gap-3 rounded-xl border border-[#006FE8] bg-white px-6 text-[14px] font-semibold text-[#082B5E] transition-colors hover:bg-[#EBF7FF] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#006FE8]";
+function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <div className="relative mx-auto w-full max-w-[610px] [perspective:1000px]" aria-label="Concept illustration of connected sources, shared business context and accountable human and AI work">
-      <div className="absolute -inset-8 rounded-full bg-[#4B82FF]/15 blur-[70px]" aria-hidden="true" />
-      <div className="relative overflow-hidden rounded-[28px] border border-white/20 bg-[#12254C]/90 p-4 shadow-[0_42px_100px_-30px_rgba(1,5,22,.85)] backdrop-blur-xl sm:p-6">
-        <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#9DB8F3]/15 pb-4">
-          <div className="flex items-center gap-2">
-            <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#7CA8FF]/15 text-[#BFD4FF]"><Network className="h-4 w-4" /></span>
-            <span className="text-[11px] font-bold uppercase tracking-[.16em] text-[#D6E5FF]">The connected business</span>
-          </div>
-          <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-2.5 py-1 text-[10px] font-medium text-[#AEC6F0]"><span className="h-1.5 w-1.5 rounded-full bg-[#73DBD0]"/>Concept view</span>
-        </div>
-        <div className="relative py-6 sm:py-8">
-          <div className="pointer-events-none absolute inset-0 opacity-30 [background-image:linear-gradient(to_right,#6483b41c_1px,transparent_1px),linear-gradient(to_bottom,#6483b41c_1px,transparent_1px)] [background-size:28px_28px]" aria-hidden="true" />
-          <div className="relative grid gap-3 sm:grid-cols-[1fr_auto_1.25fr] sm:items-center">
-            <div className="grid grid-cols-3 gap-2 sm:grid-cols-1">
-              {[
-                { name: "Applications", detail: "Systems of record", icon: Database },
-                { name: "People", detail: "Teams & knowledge", icon: UsersRound },
-                { name: "Signals", detail: "Goals & events", icon: Activity },
-              ].map(({name,detail,icon:Icon}) => (
-                <div key={name} className="flex min-w-0 items-center gap-2 rounded-xl border border-white/15 bg-[#193461]/90 p-2.5 sm:p-3">
-                  <span className="hidden h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#6C9EF4]/15 text-[#A8C6FF] sm:flex"><Icon className="h-4 w-4" /></span>
-                  <div className="min-w-0"><p className="text-[10px] font-semibold text-white sm:text-[12px]">{name}</p><p className="mt-1 hidden text-[10px] text-[#9DB6D9] sm:block">{detail}</p></div>
-                </div>
-              ))}
-            </div>
-            <div className="relative hidden h-[200px] w-[26px] items-center justify-center sm:flex" aria-hidden="true">
-              <div className="h-[1px] w-full bg-gradient-to-r from-[#86B6FF] to-[#79E0DA]" />
-              <div className="absolute right-0 h-2 w-2 rotate-45 border-r border-t border-[#79E0DA]" />
-            </div>
-            <div className="rounded-[20px] border border-[#96BDFF]/40 bg-gradient-to-br from-[#2A4F9E]/95 to-[#182E61]/95 p-4 shadow-[inset_0_1px_0_#ffffff20,0_16px_42px_-15px_#020e2d] sm:p-5">
-              <div className="flex items-center justify-between gap-3">
-                <span className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[.13em] text-[#A6CCFF]"><span className="h-2 w-2 rounded-full bg-[#79E0DA]" />SPINE FABRIC</span>
-                <Waypoints className="h-4 w-4 text-[#A6CCFF]" />
-              </div>
-              <p className="mt-5 text-[23px] font-semibold leading-[1.1] tracking-[-.05em] text-white sm:text-[27px]">Shared business context</p>
-              <p className="mt-3 text-[12px] leading-[1.6] text-[#C4D7FA]">A connected understanding of what matters, why it matters and what comes next.</p>
-              <div className="mt-5 flex flex-wrap gap-1.5">
-                {["Goals", "KPIs", "Decisions", "Evidence", "Work"].map(v=><span key={v} className="rounded-md border border-white/15 bg-white/10 px-2 py-1.5 text-[10px] text-[#DCEAFF]">{v}</span>)}
-              </div>
-            </div>
-          </div>
-          <div className="relative mx-auto my-5 h-7 w-px bg-gradient-to-b from-[#89B5FF] to-[#75DFD4]" aria-hidden="true" />
-          <div className="relative grid grid-cols-2 gap-3">
-            <div className="rounded-xl border border-[#A9C4FF]/25 bg-[#1A3462] p-3 sm:p-4">
-              <p className="flex items-center gap-2 text-[11px] font-semibold text-white"><UsersRound className="h-4 w-4 text-[#9FC1FF]" /> People</p>
-              <p className="mt-2 text-[11px] leading-5 text-[#AFC5E6]">Judgment · priorities · approval</p>
-            </div>
-            <div className="rounded-xl border border-[#A9C4FF]/25 bg-[#1A3462] p-3 sm:p-4">
-              <p className="flex items-center gap-2 text-[11px] font-semibold text-white"><Sparkles className="h-4 w-4 text-[#91E0D5]" /> AI counterpart</p>
-              <p className="mt-2 text-[11px] leading-5 text-[#AFC5E6]">Context gathering · preparation</p>
-            </div>
-          </div>
-          <div className="relative mt-3 flex items-center justify-between gap-3 rounded-xl border border-[#78C9BF]/25 bg-[#153C56]/85 px-3 py-3 sm:px-4">
-            <div className="flex items-center gap-2.5"><ShieldCheck className="h-4 w-4 shrink-0 text-[#85E7D9]" /><span className="text-[11px] font-medium text-[#E0F9F3]">Authority → execution → verification</span></div>
-            <ArrowRight className="h-4 w-4 shrink-0 text-[#8DE7D9]"/>
-          </div>
-        </div>
-        <div className="border-t border-white/10 pt-3 text-[10px] leading-5 text-[#9EBAE4]">Architecture illustration. Sources remain authoritative; execution requires permission.</div>
-      </div>
-    </div>
+    <p className="text-[11px] font-semibold uppercase tracking-[.2em] text-[#006FE8]">
+      {children}
+    </p>
+  );
+}
+function TextLink({
+  href,
+  children,
+}: {
+  href: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <Link
+      href={href}
+      className="mt-7 inline-flex items-center gap-2 rounded-sm text-sm font-semibold text-[#006FE8] hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#006FE8]"
+    >
+      {children}
+      <ArrowRight className="h-4 w-4" aria-hidden />
+    </Link>
   );
 }
 
 export function InnovLabsHome() {
   return (
-    <div className="overflow-hidden bg-[#F7F9FC] text-[#111B30]">
-      <section className="relative isolate overflow-hidden bg-[#08152F] text-white">
-        <div className="pointer-events-none absolute inset-0 opacity-45 [background-image:radial-gradient(#6F9BEA30_1px,transparent_1px)] [background-size:28px_28px] [mask-image:linear-gradient(to_right,transparent,black_60%)]" aria-hidden="true" />
-        <div className="pointer-events-none absolute -right-48 -top-56 h-[780px] w-[780px] rounded-full bg-[#3667CB]/25 blur-[110px]" aria-hidden="true" />
-        <div className="pointer-events-none absolute -bottom-64 left-[-20%] h-[600px] w-[750px] rounded-full bg-[#137B97]/15 blur-[130px]" aria-hidden="true" />
-        <div className="relative mx-auto grid max-w-[1320px] items-center gap-14 px-5 pb-20 pt-20 sm:px-8 sm:pt-24 lg:min-h-[760px] lg:grid-cols-[1.02fr_.98fr] lg:gap-10 lg:px-12 lg:pb-24 lg:pt-24">
-          <div className="relative z-10">
-            <div className="mb-7 inline-flex flex-wrap items-center gap-3 text-[11px] font-bold uppercase tracking-[.2em] text-[#B4CDFB]">
-              <span className="h-[1px] w-7 bg-[#82E1D6]" />
-              SPINE INNOVLABS
-              <span className="font-normal tracking-[.11em] text-[#8DA6CD]">/ AI & CONNECTED SYSTEMS</span>
-            </div>
-            <h1 className="max-w-[730px] text-[clamp(3.2rem,5.5vw,6.05rem)] font-semibold leading-[1.035] tracking-[-0.068em]">
-              Building intelligence for a <span className="relative whitespace-normal text-[#A9C9FF]">more connected business<span className="absolute -bottom-2 left-0 h-[3px] w-[70%] bg-gradient-to-r from-[#77D8D2] to-transparent" aria-hidden="true" /></span><span className="text-white">.</span>
+    <div className="bg-white text-[#082B5E]">
+      <section aria-labelledby="company-title" className="bg-[#F0F8FF]">
+        <div
+          className={`${container} grid items-center gap-12 py-16 sm:py-20 lg:min-h-[740px] lg:grid-cols-[1.04fr_.96fr] lg:gap-10`}
+        >
+          <div>
+            <SectionLabel>
+              SPINE INNOVTECH · TECHNOLOGY & AI INNOVATION
+            </SectionLabel>
+            <h1
+              id="company-title"
+              className="mt-6 max-w-[700px] text-[clamp(2.65rem,4.8vw,4.8rem)] font-semibold leading-[1.08] tracking-[-.05em]"
+            >
+              Building the intelligence behind{" "}
+              <span className="text-[#006FE8]">connected business.</span>
             </h1>
-            <p className="mt-9 max-w-[570px] text-[clamp(1rem,1.35vw,1.15rem)] leading-[1.85] text-[#C4D3ED]">
-              When information is scattered, people and AI lose the full picture. Spine InnovLabs builds the technology that turns disconnected systems, knowledge and work into shared business context.
+            <p className={`${body} mt-7 max-w-[590px]`}>
+              Business already runs across people, applications, decisions, and
+              AI. The challenge is not a lack of tools. It is the missing
+              context between them.
             </p>
-            <div className="mt-9 flex flex-wrap items-center gap-3">
-              <Link href="https://spineworkspace.com" className="group inline-flex min-h-12 items-center gap-3 rounded-full bg-[#A5C7FF] px-6 text-[14px] font-semibold text-[#0C2350] transition-colors hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">
-                Explore Spine Workspace <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            <p className={`${body} mt-4 max-w-[590px]`}>
+              Spine InnovTech builds the technology that connects those
+              pieces—so people and AI can understand what matters, coordinate
+              work, and act with clarity and accountability.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link href="/product" className={button}>
+                Discover Spine Workspace{" "}
+                <ArrowRight className="h-4 w-4" aria-hidden />
               </Link>
-              <Link href="#what-we-build" className="inline-flex min-h-12 items-center gap-2 rounded-full border border-[#B4CDFA]/40 bg-white/[.04] px-6 text-[14px] font-semibold text-white transition-colors hover:bg-white/10">
-                What we build <ArrowRight className="h-4 w-4" />
+              <Link href="/platform" className={secondary}>
+                Explore our technology
               </Link>
             </div>
-            <div className="mt-12 grid max-w-[590px] grid-cols-3 gap-4 border-t border-white/15 pt-6">
-              {[["Systems", "Connected"],["Context", "Shared"],["Actions", "Governed"]].map(([a,b])=><div key={a}><p className="text-[11px] font-semibold uppercase tracking-[.16em] text-[#8FADDB]">{a}</p><p className="mt-1.5 text-[15px] font-medium text-[#F0F6FF]">{b}</p></div>)}
-            </div>
+            <p className="mt-8 border-t border-[#CBE5FA] pt-5 text-[13px] font-medium text-[#4E607A]">
+              Connected systems. Shared context. Governed intelligence.
+            </p>
           </div>
-          <ContextConstellation />
+          <figure className="mx-auto w-full max-w-[640px]">
+            <Image
+              src="/images/corporate-connected-business.png"
+              alt="Original concept illustration: source records feed shared business context; a person reviews it with AI assistance, authorizes work, and verifies the outcome."
+              width={1315}
+              height={1196}
+              priority
+              className="h-auto w-full rounded-2xl"
+            />
+            <figcaption className="mt-4 text-[12px] leading-6 text-[#4E607A]">
+              Concept illustration. Source systems remain authoritative;
+              consequential work requires authorization and verification.
+            </figcaption>
+          </figure>
         </div>
       </section>
 
-      <section className="mx-auto grid max-w-[1320px] gap-12 px-5 py-24 sm:px-8 lg:grid-cols-[0.72fr_1.28fr] lg:gap-24 lg:px-12 lg:py-32">
-        <div><SectionLabel>THE PROBLEM WE SEE</SectionLabel><p className="mt-5 text-[13px] leading-7 text-[#61718A]">More software has not automatically created more understanding.</p></div>
+      <section
+        id="why-we-exist"
+        className={`${container} grid gap-10 py-20 lg:grid-cols-[.6fr_1.4fr] lg:gap-20 lg:py-28`}
+      >
         <div>
-          <h2 className="max-w-[850px] text-[clamp(2.4rem,4.3vw,4.5rem)] font-semibold leading-[1.12] tracking-[-0.055em]">The information exists.<br /><span className="text-[#5278B4]">The full picture rarely does.</span></h2>
-          <p className="mt-8 max-w-[710px] text-[17px] leading-[1.9] text-[#4D5D74]">A customer relationship lives in CRM. A problem appears in support. A commitment sits in email. A decision happens in a meeting. Another piece of the story is known only to a person or an AI session. Every system holds something useful; few hold the whole context of the work.</p>
-          <p className="mt-5 max-w-[710px] text-[17px] leading-[1.9] text-[#4D5D74]">Spine InnovLabs is focused on that gap: helping organizations connect the meaning of information without replacing the systems that own it.</p>
-          <Link href="/company" className="mt-9 inline-flex items-center gap-2 border-b border-[#245EC9] pb-2 text-sm font-semibold text-[#245EC9]">Why we build this <ArrowUpRight className="h-4 w-4" /></Link>
+          <SectionLabel>WHY WE EXIST</SectionLabel>
+          <TextLink href="/about">Read our story</TextLink>
+        </div>
+        <div>
+          <h2 className={heading}>
+            Businesses have more software than shared understanding.
+          </h2>
+          <p className={`${body} mt-7`}>
+            A customer relationship lives in CRM. A problem appears in support.
+            A financial change sits in billing. The decision is buried in a
+            meeting, a message, or someone's memory.
+          </p>
+          <p className={`${body} mt-4`}>
+            Each system may be accurate on its own. Yet people still spend time
+            reconstructing the whole picture, and AI often starts with an
+            incomplete one.
+          </p>
+          <p className={`${body} mt-4`}>
+            We believe the next generation of business software should solve
+            that problem—not by replacing every application, but by making
+            business context usable wherever work happens.
+          </p>
         </div>
       </section>
 
-      <section className="bg-white py-24 lg:py-32" id="spine-workspace">
-        <div className="mx-auto grid max-w-[1320px] items-center gap-12 px-5 sm:px-8 lg:grid-cols-2 lg:gap-20 lg:px-12">
-          <div className="rounded-[30px] border border-[#DCE6F4] bg-[#EAF1FC] p-6 sm:p-10">
-            <div className="rounded-[22px] border border-[#CADBF5] bg-white p-5 shadow-[0_30px_70px_-45px_#2D528D] sm:p-7">
-              <div className="flex items-center justify-between border-b border-[#E3EAF5] pb-5">
-                <div><p className="text-[10px] font-bold tracking-[.2em] text-[#57759F]">SPINE WORKSPACE</p><p className="mt-2 text-lg font-semibold tracking-[-.03em]">A context-aware work surface</p></div>
-                <span className="rounded-full bg-[#E6F0FF] px-3 py-1 text-[11px] font-medium text-[#2856A1]">Illustrative view</span>
+      <section id="how-it-works" className="bg-[#EBF7FF] py-20 lg:py-28">
+        <div className={container}>
+          <SectionLabel>OUR APPROACH</SectionLabel>
+          <h2 className={`${heading} mt-5 max-w-[820px]`}>
+            From disconnected information to coordinated work.
+          </h2>
+          <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-5">
+            {approach.map(([title, description], index) => (
+              <article
+                key={title}
+                className="rounded-2xl border border-[#CBE5FA] bg-white p-6"
+              >
+                <p className="text-xs font-medium text-[#006FE8]">
+                  0{index + 1}
+                </p>
+                <h3 className="mt-6 text-xl font-semibold leading-snug tracking-[-.025em]">
+                  {title}
+                </h3>
+                <p className="mt-4 text-[14px] leading-7 text-[#4E607A]">
+                  {description}
+                </p>
+              </article>
+            ))}
+          </div>
+          <TextLink href="/platform/how-it-works">
+            See how our technology works
+          </TextLink>
+        </div>
+      </section>
+
+      <section
+        id="spine-workspace"
+        className={`${container} grid items-start gap-12 py-20 lg:grid-cols-2 lg:gap-20 lg:py-28`}
+      >
+        <div>
+          <SectionLabel>INTRODUCING SPINE WORKSPACE</SectionLabel>
+          <h2 className={`${heading} mt-5`}>
+            One workspace for humans and AI to understand the business and share
+            the work.
+          </h2>
+          <p className={`${body} mt-7`}>
+            Spine Workspace brings goals, priorities, tasks, relationships,
+            knowledge, signals, connected applications, and AI assistance into
+            one business-context workspace.
+          </p>
+          <p className={`${body} mt-4`}>
+            People see the work they need to do. The AI counterpart gathers and
+            assembles relevant context, prepares useful next steps, and works
+            within the boundaries they control. Shared work can continue across
+            teams, tools, and sessions without requiring everyone to reconstruct
+            the same story.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link href="/product" className={button}>
+              Explore Spine Workspace{" "}
+              <ArrowRight className="h-4 w-4" aria-hidden />
+            </Link>
+            <Link href="/product/how-it-works" className={secondary}>
+              View a product walkthrough
+            </Link>
+          </div>
+        </div>
+        <div className="rounded-3xl border border-[#CBE5FA] bg-[#F0F8FF] p-6 sm:p-9">
+          <p className="text-[12px] font-semibold uppercase tracking-[.15em] text-[#006FE8]">
+            WHAT IT BRINGS TOGETHER
+          </p>
+          <div className="mt-6 divide-y divide-[#CBE5FA]">
+            {[
+              ["My Work", "Priorities, tasks, approvals, and next steps."],
+              [
+                "Business Context",
+                "Connected records, relationships, signals, decisions, and evidence.",
+              ],
+              [
+                "Spine Twin",
+                "A context-aware AI counterpart for investigation, preparation, and governed assistance.",
+              ],
+              [
+                "Connected Capabilities",
+                "Access to authorized applications, connectors, MCP tools, and workflows.",
+              ],
+              [
+                "Continuity",
+                "The history and outcomes needed to resume meaningful work.",
+              ],
+            ].map(([title, description]) => (
+              <div key={title} className="py-5 first:pt-0 last:pb-0">
+                <h3 className="text-xl font-semibold">{title}</h3>
+                <p className="mt-2 text-[15px] leading-7 text-[#4E607A]">
+                  {description}
+                </p>
               </div>
-              <div className="mt-6 grid gap-3 sm:grid-cols-[1fr_1.1fr]">
-                <div className="space-y-3">
-                  {["My Work", "Goals & KPIs", "Signals", "Approvals", "Knowledge"].map((x,i)=><div key={x} className={`flex items-center gap-3 rounded-xl px-4 py-3 text-sm ${i===0 ? "bg-[#17396F] font-semibold text-white" : "bg-[#F5F8FD] text-[#36506D]"}`}><span className={`h-1.5 w-1.5 rounded-full ${i===0?"bg-[#8DE5D7]":"bg-[#8DADD5]"}`}/>{x}</div>)}
-                </div>
-                <div className="rounded-2xl bg-[#F4F7FC] p-5">
-                  <p className="text-[10px] font-bold tracking-[.15em] text-[#5E7CA7]">CONTEXT FOR THIS WORK</p>
-                  <h3 className="mt-3 text-lg font-semibold leading-snug tracking-[-.03em]">A decision, with the evidence beside it.</h3>
-                  <div className="mt-5 space-y-2">
-                    {["Current goal", "Related records", "Open decisions", "Available actions"].map((x,i)=><div key={x} className="flex items-center gap-2 rounded-lg border border-[#E4ECF7] bg-white px-3 py-2.5 text-[12px] text-[#435873]"><Check className="h-3.5 w-3.5 text-[#2B72B3]"/>{x}</div>)}
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="what-we-build" className="bg-[#F0F8FF] py-20 lg:py-28">
+        <div className={container}>
+          <SectionLabel>CORE TECHNOLOGY</SectionLabel>
+          <h2 className={`${heading} mt-5 max-w-[860px]`}>
+            A connected architecture, not another disconnected application.
+          </h2>
+          <figure className="mt-10">
+            <Image
+              src="/images/corporate-architecture.png"
+              alt="Original architecture illustration connecting the Spine Fabric foundation, human Workbench, Twin assistance, Runtime authorization, and existing source systems through connected capabilities."
+              width={1774}
+              height={887}
+              className="h-auto w-full rounded-2xl"
+            />
+            <figcaption className="mt-3 text-[12px] leading-6 text-[#4E607A]">
+              Conceptual architecture: complementary parts of one governed
+              workspace, connected to the systems a business already uses.
+            </figcaption>
+          </figure>
+          <div className="mt-10 grid gap-4 md:grid-cols-2">
+            {technology.map((part, index) => (
+              <Link
+                key={part.name}
+                href={part.href}
+                className={`group rounded-2xl border border-[#CBE5FA] bg-white p-7 hover:border-[#006FE8] focus-visible:outline-2 focus-visible:outline-[#006FE8] ${index === 4 ? "md:col-span-2" : ""}`}
+              >
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <p className="text-[11px] font-semibold uppercase tracking-[.14em] text-[#006FE8]">
+                      {part.label}
+                    </p>
+                    <h3 className="mt-3 text-2xl font-semibold tracking-[-.03em]">
+                      {part.name}
+                    </h3>
                   </div>
-                  <p className="mt-5 text-[11px] leading-5 text-[#667B96]">Missing or stale information stays visible. Proposed actions are not completed actions.</p>
+                  <ArrowUpRight
+                    className="h-5 w-5 shrink-0 text-[#006FE8]"
+                    aria-hidden
+                  />
                 </div>
-              </div>
-            </div>
+                <p className="mt-4 max-w-[720px] text-[15px] leading-7 text-[#4E607A]">
+                  {part.body}
+                </p>
+              </Link>
+            ))}
+          </div>
+          <p className="mt-6 text-[13px] leading-6 text-[#4E607A]">
+            These are complementary layers of the Spine Workspace architecture,
+            not separate products or independent availability commitments.
+          </p>
+          <TextLink href="/platform">Explore the architecture</TextLink>
+        </div>
+      </section>
+
+      <section
+        id="human-ai-work"
+        className={`${container} grid gap-12 py-20 lg:grid-cols-2 lg:gap-20 lg:py-28`}
+      >
+        <div>
+          <SectionLabel>THE HUMAN–AI RELATIONSHIP</SectionLabel>
+          <h2 className={`${heading} mt-5`}>
+            Intelligence should support judgment, not replace accountability.
+          </h2>
+        </div>
+        <div>
+          <p className={body}>
+            AI can investigate and prepare. People set goals, make judgments,
+            and retain authority over consequential work. Authorized automation
+            can execute within policy. The result must be checked against what
+            actually happened.
+          </p>
+          <ol
+            aria-label="From understanding to verified work"
+            className="mt-7 flex flex-wrap gap-2"
+          >
+            {[
+              "Understand",
+              "Prepare",
+              "Decide",
+              "Authorize",
+              "Execute",
+              "Verify",
+              "Continue",
+            ].map((step, i) => (
+              <li
+                key={step}
+                className="rounded-lg border border-[#CBE5FA] bg-[#EBF7FF] px-3 py-2 text-[13px] font-semibold"
+              >
+                <span className="mr-2 text-[#006FE8]">{i + 1}.</span>
+                {step}
+              </li>
+            ))}
+          </ol>
+          <p className={`${body} mt-5`}>
+            This is how shared business context becomes useful work rather than
+            another generated answer.
+          </p>
+          <TextLink href="/governance">Explore governance and runtime</TextLink>
+        </div>
+      </section>
+
+      <section id="solutions" className="bg-[#EBF7FF] py-20 lg:py-28">
+        <div className={container}>
+          <SectionLabel>WHERE THE THINKING APPLIES</SectionLabel>
+          <h2 className={`${heading} mt-5 max-w-[850px]`}>
+            Built for the reality of cross-functional business work.
+          </h2>
+          <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {roles.map(([title, description, href]) => (
+              <Link
+                key={title}
+                href={href}
+                className="rounded-2xl border border-[#CBE5FA] bg-white p-7 hover:border-[#006FE8] focus-visible:outline-2 focus-visible:outline-[#006FE8]"
+              >
+                <h3 className="text-xl font-semibold">{title}</h3>
+                <p className="mt-3 text-[15px] leading-7 text-[#4E607A]">
+                  {description}
+                </p>
+                <ArrowRight
+                  className="mt-5 h-4 w-4 text-[#006FE8]"
+                  aria-hidden
+                />
+              </Link>
+            ))}
+          </div>
+          <p className="mt-6 text-[13px] leading-6 text-[#4E607A]">
+            These are work domains supported by a shared context model—not
+            disconnected software products.
+          </p>
+          <div className="flex flex-wrap gap-x-8">
+            <TextLink href="/solutions">Explore all solutions</TextLink>
+            <TextLink href="/use-cases">Explore business use cases</TextLink>
+          </div>
+        </div>
+      </section>
+
+      <section id="principles" className={`${container} py-20 lg:py-28`}>
+        <SectionLabel>OUR PRINCIPLES</SectionLabel>
+        <h2 className={`${heading} mt-5`}>What guides our engineering.</h2>
+        <div className="mt-10 grid gap-4 md:grid-cols-2">
+          {principles.map(([title, description], index) => (
+            <article
+              key={title}
+              className="rounded-2xl border border-[#CBE5FA] bg-[#F0F8FF] p-7"
+            >
+              <p className="text-xs text-[#006FE8]">0{index + 1}</p>
+              <h3 className="mt-5 text-xl font-semibold">{title}</h3>
+              <p className="mt-3 text-[15px] leading-7 text-[#4E607A]">
+                {description}
+              </p>
+            </article>
+          ))}
+        </div>
+        <TextLink href="/company">
+          Meet the company behind the technology
+        </TextLink>
+      </section>
+
+      <section id="company" className="bg-[#F0F8FF] py-20 lg:py-28">
+        <div className={`${container} grid gap-10 lg:grid-cols-2 lg:gap-20`}>
+          <div>
+            <SectionLabel>SPINE INNOVTECH</SectionLabel>
+            <h2 className={`${heading} mt-5`}>
+              Building from India for connected teams everywhere.
+            </h2>
           </div>
           <div>
-            <SectionLabel>OUR FLAGSHIP PRODUCT</SectionLabel>
-            <h2 className="mt-5 text-[clamp(2.5rem,4.6vw,4.7rem)] font-semibold leading-[1.1] tracking-[-0.06em]">Meet <span className="text-[#346DD6]">Spine Workspace.</span></h2>
-            <p className="mt-7 text-xl font-medium leading-[1.6] text-[#273D5A]">One workspace for humans and AI to understand the business, share the work, and achieve goals together.</p>
-            <p className="mt-5 text-[16px] leading-[1.85] text-[#52637A]">Spine Workspace is the business-context workspace. It is designed to bring people, goals, priorities, knowledge, business signals, connected capabilities, and a context-aware AI counterpart into a shared working environment.</p>
-            <p className="mt-4 text-[16px] leading-[1.85] text-[#52637A]">The workspace is the product. The intelligence underneath it makes work more informed, accountable, and continuous.</p>
-            <Link href="https://spineworkspace.com" className="mt-8 inline-flex min-h-12 items-center gap-3 rounded-full bg-[#0C2A58] px-6 text-sm font-semibold text-white transition hover:bg-[#234E98]">Visit Spine Workspace <ArrowUpRight className="h-4 w-4" /></Link>
+            <p className={body}>
+              Spine InnovTech brings enterprise integration experience, AI
+              engineering, and a practical understanding of how work crosses
+              organizational boundaries. Our starting point is simple: valuable
+              information already exists throughout the business. The missing
+              piece is a reliable way to bring its meaning into the work.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link href="/company" className={button}>
+                Meet Spine InnovTech{" "}
+                <ArrowRight className="h-4 w-4" aria-hidden />
+              </Link>
+              <Link href="/contact" className={secondary}>
+                Get in touch
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="bg-[#EBF1F9] py-24 lg:py-32" id="how-it-works">
-        <div className="mx-auto max-w-[1320px] px-5 sm:px-8 lg:px-12">
-          <SectionLabel>THE OPERATING IDEA</SectionLabel>
-          <div className="mt-5 flex flex-wrap items-end justify-between gap-8"><h2 className="max-w-[850px] text-[clamp(2.6rem,4.4vw,4.5rem)] font-semibold leading-[1.1] tracking-[-0.055em]">From fragmented information<br />to coordinated work.</h2><p className="max-w-[300px] text-[15px] leading-7 text-[#576A84]">Five connected responsibilities. One coherent business story.</p></div>
-          <div className="mt-12 grid gap-3 md:grid-cols-2 xl:grid-cols-5">
-            {foundation.map((step)=><article key={step.id} className="group flex min-h-[306px] flex-col rounded-[23px] border border-[#CFDDED] bg-white px-6 py-7 transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_40px_-24px_#4B70B3]">
-              <div className="flex items-center justify-between"><span className="font-mono text-xs text-[#6A87AA]">{step.id}</span><ChevronRight className="h-4 w-4 text-[#86A3C7] transition group-hover:translate-x-1"/></div>
-              <p className="mt-8 text-[11px] font-bold uppercase tracking-[.18em] text-[#3269BE]">{step.label}</p>
-              <h3 className="mt-3 text-[21px] font-semibold leading-snug tracking-[-.035em]">{step.title}</h3>
-              <p className="mt-4 text-[13px] leading-[1.75] text-[#556A83]">{step.description}</p>
-            </article>)}
+      <section id="insights" className={`${container} py-20 lg:py-28`}>
+        <SectionLabel>EXPLORE THE COMPANY AND OUR WORK</SectionLabel>
+        <h2 className={`${heading} mt-5`}>
+          Ideas, engineering, and work you can inspect.
+        </h2>
+        <div className="mt-10 grid gap-4 md:grid-cols-3">
+          {[
+            [
+              "Insights & research",
+              "Perspectives on business context, enterprise systems, and governed AI.",
+              "/resources",
+            ],
+            [
+              "Portfolio & demonstrations",
+              "Illustrative workflows and the architecture behind them.",
+              "/portfolio",
+            ],
+            [
+              "For developers",
+              "Technical concepts, connected capabilities, and documentation.",
+              "/developers",
+            ],
+          ].map(([title, description, href]) => (
+            <Link
+              key={title}
+              href={href}
+              className="rounded-2xl border border-[#CBE5FA] p-7 hover:bg-[#F0F8FF]"
+            >
+              <h3 className="text-xl font-semibold">{title}</h3>
+              <p className="mt-3 text-[15px] leading-7 text-[#4E607A]">
+                {description}
+              </p>
+              <ArrowRight className="mt-5 h-4 w-4 text-[#006FE8]" aria-hidden />
+            </Link>
+          ))}
+        </div>
+        <TextLink href="/site-map">Browse every public website page</TextLink>
+      </section>
+
+      <section className="bg-[#EBF7FF] py-20 lg:py-28">
+        <div
+          className={`${container} flex flex-wrap items-end justify-between gap-10`}
+        >
+          <div>
+            <SectionLabel>BUILDING WHAT COMES NEXT</SectionLabel>
+            <h2 className={`${heading} mt-5 max-w-[830px]`}>
+              The next generation of work needs a shared understanding of the
+              business.
+            </h2>
+            <p className={`${body} mt-6`}>
+              Discover the workspace we're building around that idea.
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-3">
+            <Link href="/product" className={button}>
+              Explore Spine Workspace{" "}
+              <ArrowRight className="h-4 w-4" aria-hidden />
+            </Link>
+            <Link href="/contact" className={secondary}>
+              Contact Spine InnovTech
+            </Link>
           </div>
         </div>
       </section>
-
-      <section className="bg-[#08152F] py-24 text-white lg:py-32" id="what-we-build">
-        <div className="mx-auto max-w-[1320px] px-5 sm:px-8 lg:px-12">
-          <SectionLabel light>THE TECHNOLOGY</SectionLabel>
-          <div className="mt-5 flex flex-wrap items-end justify-between gap-8">
-            <h2 className="max-w-[850px] text-[clamp(2.6rem,4.4vw,4.5rem)] font-semibold leading-[1.1] tracking-[-0.055em]">An intelligent workspace.<br /><span className="text-[#9AB9FF]">A governed foundation.</span></h2>
-            <p className="max-w-[310px] text-[15px] leading-7 text-[#B0C1DC]">Spine is a data and context fabric — not a biological spine or a collection of disconnected bots.</p>
-          </div>
-          <div className="mt-14 grid gap-px overflow-hidden rounded-[24px] border border-white/15 bg-white/10 lg:grid-cols-2">
-            {technology.map((part,index)=><Link key={part.name} href={part.href} className={`group flex min-h-[225px] flex-col justify-between bg-[#102142] p-7 transition-colors hover:bg-[#19335F] sm:p-9 ${index===4 ? "lg:col-span-2" : ""}`}>
-              <div className="flex items-start justify-between gap-4"><div><p className="text-[10px] font-bold uppercase tracking-[.2em] text-[#9ABEFF]">{part.eyebrow}</p><h3 className="mt-3 text-[26px] font-semibold tracking-[-.04em]">{part.name}</h3></div><ArrowUpRight className="h-5 w-5 text-[#8EAADB] transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5"/></div>
-              <p className="mt-6 max-w-[510px] text-[14px] leading-[1.8] text-[#B7C5DA]">{part.description}</p>
-            </Link>)}
-          </div>
-          <p className="mt-6 text-[12px] leading-6 text-[#9FB4D2]">These are complementary layers of the Spine Workspace architecture, not a list of separate products or standalone availability commitments.</p>
-        </div>
-      </section>
-
-      <section className="bg-white py-24 lg:py-32" id="solutions">
-        <div className="mx-auto grid max-w-[1320px] gap-12 px-5 sm:px-8 lg:grid-cols-[.8fr_1.2fr] lg:gap-20 lg:px-12">
-          <div><SectionLabel>WHERE CONTEXT MATTERS</SectionLabel><h2 className="mt-5 text-[clamp(2.6rem,4.4vw,4.5rem)] font-semibold leading-[1.12] tracking-[-.055em]">Different teams.<br />One connected reality.</h2><p className="mt-6 max-w-[410px] text-[16px] leading-[1.85] text-[#546781]">Each function has its own priorities, permissions, and way of working. Context should adapt to the work without splitting the business into isolated versions of the truth.</p><Link href="/solutions" className="mt-7 inline-flex items-center gap-2 border-b border-[#245EC9] pb-2 text-sm font-semibold text-[#245EC9]">Explore business solutions <ArrowUpRight className="h-4 w-4" /></Link></div>
-          <div className="border-t border-[#CBD9EB]">{teams.map((team,i)=><Link key={team.label} href={team.href} className="group flex gap-4 border-b border-[#CBD9EB] py-7 transition hover:pl-2"><span className="mt-1 font-mono text-xs text-[#6183B1]">0{i+1}</span><div className="flex-1"><h3 className="text-[21px] font-semibold tracking-[-.035em]">{team.label}</h3><p className="mt-2 max-w-[500px] text-[14px] leading-7 text-[#5B6D84]">{team.detail}</p></div><ArrowUpRight className="h-5 w-5 shrink-0 text-[#2A64C0] transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5"/></Link>)}</div>
-        </div>
-      </section>
-
-      <section className="bg-[#F0F5FC] py-24 lg:py-32" id="principles">
-        <div className="mx-auto max-w-[1320px] px-5 sm:px-8 lg:px-12">
-          <SectionLabel>OUR ENGINEERING PRINCIPLES</SectionLabel>
-          <h2 className="mt-5 max-w-[800px] text-[clamp(2.6rem,4.4vw,4.5rem)] font-semibold leading-[1.12] tracking-[-.055em]">Intelligence should support judgment, not replace accountability.</h2>
-          <div className="mt-12 grid gap-4 md:grid-cols-2">{principles.map(([title,body],i)=><div key={title} className="rounded-[22px] border border-[#D4E0EF] bg-white p-7 sm:p-9"><p className="font-mono text-xs text-[#6687B3]">0{i+1} / PRINCIPLE</p><h3 className="mt-6 text-[24px] font-semibold tracking-[-.04em]">{title}</h3><p className="mt-3 max-w-[490px] text-[15px] leading-[1.8] text-[#576B83]">{body}</p></div>)}</div>
-        </div>
-      </section>
-
-      <section className="bg-white py-24 lg:py-32">
-        <div className="mx-auto grid max-w-[1320px] items-center gap-12 px-5 sm:px-8 lg:grid-cols-[.8fr_1.2fr] lg:gap-20 lg:px-12"><div><SectionLabel>OUR PERSPECTIVE</SectionLabel><h2 className="mt-5 text-[clamp(2.6rem,4.4vw,4.5rem)] font-semibold leading-[1.1] tracking-[-.055em]">Built from a real integration problem.</h2></div><div><p className="text-[19px] leading-[1.85] text-[#354C6B]">Spine InnovLabs grew from a first-hand view of enterprise systems and customer-facing work: the repeated effort required to trace one business situation across many tools, teams, records, and decisions.</p><p className="mt-5 text-[16px] leading-[1.85] text-[#556981]">Our direction is grounded in enterprise integration, AI engineering, and the belief that a business should not have to reconstruct its context every time work changes hands.</p><Link href="/company" className="mt-8 inline-flex items-center gap-2 border-b border-[#245EC9] pb-2 text-sm font-semibold text-[#245EC9]">Meet Spine InnovLabs <ArrowUpRight className="h-4 w-4" /></Link></div></div>
-      </section>
-
-      <section className="bg-[#102C59] py-24 text-white lg:py-32"><div className="mx-auto flex max-w-[1320px] flex-wrap items-end justify-between gap-10 px-5 sm:px-8 lg:px-12"><div><SectionLabel light>BUILDING WHAT COMES NEXT</SectionLabel><h2 className="mt-5 max-w-[850px] text-[clamp(2.8rem,5.1vw,5.4rem)] font-semibold leading-[1.05] tracking-[-.06em]">The next era of work needs a shared understanding of business.</h2><p className="mt-7 max-w-[650px] text-[16px] leading-[1.8] text-[#BFD0E9]">Explore the workspace being built around that idea, or speak with the people behind it.</p></div><div className="flex flex-wrap gap-3"><Link href="https://spineworkspace.com" className="inline-flex min-h-12 items-center gap-3 rounded-full bg-white px-6 text-sm font-semibold text-[#0D2A55] transition hover:bg-[#DBE8FF]">Explore Spine Workspace <MoveUpRight className="h-4 w-4"/></Link><Link href="/contact" className="inline-flex min-h-12 items-center gap-3 rounded-full border border-white/40 px-6 text-sm font-semibold text-white transition hover:bg-white/10">Contact Spine InnovLabs <ArrowRight className="h-4 w-4"/></Link></div></div></section>
     </div>
   );
 }

@@ -7,7 +7,7 @@ export const metadata: Metadata = { alternates: { canonical: "/" } };
 
 export default function Home() {
   return (
-    <div className="min-h-screen overflow-x-clip bg-[#F7F9FC]">
+    <div className="min-h-screen overflow-x-clip bg-[#FFFFFF]">
       <Header />
       <main id="main" className="pt-16">
         <InnovLabsHome />

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { RedirectPage } from "@/components/redirect-page";
 
 export const metadata: Metadata = {
-  title: "How it works | Spine InnovLabs",
+  title: "How it works | Spine InnovTech",
   description:
     "The tools keep the record. The workspace shows the work. Twin proposes only when asked. A person decides, and an accepted change goes back to the original tool.",
   alternates: { canonical: "/platform/how-it-works" },

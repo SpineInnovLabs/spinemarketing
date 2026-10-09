@@ -5,7 +5,7 @@ import type { PublicSolution } from "@/lib/solution-taxonomy";
 
 export function createFunctionalSolutionRoute(solution: PublicSolution) {
   const metadata = createPageMetadata({
-    title: `${solution.name} | Spine InnovLabs`,
+    title: `${solution.name} | Spine InnovTech`,
     description: solution.description,
     path: `/solutions/${solution.slug}`,
   });

@@ -75,18 +75,26 @@ const contact = source("app/contact/content.tsx");
 const form = source("components/lead-form.tsx");
 
 check(home.includes("InnovLabsHome"), "corporate homepage component not wired");
-check(banner.includes("more connected business"), "approved corporate banner absent");
-check(footer.includes("Spine InnovLabs"), "corporate footer absent");
+check(banner.includes("Building the intelligence behind"), "company-led corporate banner absent");
+check(source("components/header.tsx").includes("headerNavigation"), "header must render the full corporate navigation");
+for (const label of ["Company", "Technology", "Solutions", "Insights", "Developers"]) {
+  check(source("lib/navigation.ts").includes(`label: "${label}"`), `missing corporate navigation category: ${label}`);
+}
+check(source("lib/solution-nav.ts").includes("marketingPathForSolution") && !source("lib/solution-nav.ts").includes("workspaceUrl"), "solution navigation must point to local marketing detail pages");
+check(footer.includes('href="/site-map"'), "footer must expose the complete website directory");
+check(footer.includes("Spine InnovTech"), "corporate footer absent");
 check(!meta.includes('canonical: "/"'), "site-wide root canonical incorrectly points all routes to /");
 check(meta.includes('template: "%s"'), "metadata template can duplicate corporate suffixes");
-check(policy.includes('path: "/spineworkspace"') && policy.includes('action: "redirect"'), "external product redirect must be excluded from corporate sitemap");
+check(/path: "\/product",\s*action: "keep"/.test(policy), "product-details page must be included in the corporate sitemap");
+check(source("app/product/page.tsx").includes("SpineWorkspaceDetails"), "product overview must render product details instead of redirecting");
+check(!source("lib/navigation.ts").includes("SPINE_WORKSPACE_APEX"), "marketing product navigation must remain on this site");
 check(existsSync("app/(enter)/layout.tsx") && source("app/(enter)/layout.tsx").includes("index: false"), "marketing account previews must be noindex");
-check(about.includes("Spine InnovLabs") && !about.includes("$8M"), "unsupported founder case must not be presented");
+check(about.includes("Spine InnovTech") && !about.includes("$8M"), "unsupported founder case must not be presented");
 check(!services.includes("14 days") && services.includes("text-white"), "services must avoid invented delivery guarantees");
 check(!contact.includes("SOC 2 aligned") && !contact.includes("24 hours") && !contact.includes("1–2 weeks"), "contact has unsupported guarantees");
 check(form.includes('setStatus("prepared")') && form.includes("has not submitted it"), "mailto fallback must never claim a received enquiry");
 check(privacy.includes("Privacy Policy") && terms.includes("Terms"), "legal pages must exist");
-check(source("app/pricing/page.tsx").includes("spineworkspace.com/"), "corporate pricing must direct product enquiries to product site");
+check(source("app/pricing/page.tsx").includes('href="/product"'), "corporate pricing must link to the local product-details page");
 check(source("app/portfolio/page.tsx").includes("not a list of separately purchasable products"), "portfolio must clarify capability architecture");
 check(existsSync("public/og.png") && existsSync("public/icon.svg"), "social and brand assets missing");
 

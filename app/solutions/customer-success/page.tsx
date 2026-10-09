@@ -8,12 +8,12 @@ import { CustomerSuccessRoleContent } from "./content"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
-  title: "Customer Success & Account Managers | Spine InnovLabs",
+  title: "Customer Success & Account Managers | Spine InnovTech",
   description:
     "Save at-risk accounts. Accelerate renewals. Surface expansion signals.",
   alternates: { canonical: "/solutions/customer-success" },
   openGraph: {
-    title: "Customer Success & Account Managers | Spine InnovLabs",
+    title: "Customer Success & Account Managers | Spine InnovTech",
     description: "Save at-risk accounts. Accelerate renewals. Surface expansion signals.",
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "Spine Workspace" }],
   },

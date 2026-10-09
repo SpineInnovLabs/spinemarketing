@@ -7,12 +7,12 @@ import { OperationsContent } from "./content"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
-  title: "Operations & Delivery Leaders | Spine InnovLabs",
+  title: "Operations & Delivery Leaders | Spine InnovTech",
   description:
     "Utilisation, delivery, exceptions, escalations — the live view that keeps projects on track and clients happy.",
   alternates: { canonical: "/solutions/operations" },
   openGraph: {
-    title: "Operations & Delivery Leaders | Spine InnovLabs",
+    title: "Operations & Delivery Leaders | Spine InnovTech",
     description: "Utilisation, delivery, exceptions, escalations — the live view that keeps projects on track and clients happy.",
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "Spine Workspace" }],
   },

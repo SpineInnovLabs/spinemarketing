@@ -1,6 +1,6 @@
 "use client"
 
-import { useCallback, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -56,14 +56,13 @@ export function LeadForm({ defaultIntent = "contact" }: { defaultIntent?: LeadIn
 
   const endpoint = process.env.NEXT_PUBLIC_CONTACT_FORM_ACTION?.trim()
 
-  const mailtoFallback = useCallback(() => {
-    const subject = encodeURIComponent(`[Spine InnovLabs: ${intentLabel(intent)}] ${company || "Inquiry"}`)
+  const emailDraftHref = (() => {
+    const subject = encodeURIComponent(`[Spine InnovTech: ${intentLabel(intent)}] ${company || "Inquiry"}`)
     const body = encodeURIComponent(
       `Name: ${name}\nEmail: ${email}\nCompany: ${company}\nIntent: ${intentLabel(intent)}\n\n${message}`,
     )
-    window.location.href = `mailto:${MAIL}?subject=${subject}&body=${body}`
-    setStatus("prepared")
-  }, [name, email, company, message, intent])
+    return `mailto:${MAIL}?subject=${subject}&body=${body}`
+  })()
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -74,7 +73,7 @@ export function LeadForm({ defaultIntent = "contact" }: { defaultIntent?: LeadIn
     }
 
     if (!endpoint) {
-      mailtoFallback()
+      setStatus("prepared")
       return
     }
 
@@ -92,7 +91,7 @@ export function LeadForm({ defaultIntent = "contact" }: { defaultIntent?: LeadIn
           company: company.trim(),
           message: message.trim(),
           intent: intentLabel(intent),
-          _subject: `[Spine InnovLabs] ${intentLabel(intent)} — ${name.trim()}`,
+          _subject: `[Spine InnovTech] ${intentLabel(intent)} — ${name.trim()}`,
         }),
       })
       if (!res.ok) {
@@ -128,7 +127,8 @@ export function LeadForm({ defaultIntent = "contact" }: { defaultIntent?: LeadIn
 
         {status === "prepared" && (
           <div role="status" className="mb-4 rounded-lg border border-primary/30 bg-primary/5 px-4 py-3 text-sm font-medium text-foreground">
-            Your email application should open with the message prepared. Please send it there; this website has not submitted it.
+            Your email draft is ready. Open it in your email application, then send it there; this website has not submitted it.
+            <a href={emailDraftHref} className="mt-2 block font-semibold text-primary underline">Open email draft</a>
           </div>
         )}
 
@@ -221,7 +221,7 @@ export function LeadForm({ defaultIntent = "contact" }: { defaultIntent?: LeadIn
               boxShadow: "var(--shadow-button)",
             }}
           >
-            {status === "sending" ? "Sending…" : "Send message"}
+            {status === "sending" ? "Sending…" : endpoint ? "Send message" : "Prepare email"}
           </Button>
         </form>
       </CardContent>

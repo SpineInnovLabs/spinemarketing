@@ -10,10 +10,10 @@ export type BuyerLens = {
 }
 
 export const BUYER_CTAS = {
-  packet: { label: "See a renewal decision packet", href: "/#renewal-decision-packet" },
+  packet: { label: "Explore workspace features", href: "/product#features" },
   workflowReview: { label: "Book a workflow review", href: "/contact?intent=workflow-review" },
   demo: { label: "Book a tailored demo", href: "/contact?intent=demo" },
-  replay: { label: "Replay the renewal workflow", href: "/#renewal-workflow" },
+  replay: { label: "See how the workspace works", href: "/product#how-it-works" },
 } as const
 
 const RENEWAL_LENS: BuyerLens = {
@@ -238,7 +238,7 @@ export const BUYER_HERO_BY_PATH: Record<string, Partial<PageHeroCopy> & { princi
     subhead:
       "Integrations exist so renewal managers stop re-logging into six tools. Spine reads authorized context and prepares proposals; your CRM still owns the customer record.",
     primaryCta: BUYER_CTAS.workflowReview,
-    secondaryCta: { label: "Browse connectors", href: "/integrations#catalog" },
+    secondaryCta: { label: "Browse connectors", href: "/integrations#full-catalog" },
   },
   "/security": {
     badge: "Enterprise evaluation",
@@ -270,7 +270,7 @@ export const BUYER_HERO_BY_PATH: Record<string, Partial<PageHeroCopy> & { princi
     subhead:
       "Pipeline, commitments, and risk signals from CRM and email—assembled for next-best action proposals your team approves before the record changes.",
     primaryCta: BUYER_CTAS.workflowReview,
-    secondaryCta: { label: "See renewal workflow", href: "/#renewal-workflow" },
+    secondaryCta: { label: "See renewal workflow", href: "/product#how-it-works" },
   },
   "/developers": {
     badge: "Integrations for renewal workflows",
@@ -281,7 +281,7 @@ export const BUYER_HERO_BY_PATH: Record<string, Partial<PageHeroCopy> & { princi
     secondaryCta: BUYER_CTAS.workflowReview,
   },
   "/company": {
-    badge: "Spine InnovLabs",
+    badge: "Spine InnovTech",
     headline: "We build governed decision workflows for fragmented operations.",
     subhead:
       "Starting with customer-success and renewal teams who spend hours reconstructing account reality—without replacing CRM, support, or finance systems.",

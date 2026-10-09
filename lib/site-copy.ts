@@ -51,7 +51,7 @@ export const pages = {
       headline: "Work from the full business story — not fragments.",
       subhead:
         "Spine Workspace brings authorized truth and the context for this task into one governed workspace. People and AI prepare, review, and move work forward. Your systems remain authoritative. Your people remain accountable.",
-      primaryCta: { label: "See a workflow", href: "/#renewal-workflow" },
+      primaryCta: { label: "See a workflow", href: "/product#how-it-works" },
       secondaryCta: { label: "Book a tailored demo", href: "/contact?intent=demo" },
     },
     sections: [
@@ -74,7 +74,7 @@ export const pages = {
         ],
       },
       {
-        headline: "The Spine InnovLabs technology ecosystem.",
+        headline: "The Spine InnovTech technology ecosystem.",
         cards: [
           { title: "Spine Workspace", description: "The workspace where a person sees the work and decides.", href: "/spineworkspace" },
           { title: "Spine Platform", description: "The governed architecture behind Spine Workspace.", href: "/platform" },
@@ -439,7 +439,7 @@ export const pages = {
       badge: "Proof",
       headline: "What the product actually does.",
       subhead: "Demonstrations show how the product operates. They are not claims of customer outcomes or certifications.",
-      primaryCta: { label: "See a workflow", href: "/#renewal-workflow" },
+      primaryCta: { label: "See a workflow", href: "/product#how-it-works" },
       secondaryCta: { label: "Book a tailored demo", href: "/contact?intent=demo" },
     },
     sections: [],
@@ -463,24 +463,24 @@ export const pages = {
 
   company: {
     meta: {
-      title: "Company — Spine InnovLabs builds Spine Workspace",
+      title: "Company — Spine InnovTech builds Spine Workspace",
       description:
-        "Spine InnovLabs builds Spine Workspace. Spine Fabric, Workbench, Twin, Runtime and Marketplace describe parts of one governed business-context workspace; supporting agents and tools are capabilities, not separately marketed products.",
+        "Spine InnovTech builds Spine Workspace. Spine Fabric, Workbench, Twin, Runtime and Marketplace describe parts of one governed business-context workspace; supporting agents and tools are capabilities, not separately marketed products.",
       path: "/company",
     },
     hero: {
-      badge: "Spine InnovLabs",
+      badge: "Spine InnovTech",
       headline: "We build for the work that gets lost between systems.",
       subhead:
-        "Spine InnovLabs builds Spine Workspace. Spine Fabric, Workbench, Twin, Runtime and Marketplace describe parts of one governed business-context workspace; supporting agents and tools are capabilities, not separately marketed products. The systems teams already depend on remain authoritative.",
+        "Spine InnovTech builds Spine Workspace. Spine Fabric, Workbench, Twin, Runtime and Marketplace describe parts of one governed business-context workspace; supporting agents and tools are capabilities, not separately marketed products. The systems teams already depend on remain authoritative.",
       primaryCta: { label: "Speak with the team", href: "/contact" },
-      secondaryCta: { label: "See a workflow", href: "/#renewal-workflow" },
+      secondaryCta: { label: "See a workflow", href: "/product#how-it-works" },
     },
     sections: [
       {
         headline: "Why this company exists.",
         body:
-          "Truth sits in CRM, billing, and tickets. Context sits in mail, documents, and the people who remember what happened. Spine InnovLabs exists to bring those together — without replacing source systems or removing human authority from consequential work.",
+          "Truth sits in CRM, billing, and tickets. Context sits in mail, documents, and the people who remember what happened. Spine InnovTech exists to bring those together — without replacing source systems or removing human authority from consequential work.",
       },
       {
         headline: "What we ship.",
@@ -508,7 +508,7 @@ export const pages = {
       {
         headline: "Built in Coimbatore, Tamilnadu, India.",
         body:
-          "Spine InnovLabs is headquartered in Coimbatore, Tamilnadu, India. We build for global teams operating across fragmented systems — with security, documentation, and contact paths on this site.",
+          "Spine InnovTech is headquartered in Coimbatore, Tamilnadu, India. We build for global teams operating across fragmented systems — with security, documentation, and contact paths on this site.",
       },
     ],
     crossLinks: {
@@ -555,7 +555,7 @@ export const pages = {
     hero: {
       badge: "Spine Platform",
       headline: "Spine Platform.",
-      subhead: "A Spine InnovLabs product. It is the platform Spine Workspace, Spine Fabric, Spine Twin, Spine Coworker, Spine Context Assembler, Spine Adaptive Auto Tuner, Spine Triage Bot, and Spine Folder Monitor run with.",
+      subhead: "A Spine InnovTech product. It is the platform Spine Workspace, Spine Fabric, Spine Twin, Spine Coworker, Spine Context Assembler, Spine Adaptive Auto Tuner, Spine Triage Bot, and Spine Folder Monitor run with.",
       primaryCta: { label: "Spine Fabric", href: "/platform/spine-fabric" },
     },
     sections: [

@@ -188,10 +188,10 @@ export function CampaignGalleryContent() {
         </div>
       </section>
 
-      <section className="bg-[#032D60] px-6 pt-8 pb-16 md:px-16">
+      <section className="bg-[#F0F8FF] px-6 pt-8 pb-16 md:px-16 innovtech-reference-surface">
         <div className="mx-auto max-w-[1200px]">
           <motion.div {...fade()} className="mb-8 flex items-center gap-3">
-            <h2 className="text-[22px] font-semibold tracking-[-0.03em] text-white">
+            <h2 className="text-[22px] font-semibold tracking-[-0.03em] text-[#052858]">
               The SpineWorkspace — Architecture Blueprints
             </h2>
             <span className="rounded-full bg-primary/15 px-2.5 py-0.5 text-[11px] font-bold text-primary uppercase tracking-wider">
@@ -253,7 +253,7 @@ export function CampaignGalleryContent() {
                 </div>
                 <div className="px-5 py-4">
                   <div className="text-[14px] font-semibold text-white/90 leading-snug">{arch.title}</div>
-                  <p className="mt-2 text-[12px] font-medium leading-[1.5] text-white/35">{arch.desc}</p>
+                  <p className="mt-2 text-[12px] font-medium leading-[1.5] text-[#4C5C73]/35">{arch.desc}</p>
                 </div>
               </motion.div>
             ))}
@@ -279,12 +279,12 @@ export function CampaignGalleryContent() {
         </div>
       </section>
 
-      <section className="bg-[#021B3A] px-6 pb-24 md:px-16">
+      <section className="bg-[#F0F8FF] px-6 pb-24 md:px-16 innovtech-reference-surface">
         <div className="mx-auto max-w-[1200px]">
           <div className="mb-10 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
 
           <motion.div {...fade()} className="mb-8 flex items-center gap-3">
-            <h2 className="text-[22px] font-semibold tracking-[-0.03em] text-white">
+            <h2 className="text-[22px] font-semibold tracking-[-0.03em] text-[#052858]">
               Campaign Creatives
             </h2>
             <span className="rounded-full bg-white/[0.06] px-2.5 py-0.5 text-[11px] font-bold text-white/30">
@@ -322,7 +322,7 @@ export function CampaignGalleryContent() {
                 {...fade(gi * 0.05)}
                 className="mb-6 flex items-center gap-3"
               >
-                <h2 className="text-[18px] font-semibold tracking-[-0.03em] text-white/80">
+                <h2 className="text-[18px] font-semibold tracking-[-0.03em] text-[#052858]/80">
                   {groupName}
                 </h2>
                 <span className="rounded-full bg-white/[0.06] px-2.5 py-0.5 text-[11px] font-bold text-white/30">

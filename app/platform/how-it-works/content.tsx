@@ -63,7 +63,7 @@ export function PlatformHowItWorksContent() {
         headline={"The tools keep the record.\nThe workspace shows the work."}
         subhead="People see the confirmed record and the evidence for this task. Twin proposes only when asked. A person decides. The original tool stays in charge."
         principle="SpineWorkspace does not replace truth. Source systems stay authoritative."
-        primaryCta={{ label: "See a workflow", href: "/#renewal-workflow" }}
+        primaryCta={{ label: "See a workflow", href: "/product#how-it-works" }}
         secondaryCta={{ label: "Book a tailored demo", href: "/contact?intent=demo" }}
       />
       <Section>

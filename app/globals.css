@@ -6,37 +6,37 @@
 
 :root {
   --background: 255 255 255;
-  --foreground: 10 11 16;
+  --foreground: 8 43 94;
   --card: 255 255 255;
-  --card-foreground: 10 11 16;
+  --card-foreground: 8 43 94;
   --popover: 255 255 255;
-  --popover-foreground: 10 11 16;
-  --primary: 1 118 211;
-  --primary-light: 11 92 171;
+  --popover-foreground: 8 43 94;
+  --primary: 0 111 232;
+  --primary-light: 0 85 184;
   --primary-foreground: 255 255 255;
-  --navy: 3 45 96;
-  --spine: 27 167 132;
-  --surface: 243 246 249;
-  --secondary: 248 248 250;
-  --secondary-foreground: 10 11 16;
-  --muted: 240 240 240;
-  --muted-foreground: 122 122 122;
-  --accent: 27 167 132;
+  --navy: 8 43 94;
+  --spine: 0 111 232;
+  --surface: 235 247 255;
+  --secondary: 240 248 255;
+  --secondary-foreground: 8 43 94;
+  --muted: 235 247 255;
+  --muted-foreground: 78 96 122;
+  --accent: 0 111 232;
   --accent-foreground: 255 255 255;
   --destructive: 239 68 68;
   --destructive-foreground: 255 255 255;
-  --border: 232 232 233;
-  --input: 232 232 233;
-  --ring: 27 167 132;
+  --border: 214 232 248;
+  --input: 214 232 248;
+  --ring: 0 111 232;
   --radius: 0.75rem;
 
-  --shadow-card: 0px 0px 0px 5px rgb(248 248 250), 0px 0.42px 1.26px -0.42px rgba(27,167,132,0.01), 0px 1.6px 4.8px -0.83px rgba(27,167,132,0.01), 0px 7px 21px -1.25px rgba(27,167,132,0.03);
-  --shadow-card-elevated: 0px 0px 0px 3px rgb(255 255 255), 0px 0.42px 1.26px -0.42px rgba(27,167,132,0.09), 0px 1.6px 4.8px -0.83px rgba(27,167,132,0.12), 0px 7px 21px -1.25px rgba(27,167,132,0.24);
-  --shadow-button: 0px 0.42px 0.93px -0.42px rgba(27,167,132,0.13), 0px 1.6px 3.52px -0.83px rgba(27,167,132,0.17), 0px 7px 15.4px -1.25px rgba(27,167,132,0.36);
+  --shadow-card: 0px 0px 0px 5px rgb(248 248 250), 0px 0.42px 1.26px -0.42px rgba(0,111,232,0.01), 0px 1.6px 4.8px -0.83px rgba(0,111,232,0.01), 0px 7px 21px -1.25px rgba(0,111,232,0.03);
+  --shadow-card-elevated: 0px 0px 0px 3px rgb(255 255 255), 0px 0.42px 1.26px -0.42px rgba(0,111,232,0.09), 0px 1.6px 4.8px -0.83px rgba(0,111,232,0.12), 0px 7px 21px -1.25px rgba(0,111,232,0.24);
+  --shadow-button: 0px 0.42px 0.93px -0.42px rgba(0,111,232,0.13), 0px 1.6px 3.52px -0.83px rgba(0,111,232,0.17), 0px 7px 15.4px -1.25px rgba(0,111,232,0.36);
   --shadow-nav: 0px -0.42px 1.26px -0.42px rgba(0,0,0,0.01), 0px -1.6px 4.8px -0.83px rgba(0,0,0,0.01), 0px -7px 21px -1.25px rgba(0,0,0,0.03);
 
-  --gradient-primary: linear-gradient(180deg, rgb(1, 118, 211) 0%, rgb(11, 92, 171) 100%);
-  --gradient-primary-icon: linear-gradient(180deg, rgb(1, 118, 211) 0%, rgb(3, 45, 96) 100%);
+  --gradient-primary: linear-gradient(180deg, rgb(0, 111, 232) 0%, rgb(0, 85, 184) 100%);
+  --gradient-primary-icon: linear-gradient(180deg, rgb(0, 111, 232) 0%, rgb(3, 45, 96) 100%);
 
   --dark-section: 5 7 10;
   --header-bg: rgba(255, 255, 255, 0.96);
@@ -54,7 +54,7 @@ html[data-theme="light"] {
   --card-foreground: 232 242 252;
   --popover: 18 35 58;
   --popover-foreground: 232 242 252;
-  --primary: 1 118 211;
+  --primary: 0 111 232;
   --primary-light: 107 182 240;
   --primary-foreground: 255 255 255;
   --secondary: 18 35 58;
@@ -165,7 +165,7 @@ html[data-theme="light"] {
   }
   .arvio-card:hover {
     transform: translateY(-2px);
-    box-shadow: 0px 0px 0px 5px rgb(248 248 250), 0 12px 40px -8px rgba(27, 167, 132, 0.12), 0 4px 16px -4px rgba(27, 167, 132, 0.08);
+    box-shadow: 0px 0px 0px 5px rgb(248 248 250), 0 12px 40px -8px rgba(0, 111, 232, 0.12), 0 4px 16px -4px rgba(0, 111, 232, 0.08);
   }
   .arvio-card-elevated {
     background: rgb(255 255 255);
@@ -266,8 +266,8 @@ html[data-theme="light"] {
 }
 .dark-section .arvio-card:hover {
   background: rgba(255, 255, 255, 0.04) !important;
-  border-color: rgba(27, 167, 132, 0.25) !important;
-  box-shadow: 0 20px 60px -15px rgba(27, 167, 132, 0.12), 0 0 0 1px rgba(27, 167, 132, 0.08) !important;
+  border-color: rgba(0, 111, 232, 0.25) !important;
+  box-shadow: 0 20px 60px -15px rgba(0, 111, 232, 0.12), 0 0 0 1px rgba(0, 111, 232, 0.08) !important;
   transform: translateY(-4px) scale(1.01);
 }
 
@@ -334,12 +334,12 @@ html[data-theme="light"] {
 
 .dark-section blockquote {
   color: rgba(255, 255, 255, 0.75);
-  border-left-color: rgba(45, 212, 191, 0.4);
+  border-left-color: rgba(64, 174, 255, 0.4);
 }
 
 .section-divider {
   height: 1px;
-  background: linear-gradient(90deg, transparent 0%, rgba(27,167,132,0.3) 30%, rgba(52,211,153,0.2) 50%, rgba(27,167,132,0.3) 70%, transparent 100%);
+  background: linear-gradient(90deg, transparent 0%, rgba(0,111,232,0.3) 30%, rgba(64,174,255,0.2) 50%, rgba(0,111,232,0.3) 70%, transparent 100%);
 }
 .section-divider-subtle {
   height: 1px;
@@ -372,9 +372,9 @@ html[data-theme="light"] {
   transition: border-color 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
 }
 .glass-card:hover {
-  border-color: rgba(27,167,132,0.25);
+  border-color: rgba(0,111,232,0.25);
   transform: translateY(-4px) scale(1.01);
-  box-shadow: 0 20px 60px -15px rgba(27,167,132,0.12), 0 0 0 1px rgba(27,167,132,0.08);
+  box-shadow: 0 20px 60px -15px rgba(0,111,232,0.12), 0 0 0 1px rgba(0,111,232,0.08);
 }
 
 .glow-card {
@@ -385,22 +385,22 @@ html[data-theme="light"] {
   transition: border-color 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
 }
 .glow-card:hover {
-  border-color: rgba(27,167,132,0.3);
+  border-color: rgba(0,111,232,0.3);
   transform: translateY(-4px) scale(1.01);
-  box-shadow: 0 20px 60px -15px rgba(27,167,132,0.12), 0 0 0 1px rgba(27,167,132,0.08);
+  box-shadow: 0 20px 60px -15px rgba(0,111,232,0.12), 0 0 0 1px rgba(0,111,232,0.08);
 }
 .glow-card-emerald {
   position: relative;
   border-radius: 20px;
-  background: rgba(27,167,132,0.04);
-  border: 1px solid rgba(27,167,132,0.15);
+  background: rgba(0,111,232,0.04);
+  border: 1px solid rgba(0,111,232,0.15);
 }
 .glow-card-emerald::before {
   content: "";
   position: absolute;
   inset: -1px;
   border-radius: 21px;
-  background: linear-gradient(135deg, rgba(27,167,132,0.2), transparent 60%);
+  background: linear-gradient(135deg, rgba(0,111,232,0.2), transparent 60%);
   z-index: -1;
   opacity: 0;
   transition: opacity 0.3s;
@@ -464,8 +464,8 @@ html[data-theme="light"] {
 }
 
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 20px rgba(27,167,132,0.15), 0 0 60px rgba(27,167,132,0.05); }
-  50% { box-shadow: 0 0 40px rgba(27,167,132,0.3), 0 0 100px rgba(27,167,132,0.1); }
+  0%, 100% { box-shadow: 0 0 20px rgba(0,111,232,0.15), 0 0 60px rgba(0,111,232,0.05); }
+  50% { box-shadow: 0 0 40px rgba(0,111,232,0.3), 0 0 100px rgba(0,111,232,0.1); }
 }
 .animate-pulse-glow {
   animation: pulse-glow 4s ease-in-out infinite;
@@ -482,7 +482,7 @@ html[data-theme="light"] {
   inset: 0;
   border-radius: 20px;
   padding: 1px;
-  background: linear-gradient(135deg, rgba(27,167,132,0.4), rgba(139,92,246,0.2), rgba(27,167,132,0.1));
+  background: linear-gradient(135deg, rgba(0,111,232,0.4), rgba(139,92,246,0.2), rgba(0,111,232,0.1));
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
@@ -516,7 +516,7 @@ html[data-theme="light"] {
 }
 
 .text-glow-emerald {
-  text-shadow: 0 0 40px rgba(52,211,153,0.3), 0 0 80px rgba(27,167,132,0.15);
+  text-shadow: 0 0 40px rgba(64,174,255,0.3), 0 0 80px rgba(0,111,232,0.15);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -588,18 +588,27 @@ html[data-theme="dark"] .group:hover .group-hover\:bg-white {
 }
 
 html[data-theme="dark"] .text-\[\#032D60\],
+html[data-theme="dark"] .text-\[\#082B5E\],
 html[data-theme="dark"] .hover\:text-\[\#032D60\]:hover,
+html[data-theme="dark"] .hover\:text-\[\#082B5E\]:hover,
 html[data-theme="dark"] .focus-visible\:text-\[\#032D60\]:focus-visible,
-html[data-theme="dark"] .fill-\[\#032D60\] {
+html[data-theme="dark"] .focus-visible\:text-\[\#082B5E\]:focus-visible,
+html[data-theme="dark"] .fill-\[\#032D60\],
+html[data-theme="dark"] .fill-\[\#082B5E\] {
   color: #e8f2fc;
   fill: #e8f2fc;
 }
 
 html[data-theme="dark"] .text-\[\#0176D3\],
+html[data-theme="dark"] .text-\[\#006FE8\],
 html[data-theme="dark"] .hover\:text-\[\#0176D3\]:hover,
+html[data-theme="dark"] .hover\:text-\[\#006FE8\]:hover,
 html[data-theme="dark"] .focus-visible\:text-\[\#0176D3\]:focus-visible,
+html[data-theme="dark"] .focus-visible\:text-\[\#006FE8\]:focus-visible,
 html[data-theme="dark"] .text-\[\#0B5CAB\],
-html[data-theme="dark"] .fill-\[\#0176D3\] {
+html[data-theme="dark"] .text-\[\#0055B8\],
+html[data-theme="dark"] .fill-\[\#0176D3\],
+html[data-theme="dark"] .fill-\[\#006FE8\] {
   color: #8cc4f2;
   fill: #8cc4f2;
 }
@@ -631,11 +640,14 @@ html[data-theme="dark"] .hover\:bg-\[\#F3F3F3\]:hover {
 }
 
 html[data-theme="dark"] .bg-\[\#EAF5FC\],
-html[data-theme="dark"] .hover\:bg-\[\#EAF5FC\]:hover {
+html[data-theme="dark"] .bg-\[\#EBF7FF\],
+html[data-theme="dark"] .hover\:bg-\[\#EAF5FC\]:hover,
+html[data-theme="dark"] .hover\:bg-\[\#EBF7FF\]:hover {
   background-color: #16304a;
 }
 
-html[data-theme="dark"] .bg-\[\#032D60\] {
+html[data-theme="dark"] .bg-\[\#032D60\],
+html[data-theme="dark"] .bg-\[\#082B5E\] {
   background-color: #071422;
 }
 
@@ -662,9 +674,13 @@ html[data-theme="dark"] .hover\:border-\[\#C9C9C9\]:hover {
 }
 
 html[data-theme="dark"] .border-\[\#0176D3\],
+html[data-theme="dark"] .border-\[\#006FE8\],
 html[data-theme="dark"] .hover\:border-\[\#0176D3\]:hover,
+html[data-theme="dark"] .hover\:border-\[\#006FE8\]:hover,
 html[data-theme="dark"] .ring-\[\#0176D3\],
-html[data-theme="dark"] .focus-visible\:ring-\[\#0176D3\]:focus-visible {
+html[data-theme="dark"] .ring-\[\#006FE8\],
+html[data-theme="dark"] .focus-visible\:ring-\[\#0176D3\]:focus-visible,
+html[data-theme="dark"] .focus-visible\:ring-\[\#006FE8\]:focus-visible {
   border-color: #3d94d6;
   --tw-ring-color: #8cc4f2;
 }
@@ -680,3 +696,1198 @@ html[data-theme="dark"] .arvio-card-elevated,
 html[data-theme="dark"] .arvio-badge {
   background: #12233a;
 }
+/* Reference-led Spine InnovTech marketing system. */
+.innovtech-header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 50;
+  background: #fff;
+  color: #052858;
+  border-bottom: 1px solid #dfebf5;
+}
+.innovtech-nav {
+  max-width: 1440px;
+  height: 64px;
+  margin: auto;
+  padding: 0 4.5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.innovtech-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  color: #052858;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -1.1px;
+  white-space: nowrap;
+}
+.innovtech-brand > span > span {
+  color: #0075e5;
+}
+.innovtech-desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.innovtech-desktop-nav > a:not(.innovtech-button):hover {
+  color: #0070e8;
+}
+.innovtech-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: #0072e5;
+  color: white;
+  border: 1px solid #0072e5;
+  border-radius: 9px;
+  min-height: 52px;
+  padding: 0 27px;
+  font-size: 17px;
+  font-weight: 650;
+  line-height: 1.25;
+  transition:
+    background 0.2s,
+    box-shadow 0.2s;
+}
+.innovtech-button:hover {
+  background: #005ab8;
+  color: #fff;
+  box-shadow: 0 5px 18px #006fe820;
+}
+.innovtech-desktop-nav .innovtech-button {
+  min-height: 42px;
+  padding: 0 21px;
+  font-size: 14px;
+}
+.innovtech-button-secondary {
+  background: #ffffffa6;
+  color: #052858;
+  border-color: #507ca8;
+}
+.innovtech-button-secondary:hover {
+  background: #ebf7ff;
+  color: #052858;
+  box-shadow: none;
+}
+.innovtech-menu-toggle {
+  display: none;
+}
+.innovtech-mobile-nav {
+  padding: 12px 6% 20px;
+  background: white;
+  display: grid;
+  gap: 16px;
+  border-top: 1px solid #dfebf5;
+}
+.innovtech-header a:focus-visible,
+.innovtech-page a:focus-visible,
+.innovtech-page button:focus-visible {
+  outline: 3px solid #0072e5;
+  outline-offset: 5px;
+}
+.innovtech-page {
+  background: #fff;
+  color: #052858;
+  color-scheme: light;
+  overflow: hidden;
+}
+.innovtech-page h1,
+.innovtech-page h2,
+.innovtech-page h3,
+.innovtech-page h4 {
+  margin: 0;
+}
+.innovtech-page button {
+  cursor: pointer;
+}
+.innovtech-eyebrow {
+  color: #0072e5;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 2.3px;
+  line-height: 1.5;
+  margin: 0 0 17px;
+}
+.innovtech-hero {
+  position: relative;
+  background: #f1faff;
+  padding: 0 4.8% 44px;
+}
+.innovtech-hero-main {
+  position: relative;
+  max-width: 1440px;
+  margin: auto;
+  min-height: 525px;
+  display: grid;
+  grid-template-columns: 46% 54%;
+  align-items: center;
+}
+.innovtech-hero-copy {
+  position: relative;
+  z-index: 2;
+  padding: 44px 0 22px;
+}
+.innovtech-hero h1 {
+  font-size: clamp(49px, 5.7vw, 86px);
+  line-height: 0.99;
+  letter-spacing: -4.5px;
+  font-weight: 750;
+  color: #040f49;
+}
+.innovtech-hero-description {
+  font-size: clamp(18px, 1.7vw, 25px);
+  line-height: 1.5;
+  color: #4c5c73;
+  max-width: 510px;
+  margin: 23px 0 0;
+}
+.innovtech-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 29px;
+}
+.innovtech-governance {
+  font-size: 13px;
+  line-height: 1.7;
+  color: #6f88a8;
+  margin: 22px 0 0;
+  padding-top: 4px;
+}
+.innovtech-hero-art {
+  position: relative;
+  z-index: 1;
+  margin-right: -13%;
+  margin-left: -5%;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+}
+.innovtech-hero-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  max-height: 620px;
+}
+.innovtech-summary {
+  position: relative;
+  z-index: 3;
+  background: #ffffffed;
+  border: 1px solid #d9ecfb;
+  border-radius: 22px;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 20px 28px;
+  box-shadow: 0 16px 35px #177cc425;
+}
+.innovtech-summary-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-bottom: 17px;
+  border-bottom: 1px solid #d8e7f3;
+}
+.innovtech-summary h2 {
+  font-size: 24px;
+  font-weight: 650;
+  letter-spacing: -0.7px;
+  line-height: 1.3;
+}
+.innovtech-small-label {
+  font-size: 12px;
+  color: #6a7e99;
+  margin: 0 0 3px;
+}
+.innovtech-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  background: #e1f2ff;
+  color: #0068dd;
+  border-radius: 24px;
+  padding: 9px 15px;
+  font-size: 12px;
+  white-space: nowrap;
+  font-weight: 500;
+}
+.innovtech-summary-header > .innovtech-status {
+  margin-left: auto;
+}
+.innovtech-icon-circle {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #e7f5ff;
+  color: #0072e5;
+}
+.innovtech-summary-body {
+  display: flex;
+  gap: 24px;
+  padding-top: 16px;
+  align-items: center;
+}
+.innovtech-summary-goal {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  min-width: 235px;
+  color: #0068dd;
+}
+.innovtech-summary-goal strong {
+  font-size: 15px;
+  color: #052858;
+  font-weight: 600;
+}
+.innovtech-summary-evidence {
+  flex: 1;
+  border-left: 1px solid #d9e7f5;
+  padding-left: 24px;
+}
+.innovtech-evidence-items {
+  display: flex;
+  gap: 20px;
+}
+.innovtech-evidence-items button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+}
+.innovtech-evidence-items button:hover strong {
+  color: #0072e5;
+}
+.innovtech-evidence-items .innovtech-icon-circle {
+  width: 38px;
+  height: 38px;
+}
+.innovtech-evidence-items strong {
+  font-size: 12px;
+  font-weight: 550;
+  display: block;
+}
+.innovtech-evidence-items small {
+  font-size: 11px;
+  color: #8299b8;
+  display: block;
+  margin-top: 3px;
+}
+.innovtech-collaborators {
+  display: flex;
+  gap: 12px;
+  padding-left: 22px;
+  border-left: 1px solid #d9e7f5;
+}
+.innovtech-collaborators > span {
+  display: flex;
+  align-items: center;
+  color: #006fe8;
+}
+.innovtech-collaborators > span:last-child {
+  color: #00b8e6;
+}
+.innovtech-collaborators b {
+  background: #e2f4ff;
+  border-radius: 20px;
+  font-size: 12px;
+  padding: 5px 10px;
+  font-weight: 550;
+}
+.innovtech-product {
+  max-width: 1440px;
+  margin: auto;
+  padding: 95px 4.8% 100px;
+  display: grid;
+  grid-template-columns: 47% 53%;
+  align-items: center;
+  gap: 36px;
+}
+.innovtech-product-copy h2 {
+  font-size: clamp(39px, 4vw, 60px);
+  letter-spacing: -2.8px;
+  line-height: 1.12;
+  font-weight: 700;
+  max-width: 600px;
+}
+.innovtech-product .innovtech-eyebrow {
+  font-size: 12px;
+  letter-spacing: 1.2px;
+}
+.innovtech-product-copy > .innovtech-governance {
+  border-top: 1px solid #dbe8f5;
+  margin-top: 38px;
+  padding-top: 23px;
+}
+.innovtech-renewal {
+  background: #fff;
+  border: 1px solid #d4e6f5;
+  border-radius: 15px;
+  box-shadow: 0 14px 48px #108cda25;
+  overflow: hidden;
+}
+.innovtech-renewal-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 24px 16px;
+  border-bottom: 1px solid #e0e9f3;
+}
+.innovtech-renewal-title h3 {
+  font-size: 24px;
+  letter-spacing: -1px;
+  font-weight: 700;
+}
+.innovtech-renewal-title p {
+  font-size: 14px;
+  margin: 2px 0 0;
+  color: #36516f;
+}
+.innovtech-renewal-content {
+  padding: 15px 21px 20px;
+}
+.innovtech-work-goal {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  padding: 15px 17px;
+  border-radius: 12px;
+  background: #eaf7ff;
+}
+.innovtech-work-goal p {
+  margin: 0 0 3px;
+  color: #6d88aa;
+  font-size: 13px;
+}
+.innovtech-work-goal strong {
+  font-size: 19px;
+  line-height: 1.3;
+  font-weight: 650;
+  letter-spacing: -0.55px;
+}
+.innovtech-review-people {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 10px;
+  font-size: 12px;
+}
+.innovtech-review-people > div {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.innovtech-review-people b {
+  font-weight: 550;
+}
+.innovtech-review-people img {
+  width: 37px;
+  height: 37px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.innovtech-review-people .innovtech-icon-circle {
+  height: 37px;
+  width: 37px;
+}
+.innovtech-review-people > div + div {
+  border-left: 1px solid #d9e7f5;
+  padding-left: 18px;
+}
+.innovtech-account {
+  padding: 16px 11px 9px;
+  border: 1px solid #e0eaf5;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px #00559805;
+}
+.innovtech-account-heading {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 0 5px 7px;
+}
+.innovtech-account-heading h4 {
+  font-size: 19px;
+  font-weight: 650;
+  letter-spacing: -0.6px;
+}
+.innovtech-account-heading p {
+  font-size: 12px;
+  color: #6c83a3;
+  margin: 2px 0 0;
+}
+.innovtech-source-list {
+  padding-left: 27px;
+}
+.innovtech-source {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-align: left;
+  border-bottom: 1px solid #e9eff6;
+  padding: 11px 2px;
+}
+.innovtech-source > span:nth-child(2) {
+  flex: 1;
+}
+.innovtech-source .innovtech-icon-circle {
+  width: 41px;
+  height: 41px;
+}
+.innovtech-source strong {
+  display: block;
+  font-size: 15px;
+  letter-spacing: -0.3px;
+  font-weight: 600;
+}
+.innovtech-source small {
+  display: block;
+  font-size: 12px;
+  color: #6e84a1;
+  margin-top: 2px;
+}
+.innovtech-source > svg {
+  color: #6584a3;
+}
+.innovtech-source:hover {
+  background: #f5fbff;
+}
+.innovtech-source-detail {
+  font-size: 12px;
+  color: #526985;
+  line-height: 1.6;
+  padding: 12px 12px 12px 57px;
+  background: #f3faff;
+  margin: 0;
+  border-radius: 0 0 8px 8px;
+}
+.innovtech-twin-note {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #ebf7ff;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 9px;
+}
+.innovtech-twin-note .innovtech-icon-circle {
+  width: 37px;
+  height: 37px;
+}
+.innovtech-twin-note strong {
+  font-size: 12px;
+  font-weight: 550;
+}
+.innovtech-twin-note p {
+  font-size: 10px;
+  color: #6883a4;
+  margin: 3px 0 0;
+  line-height: 1.5;
+}
+.innovtech-review-action {
+  width: 100%;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  text-align: left;
+  padding: 12px 9px;
+  background: #f7fafc;
+  border: 1px solid #e6eef5;
+  border-radius: 10px;
+  margin-top: 9px;
+}
+.innovtech-icon-navy {
+  width: 40px;
+  height: 40px;
+  background: #052858;
+  color: white;
+}
+.innovtech-review-action > span:nth-child(2) {
+  flex: 1;
+}
+.innovtech-review-action strong {
+  font-size: 12px;
+  font-weight: 600;
+  display: block;
+}
+.innovtech-review-action small {
+  font-size: 10px;
+  color: #6883a4;
+  display: block;
+  max-width: 210px;
+  margin-top: 2px;
+}
+.innovtech-review-action .innovtech-status {
+  font-size: 10px;
+  padding: 8px 10px;
+}
+.innovtech-review-detail {
+  padding: 14px 16px;
+  color: #415d7b;
+  background: #ecf8ff;
+  border-radius: 10px;
+  margin-top: 8px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+.innovtech-review-detail strong {
+  color: #052858;
+}
+.innovtech-section {
+  padding: 85px 5%;
+  background: #f3faff;
+  text-align: center;
+}
+.innovtech-section h2,
+.innovtech-company-section h2,
+.innovtech-final-section h2 {
+  font-size: clamp(35px, 3.5vw, 52px);
+  font-weight: 700;
+  line-height: 1.13;
+  letter-spacing: -2px;
+}
+.innovtech-section-intro {
+  max-width: 640px;
+  margin: 24px auto 0;
+  color: #5a6e85;
+  font-size: 17px;
+  line-height: 1.8;
+}
+.innovtech-feature-grid {
+  max-width: 1220px;
+  margin: 50px auto 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 23px;
+  text-align: left;
+}
+.innovtech-feature-grid article {
+  background: #fff;
+  padding: 30px;
+  border: 1px solid #dceaf6;
+  border-radius: 16px;
+}
+.innovtech-feature-grid h3 {
+  font-size: 21px;
+  font-weight: 650;
+  margin: 19px 0 12px;
+  letter-spacing: -0.5px;
+}
+.innovtech-feature-grid article > p:last-child {
+  font-size: 14px;
+  line-height: 1.85;
+  color: #5b6d83;
+}
+.innovtech-step-number {
+  float: right;
+  font-size: 12px;
+  color: #7691ad;
+}
+.innovtech-company-section {
+  max-width: 1300px;
+  margin: auto;
+  padding: 95px 5%;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 90px;
+  align-items: center;
+}
+.innovtech-company-section p:not(.innovtech-eyebrow) {
+  font-size: 16px;
+  line-height: 1.85;
+  color: #5b6d83;
+  margin: 22px 0;
+}
+.innovtech-text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #006fe8;
+  font-size: 14px;
+  font-weight: 600;
+}
+.innovtech-company-links > a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 17px;
+  border-bottom: 1px solid #dbe8f4;
+  padding: 25px 0;
+}
+.innovtech-company-links > a:hover {
+  color: #0072e5;
+}
+.innovtech-final-section {
+  background: #eef8ff;
+  text-align: center;
+  padding: 80px 5%;
+}
+.innovtech-final-section > p:not(.innovtech-eyebrow) {
+  color: #5b6d83;
+  font-size: 16px;
+  margin: 23px 0 28px;
+}
+.innovtech-dialog-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: #05285870;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.innovtech-dialog {
+  position: relative;
+  background: white;
+  color: #052858;
+  width: 100%;
+  max-width: 500px;
+  padding: 35px;
+  border-radius: 20px;
+  box-shadow: 0 20px 90px #05285830;
+}
+.innovtech-dialog-close {
+  position: absolute;
+  right: 17px;
+  top: 17px;
+  display: flex;
+  padding: 5px;
+  color: #5c7593;
+}
+.innovtech-dialog .innovtech-eyebrow {
+  margin-top: 20px;
+  font-size: 11px;
+}
+.innovtech-dialog h2 {
+  font-size: 29px;
+  letter-spacing: -1px;
+  font-weight: 650;
+}
+.innovtech-dialog > p:not(.innovtech-eyebrow) {
+  color: #5b6d83;
+  line-height: 1.7;
+  font-size: 14px;
+  margin-top: 15px;
+}
+.innovtech-dialog ul {
+  display: grid;
+  gap: 14px;
+  padding: 22px 0;
+  font-size: 13px;
+}
+.innovtech-dialog li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.innovtech-dialog li svg {
+  color: #0072e5;
+}
+.innovtech-dialog .innovtech-button {
+  font-size: 13px;
+}
+@media (min-width: 1500px) {
+  .innovtech-hero-main {
+    min-height: 630px;
+  }
+  .innovtech-hero-copy {
+    padding: 65px 0 35px;
+  }
+}
+@media (max-width: 1100px) {
+  .innovtech-summary-goal {
+    min-width: 185px;
+  }
+  .innovtech-collaborators {
+    display: none;
+  }
+  .innovtech-evidence-items {
+    gap: 14px;
+  }
+  .innovtech-product {
+    gap: 22px;
+  }
+  .innovtech-review-action .innovtech-status {
+    white-space: normal;
+    max-width: 105px;
+    text-align: center;
+  }
+  .innovtech-review-people {
+    padding-left: 0;
+    padding-right: 0;
+    font-size: 11px;
+  }
+  .innovtech-review-people > div + div {
+    padding-left: 10px;
+  }
+  .innovtech-work-goal strong {
+    font-size: 16px;
+  }
+  .innovtech-hero h1 {
+    letter-spacing: -3px;
+  }
+}
+@media (max-width: 760px) {
+  .innovtech-nav {
+    padding: 0 5%;
+    height: 64px;
+  }
+  .innovtech-brand {
+    font-size: 22px;
+  }
+  .innovtech-desktop-nav {
+    display: none;
+  }
+  .innovtech-menu-toggle {
+    display: flex;
+    padding: 8px;
+    align-items: center;
+  }
+  .innovtech-hero {
+    padding: 0 5% 28px;
+  }
+  .innovtech-hero-main {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-height: auto;
+  }
+  .innovtech-hero-copy {
+    padding: 43px 0 0;
+  }
+  .innovtech-eyebrow {
+    font-size: 10px;
+    letter-spacing: 1.6px;
+  }
+  .innovtech-hero h1 {
+    font-size: clamp(45px, 9.6vw, 69px);
+    letter-spacing: -2.4px;
+    line-height: 1.04;
+  }
+  .innovtech-hero-description {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-top: 22px;
+  }
+  .innovtech-button {
+    font-size: 14px;
+    min-height: 48px;
+    padding: 0 21px;
+  }
+  .innovtech-actions {
+    gap: 11px;
+    margin-top: 24px;
+  }
+  .innovtech-governance {
+    font-size: 11px;
+    margin-top: 20px;
+  }
+  .innovtech-hero-art {
+    margin: 8px -8% 0;
+    height: 300px;
+    align-self: auto;
+  }
+  .innovtech-summary {
+    padding: 16px;
+    border-radius: 16px;
+    margin-top: 5px;
+  }
+  .innovtech-summary-header {
+    gap: 11px;
+    flex-wrap: wrap;
+  }
+  .innovtech-summary h2 {
+    font-size: 19px;
+  }
+  .innovtech-summary-header > .innovtech-status {
+    margin-left: 59px;
+    padding: 6px 10px;
+    font-size: 10px;
+  }
+  .innovtech-summary .innovtech-icon-circle {
+    width: 40px;
+    height: 40px;
+  }
+  .innovtech-summary-body {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+  .innovtech-summary-goal {
+    gap: 12px;
+  }
+  .innovtech-summary-evidence {
+    border-left: 0;
+    border-top: 1px solid #e1edf8;
+    padding: 14px 0 0;
+  }
+  .innovtech-evidence-items {
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 9px;
+  }
+  .innovtech-evidence-items button {
+    gap: 14px;
+  }
+  .innovtech-evidence-items strong {
+    font-size: 12px;
+  }
+  .innovtech-product {
+    padding: 65px 5%;
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .innovtech-product-copy h2 {
+    font-size: 39px;
+    letter-spacing: -1.8px;
+    line-height: 1.15;
+  }
+  .innovtech-product .innovtech-eyebrow {
+    font-size: 10px;
+  }
+  .innovtech-product-copy > .innovtech-governance {
+    margin-top: 29px;
+    padding-top: 19px;
+  }
+  .innovtech-renewal-title {
+    padding: 19px 18px 14px;
+  }
+  .innovtech-renewal-title h3 {
+    font-size: 22px;
+  }
+  .innovtech-renewal-content {
+    padding: 13px 12px;
+  }
+  .innovtech-work-goal {
+    padding: 12px;
+    gap: 10px;
+  }
+  .innovtech-work-goal .innovtech-icon-circle {
+    height: 42px;
+    width: 42px;
+  }
+  .innovtech-review-people {
+    gap: 6px;
+    font-size: 10px;
+  }
+  .innovtech-review-people > div {
+    gap: 6px;
+  }
+  .innovtech-review-people img,
+  .innovtech-review-people .innovtech-icon-circle {
+    height: 31px;
+    width: 31px;
+  }
+  .innovtech-review-people > div + div {
+    padding-left: 9px;
+  }
+  .innovtech-account {
+    padding: 13px 8px 8px;
+  }
+  .innovtech-source-list {
+    padding-left: 12px;
+  }
+  .innovtech-account-heading h4 {
+    font-size: 17px;
+  }
+  .innovtech-source strong {
+    font-size: 13px;
+  }
+  .innovtech-source small {
+    font-size: 11px;
+  }
+  .innovtech-source {
+    gap: 10px;
+  }
+  .innovtech-twin-note strong {
+    font-size: 10px;
+  }
+  .innovtech-twin-note p {
+    font-size: 9px;
+  }
+  .innovtech-review-action {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .innovtech-review-action > .innovtech-status {
+    margin-left: 48px;
+    max-width: none;
+  }
+  .innovtech-section {
+    padding: 65px 5%;
+  }
+  .innovtech-section h2,
+  .innovtech-company-section h2,
+  .innovtech-final-section h2 {
+    font-size: 35px;
+    letter-spacing: -1.4px;
+  }
+  .innovtech-section-intro {
+    font-size: 15px;
+  }
+  .innovtech-feature-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 32px;
+  }
+  .innovtech-feature-grid article {
+    padding: 26px;
+  }
+  .innovtech-company-section {
+    padding: 65px 5%;
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .innovtech-company-links > a {
+    font-size: 14px;
+    padding: 21px 0;
+  }
+  .innovtech-final-section {
+    padding: 65px 5%;
+  }
+  .innovtech-dialog {
+    padding: 28px 24px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .innovtech-page *,
+  .innovtech-header * {
+    scroll-behavior: auto;
+    transition: none;
+  }
+}
+.innovtech-product-overview {
+  padding-top: 65px;
+  padding-bottom: 65px;
+  min-height: 730px;
+}
+.innovtech-product-overview h1 {
+  font-size: clamp(39px, 4vw, 60px);
+  letter-spacing: -2.8px;
+  line-height: 1.12;
+  font-weight: 700;
+  max-width: 600px;
+}
+.innovtech-product-details-link {
+  margin-top: 22px;
+}
+.innovtech-white-section {
+  background: #fff;
+}
+.innovtech-section-link {
+  margin-top: 32px;
+}
+.innovtech-feature-grid article .innovtech-eyebrow {
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+.innovtech-feature-grid article .innovtech-text-link {
+  margin-top: 18px;
+}
+@media (max-width: 760px) {
+  .innovtech-product-overview {
+    padding-top: 43px;
+    min-height: 0;
+  }
+  .innovtech-product-overview h1 {
+    font-size: 39px;
+    letter-spacing: -1.8px;
+    line-height: 1.15;
+  }
+}
+.innovtech-hero {
+  background: #fff;
+}
+.innovtech-hero-copy {
+  padding-top: 40px;
+  padding-bottom: 14px;
+}
+.innovtech-hero .innovtech-hero-description {
+  line-height: 1.4;
+}
+.innovtech-hero .innovtech-actions {
+  margin-top: 24px;
+}
+.innovtech-hero .innovtech-governance {
+  margin-top: 16px;
+}
+.innovtech-hero-art img {
+  object-fit: cover;
+  max-height: none;
+}
+.innovtech-hero-art {
+  margin-left: -9%;
+  margin-right: -11%;
+}
+@media (max-width: 760px) {
+  .innovtech-hero-copy {
+    padding-top: 43px;
+    padding-bottom: 0;
+  }
+  .innovtech-hero-art {
+    margin: 8px -8% 0;
+    height: 300px;
+  }
+  .innovtech-hero-art img {
+    object-fit: contain;
+  }
+  .innovtech-hero .innovtech-hero-description {
+    line-height: 1.6;
+  }
+  .innovtech-hero .innovtech-governance {
+    margin-top: 20px;
+  }
+}
+.innovtech-footer {
+  background: #f6fbff;
+  color: #052858;
+  padding: 0 5%;
+  color-scheme: light;
+}
+.innovtech-footer-content {
+  max-width: 1320px;
+  margin: auto;
+}
+.innovtech-footer-top {
+  padding: 60px 0;
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 65px;
+  border-bottom: 1px solid #dce9f5;
+}
+.innovtech-footer h2 {
+  font-size: 27px;
+  font-weight: 650;
+  line-height: 1.25;
+  letter-spacing: -1px;
+  margin: 24px 0 16px;
+}
+.innovtech-footer p {
+  color: #61758e;
+  font-size: 13px;
+  line-height: 1.85;
+}
+.innovtech-footer-top > div > .innovtech-text-link {
+  margin-top: 22px;
+}
+.innovtech-footer-navigation {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.innovtech-footer-navigation h3 {
+  font-size: 10px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  font-weight: 650;
+  margin: 0 0 19px;
+}
+.innovtech-footer-navigation li {
+  font-size: 12px;
+  line-height: 1.7;
+  margin-top: 12px;
+  color: #586e88;
+}
+.innovtech-footer-navigation a:hover {
+  color: #0072e5;
+}
+.innovtech-footer-bottom {
+  padding: 22px 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.innovtech-footer-bottom p,
+.innovtech-footer-bottom a {
+  font-size: 11px;
+  color: #657d97;
+}
+.innovtech-footer-bottom a {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+@media (max-width: 900px) {
+  .innovtech-footer-top {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .innovtech-footer-navigation {
+    gap: 25px;
+  }
+}
+@media (max-width: 500px) {
+  .innovtech-footer-top {
+    padding: 45px 0;
+  }
+  .innovtech-footer-navigation {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+  .innovtech-footer h2 {
+    font-size: 25px;
+  }
+}
+.innovtech-product {
+  background-color: #f0f8ff;
+  background-position: center right;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.innovtech-product-illustration {
+  margin: 0;
+  min-width: 0;
+}
+.innovtech-product-illustration figcaption {
+  margin-top: 14px;
+  color: #4e607a;
+  font-size: 12px;
+  line-height: 1.8;
+}
+.innovtech-product > *,
+.innovtech-renewal {
+  position: relative;
+}
+@media (max-width: 760px) {
+  .innovtech-product {
+    background-position: center bottom;
+  }
+}
+
+/* Blend the generated art into the reference's continuous light surface. */
+.innovtech-hero-art img {
+  mask-image: linear-gradient(to right, transparent, black 14%);
+}
+@media (max-width: 760px) {
+  .innovtech-hero-art img {
+    mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+  }
+}
+/* Match the compact review-card proportions in the second reference. */
+.innovtech-renewal { line-height: 1.35; }
+.innovtech-renewal-title { padding: 16px 22px 13px; }
+.innovtech-renewal-title h3 { line-height: 1.2; }
+.innovtech-work-goal { padding: 10px 14px; }
+.innovtech-review-people { padding: 10px 8px; font-size: 14px; }
+.innovtech-account { padding: 12px 10px 8px; }
+.innovtech-source { padding: 8px 2px; }
+.innovtech-twin-note strong { font-size: 13px; }
+.innovtech-twin-note p { font-size: 11px; }
+.innovtech-review-action { padding: 9px 8px; }
+.innovtech-review-action strong { font-size: 14px; }
+.innovtech-review-action small { font-size: 11px; max-width: 260px; }

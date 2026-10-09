@@ -37,7 +37,7 @@ async function ensureAuthor() {
   await client.createIfNotExists({
     _id: id,
     _type: "author",
-    name: "Spine InnovLabs Team",
+    name: "Spine InnovTech Team",
     slug: { _type: "slug", current: "spine-innovlabs-team" },
   })
   return { _type: "reference" as const, _ref: id }

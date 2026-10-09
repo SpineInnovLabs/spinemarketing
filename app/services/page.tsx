@@ -7,14 +7,14 @@ import { ServicesContent } from "./content"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
-  title: "Capabilities & Services | Spine InnovLabs",
+  title: "Capabilities & Services | Spine InnovTech",
   description:
     "Integration architecture, business-context design and governed AI workflow capabilities.",
   alternates: { canonical: "/services" },
   openGraph: {
-    title: "Capabilities & Services | Spine InnovLabs",
+    title: "Capabilities & Services | Spine InnovTech",
     description: "Integration architecture, business-context design and governed AI workflow capabilities.",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Spine InnovLabs" }],
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Spine InnovTech" }],
   },
 }
 

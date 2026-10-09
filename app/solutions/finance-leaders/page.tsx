@@ -7,12 +7,12 @@ import { FinanceLeadersContent } from "./content"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
-  title: "Finance Leaders | Spine InnovLabs",
+  title: "Finance Leaders | Spine InnovTech",
   description:
     "Cash, collections, runway — accounting, billing, and CRM unified.",
   alternates: { canonical: "/solutions/finance-leaders" },
   openGraph: {
-    title: "Finance Leaders | Spine InnovLabs",
+    title: "Finance Leaders | Spine InnovTech",
     description: "Cash, collections, runway — accounting, billing, and CRM unified.",
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "Spine Workspace" }],
   },

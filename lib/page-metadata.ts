@@ -6,9 +6,9 @@ function corporateTitle(title: string): string {
     .replace(/SpineWorkspace/g, "Spine Workspace")
     .replace(/\s*\|\s*Spine Workspace\s*$/, "")
     .trim();
-  return normalized.includes("Spine InnovLabs")
+  return normalized.includes("Spine InnovTech")
     ? normalized
-    : `${normalized} | Spine InnovLabs`;
+    : `${normalized} | Spine InnovTech`;
 }
 
 export function createPageMetadata({
@@ -28,9 +28,9 @@ export function createPageMetadata({
     openGraph: {
       title: fullTitle,
       description: description.replace(/SpineWorkspace/g, "Spine Workspace"),
-      siteName: "Spine InnovLabs",
+      siteName: "Spine InnovTech",
       type: "website",
-      images: [{ url: "/og.png", width: 1200, height: 630, alt: "Spine InnovLabs" }],
+      images: [{ url: "/og.png", width: 1200, height: 630, alt: "Spine InnovTech" }],
     },
   };
 }

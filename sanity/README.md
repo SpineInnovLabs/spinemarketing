@@ -1,4 +1,4 @@
-# Sanity Studio (Spine InnovLabs marketing)
+# Sanity Studio (Spine InnovTech marketing)
 
 Schema lives in `sanity/schemaTypes/`. Config: [`sanity.config.ts`](../sanity.config.ts).
 

@@ -7,12 +7,12 @@ import { RetailContent } from "./content"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
-  title: "Retail & Ecommerce | Spine InnovLabs",
+  title: "Retail & Ecommerce | Spine InnovTech",
   description:
     "Stock, orders, returns, support — every signal connected so teams act before problems become complaints.",
   alternates: { canonical: "/solutions/retail" },
   openGraph: {
-    title: "Retail & Ecommerce | Spine InnovLabs",
+    title: "Retail & Ecommerce | Spine InnovTech",
     description: "Stock, orders, returns, support — every signal connected so teams act before problems become complaints.",
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "Spine Workspace" }],
   },

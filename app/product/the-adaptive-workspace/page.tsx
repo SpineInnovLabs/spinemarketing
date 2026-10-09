@@ -8,12 +8,12 @@ import { WorkspaceGather } from "./sticky-sections"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
-  title: "The Adaptive Workspace | Spine InnovLabs",
+  title: "The Adaptive Workspace | Spine InnovTech",
   description:
     "Role-based views built on Customer view. Nine workspace views, one record.",
   alternates: { canonical: "/product/the-adaptive-workspace" },
   openGraph: {
-    title: "The Adaptive Workspace | Spine InnovLabs",
+    title: "The Adaptive Workspace | Spine InnovTech",
     description: "Role-based views built on Customer view. Nine workspace views, one record.",
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "Spine Workspace" }],
   },

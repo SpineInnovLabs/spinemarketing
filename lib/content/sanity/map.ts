@@ -43,7 +43,7 @@ export type SanityArticleDoc = {
 
 const FALLBACK_AUTHOR: Author = {
   slug: "spine-innovlabs-team",
-  name: "Spine InnovLabs Team",
+  name: "Spine InnovTech Team",
 }
 
 function mapAuthor(raw?: SanityAuthor | null): Author {
