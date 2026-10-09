@@ -20,5 +20,10 @@
   ],
   "runtimeWorkerEnvironment": "prod",
   "managedAuthentication": "Cloudflare Workers Builds generates an API token upon Git connection; do not store expiring Wrangler OAuth tokens or CircleCI credentials",
-  "productionSmokeTest": "Worker's live corporate homepage must contain 'more connected business'"
+  "productionSmokeTest": "Worker's live corporate homepage must contain 'more connected business'",
+  "releaseTrigger": {
+    "kind": "manual-redeploy-request",
+    "requestedOn": "2026-10-09",
+    "note": "Trigger production Cloudflare Workers Builds through the GitHub main-branch push. No DNS or worker-name changes."
+  }
 }
