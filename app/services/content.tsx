@@ -35,14 +35,14 @@ const capabilities = [
 export function ServicesContent() {
   return (
     <>
-      <section className="relative overflow-hidden bg-[#091833] px-5 pb-24 pt-40 text-white sm:px-8 lg:pb-32">
+      <section className="relative overflow-hidden bg-[#F0F8FF] px-5 pb-24 pt-40 text-[#052858] sm:px-8 lg:pb-32 innovtech-reference-surface">
         <div className="pointer-events-none absolute -right-20 -top-48 h-[620px] w-[620px] rounded-full bg-[#346CD0]/25 blur-[110px]" aria-hidden />
         <div className="relative mx-auto max-w-[1220px]">
-          <p className="text-xs font-semibold uppercase tracking-[.23em] text-[#B2CCF9]">Spine InnovLabs / Capabilities</p>
+          <p className="text-xs font-semibold uppercase tracking-[.23em] text-[#4C5C73]">Spine InnovTech / Capabilities</p>
           <h1 className="mt-7 max-w-[1050px] text-[clamp(3.2rem,6vw,6.1rem)] font-semibold leading-[1.08] tracking-[-.065em]">
-            Technology strategy grounded in <span className="text-[#A8CAFF]">business context.</span>
+            Technology strategy grounded in <span className="text-[#0072E5]">business context.</span>
           </h1>
-          <p className="mt-8 max-w-[770px] text-[18px] leading-[1.9] text-[#C4D3E9]">
+          <p className="mt-8 max-w-[770px] text-[18px] leading-[1.9] text-[#4C5C73]">
             We work at the intersection of enterprise connectivity, context-aware workspaces and responsible AI. Every engagement starts by understanding the existing systems, business goal and authority boundaries.
           </p>
           <Link href="/contact?intent=partnership" className="mt-9 inline-flex min-h-12 items-center gap-2 rounded-full bg-[#B1CFFF] px-6 text-sm font-semibold text-[#0D2B54] transition hover:bg-white">
@@ -79,8 +79,8 @@ export function ServicesContent() {
             <p className="mt-6 text-[16px] leading-[1.85] text-[#526A85]">Implementation scope and timing depend on the systems, data access, security controls and business outcome. We assess those constraints before making delivery commitments.</p>
           </div>
           <div className="flex flex-col gap-3">
-            <Link href="/contact" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#112E59] px-6 text-sm font-semibold text-white transition hover:bg-[#2659A0]">Contact Spine InnovLabs <ArrowRight className="h-4 w-4" aria-hidden /></Link>
-            <a href="https://spineworkspace.com/" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-[#BDD0EA] bg-white px-6 text-sm font-semibold text-[#112E59] transition hover:border-[#2659A0]">Explore Spine Workspace <ArrowUpRight className="h-4 w-4" aria-hidden /></a>
+            <Link href="/contact" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#112E59] px-6 text-sm font-semibold text-white transition hover:bg-[#2659A0]">Contact Spine InnovTech <ArrowRight className="h-4 w-4" aria-hidden /></Link>
+            <a href="/product" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-[#BDD0EA] bg-white px-6 text-sm font-semibold text-[#112E59] transition hover:border-[#2659A0]">Explore Spine Workspace <ArrowUpRight className="h-4 w-4" aria-hidden /></a>
           </div>
         </div>
       </section>

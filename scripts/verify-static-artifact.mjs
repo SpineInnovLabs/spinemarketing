@@ -1,11 +1,11 @@
 /**
  * Prevent a blank, stale or product-workbench page from being deployed as the
- * Spine InnovLabs corporate site.
+ * Spine InnovTech corporate site.
  */
 import { readFileSync, statSync } from "node:fs";
 const text = readFileSync("out/index.html", "utf8");
 const sitemap = readFileSync("out/sitemap.xml", "utf8");
-if (!text.includes("more connected business") || !text.includes("Spine InnovLabs")) {
+if (!text.includes("Move business") || !text.includes("Spine InnovTech")) {
   throw new Error("Static export missing approved corporate hero/company identity.");
 }
 if (text.includes("Good morning, Operator") || text.includes("Customer Zero")) {

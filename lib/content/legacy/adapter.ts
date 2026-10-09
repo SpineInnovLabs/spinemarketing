@@ -12,7 +12,7 @@ import type {
 
 const DEFAULT_AUTHOR: Author = {
   slug: "spine-innovlabs-team",
-  name: "Spine InnovLabs Team",
+  name: "Spine InnovTech Team",
 }
 
 function mapPostToSummary(post: (typeof posts)[number]): ArticleSummary {

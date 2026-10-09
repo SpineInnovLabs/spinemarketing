@@ -17,7 +17,7 @@ const fade = (delay = 0) => ({
 
 const contactFAQs = [
   {
-    question: "What can I contact Spine InnovLabs about?",
+    question: "What can I contact Spine InnovTech about?",
     answer: "Company partnerships, enterprise integrations, business-context architecture, responsible AI design and questions about our flagship product, Spine Workspace.",
   },
   {
@@ -93,7 +93,7 @@ export function ContactContent({
             transition={{ type: "spring", damping: 16, stiffness: 52, delay: 0.2 }}
             className="text-[40px] font-semibold leading-[1.1] tracking-[-0.03em] text-[#032D60] sm:text-[48px]"
           >
-            Talk to <span className="text-[#0176D3]">Spine InnovLabs.</span>
+            Talk to <span className="text-[#0176D3]">Spine InnovTech.</span>
           </motion.h1>
 
           <motion.p

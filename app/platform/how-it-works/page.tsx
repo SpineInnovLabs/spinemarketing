@@ -7,12 +7,12 @@ import { PlatformHowItWorksContent } from "./content"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
-  title: "How it works | Spine InnovLabs",
+  title: "How it works | Spine InnovTech",
   description:
     "The tools keep the record. The workspace shows the work. Twin proposes only when asked. A person decides, and an accepted change goes back to the original tool.",
   alternates: { canonical: "/platform/how-it-works" },
   openGraph: {
-    title: "How it works | Spine InnovLabs",
+    title: "How it works | Spine InnovTech",
     description: "The tools keep the record. The workspace shows the work. Twin proposes only when asked. A person decides, and an accepted change goes back to the original tool.",
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "Spine Workspace" }],
   },

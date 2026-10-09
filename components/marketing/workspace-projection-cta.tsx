@@ -22,7 +22,7 @@ export function WorkspaceProjectionCta({
           </p>
         </div>
         <div className="flex flex-col gap-3">
-          <a href="https://spineworkspace.com/" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#143968] px-6 text-sm font-semibold text-white transition hover:bg-[#2862A8]">
+          <a href="/product" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#143968] px-6 text-sm font-semibold text-white transition hover:bg-[#2862A8]">
             Explore Spine Workspace <ArrowUpRight className="h-4 w-4" aria-hidden />
           </a>
           <Link href="/contact?intent=demo" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-[#BBCDE7] bg-white px-6 text-sm font-semibold text-[#143968] transition hover:border-[#2862A8]">

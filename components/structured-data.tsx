@@ -29,7 +29,7 @@ export function SoftwareApplicationJsonLd() {
     operatingSystem: "Web",
     url: publicSiteUrl,
     description:
-      "SpineWorkspace is a governed AI workspace for operational work. Connect authorized business signals from existing systems. People and AI work from the same evidence. Built by Spine InnovLabs.",
+      "SpineWorkspace is a governed AI workspace for operational work. Connect authorized business signals from existing systems. People and AI work from the same evidence. Built by Spine InnovTech.",
   }
 
   return (
@@ -123,7 +123,7 @@ export function ArticleJsonLd({
     },
     publisher: {
       "@type": "Organization",
-      name: "Spine InnovLabs",
+      name: "Spine InnovTech",
       url: publicSiteUrl,
     },
     ...(imageUrl ? { image: [imageUrl] } : {}),

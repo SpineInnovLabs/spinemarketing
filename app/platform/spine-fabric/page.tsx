@@ -10,12 +10,12 @@ import { SpineStickyScroll } from "./sticky-sections"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
-  title: "Spine Fabric | Spine InnovLabs",
+  title: "Spine Fabric | Spine InnovTech",
   description:
-    "Spine Fabric is a Spine InnovLabs product. The tools keep the record. Spine Workspace shows the work.",
+    "Spine Fabric is a Spine InnovTech product. The tools keep the record. Spine Workspace shows the work.",
   alternates: { canonical: "/platform/spine-fabric" },
   openGraph: {
-    title: "Spine Fabric | Spine InnovLabs",
+    title: "Spine Fabric | Spine InnovTech",
     description: "The tools keep the record. Spine Workspace shows the work. Twin proposes only when asked. A person decides.",
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "Spine Workspace" }],
   },

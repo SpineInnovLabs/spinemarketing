@@ -1,6 +1,6 @@
-# Spine InnovLabs — Corporate Website
+# Spine InnovTech — Corporate Website
 
-The official company website for **Spine InnovLabs**, builder of **Spine Workspace**. This repository contains company, technology, solutions, resources and corporate marketing pages.
+The official company website for **Spine InnovTech**, builder of **Spine Workspace**. This repository contains company, technology, solutions, resources and corporate marketing pages.
 
 - **Corporate site:** https://spineinnovlabs.spineworkspace.com/
 - **Source:** `SpineInnovLabs/spinemarketing`, `main`
@@ -9,7 +9,7 @@ The official company website for **Spine InnovLabs**, builder of **Spine Workspa
 - **Deployment:** **Cloudflare Workers Builds (GitHub integration)** — no CircleCI dependency
 - **Framework:** Next.js 16 static export, npm + `package-lock.json`
 - **Content:** Sanity at build time (with a legacy-content fallback)
-- **Spine Workspace product site:** https://spineworkspace.com/ — **different application and deployment**
+- **Spine Workspace product details:** `/product` — features, workflow, and underlying technology. Marketing product links stay on this site.
 
 ## Local development
 

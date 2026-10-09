@@ -17,13 +17,13 @@ export default function RequestAccessPage() {
         <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[#0176D3]">Access</p>
         <h1 className="mt-2 text-[28px] font-semibold text-[#032D60]">Request access</h1>
         <p className="mt-3 text-[15px] leading-[1.6] text-[#444]">
-          This form records interest only. It does not create an organization or open a workspace. A Spine InnovLabs contact still has to follow up.
+          This form records interest only. It does not create an organization or open a workspace. A Spine InnovTech contact still has to follow up.
         </p>
         {sent ? (
           <p className="mt-6 rounded-md border border-[#E5E5E5] bg-[#F3F6F9] p-4 text-[14px] text-[#181818]">
             Request noted in this browser only. No access request was sent, because the intake service is not connected. Use{" "}
             <Link href="/contact?intent=demo" className="font-semibold text-[#0176D3] hover:underline">
-              Talk to Spine InnovLabs
+              Talk to Spine InnovTech
             </Link>{" "}
             to continue with a person.
           </p>

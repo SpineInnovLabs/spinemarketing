@@ -18,7 +18,7 @@ export const posts: BlogPost[] = [
     description:
       "Every founder, operator, and account manager starts their day the same way: open 12 tabs, copy-paste context, and lose an hour before real work begins.",
     date: "2026-04-12",
-    author: "Spine InnovLabs Team",
+    author: "Spine InnovTech Team",
     readTime: "4 min read",
     tags: ["Product", "Workspace"],
     category: "Product",
@@ -50,9 +50,9 @@ A tool does one thing. The workspace is where the record and the evidence for th
     slug: "why-ai-needs-your-approval",
     title: "Why AI needs your approval — every single time",
     description:
-      "Most AI tools act first and ask questions later. We built Spine InnovLabs the opposite way, and here's why that matters.",
+      "Most AI tools act first and ask questions later. We built Spine InnovTech the opposite way, and here's why that matters.",
     date: "2026-04-10",
-    author: "Spine InnovLabs Team",
+    author: "Spine InnovTech Team",
     readTime: "3 min read",
     tags: ["AI", "Trust"],
     category: "Governance and trust",
@@ -62,7 +62,7 @@ A tool does one thing. The workspace is where the record and the evidence for th
 
 AI is great at sounding right. It uses the same tone whether it's giving you a verified fact or a complete hallucination. And when it's wrong about your business — a customer commitment that doesn't exist, a revenue number that's off — the consequences are real.
 
-## How Spine InnovLabs handles this differently
+## How Spine InnovTech handles this differently
 
 Every insight comes with evidence — which data, from which tool, how recent. When Twin finds something, it proposes it first. You see what it found and where it came from. You allow it, change it, or stop it.
 
@@ -84,7 +84,7 @@ It's the product. Twin prepares the next step. A person decides. The tools that 
     description:
       "Four kinds of information stay apart: the record, the evidence, the draft, and the person. Twin proposes only when asked. A person decides.",
     date: "2026-09-02",
-    author: "Spine InnovLabs Team",
+    author: "Spine InnovTech Team",
     readTime: "5 min read",
     tags: ["Product", "The record", "The workspace"],
     category: "Business context",

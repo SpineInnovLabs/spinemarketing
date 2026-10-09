@@ -1,7 +1,6 @@
 import type { LucideIcon } from "lucide-react";
 import { BookOpen, Building2, Code2, Compass, FileText, History, Layers3, Mail, Network, Newspaper, ShieldCheck, Sparkles, Users, Workflow } from "lucide-react";
 import { getSolutionNavItems } from "@/lib/solution-nav";
-import { SPINE_WORKSPACE_APEX } from "@/lib/site-urls";
 import type { ConnectorNavMark, KindNavMark } from "@/lib/integration-nav";
 
 export type NavItemChild = { name: string; href: string; icon: LucideIcon; desc?: string; external?: boolean };
@@ -19,7 +18,7 @@ export const headerNavigation: NavItem[] = [
   {
     label: "Company", href: "/company",
     items: [
-      { name: "About Spine InnovLabs", href: "/company", icon: Building2, desc: "Our vision, story and principles" },
+      { name: "About Spine InnovTech", href: "/company", icon: Building2, desc: "Our vision, story and principles" },
       { name: "Why we build", href: "/about", icon: Compass, desc: "The enterprise integration problem behind our work" },
       { name: "Contact", href: "/contact", icon: Mail, desc: "Connect with our team" },
     ],
@@ -27,8 +26,8 @@ export const headerNavigation: NavItem[] = [
   {
     label: "Technology", href: "/platform",
     featured: {
-      name: "Spine Workspace", href: SPINE_WORKSPACE_APEX, icon: Layers3,
-      desc: "Our flagship business-context workspace for humans and AI", external: true,
+      name: "Spine Workspace", href: "/product", icon: Layers3,
+      desc: "Our flagship business-context workspace for humans and AI",
     },
     items: [
       { name: "Spine Fabric", href: "/platform/spine-fabric", icon: Network, desc: "Governed business context and relationships" },
@@ -38,7 +37,7 @@ export const headerNavigation: NavItem[] = [
     ],
     menuFooter: [
       { name: "Explore the architecture", href: "/platform" },
-      { name: "Visit Spine Workspace", href: SPINE_WORKSPACE_APEX, external: true },
+      { name: "Explore Spine Workspace", href: "/product" },
     ],
   },
   {
@@ -66,7 +65,7 @@ export const footerColumns: FooterColumn[] = [
     { name: "Contact", href: "/contact" }, { name: "Portfolio", href: "/portfolio" },
   ] },
   { heading: "Our technology", links: [
-    { name: "Spine Workspace", href: SPINE_WORKSPACE_APEX, external: true },
+    { name: "Spine Workspace", href: "/product" },
     { name: "Spine Fabric", href: "/platform/spine-fabric" },
     { name: "Spine Twin", href: "/twin" },
     { name: "Governance & Runtime", href: "/governance" },

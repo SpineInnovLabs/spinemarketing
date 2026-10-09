@@ -7,8 +7,8 @@ import { BreadcrumbJsonLd } from "@/components/structured-data";
 import { absoluteUrl } from "@/lib/site-url";
 
 export const metadata: Metadata = {
-  title: { absolute: "Company & Product Updates | Spine InnovLabs" },
-  description: "Notes from Spine InnovLabs on company direction, business context, Spine Workspace and responsible AI.",
+  title: { absolute: "Company & Product Updates | Spine InnovTech" },
+  description: "Notes from Spine InnovTech on company direction, business context, Spine Workspace and responsible AI.",
   alternates: { canonical: "/updates" },
 };
 
@@ -16,8 +16,8 @@ const notes = [
   {
     period: "October 2026",
     category: "Company direction",
-    title: "Spine InnovLabs and Spine Workspace: two distinct roles",
-    body: "Spine InnovLabs is the company and technology identity. Spine Workspace is the flagship business-context workspace where people and AI collaborate. The corporate website introduces the company and its technology; the product website handles product-specific evaluation.",
+    title: "Spine InnovTech and Spine Workspace: two distinct roles",
+    body: "Spine InnovTech is the company and technology identity. Spine Workspace is the flagship business-context workspace where people and AI collaborate. This website introduces the company, its technology, and the features of Spine Workspace so visitors can evaluate the product before entering a workspace.",
   },
   {
     period: "September 2026",
@@ -33,11 +33,11 @@ export default function UpdatesPage() {
       <BreadcrumbJsonLd items={[{ name: "Home", url: absoluteUrl("/") }, { name: "Updates", url: absoluteUrl("/updates") }]} />
       <Header />
       <main id="main">
-        <section className="bg-[#0A1B38] px-5 pb-20 pt-40 text-white sm:px-8 lg:pb-28">
+        <section className="bg-[#F0F8FF] px-5 pb-20 pt-40 text-[#052858] sm:px-8 lg:pb-28 innovtech-reference-surface">
           <div className="mx-auto max-w-[1130px]">
-            <p className="text-xs font-semibold uppercase tracking-[.23em] text-[#A8C6F9]">Spine InnovLabs / Journal</p>
+            <p className="text-xs font-semibold uppercase tracking-[.23em] text-[#4C5C73]">Spine InnovTech / Journal</p>
             <h1 className="mt-7 text-[clamp(3.2rem,6vw,6rem)] font-semibold leading-[1.08] tracking-[-.06em]">Company updates.</h1>
-            <p className="mt-7 max-w-[710px] text-[17px] leading-[1.9] text-[#CBDAEE]">Direction, architecture and meaningful progress from the company behind Spine Workspace. These editorial notes are not a production release log.</p>
+            <p className="mt-7 max-w-[710px] text-[17px] leading-[1.9] text-[#4C5C73]">Direction, architecture and meaningful progress from the company behind Spine Workspace. These editorial notes are not a production release log.</p>
           </div>
         </section>
         <section className="mx-auto max-w-[1130px] px-5 py-24 sm:px-8 lg:py-32">

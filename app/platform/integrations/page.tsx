@@ -9,12 +9,12 @@ import { IntegrationsStickyScroll } from "./sticky-sections"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
-  title: "Integrations | Spine InnovLabs",
+  title: "Integrations | Spine InnovTech",
   description:
     "The apps, files, and conversations you already use, through one connection.",
   alternates: { canonical: "/platform/integrations" },
   openGraph: {
-    title: "Integrations | Spine InnovLabs",
+    title: "Integrations | Spine InnovTech",
     description: "The apps, files, and conversations you already use, through one connection.",
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "Spine Workspace" }],
   },

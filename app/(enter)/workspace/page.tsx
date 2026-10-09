@@ -68,7 +68,7 @@ export default function WorkspacePage() {
               Update setup
             </Link>
             <Link href="/contact?intent=demo" className="inline-flex h-10 items-center rounded-md border border-[#C9C9C9] px-4 text-[14px] font-semibold text-[#032D60]">
-              Talk to Spine InnovLabs
+              Talk to Spine InnovTech
             </Link>
           </div>
         </section>

@@ -9,11 +9,11 @@ import { ArrowRight } from "lucide-react"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
-  title: "Insights & Articles | Spine InnovLabs",
+  title: "Insights & Articles | Spine InnovTech",
   description: "Insights on connected workspaces, AI governance, and operational intelligence.",
   alternates: { canonical: "/blog" },
   openGraph: {
-    title: "Insights & Articles | Spine InnovLabs",
+    title: "Insights & Articles | Spine InnovTech",
     description: "Insights on connected workspaces, AI governance, and operational intelligence.",
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "Spine Workspace" }],
   },

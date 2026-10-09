@@ -113,7 +113,7 @@ const ASIDES: Record<string, Aside> = {
     ],
   },
   "Building around shared business reality.": {
-    kicker: "Spine InnovLabs",
+    kicker: "Spine InnovTech",
     title: "Same governed context",
     rows: [
       { term: "Built so", detail: "People and AI can work from the same governed business context." },

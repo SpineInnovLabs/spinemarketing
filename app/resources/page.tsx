@@ -8,12 +8,12 @@ import { ResourcesScroll } from "./sticky-sections";
 import { BreadcrumbJsonLd } from "@/components/structured-data";
 
 export const metadata: Metadata = {
-  title: "Resources | Spine InnovLabs",
+  title: "Resources | Spine InnovTech",
   description:
     "Guides, use cases, and tools to help you get the most from Spine Workspace.",
   alternates: { canonical: "/resources" },
   openGraph: {
-    title: "Resources | Spine InnovLabs",
+    title: "Resources | Spine InnovTech",
     description: "Guides, use cases, and tools to help you get the most from Spine Workspace.",
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "Spine Workspace" }],
   },

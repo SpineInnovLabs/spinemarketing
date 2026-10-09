@@ -74,7 +74,7 @@ export function AboutPlatformGather() {
     <StickyGather
       tag="What We Built"
       heading="Every piece born from that one save."
-      centerLabel="Spine InnovLabs"
+      centerLabel="Spine InnovTech"
       items={platformNodes}
     />
   );

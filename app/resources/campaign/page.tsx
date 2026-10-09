@@ -5,12 +5,12 @@ import { Footer } from "@/components/footer"
 import { CampaignGalleryContent } from "./content"
 
 export const metadata: Metadata = {
-  title: "Campaign Gallery — Architecture & Creatives | Spine InnovLabs",
+  title: "Campaign Gallery — Architecture & Creatives | Spine InnovTech",
   description:
     "Architecture blueprints showing Spine Workspace at the center of every tool, plus 36 campaign designs across LinkedIn and WhatsApp — for Account Success, Business Ops, and Personal Ops.",
   alternates: { canonical: "/resources/campaign" },
   openGraph: {
-    title: "Campaign Gallery — Architecture & Creatives | Spine InnovLabs",
+    title: "Campaign Gallery — Architecture & Creatives | Spine InnovTech",
     description:
       "The Spine Workspace connects every tool into the record the tools already keep. Architecture blueprints and 36 campaign designs.",
     images: [
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Campaign Gallery — Architecture & Creatives | Spine InnovLabs",
+    title: "Campaign Gallery — Architecture & Creatives | Spine InnovTech",
     description: "The Spine Workspace connects every tool into the record the tools already keep.",
     images: ["/images/campaign/Post-Spine.jpg"],
   },

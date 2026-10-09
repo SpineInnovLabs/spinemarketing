@@ -281,7 +281,7 @@ export const BUYER_HERO_BY_PATH: Record<string, Partial<PageHeroCopy> & { princi
     secondaryCta: BUYER_CTAS.workflowReview,
   },
   "/company": {
-    badge: "Spine InnovLabs",
+    badge: "Spine InnovTech",
     headline: "We build governed decision workflows for fragmented operations.",
     subhead:
       "Starting with customer-success and renewal teams who spend hours reconstructing account reality—without replacing CRM, support, or finance systems.",

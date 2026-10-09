@@ -8,14 +8,14 @@ import { SecurityContent } from "./content"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
-  title: "Security & Governance | Spine InnovLabs",
+  title: "Security & Governance | Spine InnovTech",
   description:
     "Security and governance design principles for Spine Workspace; deployed controls and certifications require independent verification.",
   alternates: { canonical: "/security" },
   openGraph: {
-    title: "Security & Governance | Spine InnovLabs",
+    title: "Security & Governance | Spine InnovTech",
     description: "Security and governance design principles for Spine Workspace; deployed controls and certifications require independent verification.",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Spine InnovLabs" }],
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Spine InnovTech" }],
   },
 }
 

@@ -22,15 +22,15 @@ const principles = [
 export function AboutContent() {
   return (
     <>
-      <section className="relative overflow-hidden bg-[#091932] px-5 pb-24 pt-40 text-white sm:px-8 lg:pb-32">
+      <section className="relative overflow-hidden bg-[#F0F8FF] px-5 pb-24 pt-40 text-[#052858] sm:px-8 lg:pb-32 innovtech-reference-surface">
         <div className="pointer-events-none absolute -right-24 -top-40 h-[550px] w-[550px] rounded-full bg-[#2763BC]/25 blur-[100px]" aria-hidden />
         <div className="relative mx-auto max-w-[1220px]">
-          <p className="text-xs font-semibold uppercase tracking-[.23em] text-[#B0CDFB]">Our origin / Spine InnovLabs</p>
+          <p className="text-xs font-semibold uppercase tracking-[.23em] text-[#4C5C73]">Our origin / Spine InnovTech</p>
           <h1 className="mt-7 max-w-[1050px] text-[clamp(3.2rem,6.2vw,6.6rem)] font-semibold leading-[1.04] tracking-[-.065em]">
-            The real gap was never just <span className="text-[#9EC5FF]">system integration.</span>
+            The real gap was never just <span className="text-[#0072E5]">system integration.</span>
           </h1>
-          <p className="mt-9 max-w-[770px] text-[18px] leading-[1.9] text-[#CAD7E9]">
-            Connecting systems makes information available. Helping people understand that information, act with authority and continue work across teams is a different challenge. That is the problem behind Spine InnovLabs.
+          <p className="mt-9 max-w-[770px] text-[18px] leading-[1.9] text-[#4C5C73]">
+            Connecting systems makes information available. Helping people understand that information, act with authority and continue work across teams is a different challenge. That is the problem behind Spine InnovTech.
           </p>
           <Link href="/company" className="mt-9 inline-flex min-h-12 items-center gap-2 rounded-full bg-[#AFCBFF] px-6 text-sm font-semibold text-[#0B234A] transition hover:bg-white">
             Meet the company <ArrowUpRight className="h-4 w-4" aria-hidden />
@@ -78,7 +78,7 @@ export function AboutContent() {
           <p className="text-xs font-semibold uppercase tracking-[.21em] text-[#2461BC]">From vision to product</p>
           <h2 className="mt-6 text-[clamp(2.4rem,4.4vw,4.4rem)] font-semibold leading-[1.1] tracking-[-.055em] text-[#0C274E]">Spine Workspace puts the principle to work.</h2>
           <p className="mt-7 text-[17px] leading-[1.85] text-[#536883]">One workspace for humans and AI to understand the business, share the work, and achieve goals together. Spine Fabric, the Workbench, the Twin and Runtime are parts of that integrated direction.</p>
-          <a href="https://spineworkspace.com/" className="mt-9 inline-flex min-h-12 items-center gap-2 rounded-full bg-[#102F5B] px-6 text-sm font-semibold text-white transition hover:bg-[#2759A0]">
+          <a href="/product" className="mt-9 inline-flex min-h-12 items-center gap-2 rounded-full bg-[#102F5B] px-6 text-sm font-semibold text-white transition hover:bg-[#2759A0]">
             Explore Spine Workspace <ArrowRight className="h-4 w-4" aria-hidden />
           </a>
         </div>

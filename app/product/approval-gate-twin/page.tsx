@@ -8,12 +8,12 @@ import { ApprovalStickyScroll, ApprovalGather } from "./sticky-sections"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 
 export const metadata: Metadata = {
-  title: "Governance & Twin in Action | Spine InnovLabs",
+  title: "Governance & Twin in Action | Spine InnovTech",
   description:
     "AI proposes, you approve. Governed approval queues, tiered routing, Twin scoring, and 24-hour rollback.",
   alternates: { canonical: "/product/approval-gate-twin" },
   openGraph: {
-    title: "Governance & Twin in Action | Spine InnovLabs",
+    title: "Governance & Twin in Action | Spine InnovTech",
     description: "AI proposes, you approve. Governed approval queues, tiered routing, Twin scoring, and 24-hour rollback.",
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "Spine Workspace" }],
   },

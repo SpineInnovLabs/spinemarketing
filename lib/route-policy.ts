@@ -15,8 +15,8 @@ export const ROUTE_DECISIONS: RouteDecision[] = [
   {
     path: "/spineworkspace",
     action: "redirect",
-    destination: "https://spineworkspace.com/",
-    reason: "Product marketing lives on its own domain; exclude the corporate-host redirect from this sitemap.",
+    destination: "/product",
+    reason: "Legacy entry redirects to the local Spine Workspace product-details page.",
   },
   {
     path: "/ai",
@@ -26,9 +26,8 @@ export const ROUTE_DECISIONS: RouteDecision[] = [
   },
   {
     path: "/product",
-    action: "redirect",
-    destination: "/spineworkspace",
-    reason: "Page is only a client redirect. Older product overview; /spineworkspace is canonical.",
+    action: "keep",
+    reason: "Spine Workspace product details, features, workflow, and technology live on the corporate marketing site.",
   },
   {
     path: "/why",
@@ -142,7 +141,7 @@ export const ROUTE_DECISIONS: RouteDecision[] = [
   {
     path: "/company",
     action: "keep",
-    reason: "Spine InnovLabs company page. Distinct from About.",
+    reason: "Spine InnovTech company page. Distinct from About.",
   },
   {
     path: "/use-cases",

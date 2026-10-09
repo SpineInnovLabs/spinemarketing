@@ -7,8 +7,8 @@ import { BreadcrumbJsonLd } from "@/components/structured-data";
 import { absoluteUrl } from "@/lib/site-url";
 
 export const metadata: Metadata = {
-  title: { absolute: "Technology Portfolio | Spine InnovLabs" },
-  description: "Explore the Spine InnovLabs technology portfolio: the Spine Workspace product, Spine Fabric, Spine Twin and governed execution architecture.",
+  title: { absolute: "Technology Portfolio | Spine InnovTech" },
+  description: "Explore the Spine InnovTech technology portfolio: the Spine Workspace product, Spine Fabric, Spine Twin and governed execution architecture.",
   alternates: { canonical: "/portfolio" },
 };
 
@@ -18,8 +18,8 @@ const work = [
     type: "Flagship product",
     title: "Spine Workspace",
     body: "A business-context workspace for people and AI to understand the business, share work and move goals forward together.",
-    href: "https://spineworkspace.com/",
-    external: true,
+    href: "/product",
+    external: false,
   },
   {
     icon: Network,
@@ -53,11 +53,11 @@ export default function PortfolioPage() {
       <BreadcrumbJsonLd items={[{ name: "Home", url: absoluteUrl("/") }, { name: "Portfolio", url: absoluteUrl("/portfolio") }]} />
       <Header />
       <main id="main">
-        <section className="bg-[#091A37] px-5 pb-24 pt-40 text-white sm:px-8 lg:pb-32">
+        <section className="bg-[#F0F8FF] px-5 pb-24 pt-40 text-[#052858] sm:px-8 lg:pb-32 innovtech-reference-surface">
           <div className="mx-auto max-w-[1220px]">
-            <p className="text-xs font-semibold uppercase tracking-[.23em] text-[#A8C7FC]">Spine InnovLabs / Portfolio</p>
-            <h1 className="mt-7 max-w-[1050px] text-[clamp(3.2rem,6vw,6.3rem)] font-semibold leading-[1.07] tracking-[-.065em]">One direction. <span className="text-[#ACCAFF]">Connected capabilities.</span></h1>
-            <p className="mt-8 max-w-[780px] text-[18px] leading-[1.9] text-[#C9D7ED]">Our portfolio is built around Spine Workspace. The elements below describe an integrated product architecture, not a list of separately purchasable products or verified customer implementations.</p>
+            <p className="text-xs font-semibold uppercase tracking-[.23em] text-[#4C5C73]">Spine InnovTech / Portfolio</p>
+            <h1 className="mt-7 max-w-[1050px] text-[clamp(3.2rem,6vw,6.3rem)] font-semibold leading-[1.07] tracking-[-.065em]">One direction. <span className="text-[#0072E5]">Connected capabilities.</span></h1>
+            <p className="mt-8 max-w-[780px] text-[18px] leading-[1.9] text-[#4C5C73]">Our portfolio is built around Spine Workspace. The elements below describe an integrated product architecture, not a list of separately purchasable products or verified customer implementations.</p>
           </div>
         </section>
         <section className="mx-auto max-w-[1220px] px-5 py-24 sm:px-8 lg:py-32">
