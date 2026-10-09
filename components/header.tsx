@@ -36,17 +36,17 @@ function isWideMenu(nav: NavItem) {
 }
 
 const entryClass =
-  "group flex h-full items-start gap-3 rounded-xl border border-transparent p-3 transition-colors duration-150 hover:border-[#D9E4EF] hover:bg-[#EAF5FC] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0176D3] focus-visible:ring-offset-2 motion-reduce:transition-none";
+  "group flex h-full items-start gap-3 rounded-xl border border-transparent p-3 transition-colors duration-150 hover:border-[#D9E4EF] hover:bg-[#EBF7FF] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006FE8] focus-visible:ring-offset-2 motion-reduce:transition-none";
 
 function MenuEntry({ item, featured = false }: { item: NavItemChild; featured?: boolean }) {
   const Icon = item.icon;
   return (
     <Link href={item.href} className={`${entryClass} ${featured ? "p-4" : ""}`}>
-      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#F3F6F9] text-[#0176D3] group-hover:bg-white">
+      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#F3F6F9] text-[#006FE8] group-hover:bg-white">
         <Icon className="h-5 w-5" strokeWidth={1.75} aria-hidden />
       </span>
       <span className="min-w-0">
-        <span className={`block font-semibold leading-snug text-[#032D60] ${featured ? "text-[18px]" : "text-[16px]"}`}>
+        <span className={`block font-semibold leading-snug text-[#082B5E] ${featured ? "text-[18px]" : "text-[16px]"}`}>
           {item.name}
         </span>
         {item.desc && (
@@ -65,7 +65,7 @@ function FooterLinks({ links, onNavigate }: { links: NavLink[]; onNavigate?: () 
           <Link
             href={link.href}
             onClick={onNavigate}
-            className="inline-flex items-center gap-1.5 rounded-md text-[14px] font-semibold leading-5 text-[#0176D3] transition-colors duration-150 hover:text-[#0B5CAB] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0176D3] focus-visible:ring-offset-2 motion-reduce:transition-none"
+            className="inline-flex items-center gap-1.5 rounded-md text-[14px] font-semibold leading-5 text-[#006FE8] transition-colors duration-150 hover:text-[#0055B8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006FE8] focus-visible:ring-offset-2 motion-reduce:transition-none"
           >
             {link.name}
             <ArrowRight className="h-4 w-4" aria-hidden />
@@ -118,7 +118,7 @@ function WidePanel({ nav, menuId, onNavigate }: { nav: NavItem; menuId: string; 
           )}
           {nav.supporting && (
             <div className="mt-5 border-t border-[#D9E4EF] pt-4">
-              <p id={`${menuId}-supporting`} className="text-[13px] font-semibold leading-5 text-[#032D60]">
+              <p id={`${menuId}-supporting`} className="text-[13px] font-semibold leading-5 text-[#082B5E]">
                 {nav.supporting.label}
               </p>
               <ul aria-labelledby={`${menuId}-supporting`} className="mt-2 flex flex-wrap gap-1">
@@ -126,7 +126,7 @@ function WidePanel({ nav, menuId, onNavigate }: { nav: NavItem; menuId: string; 
                   <li key={item.name}>
                     <Link
                       href={item.href}
-                      className="inline-flex items-center rounded-lg px-2.5 py-1.5 text-[13px] font-medium leading-5 text-[#33465B] transition-colors duration-150 hover:bg-[#EAF5FC] hover:text-[#032D60] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0176D3] focus-visible:ring-offset-2 motion-reduce:transition-none"
+                      className="inline-flex items-center rounded-lg px-2.5 py-1.5 text-[13px] font-medium leading-5 text-[#33465B] transition-colors duration-150 hover:bg-[#EBF7FF] hover:text-[#082B5E] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006FE8] focus-visible:ring-offset-2 motion-reduce:transition-none"
                     >
                       {item.name}
                     </Link>
@@ -192,7 +192,7 @@ function NavTrigger({
 
   if (!hasDropdown) {
     const linkClass =
-      "inline-flex h-10 items-center rounded-[10px] px-3 text-[15px] font-medium text-[#33465B] transition-colors duration-150 hover:text-[#032D60] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0176D3] focus-visible:ring-offset-2 motion-reduce:transition-none";
+      "inline-flex h-10 items-center rounded-[10px] px-3 text-[15px] font-medium text-[#33465B] transition-colors duration-150 hover:text-[#082B5E] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006FE8] focus-visible:ring-offset-2 motion-reduce:transition-none";
     if (nav.external) {
       return (
         <a href={nav.href} className={linkClass} onMouseEnter={onLeave} target="_blank" rel="noopener noreferrer">
@@ -220,8 +220,8 @@ function NavTrigger({
         aria-controls={menuId}
         id={`${menuId}-trigger`}
         onClick={() => onToggle(nav.label)}
-        className={`inline-flex h-10 items-center gap-1 rounded-[10px] px-3 text-[15px] font-medium transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0176D3] focus-visible:ring-offset-2 motion-reduce:transition-none ${
-          isOpen ? "text-[#032D60]" : "text-[#33465B] hover:text-[#032D60]"
+        className={`inline-flex h-10 items-center gap-1 rounded-[10px] px-3 text-[15px] font-medium transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006FE8] focus-visible:ring-offset-2 motion-reduce:transition-none ${
+          isOpen ? "text-[#082B5E]" : "text-[#33465B] hover:text-[#082B5E]"
         }`}
       >
         {nav.label}
@@ -242,9 +242,9 @@ function MobileItemLink({ item, onNavigate }: { item: NavItemChild; onNavigate: 
     <Link
       href={item.href}
       onClick={onNavigate}
-      className="flex items-start gap-3 rounded-xl px-2 py-2.5 text-[#032D60] hover:bg-[#EAF5FC] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0176D3]"
+      className="flex items-start gap-3 rounded-xl px-2 py-2.5 text-[#082B5E] hover:bg-[#EBF7FF] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006FE8]"
     >
-      <Icon className="mt-0.5 h-5 w-5 shrink-0 text-[#0176D3]" strokeWidth={1.75} aria-hidden />
+      <Icon className="mt-0.5 h-5 w-5 shrink-0 text-[#006FE8]" strokeWidth={1.75} aria-hidden />
       <span className="min-w-0">
         <span className="block text-[15px] font-semibold leading-snug">{item.name}</span>
         {item.desc && <span className="mt-0.5 block text-[13px] leading-5 text-[#33465B]">{item.desc}</span>}
@@ -385,7 +385,7 @@ export function Header({
     <>
       {activeMenu && heroRevealed && (
         <div
-          className="fixed inset-0 z-40 bg-[#032D60]/20"
+          className="fixed inset-0 z-40 bg-[#082B5E]/20"
           onMouseEnter={handleLeave}
           onClick={() => closeDesktopMenu(false)}
         />
@@ -414,11 +414,11 @@ export function Header({
         <nav className="relative mx-auto flex h-16 max-w-[1280px] items-center justify-between px-5 sm:px-8 lg:px-12">
           <Link
             href="/"
-            className="inline-flex h-10 shrink-0 items-center gap-2.5 rounded-[10px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0176D3] focus-visible:ring-offset-2"
+            className="inline-flex h-10 shrink-0 items-center gap-2.5 rounded-[10px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006FE8] focus-visible:ring-offset-2"
           >
-            <SpineLogo className="h-8 w-8 shrink-0 text-[#032D60]" variant="on-light" />
-            <span className="text-[17px] font-semibold leading-none tracking-[-0.04em] text-[#032D60]">
-              Spine <span className="text-[#0176D3]">InnovLabs</span>
+            <SpineLogo className="h-8 w-8 shrink-0 text-[#082B5E]" variant="on-light" />
+            <span className="text-[17px] font-semibold leading-none tracking-[-0.04em] text-[#082B5E]">
+              Spine <span className="text-[#006FE8]">InnovLabs</span>
             </span>
           </Link>
 
@@ -440,13 +440,13 @@ export function Header({
 
           <div className="hidden shrink-0 items-center gap-2 lg:flex">
             <AppearanceMenu />
-            <a href={DOCS_URL} className="inline-flex h-10 items-center rounded-[10px] px-3 text-[15px] font-semibold text-[#032D60] hover:bg-[#F3F6F9] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0176D3] focus-visible:ring-offset-2" target="_blank" rel="noopener noreferrer">
+            <a href={DOCS_URL} className="inline-flex h-10 items-center rounded-[10px] px-3 text-[15px] font-semibold text-[#082B5E] hover:bg-[#F3F6F9] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006FE8] focus-visible:ring-offset-2" target="_blank" rel="noopener noreferrer">
               Docs
             </a>
-            <Link href="https://spineworkspace.com" className="inline-flex h-10 items-center rounded-[10px] px-3 text-[15px] font-semibold text-[#032D60] hover:bg-[#F3F6F9] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0176D3] focus-visible:ring-offset-2">
+            <Link href="https://spineworkspace.com" className="inline-flex h-10 items-center rounded-[10px] px-3 text-[15px] font-semibold text-[#082B5E] hover:bg-[#F3F6F9] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006FE8] focus-visible:ring-offset-2">
               Spine Workspace
             </Link>
-            <Button className="h-10 rounded-[10px] bg-[#0176D3] px-4 text-[14px] font-semibold text-white hover:bg-[#0B5CAB]" asChild>
+            <Button className="h-10 rounded-[10px] bg-[#006FE8] px-4 text-[14px] font-semibold text-white hover:bg-[#0055B8]" asChild>
               <Link href="/contact">Contact us</Link>
             </Button>
           </div>
@@ -454,7 +454,7 @@ export function Header({
           <button
             ref={menuButtonRef}
             type="button"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-[10px] text-[#032D60] lg:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0176D3] focus-visible:ring-offset-2"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-[10px] text-[#082B5E] lg:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006FE8] focus-visible:ring-offset-2"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileMenuOpen}
@@ -492,7 +492,7 @@ export function Header({
                       {nav.external ? (
                         <a
                           href={nav.href}
-                          className="text-[15px] font-semibold text-[#032D60]"
+                          className="text-[15px] font-semibold text-[#082B5E]"
                           target="_blank"
                           rel="noopener noreferrer"
                           onClick={closeMobile}
@@ -502,7 +502,7 @@ export function Header({
                       ) : (
                         <Link
                           href={nav.href}
-                          className="rounded-md text-[15px] font-semibold text-[#032D60] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0176D3]"
+                          className="rounded-md text-[15px] font-semibold text-[#082B5E] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006FE8]"
                           onClick={closeMobile}
                         >
                           {nav.label}
@@ -511,7 +511,7 @@ export function Header({
                       {hasDropdown && (
                         <button
                           type="button"
-                          className="rounded-md p-1.5 text-[#032D60] hover:bg-[#EAF5FC] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0176D3]"
+                          className="rounded-md p-1.5 text-[#082B5E] hover:bg-[#EBF7FF] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006FE8]"
                           onClick={() => setMobileExpanded(isExpanded ? null : nav.label)}
                           aria-expanded={isExpanded}
                           aria-controls={panelId}
@@ -540,14 +540,14 @@ export function Header({
                         ) : null}
                         {nav.supporting && (
                           <div className="mt-2 border-t border-[#E5E5E5] pt-2">
-                            <p className="px-2 py-1 text-[13px] font-semibold text-[#032D60]">{nav.supporting.label}</p>
+                            <p className="px-2 py-1 text-[13px] font-semibold text-[#082B5E]">{nav.supporting.label}</p>
                             <ul>
                               {nav.supporting.items.map((item) => (
                                 <li key={item.name}>
                                   <Link
                                     href={item.href}
                                     onClick={closeMobile}
-                                    className="block rounded-lg px-2 py-2 text-[14px] font-medium leading-5 text-[#33465B] hover:bg-[#EAF5FC] hover:text-[#032D60] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0176D3]"
+                                    className="block rounded-lg px-2 py-2 text-[14px] font-medium leading-5 text-[#33465B] hover:bg-[#EBF7FF] hover:text-[#082B5E] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006FE8]"
                                   >
                                     {item.name}
                                   </Link>
@@ -558,7 +558,7 @@ export function Header({
                         )}
                         {nav.groups?.map((group) => (
                           <div key={group.label} className="mt-2">
-                            <p className="px-2 py-1 text-[13px] font-semibold text-[#032D60]">{group.label}</p>
+                            <p className="px-2 py-1 text-[13px] font-semibold text-[#082B5E]">{group.label}</p>
                             <ul>
                               {group.items.map((item) => (
                                 <li key={item.name}>
@@ -585,7 +585,7 @@ export function Header({
                 </div>
                 <a
                   href={DOCS_URL}
-                  className="flex h-10 items-center justify-center rounded-md border border-[#D9E4EF] text-[14px] font-semibold text-[#032D60] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0176D3]"
+                  className="flex h-10 items-center justify-center rounded-md border border-[#D9E4EF] text-[14px] font-semibold text-[#082B5E] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006FE8]"
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={closeMobile}
@@ -594,12 +594,12 @@ export function Header({
                 </a>
                 <Link
                   href="https://spineworkspace.com"
-                  className="flex h-10 items-center justify-center rounded-md border border-[#C9C9C9] text-[14px] font-semibold text-[#032D60] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0176D3]"
+                  className="flex h-10 items-center justify-center rounded-md border border-[#C9C9C9] text-[14px] font-semibold text-[#082B5E] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006FE8]"
                   onClick={closeMobile}
                 >
               Spine Workspace
             </Link>
-                <Button className="h-10 w-full rounded-md bg-[#0176D3] font-semibold text-white hover:bg-[#0B5CAB]" asChild>
+                <Button className="h-10 w-full rounded-md bg-[#006FE8] font-semibold text-white hover:bg-[#0055B8]" asChild>
                   <Link href="/contact" onClick={closeMobile}>
                     Contact us
                   </Link>
