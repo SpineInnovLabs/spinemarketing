@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { WorkspaceAuthActions } from "./workspace-auth-actions";
 import {
   ArrowRight,
   Database,
@@ -102,10 +103,8 @@ export function SpineWorkspaceDetails() {
             assistance together. Different roles can work from the same business
             context, with the source evidence and their authority kept clear.
           </p>
+          <WorkspaceAuthActions />
           <div className="innovtech-actions">
-            <Link href="/contact?intent=demo" className="innovtech-button">
-              Book a demo
-            </Link>
             <Link
               href="#features"
               className="innovtech-button innovtech-button-secondary"
