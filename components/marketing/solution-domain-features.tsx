@@ -1,6 +1,5 @@
 import { Section, SectionHeader } from "./section";
 import { getSolutionDomain } from "@/lib/solution-domains";
-import { WorkspaceAuthActions } from "./workspace-auth-actions";
 
 export function SolutionDomainFeatures({ slug }: { slug: string }) {
   const domain = getSolutionDomain(slug);
@@ -8,8 +7,7 @@ export function SolutionDomainFeatures({ slug }: { slug: string }) {
     <>
       <Section id="domain-features" variant="muted" className="scroll-mt-24">
         <SectionHeader align="left" label={`${domain.name} / Features`} headline={`Features for ${domain.name}.`} body={domain.summary} />
-        <WorkspaceAuthActions pathname={`/solutions/${slug}`} />
-        <div className="mt-10 grid gap-5 md:grid-cols-2">
+        <div className="grid gap-5 md:grid-cols-2">
           {domain.features.map(([title, detail]) => (
             <article key={title} className="rounded-2xl border border-[#D6E8F8] bg-white p-6 sm:p-7">
               <h3 className="text-xl font-semibold text-[#082B5E]">{title}</h3>

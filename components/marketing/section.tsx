@@ -43,7 +43,7 @@ export function SectionHeader({
       {label && (
         <div className="mb-3 text-[12px] font-bold uppercase tracking-[0.08em] text-[#0176D3]">{label}</div>
       )}
-      <h2 className="text-[28px] font-semibold leading-[1.15] tracking-[-0.03em] text-[#032D60] sm:text-[34px]">
+      <h2 className="text-[1.75rem] font-semibold leading-[1.22] tracking-[-0.03em] text-[#032D60] sm:text-[2rem]">
         {headline}
       </h2>
       {body && <p className="mt-4 text-[16px] leading-[1.65] text-[#444]">{body}</p>}

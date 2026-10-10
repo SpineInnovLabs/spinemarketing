@@ -19,6 +19,10 @@ type PageHeroProps = PageHeroCopy & {
 export const heroGlassClass =
   "hero-glass min-w-0 max-w-full rounded-[20px] border border-white/40 bg-white/65 shadow-[0_18px_48px_rgba(3,45,96,0.12)] backdrop-blur-[20px] backdrop-saturate-[1.2]";
 
+function ctaLabelText(label: string) {
+  return label.replace(/\s*(?:→|->|›)+\s*$/u, "").trim();
+}
+
 function HeroWash() {
   return (
     <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden>
@@ -55,7 +59,7 @@ export function PageHero({
       : "relative overflow-x-clip border-b border-[#D9E4EF] bg-white pt-[96px] pb-12 lg:pt-[108px] lg:pb-16"}>
       {ice ? <HeroWash /> : null}
       <div className={`mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-12 ${ice ? "relative" : ""}`}>
-        <div className={art ? "grid items-center gap-10 lg:grid-cols-[minmax(0,0.45fr)_minmax(0,0.55fr)] lg:items-center lg:gap-12" : "max-w-[880px]"}>
+        <div className={art ? "grid items-center gap-10 lg:grid-cols-[minmax(0,0.46fr)_minmax(0,0.54fr)] lg:items-center lg:gap-12" : "max-w-[880px]"}>
           <div className="min-w-0 text-left">
             {badge && ice ? (
               <motion.p {...rise} className="mb-5 text-[12px] font-bold uppercase tracking-[0.14em] text-[#0176D3]">
@@ -69,12 +73,12 @@ export function PageHero({
             ) : null}
             <motion.h1
               {...rise}
-              className={`max-w-full whitespace-pre-line text-balance text-[#032D60] ${ice ? "text-[clamp(2.05rem,4.6vw,3.65rem)] font-bold leading-[1.08] tracking-[-0.03em]" : "text-[clamp(2rem,4.4vw,3.5rem)] font-semibold leading-[1.12] tracking-[-0.03em]"}`}
+              className="max-w-full whitespace-pre-line text-balance text-[clamp(2rem,1.15rem+2.1vw,3rem)] font-semibold leading-[1.16] tracking-[-0.03em] text-[#032D60]"
             >
               {headline}
             </motion.h1>
             {subhead && (
-              <motion.p {...rise} className={`max-w-xl leading-[1.6] text-[#33465B] ${ice ? "mt-5 text-[16px] sm:text-[17px]" : "mt-4 text-[17px]"}`}>
+              <motion.p {...rise} className="mt-4 max-w-xl text-[17px] leading-[1.6] text-[#33465B]">
                 {subhead}
               </motion.p>
             )}
@@ -82,16 +86,16 @@ export function PageHero({
               <p className="mt-4 text-[14px] font-semibold text-[#032D60]">{principle}</p>
             )}
             {(primaryCta || secondaryCta) && (
-              <div className={`mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-start ${ice ? "items-start" : "items-stretch"}`}>
+              <div className="mt-8 flex flex-col items-start gap-3 sm:flex-row sm:items-center">
                 {primaryCta && (
                   <Button
                     size="lg"
-                    className={ice ? "h-11 rounded-[10px] bg-[#0176D3] px-5 text-[14px] font-semibold text-white hover:bg-[#0B5CAB]" : "h-10 rounded-[10px] bg-[#0176D3] px-5 text-[14px] font-semibold text-white hover:bg-[#0B5CAB]"}
+                    className="h-11 rounded-[10px] bg-[#0176D3] px-5 text-[14px] font-semibold text-white hover:bg-[#0B5CAB]"
                     asChild
                   >
                     <Link href={primaryCta.href}>
-                      {primaryCta.label}
-                      {ice ? null : <ArrowRight className="ml-2 h-4 w-4" />}
+                      {ice ? primaryCta.label : ctaLabelText(primaryCta.label)}
+                      {ice ? null : <ArrowRight className="ml-2 h-4 w-4" aria-hidden />}
                     </Link>
                   </Button>
                 )}
@@ -106,7 +110,7 @@ export function PageHero({
                       <a href={secondaryCta.href} target="_blank" rel="noopener noreferrer">{secondaryCta.label}</a>
                     ) : (
                       <Link href={secondaryCta.href}>
-                        {secondaryCta.label}
+                        {ice ? ctaLabelText(secondaryCta.label) : secondaryCta.label}
                         {ice ? <ArrowRight className="h-4 w-4" aria-hidden /> : null}
                       </Link>
                     )}
@@ -127,7 +131,7 @@ export function PageHero({
                 className="pointer-events-none absolute -inset-4 rounded-[32px] bg-[radial-gradient(circle_at_22%_18%,rgba(0,162,223,0.22),transparent_56%),radial-gradient(circle_at_82%_78%,rgba(1,118,211,0.16),transparent_52%)] sm:-inset-6"
                 aria-hidden
               />
-              <div className={`relative p-4 ${heroGlassClass}`}>{art}</div>
+              <div className={`relative p-3 sm:p-4 ${heroGlassClass}`}>{art}</div>
             </div>
           ) : null}
         </div>
