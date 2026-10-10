@@ -7,6 +7,7 @@ import Link from "next/link";
 import { ArrowRight, Shield, Clock } from "lucide-react";
 import { PageHero } from "@/components/marketing/page-hero";
 import { Section, SectionHeader } from "@/components/marketing/section";
+import { SolutionHeroBanner } from "@/components/marketing/solution-hero-banner";
 import { KpiBlock } from "@/components/marketing/enterprise";
 
 export interface BeforeAfterItem {
@@ -44,6 +45,8 @@ const fade = (delay = 0) => ({
   transition: { type: "spring" as const, damping: 18, stiffness: 70, delay },
 });
 
+const closeTitle = "text-[clamp(1.75rem,1.15rem+0.8vw,2rem)] font-semibold leading-[1.22] tracking-[-0.03em] text-white";
+
 export function DayInLifeLayout({
   domainFeatures,
   role,
@@ -66,52 +69,25 @@ export function DayInLifeLayout({
         headline={headline}
         subhead={subheadline}
         primaryCta={{ label: ctaLabel, href: ctaHref }}
+        art={
+          <SolutionHeroBanner
+            variant="timeline"
+            kicker="Today in this role"
+            items={timeline.slice(0, 4).map((slot) => ({
+              label: slot.time,
+              title: slot.title,
+              detail: slot.desc,
+            }))}
+          />
+        }
       />
-      {domainFeatures}
-
-      <Section variant="muted">
-        <SectionHeader label="Before and after" headline="A day with and without SpineWorkspace" body="Illustrative workflow examples, not measured customer results." />
-        <div className="grid gap-4 sm:grid-cols-2">
-          <motion.div {...fade(0)}>
-            <p className="mb-3 text-[12px] font-bold uppercase tracking-[0.08em] text-red-600">Without</p>
-            <div className="space-y-3">
-              {beforeAfter.map((item, i) => (
-                <div key={i} className="rounded-md border border-red-200 bg-red-50/50 p-4">
-                  <p className="text-[14px] leading-[1.6] text-[#444]">{item.before}</p>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-          <motion.div {...fade(0.1)}>
-            <p className="mb-3 text-[12px] font-bold uppercase tracking-[0.08em] text-[#0176D3]">With SpineWorkspace</p>
-            <div className="space-y-3">
-              {beforeAfter.map((item, i) => (
-                <div key={i} className="rounded-md border border-[#0176D3]/20 bg-[#F3F6F9] p-4">
-                  <p className="text-[14px] leading-[1.6] text-[#444]">{item.after}</p>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </Section>
-
-      {outcomes?.length ? (
-        <Section>
-          <SectionHeader label="Evaluation" headline="Measures to discuss for your workflow" body="Define success against your own baseline. These are evaluation areas, not measured customer results." />
-          <div className="grid gap-4 sm:grid-cols-3">
-            {outcomes.map((o, i) => (
-              <KpiBlock key={i} label="Evaluation area" value={o.label} detail="Agree a baseline and target for your workflow." />
-            ))}
-          </div>
-        </Section>
-      ) : null}
 
       <Section>
-        <SectionHeader label="A day in the life" headline="How your day flows with SpineWorkspace" />
+        <SectionHeader label="A day in the life" headline="How the day actually runs" />
         <div className="mx-auto max-w-[800px] space-y-0">
           {timeline.map((slot, i) => (
             <motion.div
-              key={i}
+              key={slot.time + slot.title}
               {...fade(i * 0.06)}
               className="relative pl-8 pb-8 last:pb-0 before:absolute before:left-0 before:top-0 before:bottom-0 before:w-px before:bg-[#E5E5E5] last:before:hidden"
             >
@@ -126,11 +102,50 @@ export function DayInLifeLayout({
         </div>
       </Section>
 
+      {domainFeatures}
+
       <Section variant="muted">
-        <SectionHeader label="Capabilities" headline="Built for your role" />
+        <SectionHeader label="Before and after" headline="The same day, with the context in one place" body="Illustrative workflow examples, not measured customer results." />
         <div className="grid gap-4 sm:grid-cols-2">
-          {capabilities.map(({ title, desc }, i) => (
-            <motion.div key={i} {...fade(i * 0.08)} className="rounded-md border border-[#E5E5E5] bg-white p-5">
+          <motion.div {...fade(0)}>
+            <p className="mb-3 text-[12px] font-bold uppercase tracking-[0.08em] text-red-600">Without</p>
+            <div className="space-y-3">
+              {beforeAfter.map((item) => (
+                <div key={item.before} className="rounded-md border border-red-200 bg-red-50/50 p-4">
+                  <p className="text-[14px] leading-[1.6] text-[#444]">{item.before}</p>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+          <motion.div {...fade(0.1)}>
+            <p className="mb-3 text-[12px] font-bold uppercase tracking-[0.08em] text-[#0176D3]">With Spine Workspace</p>
+            <div className="space-y-3">
+              {beforeAfter.map((item) => (
+                <div key={item.after} className="rounded-md border border-[#0176D3]/20 bg-[#F3F6F9] p-4">
+                  <p className="text-[14px] leading-[1.6] text-[#444]">{item.after}</p>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </Section>
+
+      {outcomes?.length ? (
+        <Section>
+          <SectionHeader label="Evaluation" headline="Measures to discuss for your workflow" body="Define success against your own baseline. These are evaluation areas, not measured customer results." />
+          <div className="grid gap-4 sm:grid-cols-3">
+            {outcomes.map((o) => (
+              <KpiBlock key={o.label} label="Evaluation area" value={o.label} detail="Agree a baseline and target for your workflow." />
+            ))}
+          </div>
+        </Section>
+      ) : null}
+
+      <Section variant="muted">
+        <SectionHeader label="Capabilities" headline="Built for this role" />
+        <div className="grid gap-4 sm:grid-cols-2">
+          {capabilities.map(({ title, desc }) => (
+            <motion.div key={title} {...fade(0)} className="rounded-md border border-[#E5E5E5] bg-white p-5">
               <h3 className="text-[16px] font-semibold text-[#032D60]">{title}</h3>
               <p className="mt-2 text-[14px] leading-[1.7] text-[#444]">{desc}</p>
             </motion.div>
@@ -172,11 +187,11 @@ export function DayInLifeLayout({
 
       <section className="border-t border-[#E5E5E5] bg-[#032D60] py-16">
         <div className="mx-auto max-w-[700px] px-6 text-center">
-          <motion.h2 {...fade(0)} className="text-[28px] font-semibold leading-[1.15] text-white sm:text-[36px]">
-            See your day, transformed
+          <motion.h2 {...fade(0)} className={closeTitle}>
+            See this day with your own accounts
           </motion.h2>
           <motion.p {...fade(0.08)} className="mx-auto mt-4 max-w-lg text-[16px] leading-[1.6] text-white/70">
-            Book a walkthrough tailored to your role and tools.
+            Book a walkthrough tailored to this role and the tools already in use.
           </motion.p>
           <motion.div {...fade(0.16)} className="mt-8">
             <Link href="/contact?intent=demo" className="inline-flex h-10 items-center gap-2 rounded-md bg-white px-5 text-[14px] font-semibold text-[#032D60] hover:bg-[#F3F6F9]">
