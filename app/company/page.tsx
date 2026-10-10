@@ -1,20 +1,15 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { createPageMetadata } from "@/lib/page-metadata";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "About Spine InnovTech | Technology, AI & Business Context",
-  description: "Discover why Spine InnovTech builds connected, context-aware technology, and the company behind Spine Workspace.",
-  alternates: { canonical: "/company" },
-  openGraph: {
-    title: "About Spine InnovTech",
-    description: "The company building intelligence for connected business and the Spine Workspace experience.",
-    type: "website",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Spine InnovTech" }],
-  },
-};
+  description:
+    "Discover why Spine InnovTech builds connected, context-aware technology, and the company behind Spine Workspace.",
+  path: "/company",
+});
 
 const beliefs = [
   { n: "01", title: "Context is a business capability.", text: "Meaning emerges from relationships between goals, people, systems, events, decisions, and work. Software should help reveal those relationships." },
