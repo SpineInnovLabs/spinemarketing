@@ -43,16 +43,18 @@ export function IntegrationsContent() {
               <thead>
                 <tr className="border-b border-[#D9E4EF]">
                   <th className="pb-3 pr-4 font-semibold text-[#032D60]">System</th>
-                  <th className="pb-3 pr-4 font-semibold text-[#032D60]">Role in a renewal workflow</th>
+                  <th className="pb-3 pr-4 font-semibold text-[#032D60]">Context contributed to business work</th>
                   <th className="pb-3 font-semibold text-[#032D60]">Authority retained</th>
                 </tr>
               </thead>
               <tbody className="text-[#33465B]">
                 {[
-                  ["CRM", "Account status, renewal date, owner activity", "CRM remains the customer record"],
+                  ["CRM", "Customer relationships, pipeline, commitments, owner activity", "CRM remains the customer record"],
                   ["Support platform", "Open tickets, escalation history, risk signals", "Ticketing system owns cases"],
                   ["Email / calendar", "Recent commitments and meeting context", "Messages stay in the source mailbox"],
-                  ["Document storage", "Contracts, QBR decks, plans", "Files remain governed where they live"],
+                  ["Document storage", "Contracts, project briefs, plans and decisions", "Files remain governed where they live"],
+                  ["Finance / billing", "Invoices, payments, obligations and exceptions", "Finance systems own financial records"],
+                  ["Project / engineering", "Tasks, dependencies, issues and delivery history", "Project tools own their work records"],
                   ["SpineWorkspace", "Context assembly, evidence links, proposals, review", "Does not become a new home for the record"],
                 ].map(([system, role, authority]) => (
                   <tr key={system} className="border-b border-[#D9E4EF]">

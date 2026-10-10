@@ -40,7 +40,7 @@ function heroExtras(path: string) {
 export function NarrativePageContent({ page, showProofCards }: { page: NarrativePageCopy; showProofCards?: boolean }) {
   return (
     <>
-      <PageHero buyerPath={page.meta.path} {...page.hero} {...heroExtras(page.meta.path)} />
+      <PageHero {...page.hero} {...heroExtras(page.meta.path)} />
       <ContentSections sections={page.sections} />
       {showProofCards && (
         <Section variant="muted">
@@ -88,7 +88,7 @@ export function NarrativePageContent({ page, showProofCards }: { page: Narrative
 export function UseCasePageContent({ page }: { page: UseCasePageCopy }) {
   return (
     <>
-      <PageHero buyerPath={page.meta.path} {...page.hero} />
+      <PageHero {...page.hero} />
       {page.scenario && (
         <ScenarioBlock headline={page.scenario.headline} body={page.scenario.body} steps={page.scenario.steps} />
       )}
@@ -119,7 +119,7 @@ export function HubPageContent({
 }) {
   return (
     <>
-      <PageHero buyerPath="/use-cases" {...hero} />
+      <PageHero {...hero} />
       <Section variant="muted">
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {cards.map((card, i) => (
@@ -136,12 +136,12 @@ export function UseCasesHubContent({ hero }: { hero: NarrativePageCopy["hero"] }
   return <HubPageContent hero={hero} cards={useCaseHubCards} />;
 }
 
-export function DevelopersHubContent({ page }: { page: NarrativePageCopy }) {
+export function DevelopersHubContent({ page, showFinalCta = true }: { page: NarrativePageCopy; showFinalCta?: boolean }) {
   return (
     <>
-      <PageHero buyerPath={page.meta.path} {...page.hero} />
+      <PageHero {...page.hero} />
       <ContentSections sections={page.sections} />
-      <FinalCTA />
+      {showFinalCta && <FinalCTA />}
     </>
   );
 }

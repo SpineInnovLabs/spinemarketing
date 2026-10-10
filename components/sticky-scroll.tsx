@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion, useScroll, useMotionValueEvent } from "framer-motion";
-import { useRef, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import { type LucideIcon } from "lucide-react";
 
 export interface StickyScrollItem {
@@ -93,7 +93,11 @@ export function StickyScroll({
   items: StickyScrollItem[];
 }) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const reduce = useReducedMotion();
+  const prefersReducedMotion = useReducedMotion();
+  const [hasMounted, setHasMounted] = useState(false);
+  useEffect(() => setHasMounted(true), []);
+  // Keep the first client render identical to the static export.
+  const reduce = hasMounted && prefersReducedMotion;
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"],
@@ -148,11 +152,14 @@ export function StickyScroll({
                   return (
                     <button
                       key={item.tag}
+                      aria-pressed={isActive}
                       onClick={() => {
                         if (!containerRef.current) return;
-                        const top = containerRef.current.offsetTop;
-                        const totalH = containerRef.current.offsetHeight;
-                        const targetScroll = top + (i / items.length) * totalH;
+                        const top = containerRef.current.getBoundingClientRect().top + window.scrollY;
+                        const scrollRange = Math.max(0, containerRef.current.offsetHeight - window.innerHeight);
+                        // Match useScroll's start-start/end-end range and land
+                        // inside the chosen step, rather than on its boundary.
+                        const targetScroll = top + ((i + 0.5) / items.length) * scrollRange;
                         window.scrollTo({ top: targetScroll, behavior: "smooth" });
                       }}
                       className={`group flex items-center gap-3 rounded-md px-4 py-3 text-left transition-all ${

@@ -10,11 +10,11 @@ import { BreadcrumbJsonLd } from "@/components/structured-data"
 export const metadata: Metadata = {
   title: "Governance & Twin in Action | Spine InnovTech",
   description:
-    "AI proposes, you approve. Governed approval queues, tiered routing, Twin scoring, and 24-hour rollback.",
+    "Review proposed work with evidence, route consequential actions to the right authority, and reconcile observed outcomes.",
   alternates: { canonical: "/product/approval-gate-twin" },
   openGraph: {
     title: "Governance & Twin in Action | Spine InnovTech",
-    description: "AI proposes, you approve. Governed approval queues, tiered routing, Twin scoring, and 24-hour rollback.",
+    description: "Review proposed work with evidence, route consequential actions to the right authority, and reconcile observed outcomes.",
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "Spine Workspace" }],
   },
 }

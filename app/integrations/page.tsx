@@ -10,11 +10,11 @@ import { BreadcrumbJsonLd } from "@/components/structured-data"
 export const metadata: Metadata = {
   title: "Connected Ecosystems & Integrations | Spine InnovTech",
   description:
-    "For renewal managers: connect CRM, support, inbox, and finance. Source systems stay authoritative. Stop re-logging into six tools for account reviews.",
+    "Connect the systems your business already uses: CRM, support, finance, project tools, email and documents. Source systems stay authoritative.",
   alternates: { canonical: "/integrations" },
   openGraph: {
     title: "Connected Ecosystems & Integrations | Spine InnovTech",
-    description: "Connect CRM, support, inbox, and finance for renewal reviews. Source systems stay authoritative.",
+    description: "Connect business systems and assemble shared context for people and their Twin. Source systems stay authoritative.",
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "Spine Workspace Integrations" }],
   },
 }

@@ -99,7 +99,7 @@ export function ProductHowItWorksContent() {
         </div>
       </section>
 
-      <section className="arvio-section dark-section">
+      <section className="arvio-section marketing-surface">
         <div className="mx-auto max-w-[1100px]">
           <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center mb-12">
             <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">Twin</p>
@@ -119,7 +119,7 @@ export function ProductHowItWorksContent() {
         </div>
       </section>
 
-      <section className="arvio-section dark-section">
+      <section className="arvio-section marketing-surface">
         <div className="mx-auto max-w-[1100px]">
           <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center mb-12">
             <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">Signal Patterns</p>
@@ -150,7 +150,7 @@ export function ProductHowItWorksContent() {
         </div>
       </section>
 
-      <section className="arvio-section dark-section">
+      <section className="arvio-section marketing-surface">
         <div className="mx-auto max-w-[1100px]">
           <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center mb-12">
             <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">Morning Brief</p>
@@ -167,7 +167,7 @@ export function ProductHowItWorksContent() {
         </div>
       </section>
 
-      <section className="arvio-section dark-section">
+      <section className="arvio-section marketing-surface">
         <div className="mx-auto max-w-[1100px]">
           <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center mb-12">
             <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">Exception-Based Intelligence</p>
@@ -185,7 +185,7 @@ export function ProductHowItWorksContent() {
         </div>
       </section>
 
-      <section className="arvio-section dark-section">
+      <section className="arvio-section marketing-surface">
         <div className="mx-auto max-w-[1100px]">
           <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center mb-12">
             <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">Evidence & Attribution</p>
@@ -203,7 +203,7 @@ export function ProductHowItWorksContent() {
         </div>
       </section>
 
-      <section className="arvio-section dark-section bg-white">
+      <section className="arvio-section marketing-surface bg-white">
         <div className="mx-auto max-w-[680px] px-4 text-center">
           <motion.div {...fade(0)}>
             <TrendingUp className="mx-auto mb-4 h-7 w-7 text-primary" />

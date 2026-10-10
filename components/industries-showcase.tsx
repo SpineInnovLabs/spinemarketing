@@ -132,7 +132,7 @@ export function IndustriesShowcase({
   const visibleIndustries = expanded ? industries : industries.slice(0, 6);
 
   return (
-    <section ref={containerRef} className="relative arvio-section dark-section overflow-hidden">
+    <section ref={containerRef} className="relative arvio-section marketing-surface overflow-hidden">
       <motion.div className="absolute inset-0 pointer-events-none" style={{ y: bgY }}>
         <div className="absolute top-[20%] left-[10%] w-[500px] h-[500px] rounded-full blur-[200px]" style={{ background: "rgba(27,167,132,0.04)" }} />
         <div className="absolute bottom-[20%] right-[10%] w-[400px] h-[400px] rounded-full blur-[180px]" style={{ background: "rgba(139,92,246,0.03)" }} />

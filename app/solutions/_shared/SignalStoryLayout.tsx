@@ -69,21 +69,18 @@ export function SignalStoryLayout({
       />
 
       <Section variant="muted">
-        <SectionHeader label="The problem" headline="Signals buried across systems" />
-        <div className="grid gap-4 sm:grid-cols-2">
+        <SectionHeader label="Illustrative workflow" headline="Signals buried across systems" body="Compare the current situation with the intended workflow. These examples are not measured customer results." />
+        <div className="space-y-4">
           {beforeAfter.map((item, i) => (
-            <motion.div key={i} {...fade(i * 0.08)} className="rounded-md border border-[#E5E5E5] bg-white p-5">
-              <div className="flex items-start gap-2 mb-3">
-                {i === 0 ? (
-                  <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-amber-500" />
-                ) : (
-                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#0176D3]" />
-                )}
-                <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[#706E6B]">
-                  {i === 0 ? "Before" : "After"}
-                </p>
+            <motion.div key={i} {...fade(i * 0.08)} className="grid gap-5 rounded-md border border-[#E5E5E5] bg-white p-5 sm:grid-cols-2">
+              <div>
+                <p className="mb-3 flex items-center gap-2 text-[12px] font-bold uppercase tracking-[0.08em] text-[#706E6B]"><AlertTriangle className="h-4 w-4 text-amber-600" aria-hidden />Before</p>
+                <p className="text-[14px] leading-[1.7] text-[#444]">{item.before}</p>
               </div>
-              <p className="text-[14px] leading-[1.7] text-[#444]">{i === 0 ? item.before : item.after}</p>
+              <div>
+                <p className="mb-3 flex items-center gap-2 text-[12px] font-bold uppercase tracking-[0.08em] text-[#0176D3]"><CheckCircle2 className="h-4 w-4" aria-hidden />After</p>
+                <p className="text-[14px] leading-[1.7] text-[#444]">{item.after}</p>
+              </div>
             </motion.div>
           ))}
         </div>
@@ -91,9 +88,10 @@ export function SignalStoryLayout({
 
       {outcomes?.length ? (
         <Section>
+          <SectionHeader label="Evaluation" headline="Measures to discuss for your workflow" body="Define success against your own baseline. These are evaluation areas, not measured customer results." />
           <div className="grid gap-4 sm:grid-cols-3">
             {outcomes.map((o, i) => (
-              <KpiBlock key={i} label={o.label} value={o.stat} detail="" />
+              <KpiBlock key={i} label="Evaluation area" value={o.label} detail="Agree a baseline and target for your workflow." />
             ))}
           </div>
         </Section>

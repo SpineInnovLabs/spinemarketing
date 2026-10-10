@@ -32,7 +32,7 @@ const scrollItems = [
   {
     tag: "Tiered Routing",
     title: "Route approvals by impact and type",
-    description: "Low-impact actions route to CSMs. Revenue-affecting decisions escalate to managers. Financial actions require Finance sign-off.",
+    description: "Route work to the person or policy with the appropriate authority. Customer, finance, operations, and other workflows can have different review boundaries.",
     icon: GitBranch,
     color: "#8b5cf6",
     features: [
@@ -69,16 +69,16 @@ const scrollItems = [
     ],
   },
   {
-    tag: "Rollback",
-    title: "Reverse any action within 24 hours",
-    description: "Made a mistake? Roll back any approved action. The system reverses the write-back and restores the previous state.",
+    tag: "Reconciliation",
+    title: "Observe effects and review corrective work",
+    description: "Execution can succeed, fail, or complete partially. Reconcile what happened against the intended outcome. Reversal depends on the source system, action, and available recovery path.",
     icon: RotateCcw,
     color: "#ef4444",
     features: [
-      "One-click rollback on any action within 24 hours",
-      "Automatic write-back reversal to source systems",
-      "State snapshot before and after every action",
-      "Rollback audit entry with reason tracking",
+      "Track attempted actions and observed effects",
+      "Distinguish complete, failed, and partial outcomes",
+      "Review supported corrective steps with the right authority",
+      "Preserve reasons and evidence for reconciliation",
     ],
   },
 ];
@@ -89,7 +89,7 @@ const gatherItems = [
   { icon: GitBranch, label: "Routing Engine", description: "Impact-based escalation and multi-approver flows.", color: "#3b82f6" },
   { icon: Activity, label: "Twin Scoring", description: "0-100 confidence with historical accuracy tracking.", color: "#fbbf24" },
   { icon: Clock, label: "Audit Log", description: "Immutable record of every decision and outcome.", color: "#f97316" },
-  { icon: RotateCcw, label: "Rollback Engine", description: "Reverse any action within 24 hours.", color: "#ef4444" },
+  { icon: RotateCcw, label: "Reconciliation", description: "Observed effects and supported corrective work.", color: "#ef4444" },
   { icon: AlertTriangle, label: "Risk Flagging", description: "Low-confidence suggestions auto-flagged for review.", color: "#ec4899" },
   { icon: CheckCircle2, label: "Bulk Review", description: "Portfolio-wide action review in one queue.", color: "#14b8a6" },
   { icon: Lock, label: "Access Control", description: "Role-based approval permissions per action type.", color: "#a855f7" },

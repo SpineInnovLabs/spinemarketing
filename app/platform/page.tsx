@@ -11,11 +11,11 @@ import { BreadcrumbJsonLd, SoftwareApplicationJsonLd } from "@/components/struct
 export const metadata: Metadata = {
   title: "Technology Architecture | Spine InnovTech",
   description:
-    "Deploy governed renewal workflows first, then expand. Platform connects your stack, runs Renewal Decision Workspace, keeps approval model consistent.",
+    "Explore the Spine architecture: Fabric, Workbench, Twin, Runtime and connected capabilities for business-context collaboration.",
   alternates: { canonical: "/platform" },
   openGraph: {
     title: "Technology Architecture | Spine InnovTech",
-    description: "Deploy renewals first, then expand. Platform connects your stack, runs Renewal Decision Workspace, keeps approval model consistent.",
+    description: "Shared business context, role-aware work, context-aware AI and governed execution in one connected architecture.",
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "Spine Workspace Platform" }],
   },
 }

@@ -27,21 +27,21 @@ const featuredResources = [
   {
     icon: BookOpen,
     title: "Use-case library",
-    desc: "Real-world examples across revenue, CS, support, and finance.",
-    href: "/account-success",
+    desc: "Illustrative workflows across customer-facing teams, operations, finance, and leadership.",
+    href: "/use-cases",
     cta: "Explore use cases",
   },
   {
     icon: FileText,
     title: "How it works",
     desc: "Connect your tools, see everything in one place, AI with your approval.",
-    href: "/platform",
+    href: "/platform/how-it-works",
     cta: "See how it works",
   },
   {
     icon: Calculator,
     title: "Pricing guide",
-    desc: "Published planning prices in US dollars, per user.",
+    desc: "Discuss scope, integrations, evaluation, and commercial terms with the team.",
     href: "/pricing",
     cta: "View pricing",
   },
@@ -50,8 +50,8 @@ const featuredResources = [
 const deepDives = [
   {
     icon: Layers,
-    title: "The SpineWorkspace",
-    desc: "How the data architecture unifies fragmented SaaS.",
+    title: "Spine Fabric",
+    desc: "How relationships, provenance, authority, and continuity form business context.",
     href: "/platform/spine-fabric",
   },
   {
@@ -143,7 +143,7 @@ export function ResourcesContent() {
         </div>
       </section>
 
-      <section className="arvio-section dark-section">
+      <section className="arvio-section marketing-surface">
         <div className="mx-auto max-w-[1100px]">
           <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center mb-16">
             <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">Start Here</p>
@@ -185,7 +185,7 @@ export function ResourcesContent() {
 
       <div className="section-divider" />
 
-      <section className="arvio-section dark-section">
+      <section className="arvio-section marketing-surface">
         <div className="mx-auto max-w-[1100px]">
           <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center mb-16">
             <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">Deep Dives</p>

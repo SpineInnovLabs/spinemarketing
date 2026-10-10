@@ -20,7 +20,7 @@ const items = [
       "The original tool stays in charge",
       "A copy in the workspace is not a new record",
       "You can see what was combined, and why",
-      "A person can undo a mistaken change",
+      "Observed effects inform supported corrective work",
     ],
   },
   {
@@ -33,7 +33,7 @@ const items = [
       "Only what this person may see",
       "Tied to this task, not to every task",
       "Every claim points back to its source",
-      "The note is not written into the record",
+      "Interpretations remain distinguishable from source evidence",
     ],
   },
   {
@@ -65,7 +65,7 @@ const items = [
   {
     tag: "One connection",
     title: "The tools, files, and conversations you already use",
-    description: "One connection brings them into the workspace. The record, the evidence, the draft, and the person stay apart.",
+    description: "Supported connections bring records and evidence into related business context. Availability and scope depend on the provider and permissions.",
     icon: GitBranch,
     color: "#3b82f6",
     features: [

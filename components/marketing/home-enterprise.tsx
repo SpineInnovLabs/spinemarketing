@@ -71,7 +71,6 @@ export function EnterpriseHome() {
   return (
     <div className="bg-white text-[#181818]">
       <PageHero
-        buyerClarity={false}
         tone="ice"
         badge="Built for customer-success and revenue teams managing complex renewals"
         headline={"Stop rebuilding the customer story\nbefore every renewal decision."}

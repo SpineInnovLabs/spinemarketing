@@ -23,7 +23,7 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#F3F6F9]">
+    <main id="main" tabIndex={-1} className="min-h-screen bg-[#F3F6F9]">
       <div className="mx-auto grid min-h-screen max-w-[1040px] items-center gap-8 px-6 py-12 md:grid-cols-2">
         <div>
           <Link href="/" className="inline-flex items-center gap-2 text-[#032D60]">
@@ -63,6 +63,6 @@ export default function LoginPage() {
           </p>
         </form>
       </div>
-    </div>
+    </main>
   );
 }

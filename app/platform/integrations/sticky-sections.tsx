@@ -12,8 +12,8 @@ import {
 const items = [
   {
     tag: "SaaS Connectors",
-    title: "OAuth connect in minutes. 60+ supported.",
-    description: "Salesforce, HubSpot, Stripe, Zendesk, Jira, Slack — connect once and SpineWorkspace handles schema changes automatically.",
+    title: "Connect supported tools with explicit permissions",
+    description: "CRM, support, finance, projects, and knowledge sources contribute different context. Authentication, availability, and supported operations vary by provider.",
     icon: Cloud,
     color: "#3b82f6",
     features: [
@@ -26,7 +26,7 @@ const items = [
   {
     tag: "Connected tools",
     title: "AI-native bidirectional data flow",
-    description: "the tools you already use enables AI systems to read and write through SpineWorkspace with full governance controls.",
+    description: "Connected tools expose supported read and action capabilities. Access remains scoped, and consequential actions require the applicable authority.",
     icon: GitBranch,
     color: "#8b5cf6",
     features: [
@@ -72,7 +72,7 @@ const items = [
       "Unified audit trail across all connector types",
       "Per-connector access control and data isolation",
       "Ingestion rate monitoring and anomaly detection",
-      "Data residency enforcement per connector",
+      "Review provider data locations and processing boundaries",
     ],
   },
 ];
@@ -81,7 +81,7 @@ export function IntegrationsStickyScroll() {
   return (
     <StickyScroll
       tag="Connector Deep Dive"
-      heading={<>Four paths in. <span className="text-primary">One one shared shape out.</span></>}
+      heading={<>Four paths in. <span className="text-primary">One connected context.</span></>}
       subheading="Scroll to explore each integration method and how data flows into SpineWorkspace."
       items={items}
     />

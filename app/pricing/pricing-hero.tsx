@@ -14,7 +14,6 @@ export function PricingHero() {
   return (
     <>
       <PageHero
-        buyerPath="/pricing"
         badge="For renewal workflow sponsors"
         headline="Start with one governed renewal workflow."
         subhead="Pricing follows connectors and governance scope for renewals—not seat-based mystery. Most teams begin with a scoped pilot, then expand."

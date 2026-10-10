@@ -36,9 +36,9 @@ Every time you switch tabs, you lose context. Every time you copy-paste a custom
 
 SpineWorkspace connects the tools, files, and conversations you already use. It does not create a new home for the record. The CRM, the desk, and the billing tool stay in charge. The workspace shows the view this role needs for the task in front of them.
 
-## Twin waits until someone asks
+## Twin prepares within authorized context
 
-When someone asks, Twin reads the record, the evidence for this task, and earlier decisions. It prepares a proposal. Every claim points back to its source. Twin does not write the record.
+Twin reads permitted records, evidence for the task, and earlier decisions. Coworker can gather authorized context proactively. It prepares a proposal. Every claim points back to its source. Twin does not write the record.
 
 A person allows it, changes it, or stops it. An accepted change is written back through the tool that owns the record. The workspace then shows the result.
 
@@ -82,7 +82,7 @@ It's the product. Twin prepares the next step. A person decides. The tools that 
     slug: "spine-fabric-contextual-continuity-layer",
     title: "The tools keep the record. The workspace shows the work.",
     description:
-      "Four kinds of information stay apart: the record, the evidence, the draft, and the person. Twin proposes only when asked. A person decides.",
+      "Four kinds of information stay apart: the record, the evidence, the draft, and the person. Twin prepares within authorized context. Consequential actions need the right authority.",
     date: "2026-09-02",
     author: "Spine InnovTech Team",
     readTime: "5 min read",
@@ -106,7 +106,7 @@ SpineWorkspace does not create a new home for that record. It connects the tools
 
 The workspace shows the view this role needs. Sales sees the next customer step. Operations sees the handoff. Leadership sees the decision that is still waiting.
 
-Twin opens only when asked. It reads the record, the evidence, and earlier decisions, and it prepares a proposal. Every claim points back to its source. Twin does not write the record.
+Twin reads permitted records, evidence, and earlier decisions to prepare a proposal. Coworker can gather authorized context proactively; preparation is distinct from execution authority. Every claim points back to its source. Twin does not write the record.
 
 A person allows it, changes it, or stops it. An accepted change is written back through the tool that owns the record. The workspace then shows the result.
 

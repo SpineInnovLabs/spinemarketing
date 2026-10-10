@@ -152,7 +152,7 @@ export function AIContent() {
       </section>
 
       {/* Three Layers */}
-      <section className="arvio-section dark-section">
+      <section className="arvio-section marketing-surface">
         <div className="mx-auto max-w-[1100px]">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -227,7 +227,7 @@ export function AIContent() {
       </section>
 
       {/* What The Twin catches */}
-      <section className="arvio-section dark-section">
+      <section className="arvio-section marketing-surface">
         <div className="mx-auto max-w-[1100px]">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -281,7 +281,7 @@ export function AIContent() {
       </section>
 
       {/* The Twin lives in the Twin */}
-      <section className="arvio-section dark-section">
+      <section className="arvio-section marketing-surface">
         <div className="mx-auto max-w-[1100px]">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -348,7 +348,7 @@ export function AIContent() {
       </section>
 
       {/* What makes the Twin different */}
-      <section className="arvio-section dark-section">
+      <section className="arvio-section marketing-surface">
         <div className="mx-auto max-w-[1100px]">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -427,7 +427,7 @@ export function AIContent() {
 
       {/* TruthLayer — Approval Flow */}
       <section
-        className="arvio-section dark-section bg-white"
+        className="arvio-section marketing-surface bg-white"
       >
         <div className="mx-auto max-w-[1100px]">
           <motion.div

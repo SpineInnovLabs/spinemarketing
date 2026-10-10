@@ -242,100 +242,57 @@ html[data-theme="light"] {
   }
 }
 
-.dark-section {
-  background-color: rgb(5, 7, 10) !important;
+/* Shared section palette for the restored corporate design system. */
+.marketing-surface {
+  background-color: #f0f8ff;
+  color: #082b5e;
 }
+.marketing-surface:nth-of-type(even) { background-color: #fff; }
+.marketing-surface :is(h1, h2, h3, h4, h5, .section-heading, .section-heading-sm) {
+  color: #082b5e;
+}
+.marketing-surface .arvio-card {
+  background: #fff;
+  border: 1px solid #d6e8f8;
+  box-shadow: 0 6px 24px rgb(8 43 94 / 4%);
+  color: #082b5e;
+}
+.marketing-surface .arvio-card:hover {
+  border-color: #8cbae8;
+  box-shadow: 0 12px 32px rgb(8 43 94 / 8%);
+}
+.marketing-surface :is([class*="text-white"], [class*="text-foreground"]):not(svg) {
+  color: #082b5e;
+}
+.marketing-surface :is([class*="text-white/"], .text-muted-foreground):not(svg) {
+  color: #4e607a;
+}
+.marketing-surface :is([class*="border-white"], [class*="border-border"]) {
+  border-color: #d6e8f8;
+}
+.marketing-surface :is([class*="bg-white/"], .bg-muted) { background-color: #ebf7ff; }
+.marketing-surface .bg-background { background-color: #fff; }
+.marketing-surface .text-destructive { color: #b91c1c; }
+.marketing-surface blockquote { border-color: #006fe8; color: #33465b; }
+/* Filled actions and decorative icon tiles retain their inverse foreground. */
+.marketing-surface :is(.bg-primary, .marketing-inverse)[class],
+.marketing-surface :is(.bg-primary, .marketing-inverse) [class] { color: #fff; }
+.marketing-surface [style*="--gradient-primary"][class],
+.marketing-surface [style*="--gradient-primary"] [class] { color: #fff; }
 
-.dark-section .section-heading,
-.dark-section .section-heading-sm {
-  color: rgb(255, 255, 255);
+/* Small labels and links need a deeper blue on pale surfaces. Filled actions
+   and icon colours retain the bright-blue brand token. */
+main :is(.text-primary, [class~="text-[#006FE8]"], [class~="text-[#0176D3]"]):not(svg):not(dialog *) {
+  color: #0055b8;
 }
-.dark-section h2,
-.dark-section h3,
-.dark-section h4,
-.dark-section h5 {
-  color: rgb(255, 255, 255);
+main :is([class~="text-[#5082C8]"], [class~="text-[#6688BA]"], [class~="text-[#6A8FC5]"], [class~="text-[#7394C2]"], [class~="text-[#7A98C4]"]):not(svg) {
+  color: #526479;
 }
+main .text-emerald-400:not(svg) { color: #047857; }
+main .text-red-600:not(svg) { color: #b91c1c; }
+main .innovtech-eyebrow { color: #0055b8; }
+main :is(.innovtech-governance, .innovtech-step-number) { color: #526479; }
 
-.dark-section .arvio-card {
-  background: rgba(255, 255, 255, 0.02) !important;
-  border: 1px solid rgba(255, 255, 255, 0.06) !important;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04) !important;
-  backdrop-filter: blur(12px);
-  color: rgb(255, 255, 255);
-}
-.dark-section .arvio-card:hover {
-  background: rgba(255, 255, 255, 0.04) !important;
-  border-color: rgba(0, 111, 232, 0.25) !important;
-  box-shadow: 0 20px 60px -15px rgba(0, 111, 232, 0.12), 0 0 0 1px rgba(0, 111, 232, 0.08) !important;
-  transform: translateY(-4px) scale(1.01);
-}
-
-.dark-section .text-foreground {
-  color: rgb(255, 255, 255) !important;
-}
-.dark-section .text-muted-foreground {
-  color: rgba(255, 255, 255, 0.5) !important;
-}
-.dark-section .text-foreground\/80 {
-  color: rgba(255, 255, 255, 0.8) !important;
-}
-.dark-section .text-foreground\/75 {
-  color: rgba(255, 255, 255, 0.75) !important;
-}
-.dark-section .text-foreground\/70 {
-  color: rgba(255, 255, 255, 0.7) !important;
-}
-.dark-section .text-foreground\/60 {
-  color: rgba(255, 255, 255, 0.6) !important;
-}
-.dark-section .text-foreground\/50 {
-  color: rgba(255, 255, 255, 0.5) !important;
-}
-.dark-section .text-foreground\/40 {
-  color: rgba(255, 255, 255, 0.4) !important;
-}
-
-.dark-section .text-destructive {
-  color: rgb(252, 129, 129) !important;
-}
-.dark-section .text-destructive\/60 {
-  color: rgba(252, 129, 129, 0.6) !important;
-}
-.dark-section .border-destructive\/20 {
-  border-color: rgba(239, 68, 68, 0.3) !important;
-}
-.dark-section .bg-destructive\/5 {
-  background-color: rgba(239, 68, 68, 0.08) !important;
-}
-
-.dark-section .bg-muted {
-  background-color: rgba(255, 255, 255, 0.04) !important;
-}
-.dark-section .bg-background {
-  background-color: rgba(255, 255, 255, 0.03) !important;
-}
-
-.dark-section .border-border {
-  border-color: rgba(255, 255, 255, 0.08) !important;
-}
-.dark-section .border-border\/75 {
-  border-color: rgba(255, 255, 255, 0.1) !important;
-}
-.dark-section .border-border\/50 {
-  border-color: rgba(255, 255, 255, 0.07) !important;
-}
-.dark-section .border-border\/30 {
-  border-color: rgba(255, 255, 255, 0.05) !important;
-}
-.dark-section .border-border\/20 {
-  border-color: rgba(255, 255, 255, 0.04) !important;
-}
-
-.dark-section blockquote {
-  color: rgba(255, 255, 255, 0.75);
-  border-left-color: rgba(64, 174, 255, 0.4);
-}
 
 .section-divider {
   height: 1px;

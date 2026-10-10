@@ -98,7 +98,7 @@ export function SpineContent() {
     <>
       {/* Hero */}
       <section
-        className="relative overflow-hidden pb-24 pt-40 bg-white"
+        className="marketing-surface relative overflow-hidden pb-24 pt-40 bg-white"
       >
         <div className="mx-auto max-w-[800px] px-4 text-center">
           <motion.div
@@ -131,7 +131,7 @@ export function SpineContent() {
       </section>
 
       {/* What SpineWorkspace does */}
-      <section className="arvio-section dark-section">
+      <section className="arvio-section marketing-surface">
         <div className="mx-auto max-w-[1100px]">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -178,7 +178,7 @@ export function SpineContent() {
 
       {/* a person flow */}
       <section
-        className="arvio-section dark-section bg-white"
+        className="arvio-section marketing-surface bg-white"
       >
         <div className="mx-auto max-w-[1100px]">
           <motion.div
@@ -229,7 +229,7 @@ export function SpineContent() {
       </section>
 
       {/* Differentiators */}
-      <section className="arvio-section dark-section">
+      <section className="arvio-section marketing-surface">
         <div className="mx-auto max-w-[1100px]">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

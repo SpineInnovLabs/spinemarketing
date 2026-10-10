@@ -26,7 +26,7 @@ const platformFAQs: FAQItem[] = [
   },
   {
     question: "What are the Workspace and Twin?",
-    answer: "The Workspace is where you see the truth for an account, the context for this task, and the proposal waiting for review. Twin prepares that proposal from the evidence it is allowed to use. A person accepts, edits, or rejects it. The source system stays authoritative.",
+    answer: "The Workspace brings goals, responsibilities, evidence, decisions, and next steps into a shared work environment. Twin helps investigate, prepare, and coordinate work using authorized business context. Consequential actions remain subject to the right authority and policy; source systems keep their authoritative roles.",
   },
   {
     question: "How is SpineWorkspace different from a CRM or a dashboard tool?",
@@ -34,19 +34,19 @@ const platformFAQs: FAQItem[] = [
   },
   {
     question: "Does Twin act on its own?",
-    answer: "No. Twin opens only when someone asks. It prepares a proposal, and every claim points back to its source. A person allows it, changes it, or stops it. Twin does not write the record.",
+    answer: "Twin can help proactively gather authorized context and prepare work, including in Coworker mode. Preparing a proposal does not grant authority to execute it. Consequential actions require the applicable human or policy authorization, and outcomes must be observed and reconciled.",
   },
   {
     question: "How many apps can I connect?",
-    answer: "Starter supports up to 5 connectors, Growth supports up to 15, and Command offers unlimited connectors. The catalog includes Salesforce, HubSpot, Stripe, Slack, Jira, Zendesk, Gmail, Notion, and more — see the integrations page for the full list.",
+    answer: "Connection scope depends on the supported provider, permissions, deployment, and agreed evaluation. The integrations page describes system categories and examples. Discuss availability and limits for your actual tools with the team.",
   },
   {
     question: "Is my data secure?",
-    answer: "Yes. All data is encrypted at rest (AES-256) and in transit (TLS 1.3). We follow SOC 2 aligned practices — no certification is claimed on this site. SpineWorkspace reads data via OAuth with the minimum permissions required. Your data is never used to train AI models. Command tier includes SSO, RBAC with field-level permissions, and a full enterprise audit trail.",
+    answer: "The security model is organized around identity, policy, access scope, data boundaries, and decision evidence. Verify configured controls, provider processing terms, and deployment evidence for your evaluation. This website does not claim an independent security certification; the security pages explain what to review with the team.",
   },
   {
     question: "Can I start with just the Workspace?",
-    answer: "Yes. Starter includes the Workspace, where you see the truth from connected systems and the context for the current task. Growth adds Twin, which prepares proposals for a person to review.",
+    answer: "Discuss a bounded evaluation around your goals, tools, and work practices. The product page explains the workspace features and how Twin participates; commercial scope and availability are agreed with the team.",
   },
   {
     question: "What are Session Summaries?",

@@ -70,7 +70,7 @@ export function WorkflowTransformLayout({
       />
 
       <Section variant="muted">
-        <SectionHeader label="The difference" headline="What changes from day one" />
+        <SectionHeader label="The difference" headline="What changes from day one" body="Illustrative workflow examples, not measured customer results." />
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
           <motion.div {...fade(0)} className="space-y-3">
             <div className="flex items-center gap-2 mb-2">
@@ -103,9 +103,10 @@ export function WorkflowTransformLayout({
 
       {outcomes?.length ? (
         <Section>
+          <SectionHeader label="Evaluation" headline="Measures to discuss for your workflow" body="Define success against your own baseline. These are evaluation areas, not measured customer results." />
           <div className="grid gap-4 sm:grid-cols-3">
             {outcomes.map((o, i) => (
-              <KpiBlock key={i} label={o.label} value={o.stat} detail="" />
+              <KpiBlock key={i} label="Evaluation area" value={o.label} detail="Agree a baseline and target for your workflow." />
             ))}
           </div>
         </Section>

@@ -116,13 +116,13 @@ export function TwinReviewPanel() {
       <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[#526479]">Spine Twin</p>
       <h2 className="mt-2 text-[18px] font-semibold text-[#032D60]">Truth and context</h2>
       <ul className="mt-3 space-y-2 text-[14px] text-[#33465B]">
-        <li>Truth: account status from the tools that keep it</li>
-        <li>Context: the evidence Coworker assembled for this person and this step</li>
-        <li>Proposal: a follow-up, waiting for a person</li>
+        <li>Records: the permitted facts about the current goal and work</li>
+        <li>Context: relevant signals, evidence and earlier decisions</li>
+        <li>Proposal: options and a next step, ready for authorized review</li>
       </ul>
       <div className="mt-4 rounded-xl border border-[#D9E4EF] bg-[#F3F6F9] p-4">
         <p className="text-[12px] font-bold uppercase tracking-[0.06em] text-[#0176D3]">Proposed next step</p>
-        <p className="mt-1 text-[14px] text-[#032D60]">Draft the follow-up from the truth and the context for this step.</p>
+        <p className="mt-1 text-[14px] text-[#032D60]">Prepare the next step from the goal, evidence and responsibilities.</p>
         <p className="mt-2 text-[13px] font-semibold text-[#526479]">Awaiting review</p>
       </div>
     </div>

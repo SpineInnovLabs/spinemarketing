@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useRef, useState, useEffect } from "react"
-import { motion, useScroll, useTransform, useMotionValueEvent } from "framer-motion"
+import { motion, useScroll, useTransform, useMotionValueEvent, useReducedMotion } from "framer-motion"
 import { cn } from "@/lib/utils"
 
 export interface StickyScrollStep {
@@ -35,6 +35,9 @@ export function StickyScrollReveal({
 }: StickyScrollRevealProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const [activeIndex, setActiveIndex] = useState(0)
+  const prefersReducedMotion = useReducedMotion()
+  const [hasMounted, setHasMounted] = useState(false)
+  useEffect(() => setHasMounted(true), [])
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -51,8 +54,12 @@ export function StickyScrollReveal({
     setActiveIndex(idx)
   })
 
+  if (hasMounted && prefersReducedMotion) {
+    return <StickyScrollFallback steps={steps} heading={heading} className={className} id={id} style={style} />
+  }
+
   return (
-    <section id={id} className={cn("relative", className)} style={style}>
+    <section id={id} className={cn("marketing-surface relative", className)} style={style}>
       {/* Section heading (outside sticky area) */}
       {heading && (
         <div className="mx-auto max-w-[1100px] px-6 pt-[100px] pb-8 md:px-16">
@@ -145,6 +152,7 @@ export function StickyScrollReveal({
               {steps.map((step, i) => (
                 <motion.div
                   key={i}
+                  aria-hidden={i !== activeIndex}
                   className="absolute inset-0 flex items-center justify-center"
                   initial={false}
                   animate={{
@@ -181,7 +189,7 @@ export function StickyScrollFallback({
   style,
 }: StickyScrollRevealProps) {
   return (
-    <section id={id} className={cn("arvio-section", className)} style={style}>
+    <section id={id} className={cn("arvio-section marketing-surface", className)} style={style}>
       <div className="mx-auto max-w-[1100px]">
         {heading}
         <div className="mt-16 space-y-12">

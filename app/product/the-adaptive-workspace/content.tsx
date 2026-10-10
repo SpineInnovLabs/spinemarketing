@@ -84,7 +84,7 @@ export function TheAdaptiveWorkspaceContent() {
 
   return (
     <>
-      <section className="relative overflow-hidden pb-28 pt-40 bg-white">
+      <section className="marketing-surface relative overflow-hidden pb-28 pt-40 bg-white">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute -top-32 left-1/4 w-[700px] h-[700px] rounded-full blur-[220px]" style={{ background: "rgba(27,167,132,0.07)" }} />
         </div>
@@ -120,7 +120,7 @@ export function TheAdaptiveWorkspaceContent() {
         </div>
       </section>
 
-      <section className="arvio-section dark-section">
+      <section className="arvio-section marketing-surface">
         <div className="mx-auto max-w-[1100px]">
           <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center mb-12">
             <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">Workspace Views</p>
@@ -130,6 +130,8 @@ export function TheAdaptiveWorkspaceContent() {
             {viewCategories.map((cat, i) => (
               <button
                 key={cat.category}
+                aria-pressed={activeCategory === i}
+                aria-controls="workspace-view-cards"
                 onClick={() => setActiveCategory(i)}
                 className={`flex items-center gap-2 rounded-full px-4 py-2 text-[13px] font-semibold transition-all ${
                   activeCategory === i
@@ -142,7 +144,7 @@ export function TheAdaptiveWorkspaceContent() {
               </button>
             ))}
           </div>
-          <div className="grid gap-5 sm:grid-cols-3">
+          <div id="workspace-view-cards" className="grid gap-5 sm:grid-cols-3">
             {viewCategories[activeCategory].views.map((v, i) => (
               <motion.div key={v.view} {...fade(i * 0.07)} className="arvio-card p-7">
                 <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl" style={{ background: "var(--gradient-primary-icon)" }}>
@@ -156,7 +158,7 @@ export function TheAdaptiveWorkspaceContent() {
         </div>
       </section>
 
-      <section className="arvio-section dark-section">
+      <section className="arvio-section marketing-surface">
         <div className="mx-auto max-w-[1100px]">
           <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center mb-12">
             <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">Customer view</p>
@@ -195,7 +197,7 @@ export function TheAdaptiveWorkspaceContent() {
         </div>
       </section>
 
-      <section className="arvio-section dark-section">
+      <section className="arvio-section marketing-surface">
         <div className="mx-auto max-w-[900px]">
           <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center mb-12">
             <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">Workspace Features</p>
@@ -224,7 +226,7 @@ export function TheAdaptiveWorkspaceContent() {
         </div>
       </section>
 
-      <section className="arvio-section dark-section bg-white">
+      <section className="arvio-section marketing-surface bg-white">
         <div className="mx-auto max-w-[680px] px-4 text-center">
           <motion.div {...fade(0)}>
             <Cpu className="mx-auto mb-4 h-7 w-7 text-primary" />

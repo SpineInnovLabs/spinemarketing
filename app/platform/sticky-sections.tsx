@@ -19,84 +19,84 @@ import {
 
 const scrollItems = [
   {
-    tag: "Canonical Data",
-    title: "One truth from many sources",
-    description: "Accounts, contacts, deals, tickets, invoices — normalized, deduplicated, versioned. Every record links back to its origin.",
+    tag: "Spine Fabric",
+    title: "Relate records to the work they belong to",
+    description: "Connect people, accounts, goals, events, evidence, decisions, tasks, and outcomes. Source systems retain their authoritative roles.",
     icon: Database,
     color: "#2dd4bf",
     features: [
-      "Auto-deduplication across all connected tools",
-      "Version history on every entity change",
-      "Source attribution — know where data came from",
-      "Each tool stays itself",
+      "Relationships across business entities and work",
+      "Sources, freshness, conflicts, and missing evidence",
+      "Identity, roles, policy, and authorized scope",
+      "Continuity across tools and work sessions",
     ],
   },
   {
-    tag: "Contextual Signals",
-    title: "Patterns humans miss, surfaced automatically",
-    description: "Behavioral traces, engagement deltas, billing anomalies, support sentiment — assembled into actionable context.",
+    tag: "Spine Workbench",
+    title: "Bring context into a shared working surface",
+    description: "People work with responsibilities, records, evidence, decisions, and next steps. Role and task determine which context belongs in view.",
     icon: Activity,
     color: "#8b5cf6",
     features: [
-      "Cross-system pattern detection in real-time",
-      "Engagement scoring from email + product + support",
-      "Revenue anomaly alerts before invoice overdue",
-      "Sentiment drift tracking across support threads",
+      "Views organized around goals and responsibilities",
+      "Related records and evidence close to the task",
+      "Shared preparation, review, and coordination",
+      "Role-appropriate context across business functions",
     ],
   },
   {
-    tag: "AI Sessions",
-    title: "Every interaction becomes knowledge",
-    description: "Conversations auto-summarized, linked to entities, persisted. The Spine compounds intelligence every day.",
+    tag: "Spine Twin",
+    title: "Investigate, prepare, and coordinate with context",
+    description: "Twin helps compare evidence, identify missing information, prepare options, and coordinate work. Coworker preparation stays within authorized scope.",
     icon: Brain,
     color: "#fbbf24",
     features: [
-      "Auto-summarized meeting notes and email threads",
-      "Entity-linked — every insight ties to an account",
-      "No retraining required — knowledge is append-only",
-      "Session continuity across team members",
+      "Investigate situations using available evidence",
+      "Prepare summaries, options, tasks, and proposals",
+      "Proactive preparation without assumed execution authority",
+      "Durable work context across models and tools",
     ],
   },
   {
-    tag: "Connectors",
+    tag: "Connected capabilities",
     title: "The apps, files, and conversations you already use",
-    description: "Broad connector catalog. OAuth where supported. Auto-upgrade when APIs change. Your tools stay where they are.",
+    description: "Connect supported systems and capabilities under explicit permissions. Availability, supported operations, and provider limits depend on each integration.",
     icon: Plug,
     color: "#3b82f6",
     features: [
-      "SaaS connectors — Salesforce, HubSpot, Stripe, Zendesk",
-      "connected tools — AI-native bidirectional data flow",
-      "Webhook ingestion with automatic schema detection",
-      "Auto-upgrade when upstream APIs change version",
+      "CRM, finance, support, projects, and knowledge sources",
+      "Provider-specific permissions and supported operations",
+      "Source freshness and connection health",
+      "Capability access remains distinct from authority to act",
     ],
   },
   {
-    tag: "Governance",
-    title: "Hard-coded human approval. Immutable audit.",
-    description: "Every action requires approval. Every decision logged. SOC 2 aligned practices — no certification claimed. AES-256 encryption at rest and in transit.",
+    tag: "Spine Runtime",
+    title: "Authorize execution and reconcile what happened",
+    description: "Consequential actions need the appropriate human or policy authority. Observe effects, handle partial outcomes, and retain evidence of the decision and result.",
     icon: Shield,
     color: "#ef4444",
     features: [
-      "A person decides before anything is written back",
-      "Full audit trail — who approved what, when",
-      "Role-based routing: CSM, Manager, or Finance",
-      "Automatic rollback within 24 hours of any action",
+      "Explicit authority for consequential actions",
+      "Reviewable decision and execution evidence",
+      "Policy and role boundaries appropriate to the work",
+      "Observed outcomes and supported corrective work",
     ],
   },
 ];
 
 const gatherItems = [
-  { icon: Database, label: "Truth Layer", description: "Canonical records — normalized, versioned, deduplicated.", color: "#2dd4bf" },
+  { icon: Database, label: "Spine Fabric", description: "Relationships, provenance, authority, and continuity.", color: "#2dd4bf" },
   { icon: Activity, label: "Context Layer", description: "Behavioral patterns and risk signals assembled automatically.", color: "#8b5cf6" },
   { icon: Brain, label: "AI Sessions", description: "Compounding knowledge from every interaction.", color: "#fbbf24" },
   { icon: Plug, label: "Connectors", description: "The tools you already connect.", color: "#3b82f6" },
-  { icon: Shield, label: "Review", description: "Non-bypassable human approval on all actions.", color: "#ef4444" },
-  { icon: Lock, label: "TruthBoundary", description: "SOC 2 aligned practices, no certification claimed. AES-256. Immutable audit log.", color: "#f59e0b" },
-  { icon: Eye, label: "Workspace", description: "Customer views, tasks, workflows — your daily surface.", color: "#06b6d4" },
+  { icon: Shield, label: "Review", description: "The right authority for consequential decisions.", color: "#ef4444" },
+  { icon: Lock, label: "Authority boundary", description: "Identity, policy, access scope, and decision evidence.", color: "#f59e0b" },
+  { icon: Eye, label: "Spine Workbench", description: "Goals, responsibilities, evidence, and next steps.", color: "#06b6d4" },
   { icon: Zap, label: "Twin", description: "AI suggests with evidence. You approve what executes.", color: "#a855f7" },
-  { icon: Server, label: "Infrastructure", description: "Firebase real-time. Continuous sync.", color: "#ec4899" },
-  { icon: GitBranch, label: "Connected tools", description: "AI-native integration. Bidirectional data flow.", color: "#14b8a6" },
-  { icon: RefreshCw, label: "The loop", description: "Think → Act → Govern → Repeat → Adjust.", color: "#f97316" },
+  { icon: Server, label: "Infrastructure", description: "Delivery, storage, event processing, and recovery.", color: "#ec4899" },
+  { icon: GitBranch, label: "Connected tools", description: "Provider-specific capabilities and permissions.", color: "#14b8a6" },
+  { icon: RefreshCw, label: "Spine Runtime", description: "Authorize, execute, observe, and reconcile.", color: "#f97316" },
   { icon: Layers, label: "SpineWorkspace", description: "Adaptive architecture. Survives tool migrations.", color: "#6366f1" },
 ];
 
@@ -115,7 +115,7 @@ export function PlatformStickyScroll() {
       <StickyGather
         tag="How It Assembles"
         heading={<>Scattered tools. <span className="text-primary">One unified architecture.</span></>}
-        subheading="Every component converges into SpineWorkspace — your single source of operational truth."
+        subheading="The architecture brings business context, working surfaces, intelligence, and governed execution together. Source systems retain their authoritative roles."
         centerLabel="The Spine"
         centerDescription="Adaptive core"
         items={gatherItems}
