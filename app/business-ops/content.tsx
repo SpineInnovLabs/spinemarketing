@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import {
   StickyScrollReveal,
   StickyScrollFallback,
@@ -575,8 +575,12 @@ const howItWorksSteps: StickyScrollStep[] = [
 
 export function BusinessOpsContent() {
   const [isMobile, setIsMobile] = useState(false);
+  const [hasMounted, setHasMounted] = useState(false);
+  const prefersReducedMotion = useReducedMotion();
+  const reduce = hasMounted && prefersReducedMotion;
 
   useEffect(() => {
+    setHasMounted(true);
     const check = () => setIsMobile(window.innerWidth < 1024);
     check();
     window.addEventListener("resize", check);
@@ -586,9 +590,10 @@ export function BusinessOpsContent() {
   const stickyHeading = (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      animate={reduce ? { opacity: 1, y: 0 } : undefined}
+      whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
-      transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+      transition={reduce ? { duration: 0 } : { type: "spring", bounce: 0.2, duration: 0.6 }}
       className="mx-auto max-w-2xl text-center"
     >
       <h2 className="section-heading">

@@ -1,10 +1,11 @@
-"use client";
+import { SolutionDomainFeatures } from "@/components/marketing/solution-domain-features";
 
 import { ExecutiveDashboardLayout } from "../_shared/ExecutiveDashboardLayout";
 
 export function FoundersContent() {
   return (
     <ExecutiveDashboardLayout
+      domainFeatures={<SolutionDomainFeatures slug="founders" />}
       role="Founders & CXOs"
       headline="One screen. Every red flag. Full context."
       subheadline="Stop asking five people for the same number. See your forecast, your biggest risks, and what needs your attention — updated live, not in a weekly report."

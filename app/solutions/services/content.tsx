@@ -1,10 +1,11 @@
-"use client";
+import { SolutionDomainFeatures } from "@/components/marketing/solution-domain-features";
 
 import { WorkflowTransformLayout } from "../_shared/WorkflowTransformLayout";
 
 export function ServicesContent() {
   return (
     <WorkflowTransformLayout
+      domainFeatures={<SolutionDomainFeatures slug="services" />}
       category="Services & Agencies"
       headline="Know which projects are bleeding before the client review."
       subheadline="Margin, utilization, and billing risk — all connected. Stop finding out about problems when the invoice gets disputed."

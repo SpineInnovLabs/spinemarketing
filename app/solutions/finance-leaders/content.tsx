@@ -1,10 +1,11 @@
-"use client";
+import { SolutionDomainFeatures } from "@/components/marketing/solution-domain-features";
 
 import { ExecutiveDashboardLayout } from "../_shared/ExecutiveDashboardLayout";
 
 export function FinanceLeadersContent() {
   return (
     <ExecutiveDashboardLayout
+      domainFeatures={<SolutionDomainFeatures slug="finance-leaders" />}
       role="Finance Leaders"
       headline="Know the answer before the board asks."
       subheadline="Collections, cash flow, and revenue risk — connected to what's actually happening with your customers, not just what's on the invoice."

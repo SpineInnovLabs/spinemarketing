@@ -1,10 +1,11 @@
-"use client";
+import { SolutionDomainFeatures } from "@/components/marketing/solution-domain-features";
 
 import { SignalStoryLayout } from "../_shared/SignalStoryLayout";
 
 export function SaasContent() {
   return (
     <SignalStoryLayout
+      domainFeatures={<SolutionDomainFeatures slug="saas" />}
       category="SaaS & Subscription"
       headline="Stop finding out about churn at renewal."
       subheadline="Bring adoption, support, commercial commitments, and relationship changes together to prepare customer decisions before the contract review."

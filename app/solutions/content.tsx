@@ -1,8 +1,11 @@
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, Layers3 } from "lucide-react";
 import { PUBLIC_SOLUTIONS, marketingPathForSolution } from "@/lib/solution-taxonomy";
+import { SOLUTION_DOMAINS, getSolutionDomain } from "@/lib/solution-domains";
 
 export function SolutionsContent() {
+  const functionSlugs = new Set(PUBLIC_SOLUTIONS.map(solution => solution.slug));
+  const specialistSolutions = Object.entries(SOLUTION_DOMAINS).filter(([slug]) => !functionSlugs.has(slug));
   return (
     <>
       <section className="relative overflow-hidden bg-[#F0F8FF] px-5 pb-24 pt-40 text-[#052858] sm:px-8 lg:pb-32 innovtech-reference-surface">
@@ -40,10 +43,29 @@ export function SolutionsContent() {
                   <span className="font-mono text-xs text-[#7A98C4]">{String(index + 1).padStart(2, "0")}</span>
                 </div>
                 <h3 className="mt-9 text-[24px] font-semibold tracking-[-.04em] text-[#14345E]">{solution.name}</h3>
-                <p className="mt-4 flex-1 text-[15px] leading-[1.8] text-[#576E88]">{solution.description}</p>
+                <p className="mt-4 flex-1 text-[15px] leading-[1.8] text-[#576E88]">{getSolutionDomain(solution.slug).summary}</p>
+                <ul className="mt-5 space-y-2 text-sm text-[#4E607A]">
+                  {getSolutionDomain(solution.slug).features.slice(0, 2).map(([title]) => <li key={title} className="border-t border-[#D6E8F8] pt-2">{title}</li>)}
+                </ul>
                 <Link href={marketingPathForSolution(solution.slug)} className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-[#2464AF] hover:underline">
-                  Explore this context <ArrowRight className="h-4 w-4" aria-hidden />
+                  Explore {solution.name} features <ArrowRight className="h-4 w-4" aria-hidden />
                 </Link>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section className="border-t border-[#D6E8F8] bg-white px-5 py-24 sm:px-8">
+        <div className="mx-auto max-w-[1220px]">
+          <p className="text-xs font-semibold uppercase tracking-wider text-[#0055B8]">By industry and operating model</p>
+          <h2 className="mt-5 text-4xl font-semibold tracking-tight text-[#082B5E]">Workflows for the way your business operates.</h2>
+          <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+            {specialistSolutions.map(([slug, domain]) => (
+              <article key={slug} className="flex flex-col rounded-2xl border border-[#D6E8F8] bg-[#F0F8FF] p-7">
+                <h3 className="text-2xl font-semibold text-[#082B5E]">{domain.name}</h3>
+                <p className="mt-4 flex-1 text-[15px] leading-relaxed text-[#4E607A]">{domain.summary}</p>
+                <ul className="mt-5 space-y-2 text-sm text-[#4E607A]">{domain.features.slice(0, 2).map(([title]) => <li key={title} className="border-t border-[#D6E8F8] pt-2">{title}</li>)}</ul>
+                <Link href={`/solutions/${slug}`} className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#0055B8] hover:underline">Explore {domain.name} features <ArrowRight className="h-4 w-4" aria-hidden /></Link>
               </article>
             ))}
           </div>

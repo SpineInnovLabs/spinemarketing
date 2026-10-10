@@ -1,0 +1,485 @@
+{
+  "baseline": "66c8648a618d7ae578da888ef35e1c252ed0036f",
+  "reviewedOn": "2026-10-10",
+  "routes": 83,
+  "routeViewports": 166,
+  "failedCaptures": [],
+  "errors": [],
+  "overflow": [],
+  "severeContrast": [],
+  "missingImages": [],
+  "duplicateHeadings": [],
+  "solidBackgroundContrastFlags": 0,
+  "navyFooterRouteViewports": 156,
+  "localRoutes": {
+    "checked": 81,
+    "passed": 81,
+    "failures": []
+  },
+  "internalLinks": {
+    "checked": 2275,
+    "issues": []
+  },
+  "solutionBrowserChecks": [
+    {
+      "width": 1280,
+      "solutions": 20,
+      "featureCards": 80,
+      "sources": 80,
+      "workflowSteps": 60,
+      "footerKeyboardAndDirectory": true,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "solutions": 20,
+      "featureCards": 80,
+      "sources": 80,
+      "workflowSteps": 60,
+      "footerKeyboardAndDirectory": true,
+      "passed": true
+    }
+  ],
+  "businessOpsMotionChecks": [
+    {
+      "width": 1280,
+      "motion": "no-preference",
+      "steps": 4,
+      "passed": true
+    },
+    {
+      "width": 1280,
+      "motion": "reduce",
+      "steps": 4,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "motion": "reduce",
+      "steps": 4,
+      "passed": true
+    }
+  ],
+  "domains": [
+    {
+      "route": "/solutions/sales",
+      "name": "Sales",
+      "features": [
+        "Deal preparation",
+        "Commitment tracking",
+        "Pipeline exceptions",
+        "Sales-to-delivery handoff"
+      ],
+      "sources": [
+        "CRM opportunities",
+        "Customer conversations",
+        "Proposals and contracts",
+        "Delivery commitments"
+      ],
+      "workflow": [
+        "An opportunity is ready to close, but a requested delivery date conflicts with the current plan.",
+        "Twin assembles the proposal, customer conversation and delivery dependency into options for the account team.",
+        "The sales owner reviews the commitment with delivery before approving a revised proposal."
+      ]
+    },
+    {
+      "route": "/solutions/marketing",
+      "name": "Marketing",
+      "features": [
+        "Campaign context",
+        "Customer signal briefs",
+        "Launch coordination",
+        "Performance investigation"
+      ],
+      "sources": [
+        "Campaign briefs",
+        "Audience and CRM context",
+        "Channel performance",
+        "Approved messaging"
+      ],
+      "workflow": [
+        "A launch campaign is receiving attention but generating fewer qualified conversations than expected.",
+        "Twin compares the brief, audience feedback and channel evidence, then prepares messaging and distribution options.",
+        "The campaign owner approves the revised plan and any changes to spend or publishing."
+      ]
+    },
+    {
+      "route": "/solutions/content",
+      "name": "Content",
+      "features": [
+        "Brief preparation",
+        "Evidence-linked drafting",
+        "Editorial handoffs",
+        "Reuse and refresh"
+      ],
+      "sources": [
+        "Editorial briefs",
+        "Research and source documents",
+        "Asset versions",
+        "Review comments"
+      ],
+      "workflow": [
+        "A writer needs to refresh an article after product messaging changes.",
+        "Twin gathers the existing article, revised brief, approved product references and unresolved reviewer comments.",
+        "The editor verifies the claims and approves the revised asset before publication."
+      ]
+    },
+    {
+      "route": "/solutions/customer-support",
+      "name": "Customer Support",
+      "features": [
+        "Case preparation",
+        "Knowledge-assisted responses",
+        "Escalation continuity",
+        "Case follow-through"
+      ],
+      "sources": [
+        "Support cases",
+        "Account history",
+        "Product documentation",
+        "Customer commitments"
+      ],
+      "workflow": [
+        "A customer reports an issue that has already crossed support and engineering.",
+        "Twin brings together the case history, attempted fixes, related issue and promised follow-up.",
+        "The support owner reviews the response and authorizes the customer communication or escalation."
+      ]
+    },
+    {
+      "route": "/solutions/product-engineering",
+      "name": "Product & Engineering",
+      "features": [
+        "Prioritization context",
+        "Dependency investigation",
+        "Release preparation",
+        "Decision continuity"
+      ],
+      "sources": [
+        "Product roadmap",
+        "Engineering issues",
+        "Customer feedback",
+        "Release evidence"
+      ],
+      "workflow": [
+        "A release has an unresolved issue affecting a customer commitment.",
+        "Twin connects the release goal, issue history, technical dependency and customer impact into delivery options.",
+        "The product and engineering owners decide the release scope and authorize the next action."
+      ]
+    },
+    {
+      "route": "/solutions/human-resources",
+      "name": "Human Resources",
+      "features": [
+        "Hiring coordination",
+        "Employee onboarding",
+        "Policy preparation",
+        "People-program reviews"
+      ],
+      "sources": [
+        "Hiring plans",
+        "Onboarding tasks",
+        "Approved people policies",
+        "Permitted employee records"
+      ],
+      "workflow": [
+        "A new employee starts next week and several onboarding dependencies remain open.",
+        "Twin prepares the approved onboarding plan, responsible teams and outstanding tasks from permitted information.",
+        "HR and the relevant owners review the plan; access changes follow their authorization process."
+      ]
+    },
+    {
+      "route": "/solutions/legal",
+      "name": "Legal",
+      "features": [
+        "Contract review preparation",
+        "Obligation tracking",
+        "Exception context",
+        "Matter continuity"
+      ],
+      "sources": [
+        "Contract versions",
+        "Review comments",
+        "Business commitments",
+        "Approved legal policies"
+      ],
+      "workflow": [
+        "A customer requests a contract exception before signing.",
+        "Twin assembles the proposed change, approved terms, business reason and earlier review comments.",
+        "The authorized legal and commercial reviewers decide the exception; AI preparation does not replace legal advice."
+      ]
+    },
+    {
+      "route": "/solutions/memoryandknowledge",
+      "name": "Memory & Knowledge",
+      "features": [
+        "Evidence-linked discovery",
+        "Decision history",
+        "Knowledge freshness",
+        "Handoff continuity"
+      ],
+      "sources": [
+        "Knowledge documents",
+        "Decision records",
+        "Project history",
+        "Source ownership"
+      ],
+      "workflow": [
+        "A new team owner needs to understand why a project changed direction.",
+        "Twin gathers the permitted decision record, source evidence, previous tradeoffs and unresolved questions.",
+        "The owner checks the references and confirms which conclusions remain valid before proceeding."
+      ]
+    },
+    {
+      "route": "/solutions/customer-success",
+      "name": "Account Success",
+      "features": [
+        "Onboarding plans",
+        "Adoption reviews",
+        "Account coordination",
+        "Growth and renewal preparation"
+      ],
+      "sources": [
+        "Account records",
+        "Adoption signals",
+        "Support history",
+        "Customer commitments"
+      ],
+      "workflow": [
+        "A customer reaches an onboarding milestone with a delivery dependency still unresolved.",
+        "Twin prepares the agreed goal, adoption evidence, support history and responsible teams for the account review.",
+        "The account owner agrees the next step with the customer and approves any consequential communication."
+      ]
+    },
+    {
+      "route": "/solutions/finance",
+      "name": "Finance",
+      "features": [
+        "Receivables context",
+        "Spend and payable review",
+        "Reconciliation exceptions",
+        "Cash and close preparation"
+      ],
+      "sources": [
+        "Invoice and payment records",
+        "Contracts and purchase orders",
+        "Delivery evidence",
+        "Financial review notes"
+      ],
+      "workflow": [
+        "A supplier invoice differs from the approved purchase and delivery record.",
+        "Twin compares the invoice, purchase order, terms and receipt evidence, then prepares the unresolved questions.",
+        "The finance owner decides the exception and authorizes any payment or source-record correction."
+      ]
+    },
+    {
+      "route": "/solutions/finance-leaders",
+      "name": "Finance Leadership",
+      "features": [
+        "Management brief preparation",
+        "Liquidity scenarios",
+        "Resource allocation",
+        "Board and audit context"
+      ],
+      "sources": [
+        "Financial reports",
+        "Cash assumptions",
+        "Operating plans",
+        "Management decisions"
+      ],
+      "workflow": [
+        "Leadership needs to review a hiring proposal against a revised cash outlook.",
+        "Twin assembles the operating plan, cash assumptions, cost commitments and alternative allocation options.",
+        "The finance leader reviews the assumptions and the authorized executives decide the budget commitment."
+      ]
+    },
+    {
+      "route": "/solutions/founders",
+      "name": "Founders & CXOs",
+      "features": [
+        "Executive operating briefs",
+        "Cross-functional risks",
+        "Decision preparation",
+        "Follow-through"
+      ],
+      "sources": [
+        "Business goals",
+        "Operating reports",
+        "Customer commitments",
+        "Decision history"
+      ],
+      "workflow": [
+        "A growth target conflicts with current delivery capacity and budget.",
+        "Twin prepares the revenue assumptions, capacity constraints, resource options and earlier decisions.",
+        "The leadership team chooses the tradeoff and authorizes the resulting commitments."
+      ]
+    },
+    {
+      "route": "/solutions/individual",
+      "name": "Personal Work",
+      "features": [
+        "Priority preparation",
+        "Meeting context",
+        "Task continuity",
+        "Personal boundaries"
+      ],
+      "sources": [
+        "Personal tasks",
+        "Permitted calendars",
+        "Working notes",
+        "Relevant files"
+      ],
+      "workflow": [
+        "You return to a project after several meetings and a tool change.",
+        "Twin prepares your permitted notes, files, outstanding commitments and the previous checkpoint.",
+        "You choose the next priority and approve any message or consequential update."
+      ]
+    },
+    {
+      "route": "/solutions/operations",
+      "name": "Operations",
+      "features": [
+        "Handoff preparation",
+        "Dependency tracking",
+        "Exception investigation",
+        "Operating reviews"
+      ],
+      "sources": [
+        "Delivery plans",
+        "Work queues",
+        "Customer commitments",
+        "Escalation history"
+      ],
+      "workflow": [
+        "A delivery handoff is blocked by an unresolved dependency in another team.",
+        "Twin gathers the commitment, task history, affected work and responsible owners into escalation options.",
+        "The operations owner approves the revised handoff and coordinates the agreed actions."
+      ]
+    },
+    {
+      "route": "/solutions/revops",
+      "name": "Revenue Operations",
+      "features": [
+        "Pipeline hygiene",
+        "Quote-to-cash context",
+        "Forecast preparation",
+        "Revenue handoffs"
+      ],
+      "sources": [
+        "CRM pipeline",
+        "Commercial terms",
+        "Billing records",
+        "Account handoffs"
+      ],
+      "workflow": [
+        "A signed deal has a billing discrepancy and an unclear onboarding owner.",
+        "Twin relates the CRM record, approved terms, invoice and handoff history to prepare the discrepancies.",
+        "Revenue operations coordinates the authorized owners before a billing correction or customer update."
+      ]
+    },
+    {
+      "route": "/solutions/saas",
+      "name": "SaaS",
+      "features": [
+        "Adoption investigation",
+        "Subscription context",
+        "Product feedback loops",
+        "Lifecycle preparation"
+      ],
+      "sources": [
+        "Subscription records",
+        "Product usage evidence",
+        "Support cases",
+        "Customer feedback"
+      ],
+      "workflow": [
+        "A customer reports low adoption alongside a recurring product issue.",
+        "Twin prepares the available usage evidence, support pattern, subscription context and product dependency.",
+        "The account and product owners agree the response and authorize the customer-facing next step."
+      ]
+    },
+    {
+      "route": "/solutions/services",
+      "name": "Service Delivery",
+      "features": [
+        "Engagement context",
+        "Scope-change preparation",
+        "Delivery coordination",
+        "Commercial follow-through"
+      ],
+      "sources": [
+        "Client statements of work",
+        "Delivery tasks",
+        "Scope changes",
+        "Client communications"
+      ],
+      "workflow": [
+        "A client requests additional work while a delivery milestone is at risk.",
+        "Twin prepares the agreed scope, new request, affected dependencies and options for delivery.",
+        "The engagement owner approves the scope or schedule change with the client."
+      ]
+    },
+    {
+      "route": "/solutions/professional-services",
+      "name": "Professional Services",
+      "features": [
+        "Engagement preparation",
+        "Billable-work context",
+        "Utilization reviews",
+        "Client-review preparation"
+      ],
+      "sources": [
+        "Engagement agreements",
+        "Time and work records",
+        "Project deliverables",
+        "Client approvals"
+      ],
+      "workflow": [
+        "An engagement review finds work recorded outside the agreed billable scope.",
+        "Twin compares the engagement terms, time records, delivered work and client approval history.",
+        "The engagement and finance owners review the evidence before approving a billing adjustment."
+      ]
+    },
+    {
+      "route": "/solutions/manufacturing",
+      "name": "Manufacturing",
+      "features": [
+        "Production exception context",
+        "Quality investigation",
+        "Supplier coordination",
+        "Delivery-impact preparation"
+      ],
+      "sources": [
+        "Production records",
+        "Quality inspections",
+        "Supplier information",
+        "Delivery commitments"
+      ],
+      "workflow": [
+        "A quality exception affects a batch needed for a committed delivery.",
+        "Twin assembles the inspection evidence, batch history, supplier context and affected orders.",
+        "The quality and operations owners decide the disposition and authorize the revised delivery plan."
+      ]
+    },
+    {
+      "route": "/solutions/retail",
+      "name": "Retail & Ecommerce",
+      "features": [
+        "Order-service context",
+        "Inventory exception review",
+        "Returns investigation",
+        "Customer recovery preparation"
+      ],
+      "sources": [
+        "Order records",
+        "Inventory information",
+        "Returns evidence",
+        "Customer support history"
+      ],
+      "workflow": [
+        "Several returns involve the same product while replacement stock is constrained.",
+        "Twin compares return reasons, product context, available inventory and affected customer cases.",
+        "The retail owner reviews the evidence and approves any replenishment, refund or customer outreach."
+      ]
+    }
+  ]
+}

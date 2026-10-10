@@ -1,5 +1,7 @@
 "use client";
 
+import type { ReactNode } from "react";
+
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Shield, TrendingDown, TrendingUp } from "lucide-react";
@@ -19,6 +21,7 @@ export interface DashboardCard {
 }
 
 export interface ExecutiveDashboardProps {
+  domainFeatures: ReactNode;
   role: string;
   headline: string;
   subheadline: string;
@@ -42,6 +45,7 @@ const fade = (delay = 0) => ({
 });
 
 export function ExecutiveDashboardLayout({
+  domainFeatures,
   role,
   headline,
   subheadline,
@@ -63,6 +67,7 @@ export function ExecutiveDashboardLayout({
         subhead={subheadline}
         primaryCta={{ label: ctaLabel, href: ctaHref }}
       />
+      {domainFeatures}
 
       <Section variant="muted">
         <SectionHeader label="The shift" headline="From fragmented signals to executive clarity" body="Illustrative workflow examples, not measured customer results." />

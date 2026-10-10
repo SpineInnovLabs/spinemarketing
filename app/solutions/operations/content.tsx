@@ -1,10 +1,11 @@
-"use client";
+import { SolutionDomainFeatures } from "@/components/marketing/solution-domain-features";
 
 import { WorkflowTransformLayout } from "../_shared/WorkflowTransformLayout";
 
 export function OperationsContent() {
   return (
     <WorkflowTransformLayout
+      domainFeatures={<SolutionDomainFeatures slug="operations" />}
       category="Operations & Delivery"
       headline="Catch delivery problems before the client notices."
       subheadline="Project health, team utilization, and client communication in one place. Exceptions surface so you can fix them proactively."

@@ -1,10 +1,11 @@
-"use client";
+import { SolutionDomainFeatures } from "@/components/marketing/solution-domain-features";
 
 import { SignalStoryLayout } from "../_shared/SignalStoryLayout";
 
 export function RetailContent() {
   return (
     <SignalStoryLayout
+      domainFeatures={<SolutionDomainFeatures slug="retail" />}
       category="Retail & Ecommerce"
       headline="Act on signals. Not complaints."
       subheadline="Stock levels, order status, returns, and support — all connected. Problems surface before customers have to tell you."

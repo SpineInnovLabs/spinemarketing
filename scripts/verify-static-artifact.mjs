@@ -3,6 +3,7 @@
  * Spine InnovTech corporate site.
  */
 import { readFileSync, statSync } from "node:fs";
+import "./verify-domain-solutions.mjs";
 const text = readFileSync("out/index.html", "utf8");
 const sitemap = readFileSync("out/sitemap.xml", "utf8");
 const product = readFileSync("out/product.html", "utf8");
