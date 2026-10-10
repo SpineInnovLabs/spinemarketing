@@ -6,15 +6,25 @@ import { FinalCTA } from "@/components/final-cta"
 import { SpineContent } from "./content"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 
+const title = "Spine & Intelligence | Spine InnovTech"
+const description =
+  "Spine Fabric keeps shared business context under Spine Workspace. Source systems stay authoritative. People and AI work from that context, and consequential action stays governed."
+
 export const metadata: Metadata = {
-  title: "Spine & Intelligence | Spine InnovTech",
-  description:
-    "Spine Workspace: the shared contextual layer under your business. Unifies every app. AI reasons with evidence. You approve.",
+  title,
+  description,
   alternates: { canonical: "/spine" },
   openGraph: {
-    title: "Spine & Intelligence | Spine InnovTech",
-    description: "Spine Workspace: the shared contextual layer under your business. Unifies every app. AI reasons with evidence. You approve.",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Spine Workspace" }],
+    title,
+    description,
+    url: absoluteUrl("/spine"),
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Spine InnovTech" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: ["/og.png"],
   },
 }
 

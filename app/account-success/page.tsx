@@ -6,22 +6,25 @@ import { FinalCTA } from "@/components/final-cta"
 import { AccountSuccessContent } from "./content"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 
+const title = "Account Success — One Customer, One Record | Spine InnovTech"
+const description =
+  "Detect churn signals across 4+ tools before it's too late. Cross-tool entity matching, confidence scoring, and human-approved merges. One customer. One record."
+
 export const metadata: Metadata = {
-  title: "Account Success — One Customer, One Record | Spine InnovTech",
-  description:
-    "Detect churn signals across 4+ tools before it's too late. Cross-tool entity matching, confidence scoring, and human-approved merges. One customer. One record.",
+  title,
+  description,
   alternates: { canonical: "/account-success" },
   openGraph: {
-    title: "Account Success — One Customer, One Record | Spine InnovTech",
-    description:
-      "Detect churn signals across 4+ tools before it's too late. Cross-tool entity matching with confidence scoring.",
-    images: [{ url: "/images/campaign/Banner-AccountSuccess-A.jpg", width: 1584, height: 396, alt: "Spine Workspace Account Success" }],
+    title,
+    description,
+    url: absoluteUrl("/account-success"),
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Spine InnovTech" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Account Success — One Customer, One Record | Spine InnovTech",
-    description: "Detect churn signals across 4+ tools before it's too late.",
-    images: ["/images/campaign/Banner-AccountSuccess-A.jpg"],
+    title,
+    description,
+    images: ["/og.png"],
   },
 }
 

@@ -1,16 +1,17 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, Network, ShieldCheck, UsersRound, Waypoints } from "lucide-react";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { BreadcrumbJsonLd } from "@/components/structured-data";
 import { absoluteUrl } from "@/lib/site-url";
+import { createPageMetadata } from "@/lib/page-metadata";
 
-export const metadata: Metadata = {
-  title: { absolute: "Technology Portfolio | Spine InnovTech" },
-  description: "Explore the Spine InnovTech technology portfolio: the Spine Workspace product, Spine Fabric, Spine Twin and governed execution architecture.",
-  alternates: { canonical: "/portfolio" },
-};
+export const metadata = createPageMetadata({
+  title: "Technology Portfolio | Spine InnovTech",
+  description:
+    "Explore the Spine InnovTech technology portfolio: the Spine Workspace product, Spine Fabric, Spine Twin and governed execution architecture.",
+  path: "/portfolio",
+});
 
 const work = [
   {

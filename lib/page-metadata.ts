@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
 import { absoluteUrl, publicSiteUrl } from "@/lib/site-url";
 
+const shareImage = {
+  url: "/og.png",
+  width: 1200,
+  height: 630,
+  alt: "Spine InnovTech",
+} as const;
+
 function corporateTitle(title: string): string {
   const normalized = title
     .replace(/SpineWorkspace/g, "Spine Workspace")
@@ -21,16 +28,24 @@ export function createPageMetadata({
   path: string;
 }): Metadata {
   const fullTitle = corporateTitle(title);
+  const descriptionText = description.replace(/SpineWorkspace/g, "Spine Workspace");
   return {
     title: { absolute: fullTitle },
-    description: description.replace(/SpineWorkspace/g, "Spine Workspace"),
+    description: descriptionText,
     alternates: { canonical: path },
     openGraph: {
       title: fullTitle,
-      description: description.replace(/SpineWorkspace/g, "Spine Workspace"),
+      description: descriptionText,
+      url: absoluteUrl(path),
       siteName: "Spine InnovTech",
       type: "website",
-      images: [{ url: "/og.png", width: 1200, height: 630, alt: "Spine InnovTech" }],
+      images: [shareImage],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: fullTitle,
+      description: descriptionText,
+      images: [shareImage.url],
     },
   };
 }

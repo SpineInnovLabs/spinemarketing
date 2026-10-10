@@ -27,15 +27,13 @@ export const metadata: Metadata = {
     title: "Spine InnovTech | Intelligence for Connected Business",
     description:
       "Technology and AI innovation for shared business context, governed action, and connected work. Meet the company behind Spine Workspace.",
+    url: publicSiteUrl,
     siteName: "Spine InnovTech",
     type: "website",
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "Spine InnovTech" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Spine InnovTech | Intelligence for Connected Business",
-    description:
-      "Technology and AI innovation for shared business context, governed action, and connected work.",
     images: ["/og.png"],
   },
 }
@@ -59,7 +57,10 @@ export default function RootLayout({
               description: "Technology and AI innovation company behind Spine Workspace",
               url: publicSiteUrl,
               logo: absoluteUrl("/icon.svg"),
-              sameAs: [],
+              sameAs: [
+                "https://spineworkspace.com",
+                "https://docs.spineworkspace.com",
+              ],
               contactPoint: [
                 {
                   "@type": "ContactPoint",

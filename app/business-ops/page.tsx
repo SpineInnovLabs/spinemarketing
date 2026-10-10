@@ -6,21 +6,25 @@ import { FinalCTA } from "@/components/final-cta"
 import { BusinessOpsContent } from "./content"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 
+const title = "Business Ops — 12 Tabs → One Workspace | Spine InnovTech"
+const description =
+  "Stop toggling between 12 tabs to find context. Cross-system visibility with AI that handles the busywork — with your approval. Zero context lost."
+
 export const metadata: Metadata = {
-  title: "Business Ops — 12 Tabs → One Workspace | Spine InnovTech",
-  description:
-    "Stop toggling between 12 tabs to find context. Cross-system visibility with AI that handles the busywork — with your approval. Zero context lost.",
+  title,
+  description,
   alternates: { canonical: "/business-ops" },
   openGraph: {
-    title: "Business Ops — 12 Tabs → One Workspace | Spine InnovTech",
-    description: "Stop toggling between 12 tabs to find context. Cross-system visibility with AI that handles the busywork.",
-    images: [{ url: "/images/campaign/Banner-BusinessOps-A.jpg", width: 1584, height: 396, alt: "Spine Workspace Business Ops" }],
+    title,
+    description,
+    url: absoluteUrl("/business-ops"),
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Spine InnovTech" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Business Ops — 12 Tabs → One Workspace | Spine InnovTech",
-    description: "Stop toggling between 12 tabs to find context. Zero context lost.",
-    images: ["/images/campaign/Banner-BusinessOps-A.jpg"],
+    title,
+    description,
+    images: ["/og.png"],
   },
 }
 

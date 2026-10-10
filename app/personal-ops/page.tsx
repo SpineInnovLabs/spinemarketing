@@ -6,21 +6,25 @@ import { FinalCTA } from "@/components/final-cta"
 import { PersonalOpsContent } from "./content"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 
+const title = "Personal Ops — Your Morning, Auto-Organized | Spine InnovTech"
+const description =
+  "Replace 45 minutes of app-hopping with a single morning brief. A calm workspace above all your apps — connect, surface insights, approve what happens."
+
 export const metadata: Metadata = {
-  title: "Personal Ops — Your Morning, Auto-Organized | Spine InnovTech",
-  description:
-    "Replace 45 minutes of app-hopping with a single morning brief. A calm workspace above all your apps — connect, surface insights, approve what happens.",
+  title,
+  description,
   alternates: { canonical: "/personal-ops" },
   openGraph: {
-    title: "Personal Ops — Your Morning, Auto-Organized | Spine InnovTech",
-    description: "Replace 45 minutes of app-hopping with a single morning brief. A calm workspace above all your apps.",
-    images: [{ url: "/images/campaign/Banner-PersonalOps-A.jpg", width: 1584, height: 396, alt: "Spine Workspace Personal Ops" }],
+    title,
+    description,
+    url: absoluteUrl("/personal-ops"),
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Spine InnovTech" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Personal Ops — Your Morning, Auto-Organized | Spine InnovTech",
-    description: "Replace 45 minutes of app-hopping with a single morning brief.",
-    images: ["/images/campaign/Banner-PersonalOps-A.jpg"],
+    title,
+    description,
+    images: ["/og.png"],
   },
 }
 
