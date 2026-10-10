@@ -1,10 +1,11 @@
-"use client";
+import { SolutionDomainFeatures } from "@/components/marketing/solution-domain-features";
 
 import { SignalStoryLayout } from "../_shared/SignalStoryLayout";
 
 export function RevOpsContent() {
   return (
     <SignalStoryLayout
+      domainFeatures={<SolutionDomainFeatures slug="revops" />}
       category="RevOps & Business Operations"
       headline="Revenue context you can trace. Fewer spreadsheet wars."
       subheadline="Pipeline, bookings, billings, and churn — all connected and traceable. Stop reconciling five systems and start operating from one."

@@ -188,6 +188,10 @@ export function StickyScrollFallback({
   id,
   style,
 }: StickyScrollRevealProps) {
+  const prefersReducedMotion = useReducedMotion()
+  const [hasMounted, setHasMounted] = useState(false)
+  useEffect(() => setHasMounted(true), [])
+  const reduce = hasMounted && prefersReducedMotion
   return (
     <section id={id} className={cn("arvio-section marketing-surface", className)} style={style}>
       <div className="mx-auto max-w-[1100px]">
@@ -197,9 +201,10 @@ export function StickyScrollFallback({
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              animate={reduce ? { opacity: 1, y: 0 } : undefined}
+              whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{
+              transition={reduce ? { duration: 0 } : {
                 type: "spring",
                 bounce: 0.2,
                 duration: 0.6,

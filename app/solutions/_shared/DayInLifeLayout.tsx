@@ -1,5 +1,7 @@
 "use client";
 
+import type { ReactNode } from "react";
+
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Shield, Clock } from "lucide-react";
@@ -19,6 +21,7 @@ export interface TimelineSlot {
 }
 
 export interface DayInLifeProps {
+  domainFeatures: ReactNode;
   role: string;
   headline: string;
   subheadline: string;
@@ -42,6 +45,7 @@ const fade = (delay = 0) => ({
 });
 
 export function DayInLifeLayout({
+  domainFeatures,
   role,
   headline,
   subheadline,
@@ -63,6 +67,7 @@ export function DayInLifeLayout({
         subhead={subheadline}
         primaryCta={{ label: ctaLabel, href: ctaHref }}
       />
+      {domainFeatures}
 
       <Section variant="muted">
         <SectionHeader label="Before and after" headline="A day with and without SpineWorkspace" body="Illustrative workflow examples, not measured customer results." />

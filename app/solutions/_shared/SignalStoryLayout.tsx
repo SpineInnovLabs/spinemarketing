@@ -1,5 +1,7 @@
 "use client";
 
+import type { ReactNode } from "react";
+
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Shield, AlertTriangle, CheckCircle2 } from "lucide-react";
@@ -23,6 +25,7 @@ export interface CapabilityItem {
 }
 
 export interface SignalStoryProps {
+  domainFeatures: ReactNode;
   category: string;
   headline: string;
   subheadline: string;
@@ -46,6 +49,7 @@ const fade = (delay = 0) => ({
 });
 
 export function SignalStoryLayout({
+  domainFeatures,
   category,
   headline,
   subheadline,
@@ -67,6 +71,7 @@ export function SignalStoryLayout({
         subhead={subheadline}
         primaryCta={{ label: ctaLabel, href: ctaHref }}
       />
+      {domainFeatures}
 
       <Section variant="muted">
         <SectionHeader label="Illustrative workflow" headline="Signals buried across systems" body="Compare the current situation with the intended workflow. These examples are not measured customer results." />

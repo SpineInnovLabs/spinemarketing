@@ -1,10 +1,11 @@
-"use client";
+import { SolutionDomainFeatures } from "@/components/marketing/solution-domain-features";
 
 import { DayInLifeLayout } from "../_shared/DayInLifeLayout";
 
 export function CustomerSuccessRoleContent() {
   return (
     <DayInLifeLayout
+      domainFeatures={<SolutionDomainFeatures slug="customer-success" />}
       role="Customer Success & Account Managers"
       headline="Walk into every call already knowing what changed."
       subheadline="Your accounts, their health, their history — one calm view that tells you where to spend your time today."

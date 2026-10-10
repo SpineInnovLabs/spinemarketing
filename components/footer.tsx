@@ -5,35 +5,35 @@ import { footerColumns } from "@/lib/navigation";
 
 export function Footer() {
   return (
-    <footer className="bg-[#F0F8FF] text-[#082B5E]">
+    <footer className="border-t-4 border-[#006FE8] bg-[#082B5E] text-white [&_a:focus-visible]:outline-2 [&_a:focus-visible]:outline-offset-4 [&_a:focus-visible]:outline-[#9BCAFF]">
       <div className="mx-auto max-w-[1320px] px-5 sm:px-8 lg:px-12">
-        <div className="grid gap-12 border-b border-[#CBE5FA] py-16 lg:grid-cols-[.85fr_1.15fr] lg:gap-20 lg:py-20">
+        <div className="grid gap-12 border-b border-white/20 py-16 lg:grid-cols-[.85fr_1.15fr] lg:gap-20 lg:py-20">
           <div>
             <Link
               href="/"
-              className="inline-flex items-center gap-3 rounded-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#006FE8]"
+              className="inline-flex items-center gap-3 rounded-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#9BCAFF]"
             >
-              <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-white p-2">
+              <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-white/10 p-2">
                 <SpineLogo
                   className="h-7 w-7 text-[#103366]"
-                  variant="on-light"
+                  variant="on-dark"
                 />
               </span>
-              <span className="text-[21px] font-semibold tracking-[-.055em] text-[#082B5E]">
-                Spine <span className="text-[#006FE8]">InnovTech</span>
+              <span className="text-[21px] font-semibold tracking-[-.055em] text-white">
+                Spine <span className="text-[#9BCAFF]">InnovTech</span>
               </span>
             </Link>
-            <h2 className="mt-8 max-w-[420px] text-[clamp(1.8rem,3vw,2.8rem)] font-semibold leading-[1.2] tracking-[-.05em] text-[#082B5E]">
+            <h2 className="mt-8 max-w-[420px] text-[clamp(1.8rem,3vw,2.8rem)] font-semibold leading-[1.2] tracking-[-.05em] text-white">
               Building the intelligence behind connected business.
             </h2>
-            <p className="mt-5 max-w-[400px] text-[14px] leading-[1.85] text-[#4E607A]">
+            <p className="mt-5 max-w-[400px] text-[14px] leading-[1.85] text-[#CBD9EB]">
               Connected systems. Shared context. Governed intelligence. Building
               Spine Workspace for humans and AI to work together with business
               context.
             </p>
             <Link
               href="/contact"
-              className="mt-7 inline-flex items-center gap-2 text-[14px] font-semibold text-[#006FE8] transition hover:text-[#082B5E]"
+              className="mt-7 inline-flex items-center gap-2 text-[14px] font-semibold text-[#9BCAFF] transition hover:text-white"
             >
               Talk to Spine InnovTech <ArrowUpRight className="h-4 w-4" />
             </Link>
@@ -44,7 +44,7 @@ export function Footer() {
           >
             {footerColumns.map((col) => (
               <div key={col.heading}>
-                <h3 className="text-[11px] font-semibold uppercase tracking-[.18em] text-[#082B5E]">
+                <h3 className="text-[11px] font-semibold uppercase tracking-[.18em] text-white">
                   {col.heading}
                 </h3>
                 <ul className="mt-6 space-y-3.5">
@@ -55,14 +55,14 @@ export function Footer() {
                           href={link.href}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-[13px] leading-6 text-[#4E607A] transition hover:text-[#082B5E]"
+                          className="text-[13px] leading-6 text-[#CBD9EB] transition hover:text-white"
                         >
                           {link.name}
                         </a>
                       ) : (
                         <Link
                           href={link.href}
-                          className="text-[13px] leading-6 text-[#4E607A] transition hover:text-[#082B5E]"
+                          className="text-[13px] leading-6 text-[#CBD9EB] transition hover:text-white"
                         >
                           {link.name}
                         </Link>
@@ -75,19 +75,19 @@ export function Footer() {
           </nav>
         </div>
         <div className="flex flex-wrap items-center justify-between gap-4 py-7">
-          <p className="text-[12px] text-[#4E607A]">
+          <p className="text-[12px] text-[#CBD9EB]">
             © {new Date().getFullYear()} Spine InnovTech Private Limited. Built
             in India.
           </p>
           <Link
             href="/site-map"
-            className="text-[12px] text-[#4E607A] hover:text-[#006FE8]"
+            className="text-[12px] text-[#CBD9EB] hover:text-white"
           >
             All website pages
           </Link>
           <a
             href="mailto:connect@spineworkspace.com"
-            className="inline-flex items-center gap-2 text-[12px] text-[#4E607A] transition hover:text-[#082B5E]"
+            className="inline-flex items-center gap-2 text-[12px] text-[#CBD9EB] transition hover:text-white"
           >
             <Mail className="h-3.5 w-3.5" /> connect@spineworkspace.com
           </a>

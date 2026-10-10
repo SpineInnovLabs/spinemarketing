@@ -1,10 +1,11 @@
-"use client";
+import { SolutionDomainFeatures } from "@/components/marketing/solution-domain-features";
 
 import { DayInLifeLayout } from "../_shared/DayInLifeLayout";
 
 export function IndividualContent() {
   return (
     <DayInLifeLayout
+      domainFeatures={<SolutionDomainFeatures slug="individual" />}
       role="Individual Professionals"
       headline="Your day, organised. Your context, remembered."
       subheadline="One calm view of today's priorities — with an AI that remembers what you discussed yesterday and picks up where you left off."

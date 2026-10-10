@@ -1,10 +1,11 @@
-"use client";
+import { SolutionDomainFeatures } from "@/components/marketing/solution-domain-features";
 
 import { DayInLifeLayout } from "../_shared/DayInLifeLayout";
 
 export function ProfessionalServicesContent() {
   return (
     <DayInLifeLayout
+      domainFeatures={<SolutionDomainFeatures slug="professional-services" />}
       role="Professional Services"
       headline="Bill what you earn. Earn what you bill."
       subheadline="Time entries, client health, and billing all connected. Stop losing revenue to unbilled work and scope surprises."

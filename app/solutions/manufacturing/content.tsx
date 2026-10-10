@@ -1,10 +1,11 @@
-"use client";
+import { SolutionDomainFeatures } from "@/components/marketing/solution-domain-features";
 
 import { WorkflowTransformLayout } from "../_shared/WorkflowTransformLayout";
 
 export function ManufacturingContent() {
   return (
     <WorkflowTransformLayout
+      domainFeatures={<SolutionDomainFeatures slug="manufacturing" />}
       category="Manufacturing & Trade"
       headline="Catch problems before they reach your customer."
       subheadline="Orders, shipments, and payments connected in one place. When something goes wrong in the supply chain, you know before your customer does."

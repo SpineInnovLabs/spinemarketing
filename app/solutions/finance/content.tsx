@@ -1,10 +1,11 @@
-"use client";
+import { SolutionDomainFeatures } from "@/components/marketing/solution-domain-features";
 
 import { ExecutiveDashboardLayout } from "../_shared/ExecutiveDashboardLayout";
 
 export function FinanceIndustryContent() {
   return (
     <ExecutiveDashboardLayout
+      domainFeatures={<SolutionDomainFeatures slug="finance" />}
       role="Finance & Revenue Operations"
       headline="Collect smarter. Not just harder."
       subheadline="Stop chasing invoices blindly. See which customers can pay, which need a conversation, and which are about to churn — all in one view."

@@ -1,5 +1,7 @@
 "use client";
 
+import type { ReactNode } from "react";
+
 import { motion } from "framer-motion";
 import Link from "next/link";
 import React from "react";
@@ -24,6 +26,7 @@ export interface CapabilityItem {
 }
 
 export interface WorkflowTransformProps {
+  domainFeatures: ReactNode;
   category: string;
   headline: string;
   subheadline: string;
@@ -47,6 +50,7 @@ const fade = (delay = 0) => ({
 });
 
 export function WorkflowTransformLayout({
+  domainFeatures,
   category,
   headline,
   subheadline,
@@ -68,6 +72,7 @@ export function WorkflowTransformLayout({
         subhead={subheadline}
         primaryCta={{ label: ctaLabel, href: ctaHref }}
       />
+      {domainFeatures}
 
       <Section variant="muted">
         <SectionHeader label="The difference" headline="What changes from day one" body="Illustrative workflow examples, not measured customer results." />
