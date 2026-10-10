@@ -2,8 +2,6 @@ import { Metadata } from "next"
 import { absoluteUrl } from "@/lib/site-url"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { FinalCTA } from "@/components/final-cta"
-import { SolutionWorkspaceFooter } from "@/components/marketing/solution-workspace-footer"
 import { FoundersContent } from "./content"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 
@@ -30,8 +28,6 @@ export default function FoundersPage() {
       <Header />
       <main id="main">
         <FoundersContent />
-        <SolutionWorkspaceFooter slug="founders" />
-        <FinalCTA />
       </main>
       <Footer />
     </div>

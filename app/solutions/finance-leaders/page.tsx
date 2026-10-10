@@ -2,7 +2,6 @@ import { Metadata } from "next"
 import { absoluteUrl } from "@/lib/site-url"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { FinalCTA } from "@/components/final-cta"
 import { FinanceLeadersContent } from "./content"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
 
@@ -29,7 +28,6 @@ export default function FinanceLeadersPage() {
       <Header />
       <main id="main">
         <FinanceLeadersContent />
-        <FinalCTA />
       </main>
       <Footer />
     </div>

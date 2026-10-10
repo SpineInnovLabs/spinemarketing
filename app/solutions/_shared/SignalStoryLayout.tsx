@@ -7,6 +7,7 @@ import Link from "next/link";
 import { ArrowRight, Shield, AlertTriangle, CheckCircle2 } from "lucide-react";
 import { PageHero } from "@/components/marketing/page-hero";
 import { Section, SectionHeader } from "@/components/marketing/section";
+import { SolutionHeroBanner } from "@/components/marketing/solution-hero-banner";
 import { KpiBlock } from "@/components/marketing/enterprise";
 
 export interface BeforeAfterItem {
@@ -48,6 +49,8 @@ const fade = (delay = 0) => ({
   transition: { type: "spring" as const, damping: 18, stiffness: 70, delay },
 });
 
+const closeTitle = "text-[clamp(1.75rem,1.15rem+0.8vw,2rem)] font-semibold leading-[1.22] tracking-[-0.03em] text-white";
+
 export function SignalStoryLayout({
   domainFeatures,
   category,
@@ -70,14 +73,43 @@ export function SignalStoryLayout({
         headline={headline}
         subhead={subheadline}
         primaryCta={{ label: ctaLabel, href: ctaHref }}
+        art={
+          <SolutionHeroBanner
+            variant="signals"
+            kicker="What the signals say"
+            items={signals.slice(0, 4).map((signal, index) => ({
+              label: `0${index + 1}`,
+              title: signal.label,
+              detail: signal.detail,
+            }))}
+          />
+        }
       />
+
+      <Section>
+        <SectionHeader label="Signal detection" headline="How SpineWorkspace surfaces what matters" />
+        <div className="mx-auto max-w-[800px] space-y-0">
+          {signals.map((signal, i) => (
+            <motion.div
+              key={signal.label}
+              {...fade(i * 0.06)}
+              className="relative pl-8 pb-8 last:pb-0 before:absolute before:left-0 before:top-0 before:bottom-0 before:w-px before:bg-[#E5E5E5] last:before:hidden"
+            >
+              <div className="absolute left-0 top-1 h-2.5 w-2.5 -translate-x-[calc(50%-0.5px)] rounded-full bg-[#0176D3]" />
+              <p className="text-[12px] font-bold text-[#0176D3]">{signal.label}</p>
+              <p className="mt-2 text-[14px] leading-[1.6] text-[#444]">{signal.detail}</p>
+            </motion.div>
+          ))}
+        </div>
+      </Section>
+
       {domainFeatures}
 
       <Section variant="muted">
         <SectionHeader label="Illustrative workflow" headline="Signals buried across systems" body="Compare the current situation with the intended workflow. These examples are not measured customer results." />
         <div className="space-y-4">
           {beforeAfter.map((item, i) => (
-            <motion.div key={i} {...fade(i * 0.08)} className="grid gap-5 rounded-md border border-[#E5E5E5] bg-white p-5 sm:grid-cols-2">
+            <motion.div key={item.before} {...fade(i * 0.08)} className="grid gap-5 rounded-md border border-[#E5E5E5] bg-white p-5 sm:grid-cols-2">
               <div>
                 <p className="mb-3 flex items-center gap-2 text-[12px] font-bold uppercase tracking-[0.08em] text-[#706E6B]"><AlertTriangle className="h-4 w-4 text-amber-600" aria-hidden />Before</p>
                 <p className="text-[14px] leading-[1.7] text-[#444]">{item.before}</p>
@@ -95,35 +127,18 @@ export function SignalStoryLayout({
         <Section>
           <SectionHeader label="Evaluation" headline="Measures to discuss for your workflow" body="Define success against your own baseline. These are evaluation areas, not measured customer results." />
           <div className="grid gap-4 sm:grid-cols-3">
-            {outcomes.map((o, i) => (
-              <KpiBlock key={i} label="Evaluation area" value={o.label} detail="Agree a baseline and target for your workflow." />
+            {outcomes.map((o) => (
+              <KpiBlock key={o.label} label="Evaluation area" value={o.label} detail="Agree a baseline and target for your workflow." />
             ))}
           </div>
         </Section>
       ) : null}
 
-      <Section>
-        <SectionHeader label="Signal detection" headline="How SpineWorkspace surfaces what matters" />
-        <div className="mx-auto max-w-[800px] space-y-0">
-          {signals.map((signal, i) => (
-            <motion.div
-              key={i}
-              {...fade(i * 0.06)}
-              className="relative pl-8 pb-8 last:pb-0 before:absolute before:left-0 before:top-0 before:bottom-0 before:w-px before:bg-[#E5E5E5] last:before:hidden"
-            >
-              <div className="absolute left-0 top-1 h-2.5 w-2.5 -translate-x-[calc(50%-0.5px)] rounded-full bg-[#0176D3]" />
-              <p className="text-[12px] font-bold text-[#0176D3]">{signal.label}</p>
-              <p className="mt-2 text-[14px] leading-[1.6] text-[#444]">{signal.detail}</p>
-            </motion.div>
-          ))}
-        </div>
-      </Section>
-
       <Section variant="muted">
         <SectionHeader label="Capabilities" headline="Built for signal-driven work" />
         <div className="grid gap-4 sm:grid-cols-2">
-          {capabilities.map(({ title, desc }, i) => (
-            <motion.div key={i} {...fade(i * 0.08)} className="rounded-md border border-[#E5E5E5] bg-white p-5">
+          {capabilities.map(({ title, desc }) => (
+            <motion.div key={title} {...fade(0)} className="rounded-md border border-[#E5E5E5] bg-white p-5">
               <h3 className="text-[16px] font-semibold text-[#032D60]">{title}</h3>
               <p className="mt-2 text-[14px] leading-[1.7] text-[#444]">{desc}</p>
             </motion.div>
@@ -165,7 +180,7 @@ export function SignalStoryLayout({
 
       <section className="border-t border-[#E5E5E5] bg-[#032D60] py-16">
         <div className="mx-auto max-w-[700px] px-6 text-center">
-          <motion.h2 {...fade(0)} className="text-[28px] font-semibold leading-[1.15] text-white sm:text-[36px]">
+          <motion.h2 {...fade(0)} className={closeTitle}>
             See signals in your context
           </motion.h2>
           <motion.p {...fade(0.08)} className="mx-auto mt-4 max-w-lg text-[16px] leading-[1.6] text-white/70">

@@ -8,6 +8,7 @@ import React from "react";
 import { ArrowRight, Shield, X, Check, ArrowDown } from "lucide-react";
 import { PageHero } from "@/components/marketing/page-hero";
 import { Section, SectionHeader } from "@/components/marketing/section";
+import { SolutionHeroBanner } from "@/components/marketing/solution-hero-banner";
 import { KpiBlock } from "@/components/marketing/enterprise";
 
 export interface BeforeAfterItem {
@@ -49,6 +50,8 @@ const fade = (delay = 0) => ({
   transition: { type: "spring" as const, damping: 18, stiffness: 70, delay },
 });
 
+const closeTitle = "text-[clamp(1.75rem,1.15rem+0.8vw,2rem)] font-semibold leading-[1.22] tracking-[-0.03em] text-white";
+
 export function WorkflowTransformLayout({
   domainFeatures,
   category,
@@ -71,57 +74,24 @@ export function WorkflowTransformLayout({
         headline={headline}
         subhead={subheadline}
         primaryCta={{ label: ctaLabel, href: ctaHref }}
+        art={
+          <SolutionHeroBanner
+            variant="steps"
+            kicker="How the work moves"
+            items={workflow.slice(0, 4).map((step, index) => ({
+              label: `Step ${index + 1}`,
+              title: step.title,
+              detail: step.desc,
+            }))}
+          />
+        }
       />
-      {domainFeatures}
 
-      <Section variant="muted">
-        <SectionHeader label="The difference" headline="What changes from day one" body="Illustrative workflow examples, not measured customer results." />
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-          <motion.div {...fade(0)} className="space-y-3">
-            <div className="flex items-center gap-2 mb-2">
-              <div className="flex h-7 w-7 items-center justify-center rounded-md bg-red-50">
-                <X className="h-3.5 w-3.5 text-red-500" />
-              </div>
-              <span className="text-[13px] font-bold uppercase tracking-[0.08em] text-red-600">Without SpineWorkspace</span>
-            </div>
-            {beforeAfter.map((item, i) => (
-              <div key={i} className="rounded-md border border-red-200 bg-red-50/50 px-5 py-4">
-                <p className="text-[14px] leading-[1.6] text-[#444]">{item.before}</p>
-              </div>
-            ))}
-          </motion.div>
-          <motion.div {...fade(0.12)} className="space-y-3">
-            <div className="flex items-center gap-2 mb-2">
-              <div className="flex h-7 w-7 items-center justify-center rounded-md bg-[#0176D3]/10">
-                <Check className="h-3.5 w-3.5 text-[#0176D3]" />
-              </div>
-              <span className="text-[13px] font-bold uppercase tracking-[0.08em] text-[#0176D3]">With SpineWorkspace</span>
-            </div>
-            {beforeAfter.map((item, i) => (
-              <div key={i} className="rounded-md border border-[#0176D3]/20 bg-[#F3F6F9] px-5 py-4">
-                <p className="text-[14px] leading-[1.6] text-[#444]">{item.after}</p>
-              </div>
-            ))}
-          </motion.div>
-        </div>
-      </Section>
-
-      {outcomes?.length ? (
-        <Section>
-          <SectionHeader label="Evaluation" headline="Measures to discuss for your workflow" body="Define success against your own baseline. These are evaluation areas, not measured customer results." />
-          <div className="grid gap-4 sm:grid-cols-3">
-            {outcomes.map((o, i) => (
-              <KpiBlock key={i} label="Evaluation area" value={o.label} detail="Agree a baseline and target for your workflow." />
-            ))}
-          </div>
-        </Section>
-      ) : null}
-
-      <Section variant="muted">
+      <Section>
         <SectionHeader label="Your new workflow" headline="How it works, step by step" />
         <div className="mx-auto max-w-[900px] space-y-0">
           {workflow.map((step, i) => (
-            <React.Fragment key={i}>
+            <React.Fragment key={step.title}>
               <motion.div
                 {...fade(i * 0.1)}
                 className="rounded-md border border-[#E5E5E5] bg-white p-6 shadow-[0_1px_2px_rgba(0,0,0,0.04)]"
@@ -146,13 +116,58 @@ export function WorkflowTransformLayout({
         </div>
       </Section>
 
+      {domainFeatures}
+
+      <Section variant="muted">
+        <SectionHeader label="The difference" headline="What changes from day one" body="Illustrative workflow examples, not measured customer results." />
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+          <motion.div {...fade(0)} className="space-y-3">
+            <div className="flex items-center gap-2 mb-2">
+              <div className="flex h-7 w-7 items-center justify-center rounded-md bg-red-50">
+                <X className="h-3.5 w-3.5 text-red-500" />
+              </div>
+              <span className="text-[13px] font-bold uppercase tracking-[0.08em] text-red-600">Without SpineWorkspace</span>
+            </div>
+            {beforeAfter.map((item) => (
+              <div key={item.before} className="rounded-md border border-red-200 bg-red-50/50 px-5 py-4">
+                <p className="text-[14px] leading-[1.6] text-[#444]">{item.before}</p>
+              </div>
+            ))}
+          </motion.div>
+          <motion.div {...fade(0.12)} className="space-y-3">
+            <div className="flex items-center gap-2 mb-2">
+              <div className="flex h-7 w-7 items-center justify-center rounded-md bg-[#0176D3]/10">
+                <Check className="h-3.5 w-3.5 text-[#0176D3]" />
+              </div>
+              <span className="text-[13px] font-bold uppercase tracking-[0.08em] text-[#0176D3]">With SpineWorkspace</span>
+            </div>
+            {beforeAfter.map((item) => (
+              <div key={item.after} className="rounded-md border border-[#0176D3]/20 bg-[#F3F6F9] px-5 py-4">
+                <p className="text-[14px] leading-[1.6] text-[#444]">{item.after}</p>
+              </div>
+            ))}
+          </motion.div>
+        </div>
+      </Section>
+
+      {outcomes?.length ? (
+        <Section>
+          <SectionHeader label="Evaluation" headline="Measures to discuss for your workflow" body="Define success against your own baseline. These are evaluation areas, not measured customer results." />
+          <div className="grid gap-4 sm:grid-cols-3">
+            {outcomes.map((o) => (
+              <KpiBlock key={o.label} label="Evaluation area" value={o.label} detail="Agree a baseline and target for your workflow." />
+            ))}
+          </div>
+        </Section>
+      ) : null}
+
       <Section>
         <SectionHeader label="Capabilities" headline="Built for this work" />
         <div className="space-y-3">
-          {capabilities.map(({ title, desc }, i) => (
+          {capabilities.map(({ title, desc }) => (
             <motion.div
-              key={i}
-              {...fade(i * 0.08)}
+              key={title}
+              {...fade(0)}
               className="flex items-start gap-4 rounded-md border border-[#E5E5E5] bg-white p-5"
             >
               <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-[#F3F6F9]">
@@ -201,7 +216,7 @@ export function WorkflowTransformLayout({
 
       <section className="border-t border-[#E5E5E5] bg-[#032D60] py-16">
         <div className="mx-auto max-w-[700px] px-6 text-center">
-          <motion.h2 {...fade(0)} className="text-[28px] font-semibold leading-[1.15] text-white sm:text-[36px]">
+          <motion.h2 {...fade(0)} className={closeTitle}>
             See it working with your tools
           </motion.h2>
           <motion.p {...fade(0.08)} className="mx-auto mt-4 max-w-lg text-[16px] leading-[1.6] text-white/70">
