@@ -1,0 +1,15 @@
+/* Display headlines were authored up to 7rem. Keep the corporate scale readable.
+   Body copy is unchanged. Card titles that are not page or section headlines are left alone. */
+main h1 {
+  font-size: clamp(2rem, 1.15rem + 2.1vw, 3rem) !important;
+  line-height: 1.16 !important;
+  letter-spacing: -0.03em !important;
+}
+
+main h2[class*="clamp"],
+.section-heading,
+.section-heading-sm {
+  font-size: clamp(1.75rem, 1.15rem + 0.8vw, 2rem) !important;
+  line-height: 1.22 !important;
+  letter-spacing: -0.03em !important;
+}

@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
+import "./corporate-type.css"
 
 import { FirebaseAnalytics } from "@/components/firebase-analytics"
 import { absoluteUrl, publicSiteUrl } from "@/lib/site-url"
