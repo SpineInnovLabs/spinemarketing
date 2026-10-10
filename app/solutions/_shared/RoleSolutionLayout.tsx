@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowRight, Shield, Zap, Eye, TrendingUp, Target } from "lucide-react";
 import { PageHero } from "@/components/marketing/page-hero";
 import { Section, SectionHeader } from "@/components/marketing/section";
+import { SolutionHeroBanner } from "@/components/marketing/solution-hero-banner";
 
 export interface FocusItem {
   title: string;
@@ -31,6 +32,7 @@ const fade = (delay = 0) => ({
 });
 
 const focusIcons = [Zap, Eye, TrendingUp, Target, Shield, Zap];
+const closeTitle = "text-[clamp(1.75rem,1.15rem+0.8vw,2rem)] font-semibold leading-[1.22] tracking-[-0.03em] text-white";
 
 export function RoleSolutionLayout({
   role,
@@ -50,19 +52,26 @@ export function RoleSolutionLayout({
         headline={headline}
         subhead={subheadline}
         primaryCta={{ label: ctaLabel, href: ctaHref }}
+        art={
+          <SolutionHeroBanner
+            variant="dashboard"
+            kicker="What this role watches"
+            items={focus.slice(0, 4).map((item) => ({
+              label: "Focus",
+              title: item.title,
+              detail: item.desc,
+            }))}
+          />
+        }
       />
 
-      <Section variant="muted">
-        <SectionHeader label="Focus areas" headline="What this role needs from SpineWorkspace" />
+      <Section>
+        <SectionHeader label="Focus areas" headline="What this role needs from the workspace" />
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {focus.map(({ title, desc }, i) => {
             const Icon = focusIcons[i % focusIcons.length];
             return (
-              <motion.div
-                key={i}
-                {...fade(i * 0.08)}
-                className="rounded-md border border-[#E5E5E5] bg-white p-5 shadow-[0_1px_2px_rgba(0,0,0,0.04)]"
-              >
+              <motion.div key={title} {...fade(0)} className="rounded-md border border-[#E5E5E5] bg-white p-5 shadow-[0_1px_2px_rgba(0,0,0,0.04)]">
                 <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-md bg-[#F3F6F9]">
                   <Icon className="h-5 w-5 text-[#0176D3]" />
                 </div>
@@ -74,10 +83,10 @@ export function RoleSolutionLayout({
         </div>
       </Section>
 
-      <Section>
-        <div className="rounded-md border border-[#E5E5E5] bg-[#F3F6F9] p-6 md:p-8">
+      <Section variant="muted">
+        <div className="rounded-md border border-[#E5E5E5] bg-white p-6 md:p-8">
           <div className="flex items-start gap-4">
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-white">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-[#F3F6F9]">
               <Shield className="h-5 w-5 text-[#0176D3]" />
             </div>
             <div>
@@ -115,9 +124,7 @@ export function RoleSolutionLayout({
 
       <section className="border-t border-[#E5E5E5] bg-[#032D60] py-16">
         <div className="mx-auto max-w-[700px] px-6 text-center">
-          <motion.h2 {...fade(0)} className="text-[28px] font-semibold leading-[1.15] text-white sm:text-[36px]">
-            See it working for your role
-          </motion.h2>
+          <motion.h2 {...fade(0)} className={closeTitle}>See it working for this role</motion.h2>
           <motion.div {...fade(0.16)} className="mt-8">
             <Link href="/contact?intent=demo" className="inline-flex h-10 items-center gap-2 rounded-md bg-white px-5 text-[14px] font-semibold text-[#032D60] hover:bg-[#F3F6F9]">
               Book a demo <ArrowRight className="h-4 w-4" />
