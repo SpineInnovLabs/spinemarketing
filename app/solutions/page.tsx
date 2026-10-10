@@ -8,15 +8,16 @@ import { StatsBar } from "@/components/stats-bar"
 import { BenefitsGrid } from "@/components/benefits-grid"
 import { TestimonialsSection } from "@/components/testimonials-section"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
+import { WorkspaceAuthActions } from "@/components/marketing/workspace-auth-actions"
 
 export const metadata: Metadata = {
   title: "Solutions by Team & Industry | Spine InnovTech",
   description:
-    "Start with the Renewal Decision Workspace for customer-success and RevOps. Each functional solution describes the operational job and first workflow to deploy.",
+    "Explore Spine Workspace features and workflows for sales, customer success, finance, operations, and industry-specific work. Sign up or sign in to your authorized workspace.",
   alternates: { canonical: "/solutions" },
   openGraph: {
     title: "Solutions by Team & Industry | Spine InnovTech",
-    description: "Most teams begin with Renewal Decision Workspace for CS and RevOps, then expand to other functions.",
+    description: "Explore domain-specific features, connected context, and governed workflows by team and industry.",
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "Spine Workspace Solutions" }],
   },
 }
@@ -31,6 +32,10 @@ export default function SolutionsPage() {
       <Header />
       <main id="main">
         <SolutionsContent />
+        <section className="mx-auto max-w-7xl px-6 py-8 sm:px-8" aria-label="Enter Spine Workspace">
+          <h2 className="text-2xl font-semibold text-[#082B5E]">Bring your team’s work into Spine Workspace.</h2>
+          <WorkspaceAuthActions />
+        </section>
         <StatsBar
           stats={[
             { value: 6, suffix: "", label: "Industries served" },
