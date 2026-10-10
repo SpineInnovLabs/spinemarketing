@@ -4,16 +4,16 @@ import { motion } from "framer-motion";
 
 const defaultTestimonials = [
   {
-    quote: "A customer team stops rebuilding the account story before every renewal conversation.",
+    quote: "A delivery team carries dependencies and prior decisions into an operational handoff.",
     name: "Illustrative scenario",
-    role: "Account team",
+    role: "Operations team",
     company: "Not a customer quote",
     avatar: "Ex",
   },
   {
-    quote: "A revenue lead reviews a proposed next step before anything is sent.",
+    quote: "A finance lead compares an invoice exception with its commitments and supporting evidence.",
     name: "Illustrative scenario",
-    role: "Revenue team",
+    role: "Finance team",
     company: "Not a customer quote",
     avatar: "Ex",
   },

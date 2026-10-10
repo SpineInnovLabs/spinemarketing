@@ -89,13 +89,13 @@ const actionLibrary = [
 const emergencyControls = [
   { icon: AlertTriangle, color: "text-red-400", title: "Pause Twin", desc: "Instant suspension of all proactive suggestions." },
   { icon: Eye, color: "text-violet-400", title: "Override with Audit", desc: "Force-execute with mandatory justification entry." },
-  { icon: RotateCcw, color: "text-cyan-400", title: "Rollback Interface", desc: "24-hour window to reverse any approved action." },
+  { icon: RotateCcw, color: "text-cyan-400", title: "Recovery Interface", desc: "Inspect effects and reconcile supported corrective actions. Reversal depends on the source system and operation." },
 ];
 
 export function ApprovalGateTwinContent() {
   return (
     <>
-      <section className="relative overflow-hidden pb-28 pt-40 bg-white">
+      <section className="marketing-surface relative overflow-hidden pb-28 pt-40 bg-white">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute -top-32 left-1/4 w-[700px] h-[700px] rounded-full blur-[220px]" style={{ background: "rgba(27,167,132,0.07)" }} />
         </div>
@@ -118,7 +118,7 @@ export function ApprovalGateTwinContent() {
             {...heroFade(0.38)}
             className="mx-auto mt-7 max-w-xl text-[17px] font-medium leading-[1.55] tracking-[-0.02em] text-white/50"
           >
-            Every AI action enters a governed approval queue with tiered routing and 24-hour rollback.
+            Consequential actions require the right authority, reviewable evidence, and an observed outcome. Routing and recovery depend on the workflow and connected system.
           </motion.p>
           <motion.div {...heroFade(0.5)} className="mt-9 flex flex-wrap items-center justify-center gap-3">
             <Link href="/contact?intent=demo" className="inline-flex h-11 items-center rounded-full bg-primary px-6 text-[14px] font-semibold tracking-[-0.02em] text-white transition-opacity hover:opacity-90">
@@ -128,7 +128,7 @@ export function ApprovalGateTwinContent() {
         </div>
       </section>
 
-      <section className="arvio-section dark-section">
+      <section className="arvio-section marketing-surface">
         <div className="mx-auto max-w-[1100px]">
           <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center mb-12">
             <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">Governance</p>
@@ -148,7 +148,7 @@ export function ApprovalGateTwinContent() {
         </div>
       </section>
 
-      <section className="arvio-section dark-section">
+      <section className="arvio-section marketing-surface">
         <div className="mx-auto max-w-[900px]">
           <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center mb-10">
             <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">Tiered Approvals</p>
@@ -179,7 +179,7 @@ export function ApprovalGateTwinContent() {
         </div>
       </section>
 
-      <section className="arvio-section dark-section">
+      <section className="arvio-section marketing-surface">
         <div className="mx-auto max-w-[1100px]">
           <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center mb-12">
             <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">Twin Trigger Scoring</p>
@@ -201,7 +201,7 @@ export function ApprovalGateTwinContent() {
         </div>
       </section>
 
-      <section className="arvio-section dark-section">
+      <section className="arvio-section marketing-surface">
         <div className="mx-auto max-w-[1100px]">
           <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center mb-12">
             <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">Twin in Action</p>
@@ -219,7 +219,7 @@ export function ApprovalGateTwinContent() {
         </div>
       </section>
 
-      <section className="arvio-section dark-section">
+      <section className="arvio-section marketing-surface">
         <div className="mx-auto max-w-[1100px]">
           <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center mb-12">
             <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">Action Library</p>
@@ -244,7 +244,7 @@ export function ApprovalGateTwinContent() {
         </div>
       </section>
 
-      <section className="arvio-section dark-section">
+      <section className="arvio-section marketing-surface">
         <div className="mx-auto max-w-[900px]">
           <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center mb-10">
             <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">Safety Mechanisms</p>
@@ -266,11 +266,11 @@ export function ApprovalGateTwinContent() {
         </div>
       </section>
 
-      <section className="arvio-section dark-section">
+      <section className="arvio-section marketing-surface">
         <div className="mx-auto max-w-[1100px]">
           <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center mb-12">
             <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">Emergency Controls</p>
-            <h2 className="section-heading">Pause. Override. <span className="text-primary">Rollback.</span></h2>
+            <h2 className="section-heading">Pause. Review. <span className="text-primary">Reconcile.</span></h2>
           </motion.div>
           <div className="grid gap-5 sm:grid-cols-3">
             {emergencyControls.map((e, i) => (
@@ -284,7 +284,7 @@ export function ApprovalGateTwinContent() {
         </div>
       </section>
 
-      <section className="arvio-section dark-section bg-white">
+      <section className="arvio-section marketing-surface bg-white">
         <div className="mx-auto max-w-[680px] px-4 text-center">
           <motion.div {...fade(0)}>
             <UserCheck className="mx-auto mb-4 h-7 w-7 text-primary" />
@@ -292,7 +292,7 @@ export function ApprovalGateTwinContent() {
               AI that works <span className="text-primary">with you, not for you.</span>
             </h2>
             <p className="mx-auto mt-4 text-[15px] font-medium leading-[1.6] text-white/40">
-              Full governance. Full auditability. Full rollback.
+              Authorized work, reviewable decisions, and reconciliation of observed effects.
             </p>
             <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
               <Link href="/product/security" className="inline-flex h-10 items-center rounded-full border border-white/15 px-5 text-[13px] font-semibold text-white/60 hover:border-white/30 hover:text-white transition-colors">

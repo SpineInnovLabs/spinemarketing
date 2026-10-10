@@ -7,7 +7,7 @@ export function SaasContent() {
     <SignalStoryLayout
       category="SaaS & Subscription"
       headline="Stop finding out about churn at renewal."
-      subheadline="See who's actually using your product, who stopped logging in, and who's about to leave — 90 days before the contract ends."
+      subheadline="Bring adoption, support, commercial commitments, and relationship changes together to prepare customer decisions before the contract review."
       ctaLabel="See it with your data →"
       ctaHref="/contact?intent=demo"
       accentColor="rgba(45,212,191,0.5)"

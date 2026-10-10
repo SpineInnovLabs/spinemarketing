@@ -39,7 +39,7 @@ export function IntegrationShowcase({
   tools?: Tool[];
 }) {
   return (
-    <section className="arvio-section dark-section">
+    <section className="arvio-section marketing-surface">
       <div className="mx-auto max-w-[1100px]">
         <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center mb-12">
           <p className="text-[12px] font-bold uppercase tracking-[0.12em] text-primary mb-3">{tag}</p>

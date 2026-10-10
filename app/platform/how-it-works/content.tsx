@@ -39,8 +39,8 @@ const loop = [
   },
   {
     n: "04",
-    title: "Ask Twin when you want a next step.",
-    body: "Twin looks at the record, the evidence, and earlier decisions, then prepares a proposal. Every claim points back to where it came from. Twin does not write the record.",
+    title: "Prepare the next step with Twin.",
+    body: "Twin investigates the situation and prepares options from permitted records, evidence, and earlier decisions. Coworker can gather authorized context proactively. Preparation does not grant authority to execute a change.",
   },
   {
     n: "05",
@@ -61,7 +61,7 @@ export function PlatformHowItWorksContent() {
         badge="How it works"
         tone="ice"
         headline={"The tools keep the record.\nThe workspace shows the work."}
-        subhead="People see the confirmed record and the evidence for this task. Twin proposes only when asked. A person decides. The original tool stays in charge."
+        subhead="People and Twin work from permitted business context. Twin helps investigate and prepare; consequential actions need the appropriate authority. Source systems retain their authoritative roles."
         principle="SpineWorkspace does not replace truth. Source systems stay authoritative."
         primaryCta={{ label: "See a workflow", href: "/product#how-it-works" }}
         secondaryCta={{ label: "Book a tailored demo", href: "/contact?intent=demo" }}

@@ -65,7 +65,7 @@ export function ExecutiveDashboardLayout({
       />
 
       <Section variant="muted">
-        <SectionHeader label="The shift" headline="From fragmented signals to executive clarity" />
+        <SectionHeader label="The shift" headline="From fragmented signals to executive clarity" body="Illustrative workflow examples, not measured customer results." />
         <div className="space-y-4">
           {beforeAfter.map((item, i) => (
             <motion.div key={i} {...fade(i * 0.08)} className="rounded-md border border-[#E5E5E5] bg-white p-5">
@@ -87,9 +87,10 @@ export function ExecutiveDashboardLayout({
 
       {outcomes?.length ? (
         <Section>
+          <SectionHeader label="Evaluation" headline="Measures to discuss for your workflow" body="Define success against your own baseline. These are evaluation areas, not measured customer results." />
           <div className="grid gap-4 sm:grid-cols-3">
             {outcomes.map((o, i) => (
-              <KpiBlock key={i} label={o.label} value={o.stat} detail="" />
+              <KpiBlock key={i} label="Evaluation area" value={o.label} detail="Agree a baseline and target for your workflow." />
             ))}
           </div>
         </Section>

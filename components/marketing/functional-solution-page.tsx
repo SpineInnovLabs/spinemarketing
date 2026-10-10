@@ -9,12 +9,10 @@ import type { PublicSolution } from "@/lib/solution-taxonomy";
 
 export function FunctionalSolutionPage({ solution }: { solution: PublicSolution }) {
   const hero = solutionHeroFromPublic(solution);
-  const path = `/solutions/${solution.slug}`;
 
   return (
     <>
       <PageHero
-        buyerPath={path}
         badge={hero.badge}
         headline={hero.headline}
         subhead={hero.subhead}

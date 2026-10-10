@@ -1,0 +1,684 @@
+{
+  "reviewedAt": "2026-10-09",
+  "summary": {
+    "routes": 83,
+    "routeViewports": 166,
+    "failedCaptures": [],
+    "errors": [],
+    "overflow": [],
+    "severeContrast": [],
+    "missingImages": [],
+    "duplicateHeadings": []
+  },
+  "localLinks": {
+    "routes": 83,
+    "localLinksChecked": 2267,
+    "issues": []
+  },
+  "routes": [
+    {
+      "route": "/",
+      "classification": "Public page",
+      "source": "app/page.tsx",
+      "hero": "Building the intelligence behind connected business.",
+      "sections": 11,
+      "review": "Reviewed introduction, body hierarchy, actions, local links, images and responsive layout; page-specific scope retained."
+    },
+    {
+      "route": "/404",
+      "classification": "Error surface",
+      "source": "app/not-found.tsx",
+      "hero": "Page not found.",
+      "sections": 0,
+      "review": "Branded error surface now has main landmark, navigation, and homepage/directory recovery links."
+    },
+    {
+      "route": "/_not-found",
+      "classification": "Error surface",
+      "source": "app/not-found.tsx",
+      "hero": "Page not found.",
+      "sections": 0,
+      "review": "Same accessible error surface as /404; excluded from public-page count."
+    },
+    {
+      "route": "/about",
+      "classification": "Public page",
+      "source": "app/about/page.tsx",
+      "hero": "The real gap was never just system integration.",
+      "sections": 5,
+      "review": "Reviewed introduction, body hierarchy, actions, local links, images and responsive layout; page-specific scope retained."
+    },
+    {
+      "route": "/account-success",
+      "classification": "Public page",
+      "source": "app/account-success/page.tsx",
+      "hero": "One customer. One record.",
+      "sections": 8,
+      "review": "Readable matching workflow, sources, comparisons and review; removed contradictory unapproved/reversible-all merge language."
+    },
+    {
+      "route": "/adaptive-workspace",
+      "classification": "Public page",
+      "source": "app/adaptive-workspace/page.tsx",
+      "hero": "One Work. A view that fits the role.",
+      "sections": 7,
+      "review": "Reviewed introduction, body hierarchy, actions, local links, images and responsive layout; page-specific scope retained."
+    },
+    {
+      "route": "/ai",
+      "classification": "Internal alias",
+      "source": "app/ai/page.tsx",
+      "hero": "AI that works with your business context.",
+      "sections": 7,
+      "review": "Redirect verified to /twin. Local destination inspected separately in this inventory."
+    },
+    {
+      "route": "/blog",
+      "classification": "Public page",
+      "source": "app/blog/page.tsx",
+      "hero": "Blog",
+      "sections": 4,
+      "review": "Reviewed introduction, body hierarchy, actions, local links, images and responsive layout; page-specific scope retained."
+    },
+    {
+      "route": "/blog/authors/spine-innovlabs-team",
+      "classification": "Public page",
+      "source": "app/blog/authors/[slug]/page.tsx",
+      "hero": "Spine InnovTech Team",
+      "sections": 0,
+      "review": "Reviewed introduction, body hierarchy, actions, local links, images and responsive layout; page-specific scope retained."
+    },
+    {
+      "route": "/blog/spine-fabric-contextual-continuity-layer",
+      "classification": "Public page",
+      "source": "app/blog/[slug]/page.tsx",
+      "hero": "The tools keep the record. The workspace shows the work.",
+      "sections": 2,
+      "review": "Retained article and source/evidence distinction; corrected outdated on-demand-only Twin description."
+    },
+    {
+      "route": "/blog/stop-being-the-human-api",
+      "classification": "Public page",
+      "source": "app/blog/[slug]/page.tsx",
+      "hero": "Stop being the translator between your tools",
+      "sections": 2,
+      "review": "Retained article; preparation now includes permitted proactive context rather than on-demand-only wording."
+    },
+    {
+      "route": "/blog/why-ai-needs-your-approval",
+      "classification": "Public page",
+      "source": "app/blog/[slug]/page.tsx",
+      "hero": "Why AI needs your approval \u2014 every single time",
+      "sections": 2,
+      "review": "Reviewed introduction, body hierarchy, actions, local links, images and responsive layout; page-specific scope retained."
+    },
+    {
+      "route": "/business-context",
+      "classification": "Public page",
+      "source": "app/business-context/page.tsx",
+      "hero": "One governed picture of the work.",
+      "sections": 7,
+      "review": "Restored supplied page introduction by removing global hero override. Reviewed body hierarchy, links, actions and responsive layout."
+    },
+    {
+      "route": "/business-ops",
+      "classification": "Public page",
+      "source": "app/business-ops/page.tsx",
+      "hero": "One workspace. Your entire business, connected.",
+      "sections": 11,
+      "review": "Readable hero/body and separate legacy scroll component; mobile and reduced-motion layouts reviewed with all four steps."
+    },
+    {
+      "route": "/changelog",
+      "classification": "Public page",
+      "source": "app/changelog/page.tsx",
+      "hero": "Changelog",
+      "sections": 2,
+      "review": "Reviewed introduction, body hierarchy, actions, local links, images and responsive layout; page-specific scope retained."
+    },
+    {
+      "route": "/company",
+      "classification": "Public page",
+      "source": "app/company/page.tsx",
+      "hero": "Technology should understand the business it serves.",
+      "sections": 7,
+      "review": "Reviewed introduction, body hierarchy, actions, local links, images and responsive layout; page-specific scope retained."
+    },
+    {
+      "route": "/contact",
+      "classification": "Public page",
+      "source": "app/contact/page.tsx",
+      "hero": "Talk to Spine InnovTech.",
+      "sections": 4,
+      "review": "Reviewed introduction, body hierarchy, actions, local links, images and responsive layout; page-specific scope retained."
+    },
+    {
+      "route": "/continuity",
+      "classification": "Public page",
+      "source": "app/continuity/page.tsx",
+      "hero": "Work should continue without rebuilding the story.",
+      "sections": 6,
+      "review": "Restored broad continuity hero; delivery handoff example replaces repeated renewal story."
+    },
+    {
+      "route": "/developers",
+      "classification": "Public page",
+      "source": "app/developers/page.tsx",
+      "hero": "Build with Spine Workspace.",
+      "sections": 3,
+      "review": "Restored supplied page introduction by removing global hero override. Reviewed body hierarchy, links, actions and responsive layout."
+    },
+    {
+      "route": "/docs",
+      "classification": "External redirect",
+      "source": "app/docs/page.tsx",
+      "hero": null,
+      "sections": null,
+      "review": "Corporate redirect verified; the external documentation application is outside this review."
+    },
+    {
+      "route": "/folder-monitor",
+      "classification": "Public page",
+      "source": "app/folder-monitor/page.tsx",
+      "hero": "A new file shows up with the work.",
+      "sections": 4,
+      "review": "Reviewed introduction, body hierarchy, actions, local links, images and responsive layout; page-specific scope retained."
+    },
+    {
+      "route": "/governance",
+      "classification": "Public page",
+      "source": "app/governance/page.tsx",
+      "hero": "Humans govern the business. AI helps the business work.",
+      "sections": 6,
+      "review": "Restored supplied page introduction by removing global hero override. Reviewed body hierarchy, links, actions and responsive layout."
+    },
+    {
+      "route": "/host-connected-environment",
+      "classification": "Public page",
+      "source": "app/host-connected-environment/page.tsx",
+      "hero": "Your tools stay themselves. The work still moves.",
+      "sections": 6,
+      "review": "Reviewed introduction, body hierarchy, actions, local links, images and responsive layout; page-specific scope retained."
+    },
+    {
+      "route": "/integrations",
+      "classification": "Public page",
+      "source": "app/integrations/page.tsx",
+      "hero": "Your tools. Shared context.",
+      "sections": 6,
+      "review": "Restored broad system categories and context contributions, including finance and project/engineering work."
+    },
+    {
+      "route": "/login",
+      "classification": "Non-indexed preview",
+      "source": "app/(enter)/login/page.tsx",
+      "hero": "Sign in",
+      "sections": 0,
+      "review": "Non-indexed marketing preview preserved; main landmark supplies working skip target."
+    },
+    {
+      "route": "/onboarding",
+      "classification": "Non-indexed preview",
+      "source": "app/(enter)/onboarding/page.tsx",
+      "hero": "Setup",
+      "sections": 0,
+      "review": "Non-indexed marketing preview retained, with visible demonstration notice. No tenant or account provisioned."
+    },
+    {
+      "route": "/personal-ops",
+      "classification": "Public page",
+      "source": "app/personal-ops/page.tsx",
+      "hero": "A calm Personal Ops workspace above all your apps.",
+      "sections": 7,
+      "review": "Retained individual workflow, comparisons and capabilities; repaired hero and section contrast."
+    },
+    {
+      "route": "/platform",
+      "classification": "Public page",
+      "source": "app/platform/page.tsx",
+      "hero": "One architecture for connected business work.",
+      "sections": 6,
+      "review": "Restored integrated Fabric/Workbench/Twin/Runtime/capabilities scope; removed duplicated final CTA; corrected scroll selection and reduced-motion hydration."
+    },
+    {
+      "route": "/platform/how-it-works",
+      "classification": "Public page",
+      "source": "app/platform/how-it-works/page.tsx",
+      "hero": "The tools keep the record.\nThe workspace shows the work.",
+      "sections": 4,
+      "review": "Restored general workflow hero; preparation includes authorized proactive context gathering, distinct from execution."
+    },
+    {
+      "route": "/platform/infrastructure",
+      "classification": "Public page",
+      "source": "app/platform/infrastructure/page.tsx",
+      "hero": "Six services. Global edge. Near real-time.",
+      "sections": 8,
+      "review": "Preserved service and deployment detail; removed fixed latency, regional residency, zero-downtime and universal rollback promises."
+    },
+    {
+      "route": "/platform/integrations",
+      "classification": "Public page",
+      "source": "app/platform/integrations/page.tsx",
+      "hero": "The tools you already use",
+      "sections": 8,
+      "review": "Preserved integration methods; corrected unreadable hero, malformed heading and unsupported universal connection/residency claims."
+    },
+    {
+      "route": "/platform/security",
+      "classification": "Public page",
+      "source": "app/platform/security/page.tsx",
+      "hero": "Authority is designed into the execution path.",
+      "sections": 6,
+      "review": "Reviewed introduction, body hierarchy, actions, local links, images and responsive layout; page-specific scope retained."
+    },
+    {
+      "route": "/platform/spine-fabric",
+      "classification": "Public page",
+      "source": "app/platform/spine-fabric/page.tsx",
+      "hero": "A business is more than its records.",
+      "sections": 8,
+      "review": "Restored contextual foundation from supplied master: relationships, provenance, authority, continuity, three function examples, connected systems and governed work."
+    },
+    {
+      "route": "/portfolio",
+      "classification": "Public page",
+      "source": "app/portfolio/page.tsx",
+      "hero": "One direction. Connected capabilities.",
+      "sections": 2,
+      "review": "Reviewed introduction, body hierarchy, actions, local links, images and responsive layout; page-specific scope retained."
+    },
+    {
+      "route": "/pricing",
+      "classification": "Public page",
+      "source": "app/pricing/page.tsx",
+      "hero": "The right conversation for the right scope.",
+      "sections": 2,
+      "review": "Reviewed introduction, body hierarchy, actions, local links, images and responsive layout; page-specific scope retained."
+    },
+    {
+      "route": "/privacy",
+      "classification": "Public page",
+      "source": "app/privacy/page.tsx",
+      "hero": "Privacy Policy",
+      "sections": 1,
+      "review": "Document hierarchy, readable content and links checked. This is website QA, not legal validation."
+    },
+    {
+      "route": "/product",
+      "classification": "Public page",
+      "source": "app/product/page.tsx",
+      "hero": "One workspace to understand the business and share the work.",
+      "sections": 6,
+      "review": "Reviewed introduction, body hierarchy, actions, local links, images and responsive layout; page-specific scope retained."
+    },
+    {
+      "route": "/product/approval-gate-twin",
+      "classification": "Public page",
+      "source": "app/product/approval-gate-twin/page.tsx",
+      "hero": "AI proposes. You approve.",
+      "sections": 12,
+      "review": "Readable hero and body; review extends across functions; replaced universal 24-hour rollback with observed effects and reconciliation."
+    },
+    {
+      "route": "/product/how-it-works",
+      "classification": "Internal alias",
+      "source": "app/product/how-it-works/page.tsx",
+      "hero": "The tools keep the record.\nThe workspace shows the work.",
+      "sections": 4,
+      "review": "Redirect verified to /platform/how-it-works. Local destination inspected separately in this inventory."
+    },
+    {
+      "route": "/product/security",
+      "classification": "Public page",
+      "source": "app/product/security/page.tsx",
+      "hero": "Governed execution and audit design.",
+      "sections": 6,
+      "review": "Reviewed introduction, body hierarchy, actions, local links, images and responsive layout; page-specific scope retained."
+    },
+    {
+      "route": "/product/the-adaptive-workspace",
+      "classification": "Public page",
+      "source": "app/product/the-adaptive-workspace/page.tsx",
+      "hero": "Your daily surface on top of SpineWorkspace.",
+      "sections": 7,
+      "review": "Readable hero/body and selected buttons; all nine role views tested; selection state exposed."
+    },
+    {
+      "route": "/proof",
+      "classification": "Public page",
+      "source": "app/proof/page.tsx",
+      "hero": "What the product actually does.",
+      "sections": 4,
+      "review": "Restored demonstration scope; delivery risk example and explicit illustrative proof cards."
+    },
+    {
+      "route": "/request-access",
+      "classification": "Non-indexed preview",
+      "source": "app/(enter)/request-access/page.tsx",
+      "hero": "Request access",
+      "sections": 0,
+      "review": "Non-indexed local preview preserved; main landmark supplies working skip target."
+    },
+    {
+      "route": "/resources",
+      "classification": "Public page",
+      "source": "app/resources/page.tsx",
+      "hero": "Learn, evaluate, adopt.",
+      "sections": 6,
+      "review": "Use-case library reaches /use-cases; process card reaches /platform/how-it-works; commercial copy matches inquiry-based pricing."
+    },
+    {
+      "route": "/resources/campaign",
+      "classification": "Public page",
+      "source": "app/resources/campaign/page.tsx",
+      "hero": "Architecture and campaign concepts.",
+      "sections": 4,
+      "review": "All 36 assets retained. Earlier concepts labelled; light body palette, readable labels, six filters, native modal, keyboard opening, Escape and focus restoration tested."
+    },
+    {
+      "route": "/security",
+      "classification": "Public page",
+      "source": "app/security/page.tsx",
+      "hero": "Controls and limits for the workspace.",
+      "sections": 10,
+      "review": "Restored supplied page introduction by removing global hero override. Reviewed body hierarchy, links, actions and responsive layout."
+    },
+    {
+      "route": "/services",
+      "classification": "Public page",
+      "source": "app/services/page.tsx",
+      "hero": "Technology strategy grounded in business context.",
+      "sections": 4,
+      "review": "Reviewed introduction, body hierarchy, actions, local links, images and responsive layout; page-specific scope retained."
+    },
+    {
+      "route": "/site-map",
+      "classification": "Public page",
+      "source": "app/site-map/page.tsx",
+      "hero": "The full website, in one place.",
+      "sections": 5,
+      "review": "Reviewed introduction, body hierarchy, actions, local links, images and responsive layout; page-specific scope retained."
+    },
+    {
+      "route": "/solutions",
+      "classification": "Public page",
+      "source": "app/solutions/page.tsx",
+      "hero": "One business context. Different work.",
+      "sections": 7,
+      "review": "Reviewed introduction, body hierarchy, actions, local links, images and responsive layout; page-specific scope retained."
+    },
+    {
+      "route": "/solutions/content",
+      "classification": "Public page",
+      "source": "app/solutions/[slug]/page.tsx",
+      "hero": "Content work with the brief's context.",
+      "sections": 4,
+      "review": "Function-specific introduction, responsibilities, context, and next steps retained. Removed injected renewal fallback and unrelated expansion language."
+    },
+    {
+      "route": "/solutions/customer-success",
+      "classification": "Public page",
+      "source": "app/solutions/customer-success/page.tsx",
+      "hero": "Walk into every call already knowing what changed.",
+      "sections": 9,
+      "review": "Preserved onboarding/account work, growth and renewals; removed fixed 90-day detection promise and numeric result claims."
+    },
+    {
+      "route": "/solutions/customer-support",
+      "classification": "Public page",
+      "source": "app/solutions/[slug]/page.tsx",
+      "hero": "Support with the full customer story.",
+      "sections": 4,
+      "review": "Function-specific introduction, responsibilities, context, and next steps retained. Removed injected renewal fallback and unrelated expansion language."
+    },
+    {
+      "route": "/solutions/finance",
+      "classification": "Public page",
+      "source": "app/solutions/finance/page.tsx",
+      "hero": "Collect smarter. Not just harder.",
+      "sections": 9,
+      "review": "Role/industry-specific introduction retained. Comparison, workflow, capabilities, authority, connectors and evaluation content reviewed; no global renewal audience."
+    },
+    {
+      "route": "/solutions/finance-leaders",
+      "classification": "Public page",
+      "source": "app/solutions/finance-leaders/page.tsx",
+      "hero": "Know the answer before the board asks.",
+      "sections": 8,
+      "review": "Role/industry-specific introduction retained. Comparison, workflow, capabilities, authority, connectors and evaluation content reviewed; no global renewal audience."
+    },
+    {
+      "route": "/solutions/founders",
+      "classification": "Public page",
+      "source": "app/solutions/founders/page.tsx",
+      "hero": "One screen. Every red flag. Full context.",
+      "sections": 9,
+      "review": "Role/industry-specific introduction retained. Comparison, workflow, capabilities, authority, connectors and evaluation content reviewed; no global renewal audience."
+    },
+    {
+      "route": "/solutions/human-resources",
+      "classification": "Public page",
+      "source": "app/solutions/[slug]/page.tsx",
+      "hero": "People operations with the records and the context for the decision.",
+      "sections": 4,
+      "review": "Function-specific introduction, responsibilities, context, and next steps retained. Removed injected renewal fallback and unrelated expansion language."
+    },
+    {
+      "route": "/solutions/individual",
+      "classification": "Public page",
+      "source": "app/solutions/individual/page.tsx",
+      "hero": "Your day, organised. Your context, remembered.",
+      "sections": 9,
+      "review": "Role/industry-specific introduction retained. Comparison, workflow, capabilities, authority, connectors and evaluation content reviewed; no global renewal audience."
+    },
+    {
+      "route": "/solutions/legal",
+      "classification": "Public page",
+      "source": "app/solutions/[slug]/page.tsx",
+      "hero": "Legal work with evidence and authority.",
+      "sections": 4,
+      "review": "Function-specific introduction, responsibilities, context, and next steps retained. Removed injected renewal fallback and unrelated expansion language."
+    },
+    {
+      "route": "/solutions/manufacturing",
+      "classification": "Public page",
+      "source": "app/solutions/manufacturing/page.tsx",
+      "hero": "Catch problems before they reach your customer.",
+      "sections": 8,
+      "review": "Role/industry-specific introduction retained. Comparison, workflow, capabilities, authority, connectors and evaluation content reviewed; no global renewal audience."
+    },
+    {
+      "route": "/solutions/marketing",
+      "classification": "Public page",
+      "source": "app/solutions/[slug]/page.tsx",
+      "hero": "Campaigns connected to business outcomes.",
+      "sections": 4,
+      "review": "Function-specific introduction, responsibilities, context, and next steps retained. Removed injected renewal fallback and unrelated expansion language."
+    },
+    {
+      "route": "/solutions/memoryandknowledge",
+      "classification": "Public page",
+      "source": "app/solutions/[slug]/page.tsx",
+      "hero": "Organizational memory that compounds.",
+      "sections": 4,
+      "review": "Function-specific introduction, responsibilities, context, and next steps retained. Removed injected renewal fallback and unrelated expansion language."
+    },
+    {
+      "route": "/solutions/operations",
+      "classification": "Public page",
+      "source": "app/solutions/operations/page.tsx",
+      "hero": "Catch delivery problems before the client notices.",
+      "sections": 8,
+      "review": "Role/industry-specific introduction retained. Comparison, workflow, capabilities, authority, connectors and evaluation content reviewed; no global renewal audience."
+    },
+    {
+      "route": "/solutions/product-engineering",
+      "classification": "Public page",
+      "source": "app/solutions/[slug]/page.tsx",
+      "hero": "Ship with product truth and the context around the work.",
+      "sections": 4,
+      "review": "Function-specific introduction, responsibilities, context, and next steps retained. Removed injected renewal fallback and unrelated expansion language."
+    },
+    {
+      "route": "/solutions/professional-services",
+      "classification": "Public page",
+      "source": "app/solutions/professional-services/page.tsx",
+      "hero": "Bill what you earn. Earn what you bill.",
+      "sections": 8,
+      "review": "Role/industry-specific introduction retained. Comparison, workflow, capabilities, authority, connectors and evaluation content reviewed; no global renewal audience."
+    },
+    {
+      "route": "/solutions/retail",
+      "classification": "Public page",
+      "source": "app/solutions/retail/page.tsx",
+      "hero": "Act on signals. Not complaints.",
+      "sections": 8,
+      "review": "Role/industry-specific introduction retained. Comparison, workflow, capabilities, authority, connectors and evaluation content reviewed; no global renewal audience."
+    },
+    {
+      "route": "/solutions/revops",
+      "classification": "Public page",
+      "source": "app/solutions/revops/page.tsx",
+      "hero": "Revenue context you can trace. Fewer spreadsheet wars.",
+      "sections": 8,
+      "review": "Corrected malformed hero; restored both sides of every comparison; evaluation areas replace invented outcome percentages."
+    },
+    {
+      "route": "/solutions/saas",
+      "classification": "Public page",
+      "source": "app/solutions/saas/page.tsx",
+      "hero": "Stop finding out about churn at renewal.",
+      "sections": 8,
+      "review": "Retained customer/adoption scope; removed universal 90-day lead time; complete comparisons and evaluation areas."
+    },
+    {
+      "route": "/solutions/sales",
+      "classification": "Public page",
+      "source": "app/solutions/[slug]/page.tsx",
+      "hero": "Keep revenue work connected.",
+      "sections": 4,
+      "review": "Function-specific introduction, responsibilities, context, and next steps retained. Removed injected renewal fallback and unrelated expansion language."
+    },
+    {
+      "route": "/solutions/services",
+      "classification": "Public page",
+      "source": "app/solutions/services/page.tsx",
+      "hero": "Know which projects are bleeding before the client review.",
+      "sections": 8,
+      "review": "Role/industry-specific introduction retained. Comparison, workflow, capabilities, authority, connectors and evaluation content reviewed; no global renewal audience."
+    },
+    {
+      "route": "/spine",
+      "classification": "Public page",
+      "source": "app/spine/page.tsx",
+      "hero": "The intelligence layer above your apps.",
+      "sections": 5,
+      "review": "Restored supplied page introduction by removing global hero override. Reviewed body hierarchy, links, actions and responsive layout."
+    },
+    {
+      "route": "/spineworkspace",
+      "classification": "Internal alias",
+      "source": "app/spineworkspace/page.tsx",
+      "hero": "One workspace to understand the business and share the work.",
+      "sections": 6,
+      "review": "Redirect verified to /product. Local destination inspected separately in this inventory."
+    },
+    {
+      "route": "/terms",
+      "classification": "Public page",
+      "source": "app/terms/page.tsx",
+      "hero": "Terms & Conditions",
+      "sections": 1,
+      "review": "Document hierarchy, readable content and links checked. This is website QA, not legal validation."
+    },
+    {
+      "route": "/triage-bot",
+      "classification": "Public page",
+      "source": "app/triage-bot/page.tsx",
+      "hero": "See what needs a decision.",
+      "sections": 4,
+      "review": "Reviewed introduction, body hierarchy, actions, local links, images and responsive layout; page-specific scope retained."
+    },
+    {
+      "route": "/twin",
+      "classification": "Public page",
+      "source": "app/twin/page.tsx",
+      "hero": "AI that works with your business context.",
+      "sections": 7,
+      "review": "Removed renewal-only override. Investigate, prepare, and coordinate; Coworker preparation; six business functions; authorization and observed outcomes."
+    },
+    {
+      "route": "/updates",
+      "classification": "Public page",
+      "source": "app/updates/page.tsx",
+      "hero": "Company updates.",
+      "sections": 2,
+      "review": "Reviewed introduction, body hierarchy, actions, local links, images and responsive layout; page-specific scope retained."
+    },
+    {
+      "route": "/use-cases",
+      "classification": "Public page",
+      "source": "app/use-cases/page.tsx",
+      "hero": "Business work, connected.",
+      "sections": 3,
+      "review": "Restored supplied page introduction by removing global hero override. Reviewed body hierarchy, links, actions and responsive layout."
+    },
+    {
+      "route": "/use-cases/customer-success",
+      "classification": "Public page",
+      "source": "app/use-cases/customer-success/page.tsx",
+      "hero": "Carry the customer record and the context for each interaction.",
+      "sections": 3,
+      "review": "Function-specific topics and scenarios retained; supplied introduction replaces global buyer override."
+    },
+    {
+      "route": "/use-cases/founders-and-leaders",
+      "classification": "Public page",
+      "source": "app/use-cases/founders-and-leaders/page.tsx",
+      "hero": "See goals, KPIs, decisions, and execution together.",
+      "sections": 3,
+      "review": "Function-specific topics and scenarios retained; supplied introduction replaces global buyer override."
+    },
+    {
+      "route": "/use-cases/operations",
+      "classification": "Public page",
+      "source": "app/use-cases/operations/page.tsx",
+      "hero": "Coordinate work across fragmented systems.",
+      "sections": 3,
+      "review": "Function-specific topics and scenarios retained; supplied introduction replaces global buyer override."
+    },
+    {
+      "route": "/use-cases/sales",
+      "classification": "Public page",
+      "source": "app/use-cases/sales/page.tsx",
+      "hero": "Keep revenue work connected.",
+      "sections": 3,
+      "review": "Function-specific topics and scenarios retained; supplied introduction replaces global buyer override."
+    },
+    {
+      "route": "/use-cases/teams",
+      "classification": "Public page",
+      "source": "app/use-cases/teams/page.tsx",
+      "hero": "One workspace for shared work and shared memory.",
+      "sections": 3,
+      "review": "Function-specific topics and scenarios retained; supplied introduction replaces global buyer override."
+    },
+    {
+      "route": "/why",
+      "classification": "Internal alias",
+      "source": "app/why/page.tsx",
+      "hero": "The real gap was never just system integration.",
+      "sections": 5,
+      "review": "Redirect verified to /about. Local destination inspected separately in this inventory."
+    },
+    {
+      "route": "/workspace",
+      "classification": "Non-indexed preview",
+      "source": "app/(enter)/workspace/page.tsx",
+      "hero": "Workspace",
+      "sections": 0,
+      "review": "Non-indexed local workspace preview retained. Header H1 counted across whole document; no missing-heading defect."
+    }
+  ]
+}

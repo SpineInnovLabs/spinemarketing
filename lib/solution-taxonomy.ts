@@ -69,10 +69,10 @@ export const PUBLIC_SOLUTIONS: PublicSolution[] = [
     slug: "customer-success",
     name: "Account Success",
     navLabel: "Account Success",
-    headline: "Stop rebuilding the customer story before every renewal decision.",
+    headline: "Connect the customer journey from onboarding to growth.",
     description:
-      "Assemble CRM, support, email, document, and finance context into an evidence-backed renewal decision packet—review, approve, and execute with control.",
-    buyerSummary: "Renewal reviews from a source-linked decision packet—not six tabs and a spreadsheet.",
+      "Bring account history, adoption, support, commitments and commercial context together for onboarding, account reviews, expansion and renewal decisions.",
+    buyerSummary: "Carry the customer story through onboarding, service, growth and renewal with shared context.",
     workspaceAssociations: [
       { host: "account-success.spineworkspace.com", label: "Account Success Workbench", primary: true },
       { host: "technical-account-success.spineworkspace.com", label: "Technical Account Success" },

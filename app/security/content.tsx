@@ -80,7 +80,7 @@ export function SecurityContent() {
   return (
     <>
       {/* Security Features Grid */}
-      <section className="arvio-section dark-section">
+      <section className="arvio-section marketing-surface">
         <div className="mx-auto max-w-[1100px]">
           <motion.div
             initial={{ y: 20 }}
@@ -129,7 +129,7 @@ export function SecurityContent() {
       </section>
 
       {/* Security Principles */}
-      <section className="arvio-section dark-section">
+      <section className="arvio-section marketing-surface">
         <div className="mx-auto max-w-[1100px]">
           <motion.div
             initial={{ y: 20 }}

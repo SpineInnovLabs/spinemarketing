@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
@@ -113,7 +113,7 @@ function typeGroupLabel(t: CampaignAsset["type"]) {
 }
 
 function channelColor(c: CampaignAsset["channel"]) {
-  return c === "linkedin" ? "bg-blue-500/20 text-blue-400" : "bg-green-500/20 text-green-400";
+  return c === "linkedin" ? "bg-blue-100 text-blue-800" : "bg-green-100 text-green-800";
 }
 
 function personaLink(p: CampaignAsset["persona"]) {
@@ -136,6 +136,21 @@ function personaLabel(p: CampaignAsset["persona"]) {
 export function CampaignGalleryContent() {
   const [active, setActive] = useState<FilterKey>("all");
   const [lightbox, setLightbox] = useState<CampaignAsset | null>(null);
+  const dialogRef = useRef<HTMLDialogElement>(null);
+
+  useEffect(() => {
+    const dialog = dialogRef.current;
+    if (!lightbox || !dialog) return;
+    const opener = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+    const previousOverflow = document.body.style.overflow;
+    dialog.showModal();
+    document.body.style.overflow = "hidden";
+    return () => {
+      dialog.close();
+      document.body.style.overflow = previousOverflow;
+      opener?.focus();
+    };
+  }, [lightbox]);
 
   const filtered = assets.filter((a) => {
     if (active === "all") return true;
@@ -152,7 +167,7 @@ export function CampaignGalleryContent() {
 
   return (
     <>
-      <section className="relative overflow-hidden bg-[#032D60]">
+      <section className="marketing-surface relative overflow-hidden">
         <div
           className="pointer-events-none absolute inset-0"
           style={{
@@ -175,20 +190,20 @@ export function CampaignGalleryContent() {
               {...fade(0.2)}
               className="text-[40px] font-semibold leading-[1.1em] tracking-[-0.05em] text-white sm:text-[52px] lg:text-[60px]"
             >
-              Every customer. Every tool.{" "}
-              <span className="text-primary">One screen.</span>
+              Architecture and campaign{" "}
+              <span className="text-primary">concepts.</span>
             </motion.h1>
             <motion.p
               {...fade(0.3)}
               className="mx-auto mt-8 max-w-2xl text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-white/55"
             >
-              Architecture blueprints and 36 campaign designs — showing how the SpineWorkspace connects every tool into one governed workspace for Account Success, Business Ops, and Personal Ops.
+              Explore architecture illustrations and all 36 campaign designs for Account Success, Business Ops, and Personal Ops. These earlier concepts are illustrative assets; the product and technology pages describe the current direction.
             </motion.p>
           </div>
         </div>
       </section>
 
-      <section className="bg-[#F0F8FF] px-6 pt-8 pb-16 md:px-16 innovtech-reference-surface">
+      <section className="marketing-surface bg-[#F0F8FF] px-6 pt-8 pb-16 md:px-16 innovtech-reference-surface">
         <div className="mx-auto max-w-[1200px]">
           <motion.div {...fade()} className="mb-8 flex items-center gap-3">
             <h2 className="text-[22px] font-semibold tracking-[-0.03em] text-[#052858]">
@@ -199,7 +214,7 @@ export function CampaignGalleryContent() {
             </span>
           </motion.div>
           <motion.p {...fade(0.05)} className="mb-10 max-w-3xl text-[15px] font-medium leading-[1.6] text-white/45">
-            SpineWorkspace sits at the center — connecting Salesforce, HubSpot, Slack, Stripe, Zendesk, and every other tool into the record the tools already keep. AI reasons over SpineWorkspace context and governs via policy, but a human must approve every action.
+            These illustrations explore how tools and evidence relate to shared business context. They do not establish connector availability or prove deployed controls. Explore Spine Fabric for the contextual foundation and Spine Workspace for the product features.
           </motion.p>
 
           <div className="grid gap-6 sm:grid-cols-2">
@@ -229,19 +244,8 @@ export function CampaignGalleryContent() {
                 key={arch.src}
                 {...fade(i * 0.08)}
                 className="group cursor-pointer overflow-hidden rounded-xl border border-white/[0.08] bg-white/[0.02] transition-all hover:border-primary/20 hover:bg-white/[0.04]"
-                onClick={() =>
-                  setLightbox({
-                    src: arch.src,
-                    title: arch.title,
-                    channel: "linkedin",
-                    type: "post",
-                    persona: "general",
-                    width: 1200,
-                    height: 1200,
-                  })
-                }
               >
-                <div className="relative overflow-hidden">
+                <button type="button" aria-label={`View ${arch.title}`} className="relative block w-full overflow-hidden focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-[#0055B8]" onClick={() => setLightbox({ src: arch.src, title: arch.title, channel: "linkedin", type: "post", persona: "general", width: 1200, height: 1200 })}>
                   <Image
                     src={arch.src}
                     alt={arch.title}
@@ -250,10 +254,10 @@ export function CampaignGalleryContent() {
                     className="w-full h-auto transition-transform duration-300 group-hover:scale-[1.02]"
                     loading={i < 2 ? "eager" : "lazy"}
                   />
-                </div>
+                </button>
                 <div className="px-5 py-4">
                   <div className="text-[14px] font-semibold text-white/90 leading-snug">{arch.title}</div>
-                  <p className="mt-2 text-[12px] font-medium leading-[1.5] text-[#4C5C73]/35">{arch.desc}</p>
+                  <p className="mt-2 text-[12px] font-medium leading-[1.5] text-[#4C5C73]">{arch.desc}</p>
                 </div>
               </motion.div>
             ))}
@@ -262,7 +266,7 @@ export function CampaignGalleryContent() {
           <motion.div {...fade(0.3)} className="mt-6 flex items-center justify-center gap-4">
             <Link
               href="/platform/spine-fabric"
-              className="text-[13px] font-semibold text-primary/80 hover:text-primary transition flex items-center gap-1"
+              className="text-[13px] font-semibold text-primary hover:text-primary transition flex items-center gap-1"
             >
               Explore the SpineWorkspace
               <ChevronRight className="h-3.5 w-3.5" />
@@ -279,7 +283,7 @@ export function CampaignGalleryContent() {
         </div>
       </section>
 
-      <section className="bg-[#F0F8FF] px-6 pb-24 md:px-16 innovtech-reference-surface">
+      <section className="marketing-surface bg-[#F0F8FF] px-6 pb-24 md:px-16 innovtech-reference-surface">
         <div className="mx-auto max-w-[1200px]">
           <div className="mb-10 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
 
@@ -296,6 +300,8 @@ export function CampaignGalleryContent() {
             {filters.map((f) => (
               <button
                 key={f.key}
+                aria-pressed={active === f.key}
+                aria-controls="campaign-results"
                 onClick={() => setActive(f.key)}
                 className={`flex items-center gap-2 rounded-full px-4 py-2 text-[13px] font-semibold transition-all ${
                   active === f.key
@@ -309,10 +315,11 @@ export function CampaignGalleryContent() {
             ))}
           </motion.div>
 
-          <motion.div {...fade(0.1)} className="mb-8 text-center text-[13px] font-medium text-white/25">
+          <motion.div {...fade(0.1)} role="status" className="mb-8 text-center text-[13px] font-medium text-[#4E607A]">
             {filtered.length} design{filtered.length !== 1 ? "s" : ""}
           </motion.div>
 
+          <div id="campaign-results">
           {Object.entries(groups).map(([groupName, items], gi) => (
             <div key={groupName} className="mb-14">
               {gi > 0 && (
@@ -347,9 +354,8 @@ export function CampaignGalleryContent() {
                     key={asset.src}
                     {...fade(i * 0.04)}
                     className="group cursor-pointer overflow-hidden rounded-xl border border-white/[0.08] bg-white/[0.02] transition-all hover:border-white/[0.15] hover:bg-white/[0.04]"
-                    onClick={() => setLightbox(asset)}
                   >
-                    <div className="relative overflow-hidden">
+                    <button type="button" aria-label={`View ${asset.title}`} onClick={() => setLightbox(asset)} className="relative block w-full overflow-hidden focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-[#0055B8]">
                       <Image
                         src={asset.src}
                         alt={`${asset.title} — SpineWorkspace ${typeLabel(asset.type)}`}
@@ -358,7 +364,7 @@ export function CampaignGalleryContent() {
                         className="w-full h-auto transition-transform duration-300 group-hover:scale-[1.02]"
                         loading="lazy"
                       />
-                    </div>
+                    </button>
                     <div className="flex items-center justify-between gap-2 px-4 py-3">
                       <div>
                         <div className="text-[13px] font-semibold text-white/80">{asset.title}</div>
@@ -373,7 +379,7 @@ export function CampaignGalleryContent() {
                         <Link
                           href={personaLink(asset.persona)!}
                           onClick={(e) => e.stopPropagation()}
-                          className="text-[11px] font-semibold text-primary/70 hover:text-primary flex items-center gap-0.5"
+                          className="text-[11px] font-semibold text-primary hover:text-primary flex items-center gap-0.5"
                         >
                           {personaLabel(asset.persona)}
                           <ChevronRight className="h-3 w-3" />
@@ -385,6 +391,7 @@ export function CampaignGalleryContent() {
               </div>
             </div>
           ))}
+          </div>
         </div>
       </section>
 
@@ -423,12 +430,12 @@ export function CampaignGalleryContent() {
 
       <AnimatePresence>
         {lightbox && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-sm p-4"
-            onClick={() => setLightbox(null)}
+          <dialog
+            ref={dialogRef}
+            aria-labelledby="campaign-lightbox-title"
+            className="fixed inset-0 z-[100] m-0 h-[100dvh] w-screen max-h-none max-w-none items-center justify-center bg-black/90 backdrop-blur-sm p-6 open:flex"
+            onCancel={(event) => { event.preventDefault(); setLightbox(null); }}
+            onClick={(event) => { if (event.target === event.currentTarget) setLightbox(null); }}
           >
             <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
@@ -438,8 +445,10 @@ export function CampaignGalleryContent() {
               onClick={(e) => e.stopPropagation()}
             >
               <button
+                type="button"
+                aria-label="Close image preview"
                 onClick={() => setLightbox(null)}
-                className="absolute -top-4 -right-4 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition"
+                className="absolute -top-4 -right-4 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-[#082B5E] text-white hover:bg-[#0055B8] transition"
               >
                 <X className="h-4 w-4" />
               </button>
@@ -448,23 +457,23 @@ export function CampaignGalleryContent() {
                 alt={lightbox.title}
                 width={lightbox.width}
                 height={lightbox.height}
-                className="rounded-xl max-h-[85vh] w-auto"
+                className="rounded-xl max-h-[72vh] max-w-[80vw] h-auto w-auto"
                 priority
               />
               <div className="mt-4 text-center">
-                <div className="text-[15px] font-semibold text-white">{lightbox.title}</div>
+                <div id="campaign-lightbox-title" className="text-[15px] font-semibold text-white">{lightbox.title}</div>
                 <div className="mt-1 flex items-center justify-center gap-2">
                   <span className={`inline-flex items-center rounded-full px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider ${channelColor(lightbox.channel)}`}>
                     {lightbox.channel}
                   </span>
-                  <span className="text-[12px] text-white/40">{typeLabel(lightbox.type)}</span>
+                  <span className="text-[12px] text-white/75">{typeLabel(lightbox.type)}</span>
                   {lightbox.persona !== "general" && (
-                    <span className="text-[12px] text-primary/70">{personaLabel(lightbox.persona)}</span>
+                    <span className="text-[12px] text-blue-200">{personaLabel(lightbox.persona)}</span>
                   )}
                 </div>
               </div>
             </motion.div>
-          </motion.div>
+          </dialog>
         )}
       </AnimatePresence>
     </>

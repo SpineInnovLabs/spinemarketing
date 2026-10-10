@@ -61,7 +61,7 @@ export function PersonalOpsContent() {
     <>
       {/* Hero */}
       <section
-        className="relative overflow-hidden bg-white"
+        className="marketing-surface relative overflow-hidden bg-white"
       >
         <div className="mx-auto max-w-[1200px] px-6 pt-[160px] pb-[100px] md:px-16">
           <div className="mx-auto max-w-3xl text-center">
@@ -155,7 +155,7 @@ export function PersonalOpsContent() {
       </section>
 
       {/* Problem */}
-      <section className="arvio-section dark-section">
+      <section className="arvio-section marketing-surface">
         <div className="mx-auto max-w-[1100px]">
           <div className="mx-auto max-w-3xl">
             <motion.div
@@ -182,7 +182,7 @@ export function PersonalOpsContent() {
       </section>
 
       {/* What Changes */}
-      <section className="arvio-section dark-section">
+      <section className="arvio-section marketing-surface">
         <div className="mx-auto max-w-[1100px]">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -230,7 +230,7 @@ export function PersonalOpsContent() {
       </section>
 
       {/* How It Works */}
-      <section className="arvio-section dark-section">
+      <section className="arvio-section marketing-surface">
         <div className="mx-auto max-w-[1100px]">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -276,7 +276,7 @@ export function PersonalOpsContent() {
       </section>
 
       {/* 4 Use Cases */}
-      <section className="arvio-section dark-section">
+      <section className="arvio-section marketing-surface">
         <div className="mx-auto max-w-[1100px]">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -345,7 +345,7 @@ export function PersonalOpsContent() {
       </section>
 
       {/* CTA */}
-      <section className="arvio-section dark-section">
+      <section className="arvio-section marketing-surface">
         <div className="mx-auto max-w-[1100px]">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

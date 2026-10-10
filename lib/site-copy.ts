@@ -99,62 +99,59 @@ export const pages = {
 
   twin: {
     meta: {
-      title: "The Twin — A proposal from truth and context",
-      description: "Coworker gathers the truth and context this person may use. Twin prepares a proposal. A person reviews it.",
+      title: "Spine Twin — Context-aware AI for business work",
+      description: "Spine Twin helps people understand business context, compare evidence, prepare work and propose next steps within defined authority.",
       path: "/twin",
     },
     hero: {
-      badge: "Spine Twin",
-      headline: "Your Twin starts from the work, not a blank chat.",
-      subhead: "Twin opens when someone asks. It prepares a proposal from the record and the evidence for this task. A person reviews it.",
-      primaryCta: { label: "Book a demo", href: "/contact?intent=demo" },
+      badge: "Spine Twin · Context-aware AI",
+      headline: "AI that works with your business context.",
+      subhead: "Spine Twin brings objectives, responsibilities, records, signals, decisions and evidence into the work. It helps people investigate situations, prepare options and coordinate the next step within the authority they have.",
+      primaryCta: { label: "Explore the Twin experience", href: "#capabilities" },
       secondaryCta: { label: "See governance", href: "/governance" },
     },
     sections: [
       {
+        id: "capabilities",
+        label: "Understand before responding",
+        headline: "Start with the situation, its evidence and the goal.",
+        body: "The Twin uses the context it is permitted to access to explain a situation, compare evidence and identify what is missing. The work can involve an operational handoff, a financial exception, a delivery decision or a customer review.",
+        cards: [
+          { title: "Investigate", description: "Relate a signal to its sources, dependencies, earlier decisions and business impact." },
+          { title: "Prepare", description: "Assemble summaries, options, plans and proposed next steps around the current goal." },
+          { title: "Coordinate", description: "Help people move work between responsibilities and approved capabilities with its context intact." },
+        ],
+      },
+      {
         id: "coworker",
         label: "Spine Coworker",
-        headline: "Coworker gathers truth and context. Twin prepares the proposal.",
-        body:
-          "Spine Coworker is a governed context-gathering capability. It gathers the record and the evidence this person is allowed to use for this task. Spine Twin is a Spine Workspace capability. It prepares a proposal from that, and only when someone asks. A person reviews it. The proposal is not the record. There is no model catalogue and no model picker.",
+        headline: "Relevant context can be ready before the conversation starts.",
+        body: "Spine Coworker represents the context-gathering aspect of the experience: watching authorized signals, assembling relevant evidence and preparing useful context. Gathering context is distinct from independently sending messages, changing business records or committing the organization.",
       },
       {
-        headline: "The record and the evidence first. Then a proposal.",
-        body:
-          "Before Twin responds, it uses authoritative records and the context assembled for this task: goals, active work, customer history, prior decisions, and evidence. The proposal stays a proposal until a person reviews it.",
+        headline: "Support the work across business functions.",
+        cards: [
+          { title: "Operations", description: "Prepare a handoff or escalation with its dependencies, owners and decision history." },
+          { title: "Finance", description: "Compare an exception with the invoice, contractual commitments and supporting evidence." },
+          { title: "Product & engineering", description: "Investigate a release blocker and prepare options around its customer impact and delivery goal." },
+          { title: "Customer-facing teams", description: "Prepare onboarding, account reviews, expansion conversations or renewal decisions from the customer story." },
+          { title: "Leadership", description: "Bring goals, signals, responsibilities and unresolved decisions into an executive brief." },
+          { title: "People & knowledge", description: "Find permitted knowledge and prepare a context-rich answer for an employee or team." },
+        ],
       },
       {
-        headline: "Not a chat agent. A coworker.",
-        comparison: {
-          left: {
-            title: "Generic chat agents",
-            items: ["Answer prompts", "Start cold every session", "Expose model catalogs", "No business memory"],
-          },
-          right: {
-            title: "The Twin",
-            items: [
-              "Starts from truth and governed context",
-              "Knows goals, KPIs, work state",
-              "Selects the right capability silently",
-              "Respects permissions and evidence",
-            ],
-          },
-        },
+        headline: "Human and policy boundaries stay explicit.",
+        body: "A person or approved policy authorizes consequential actions. A proposal remains a proposal until authorized. Execution uses governed capabilities; completion depends on observed and reconciled results.",
       },
       {
-        headline: "One counterpart. No model catalogue.",
-        body:
-          "Twin is the user-facing AI counterpart. It uses the capability the task needs. There is no second chat product and no model picker.",
-      },
-      {
-        headline: "AI helps. You decide.",
-        body:
-          "The Twin proposes. Humans keep judgment, approvals, and accountability. Consequential actions require explicit authority.",
+        headline: "Business context continues as models and tools evolve.",
+        body: "The relevant history, evidence and responsibility belong to the work. Durable business understanding should carry across providers and sessions rather than depend on a single chat history.",
       },
     ],
     crossLinks: {
-      prev: { label: "Spine Workspace", href: "/spineworkspace" },
+      prev: { label: "Spine Workspace", href: "/product" },
       next: { label: "Spine Context Assembler", href: "/business-context" },
+      related: [{ label: "Spine Fabric", href: "/platform/spine-fabric" }, { label: "Governed execution", href: "/governance" }],
     },
   },
 
@@ -416,9 +413,9 @@ export const pages = {
     ],
     scenario: {
       headline: "One objective. Two tools. The story continues.",
-      body: "A renewal risk shows up in one tool. The team opens another tool to draft the note. Spine Workspace carries the record and the evidence for that work, so the story does not have to be rebuilt.",
+      body: "A delivery dependency changes in a project tool. The team opens another tool to prepare the handoff. Spine Workspace carries the record and the evidence for that work, so the story does not have to be rebuilt.",
       steps: [
-        "Renewal risk shows up in the tool that holds the account",
+        "A delivery dependency changes in the project tool",
         "The record and the evidence travel with the work to the tool used for the note",
         "A person accepts, edits, or rejects the proposal",
         "Outcome reconciled in Workbench",
@@ -446,7 +443,7 @@ export const pages = {
     scenario: {
       headline: "One piece of work. More than one tool. The story continues.",
       body:
-        "Renewal risk shows up in one tool. The record and the evidence travel with the work. A person decides. The original tool is updated. The story does not have to be rebuilt.",
+        "A delivery risk surfaces in a project tool. The record and the evidence travel with the work. A person decides. The original tool is updated. The story does not have to be rebuilt.",
       steps: [
         "Risk signal surfaces with linked evidence",
         "Twin prepares a proposal within governance bounds",
@@ -549,13 +546,13 @@ export const pages = {
   platformHub: {
     meta: {
       title: "Spine Platform",
-      description: "Spine Platform is a Spine Workspace capability. The tools keep the record. The products run with the platform.",
+      description: "Explore the architecture behind Spine Workspace: business context, role-aware collaboration, context-aware AI and governed execution.",
       path: "/platform",
     },
     hero: {
       badge: "Spine Platform",
-      headline: "Spine Platform.",
-      subhead: "A Spine InnovTech product. It is the platform Spine Workspace, Spine Fabric, Spine Twin, Spine Coworker, Spine Context Assembler, Spine Adaptive Auto Tuner, Spine Triage Bot, and Spine Folder Monitor run with.",
+      headline: "One architecture for connected business work.",
+      subhead: "Fabric provides shared context. Workbench brings it into role-aware work. Twin helps people understand and prepare. Runtime governs authorized execution and observed outcomes. Connected capabilities extend that architecture.",
       primaryCta: { label: "Spine Fabric", href: "/platform/spine-fabric" },
     },
     sections: [

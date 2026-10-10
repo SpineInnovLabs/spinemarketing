@@ -13,7 +13,7 @@ const items = [
   {
     tag: "Real-Time Sync",
     title: "The workspace shows the result",
-    description: "Firebase real-time layer delivers changes to the Workspace quickly. No polling, no stale data.",
+    description: "Event-driven updates help the Workspace reflect connected work. Source freshness, delivery delays, and reconciliation remain visible concerns.",
     icon: Zap,
     color: "#fbbf24",
     features: [
@@ -38,21 +38,21 @@ const items = [
   },
   {
     tag: "Edge Network",
-    title: "Global edge with regional data residency",
-    description: "CDN-cached static assets. API requests routed to the nearest edge. Data stays in the region you choose.",
+    title: "Edge delivery and explicit storage boundaries",
+    description: "Static assets and application requests have different delivery and storage needs. Data locations and cross-border flows require deployment-specific review.",
     icon: Globe,
     color: "#8b5cf6",
     features: [
-      "Multi-region deployment for global teams",
-      "Data residency enforcement at the storage layer",
-      "Edge caching for sub-50ms page loads",
-      "Automatic failover between regions",
+      "Edge delivery where supported by the deployment",
+      "Storage locations reviewed separately from delivery",
+      "Measure latency using the actual user journey",
+      "Verify failover and recovery for the target environment",
     ],
   },
   {
     tag: "Observability",
     title: "Full-stack monitoring and alerting",
-    description: "System health, pipeline throughput, connector status, and error rates — monitored 24/7 with automated incident response.",
+    description: "Observe system health, pipeline throughput, connector status, and error rates. Monitoring coverage and incident response must be agreed for the deployment.",
     icon: Activity,
     color: "#3b82f6",
     features: [
@@ -64,15 +64,15 @@ const items = [
   },
   {
     tag: "Reliability",
-    title: "Built for reliability with zero-downtime deploys",
-    description: "Blue-green deployments. Automated rollback. No maintenance windows. Your team keeps access during updates.",
+    title: "Plan, observe, and verify recovery",
+    description: "Deployment and recovery plans should describe how changes are introduced, failures detected, and service restored. Test those plans in the target environment.",
     icon: Shield,
     color: "#ef4444",
     features: [
-      "Blue-green deployment with instant rollback",
-      "Zero-downtime database migrations",
-      "Automated health checks every 30 seconds",
-      "Health checks and automated incident escalation",
+      "Staged deployment and recovery procedures",
+      "Migration planning with explicit service-impact review",
+      "Health checks appropriate to each service",
+      "Incident escalation and recovery verification",
     ],
   },
 ];

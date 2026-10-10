@@ -12,7 +12,7 @@ export default function RequestAccessPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#F3F6F9] px-6 py-16">
+    <main id="main" tabIndex={-1} className="min-h-screen bg-[#F3F6F9] px-6 py-16">
       <div className="mx-auto max-w-[640px] rounded-md border border-[#E5E5E5] bg-white p-6">
         <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[#0176D3]">Access</p>
         <h1 className="mt-2 text-[28px] font-semibold text-[#032D60]">Request access</h1>
@@ -45,7 +45,7 @@ export default function RequestAccessPage() {
           Back to sign in
         </Link>
       </div>
-    </div>
+    </main>
   );
 }
 

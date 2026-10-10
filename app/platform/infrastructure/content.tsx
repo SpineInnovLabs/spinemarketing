@@ -18,18 +18,18 @@ const firebaseCards = [
 ];
 
 const services = [
-  { icon: Database, name: "Spine Service", desc: "Core the record, entity resolution, schema governance." },
+  { icon: Database, name: "Spine Service", desc: "Business entities, source relationships, and schema governance." },
   { icon: Layers, name: "Context Service", desc: "Real-time view assembly and conflict detection." },
   { icon: Zap, name: "Twin Service", desc: "AI reasoning engine and signal detection." },
   { icon: Globe, name: "Approval Service", desc: "Governance enforcement and human-in-the-loop routing logic." },
-  { icon: BarChart3, name: "Action Service", desc: "Write-back execution with 24h rollback window." },
+  { icon: BarChart3, name: "Action Service", desc: "Authorized execution with observed effects and reconciliation." },
   { icon: Server, name: "Notification Service", desc: "Alert routing and digest generation — no spam." },
 ];
 
 const scalabilityCards = [
   { title: "Cloudflare Edge", desc: "Workers at edge for low-latency global access." },
-  { title: "D1 / R2 Storage", desc: "Distributed, globally replicated, cost-efficient storage." },
-  { title: "Queue Management", desc: "Async processing — no data lost during spikes." },
+  { title: "D1 / R2 Storage", desc: "Database and object-storage responsibilities depend on the configured deployment." },
+  { title: "Queue Management", desc: "Async work requires retry, failure handling, and reconciliation." },
 ];
 
 const fade = (delay = 0) => ({
@@ -47,7 +47,7 @@ export function InfrastructureContent() {
         <PageHero
           badge="Infrastructure"
           headline="Six services. Global edge. Near real-time."
-          subhead="Firebase, Cloudflare Workers, and six purpose-built microservices power every sync in SpineWorkspace."
+          subhead="Explore the service responsibilities and infrastructure approach behind SpineWorkspace. Deployment regions, performance, and recovery behavior depend on the configured environment."
           primaryCta={{ label: "See the architecture", href: "/contact?intent=demo" }}
         />
 

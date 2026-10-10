@@ -202,7 +202,7 @@ const useCases = [
 export function AccountSuccessContent() {
   return (
     <>
-      <section className="relative overflow-hidden bg-white">
+      <section className="marketing-surface relative overflow-hidden bg-white">
         <div
           className="pointer-events-none absolute inset-0"
           style={{
@@ -268,7 +268,7 @@ export function AccountSuccessContent() {
         </div>
       </section>
 
-      <section className="arvio-section dark-section">
+      <section className="arvio-section marketing-surface">
         <div className="mx-auto max-w-[1100px]">
           <div className="mx-auto max-w-3xl">
             <motion.div {...fade()}>
@@ -289,7 +289,7 @@ export function AccountSuccessContent() {
         </div>
       </section>
 
-      <section className="arvio-section dark-section">
+      <section className="arvio-section marketing-surface">
         <div className="mx-auto max-w-[1100px]">
           <motion.div {...fade()} className="mx-auto max-w-2xl text-center">
             <h2 className="section-heading">
@@ -315,7 +315,7 @@ export function AccountSuccessContent() {
         </div>
       </section>
 
-      <section className="arvio-section dark-section bg-white">
+      <section className="arvio-section marketing-surface bg-white">
         <div className="mx-auto max-w-[1100px]">
           <motion.div {...fade()} className="mx-auto max-w-2xl text-center">
             <h2 className="text-[40px] font-semibold tracking-[-0.05em] leading-[1.15] text-white sm:text-[48px]">
@@ -353,7 +353,7 @@ export function AccountSuccessContent() {
         </div>
       </section>
 
-      <section className="arvio-section dark-section">
+      <section className="arvio-section marketing-surface">
         <div className="mx-auto max-w-[1100px]">
           <div className="mx-auto max-w-4xl">
             <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:items-start">
@@ -368,10 +368,10 @@ export function AccountSuccessContent() {
                   {[
                     "Entities matched across every connected tool automatically",
                     "Confidence score on every proposed match — 0 to 100",
-                    "High-confidence merges happen without manual work",
+                    "High-confidence matches are prepared for authorized review",
                     "Low-confidence matches go to your review queue",
-                    "Every merge is auditable and reversible",
-                    "Canonical entity updates propagate to all views instantly",
+                    "Supported changes retain decision and source evidence",
+                    "View updates track source freshness and reconciliation",
                   ].map((outcome, i) => (
                     <motion.li key={i} {...fade(i * 0.06)} className="flex items-start gap-3">
                       <div
@@ -416,7 +416,7 @@ export function AccountSuccessContent() {
         </div>
       </section>
 
-      <section className="arvio-section dark-section">
+      <section className="arvio-section marketing-surface">
         <div className="mx-auto max-w-[1100px]">
           <motion.div {...fade()} className="mx-auto max-w-2xl text-center">
             <h2 className="section-heading">
@@ -447,7 +447,7 @@ export function AccountSuccessContent() {
         </div>
       </section>
 
-      <section className="arvio-section dark-section">
+      <section className="arvio-section marketing-surface">
         <div className="mx-auto max-w-[1100px]">
           <motion.div {...fade()} className="mx-auto max-w-2xl text-center">
             <h2 className="section-heading">
@@ -455,7 +455,7 @@ export function AccountSuccessContent() {
               <span className="text-primary">Resolve it.</span>
             </h2>
             <p className="mt-6 text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">
-              Confidence-scored matching. Human-approved merges. One the record.
+              Confidence-scored matching, authorized review, and traceable source records.
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-2.5 sm:flex-row">
               <Button

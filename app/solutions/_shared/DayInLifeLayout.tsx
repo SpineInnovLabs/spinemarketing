@@ -65,7 +65,7 @@ export function DayInLifeLayout({
       />
 
       <Section variant="muted">
-        <SectionHeader label="Before and after" headline="A day with and without SpineWorkspace" />
+        <SectionHeader label="Before and after" headline="A day with and without SpineWorkspace" body="Illustrative workflow examples, not measured customer results." />
         <div className="grid gap-4 sm:grid-cols-2">
           <motion.div {...fade(0)}>
             <p className="mb-3 text-[12px] font-bold uppercase tracking-[0.08em] text-red-600">Without</p>
@@ -92,9 +92,10 @@ export function DayInLifeLayout({
 
       {outcomes?.length ? (
         <Section>
+          <SectionHeader label="Evaluation" headline="Measures to discuss for your workflow" body="Define success against your own baseline. These are evaluation areas, not measured customer results." />
           <div className="grid gap-4 sm:grid-cols-3">
             {outcomes.map((o, i) => (
-              <KpiBlock key={i} label={o.label} value={o.stat} detail="" />
+              <KpiBlock key={i} label="Evaluation area" value={o.label} detail="Agree a baseline and target for your workflow." />
             ))}
           </div>
         </Section>

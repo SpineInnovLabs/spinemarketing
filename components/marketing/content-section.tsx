@@ -440,9 +440,12 @@ function SectionBody({
     case "cards":
       return (
         <div className="relative z-10 -mt-6 rounded-[20px] border border-[#D9E4EF] bg-white p-6 shadow-[0_18px_48px_rgba(3,45,96,0.1)] md:-mt-10 md:p-8">
-          <Heading label={section.label} headline={section.headline} className="mb-8 max-w-3xl" />
+          <Heading label={section.label} headline={section.headline} className="max-w-3xl" />
+          {section.body && <div className="max-w-3xl"><Body>{section.body}</Body></div>}
           {section.cards && (
-            <FeatureGrid cards={section.cards} columns={section.cards.length === 5 ? 3 : section.cards.length === 4 ? 2 : 3} />
+            <div className="mt-8">
+              <FeatureGrid cards={section.cards} columns={section.cards.length === 5 ? 3 : section.cards.length === 4 ? 2 : 3} />
+            </div>
           )}
         </div>
       );

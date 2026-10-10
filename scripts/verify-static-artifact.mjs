@@ -37,4 +37,33 @@ if (!sitemap.includes("spineinnovlabs.spineworkspace.com")) {
 if (statSync("out/index.html").size < 1024) {
   throw new Error("Suspiciously small production HTML.");
 }
-console.log("Corporate HTML, product routing, and sitemap artifact verified.");
+
+// General technology and company pages must keep their scope. A shared hero
+// override previously turned these routes into renewal-only marketing pages.
+const broadRoutes = [
+  "twin", "business-context", "continuity", "governance", "adaptive-workspace",
+  "host-connected-environment", "platform", "platform/spine-fabric",
+  "platform/how-it-works", "integrations", "security", "developers", "use-cases",
+];
+for (const route of broadRoutes) {
+  const html = readFileSync(`out/${route}.html`, "utf8");
+  const hero = html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/)?.[1].replace(/<[^>]*>/g, "") ?? "";
+  if (!hero.trim() || /\brenewals?\b/i.test(hero)) {
+    throw new Error(`/${route} needs its own broad introduction, not a renewal-only hero.`);
+  }
+  if (html.includes("Renewal Decision Workspace") || html.includes("Expand after renewals are working")) {
+    throw new Error(`/${route} still contains the forced renewal-copy layer.`);
+  }
+}
+const twin = readFileSync("out/twin.html", "utf8");
+for (const scope of ["Operations", "Finance", "Product &amp; engineering", "Leadership", "Coworker"]) {
+  if (!twin.includes(scope)) throw new Error(`Twin scope missing: ${scope}`);
+}
+if (!twin.includes("The Twin uses the context it is permitted to access")) {
+  throw new Error("Twin capability introduction was dropped by its card layout.");
+}
+const resources = readFileSync("out/resources.html", "utf8");
+if (resources.includes("Published planning prices") || !resources.includes('href="/use-cases"')) {
+  throw new Error("Resources must describe current destinations and commercial scope accurately.");
+}
+console.log("Corporate HTML, broad technology scope, resource destinations, product routing, and sitemap artifact verified.");

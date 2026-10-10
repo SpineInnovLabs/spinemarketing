@@ -369,7 +369,7 @@ function OpsViewVisual() {
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-75" />
               <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-500" />
             </span>
-            <span className="text-[11px] font-semibold text-emerald-600">
+            <span className="text-[11px] font-semibold text-emerald-700">
               Live
             </span>
           </div>
@@ -604,7 +604,7 @@ export function BusinessOpsContent() {
     <>
       {/* ── HERO ─────────────────────────────────────────── */}
       <section
-        className="relative overflow-hidden bg-white"
+        className="marketing-surface relative overflow-hidden bg-white"
       >
         <div
           className="pointer-events-none absolute inset-0"
@@ -744,7 +744,7 @@ export function BusinessOpsContent() {
       </section>
 
       {/* ── THE PROBLEM ──────────────────────────────────── */}
-      <section className="arvio-section dark-section">
+      <section className="arvio-section marketing-surface">
         <div className="mx-auto max-w-[1100px]">
           <div className="mx-auto max-w-3xl">
             <motion.div
@@ -771,7 +771,7 @@ export function BusinessOpsContent() {
       </section>
 
       {/* ── WORKBENCH/INTELLIGENCE SOLUTION FRAMING ────────────────────────── */}
-      <section className="arvio-section dark-section">
+      <section className="arvio-section marketing-surface">
         <div className="mx-auto max-w-[1100px]">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -816,7 +816,7 @@ export function BusinessOpsContent() {
 
       {/* ── THE SHIFT — Before vs After ──────────────────── */}
       <section
-        className="arvio-section dark-section bg-white"
+        className="arvio-section marketing-surface bg-white"
       >
         <div className="mx-auto max-w-[1100px]">
           <motion.div
@@ -870,7 +870,7 @@ export function BusinessOpsContent() {
       </section>
 
       {/* ── FOUR VIEWS — Role-specific Lenses ────────────── */}
-      <section className="arvio-section dark-section">
+      <section className="arvio-section marketing-surface">
         <div className="mx-auto max-w-[1100px]">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -936,7 +936,7 @@ export function BusinessOpsContent() {
       )}
 
       {/* ── WHAT YOU GET — Day One + Stats ────────────────── */}
-      <section className="arvio-section dark-section">
+      <section className="arvio-section marketing-surface">
         <div className="mx-auto max-w-[1100px]">
           <div className="mx-auto max-w-4xl">
             <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:items-start">
@@ -1024,7 +1024,7 @@ export function BusinessOpsContent() {
       </section>
 
       {/* ── 4 USE CASES ───────────────────────────────────── */}
-      <section className="arvio-section dark-section">
+      <section className="arvio-section marketing-surface">
         <div className="mx-auto max-w-[1100px]">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -1093,7 +1093,7 @@ export function BusinessOpsContent() {
       </section>
 
       {/* ── CTA ──────────────────────────────────────────── */}
-      <section className="arvio-section dark-section">
+      <section className="arvio-section marketing-surface">
         <div className="mx-auto max-w-[1100px]">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

@@ -4,7 +4,7 @@ import { RedirectPage } from "@/components/redirect-page";
 export const metadata: Metadata = {
   title: "How it works | Spine InnovTech",
   description:
-    "The tools keep the record. The workspace shows the work. Twin proposes only when asked. A person decides, and an accepted change goes back to the original tool.",
+    "People and Twin work from authorized business context. Investigate, prepare, review consequential actions, and reconcile observed results in the systems that own the records.",
   alternates: { canonical: "/platform/how-it-works" },
 };
 

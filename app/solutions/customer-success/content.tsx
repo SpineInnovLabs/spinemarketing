@@ -38,7 +38,7 @@ export function CustomerSuccessRoleContent() {
         { time: "4:00", title: "End-of-day review", desc: "Check the Signal Center. Two new signals queued for tomorrow. Everything else is handled. Go home knowing nothing was missed." },
       ]}
       capabilities={[
-        { title: "Risk detected 90 days before renewal", desc: "Usage drops, support spikes, and payment delays combined into one risk score you can act on today." },
+        { title: "Review renewal risk before the customer conversation", desc: "Relate usage changes, support issues, and payment signals to the available account context and evidence." },
         { title: "Expansion signals surfaced automatically", desc: "When a customer hits usage limits or adds team members, AI drafts the upgrade conversation." },
         { title: "QBR decks from real data", desc: "Stop spending hours assembling slides. One click generates a review deck from actual adoption and health data." },
         { title: "Escalations with full context", desc: "When you escalate, everyone sees the same picture — support history, usage, payment status, communications." },

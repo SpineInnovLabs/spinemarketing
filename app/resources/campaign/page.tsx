@@ -7,12 +7,12 @@ import { CampaignGalleryContent } from "./content"
 export const metadata: Metadata = {
   title: "Campaign Gallery — Architecture & Creatives | Spine InnovTech",
   description:
-    "Architecture blueprints showing Spine Workspace at the center of every tool, plus 36 campaign designs across LinkedIn and WhatsApp — for Account Success, Business Ops, and Personal Ops.",
+    "Architecture illustrations and 36 earlier campaign concepts for Account Success, Business Ops, and Personal Ops. Explore the product pages for the current direction.",
   alternates: { canonical: "/resources/campaign" },
   openGraph: {
     title: "Campaign Gallery — Architecture & Creatives | Spine InnovTech",
     description:
-      "The Spine Workspace connects every tool into the record the tools already keep. Architecture blueprints and 36 campaign designs.",
+      "Architecture illustrations and 36 campaign concepts. Illustrative assets, not evidence of deployed product controls.",
     images: [
       { url: "/images/campaign/Post-Spine.jpg", width: 1080, height: 1080, alt: "Spine Workspace — The Spine Workspace Architecture" },
     ],
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Campaign Gallery — Architecture & Creatives | Spine InnovTech",
-    description: "The Spine Workspace connects every tool into the record the tools already keep.",
+    description: "Architecture illustrations and earlier campaign concepts for Spine Workspace.",
     images: ["/images/campaign/Post-Spine.jpg"],
   },
 }
@@ -51,7 +51,7 @@ const jsonLd = {
 
 export default function CampaignGalleryPage() {
   return (
-    <div className="min-h-screen bg-[#032D60]">
+    <div className="min-h-screen bg-white">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

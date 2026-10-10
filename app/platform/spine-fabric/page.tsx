@@ -12,11 +12,11 @@ import { BreadcrumbJsonLd } from "@/components/structured-data"
 export const metadata: Metadata = {
   title: "Spine Fabric | Spine InnovTech",
   description:
-    "Spine Fabric is a Spine InnovTech product. The tools keep the record. Spine Workspace shows the work.",
+    "Spine Fabric connects business relationships, evidence, signals, decisions, goals and work into governed context.",
   alternates: { canonical: "/platform/spine-fabric" },
   openGraph: {
     title: "Spine Fabric | Spine InnovTech",
-    description: "The tools keep the record. Spine Workspace shows the work. Twin proposes only when asked. A person decides.",
+    description: "Explore the contextual foundation behind Spine Workspace: relationships, provenance, authority and continuity.",
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "Spine Workspace" }],
   },
 }
@@ -34,10 +34,10 @@ export default function SpineFabricPage() {
         <SpineFabricContent />
         <SpineStickyScroll />
         <IntegrationShowcase
-          tag="Works With Everything"
+          tag="Connected capabilities"
           heading={<>Your tools, <span className="text-primary">still in charge.</span></>}
         />
-        <TestimonialsSection heading="Why teams keep the record in their tools." />
+        <TestimonialsSection heading="Connected context across business functions." />
         <FinalCTA />
       </main>
       <Footer />
