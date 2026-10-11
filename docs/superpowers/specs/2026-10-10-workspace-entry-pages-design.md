@@ -1,15 +1,15 @@
-# SpineWorkspace entry, identity, and Pages delivery
+# SpineWorkspace entry, role profiles, and Workers delivery
 
-Status: proposed downstream implementation specification; awaiting written review.
-Date: 2026-10-10.
-Source baseline: `SpineInnovLabs/spineworkspace-live@f5dffed1bc2607a6b282856cbf59e6f007020af5`.
+Status: entry specification updated for role-first onboarding; runtime changes are under review in spineworkspace-live. Live TEST acceptance remains blocked at authenticated session access.
+Date: 2026-10-10. Updated: 2026-10-11.
+Historical source baseline for the original inspection table: `SpineInnovLabs/spineworkspace-live@f5dffed1bc2607a6b282856cbf59e6f007020af5`. Current runtime work builds on `dev@9c10e703f2ad3c0618320c3b002961afedfdabdb`.
 Parent branding in this work: Spine InnovTech / Spine InnovTech Private Limited, as directed by the founder. Existing repository identifiers remain unchanged.
 
 ## Intended outcome
 
-A person can enter from a Spine Network MCP/plugin listing in an AI host, or explore the public Product, functional Solution, and industry Solution pages before signing up. Both journeys use SpineWorkspace authentication through Descope and resolve an authorized workspace. Authentication offers configured social login, enterprise SSO, and AI-host identity where a supported, verified federation connection exists. Host discovery and tool connection happen after entry without a mandatory setup wizard.
+A person can enter from a Spine Network MCP/plugin listing in an AI host, or explore the public Product, functional Solution, and industry Solution pages before signing up. Both journeys use SpineWorkspace authentication through Descope and resolve an authorized workspace. Authentication offers configured social login, enterprise SSO, and AI-host identity where a supported, verified federation connection exists. The person saves organization or personal-workspace context, industry, and an authorized work role before opening the Workbench. Host discovery and tool connection remain optional and can happen afterward.
 
-Connected, authorized context flows through the existing loader, normalization, governed writer, Spine Fabric, Context Assembly, and projection services. The frontend renders those projections through the server boundary. The founder requested Cloudflare Pages for frontend delivery.
+Connected, authorized context flows through the existing loader, normalization, governed writer, Spine Fabric, Context Assembly, and projection services. The frontend renders those projections through the server boundary. The current release instruction uses Cloudflare Workers Builds with the existing OpenNext app Worker; the earlier Pages entry proposal below is deferred.
 
 The first implementation covers entry and one connected-context journey. It does not rewrite every service, create separate apps per industry, or change the fixed workspace navigation grammar. Further providers and domain journeys extend the same contracts after this first journey is demonstrated.
 
@@ -49,7 +49,7 @@ The person returns to the AI host with its permitted Spine Network connection re
 
 The person finds Spine Network in an AI host, follows its website link, and explores the marketing site. Product and domain/industry solution pages explain the relevant features and offer Sign up / Sign in. Those actions enter the same Descope-backed authentication choices and membership resolution as the direct connection journey.
 
-After authentication, the person enters the permitted workspace without mandatory tool setup. If the journey began with a valid pending host connection, offer to resume its authorization and return to that host after consent. A normal website visitor enters the workspace without a fabricated host grant. Preserve a pending connection using server-validated state or a supported authorization transaction; marketing query parameters must not carry credentials, grant permissions, or supply arbitrary OAuth callback URLs.
+After authentication and verified membership, the person chooses an authorized work role if no durable profile exists, then enters the permitted workspace without mandatory tool setup. If the journey began with a valid pending host connection, offer to resume its authorization and return to that host after consent. A normal website visitor enters the workspace without a fabricated host grant. Preserve a pending connection using server-validated state or a supported authorization transaction; marketing query parameters must not carry credentials, grant permissions, or supply arbitrary OAuth callback URLs.
 
 ### Shared continuation
 
@@ -70,34 +70,33 @@ A desired Grok/ChatGPT presentation must be backed by real per-host reports, bin
 | Option | Benefit | Cost / limitation |
 | --- | --- | --- |
 | Pages frontend entry through a Function service binding to the existing OpenNext app Worker | Meets the requested Pages delivery entry while preserving Next server components, session routes, and private Worker bindings | Adds one thin delivery hop; requires origin, cookie, streaming, and cache validation |
-| Keep the complete frontend on Workers Static Assets | Matches the accepted current hosting ADR and the deployed architecture | Does not deliver the requested Pages entry |
+| Keep the complete frontend on Workers Static Assets | Matches the current Workers Builds release instruction, accepted hosting ADR, and deployed architecture | Exact-commit TEST deployment and authenticated acceptance still need verification |
 | Convert apps/web into a static client app on Pages | Pages directly hosts the client application | Replaces load-bearing server behavior and requires a substantially larger migration; excluded from this first slice |
 
-Selected proposal: the Pages delivery entry with the existing Worker as the sole application server. Cloudflare's Next.js Pages guide directs full-stack applications to Workers; a static export cannot preserve this app's server session and projection loaders. Pages Functions officially support `context.env.SERVICE.fetch(context.request)`.
+Current delivery decision (2026-10-11): preserve the existing OpenNext app Worker and use native Cloudflare Workers Builds for TEST from `dev` and production from `main`. The earlier Pages delivery entry is deferred; it must not be deployed as part of this role/profile change. Historical proposal: the Pages delivery entry with the existing Worker as the sole application server. Cloudflare's Next.js Pages guide directs full-stack applications to Workers; a static export cannot preserve this app's server session and projection loaders. Pages Functions officially support `context.env.SERVICE.fetch(context.request)`.
 
-`ADR-2026-10-03-01` currently specifies Workers hosting. The founder's latest request extends delivery to Pages, so the implementation must record a narrowly scoped delivery ADR in `spineworkspace-live`. It preserves Worker-owned application/BFF behavior and the existing single Workbench runtime. It does not silently edit the constitutional canon.
+`ADR-2026-10-03-01` currently specifies Workers hosting. Any future Pages entry requires a separately reviewed delivery ADR in `spineworkspace-live`. It preserves Worker-owned application/BFF behavior and the existing single Workbench runtime. It does not silently edit the constitutional canon.
 
 ```mermaid
 flowchart LR
     H0[AI host Spine Network listing] --> O[Connect MCP/plugin: OAuth authorization]
     H0 --> M
-    M[Public product and solutions] --> P[Pages delivery entry]
-    O --> P
-    P -->|service binding| W[Existing app Worker / Edge BFF]
+    M[Public product and solutions] --> W[Existing app Worker frontend / Edge BFF]
+    O --> W
     W --> D[Descope identity and federation]
     D --> I[Social / enterprise SSO / verified AI-host identity]
     W -->|GATEWAY binding| G[One Access / Gateway]
     G --> A[Authorized tenant and workspace]
-    A --> V[My Work / permitted projection]
+    A --> F[Save authorized work role / organization / industry]
+    F --> V[My Work / permitted projection]
     A --> Q[Consent to requested host permissions]
     Q --> R[Registered callback: resume AI host]
-    A --> H[Background host discovery and consent]
+    F --> H[Optional host discovery and consent]
     H --> L[Loader and normalization]
     L --> S[Governed writer / Spine Fabric]
     S --> C[Context Assembly / Projection Engine]
     C --> G
     G --> W
-    W --> P
 ```
 
 ## Authentication and entry behavior
@@ -107,10 +106,10 @@ flowchart LR
 3. Sign-up/sign-in cross-links, the Descope flow, callback, and server session exchange preserve the sanitized return path. External and protocol-relative return URLs are rejected by the shared contracts.
 4. The three authentication categories are configured social login, enterprise SSO, and verified AI-host identity. A permitted federated host/enterprise method uses the configured Descope connection. A hostname, email suffix, plugin click, or claimed host identity alone never authorizes it. Unconfigured methods are not offered as working methods.
 5. When that federation method is unavailable, configured social Descope methods are offered. An explicit identity/authorization denial must be shown; the application must not silently substitute another identity to bypass it.
-6. The server validates the Descope credential and resolves tenant/workspace membership. Existing users enter their authorized workspace directly. Multiple memberships require explicit selection of an authorized tenant. A new user receives an authorized provision/create/join outcome through One Access; failure does not create a default or Customer Zero membership.
-7. Only the identity/membership requirement can block entry. Connection discovery, hydration, plugin selection, and completion of a setup checklist do not block My Work. Removing the onboarding-cookie gate must not remove server membership or projection authorization checks.
+6. The server validates the Descope credential and resolves tenant/workspace membership. Returning users with a valid saved work profile enter their authorized workspace directly; users without one first choose a work role within their verified membership permissions. Multiple memberships require explicit selection of an authorized tenant. A new user receives an authorized provision/create/join outcome through One Access; failure does not create a default or Customer Zero membership.
+7. Verified identity, active membership, and a saved authorized work role are required before Workbench entry. Connection discovery, hydration, plugin selection, and completion of a setup checklist do not block My Work. Removing the onboarding-cookie gate must not remove server membership or projection authorization checks.
 8. An unauthorized requested projection displays the access outcome and an available authorized workspace entry. It never renders another tenant's data. Server resolution remains authoritative over the marketing hint.
-9. Logout clears the applicable app session. Returning sign-in re-resolves membership and current permissions rather than restoring cached authority.
+9. Logout clears the current-host app and identity cookies, awaits Descope SDK logout, clears client identity/projection caches, and navigates fully to sign-in. A failure is shown for retry. Returning sign-in re-resolves membership and current permissions rather than restoring cached authority; logout does not revoke separately granted MCP connections or promise cross-domain cookie deletion.
 10. A pending MCP/plugin authorization survives a sign-up/sign-in switch through a validated authorization transaction. Completing authentication does not silently approve the host's permissions. Consent, cancellation, callback validation, expiration, and revocation have explicit outcomes. App logout and host-grant revocation are separate operations with clearly stated effects.
 
 ## First connected-context journey
@@ -125,7 +124,7 @@ The browser requests same-origin application endpoints. Server calls use the exi
 
 Unavailable sources show a disclosed gap; denied sources show denial; stale context shows freshness. Demonstration fixtures are labeled and cannot satisfy live acceptance. The first read journey does not trigger an external write. A later consequential action remains Capability → Govern → Hermes → independent readback → reconciliation.
 
-## Pages boundary and rollout
+## Deferred Pages boundary and rollout
 
 - A dedicated Pages preview entry binds to the TEST app Worker. Production and preview bindings cannot share a production tenant/data shortcut.
 - Pages serves eligible public/static frontend assets and forwards dynamic application requests to the app Worker. Login, signup, session, callback, authenticated HTML/RSC, API requests, and logout preserve method, body, cookies, query, response status, streaming, and Set-Cookie behavior.
@@ -138,7 +137,7 @@ Unavailable sources show a disclosed gap; denied sources show denial; stale cont
 
 ## UI requirements
 
-Use the approved white/pale-blue surfaces, navy headings, bright-blue buttons, readable type, and consistent focus states for apps/web entry and the first tested workspace surface. Retain the fixed primary sidebar and domain projection contracts. New visuals must be original and relevant; the supplied screenshots are design references, not assets to embed.
+Use the approved white/pale-blue surfaces, navy headings, bright-blue buttons, readable type, and consistent focus states for apps/web entry and the first tested workspace surface. The profile control must show canonical name/email, Dashboard, My Settings, persistent System/Light/Dark appearance, Help, and Log Out. Settings groups Personal and Organization sections with search and only supported controls. Choosing a work role never grants administrator membership. Retain the fixed primary sidebar and domain projection contracts. New visuals must be original and relevant; the supplied screenshots are design references, not assets to embed.
 
 Authentication explains only the choice the person needs to make. Discovery appears in Connected Ecosystem with available, consent-needed, denied, revoked, unavailable, and synchronizing states. Service names, worker topology, configuration hashes, and normalizer/RPC details belong in diagnostics rather than the everyday entry flow.
 
@@ -163,3 +162,11 @@ The Cloudflare token is present and verified active via the supported proxy. Acc
 Deployed Descope provider availability, a real authorized test user/tenant, and a supported consenting source connection remain unverified. Inspect existing secure configuration metadata first. Any missing identity/provider configuration should be supplied through the existing Descope/vault/environment administration path, never as credentials pasted in chat.
 
 Follow spineworkspace-live's feature → dev → staging → main promotion discipline, affected contract tests, changelog/evidence obligations, and live-journey release gate. Its current repository is available for source inspection; its dependency install, startup, test suite, and new-task restoration have not been validated in this session. The marketing environment is separately build-tested.
+
+## Current implementation and live acceptance boundary — 2026-10-11
+
+The app change resolves identity and active tenant membership through Gateway, saves the work profile to that membership, derives projection scope from the selected role intersected with verified permissions, and gates workspace launch before discovery. A shared Settings/My Work return path is retained; a different role's marketing hint cannot override the chosen role. Host reports may be pending or unavailable without preventing entry once the profile is saved. No report means tools are unknown, rather than a claim that no tools exist on the person's machine.
+
+The user confirmed that neither a Descope-authenticated TEST browser session nor the original Grok October 11 Gmail/Calendar session is available in this Codex environment. `https://app.spineworkspace.com/login` is the configured One Auth entry, but a Cloudflare binding is not an authenticated session. Original source envelopes must be recovered by the owning Grok host. Local fixtures, queued receipts, or stored credentials cannot replace that access or prove Fabric ingestion, projections, governed execution, readback, or returning-user continuity.
+
+PR #19 remains a documentation change. The existing marketing pages and their public feature content remain intact; this update does not claim a production app deployment. The broad host-federation gap remains tracked by spineworkspace-live issue #440.
