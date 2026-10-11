@@ -7,7 +7,7 @@ Parent branding in this work: Spine InnovTech / Spine InnovTech Private Limited,
 
 ## Intended outcome
 
-A person can read the public Product, functional Solution, and industry Solution pages, choose Sign up or Sign in, authenticate through Descope, and enter their authorized workspace. A permitted host identity can be federated through Descope. When that method is unavailable, the configured social methods remain available. Host discovery and tool connection happen after entry without a mandatory setup wizard.
+A person can enter from a Spine Network MCP/plugin listing in an AI host, or explore the public Product, functional Solution, and industry Solution pages before signing up. Both journeys use SpineWorkspace authentication through Descope and resolve an authorized workspace. Authentication offers configured social login, enterprise SSO, and AI-host identity where a supported, verified federation connection exists. Host discovery and tool connection happen after entry without a mandatory setup wizard.
 
 Connected, authorized context flows through the existing loader, normalization, governed writer, Spine Fabric, Context Assembly, and projection services. The frontend renders those projections through the server boundary. The founder requested Cloudflare Pages for frontend delivery.
 
@@ -20,7 +20,7 @@ The following observations distinguish source behavior from verified deployed be
 | Area | Evidence | Assessment |
 | --- | --- | --- |
 | Descope sign-in | `apps/web/components/auth/descope-flow.tsx` uses `sign-up-or-in` and exchanges the credential with `/api/auth/session`; the session route validates it through the Descope SDK | Implemented in source; an actual authenticated journey has not been exercised in this session |
-| Federated identity | `packages/auth/src/index.ts` states that enterprise SAML/OIDC providers federate behind Descope and that discovery requires separate authorization | Contract exists; enabled social/SSO methods in the deployed Descope project are unknown |
+| Federated identityWhat is that exactly what is the change that is | `packages/auth/src/index.ts` states that enterprise SAML/OIDC providers federate behind Descope and that discovery requires separate authorization | Contract exists; enabled social/SSO methods in the deployed Descope project are unknown |
 | Return paths | Login preserves `next`; signup reads `next`, but its existing `/login` cross-link omits it (`apps/web/app/signup/page.tsx`) | Partial; context can be lost when switching authentication mode |
 | Direct entry | `apps/web/proxy.ts` checks a completed onboarding cookie under production strict mode; `lib/auth/post-auth-destination.ts` directs an identity without a tenant to onboarding | Conflicting with the current immediate-My-Work requirement; membership provisioning must remain an authorization prerequisite |
 | Membership | `lib/auth/session-identity.ts`, Gateway One Access, and tenant contracts resolve verified membership without a default tenant | Source contract exists; new-user, returning-user, and multiple-tenant outcomes require actual journey evidence |
@@ -32,6 +32,28 @@ The following observations distinguish source behavior from verified deployed be
 | Ingestion | `services/loader/src/index.ts`, `services/pipeline/src/normalizer/normalize.ts`, and the canonical writer contain the ingestion/normalization paths | Source exists; this session has not submitted a real authorized source record or verified its readback |
 
 The public app login/signup endpoints returned HTTP 200, while `auth.spineworkspace.com/login` returned 404. Marketing therefore uses the existing app origin. HTTP 200 does not prove authentication succeeded.
+
+## Two user journey entries
+
+### 1. Connect from an AI host
+
+The person finds Spine Network in a supported AI host's MCP/plugin listing and chooses Connect. Candidate hosts include ChatGPT, Claude, Perplexity, Cursor, Devin, and Hermes; listing, installation, OAuth, and identity capabilities must be verified independently for each host. This list does not claim that every host has a directory or a supported integration today.
+
+The host starts the supported OAuth authorization flow with SpineWorkspace. SpineWorkspace presents its configured authentication choices through Descope: social login, enterprise SSO, or verified AI-host identity. A plugin click or an existing AI-host session is not itself proof of a SpineWorkspace identity. AI-host login is offered only when a supported identity exchange/federation connection can be validated; otherwise the user chooses an available social or SSO method.
+
+After authentication, SpineWorkspace resolves membership and the intended workspace. The person reviews the requesting host/client, workspace, and requested permissions before granting the connection. The authorization server then returns the authorization result to the registered host callback. Where the host supports the flow, use authorization code with PKCE, exact registered redirect URI validation, state validation, and appropriately scoped tokens. User authentication and the host's authorization grant are distinct steps; an app session cookie is not issued to the host as an MCP credential.
+
+The person returns to the AI host with its permitted Spine Network connection ready, and can also open the authorized workspace. Cancelling login or consent leaves the connection ungranted. Revocation and expired grants prevent subsequent access. Host-specific OAuth requirements, authorization-server ownership, token audience, and the current MCP implementation are implementation evidence to inspect before choosing or adding endpoints.
+
+### 2. Explore before signing up
+
+The person finds Spine Network in an AI host, follows its website link, and explores the marketing site. Product and domain/industry solution pages explain the relevant features and offer Sign up / Sign in. Those actions enter the same Descope-backed authentication choices and membership resolution as the direct connection journey.
+
+After authentication, the person enters the permitted workspace without mandatory tool setup. If the journey began with a valid pending host connection, offer to resume its authorization and return to that host after consent. A normal website visitor enters the workspace without a fabricated host grant. Preserve a pending connection using server-validated state or a supported authorization transaction; marketing query parameters must not carry credentials, grant permissions, or supply arbitrary OAuth callback URLs.
+
+### Shared continuation
+
+Both entries converge on verified identity, authorized tenant/workspace membership, and separately consented host/tool connections. Social login does not automatically expose the AI host's tools or accounts. Host discovery uses verified estate reports and eligible provider connections; authorized source data then follows Loader → Normalization → governed Spine Fabric → Context Assembly/projection → the application server boundary. The host receives only the capabilities and data its grant permits, while the workspace renders only the user's permitted projections.
 
 ## Delivery options and selected proposal
 
@@ -47,12 +69,18 @@ Selected proposal: the Pages delivery entry with the existing Worker as the sole
 
 ```mermaid
 flowchart LR
+    H0[AI host Spine Network listing] --> O[Connect MCP/plugin: OAuth authorization]
+    H0 --> M
     M[Public product and solutions] --> P[Pages delivery entry]
+    O --> P
     P -->|service binding| W[Existing app Worker / Edge BFF]
     W --> D[Descope identity and federation]
+    D --> I[Social / enterprise SSO / verified AI-host identity]
     W -->|GATEWAY binding| G[One Access / Gateway]
     G --> A[Authorized tenant and workspace]
     A --> V[My Work / permitted projection]
+    A --> Q[Consent to requested host permissions]
+    Q --> R[Registered callback: resume AI host]
     A --> H[Background host discovery and consent]
     H --> L[Loader and normalization]
     L --> S[Governed writer / Spine Fabric]
@@ -67,12 +95,13 @@ flowchart LR
 1. Public feature pages retain their content. Sign up and Sign in are prominent actions. Product navigation remains a public product-details link unless the founder explicitly chooses an authentication-only navigation door.
 2. Both authentication URLs carry a fixed app-local `next` path. Functional solutions request their registered projection; industry pages without a registered projection request My Work. No industry hostname or entitlement is invented.
 3. Sign-up/sign-in cross-links, the Descope flow, callback, and server session exchange preserve the sanitized return path. External and protocol-relative return URLs are rejected by the shared contracts.
-4. A permitted federated host/enterprise method uses the configured Descope connection. A hostname, email suffix, or claimed host identity alone never authorizes it. Unconfigured methods are not offered as working methods.
+4. The three authentication categories are configured social login, enterprise SSO, and verified AI-host identity. A permitted federated host/enterprise method uses the configured Descope connection. A hostname, email suffix, plugin click, or claimed host identity alone never authorizes it. Unconfigured methods are not offered as working methods.
 5. When that federation method is unavailable, configured social Descope methods are offered. An explicit identity/authorization denial must be shown; the application must not silently substitute another identity to bypass it.
 6. The server validates the Descope credential and resolves tenant/workspace membership. Existing users enter their authorized workspace directly. Multiple memberships require explicit selection of an authorized tenant. A new user receives an authorized provision/create/join outcome through One Access; failure does not create a default or Customer Zero membership.
 7. Only the identity/membership requirement can block entry. Connection discovery, hydration, plugin selection, and completion of a setup checklist do not block My Work. Removing the onboarding-cookie gate must not remove server membership or projection authorization checks.
 8. An unauthorized requested projection displays the access outcome and an available authorized workspace entry. It never renders another tenant's data. Server resolution remains authoritative over the marketing hint.
 9. Logout clears the applicable app session. Returning sign-in re-resolves membership and current permissions rather than restoring cached authority.
+10. A pending MCP/plugin authorization survives a sign-up/sign-in switch through a validated authorization transaction. Completing authentication does not silently approve the host's permissions. Consent, cancellation, callback validation, expiration, and revocation have explicit outcomes. App logout and host-grant revocation are separate operations with clearly stated effects.
 
 ## First connected-context journey
 
@@ -107,12 +136,13 @@ Authentication explains only the choice the person needs to make. Discovery appe
 
 The first slice is accepted when a real user completes the following on the deployed preview and then the production release:
 
-1. Arrives from Product, a functional Solution, and an industry Solution with the intended entry context; switches sign-up/sign-in without losing it.
-2. Uses a configured permitted federation method, or a configured social Descope method when federation is unavailable. The server rejects an invalid/expired credential and an unsafe return URL.
+1. Completes both entry journeys: directly connecting Spine Network from one verified supported AI host, and exploring its marketing link before signing up. Also arrives from Product, a functional Solution, and an industry Solution with the intended entry context; switches sign-up/sign-in without losing it.
+2. Uses each configured authentication category that is actually supported: social, enterprise SSO, and AI-host identity. Unsupported host identity is disclosed rather than represented as working. The server rejects an invalid/expired credential and an unsafe return URL.
 3. Resolves a valid tenant/workspace and opens My Work or the permitted projection without completing tool setup. An independent second tenant cannot retrieve the first tenant's projection or connected records.
 4. Discovers only verified/authorized host estate, consents to a supported source, and sees its real record after loader/normalization/governed promotion with provenance and freshness. Missing permission, revoked connection, and source failure are disclosed.
 5. Receives the projection through the Pages → app Worker → Gateway binding path. Browser network inspection shows no raw internal datastore calls or provider credentials. Session cookies, CSRF/origin checks, private cache rules, streaming, and asset loading behave correctly.
 6. Logs out, signs back in, and resumes the correct workspace with current permissions. Desktop, tablet, mobile, keyboard, loading, empty, denied, and error states pass the repository visual and accessibility checks.
+7. Reviews and grants the host's requested workspace permissions, resumes the registered host callback, and demonstrates one permitted MCP operation. Rejected consent, invalid callback/state, expired authorization, and a revoked grant cannot access workspace data. A website-only sign-up creates no host grant.
 
 Record source commit, build/deployment identity, redacted screenshots, route outcomes, trace/correlation references, data provenance, and isolation results. Build success and HTTP 200 are separately recorded and cannot substitute for this journey.
 
