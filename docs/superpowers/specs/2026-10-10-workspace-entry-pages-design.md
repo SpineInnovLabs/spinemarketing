@@ -161,7 +161,7 @@ The Cloudflare token is present and verified active via the supported proxy. Acc
 
 Deployed Descope provider availability, a real authorized test user/tenant, and a supported consenting source connection remain unverified. Inspect existing secure configuration metadata first. Any missing identity/provider configuration should be supplied through the existing Descope/vault/environment administration path, never as credentials pasted in chat.
 
-Follow spineworkspace-live's feature → dev → staging → main promotion discipline, affected contract tests, changelog/evidence obligations, and live-journey release gate. Its current repository is available for source inspection; its dependency install, startup, test suite, and new-task restoration have not been validated in this session. The marketing environment is separately build-tested.
+Follow spineworkspace-live's feature → dev → staging → main promotion discipline, affected contract tests, changelog/evidence obligations, and live-journey release gate. The initial inspection did not validate app dependencies or startup. The current source checks and built-app local UI checks are recorded below; new-task restoration and live acceptance remain unverified. The marketing environment is separately build-tested.
 
 ## Current implementation and live acceptance boundary — 2026-10-11
 
@@ -170,3 +170,7 @@ The app change resolves identity and active tenant membership through Gateway, s
 The user confirmed that neither a Descope-authenticated TEST browser session nor the original Grok October 11 Gmail/Calendar session is available in this Codex environment. `https://app.spineworkspace.com/login` is the configured One Auth entry, but a Cloudflare binding is not an authenticated session. Original source envelopes must be recovered by the owning Grok host. Local fixtures, queued receipts, or stored credentials cannot replace that access or prove Fabric ingestion, projections, governed execution, readback, or returning-user continuity.
 
 PR #19 remains a documentation change. The existing marketing pages and their public feature content remain intact; this update does not claim a production app deployment. The broad host-federation gap remains tracked by spineworkspace-live issue #440.
+
+Runtime implementation: draft [spineworkspace-live #444](https://github.com/SpineInnovLabs/spineworkspace-live/pull/444) targets `dev`. Full web tests (1,679 passing), Gateway tests (664 passing, five existing pending), whole-web/Gateway/shared configuration typechecks, the TEST OpenNext build, and five built-app local fixture UI checks pass. The fixture used no provider records and cannot satisfy live acceptance.
+
+The newly supplied Descope management network binding is present. Read-only management and public signing-key API requests both returned a Cloudflare HTML 403, preventing management-key/project/test-user/provider verification. This is an API access blocker, not proof that the key is invalid. No management impersonation or replacement authenticated user session was created.
