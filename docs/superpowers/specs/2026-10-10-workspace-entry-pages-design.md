@@ -55,6 +55,16 @@ After authentication, the person enters the permitted workspace without mandator
 
 Both entries converge on verified identity, authorized tenant/workspace membership, and separately consented host/tool connections. Social login does not automatically expose the AI host's tools or accounts. Host discovery uses verified estate reports and eligible provider connections; authorized source data then follows Loader → Normalization → governed Spine Fabric → Context Assembly/projection → the application server boundary. The host receives only the capabilities and data its grant permits, while the workspace renders only the user's permitted projections.
 
+## Shared tenant context and host-owned execution
+
+Spine OAuth authorizes a host to call Spine Network; it does not transfer that host's app credentials or discover its private tools automatically. A host reports only apps it can actually probe, with host attribution, read scopes and `credential_plane: host`. Inventory, authorization bindings, connection ownership and capability routes are distinct from ingested business records. A binding with no executable route must be shown honestly.
+
+The requested ChatGPT custom-connector entry is `https://gateway.spineworkspace.com/mcp`, using the Spine auth authority. Switch that same connector to a direct marketplace MCP URL only after its installation is active; do not create a second connection or claim installation from a URL alone. Runtime availability and a real OAuth handshake remain verification gates.
+
+Within an authorized tenant, people can inspect each reporting host's connected environment. The owning host can execute its permitted local capability and report its result; another host sees the binding but receives `not_executable` when no authorized delegation route exists. Shared context consists of governed Spine records. Workbench reads their server projection rather than invoking host apps directly. Provider credentials remain on the owning host.
+
+A desired Grok/ChatGPT presentation must be backed by real per-host reports, bindings and projection readback. Current source audit found `get_available_actions` reads D1 `tenant_integrations` and top-level host metadata, rather than the owner-described Neon host inventory; complete combined-host visibility is still Partial. Do not publish a fictitious ChatGPT app list or label connection registration as ingestion. Original Gmail/Calendar recovery remains separate from the repaired outbox schema and requires the owning host's original envelopes.
+
 ## Delivery options and selected proposal
 
 | Option | Benefit | Cost / limitation |
