@@ -173,7 +173,7 @@ export function InnovLabsHome() {
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href="/product" className={button}>
-                Discover Spine Workspace{" "}
+                Discover SpineWorkspace{" "}
                 <ArrowRight className="h-4 w-4" aria-hidden />
               </Link>
               <Link href="/platform" className={secondary}>
@@ -186,10 +186,11 @@ export function InnovLabsHome() {
           </div>
           <figure className="mx-auto w-full max-w-[640px]">
             <Image
-              src="/images/corporate-connected-business.png"
-              alt="Original concept illustration: source records feed shared business context; a person reviews it with AI assistance, authorizes work, and verifies the outcome."
+              src="/images/corporate-context-flow.webp"
+              alt="Source documents, databases and work records connect to shared business context, then to a person and AI, an approval gate, and a verified outcome."
               width={1315}
               height={1196}
+              sizes="(min-width: 1320px) 568px, (min-width: 1024px) 46vw, (min-width: 640px) 640px, calc(100vw - 40px)"
               priority
               className="h-auto w-full rounded-2xl"
             />
@@ -272,7 +273,7 @@ export function InnovLabsHome() {
             the work.
           </h2>
           <p className={`${body} mt-7`}>
-            Spine Workspace brings goals, priorities, tasks, relationships,
+            SpineWorkspace brings goals, priorities, tasks, relationships,
             knowledge, signals, connected applications, and AI assistance into
             one business-context workspace.
           </p>
@@ -285,7 +286,7 @@ export function InnovLabsHome() {
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link href="/product" className={button}>
-              Explore Spine Workspace{" "}
+              Explore SpineWorkspace{" "}
               <ArrowRight className="h-4 w-4" aria-hidden />
             </Link>
             <Link href="/product/how-it-works" className={secondary}>
@@ -375,7 +376,7 @@ export function InnovLabsHome() {
             ))}
           </div>
           <p className="mt-6 text-[13px] leading-6 text-[#4E607A]">
-            These are complementary layers of the Spine Workspace architecture,
+            These are complementary layers of the SpineWorkspace architecture,
             not separate products or independent availability commitments.
           </p>
           <TextLink href="/platform">Explore the architecture</TextLink>
@@ -570,7 +571,7 @@ export function InnovLabsHome() {
           </div>
           <div className="flex flex-wrap gap-3">
             <Link href="/product" className={button}>
-              Explore Spine Workspace{" "}
+              Explore SpineWorkspace{" "}
               <ArrowRight className="h-4 w-4" aria-hidden />
             </Link>
             <Link href="/contact" className={secondary}>

@@ -4,7 +4,7 @@ import { DOCS_URL } from "@/lib/navigation";
 
 export const metadata: Metadata = {
   title: "Documentation | Spine InnovTech",
-  description: "Spine Workspace documentation.",
+  description: "SpineWorkspace documentation.",
 };
 
 export default function DocsPage() {

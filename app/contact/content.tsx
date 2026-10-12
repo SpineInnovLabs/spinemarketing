@@ -18,7 +18,7 @@ const fade = (delay = 0) => ({
 const contactFAQs = [
   {
     question: "What can I contact Spine InnovTech about?",
-    answer: "Company partnerships, enterprise integrations, business-context architecture, responsible AI design and questions about our flagship product, Spine Workspace.",
+    answer: "Company partnerships, enterprise integrations, business-context architecture, responsible AI design and questions about our flagship product, SpineWorkspace.",
   },
   {
     question: "Do we need to replace our existing tools?",
@@ -103,7 +103,7 @@ export function ContactContent({
             className="mx-auto mt-5 max-w-2xl text-[17px] leading-[1.6] text-[#444]"
           >
             Whether you want a demo, have a question, or want to explore how
-            Spine Workspace fits your existing environment — we&apos;re here.
+            SpineWorkspace fits your existing environment — we&apos;re here.
           </motion.p>
         </div>
       </section>
@@ -115,7 +115,7 @@ export function ContactContent({
               {
                 icon: MessageSquare,
                 title: "Book a demo",
-                desc: "Discuss Spine Workspace and arrange a relevant product walkthrough.",
+                desc: "Discuss SpineWorkspace and arrange a relevant product walkthrough.",
                 cta: "Book a demo",
                 href: "/contact?intent=demo",
                 external: false,

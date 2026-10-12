@@ -8,7 +8,7 @@ import { absoluteUrl } from "@/lib/site-url";
 
 export const metadata: Metadata = {
   title: { absolute: "Technology Portfolio | Spine InnovTech" },
-  description: "Explore the Spine InnovTech technology portfolio: the Spine Workspace product, Spine Fabric, Spine Twin and governed execution architecture.",
+  description: "Explore the Spine InnovTech technology portfolio: the SpineWorkspace product, Spine Fabric, Spine Twin and governed execution architecture.",
   alternates: { canonical: "/portfolio" },
 };
 
@@ -16,7 +16,7 @@ const work = [
   {
     icon: UsersRound,
     type: "Flagship product",
-    title: "Spine Workspace",
+    title: "SpineWorkspace",
     body: "A business-context workspace for people and AI to understand the business, share work and move goals forward together.",
     href: "/product",
     external: false,
@@ -57,7 +57,7 @@ export default function PortfolioPage() {
           <div className="mx-auto max-w-[1220px]">
             <p className="text-xs font-semibold uppercase tracking-[.23em] text-[#4C5C73]">Spine InnovTech / Portfolio</p>
             <h1 className="mt-7 max-w-[1050px] text-[clamp(3.2rem,6vw,6.3rem)] font-semibold leading-[1.07] tracking-[-.065em]">One direction. <span className="text-[#0072E5]">Connected capabilities.</span></h1>
-            <p className="mt-8 max-w-[780px] text-[18px] leading-[1.9] text-[#4C5C73]">Our portfolio is built around Spine Workspace. The elements below describe an integrated product architecture, not a list of separately purchasable products or verified customer implementations.</p>
+            <p className="mt-8 max-w-[780px] text-[18px] leading-[1.9] text-[#4C5C73]">Our portfolio is built around SpineWorkspace. The elements below describe an integrated product architecture, not a list of separately purchasable products or verified customer implementations.</p>
           </div>
         </section>
         <section className="mx-auto max-w-[1220px] px-5 py-24 sm:px-8 lg:py-32">

@@ -19,7 +19,7 @@ const names: Record<string, string> = {
   "/company": "About Spine InnovTech",
   "/about": "Our story",
   "/platform": "Technology overview",
-  "/product": "Spine Workspace — product details & features",
+  "/product": "SpineWorkspace — product details & features",
   "/platform/spine-fabric": "Spine Fabric — technical overview",
   "/spine": "Spine Fabric — introduction",
   "/twin": "Spine Twin",
@@ -140,7 +140,7 @@ export default async function SiteMapPage() {
           The full website, in one place.
         </h1>
         <p className="mt-6 max-w-[740px] text-[17px] leading-8 text-[#4E607A]">
-          Explore our company, the technology behind Spine Workspace, business
+          Explore our company, the technology behind SpineWorkspace, business
           solutions, practical use cases, and published thinking.
         </p>
         <div className="mt-12 grid items-start gap-8 lg:grid-cols-2">

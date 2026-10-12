@@ -8,11 +8,11 @@ import { absoluteUrl } from "@/lib/site-url";
 
 export const metadata: Metadata = {
   title: { absolute: "Pricing & Commercial Inquiries | Spine InnovTech" },
-  description: "Explore Spine Workspace features and discuss product plans with our team. For architecture, integration and partnership inquiries, contact Spine InnovTech.",
+  description: "Explore SpineWorkspace features and discuss product plans with our team. For architecture, integration and partnership inquiries, contact Spine InnovTech.",
   alternates: { canonical: "/pricing" },
   openGraph: {
     title: "Pricing & Commercial Inquiries | Spine InnovTech",
-    description: "Find the right destination for Spine Workspace product pricing and Spine InnovTech project discussions.",
+    description: "Find the right destination for SpineWorkspace product pricing and Spine InnovTech project discussions.",
   },
 };
 
@@ -32,7 +32,7 @@ export default function PricingPage() {
               The right conversation for the <span className="text-[#0072E5]">right scope.</span>
             </h1>
             <p className="mt-8 max-w-[730px] text-[18px] leading-[1.85] text-[#4C5C73]">
-              Spine InnovTech is the company behind Spine Workspace. Product plans and project engagements are different conversations, so we keep their commercial information separate.
+              Spine InnovTech is the company behind SpineWorkspace. Product plans and project engagements are different conversations, so we keep their commercial information separate.
             </p>
           </div>
         </section>
@@ -40,7 +40,7 @@ export default function PricingPage() {
           <article className="rounded-[26px] border border-[#D7E4F3] bg-white p-8 sm:p-11">
             <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#EAF2FF] text-[#245EA9]"><ArrowUpRight className="h-6 w-6" aria-hidden /></div>
             <p className="mt-9 text-xs font-semibold uppercase tracking-[.2em] text-[#386CAC]">Flagship product</p>
-            <h2 className="mt-5 text-[30px] font-semibold tracking-[-.045em] text-[#112F58]">Spine Workspace</h2>
+            <h2 className="mt-5 text-[30px] font-semibold tracking-[-.045em] text-[#112F58]">SpineWorkspace</h2>
             <p className="mt-5 text-[16px] leading-[1.85] text-[#546B85]">Explore the product capabilities and workflow here, then talk with our team about subscriptions, availability, and the right evaluation path.</p>
             <a href="/product" className="mt-9 inline-flex min-h-12 items-center gap-2 rounded-full bg-[#103467] px-6 text-sm font-semibold text-white transition hover:bg-[#295BA1]">Explore product details <ArrowUpRight className="h-4 w-4" aria-hidden /></a>
           </article>

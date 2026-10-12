@@ -19,7 +19,7 @@ export const SPINE_INNOVLABS_SITE = resolved.resolved.spine_innovlabs_site;
 export const SPINE_INNOVLABS_CANONICAL_URL =
   resolved.spine_innovlabs.canonical_url;
 
-/** Spine Workspace product — apex landing and lens doors only. */
+/** SpineWorkspace product — apex landing and lens doors only. */
 export const SPINE_WORKSPACE_APEX = resolved.resolved.spine_workspace_apex;
 
 export const SPINE_WORKSPACE_APP = resolved.resolved.spine_workspace_app;

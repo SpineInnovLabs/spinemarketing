@@ -20,7 +20,7 @@ export function SolutionsContent() {
           </p>
           <div className="mt-9 flex flex-wrap gap-3">
             <a href="/product" className="inline-flex min-h-12 items-center gap-2 rounded-full bg-[#B0CEFF] px-6 text-sm font-semibold text-[#102B51] transition hover:bg-white">
-              Explore Spine Workspace <ArrowUpRight className="h-4 w-4" aria-hidden />
+              Explore SpineWorkspace <ArrowUpRight className="h-4 w-4" aria-hidden />
             </a>
             <Link href="/contact" className="inline-flex min-h-12 items-center gap-2 rounded-full border border-[#006FE8] bg-white px-6 text-sm font-semibold text-[#082B5E] transition hover:bg-[#EBF7FF]">
               Discuss your use case <ArrowRight className="h-4 w-4" aria-hidden />

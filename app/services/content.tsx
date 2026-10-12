@@ -80,7 +80,7 @@ export function ServicesContent() {
           </div>
           <div className="flex flex-col gap-3">
             <Link href="/contact" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#112E59] px-6 text-sm font-semibold text-white transition hover:bg-[#2659A0]">Contact Spine InnovTech <ArrowRight className="h-4 w-4" aria-hidden /></Link>
-            <a href="/product" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-[#BDD0EA] bg-white px-6 text-sm font-semibold text-[#112E59] transition hover:border-[#2659A0]">Explore Spine Workspace <ArrowUpRight className="h-4 w-4" aria-hidden /></a>
+            <a href="/product" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-[#BDD0EA] bg-white px-6 text-sm font-semibold text-[#112E59] transition hover:border-[#2659A0]">Explore SpineWorkspace <ArrowUpRight className="h-4 w-4" aria-hidden /></a>
           </div>
         </div>
       </section>
