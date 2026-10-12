@@ -3,9 +3,31 @@ import { getSolutionDomain } from "@/lib/solution-domains";
 import { WorkspaceAuthActions } from "./workspace-auth-actions";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { WorkbenchViewExplorer } from "./workbench-view-explorer";
 
 export function SolutionDomainFeatures({ slug }: { slug: string }) {
   const domain = getSolutionDomain(slug);
+  const associatedWorkbench: Record<string, string> = {
+    "customer-success": "account-success",
+    "account-success": "account-success",
+    "technical-account-success": "technical-account-success",
+    founders: "founderops",
+    sales: "sales",
+    marketing: "marketing",
+    content: "content",
+    finance: "finance",
+    "finance-leaders": "finance",
+    revops: "revops",
+    operations: "operations",
+    "business-ops": "operations",
+    services: "service",
+    support: "support",
+    "product-engineering": "productengineering",
+    individual: "personal",
+    "human-resources": "humanresources",
+    legal: "legal",
+  };
+  const workbenchId = associatedWorkbench[slug];
   return (
     <>
       <Section id="domain-features" variant="muted" className="scroll-mt-24">
@@ -27,6 +49,7 @@ export function SolutionDomainFeatures({ slug }: { slug: string }) {
           <p className="mt-4 max-w-3xl text-sm leading-relaxed text-[#4E607A]">These feature patterns use connected, permitted information. Supported systems and authorized actions are confirmed for your deployment.</p>
         </div>
       </Section>
+      {workbenchId ? <WorkbenchViewExplorer initialDomain={workbenchId} compact /> : null}
       <Section id="domain-workflow" className="scroll-mt-24">
         <SectionHeader align="left" label="Example workflow" headline={`${domain.name}: a decision with its context.`} />
         <ol className="mt-10 grid gap-5 lg:grid-cols-3">
