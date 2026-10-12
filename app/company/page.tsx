@@ -6,11 +6,11 @@ import { Footer } from "@/components/footer";
 
 export const metadata: Metadata = {
   title: "About Spine InnovTech | Technology, AI & Business Context",
-  description: "Discover why Spine InnovTech builds connected, context-aware technology, and the company behind Spine Workspace.",
+  description: "Discover why Spine InnovTech builds connected, context-aware technology, and the company behind SpineWorkspace.",
   alternates: { canonical: "/company" },
   openGraph: {
     title: "About Spine InnovTech",
-    description: "The company building intelligence for connected business and the Spine Workspace experience.",
+    description: "The company building intelligence for connected business and the SpineWorkspace experience.",
     type: "website",
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "Spine InnovTech" }],
   },
@@ -97,8 +97,8 @@ export default function CompanyPage() {
 
         <section className="bg-white py-24 lg:py-32">
           <div className="mx-auto grid max-w-[1240px] items-center gap-12 px-5 sm:px-8 lg:grid-cols-2 lg:gap-20">
-            <div><p className="text-[11px] font-semibold uppercase tracking-[.24em] text-[#245FC8]">OUR FLAGSHIP</p><h2 className="mt-5 text-[clamp(2.6rem,4.5vw,4.7rem)] font-semibold leading-[1.1] tracking-[-.06em]">Spine Workspace brings the idea to work.</h2></div>
-            <div><p className="text-[20px] font-medium leading-[1.7] text-[#253F62]">One workspace for humans and AI to understand the business, share the work, and achieve goals together.</p><p className="mt-5 text-[16px] leading-[1.85] text-[#556982]">Spine Workspace is our flagship product. Its human-facing workbench and context-aware AI counterpart are supported by Spine Fabric, Spine Runtime, and connected capabilities. The architecture is designed for context to be usable while responsibility stays clear.</p><Link href="/product" className="mt-8 inline-flex min-h-12 items-center gap-2 rounded-full bg-[#0D2B59] px-6 text-sm font-semibold text-white transition hover:bg-[#2854A0]">Explore Spine Workspace <ArrowUpRight className="h-4 w-4"/></Link></div>
+            <div><p className="text-[11px] font-semibold uppercase tracking-[.24em] text-[#245FC8]">OUR FLAGSHIP</p><h2 className="mt-5 text-[clamp(2.6rem,4.5vw,4.7rem)] font-semibold leading-[1.1] tracking-[-.06em]">SpineWorkspace brings the idea to work.</h2></div>
+            <div><p className="text-[20px] font-medium leading-[1.7] text-[#253F62]">One workspace for humans and AI to understand the business, share the work, and achieve goals together.</p><p className="mt-5 text-[16px] leading-[1.85] text-[#556982]">SpineWorkspace is our flagship product. Its human-facing workbench and context-aware AI counterpart are supported by Spine Fabric, Spine Runtime, and connected capabilities. The architecture is designed for context to be usable while responsibility stays clear.</p><Link href="/product" className="mt-8 inline-flex min-h-12 items-center gap-2 rounded-full bg-[#0D2B59] px-6 text-sm font-semibold text-white transition hover:bg-[#2854A0]">Explore SpineWorkspace <ArrowUpRight className="h-4 w-4"/></Link></div>
           </div>
         </section>
 

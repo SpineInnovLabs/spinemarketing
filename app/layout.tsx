@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     template: "%s",
   },
   description:
-    "Spine InnovTech builds intelligent, context-aware technology for connected business — and Spine Workspace, where humans and AI work from shared business context.",
+    "Spine InnovTech builds intelligent, context-aware technology for connected business — and SpineWorkspace, where humans and AI work from shared business context.",
   icons: {
     icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
     apple: "/icon.svg",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Spine InnovTech | Intelligence for Connected Business",
     description:
-      "Technology and AI innovation for shared business context, governed action, and connected work. Meet the company behind Spine Workspace.",
+      "Technology and AI innovation for shared business context, governed action, and connected work. Meet the company behind SpineWorkspace.",
     siteName: "Spine InnovTech",
     type: "website",
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "Spine InnovTech" }],
@@ -56,7 +56,7 @@ export default function RootLayout({
               "@type": "Organization",
               name: "Spine InnovTech",
               legalName: "Spine InnovTech Private Limited",
-              description: "Technology and AI innovation company behind Spine Workspace",
+              description: "Technology and AI innovation company behind SpineWorkspace",
               url: publicSiteUrl,
               logo: absoluteUrl("/icon.svg"),
               sameAs: [],

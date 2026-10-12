@@ -214,7 +214,7 @@ export function CampaignGalleryContent() {
             </span>
           </motion.div>
           <motion.p {...fade(0.05)} className="mb-10 max-w-3xl text-[15px] font-medium leading-[1.6] text-white/45">
-            These illustrations explore how tools and evidence relate to shared business context. They do not establish connector availability or prove deployed controls. Explore Spine Fabric for the contextual foundation and Spine Workspace for the product features.
+            These illustrations explore how tools and evidence relate to shared business context. They do not establish connector availability or prove deployed controls. Explore Spine Fabric for the contextual foundation and SpineWorkspace for the product features.
           </motion.p>
 
           <div className="grid gap-6 sm:grid-cols-2">

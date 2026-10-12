@@ -28,7 +28,7 @@ export function Footer() {
             </h2>
             <p className="mt-5 max-w-[400px] text-[14px] leading-[1.85] text-[#CBD9EB]">
               Connected systems. Shared context. Governed intelligence. Building
-              Spine Workspace for humans and AI to work together with business
+              SpineWorkspace for humans and AI to work together with business
               context.
             </p>
             <Link

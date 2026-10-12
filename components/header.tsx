@@ -561,7 +561,7 @@ export function Header({
               href="/product"
               className="inline-flex h-10 items-center rounded-[10px] px-3 text-[15px] font-semibold text-[#082B5E] hover:bg-[#F3F6F9] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006FE8] focus-visible:ring-offset-2"
             >
-              Spine Workspace
+              SpineWorkspace
             </Link>
             <a href={authLinks.login} className="inline-flex h-10 items-center rounded-[10px] px-3 text-[14px] font-semibold text-[#082B5E] hover:bg-[#F3F6F9] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006FE8] focus-visible:ring-offset-2">
               Sign in
@@ -749,7 +749,7 @@ export function Header({
                   className="flex h-10 items-center justify-center rounded-md border border-[#C9C9C9] text-[14px] font-semibold text-[#082B5E] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006FE8]"
                   onClick={closeMobile}
                 >
-                  Spine Workspace
+                  SpineWorkspace
                 </Link>
                 <Button
                   className="h-10 w-full rounded-md bg-[#006FE8] font-semibold text-white hover:bg-[#0055B8]"

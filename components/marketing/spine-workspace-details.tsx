@@ -138,7 +138,7 @@ export function SpineWorkspaceDetails() {
           The work you own.
         </h2>
         <p className="innovtech-section-intro">
-          Spine Workspace is the product. Its human work surface and AI
+          SpineWorkspace is the product. Its human work surface and AI
           counterpart bring connected business context into everyday work.
         </p>
         <div className="innovtech-feature-grid">
@@ -200,7 +200,7 @@ export function SpineWorkspaceDetails() {
           <br />A connected foundation.
         </h2>
         <p className="innovtech-section-intro">
-          These layers work together as the Spine Workspace architecture. They
+          These layers work together as the SpineWorkspace architecture. They
           describe the technology behind the product, rather than separate
           availability commitments.
         </p>

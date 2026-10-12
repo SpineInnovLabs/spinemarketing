@@ -27,7 +27,7 @@ export const headerNavigation: NavItem[] = [
   {
     label: "Technology", href: "/platform",
     featured: {
-      name: "Spine Workspace", href: "/product", icon: Layers3,
+      name: "SpineWorkspace", href: "/product", icon: Layers3,
       desc: "Our flagship business-context workspace for humans and AI",
     },
     items: [
@@ -39,7 +39,7 @@ export const headerNavigation: NavItem[] = [
     ],
     menuFooter: [
       { name: "Explore the architecture", href: "/platform" },
-      { name: "Explore Spine Workspace", href: "/product" },
+      { name: "Explore SpineWorkspace", href: "/product" },
     ],
   },
   {
@@ -79,7 +79,7 @@ export const footerColumns: FooterColumn[] = [
     { name: "Contact", href: "/contact" }, { name: "Portfolio", href: "/portfolio" },
   ] },
   { heading: "Our technology", links: [
-    { name: "Spine Workspace", href: "/product" },
+    { name: "SpineWorkspace", href: "/product" },
     { name: "Spine Fabric", href: "/platform/spine-fabric" },
     { name: "Spine Twin", href: "/twin" },
     { name: "Governance & Runtime", href: "/governance" },
@@ -97,4 +97,4 @@ export const footerColumns: FooterColumn[] = [
 ];
 
 export const COMPANY_TAGLINE = "Building the intelligence behind connected business. Connected systems. Shared context. Governed intelligence.";
-export const PRODUCT_ONELINER = "Spine Workspace is the business-context workspace where humans and AI work together.";
+export const PRODUCT_ONELINER = "SpineWorkspace is the business-context workspace where humans and AI work together.";
