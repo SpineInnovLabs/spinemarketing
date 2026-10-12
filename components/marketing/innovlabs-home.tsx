@@ -519,6 +519,27 @@ export function InnovLabsHome() {
         </div>
       </section>
 
+      <section aria-labelledby="domain-preview-heading" className="border-y border-[#D6E8F8] bg-[#F0F8FF] py-16">
+        <div className={container}>
+          <SectionLabel>THE WORKBENCH FOR YOUR ROLE</SectionLabel>
+          <div className="mt-5 flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+            <div className="max-w-3xl">
+              <h2 id="domain-preview-heading" className={heading}>
+                The same workspace, with different work in focus.
+              </h2>
+              <p className={`${body} mt-5`}>
+                Sales works with pipeline and deals. Marketing works with campaigns and attribution.
+                FounderOps works with strategic decisions. Explore the view definitions drawn from
+                the actual Spine Workspace codebase, then choose the domain that fits your work.
+              </p>
+            </div>
+            <Link href="/product#workbench-views" className={button}>
+              Explore Workbench views <ArrowRight className="h-4 w-4" aria-hidden />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <section id="insights" className={`${container} py-20 lg:py-28`}>
         <SectionLabel>EXPLORE THE COMPANY AND OUR WORK</SectionLabel>
         <h2 className={`${heading} mt-5`}>
