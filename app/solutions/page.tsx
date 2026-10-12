@@ -33,7 +33,7 @@ export default function SolutionsPage() {
       <main id="main">
         <SolutionsContent />
         <section className="mx-auto max-w-7xl px-6 py-8 sm:px-8" aria-label="Enter SpineWorkspace">
-          <h2 className="text-2xl font-semibold text-[#082B5E]">Bring your team’s work into SpineWorkspace.</h2>
+          <h2 className="text-[length:min(1.5rem,var(--marketing-heading-size))]/[var(--tw-leading,1.3333333333)] font-semibold text-[#082B5E]">Bring your team’s work into SpineWorkspace.</h2>
           <WorkspaceAuthActions />
         </section>
         <StatsBar

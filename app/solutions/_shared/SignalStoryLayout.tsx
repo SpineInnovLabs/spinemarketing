@@ -165,7 +165,7 @@ export function SignalStoryLayout({
 
       <section className="border-t border-[#E5E5E5] bg-[#032D60] py-16">
         <div className="mx-auto max-w-[700px] px-6 text-center">
-          <motion.h2 {...fade(0)} className="text-[28px] font-semibold leading-[1.15] text-white sm:text-[36px]">
+          <motion.h2 {...fade(0)} className="text-[length:min(28px,var(--marketing-heading-size))] font-semibold leading-[1.15] text-white sm:text-[length:min(36px,var(--marketing-heading-size))]">
             See signals in your context
           </motion.h2>
           <motion.p {...fade(0.08)} className="mx-auto mt-4 max-w-lg text-[16px] leading-[1.6] text-white/70">

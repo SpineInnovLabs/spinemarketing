@@ -136,10 +136,10 @@ export default async function SiteMapPage() {
         <p className="text-[11px] font-semibold uppercase tracking-[.2em] text-[#006FE8]">
           EXPLORE SPINE INNOVTECH
         </p>
-        <h1 className="mt-5 text-[clamp(2.5rem,5vw,4.5rem)] font-semibold leading-[1.1] tracking-[-.045em]">
+        <h1 className="mt-5 text-[length:min(clamp(2.5rem,5vw,4.5rem),var(--marketing-title-size))] font-semibold leading-[1.1] tracking-[-.045em]">
           The full website, in one place.
         </h1>
-        <p className="mt-6 max-w-[740px] text-[17px] leading-8 text-[#4E607A]">
+        <p className="mt-6 max-w-[740px] text-[length:min(17px,var(--marketing-body-size))] leading-8 text-[#4E607A]">
           Explore our company, the technology behind SpineWorkspace, business
           solutions, practical use cases, and published thinking.
         </p>
@@ -150,7 +150,7 @@ export default async function SiteMapPage() {
               aria-label={group}
               className="rounded-2xl border border-[#CBE5FA] bg-[#F0F8FF] p-6 sm:p-8"
             >
-              <h2 className="text-2xl font-semibold tracking-[-.03em]">
+              <h2 className="text-[length:min(1.5rem,var(--marketing-heading-size))]/[var(--tw-leading,1.3333333333)] font-semibold tracking-[-.03em]">
                 {group}
               </h2>
               <ul className="mt-5 divide-y divide-[#CBE5FA]">

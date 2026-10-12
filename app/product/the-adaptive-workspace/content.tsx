@@ -98,14 +98,14 @@ export function TheAdaptiveWorkspaceContent() {
           </motion.div>
           <motion.h1
             {...heroFade(0.22)}
-            className="text-[44px] font-semibold leading-[1.08] tracking-[-0.05em] text-white sm:text-[64px]"
+            className="text-[length:min(44px,var(--marketing-title-size))] font-semibold leading-[1.08] tracking-[-0.05em] text-white sm:text-[length:min(64px,var(--marketing-title-size))]"
           >
             Your daily surface{" "}
             <span className="text-primary">on top of SpineWorkspace.</span>
           </motion.h1>
           <motion.p
             {...heroFade(0.38)}
-            className="mx-auto mt-7 max-w-xl text-[17px] font-medium leading-[1.55] tracking-[-0.02em] text-white/50"
+            className="mx-auto mt-7 max-w-xl text-[length:min(17px,var(--marketing-body-size))] font-medium leading-[1.55] tracking-[-0.02em] text-white/50"
           >
             Pulls Spine entities into domain-specific views. Customer Success, RevOps, and BizOps share the same underlying reality — each team sees what they need, nothing more.
           </motion.p>
@@ -230,7 +230,7 @@ export function TheAdaptiveWorkspaceContent() {
         <div className="mx-auto max-w-[680px] px-4 text-center">
           <motion.div {...fade(0)}>
             <Cpu className="mx-auto mb-4 h-7 w-7 text-primary" />
-            <h2 className="text-[32px] font-semibold tracking-[-0.05em] text-white">
+            <h2 className="text-[length:min(32px,var(--marketing-heading-size))] font-semibold tracking-[-0.05em] text-white">
               Your workspace. <span className="text-primary">Your context.</span>
             </h2>
             <p className="mx-auto mt-4 text-[15px] font-medium leading-[1.6] text-white/40">

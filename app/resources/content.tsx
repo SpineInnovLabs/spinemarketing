@@ -101,14 +101,14 @@ export function ResourcesContent() {
             </motion.div>
             <motion.h1
               {...fade(0.2)}
-              className="text-[48px] font-semibold leading-[1.1] tracking-[-0.05em] text-[#032D60] sm:text-[64px]"
+              className="text-[length:min(48px,var(--marketing-title-size))] font-semibold leading-[1.1] tracking-[-0.05em] text-[#032D60] sm:text-[length:min(64px,var(--marketing-title-size))]"
             >
               Learn, evaluate,{" "}
               <span className="text-primary">adopt.</span>
             </motion.h1>
             <motion.p
               {...fade(0.35)}
-              className="mx-auto mt-8 max-w-xl text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-[#33465B]"
+              className="mx-auto mt-8 max-w-xl text-[length:min(17px,var(--marketing-body-size))] font-medium leading-[1.5] tracking-[-0.02em] text-[#33465B]"
             >
               Guides, playbooks, and deep dives to help you understand SpineWorkspace.
             </motion.p>
@@ -119,7 +119,7 @@ export function ResourcesContent() {
       <section className="border-y border-[#D9E4EF] bg-[#F3F6F9] py-16">
         <div className="mx-auto max-w-[1100px] px-6">
           <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[#0176D3]">Read</p>
-          <h2 className="mt-3 text-[28px] font-semibold tracking-[-0.03em] text-[#032D60]">Blog, updates, changelog, portfolio, docs</h2>
+          <h2 className="mt-3 text-[length:min(28px,var(--marketing-heading-size))] font-semibold tracking-[-0.03em] text-[#032D60]">Blog, updates, changelog, portfolio, docs</h2>
           <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {[
               ["Blog", "Product thinking.", "/blog"],
@@ -134,7 +134,7 @@ export function ResourcesContent() {
                   className="block h-full rounded-[16px] border border-[#D9E4EF] bg-white p-5 hover:border-[#0176D3]"
                   {...(href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                 >
-                  <p className="text-[18px] font-semibold text-[#032D60]">{title}</p>
+                  <p className="text-[length:min(18px,var(--marketing-body-size))] font-semibold text-[#032D60]">{title}</p>
                   <p className="mt-2 text-[14px] leading-[1.55] text-[#33465B]">{desc}</p>
                 </Link>
               </li>

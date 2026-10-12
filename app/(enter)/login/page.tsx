@@ -30,7 +30,7 @@ export default function LoginPage() {
             <SpineLogo className="h-8 w-8" />
             <span className="text-[16px] font-semibold">SpineWorkspace</span>
           </Link>
-          <h1 className="mt-8 text-[32px] font-semibold tracking-[-0.03em] text-[#032D60]">Sign in</h1>
+          <h1 className="mt-8 text-[length:min(32px,var(--marketing-title-size))] font-semibold tracking-[-0.03em] text-[#032D60]">Sign in</h1>
           <p className="mt-3 text-[15px] leading-[1.6] text-[#444]">
             SpineWorkspace is the business-context workspace where humans and AI work together. Sign-in continues into setup for your operating area.
           </p>

@@ -30,25 +30,25 @@ export function ProofSection() {
           className="mx-auto mt-16 max-w-3xl"
         >
           <div className="arvio-card p-10">
-            <p className="text-[17px] font-medium leading-[1.6] tracking-[-0.02em] text-foreground">
+            <p className="text-[length:min(17px,var(--marketing-body-size))] font-medium leading-[1.6] tracking-[-0.02em] text-foreground">
               An eight million account showed quiet distress across many tools. SpineWorkspace caught the pattern early, so the team stepped in with full control.
             </p>
 
             <div className="mt-8 grid grid-cols-1 gap-4 border-t border-border/60 pt-6 sm:grid-cols-3">
               <div className="text-center">
-                <div className="text-[34px] font-semibold tracking-[-0.05em] leading-[1.3] text-primary">
+                <div className="text-[length:min(34px,var(--marketing-heading-size))] font-semibold tracking-[-0.05em] leading-[1.3] text-primary">
                   $<NumberTicker value={8} className="text-[34px] font-semibold tracking-[-0.05em] leading-[1.3] text-primary" />M
                 </div>
                 <div className="mt-1 text-[14px] font-medium tracking-[-0.03em] text-muted-foreground">Account saved</div>
               </div>
               <div className="text-center">
-                <div className="text-[34px] font-semibold tracking-[-0.05em] leading-[1.3] text-primary">
+                <div className="text-[length:min(34px,var(--marketing-heading-size))] font-semibold tracking-[-0.05em] leading-[1.3] text-primary">
                   <NumberTicker value={70} className="text-[34px] font-semibold tracking-[-0.05em] leading-[1.3] text-primary" />+
                 </div>
                 <div className="mt-1 text-[14px] font-medium tracking-[-0.03em] text-muted-foreground">Nerve endings connected</div>
               </div>
               <div className="text-center">
-                <div className="text-[34px] font-semibold tracking-[-0.05em] leading-[1.3] text-primary">
+                <div className="text-[length:min(34px,var(--marketing-heading-size))] font-semibold tracking-[-0.05em] leading-[1.3] text-primary">
                   <NumberTicker value={0} className="text-[34px] font-semibold tracking-[-0.05em] leading-[1.3] text-primary" />
                 </div>
                 <div className="mt-1 text-[14px] font-medium tracking-[-0.03em] text-muted-foreground">Unauthorized actions</div>

@@ -40,7 +40,7 @@ export function SpineFabricContent() {
           {foundations.map(({ icon: Icon, title, body }) => (
             <article key={title} className="rounded-2xl border border-[#D6E8F8] bg-white p-7">
               <Icon className="mb-5 h-7 w-7 text-[#006FE8]" aria-hidden />
-              <h3 className="text-xl font-semibold text-[#082B5E]">{title}</h3>
+              <h3 className="text-[length:min(1.25rem,var(--marketing-card-size))]/[var(--tw-leading,1.4)] font-semibold text-[#082B5E]">{title}</h3>
               <p className="mt-3 text-[15px] leading-relaxed text-[#4E607A]">{body}</p>
             </article>
           ))}
@@ -52,7 +52,7 @@ export function SpineFabricContent() {
           {examples.map(({ title, context, detail }) => (
             <article key={title} className="rounded-2xl border border-[#D6E8F8] bg-[#F0F8FF] p-7">
               <p className="text-xs font-bold uppercase tracking-wider text-[#0055B8]">{title}</p>
-              <h3 className="mt-4 text-xl font-semibold text-[#082B5E]">{context}</h3>
+              <h3 className="mt-4 text-[length:min(1.25rem,var(--marketing-card-size))]/[var(--tw-leading,1.4)] font-semibold text-[#082B5E]">{context}</h3>
               <p className="mt-3 text-[15px] leading-relaxed text-[#4E607A]">{detail}</p>
             </article>
           ))}
@@ -69,7 +69,7 @@ export function SpineFabricContent() {
           ].map(([title, body], i) => (
             <li key={title} className="rounded-2xl border border-[#D6E8F8] bg-white p-7">
               <p className="text-xs font-bold text-[#0055B8]">0{i + 1}</p>
-              <h3 className="mt-3 text-xl font-semibold text-[#082B5E]">{title}</h3>
+              <h3 className="mt-3 text-[length:min(1.25rem,var(--marketing-card-size))]/[var(--tw-leading,1.4)] font-semibold text-[#082B5E]">{title}</h3>
               <p className="mt-3 text-[15px] leading-relaxed text-[#4E607A]">{body}</p>
             </li>
           ))}

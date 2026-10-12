@@ -31,7 +31,7 @@ export function IntegrationsContent() {
       <section className="border-y border-[#D9E4EF] bg-[#F3F6F9] py-20 md:py-24">
         <div className="mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-12">
           <div className="mx-auto max-w-2xl">
-            <h2 className="text-[28px] font-semibold tracking-[-0.03em] text-[#032D60]">
+            <h2 className="text-[length:min(28px,var(--marketing-heading-size))] font-semibold tracking-[-0.03em] text-[#032D60]">
               Bring your systems together — without replacing them
             </h2>
             <p className="mt-4 text-[16px] leading-[1.65] text-[#33465B]">
@@ -84,7 +84,7 @@ export function IntegrationsContent() {
       <section className="py-20 md:py-24">
         <div className="mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-12">
           <div className="mx-auto max-w-2xl">
-            <h2 className="text-[28px] font-semibold tracking-[-0.03em] text-[#032D60]">One context-assembly example</h2>
+            <h2 className="text-[length:min(28px,var(--marketing-heading-size))] font-semibold tracking-[-0.03em] text-[#032D60]">One context-assembly example</h2>
             <p className="mt-4 text-[16px] leading-[1.65] text-[#33465B]">
               A customer onboarding note in mail, a ticket, and a CRM record can be read together. Twin proposes the next step. A person reviews it. Nothing here is a live install count.
             </p>
@@ -99,7 +99,7 @@ export function IntegrationsContent() {
       <section className="py-20 md:py-24">
         <div className="mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-12">
           <motion.div {...fade(0)} className="mx-auto max-w-2xl text-center">
-            <h2 id="full-catalog" className="scroll-mt-24 text-[28px] font-semibold tracking-[-0.03em] text-[#032D60]">Full catalog</h2>
+            <h2 id="full-catalog" className="scroll-mt-24 text-[length:min(28px,var(--marketing-heading-size))] font-semibold tracking-[-0.03em] text-[#032D60]">Full catalog</h2>
             <p className="mt-4 text-[15px] text-[#33465B]">
               {TOTAL_CONNECTORS} connectors across {INTEGRATION_CATALOG.length} categories. {CONNECTORS_WITH_MARKS} use a published brand mark. The rest show the name until a square mark is available. Nothing here is an install count.
             </p>
@@ -159,7 +159,7 @@ export function IntegrationsContent() {
 
           <motion.div {...fade(0.15)} className="mt-12 text-center">
             <div className="mx-auto max-w-2xl rounded-md border border-[#E5E5E5] bg-white p-8 shadow-[0_1px_2px_rgba(0,0,0,0.04)]">
-              <h3 className="text-[20px] font-semibold tracking-[-0.02em] text-[#032D60]">Connect the tools your team already uses</h3>
+              <h3 className="text-[length:min(20px,var(--marketing-card-size))] font-semibold tracking-[-0.02em] text-[#032D60]">Connect the tools your team already uses</h3>
               <p className="mt-2 text-[15px] leading-[1.5] text-[#444]">
                 Authorized connections through each app&apos;s setup flow. Source systems stay authoritative. Custom connectors are available on request.
               </p>

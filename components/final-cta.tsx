@@ -7,7 +7,7 @@ export function FinalCTA() {
       <div className="mx-auto grid max-w-[1240px] items-center gap-10 px-5 py-20 sm:px-8 lg:grid-cols-[1.3fr_.7fr] lg:py-24">
         <div>
           <p className="text-[11px] font-bold uppercase tracking-[.2em] text-[#245FC8]">SPINE INNOVTECH / WHAT'S NEXT</p>
-          <h2 id="corporate-next-step" className="mt-5 max-w-[780px] text-[clamp(2.4rem,4.2vw,4.2rem)] font-semibold leading-[1.12] tracking-[-.055em] text-[#0C2448]">
+          <h2 id="corporate-next-step" className="mt-5 max-w-[780px] text-[length:min(clamp(2.4rem,4.2vw,4.2rem),var(--marketing-heading-size))] font-semibold leading-[1.12] tracking-[-.055em] text-[#0C2448]">
             Build on shared context, not disconnected tools.
           </h2>
           <p className="mt-6 max-w-[700px] text-[16px] leading-[1.85] text-[#506783]">

@@ -130,7 +130,7 @@ export function StickyScrollReveal({
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.35, delay: 0.05 }}
-                className="text-[34px] font-semibold tracking-[-0.04em] leading-[1.15] text-white sm:text-[40px]"
+                className="text-[length:min(34px,var(--marketing-card-size))] font-semibold tracking-[-0.04em] leading-[1.15] text-white sm:text-[length:min(40px,var(--marketing-card-size))]"
               >
                 {steps[activeIndex].title}
               </motion.h3>
@@ -224,7 +224,7 @@ export function StickyScrollFallback({
                     {step.label}
                   </span>
                 )}
-                <h3 className="text-[28px] font-semibold tracking-[-0.04em] leading-[1.15] text-white">
+                <h3 className="text-[length:min(28px,var(--marketing-card-size))] font-semibold tracking-[-0.04em] leading-[1.15] text-white">
                   {step.title}
                 </h3>
                 <p className="mt-3 text-[15px] font-medium leading-[1.6] text-white/45">

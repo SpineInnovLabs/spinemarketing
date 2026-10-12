@@ -128,7 +128,7 @@ export function AIContent() {
                 stiffness: 52,
                 delay: 0.4,
               }}
-              className="text-[48px] font-semibold leading-[1em] tracking-[-0.05em] text-white sm:text-[54px] lg:text-[64px]"
+              className="text-[length:min(48px,var(--marketing-title-size))] font-semibold leading-[1em] tracking-[-0.05em] text-white sm:text-[length:min(54px,var(--marketing-title-size))] lg:text-[length:min(64px,var(--marketing-title-size))]"
             >
               Your personal AI operator,{" "}
               <span className="text-primary">grounded in your business.</span>
@@ -143,7 +143,7 @@ export function AIContent() {
                 stiffness: 52,
                 delay: 0.6,
               }}
-              className="mx-auto mt-8 max-w-2xl text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-white/55"
+              className="mx-auto mt-8 max-w-2xl text-[length:min(17px,var(--marketing-body-size))] font-medium leading-[1.5] tracking-[-0.02em] text-white/55"
             >
               Assembles evidence, explains why a signal exists, proposes concrete actions. Operates on governed context from the SpineWorkspace, not screen-scraped guesses. Always shows its reasoning before asking for approval. And through the Twin, it coordinates specialist agents behind the scenes — you talk to one intelligence, not a menu of bots.
             </motion.p>
@@ -443,7 +443,7 @@ export function AIContent() {
                 Governance
               </span>
             </div>
-            <h2 className="text-[40px] font-semibold tracking-[-0.05em] leading-[1.15] text-white sm:text-[48px]">
+            <h2 className="text-[length:min(40px,var(--marketing-heading-size))] font-semibold tracking-[-0.05em] leading-[1.15] text-white sm:text-[length:min(48px,var(--marketing-heading-size))]">
               AI thinks in context.{" "}
               <span className="text-primary">
                 You decide what becomes knowledge.

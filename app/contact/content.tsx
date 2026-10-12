@@ -91,7 +91,7 @@ export function ContactContent({
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ type: "spring", damping: 16, stiffness: 52, delay: 0.2 }}
-            className="text-[40px] font-semibold leading-[1.1] tracking-[-0.03em] text-[#032D60] sm:text-[48px]"
+            className="text-[length:min(40px,var(--marketing-title-size))] font-semibold leading-[1.1] tracking-[-0.03em] text-[#032D60] sm:text-[length:min(48px,var(--marketing-title-size))]"
           >
             Talk to <span className="text-[#0176D3]">Spine InnovTech.</span>
           </motion.h1>
@@ -100,7 +100,7 @@ export function ContactContent({
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ type: "spring", damping: 16, stiffness: 52, delay: 0.35 }}
-            className="mx-auto mt-5 max-w-2xl text-[17px] leading-[1.6] text-[#444]"
+            className="mx-auto mt-5 max-w-2xl text-[length:min(17px,var(--marketing-body-size))] leading-[1.6] text-[#444]"
           >
             Whether you want a demo, have a question, or want to explore how
             SpineWorkspace fits your existing environment — we&apos;re here.

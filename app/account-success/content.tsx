@@ -224,14 +224,14 @@ export function AccountSuccessContent() {
               </motion.div>
               <motion.h1
                 {...heroFade(0.4)}
-                className="text-[40px] font-semibold leading-[1.1em] tracking-[-0.05em] text-white sm:text-[52px] lg:text-[60px]"
+                className="text-[length:min(40px,var(--marketing-title-size))] font-semibold leading-[1.1em] tracking-[-0.05em] text-white sm:text-[length:min(52px,var(--marketing-title-size))] lg:text-[length:min(60px,var(--marketing-title-size))]"
               >
                 One customer.{" "}
                 <span className="text-primary">One record.</span>
               </motion.h1>
               <motion.p
                 {...heroFade(0.6)}
-                className="mx-auto mt-8 max-w-2xl text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-white/55 lg:mx-0"
+                className="mx-auto mt-8 max-w-2xl text-[length:min(17px,var(--marketing-body-size))] font-medium leading-[1.5] tracking-[-0.02em] text-white/55 lg:mx-0"
               >
                 Cross-tool entity matching and dedup. Automatic confidence scoring with human review.
               </motion.p>
@@ -318,11 +318,11 @@ export function AccountSuccessContent() {
       <section className="arvio-section marketing-surface bg-white">
         <div className="mx-auto max-w-[1100px]">
           <motion.div {...fade()} className="mx-auto max-w-2xl text-center">
-            <h2 className="text-[40px] font-semibold tracking-[-0.05em] leading-[1.15] text-white sm:text-[48px]">
+            <h2 className="text-[length:min(40px,var(--marketing-heading-size))] font-semibold tracking-[-0.05em] leading-[1.15] text-white sm:text-[length:min(48px,var(--marketing-heading-size))]">
               Every other tool shows you{" "}
               <span className="text-white/40">duplicates.</span>
             </h2>
-            <p className="mt-4 text-[17px] font-semibold leading-[1.5] text-primary">
+            <p className="mt-4 text-[length:min(17px,var(--marketing-body-size))] font-semibold leading-[1.5] text-primary">
               Resolution shows you the record.
             </p>
           </motion.div>
@@ -394,7 +394,7 @@ export function AccountSuccessContent() {
                   { value: 0, suffix: "", label: "Silent merges", prefix: "" },
                 ].map((stat, i) => (
                   <motion.div key={stat.label} {...fade(i * 0.12)} className="text-center lg:text-left">
-                    <div className="text-[48px] font-bold tracking-[-0.04em]">
+                    <div className="text-[length:min(48px,var(--marketing-heading-size))] font-bold tracking-[-0.04em]">
                       {stat.prefix !== undefined ? (
                         <span className="text-foreground">{stat.prefix}</span>
                       ) : null}
@@ -454,7 +454,7 @@ export function AccountSuccessContent() {
               Stop guessing which record is real.{" "}
               <span className="text-primary">Resolve it.</span>
             </h2>
-            <p className="mt-6 text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">
+            <p className="mt-6 text-[length:min(17px,var(--marketing-body-size))] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">
               Confidence-scored matching, authorized review, and traceable source records.
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-2.5 sm:flex-row">

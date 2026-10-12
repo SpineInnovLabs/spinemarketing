@@ -115,7 +115,7 @@ export function RoleSolutionLayout({
 
       <section className="border-t border-[#E5E5E5] bg-[#032D60] py-16">
         <div className="mx-auto max-w-[700px] px-6 text-center">
-          <motion.h2 {...fade(0)} className="text-[28px] font-semibold leading-[1.15] text-white sm:text-[36px]">
+          <motion.h2 {...fade(0)} className="text-[length:min(28px,var(--marketing-heading-size))] font-semibold leading-[1.15] text-white sm:text-[length:min(36px,var(--marketing-heading-size))]">
             See it working for your role
           </motion.h2>
           <motion.div {...fade(0.16)} className="mt-8">

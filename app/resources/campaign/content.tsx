@@ -188,14 +188,14 @@ export function CampaignGalleryContent() {
             </motion.div>
             <motion.h1
               {...fade(0.2)}
-              className="text-[40px] font-semibold leading-[1.1em] tracking-[-0.05em] text-white sm:text-[52px] lg:text-[60px]"
+              className="text-[length:min(40px,var(--marketing-title-size))] font-semibold leading-[1.1em] tracking-[-0.05em] text-white sm:text-[length:min(52px,var(--marketing-title-size))] lg:text-[length:min(60px,var(--marketing-title-size))]"
             >
               Architecture and campaign{" "}
               <span className="text-primary">concepts.</span>
             </motion.h1>
             <motion.p
               {...fade(0.3)}
-              className="mx-auto mt-8 max-w-2xl text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-white/55"
+              className="mx-auto mt-8 max-w-2xl text-[length:min(17px,var(--marketing-body-size))] font-medium leading-[1.5] tracking-[-0.02em] text-white/55"
             >
               Explore architecture illustrations and all 36 campaign designs for Account Success, Business Ops, and Personal Ops. These earlier concepts are illustrative assets; the product and technology pages describe the current direction.
             </motion.p>
@@ -399,12 +399,12 @@ export function CampaignGalleryContent() {
         <div className="mx-auto max-w-3xl text-center">
           <motion.h2
             {...fade()}
-            className="text-[32px] font-semibold leading-[1.15] tracking-[-0.03em] text-[#032D60] sm:text-[36px]"
+            className="text-[length:min(32px,var(--marketing-heading-size))] font-semibold leading-[1.15] tracking-[-0.03em] text-[#032D60] sm:text-[length:min(36px,var(--marketing-heading-size))]"
           >
             Ready to see it{" "}
             <span className="text-[#0176D3]">in action?</span>
           </motion.h2>
-          <motion.p {...fade(0.1)} className="mt-6 text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-[#444]">
+          <motion.p {...fade(0.1)} className="mt-6 text-[length:min(17px,var(--marketing-body-size))] font-medium leading-[1.5] tracking-[-0.02em] text-[#444]">
             Illustrative campaign designs showing how SpineWorkspace capabilities are communicated. Book a demo to see the product demonstration.
           </motion.p>
           <motion.div {...fade(0.2)} className="mt-10 flex flex-col items-center justify-center gap-2.5 sm:flex-row">

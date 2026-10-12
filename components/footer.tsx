@@ -23,7 +23,7 @@ export function Footer() {
                 Spine <span className="text-[#9BCAFF]">InnovTech</span>
               </span>
             </Link>
-            <h2 className="mt-8 max-w-[420px] text-[clamp(1.8rem,3vw,2.8rem)] font-semibold leading-[1.2] tracking-[-.05em] text-white">
+            <h2 className="mt-8 max-w-[420px] text-[length:min(clamp(1.8rem,3vw,2.8rem),var(--marketing-heading-size))] font-semibold leading-[1.2] tracking-[-.05em] text-white">
               Building the intelligence behind connected business.
             </h2>
             <p className="mt-5 max-w-[400px] text-[14px] leading-[1.85] text-[#CBD9EB]">

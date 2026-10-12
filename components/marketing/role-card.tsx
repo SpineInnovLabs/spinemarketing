@@ -26,7 +26,7 @@ export function RoleCard({
         href={href}
         className="group flex h-full flex-col rounded-2xl border border-[#D9E4EF] bg-white p-6 transition-colors hover:border-[#0176D3] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0176D3]/40"
       >
-        <h3 className="text-[20px] font-semibold tracking-[-0.03em] text-[#032D60]">
+        <h3 className="text-[length:min(20px,var(--marketing-card-size))] font-semibold tracking-[-0.03em] text-[#032D60]">
           {title}
         </h3>
         <p className="mt-2 flex-1 text-[14px] font-medium leading-[1.65] text-[#33465B]">{description}</p>

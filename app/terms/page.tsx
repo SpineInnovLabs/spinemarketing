@@ -25,7 +25,7 @@ export default function TermsPage() {
       <Header />
       <main id="main">
         <section className="mx-auto max-w-[800px] px-6 pt-[140px] pb-24 md:px-16">
-          <h1 className="text-[36px] font-semibold tracking-[-0.04em] leading-[1.2] sm:text-[44px]">Terms &amp; Conditions</h1>
+          <h1 className="text-[length:min(36px,var(--marketing-title-size))] font-semibold tracking-[-0.04em] leading-[1.2] sm:text-[length:min(44px,var(--marketing-title-size))]">Terms &amp; Conditions</h1>
           <p className="mt-4 text-[15px] font-medium text-muted-foreground">Spine InnovTech Private Limited</p>
           <p className="mt-4 text-[15px] font-medium text-muted-foreground">Last updated: April 2026</p>
 

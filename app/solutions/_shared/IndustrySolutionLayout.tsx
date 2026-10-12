@@ -62,7 +62,7 @@ export function IndustrySolutionLayout({
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
           {problem.bullets.map((b, i) => (
             <motion.div key={i} {...fade(i * 0.06)} className="rounded-md border border-[#E5E5E5] bg-white p-5">
-              <span className="mb-2 block text-[32px] font-bold leading-none tracking-[-0.04em] text-[#0176D3]/20">
+              <span className="mb-2 block text-[length:min(32px,var(--marketing-heading-size))] font-bold leading-none tracking-[-0.04em] text-[#0176D3]/20">
                 0{i + 1}
               </span>
               <p className="text-[14px] leading-[1.7] text-[#444]">{b}</p>
@@ -137,7 +137,7 @@ export function IndustrySolutionLayout({
 
       <section className="border-t border-[#E5E5E5] bg-[#032D60] py-16">
         <div className="mx-auto max-w-[700px] px-6 text-center">
-          <motion.h2 {...fade(0)} className="text-[28px] font-semibold leading-[1.15] text-white sm:text-[36px]">
+          <motion.h2 {...fade(0)} className="text-[length:min(28px,var(--marketing-heading-size))] font-semibold leading-[1.15] text-white sm:text-[length:min(36px,var(--marketing-heading-size))]">
             See it working in your context
           </motion.h2>
           <motion.p {...fade(0.08)} className="mx-auto mt-4 max-w-lg text-[16px] leading-[1.6] text-white/70">

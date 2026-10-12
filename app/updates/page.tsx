@@ -36,8 +36,8 @@ export default function UpdatesPage() {
         <section className="bg-[#F0F8FF] px-5 pb-20 pt-40 text-[#052858] sm:px-8 lg:pb-28 innovtech-reference-surface">
           <div className="mx-auto max-w-[1130px]">
             <p className="text-xs font-semibold uppercase tracking-[.23em] text-[#4C5C73]">Spine InnovTech / Journal</p>
-            <h1 className="mt-7 text-[clamp(3.2rem,6vw,6rem)] font-semibold leading-[1.08] tracking-[-.06em]">Company updates.</h1>
-            <p className="mt-7 max-w-[710px] text-[17px] leading-[1.9] text-[#4C5C73]">Direction, architecture and meaningful progress from the company behind SpineWorkspace. These editorial notes are not a production release log.</p>
+            <h1 className="mt-7 text-[length:min(clamp(3.2rem,6vw,6rem),var(--marketing-title-size))] font-semibold leading-[1.08] tracking-[-.06em]">Company updates.</h1>
+            <p className="mt-7 max-w-[710px] text-[length:min(17px,var(--marketing-body-size))] leading-[1.9] text-[#4C5C73]">Direction, architecture and meaningful progress from the company behind SpineWorkspace. These editorial notes are not a production release log.</p>
           </div>
         </section>
         <section className="mx-auto max-w-[1130px] px-5 py-24 sm:px-8 lg:py-32">
@@ -45,7 +45,7 @@ export default function UpdatesPage() {
             {notes.map((note) => (
               <article key={note.title} className="grid gap-6 rounded-[24px] border border-[#D7E5F5] bg-white p-8 sm:p-10 lg:grid-cols-[.3fr_1fr]">
                 <div><p className="text-xs font-semibold uppercase tracking-[.14em] text-[#2664B3]">{note.period}</p><p className="mt-3 text-sm text-[#58708C]">{note.category}</p></div>
-                <div><h2 className="max-w-2xl text-[28px] font-semibold leading-[1.25] tracking-[-.045em] text-[#112E55]">{note.title}</h2><p className="mt-6 max-w-3xl text-[16px] leading-[1.85] text-[#536B85]">{note.body}</p></div>
+                <div><h2 className="max-w-2xl text-[length:min(28px,var(--marketing-heading-size))] font-semibold leading-[1.25] tracking-[-.045em] text-[#112E55]">{note.title}</h2><p className="mt-6 max-w-3xl text-[16px] leading-[1.85] text-[#536B85]">{note.body}</p></div>
               </article>
             ))}
           </div>

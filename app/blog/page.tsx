@@ -70,8 +70,8 @@ export default async function BlogPage() {
       <main id="main">
         <section className="relative overflow-hidden bg-white">
           <div className="mx-auto max-w-[1100px] px-6 pt-[160px] pb-[80px] md:px-16">
-            <h1 className="text-[40px] font-semibold tracking-[-0.05em] leading-[1.1] text-[#032D60] sm:text-[52px]">Blog</h1>
-            <p className="mt-4 max-w-xl text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-[#33465B]">
+            <h1 className="text-[length:min(40px,var(--marketing-title-size))] font-semibold tracking-[-0.05em] leading-[1.1] text-[#032D60] sm:text-[length:min(52px,var(--marketing-title-size))]">Blog</h1>
+            <p className="mt-4 max-w-xl text-[length:min(17px,var(--marketing-body-size))] font-medium leading-[1.5] tracking-[-0.02em] text-[#33465B]">
               Product thinking. What changed is on{" "}
               <Link href="/updates" className="font-semibold text-[#0176D3] hover:underline">
                 Updates

@@ -100,7 +100,7 @@ export function InfrastructureContent() {
 
         <section className="border-t border-[#E5E5E5] bg-[#F3F6F9] py-16">
           <div className="mx-auto max-w-3xl px-6 text-center">
-            <h2 className="text-[28px] font-semibold text-[#032D60]">Built for scale from day one.</h2>
+            <h2 className="text-[length:min(28px,var(--marketing-heading-size))] font-semibold text-[#032D60]">Built for scale from day one.</h2>
             <p className="mt-3 text-[16px] text-[#444]">Walk through the full architecture in a 30-minute session.</p>
             <Link
               href="/contact?intent=demo"
