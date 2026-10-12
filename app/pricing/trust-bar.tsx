@@ -15,7 +15,7 @@ export function PricingTrustBar() {
     <section className="relative overflow-x-clip border-t border-[#D9E4EF] bg-[#F3F6F9] py-20 md:py-24">
       <div className="mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-12">
         <motion.div {...fade(0)} className="mx-auto max-w-lg text-center mb-10">
-          <h2 className="text-[24px] font-semibold tracking-[-0.03em] text-[#032D60]">
+          <h2 className="text-[length:min(24px,var(--marketing-heading-size))] font-semibold tracking-[-0.03em] text-[#032D60]">
             Every plan includes{" "}
             <span className="text-[#0176D3]">governance by design.</span>
           </h2>

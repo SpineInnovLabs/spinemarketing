@@ -223,7 +223,7 @@ function Heading({ label, headline, className = "" }: { label?: string; headline
   return (
     <div className={className}>
       {label && <p className="mb-3 text-[12px] font-bold uppercase tracking-[0.08em] text-[#0176D3]">{label}</p>}
-      <h2 className="text-[28px] font-semibold leading-[1.15] tracking-[-0.03em] text-[#032D60] sm:text-[34px]">{headline}</h2>
+      <h2 className="text-[length:min(28px,var(--marketing-heading-size))] font-semibold leading-[1.15] tracking-[-0.03em] text-[#032D60] sm:text-[length:min(34px,var(--marketing-heading-size))]">{headline}</h2>
     </div>
   );
 }
@@ -239,7 +239,7 @@ function EvidencePanel({ aside, raised = false }: { aside: Aside; raised?: boole
       aria-label={aside.title}
     >
       <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[#0176D3]">{aside.kicker}</p>
-      <h3 className="mt-2 text-[20px] font-semibold tracking-[-0.02em] text-[#032D60]">{aside.title}</h3>
+      <h3 className="mt-2 text-[length:min(20px,var(--marketing-card-size))] font-semibold tracking-[-0.02em] text-[#032D60]">{aside.title}</h3>
       <dl className="mt-6 space-y-4">
         {aside.rows.map((row) => (
           <div key={row.term} className="border-t border-[#D9E4EF] pt-4 first:border-t-0 first:pt-0">

@@ -56,8 +56,8 @@ export default function PortfolioPage() {
         <section className="bg-[#F0F8FF] px-5 pb-24 pt-40 text-[#052858] sm:px-8 lg:pb-32 innovtech-reference-surface">
           <div className="mx-auto max-w-[1220px]">
             <p className="text-xs font-semibold uppercase tracking-[.23em] text-[#4C5C73]">Spine InnovTech / Portfolio</p>
-            <h1 className="mt-7 max-w-[1050px] text-[clamp(3.2rem,6vw,6.3rem)] font-semibold leading-[1.07] tracking-[-.065em]">One direction. <span className="text-[#0072E5]">Connected capabilities.</span></h1>
-            <p className="mt-8 max-w-[780px] text-[18px] leading-[1.9] text-[#4C5C73]">Our portfolio is built around SpineWorkspace. The elements below describe an integrated product architecture, not a list of separately purchasable products or verified customer implementations.</p>
+            <h1 className="mt-7 max-w-[1050px] text-[length:min(clamp(3.2rem,6vw,6.3rem),var(--marketing-title-size))] font-semibold leading-[1.07] tracking-[-.065em]">One direction. <span className="text-[#0072E5]">Connected capabilities.</span></h1>
+            <p className="mt-8 max-w-[780px] text-[length:min(18px,var(--marketing-body-size))] leading-[1.9] text-[#4C5C73]">Our portfolio is built around SpineWorkspace. The elements below describe an integrated product architecture, not a list of separately purchasable products or verified customer implementations.</p>
           </div>
         </section>
         <section className="mx-auto max-w-[1220px] px-5 py-24 sm:px-8 lg:py-32">
@@ -69,7 +69,7 @@ export default function PortfolioPage() {
                   <span className="font-mono text-xs text-[#6A8FC5]">0{index + 1}</span>
                 </div>
                 <p className="mt-10 text-xs font-semibold uppercase tracking-[.2em] text-[#386DA9]">{type}</p>
-                <h2 className="mt-4 text-[30px] font-semibold tracking-[-.05em] text-[#112F59]">{title}</h2>
+                <h2 className="mt-4 text-[length:min(30px,var(--marketing-heading-size))] font-semibold tracking-[-.05em] text-[#112F59]">{title}</h2>
                 <p className="mt-5 flex-1 text-[16px] leading-[1.85] text-[#536A85]">{body}</p>
                 {external ? (
                   <a href={href} className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-[#1E5EA8] hover:underline">Explore {title} <ArrowUpRight className="h-4 w-4" aria-hidden /></a>

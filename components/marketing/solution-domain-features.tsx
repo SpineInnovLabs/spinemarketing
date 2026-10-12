@@ -12,7 +12,7 @@ export function SolutionDomainFeatures({ slug }: { slug: string }) {
         <div className="mt-10 grid gap-5 md:grid-cols-2">
           {domain.features.map(([title, detail]) => (
             <article key={title} className="rounded-2xl border border-[#D6E8F8] bg-white p-6 sm:p-7">
-              <h3 className="text-xl font-semibold text-[#082B5E]">{title}</h3>
+              <h3 className="text-[length:min(1.25rem,var(--marketing-card-size))]/[var(--tw-leading,1.4)] font-semibold text-[#082B5E]">{title}</h3>
               <p className="mt-3 text-[15px] leading-relaxed text-[#4E607A]">{detail}</p>
             </article>
           ))}

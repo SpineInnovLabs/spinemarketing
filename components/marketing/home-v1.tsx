@@ -40,7 +40,7 @@ export function EnterpriseHome() {
       <section className="relative border-b border-[#D9E4EF] bg-white py-24">
         <div className="mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-12">
           <p className="text-sm font-semibold uppercase tracking-wide text-[#0176D3]">The connected workspace for people and AI</p>
-          <h1 className="mt-6 max-w-3xl text-5xl font-bold leading-tight md:text-6xl">
+          <h1 className="mt-6 max-w-3xl text-[length:min(3rem,var(--marketing-title-size))]/[var(--tw-leading,1)] font-bold leading-tight md:text-[length:min(3.75rem,var(--marketing-title-size))]/[var(--tw-leading,1)]">
             Your work already has the data.
             <br />
             SpineWorkspace gives it context.
@@ -256,7 +256,7 @@ export function EnterpriseHome() {
       {/* Closing CTA */}
       <Section variant="muted">
         <motion.div {...rise} className="text-center">
-          <h2 className="text-4xl font-bold">Stop rebuilding context every morning.</h2>
+          <h2 className="text-[length:min(2.25rem,var(--marketing-heading-size))]/[var(--tw-leading,1.1111111111)] font-bold">Stop rebuilding context every morning.</h2>
           <p className="mx-auto mt-4 max-w-2xl text-[#3C4A5A]">Bring your tools, people, and AI together—and let work continue with the context it needs.</p>
           <div className="mt-8 flex justify-center gap-4">
             <EnterpriseButton href="/request-access">Start Workspace Free</EnterpriseButton>

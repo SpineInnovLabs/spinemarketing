@@ -58,7 +58,7 @@ export function NarrativePageContent({ page, showProofCards }: { page: Narrative
         <section className="border-t border-[#D9E4EF] bg-[#EAF5FC]">
           <div className="mx-auto max-w-[1100px] px-6 py-20 md:px-16">
             <div className="relative mx-auto max-w-2xl text-center">
-              <h2 className="text-[32px] font-semibold tracking-[-0.03em] leading-[1.2] text-[#032D60] sm:text-[40px]">
+              <h2 className="text-[length:min(32px,var(--marketing-heading-size))] font-semibold tracking-[-0.03em] leading-[1.2] text-[#032D60] sm:text-[length:min(40px,var(--marketing-heading-size))]">
                 {page.finalCta.headline}
               </h2>
               <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">

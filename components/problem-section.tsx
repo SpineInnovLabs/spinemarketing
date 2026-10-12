@@ -23,7 +23,7 @@ export function ProblemSection() {
           <h2 className="section-heading text-[rgba(246,239,239,1)]">
             Your work should not start from zero
           </h2>
-          <p className="mt-6 text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">
+          <p className="mt-6 text-[length:min(17px,var(--marketing-body-size))] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">
             The information already exists. It&apos;s just fragmented. So you become the bridge — and it&apos;s exhausting.
           </p>
         </motion.div>

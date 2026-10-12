@@ -76,7 +76,7 @@ export function PlatformHowItWorksContent() {
         <ul className="grid gap-4 md:grid-cols-2">
           {arrivals.map((item) => (
             <li key={item.title} className="rounded-2xl border border-[#D9E4EF] bg-[#F3F6F9] p-6">
-              <h3 className="text-[20px] font-semibold leading-[1.3] tracking-[-0.02em] text-[#032D60]">{item.title}</h3>
+              <h3 className="text-[length:min(20px,var(--marketing-card-size))] font-semibold leading-[1.3] tracking-[-0.02em] text-[#032D60]">{item.title}</h3>
               <p className="mt-3 text-[15px] leading-[1.65] text-[#33465B]">{item.body}</p>
             </li>
           ))}
@@ -93,7 +93,7 @@ export function PlatformHowItWorksContent() {
           {loop.map((step) => (
             <li key={step.n} className="rounded-2xl border border-[#D9E4EF] bg-white p-6">
               <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[#0176D3]">{step.n}</p>
-              <h3 className="mt-3 text-[20px] font-semibold leading-[1.3] tracking-[-0.02em] text-[#032D60]">{step.title}</h3>
+              <h3 className="mt-3 text-[length:min(20px,var(--marketing-card-size))] font-semibold leading-[1.3] tracking-[-0.02em] text-[#032D60]">{step.title}</h3>
               <p className="mt-3 text-[15px] leading-[1.65] text-[#33465B]">{step.body}</p>
             </li>
           ))}

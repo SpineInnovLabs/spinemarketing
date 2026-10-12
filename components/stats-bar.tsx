@@ -65,7 +65,7 @@ export function StatsBar({
                 i < stats.length - 1 ? "border-r border-[#E5E5E5]" : ""
               }`}
             >
-              <span className="text-[36px] font-bold tracking-[-0.04em] text-[#032D60]">
+              <span className="text-[length:min(36px,var(--marketing-heading-size))] font-bold tracking-[-0.04em] text-[#032D60]">
                 <AnimatedStat value={value} suffix={suffix || ""} prefix={prefix || ""} />
               </span>
               <span className="text-center text-[11px] font-semibold uppercase tracking-[0.1em] text-[#706E6B]">

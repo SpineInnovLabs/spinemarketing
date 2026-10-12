@@ -599,7 +599,7 @@ export function BusinessOpsContent() {
       <h2 className="section-heading">
         How it <span className="text-primary">works</span>
       </h2>
-      <p className="mt-4 text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">
+      <p className="mt-4 text-[length:min(17px,var(--marketing-body-size))] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">
         Four steps. Your entire business, fully connected.
       </p>
     </motion.div>
@@ -653,7 +653,7 @@ export function BusinessOpsContent() {
                   stiffness: 52,
                   delay: 0.4,
                 }}
-                className="text-[40px] font-semibold leading-[1.1em] tracking-[-0.05em] text-white sm:text-[52px] lg:text-[60px]"
+                className="text-[length:min(40px,var(--marketing-title-size))] font-semibold leading-[1.1em] tracking-[-0.05em] text-white sm:text-[length:min(52px,var(--marketing-title-size))] lg:text-[length:min(60px,var(--marketing-title-size))]"
               >
                 One workspace.{" "}
                 <span className="text-primary">Your entire business, connected.</span>
@@ -668,7 +668,7 @@ export function BusinessOpsContent() {
                   stiffness: 52,
                   delay: 0.6,
                 }}
-                className="mx-auto mt-8 max-w-2xl text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-white/55 lg:mx-0"
+                className="mx-auto mt-8 max-w-2xl text-[length:min(17px,var(--marketing-body-size))] font-medium leading-[1.5] tracking-[-0.02em] text-white/55 lg:mx-0"
               >
                 Live picture across CRM, finance, support, and ops — with AI that reasons and waits for approval.
               </motion.p>
@@ -831,11 +831,11 @@ export function BusinessOpsContent() {
             transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
             className="mx-auto max-w-2xl text-center"
           >
-            <h2 className="text-[40px] font-semibold tracking-[-0.05em] leading-[1.15] text-white sm:text-[48px]">
+            <h2 className="text-[length:min(40px,var(--marketing-heading-size))] font-semibold tracking-[-0.05em] leading-[1.15] text-white sm:text-[length:min(48px,var(--marketing-heading-size))]">
               Every other dashboard shows you{" "}
               <span className="text-white/40">a department.</span>
             </h2>
-            <p className="mt-4 text-[17px] font-semibold leading-[1.5] text-primary">
+            <p className="mt-4 text-[length:min(17px,var(--marketing-body-size))] font-semibold leading-[1.5] text-primary">
               SpineWorkspace shows you the business.
             </p>
           </motion.div>
@@ -888,7 +888,7 @@ export function BusinessOpsContent() {
               Same workspace.{" "}
               <span className="text-primary">Different lenses.</span>
             </h2>
-            <p className="mt-4 text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">
+            <p className="mt-4 text-[length:min(17px,var(--marketing-body-size))] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">
               Same truth, different lens for each role.
             </p>
           </motion.div>
@@ -956,7 +956,7 @@ export function BusinessOpsContent() {
                     What changes{" "}
                     <span className="text-primary">on day one</span>
                   </h2>
-                  <p className="mt-4 text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">
+                  <p className="mt-4 text-[length:min(17px,var(--marketing-body-size))] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">
                     A first connected workflow. Not a months-long replacement project.
                   </p>
                 </motion.div>
@@ -1007,7 +1007,7 @@ export function BusinessOpsContent() {
                     }}
                     className="text-center lg:text-left"
                   >
-                    <div className="text-[48px] font-bold tracking-[-0.04em]">
+                    <div className="text-[length:min(48px,var(--marketing-heading-size))] font-bold tracking-[-0.04em]">
                       <NumberTicker
                         value={stat.value}
                         delay={0.2 + i * 0.15}
@@ -1111,7 +1111,7 @@ export function BusinessOpsContent() {
               Your business deserves{" "}
               <span className="text-primary">the record the tools already keep.</span>
             </h2>
-            <p className="mt-6 text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">
+            <p className="mt-6 text-[length:min(17px,var(--marketing-body-size))] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">
               One workspace. Full business picture. AI that waits for your approval.
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-2.5 sm:flex-row">

@@ -114,7 +114,7 @@ export function SpineContent() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ type: "spring", damping: 18, stiffness: 70, delay: 0.15 }}
-            className="text-[48px] font-semibold leading-[1.1] tracking-[-0.05em] text-white sm:text-[64px]"
+            className="text-[length:min(48px,var(--marketing-title-size))] font-semibold leading-[1.1] tracking-[-0.05em] text-white sm:text-[length:min(64px,var(--marketing-title-size))]"
           >
             The intelligence layer{" "}
             <span className="text-primary">above your apps.</span>
@@ -123,7 +123,7 @@ export function SpineContent() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ type: "spring", damping: 16, stiffness: 52, delay: 0.35 }}
-            className="mx-auto mt-8 max-w-2xl text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-white/55"
+            className="mx-auto mt-8 max-w-2xl text-[length:min(17px,var(--marketing-body-size))] font-medium leading-[1.5] tracking-[-0.02em] text-white/55"
           >
             A vendor-neutral layer unifying records, conversations, and AI outputs — every action waits for human approval.
           </motion.p>
@@ -188,11 +188,11 @@ export function SpineContent() {
             transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
             className="mx-auto max-w-2xl text-center"
           >
-            <h2 className="text-[40px] font-semibold tracking-[-0.05em] leading-[1.15] text-white sm:text-[48px]">
+            <h2 className="text-[length:min(40px,var(--marketing-heading-size))] font-semibold tracking-[-0.05em] leading-[1.15] text-white sm:text-[length:min(48px,var(--marketing-heading-size))]">
               Human-in-the-loop is{" "}
               <span className="text-primary">not a setting.</span>
             </h2>
-            <p className="mt-4 text-[17px] font-medium leading-[1.5] text-white/55">
+            <p className="mt-4 text-[length:min(17px,var(--marketing-body-size))] font-medium leading-[1.5] text-white/55">
               The Review is built into the execution path. Nothing bypasses it.
             </p>
           </motion.div>

@@ -76,7 +76,7 @@ export function NumberedSteps({
             <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/15 text-xl font-bold text-primary">
               {steps[active].num}
             </div>
-            <h3 className="text-[22px] font-semibold tracking-[-0.04em] text-white mb-3">
+            <h3 className="text-[length:min(22px,var(--marketing-card-size))] font-semibold tracking-[-0.04em] text-white mb-3">
               {steps[active].title}
             </h3>
             <p className="text-[15px] font-medium leading-[1.6] text-white/50">

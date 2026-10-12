@@ -105,11 +105,11 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 </span>
               ))}
             </div>
-            <h1 className="mt-4 text-[36px] font-semibold tracking-[-0.04em] leading-[1.15] text-[#032D60] sm:text-[44px]">
+            <h1 className="mt-4 text-[length:min(36px,var(--marketing-title-size))] font-semibold tracking-[-0.04em] leading-[1.15] text-[#032D60] sm:text-[length:min(44px,var(--marketing-title-size))]">
               {post.title}
             </h1>
             {post.subtitle ? (
-              <p className="mt-3 text-[18px] font-medium text-[#33465B]">{post.subtitle}</p>
+              <p className="mt-3 text-[length:min(18px,var(--marketing-body-size))] font-medium text-[#33465B]">{post.subtitle}</p>
             ) : null}
             <div className="mt-6 flex flex-wrap items-center gap-3 text-[14px] font-medium text-muted-foreground">
               <Link href={`/blog/authors/${post.author.slug}`} className="hover:text-primary hover:underline">
@@ -144,7 +144,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
         <section className="mx-auto max-w-[800px] px-6 pb-16 md:px-16">
           <div className="rounded-2xl border border-border/50 bg-muted/30 p-8 text-center">
-            <p className="text-[18px] font-semibold tracking-[-0.03em]">Ready to stop translating between your tools?</p>
+            <p className="text-[length:min(18px,var(--marketing-body-size))] font-semibold tracking-[-0.03em]">Ready to stop translating between your tools?</p>
             <p className="mt-2 text-[15px] font-medium text-muted-foreground">See SpineWorkspace in action.</p>
             <Link
               href="/contact?intent=demo"

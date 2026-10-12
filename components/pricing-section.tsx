@@ -67,11 +67,11 @@ export function PricingSection({ hideHeading = false }: { hideHeading?: boolean 
           )}
           {!hideHeading && (
             <>
-              <h2 className="text-[32px] font-semibold tracking-[-0.03em] text-[#032D60]">
+              <h2 className="text-[length:min(32px,var(--marketing-heading-size))] font-semibold tracking-[-0.03em] text-[#032D60]">
                 Choose your{" "}
                 <span className="text-[#0176D3]">workspace tier.</span>
               </h2>
-              <p className="mt-4 text-[17px] leading-[1.5] text-[#444]">
+              <p className="mt-4 text-[length:min(17px,var(--marketing-body-size))] leading-[1.5] text-[#444]">
                 Start small, add more tools and intelligence as your team needs it.
                 No hidden costs.
               </p>
@@ -117,7 +117,7 @@ export function PricingSection({ hideHeading = false }: { hideHeading?: boolean 
                   {plan.description}
                 </p>
                 <div className="mt-4">
-                  <span className="text-[34px] font-semibold tracking-[-0.04em] text-[#032D60]">
+                  <span className="text-[length:min(34px,var(--marketing-heading-size))] font-semibold tracking-[-0.04em] text-[#032D60]">
                     {plan.price}
                   </span>
                   <span className="text-[15px] text-[#706E6B]">
@@ -164,7 +164,7 @@ export function PricingSection({ hideHeading = false }: { hideHeading?: boolean 
           className="mx-auto mt-12 max-w-3xl"
         >
           <div className="rounded-md border border-[#E5E5E5] bg-white p-6 shadow-[0_1px_2px_rgba(0,0,0,0.04)]">
-            <p className="text-[17px] font-semibold tracking-[-0.03em] text-[#032D60]">
+            <p className="text-[length:min(17px,var(--marketing-body-size))] font-semibold tracking-[-0.03em] text-[#032D60]">
               Implementation &amp; services
             </p>
             <p className="mt-2 text-[15px] leading-[1.5] text-[#444]">

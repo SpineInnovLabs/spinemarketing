@@ -26,10 +26,10 @@ export function AboutContent() {
         <div className="pointer-events-none absolute -right-24 -top-40 h-[550px] w-[550px] rounded-full bg-[#2763BC]/25 blur-[100px]" aria-hidden />
         <div className="relative mx-auto max-w-[1220px]">
           <p className="text-xs font-semibold uppercase tracking-[.23em] text-[#4C5C73]">Our origin / Spine InnovTech</p>
-          <h1 className="mt-7 max-w-[1050px] text-[clamp(3.2rem,6.2vw,6.6rem)] font-semibold leading-[1.04] tracking-[-.065em]">
+          <h1 className="mt-7 max-w-[1050px] text-[length:min(clamp(3.2rem,6.2vw,6.6rem),var(--marketing-title-size))] font-semibold leading-[1.04] tracking-[-.065em]">
             The real gap was never just <span className="text-[#0072E5]">system integration.</span>
           </h1>
-          <p className="mt-9 max-w-[770px] text-[18px] leading-[1.9] text-[#4C5C73]">
+          <p className="mt-9 max-w-[770px] text-[length:min(18px,var(--marketing-body-size))] leading-[1.9] text-[#4C5C73]">
             Connecting systems makes information available. Helping people understand that information, act with authority and continue work across teams is a different challenge. That is the problem behind Spine InnovTech.
           </p>
           <Link href="/company" className="mt-9 inline-flex min-h-12 items-center gap-2 rounded-full bg-[#AFCBFF] px-6 text-sm font-semibold text-[#0B234A] transition hover:bg-white">
@@ -44,14 +44,14 @@ export function AboutContent() {
           <div className="mt-7 h-px w-20 bg-[#2461BC]" aria-hidden />
         </div>
         <div>
-          <h2 className="text-[clamp(2.3rem,4.5vw,4.3rem)] font-semibold leading-[1.12] tracking-[-.055em] text-[#102747]">Integration connected the systems. People still carried the context.</h2>
-          <p className="mt-8 text-[17px] leading-[1.95] text-[#536883]">
+          <h2 className="text-[length:min(clamp(2.3rem,4.5vw,4.3rem),var(--marketing-heading-size))] font-semibold leading-[1.12] tracking-[-.055em] text-[#102747]">Integration connected the systems. People still carried the context.</h2>
+          <p className="mt-8 text-[length:min(17px,var(--marketing-body-size))] leading-[1.95] text-[#536883]">
             The idea took shape through experience in software engineering, integration architecture and customer-facing enterprise work. To understand one customer or decision, a person often has to move across CRM, support, documents, messages and meetings, reconstructing the same business story repeatedly.
           </p>
-          <p className="mt-5 text-[17px] leading-[1.95] text-[#536883]">
+          <p className="mt-5 text-[length:min(17px,var(--marketing-body-size))] leading-[1.95] text-[#536883]">
             This is not a story about replacing the tools organizations already trust. It is about connecting business context around goals, relationships, work and evidence so that a person or AI counterpart can understand what matters without losing the boundaries that protect the business.
           </p>
-          <p className="mt-5 text-[17px] font-medium leading-[1.95] text-[#17375F]">
+          <p className="mt-5 text-[length:min(17px,var(--marketing-body-size))] font-medium leading-[1.95] text-[#17375F]">
             Our direction is simple: shared business understanding, useful collaboration between humans and AI, and governed paths from intention to verified outcome.
           </p>
         </div>
@@ -60,12 +60,12 @@ export function AboutContent() {
       <section className="bg-[#ECF3FC] py-24 lg:py-32">
         <div className="mx-auto max-w-[1220px] px-5 sm:px-8">
           <p className="text-xs font-semibold uppercase tracking-[.21em] text-[#2461BC]">The engineering principles</p>
-          <h2 className="mt-5 max-w-[780px] text-[clamp(2.5rem,4.7vw,4.6rem)] font-semibold leading-[1.1] tracking-[-.055em] text-[#0C274E]">Intelligence requires more than access to data.</h2>
+          <h2 className="mt-5 max-w-[780px] text-[length:min(clamp(2.5rem,4.7vw,4.6rem),var(--marketing-heading-size))] font-semibold leading-[1.1] tracking-[-.055em] text-[#0C274E]">Intelligence requires more than access to data.</h2>
           <div className="mt-12 grid gap-4 md:grid-cols-3">
             {principles.map((point) => (
               <article key={point.number} className="rounded-[24px] border border-[#D7E4F3] bg-white p-8 shadow-[0_20px_45px_-40px_rgba(10,38,87,.4)]">
                 <span className="font-mono text-xs text-[#5082C8]">{point.number}</span>
-                <h3 className="mt-12 text-[24px] font-semibold tracking-[-.04em] text-[#13365F]">{point.title}</h3>
+                <h3 className="mt-12 text-[length:min(24px,var(--marketing-card-size))] font-semibold tracking-[-.04em] text-[#13365F]">{point.title}</h3>
                 <p className="mt-5 text-[15px] leading-[1.9] text-[#576C86]">{point.body}</p>
               </article>
             ))}
@@ -76,8 +76,8 @@ export function AboutContent() {
       <section className="mx-auto grid max-w-[1220px] gap-12 px-5 py-24 sm:px-8 lg:grid-cols-2 lg:items-center lg:py-32">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[.21em] text-[#2461BC]">From vision to product</p>
-          <h2 className="mt-6 text-[clamp(2.4rem,4.4vw,4.4rem)] font-semibold leading-[1.1] tracking-[-.055em] text-[#0C274E]">SpineWorkspace puts the principle to work.</h2>
-          <p className="mt-7 text-[17px] leading-[1.85] text-[#536883]">One workspace for humans and AI to understand the business, share the work, and achieve goals together. Spine Fabric, the Workbench, the Twin and Runtime are parts of that integrated direction.</p>
+          <h2 className="mt-6 text-[length:min(clamp(2.4rem,4.4vw,4.4rem),var(--marketing-heading-size))] font-semibold leading-[1.1] tracking-[-.055em] text-[#0C274E]">SpineWorkspace puts the principle to work.</h2>
+          <p className="mt-7 text-[length:min(17px,var(--marketing-body-size))] leading-[1.85] text-[#536883]">One workspace for humans and AI to understand the business, share the work, and achieve goals together. Spine Fabric, the Workbench, the Twin and Runtime are parts of that integrated direction.</p>
           <a href="/product" className="mt-9 inline-flex min-h-12 items-center gap-2 rounded-full bg-[#102F5B] px-6 text-sm font-semibold text-white transition hover:bg-[#2759A0]">
             Explore SpineWorkspace <ArrowRight className="h-4 w-4" aria-hidden />
           </a>

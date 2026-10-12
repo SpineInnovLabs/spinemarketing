@@ -67,7 +67,7 @@ export function FAQSection({ heading, subheading, items }: FAQSectionProps) {
           transition={{ type: "spring", damping: 18, stiffness: 70 }}
           className="mb-12 text-center"
         >
-          <h2 className="text-[32px] font-semibold leading-[1.15] tracking-[-0.03em] text-[#032D60] sm:text-[40px]">
+          <h2 className="text-[length:min(32px,var(--marketing-heading-size))] font-semibold leading-[1.15] tracking-[-0.03em] text-[#032D60] sm:text-[length:min(40px,var(--marketing-heading-size))]">
             {heading ?? "Frequently asked questions"}
           </h2>
           {subheading && (

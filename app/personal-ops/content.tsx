@@ -96,7 +96,7 @@ export function PersonalOpsContent() {
                 stiffness: 52,
                 delay: 0.4,
               }}
-              className="text-[40px] font-semibold leading-[1.1em] tracking-[-0.05em] text-white sm:text-[52px] lg:text-[60px]"
+              className="text-[length:min(40px,var(--marketing-title-size))] font-semibold leading-[1.1em] tracking-[-0.05em] text-white sm:text-[length:min(52px,var(--marketing-title-size))] lg:text-[length:min(60px,var(--marketing-title-size))]"
             >
               A calm Personal Ops workspace{" "}
               <span className="text-primary">above all your apps.</span>
@@ -111,7 +111,7 @@ export function PersonalOpsContent() {
                 stiffness: 52,
                 delay: 0.6,
               }}
-              className="mx-auto mt-8 max-w-2xl text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-white/55"
+              className="mx-auto mt-8 max-w-2xl text-[length:min(17px,var(--marketing-body-size))] font-medium leading-[1.5] tracking-[-0.02em] text-white/55"
             >
               One clear view of today&apos;s priorities. AI that understands context and never acts without permission.
             </motion.p>
@@ -258,7 +258,7 @@ export function PersonalOpsContent() {
                 }}
                 className="flex gap-6"
               >
-                <div className="text-[40px] font-bold tracking-[-0.05em] text-primary/15 leading-none">
+                <div className="text-[length:min(40px,var(--marketing-heading-size))] font-bold tracking-[-0.05em] text-primary/15 leading-none">
                   {num}
                 </div>
                 <div>
@@ -358,7 +358,7 @@ export function PersonalOpsContent() {
               Your apps should work for you.{" "}
               <span className="text-primary">Not the other way around.</span>
             </h2>
-            <p className="mt-6 text-[17px] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">
+            <p className="mt-6 text-[length:min(17px,var(--marketing-body-size))] font-medium leading-[1.5] tracking-[-0.02em] text-muted-foreground">
               One calm workspace. Clear mornings. AI that remembers and waits for approval.
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-2.5 sm:flex-row">

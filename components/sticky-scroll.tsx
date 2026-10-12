@@ -35,7 +35,7 @@ function HeadingBlock({
       >
         {tag}
       </motion.p>
-      <h2 className="text-[32px] font-semibold leading-[1.15] tracking-[-0.03em] text-[#032D60] sm:text-[40px]">
+      <h2 className="text-[length:min(32px,var(--marketing-heading-size))] font-semibold leading-[1.15] tracking-[-0.03em] text-[#032D60] sm:text-[length:min(40px,var(--marketing-heading-size))]">
         {heading}
       </h2>
       {subheading && <p className="mt-4 max-w-md text-[15px] leading-[1.6] text-[#444]">{subheading}</p>}

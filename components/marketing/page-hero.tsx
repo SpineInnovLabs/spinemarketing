@@ -69,12 +69,12 @@ export function PageHero({
             ) : null}
             <motion.h1
               {...rise}
-              className={`max-w-full whitespace-pre-line text-balance text-[#032D60] ${ice ? "text-[clamp(2.05rem,4.6vw,3.65rem)] font-bold leading-[1.08] tracking-[-0.03em]" : "text-[clamp(2rem,4.4vw,3.5rem)] font-semibold leading-[1.12] tracking-[-0.03em]"}`}
+              className={`max-w-full whitespace-pre-line text-balance text-[#032D60] ${ice ? "text-[length:min(clamp(2.05rem,4.6vw,3.65rem),var(--marketing-title-size))] font-bold leading-[1.08] tracking-[-0.03em]" : "text-[length:min(clamp(2rem,4.4vw,3.5rem),var(--marketing-title-size))] font-semibold leading-[1.12] tracking-[-0.03em]"}`}
             >
               {headline}
             </motion.h1>
             {subhead && (
-              <motion.p {...rise} className={`max-w-xl leading-[1.6] text-[#33465B] ${ice ? "mt-5 text-[16px] sm:text-[17px]" : "mt-4 text-[17px]"}`}>
+              <motion.p {...rise} className={`max-w-xl leading-[1.6] text-[#33465B] ${ice ? "mt-5 text-[16px] sm:text-[length:min(17px,var(--marketing-body-size))]" : "mt-4 text-[length:min(17px,var(--marketing-body-size))]"}`}>
                 {subhead}
               </motion.p>
             )}

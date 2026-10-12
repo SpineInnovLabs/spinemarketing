@@ -50,7 +50,7 @@ export default async function AuthorPage({ params }: { params: Promise<{ slug: s
       />
       <Header />
       <main id="main" className="mx-auto max-w-[800px] px-6 pt-[160px] pb-24 md:px-16">
-        <h1 className="text-[36px] font-semibold tracking-[-0.04em] text-[#032D60]">{author.name}</h1>
+        <h1 className="text-[length:min(36px,var(--marketing-title-size))] font-semibold tracking-[-0.04em] text-[#032D60]">{author.name}</h1>
         {author.role ? <p className="mt-2 text-[15px] font-medium text-muted-foreground">{author.role}</p> : null}
         {author.bio ? <p className="mt-4 text-[16px] leading-relaxed text-[#33465B]">{author.bio}</p> : null}
         <h2 className="mt-12 text-[14px] font-semibold uppercase tracking-wider text-muted-foreground">Articles</h2>

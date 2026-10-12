@@ -87,7 +87,7 @@ export function EnterpriseHome() {
         <div className="mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-12">
           <motion.div {...rise} className="mx-auto max-w-3xl text-center">
             <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[#0176D3]">The hidden cost</p>
-            <h2 className="mt-3 text-[32px] font-semibold tracking-[-0.03em] text-[#032D60] sm:text-[36px]">
+            <h2 className="mt-3 text-[length:min(32px,var(--marketing-heading-size))] font-semibold tracking-[-0.03em] text-[#032D60] sm:text-[length:min(36px,var(--marketing-heading-size))]">
               Your team should review the decision—not spend half a day reconstructing it.
             </h2>
           </motion.div>
@@ -146,7 +146,7 @@ export function EnterpriseHome() {
         <div className="mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-12">
           <div className="mx-auto max-w-2xl text-center">
             <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[#0176D3]">Start here</p>
-            <h2 className="mt-3 text-[32px] font-semibold tracking-[-0.03em] text-[#032D60] sm:text-[36px]">
+            <h2 className="mt-3 text-[length:min(32px,var(--marketing-heading-size))] font-semibold tracking-[-0.03em] text-[#032D60] sm:text-[length:min(36px,var(--marketing-heading-size))]">
               Renewal Decision Workspace
             </h2>
             <p className="mt-4 text-[16px] leading-[1.7] text-[#33465B]">
@@ -199,7 +199,7 @@ export function EnterpriseHome() {
         <div className="mx-auto grid max-w-[1280px] items-center gap-10 px-5 sm:px-8 lg:grid-cols-2 lg:px-12">
           <motion.div {...rise}>
             <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[#0176D3]">Governance</p>
-            <h2 className="mt-3 text-[32px] font-semibold tracking-[-0.03em] text-[#032D60] sm:text-[36px]">
+            <h2 className="mt-3 text-[length:min(32px,var(--marketing-heading-size))] font-semibold tracking-[-0.03em] text-[#032D60] sm:text-[length:min(36px,var(--marketing-heading-size))]">
               AI prepares the case. Your team owns the decision.
             </h2>
             <p className="mt-4 text-[16px] leading-[1.7] text-[#33465B]">
@@ -239,7 +239,7 @@ export function EnterpriseHome() {
         <div className="mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-12">
           <div className="mx-auto max-w-2xl text-center">
             <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[#0176D3]">Evidence → proposal → approval → execution</p>
-            <h2 className="mt-3 text-[32px] font-semibold tracking-[-0.03em] text-[#032D60] sm:text-[36px]">
+            <h2 className="mt-3 text-[length:min(32px,var(--marketing-heading-size))] font-semibold tracking-[-0.03em] text-[#032D60] sm:text-[length:min(36px,var(--marketing-heading-size))]">
               Prepare the Northstar Labs renewal decision
             </h2>
             <p className="mt-4 text-[16px] leading-[1.7] text-[#33465B]">
@@ -279,7 +279,7 @@ export function EnterpriseHome() {
           <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[#526479]">
             Illustrative proof · demonstration, not customer results
           </p>
-          <h2 className="mt-3 text-[32px] font-semibold tracking-[-0.03em] text-[#032D60]">
+          <h2 className="mt-3 text-[length:min(32px,var(--marketing-heading-size))] font-semibold tracking-[-0.03em] text-[#032D60]">
             What a renewal decision packet looks like in practice
           </h2>
           <p className="mt-3 max-w-2xl text-[15px] leading-[1.6] text-[#526479]">
@@ -312,7 +312,7 @@ export function EnterpriseHome() {
       <section className="py-20 md:py-24">
         <div className="mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-12">
           <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[#0176D3]">Expand after the first workflow</p>
-          <h2 className="mt-3 max-w-xl text-[32px] font-semibold tracking-[-0.03em] text-[#032D60] sm:text-[36px]">
+          <h2 className="mt-3 max-w-xl text-[length:min(32px,var(--marketing-heading-size))] font-semibold tracking-[-0.03em] text-[#032D60] sm:text-[length:min(36px,var(--marketing-heading-size))]">
             Governed AI platform beneath the renewal workspace
           </h2>
           <p className="mt-4 max-w-2xl text-[16px] leading-[1.7] text-[#33465B]">
@@ -326,7 +326,7 @@ export function EnterpriseHome() {
                   href={href}
                   className="flex h-full flex-col rounded-[20px] border border-[#D9E4EF] bg-[#F3F6F9] p-6 transition-colors hover:border-[#0176D3] hover:bg-[#EAF5FC]"
                 >
-                  <p className="text-[18px] font-semibold text-[#032D60]">{name}</p>
+                  <p className="text-[length:min(18px,var(--marketing-body-size))] font-semibold text-[#032D60]">{name}</p>
                   <p className="mt-2 flex-1 text-[14px] leading-[1.6] text-[#33465B]">{body}</p>
                   <span className="mt-4 text-[13px] font-semibold text-[#0176D3]">Learn more →</span>
                 </Link>
@@ -382,7 +382,7 @@ export function EnterpriseHome() {
         <div className="mx-auto flex max-w-[1280px] flex-col items-start justify-between gap-6 px-5 sm:px-8 lg:flex-row lg:items-center lg:px-12">
           <div>
             <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[#0176D3]">Begin with one workflow</p>
-            <h2 className="mt-3 text-[28px] font-semibold tracking-[-0.02em] text-[#032D60]">
+            <h2 className="mt-3 text-[length:min(28px,var(--marketing-heading-size))] font-semibold tracking-[-0.02em] text-[#032D60]">
               Deploy the Renewal Decision Workspace first.
             </h2>
             <p className="mt-2 max-w-xl text-[15px] leading-[1.6] text-[#33465B]">
@@ -401,7 +401,7 @@ export function EnterpriseHome() {
       <section className="bg-[#F0F8FF] py-20 md:py-24 innovtech-reference-surface">
         <div className="mx-auto flex max-w-[1280px] flex-col items-start justify-between gap-4 px-5 sm:px-8 lg:flex-row lg:items-center lg:px-12">
           <div>
-            <h2 className="text-[24px] font-semibold tracking-[-0.02em] text-[#052858]">
+            <h2 className="text-[length:min(24px,var(--marketing-heading-size))] font-semibold tracking-[-0.02em] text-[#052858]">
               Make every renewal decision from the full customer story.
             </h2>
             <p className="mt-1 max-w-xl text-[15px] text-[#4C5C73]/80">

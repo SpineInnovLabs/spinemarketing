@@ -14,7 +14,7 @@ export function WorkspaceProjectionCta({
       <div className="mx-auto grid max-w-[1120px] items-center gap-9 lg:grid-cols-[1.3fr_.7fr]">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[.2em] text-[#2462B2]">SpineWorkspace / Role-specific context</p>
-          <h2 className="mt-5 max-w-[700px] text-[clamp(2rem,3.6vw,3.5rem)] font-semibold leading-[1.14] tracking-[-.05em] text-[#112F57]">
+          <h2 className="mt-5 max-w-[700px] text-[length:min(clamp(2rem,3.6vw,3.5rem),var(--marketing-heading-size))] font-semibold leading-[1.14] tracking-[-.05em] text-[#112F57]">
             Explore {solution.name.toLowerCase()} in the same connected workspace.
           </h2>
           <p className="mt-6 max-w-[730px] text-[16px] leading-[1.85] text-[#566E89]">

@@ -64,7 +64,7 @@ export function RenewalWorkflowNarrative() {
     <div className="overflow-hidden rounded-[20px] border border-[#D9E4EF] bg-white shadow-[0_18px_48px_rgba(3,45,96,0.08)]">
       <div className="border-b border-[#D9E4EF] bg-[#EAF5FC] px-6 py-4">
         <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[#0176D3]">Illustrative workflow</p>
-        <p className="mt-1 text-[18px] font-semibold text-[#032D60]">Renewal readiness for Northstar Labs</p>
+        <p className="mt-1 text-[length:min(18px,var(--marketing-body-size))] font-semibold text-[#032D60]">Renewal readiness for Northstar Labs</p>
         <p className="mt-1 text-[14px] text-[#526479]">Demonstration, not a customer result</p>
       </div>
       <ol className="divide-y divide-[#D9E4EF]">
@@ -301,7 +301,7 @@ export function ExampleWorkspaceStrip() {
             </span>
             <div className="min-w-0">
               <p className="text-[12px] font-medium text-[#526479]">Example workspace · demonstration</p>
-              <p className="text-[18px] font-semibold tracking-[-0.02em] text-[#032D60] sm:text-[20px]">Northstar Labs renewal</p>
+              <p className="text-[length:min(18px,var(--marketing-body-size))] font-semibold tracking-[-0.02em] text-[#032D60] sm:text-[length:min(20px,var(--marketing-body-size))]">Northstar Labs renewal</p>
             </div>
           </div>
           <p className="inline-flex w-fit items-center gap-2 text-[14px] font-semibold text-[#33465B]">

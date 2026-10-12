@@ -181,11 +181,11 @@ export function SecurityContent() {
             viewport={{ once: true }}
             transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
           >
-            <h2 className="text-[32px] font-semibold tracking-[-0.04em] leading-[1.2] text-[#102E55] sm:text-[40px]">
+            <h2 className="text-[length:min(32px,var(--marketing-heading-size))] font-semibold tracking-[-0.04em] leading-[1.2] text-[#102E55] sm:text-[length:min(40px,var(--marketing-heading-size))]">
               Security should be evaluated against{" "}
               <span className="text-primary">implementation evidence.</span>
             </h2>
-            <p className="mt-6 text-[17px] font-medium leading-[1.5] text-[#506783]">
+            <p className="mt-6 text-[length:min(17px,var(--marketing-body-size))] font-medium leading-[1.5] text-[#506783]">
               Review actual controls, authority paths and verification evidence before depending on a security claim.
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-2.5 sm:flex-row">

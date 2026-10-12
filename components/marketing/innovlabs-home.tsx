@@ -112,8 +112,8 @@ const principles = [
 ];
 const container = "mx-auto max-w-[1320px] px-5 sm:px-8 lg:px-12";
 const heading =
-  "text-[clamp(2rem,4vw,3.8rem)] font-semibold leading-[1.12] tracking-[-.045em]";
-const body = "text-[17px] leading-[1.85] text-[#4E607A]";
+  "text-[length:min(clamp(2rem,4vw,3.8rem),var(--marketing-heading-size))] font-semibold leading-[1.12] tracking-[-.045em]";
+const body = "text-[length:min(17px,var(--marketing-body-size))] leading-[1.85] text-[#4E607A]";
 const button =
   "inline-flex min-h-12 items-center gap-3 rounded-xl bg-[#006FE8] px-6 text-[14px] font-semibold text-white transition-colors hover:bg-[#0055B8] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#006FE8]";
 const secondary =
@@ -156,7 +156,7 @@ export function InnovLabsHome() {
             </SectionLabel>
             <h1
               id="company-title"
-              className="mt-6 max-w-[700px] text-[clamp(2.65rem,4.8vw,4.8rem)] font-semibold leading-[1.08] tracking-[-.05em]"
+              className="mt-6 max-w-[700px] text-[length:min(clamp(2.65rem,4.8vw,4.8rem),var(--marketing-title-size))] font-semibold leading-[1.08] tracking-[-.05em]"
             >
               Building the intelligence behind{" "}
               <span className="text-[#006FE8]">connected business.</span>
@@ -247,7 +247,7 @@ export function InnovLabsHome() {
                 <p className="text-xs font-medium text-[#006FE8]">
                   0{index + 1}
                 </p>
-                <h3 className="mt-6 text-xl font-semibold leading-snug tracking-[-.025em]">
+                <h3 className="mt-6 text-[length:min(1.25rem,var(--marketing-card-size))]/[var(--tw-leading,1.4)] font-semibold leading-snug tracking-[-.025em]">
                   {title}
                 </h3>
                 <p className="mt-4 text-[14px] leading-7 text-[#4E607A]">
@@ -319,7 +319,7 @@ export function InnovLabsHome() {
               ],
             ].map(([title, description]) => (
               <div key={title} className="py-5 first:pt-0 last:pb-0">
-                <h3 className="text-xl font-semibold">{title}</h3>
+                <h3 className="text-[length:min(1.25rem,var(--marketing-card-size))]/[var(--tw-leading,1.4)] font-semibold">{title}</h3>
                 <p className="mt-2 text-[15px] leading-7 text-[#4E607A]">
                   {description}
                 </p>
@@ -360,7 +360,7 @@ export function InnovLabsHome() {
                     <p className="text-[11px] font-semibold uppercase tracking-[.14em] text-[#006FE8]">
                       {part.label}
                     </p>
-                    <h3 className="mt-3 text-2xl font-semibold tracking-[-.03em]">
+                    <h3 className="mt-3 text-[length:min(1.5rem,var(--marketing-card-size))]/[var(--tw-leading,1.3333333333)] font-semibold tracking-[-.03em]">
                       {part.name}
                     </h3>
                   </div>
@@ -443,7 +443,7 @@ export function InnovLabsHome() {
                 href={href}
                 className="rounded-2xl border border-[#CBE5FA] bg-white p-7 hover:border-[#006FE8] focus-visible:outline-2 focus-visible:outline-[#006FE8]"
               >
-                <h3 className="text-xl font-semibold">{title}</h3>
+                <h3 className="text-[length:min(1.25rem,var(--marketing-card-size))]/[var(--tw-leading,1.4)] font-semibold">{title}</h3>
                 <p className="mt-3 text-[15px] leading-7 text-[#4E607A]">
                   {description}
                 </p>
@@ -475,7 +475,7 @@ export function InnovLabsHome() {
               className="rounded-2xl border border-[#CBE5FA] bg-[#F0F8FF] p-7"
             >
               <p className="text-xs text-[#006FE8]">0{index + 1}</p>
-              <h3 className="mt-5 text-xl font-semibold">{title}</h3>
+              <h3 className="mt-5 text-[length:min(1.25rem,var(--marketing-card-size))]/[var(--tw-leading,1.4)] font-semibold">{title}</h3>
               <p className="mt-3 text-[15px] leading-7 text-[#4E607A]">
                 {description}
               </p>
@@ -544,7 +544,7 @@ export function InnovLabsHome() {
               href={href}
               className="rounded-2xl border border-[#CBE5FA] p-7 hover:bg-[#F0F8FF]"
             >
-              <h3 className="text-xl font-semibold">{title}</h3>
+              <h3 className="text-[length:min(1.25rem,var(--marketing-card-size))]/[var(--tw-leading,1.4)] font-semibold">{title}</h3>
               <p className="mt-3 text-[15px] leading-7 text-[#4E607A]">
                 {description}
               </p>

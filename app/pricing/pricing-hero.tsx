@@ -33,14 +33,14 @@ export function PricingHero() {
 
           <motion.h1
             {...heroFade(0.2)}
-            className="text-[40px] font-semibold leading-[1.1] tracking-[-0.03em] text-[#032D60] sm:text-[48px]"
+            className="text-[length:min(40px,var(--marketing-title-size))] font-semibold leading-[1.1] tracking-[-0.03em] text-[#032D60] sm:text-[length:min(48px,var(--marketing-title-size))]"
           >
             Start with one governed workflow.{" "}
             <span className="text-[#0176D3]">Scale from there.</span>
           </motion.h1>
           <motion.p
             {...heroFade(0.35)}
-            className="mx-auto mt-5 max-w-2xl text-[17px] leading-[1.6] text-[#444]"
+            className="mx-auto mt-5 max-w-2xl text-[length:min(17px,var(--marketing-body-size))] leading-[1.6] text-[#444]"
           >
             Illustrative tiers below show how teams typically grow into SpineWorkspace. Commercial terms follow your integration scope and governance needs.
           </motion.p>

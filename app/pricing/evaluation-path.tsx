@@ -50,7 +50,7 @@ export function PricingEvaluationPath() {
       <div className="mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-12">
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[#0176D3]">Commercial path</p>
-          <h2 className="mt-3 text-[32px] font-semibold tracking-[-0.03em] text-[#032D60]">
+          <h2 className="mt-3 text-[length:min(32px,var(--marketing-heading-size))] font-semibold tracking-[-0.03em] text-[#032D60]">
             Priced to the workflow, not the buzzword
           </h2>
           <p className="mt-4 text-[16px] leading-[1.65] text-[#33465B]">
@@ -82,7 +82,7 @@ export function PricingEvaluationPath() {
               key={pkg.name}
               className="rounded-[20px] border border-[#D9E4EF] bg-white p-6 shadow-[0_8px_24px_rgba(3,45,96,0.06)]"
             >
-              <p className="text-[18px] font-semibold text-[#032D60]">{pkg.name}</p>
+              <p className="text-[length:min(18px,var(--marketing-body-size))] font-semibold text-[#032D60]">{pkg.name}</p>
               <p className="mt-1 text-[13px] font-semibold uppercase tracking-[0.06em] text-[#526479]">{pkg.audience}</p>
               <p className="mt-3 text-[14px] leading-[1.55] text-[#33465B]">{pkg.outcome}</p>
               <p className="mt-2 text-[13px] text-[#706E6B]">{pkg.note}</p>

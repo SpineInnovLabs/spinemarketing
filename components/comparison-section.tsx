@@ -67,7 +67,7 @@ export function ComparisonSection({
           <p className="mb-3 text-[12px] font-bold uppercase tracking-[0.08em] text-[#0176D3]">
             Why SpineWorkspace
           </p>
-          <h2 className="text-[32px] font-semibold leading-[1.15] tracking-[-0.03em] text-[#032D60] sm:text-[40px]">
+          <h2 className="text-[length:min(32px,var(--marketing-heading-size))] font-semibold leading-[1.15] tracking-[-0.03em] text-[#032D60] sm:text-[length:min(40px,var(--marketing-heading-size))]">
             {heading}
           </h2>
           <p className="mt-4 text-[16px] leading-[1.6] text-[#444]">
