@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowRight, ArrowUpRight, Layers3 } from "lucide-react";
 import { PUBLIC_SOLUTIONS, marketingPathForSolution } from "@/lib/solution-taxonomy";
 import { SOLUTION_DOMAINS, getSolutionDomain } from "@/lib/solution-domains";
+import { WorkbenchViewExplorer } from "@/components/marketing/workbench-view-explorer";
 
 export function SolutionsContent() {
   const functionSlugs = new Set(PUBLIC_SOLUTIONS.map(solution => solution.slug));
@@ -71,6 +72,7 @@ export function SolutionsContent() {
           </div>
         </div>
       </section>
+      <WorkbenchViewExplorer initialDomain="sales" compact />
       <section className="border-t border-[#D8E4F1] bg-[#EAF2FD] px-5 py-20 sm:px-8">
         <div className="mx-auto grid max-w-[1220px] items-center gap-9 lg:grid-cols-[1.25fr_.75fr]">
           <div><p className="text-xs font-semibold uppercase tracking-[.2em] text-[#2461AE]">One workspace</p><h2 className="mt-5 text-[length:min(clamp(2.3rem,4vw,4rem),var(--marketing-heading-size))] font-semibold leading-[1.12] tracking-[-.05em] text-[#102D55]">Different roles shouldn't need different truths.</h2><p className="mt-6 text-[16px] leading-[1.8] text-[#546C87]">Capabilities and views adapt to the work, while business context, policy and authority remain governed.</p></div>
