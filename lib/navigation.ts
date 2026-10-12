@@ -69,6 +69,7 @@ export const headerNavigation: NavItem[] = [
     { name: "Host connected environments", href: "/host-connected-environment", icon: Network, desc: "Working with compatible AI hosts" },
     { name: "Documentation", href: DOCS_URL, icon: BookOpen, desc: "Published technical documentation", external: true },
   ] },
+  { label: "Pricing", href: "/pricing" },
 ];
 
 export type FooterColumn = { heading: string; links: { name: string; href: string; external?: boolean }[] };
@@ -80,6 +81,7 @@ export const footerColumns: FooterColumn[] = [
   ] },
   { heading: "Our technology", links: [
     { name: "SpineWorkspace", href: "/product" },
+    { name: "Subscriptions & pricing", href: "/pricing" },
     { name: "Spine Fabric", href: "/platform/spine-fabric" },
     { name: "Spine Twin", href: "/twin" },
     { name: "Governance & Runtime", href: "/governance" },
