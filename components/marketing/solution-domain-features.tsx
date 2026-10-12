@@ -1,6 +1,8 @@
 import { Section, SectionHeader } from "./section";
 import { getSolutionDomain } from "@/lib/solution-domains";
 import { WorkspaceAuthActions } from "./workspace-auth-actions";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 export function SolutionDomainFeatures({ slug }: { slug: string }) {
   const domain = getSolutionDomain(slug);
@@ -35,6 +37,10 @@ export function SolutionDomainFeatures({ slug }: { slug: string }) {
             </li>
           ))}
         </ol>
+        <div className="mt-8 flex flex-wrap items-center justify-between gap-5 rounded-2xl border border-[#D6E8F8] bg-[#F0F8FF] p-6 sm:p-7">
+          <p className="max-w-2xl text-sm leading-7 text-[#4E607A]">Considering SpineWorkspace for {domain.name}? Evaluate this workflow with your team and confirm the supported tools, included capabilities and subscription terms.</p>
+          <Link href="/pricing" className="inline-flex min-h-12 items-center gap-2 rounded-xl border border-[#006FE8] bg-white px-5 text-sm font-semibold text-[#082B5E] hover:bg-[#EBF7FF] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#006FE8]">Explore subscriptions & pricing <ArrowRight className="h-4 w-4 shrink-0" aria-hidden /></Link>
+        </div>
       </Section>
     </>
   );

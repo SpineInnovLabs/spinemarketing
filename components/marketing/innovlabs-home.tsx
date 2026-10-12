@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { WorkspaceBenefits } from "./workspace-benefits";
 
 const approach = [
   [
@@ -202,6 +203,8 @@ export function InnovLabsHome() {
         </div>
       </section>
 
+      <WorkspaceBenefits />
+
       <section
         id="why-we-exist"
         className={`${container} grid gap-10 py-20 lg:grid-cols-[.6fr_1.4fr] lg:gap-20 lg:py-28`}
@@ -267,7 +270,7 @@ export function InnovLabsHome() {
         className={`${container} grid items-start gap-12 py-20 lg:grid-cols-2 lg:gap-20 lg:py-28`}
       >
         <div>
-          <SectionLabel>INTRODUCING SPINE WORKSPACE</SectionLabel>
+          <SectionLabel>INTRODUCING SPINEWORKSPACE</SectionLabel>
           <h2 className={`${heading} mt-5`}>
             One workspace for humans and AI to understand the business and share
             the work.

@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { WorkspaceAuthActions } from "./workspace-auth-actions";
+import { WorkspaceBenefits } from "./workspace-benefits";
+import { WorkspaceSubscriptionValue } from "./workspace-subscription-value";
 import {
   ArrowRight,
   Database,
@@ -93,23 +95,35 @@ export function SpineWorkspaceDetails() {
       >
         <div className="innovtech-product-copy">
           <p className="innovtech-eyebrow">
-            SPINE WORKSPACE BY SPINE INNOVTECH
+            SPINEWORKSPACE · BUSINESS CONTEXT FOR HUMANS & AI
           </p>
           <h1 id="product-title">
-            One workspace to understand the business and share the work.
+            Your tools have the information. Your team needs the whole picture.
           </h1>
           <p className="innovtech-hero-description">
-            Bring relevant work, connected information, and governed AI
-            assistance together. Different roles can work from the same business
-            context, with the source evidence and their authority kept clear.
+            Bring work, priorities, decisions, and evidence together across the
+            tools you already use. Give people and AI the context to understand
+            what matters, prepare the next step, and carry work forward with
+            control.
           </p>
+          <ul className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-xs font-semibold text-[#245EA9]" aria-label="Product principles">
+            <li>Work across existing tools</li>
+            <li>Context-aware AI</li>
+            <li>Human-controlled actions</li>
+          </ul>
           <WorkspaceAuthActions />
           <div className="innovtech-actions">
             <Link
-              href="#features"
+              href="/product/how-it-works"
               className="innovtech-button innovtech-button-secondary"
             >
-              Explore the features <ArrowRight size={18} />
+              See how it works <ArrowRight size={18} aria-hidden />
+            </Link>
+            <Link
+              href="/pricing"
+              className="innovtech-button innovtech-button-secondary"
+            >
+              Subscriptions & pricing <ArrowRight size={18} aria-hidden />
             </Link>
           </div>
           <p className="innovtech-governance">
@@ -130,6 +144,7 @@ export function SpineWorkspaceDetails() {
           </figcaption>
         </figure>
       </section>
+      <WorkspaceBenefits detailed />
       <section id="features" className="innovtech-section">
         <p className="innovtech-eyebrow">THE WORKSPACE, IN DETAIL</p>
         <h2>
@@ -193,6 +208,7 @@ export function SpineWorkspaceDetails() {
           See the underlying workflow <ArrowRight size={18} />
         </Link>
       </section>
+      <WorkspaceSubscriptionValue />
       <section id="technology" className="innovtech-section">
         <p className="innovtech-eyebrow">THE TECHNOLOGY UNDERNEATH</p>
         <h2>
