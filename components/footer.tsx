@@ -77,7 +77,7 @@ export function Footer() {
         <div className="flex flex-wrap items-center justify-between gap-4 py-7">
           <p className="text-[12px] text-[#CBD9EB]">
             © {new Date().getFullYear()} Spine InnovTech Private Limited. Built
-            in India.
+            in Coimbatore, TamilNadu, India.
           </p>
           <Link
             href="/site-map"
