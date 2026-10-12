@@ -7,28 +7,6 @@ import { SHARED_WORKBENCH_SHELL, WORKBENCH_SOURCE_DOMAINS } from "@/lib/workbenc
 
 const DEFAULT_DOMAIN = "founderops";
 
-export const SOLUTION_TO_WORKBENCH: Record<string, string> = {
-  "customer-success": "account-success",
-  "account-success": "account-success",
-  "technical-account-success": "technical-account-success",
-  "founders": "founderops",
-  "founder-ops": "founderops",
-  "sales": "sales",
-  "marketing": "marketing",
-  "content": "content",
-  "finance": "finance",
-  "finance-leaders": "finance",
-  "revops": "revops",
-  "operations": "operations",
-  "business-ops": "operations",
-  "services": "service",
-  "support": "support",
-  "product-engineering": "productengineering",
-  "individual": "personal",
-  "human-resources": "humanresources",
-  "legal": "legal",
-};
-
 export function WorkbenchViewExplorer({
   initialDomain = DEFAULT_DOMAIN,
   compact = false,
