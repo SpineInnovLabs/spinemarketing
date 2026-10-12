@@ -3,6 +3,7 @@ import Image from "next/image";
 import { WorkspaceAuthActions } from "./workspace-auth-actions";
 import { WorkspaceBenefits } from "./workspace-benefits";
 import { WorkspaceSubscriptionValue } from "./workspace-subscription-value";
+import { WorkbenchViewExplorer } from "./workbench-view-explorer";
 import {
   ArrowRight,
   Database,
@@ -208,6 +209,7 @@ export function SpineWorkspaceDetails() {
           See the underlying workflow <ArrowRight size={18} />
         </Link>
       </section>
+      <WorkbenchViewExplorer initialDomain="founderops" />
       <WorkspaceSubscriptionValue />
       <section id="technology" className="innovtech-section">
         <p className="innovtech-eyebrow">THE TECHNOLOGY UNDERNEATH</p>
