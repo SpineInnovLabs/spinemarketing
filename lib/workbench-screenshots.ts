@@ -2,11 +2,14 @@
  * Authentic Workbench Screenshot Asset Library & 4-Part Value Narrative Metadata.
  * 
  * Provenance:
- * All assets captured from the authentic local Spine Workspace Workbench (apps/web)
- * running on Next.js 16 with deterministic demonstration data and the canonical WORKBENCH_SHELL.
+ * All assets captured directly from the authentic local Spine Workspace Workbench (apps/web)
+ * running on Next.js 16 with deterministic demonstration fixtures and the canonical WORKBENCH_SHELL.
  * Verified against docs/WORKBENCH-SCREENSHOT-PROVENANCE.md.
  * 
- * Zero synthetic, mock HTML, or AI-generated screenshots.
+ * Important Notice:
+ * All numerical metrics, ARR/MRR values, pipeline totals, and account scores reflect
+ * deterministic demonstration data fixtures used in local testing and QA, NOT audited
+ * production performance, live customer telemetry, or verified financial results.
  */
 
 export interface WorkbenchScreenshotItem {
@@ -49,16 +52,16 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
         route: "/workspace/work/founderops/founder-ops",
         desktop: "/images/workbench/founderops/cockpit.webp",
         mobile: "/images/workbench/founderops/cockpit-mobile.webp",
-        badge: "Operational Cockpit",
-        alt: "Authentic Founder's Cockpit showing live MRR ($94K), aggregate pipeline ($625K), client count, open deals, and top deals by value with named client contacts.",
+        badge: "Demo Fixture",
+        alt: "Authentic Founder's Cockpit displaying deterministic demonstration metrics: MRR ($94K), aggregate pipeline ($625K), client count, open deals, and top deals by value with named client contacts.",
       },
       dashboard: {
         id: "dashboard",
         title: "Executive Overview",
         route: "/workspace/work/founderops/dashboard",
         desktop: "/images/workbench/founderops/dashboard.webp",
-        badge: "Overview",
-        alt: "FounderOps executive dashboard with key performance indicators and cross-functional company updates.",
+        badge: "Demo Overview",
+        alt: "FounderOps executive dashboard with demonstration performance indicators and cross-functional company updates.",
       },
       secondary: {
         id: "strategy-leadership",
@@ -66,18 +69,18 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
         route: "/workspace/work/founderops/strategy-leadership",
         desktop: "/images/workbench/founderops/strategy-leadership.webp",
         badge: "Strategic Objectives",
-        alt: "Strategy and leadership view tracking company milestones and executive priorities.",
+        alt: "Strategy and leadership view tracking demonstration company milestones and executive priorities.",
       },
     },
     valueNarrative: {
       whatUsersSee:
-        "High-level operational cockpit with live MRR ($94K), aggregate pipeline value ($625K), active client count, open deals, overdue tasks, top deals by value with named client contacts, and cross-company OKR progress.",
+        "High-level operational cockpit displaying demonstration fixture metrics: MRR ($94K), aggregate pipeline value ($625K), active client count (4), open deals (3), overdue tasks, top deals by value with named client contacts, and cross-company OKR progress.",
       whatTheyCanDo:
         "Drill down into individual high-value deals, review company-wide operational items, monitor client health indicators, and direct executive attention to overdue commitments.",
       whatManualWorkItReduces:
         "Eliminates piecing together revenue spreadsheets, pulling CRM deal reports, and scheduling status syncs just to know current business pulse.",
       whyItMatters:
-        "Gives leadership immediate, verified operating context without interrupting team execution or relying on outdated weekly slide decks.",
+        "Provides leadership with immediate, cohesive operating context across business systems without manual spreadsheet assembly.",
     },
   },
 
@@ -92,16 +95,16 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
         route: "/workspace/work/salesops/pipeline",
         desktop: "/images/workbench/sales/pipeline.webp",
         mobile: "/images/workbench/sales/pipeline-mobile.webp",
-        badge: "Pipeline Stages",
-        alt: "Authentic Sales Pipeline showing deal stages categorized by Proposal ($180K), Negotiation ($350K), and Discovery ($95K) with opportunity ledger.",
+        badge: "Demo Pipeline",
+        alt: "Authentic Sales Pipeline displaying deterministic demonstration deal stages: Proposal ($180K), Negotiation ($350K), and Discovery ($95K) with opportunity ledger.",
       },
       dashboard: {
         id: "dashboard",
         title: "Sales Dashboard",
         route: "/workspace/work/salesops/dashboard",
         desktop: "/images/workbench/sales/dashboard.webp",
-        badge: "Performance",
-        alt: "Sales performance dashboard tracking team quota pacing and active deal velocity.",
+        badge: "Demo Performance",
+        alt: "Sales performance dashboard tracking demonstration quota pacing and deal velocity.",
       },
       secondary: {
         id: "deals",
@@ -109,12 +112,12 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
         route: "/workspace/work/salesops/deals",
         desktop: "/images/workbench/sales/deals.webp",
         badge: "Deals Grid",
-        alt: "Detailed deal management ledger with commercial terms, stakeholder contacts, and next steps.",
+        alt: "Detailed deal management ledger with demonstration commercial terms, stakeholder contacts, and next steps.",
       },
     },
     valueNarrative: {
       whatUsersSee:
-        "Deal stages categorized by Proposal ($180K), Negotiation ($350K), and Discovery ($95K) alongside an active opportunity ledger with win probability bars, stage tags, and deal owners.",
+        "Opportunity ledger displaying deterministic demo deals categorized by Proposal ($180K), Negotiation ($350K), and Discovery ($95K) with win probability bars, stage tags, and deal owners.",
       whatTheyCanDo:
         "Filter opportunities by stage, inspect deal velocity, launch new opportunity flows, and review commercial requirements directly beside customer context.",
       whatManualWorkItReduces:
@@ -134,8 +137,8 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
         title: "Marketing Attribution",
         route: "/workspace/work/marketing/attribution",
         desktop: "/images/workbench/marketing/attribution.webp",
-        badge: "Multi-Touch Attribution",
-        alt: "Authentic Marketing Attribution view showing multi-channel conversion signals, budget allocation, and downstream pipeline influence.",
+        badge: "Demo Attribution",
+        alt: "Authentic Marketing Attribution view showing multi-channel conversion signals, budget allocation, and downstream pipeline influence from demonstration data.",
       },
       dashboard: {
         id: "dashboard",
@@ -143,7 +146,7 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
         route: "/workspace/work/marketing/dashboard",
         desktop: "/images/workbench/marketing/dashboard.webp",
         badge: "Acquisition Overview",
-        alt: "Marketing acquisition dashboard summarizing channel spend, conversion rates, and inbound lead volume.",
+        alt: "Marketing acquisition dashboard summarizing channel spend, conversion rates, and inbound lead volume from demo state.",
       },
       secondary: {
         id: "campaigns",
@@ -151,18 +154,18 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
         route: "/workspace/work/marketing/campaigns",
         desktop: "/images/workbench/marketing/campaigns.webp",
         badge: "Campaign Flights",
-        alt: "Marketing campaign management grid with active flights and budget pacing.",
+        alt: "Marketing campaign management grid with active demo flights and budget pacing.",
       },
     },
     valueNarrative: {
       whatUsersSee:
-        "Multi-channel campaign attribution cards, budget allocations, conversion signals, and audience acquisition funnels connected to downstream customer milestones.",
+        "Multi-channel campaign attribution cards, budget allocations, conversion signals, and audience acquisition funnels connected to downstream customer milestones (demonstration state).",
       whatTheyCanDo:
         "Evaluate lead acquisition velocity, review campaign performance metrics, adjust channel mix, and verify downstream pipeline attribution.",
       whatManualWorkItReduces:
         "Replaces manually stitching Google Ads, LinkedIn Campaign Manager, and CRM lead sources into third-party spreadsheet dashboards.",
       whyItMatters:
-        "Proves genuine revenue impact of marketing investments with end-to-end evidence connecting first touch to closed contracts.",
+        "Clarifies the revenue contribution of marketing programs by connecting early engagement signals to verified commercial contracts.",
     },
   },
 
@@ -176,8 +179,8 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
         title: "Invoices Ledger",
         route: "/workspace/work/finance/invoices",
         desktop: "/images/workbench/finance/invoices.webp",
-        badge: "Receivables Ledger",
-        alt: "Authentic Invoices view showing invoice numbers, customer accounts (Acme, Stripe, Figma), billed amounts, payment status, and due dates.",
+        badge: "Demo Receivables",
+        alt: "Authentic Invoices view showing demonstration records: invoice numbers, customer accounts (Acme, Stripe, Figma), billed amounts, payment status, and due dates.",
       },
       dashboard: {
         id: "dashboard",
@@ -185,7 +188,7 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
         route: "/workspace/work/finance/dashboard",
         desktop: "/images/workbench/finance/dashboard.webp",
         badge: "Cash Flow & Collections",
-        alt: "Finance executive dashboard displaying cash velocity, accounts receivable aging, and collection priorities.",
+        alt: "Finance executive dashboard displaying demonstration receivables aging and collection priorities.",
       },
       secondary: {
         id: "forecasting",
@@ -193,12 +196,12 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
         route: "/workspace/work/finance/forecasting",
         desktop: "/images/workbench/finance/forecasting.webp",
         badge: "Forecast Model",
-        alt: "Financial forecasting projection comparing contracted ARR with recognized revenue.",
+        alt: "Financial forecasting projection comparing demo contracted ARR with recognized revenue.",
       },
     },
     valueNarrative: {
       whatUsersSee:
-        "Centralized invoice ledger showing invoice numbers, customer accounts (Acme, Stripe, Figma), billed amounts, payment status (Paid, Sent, Overdue), and issue/due dates.",
+        "Centralized invoice ledger displaying demonstration records: invoice numbers, customer accounts (Acme, Stripe, Figma), billed amounts, payment status (Paid, Sent, Overdue), and issue/due dates.",
       whatTheyCanDo:
         "Filter receivables by status, track payment aging, initiate new customer invoices, and cross-reference billing terms against signed contracts.",
       whatManualWorkItReduces:
@@ -219,8 +222,8 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
         route: "/workspace/accounts/acme-corp",
         desktop: "/images/workbench/account-success/account-health.webp",
         mobile: "/images/workbench/account-success/account-health-mobile.webp",
-        badge: "Story Readiness 100%",
-        alt: "Authentic Account Success view showing Acme Corp story readiness (100%), verified domain coverage (crm, support, telemetry), and health signals.",
+        badge: "Demo Fixture",
+        alt: "Authentic Account Success view displaying deterministic demonstration fixture: Acme Corp story readiness score (100%), verified domain coverage indicators, and health signals.",
       },
       dashboard: {
         id: "dashboard",
@@ -228,7 +231,7 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
         route: "/workspace/work/account-success/dashboard",
         desktop: "/images/workbench/account-success/dashboard.webp",
         badge: "Portfolio Health",
-        alt: "Customer Success portfolio overview displaying renewal health scores, expansion pipeline, and customer sentiment signals.",
+        alt: "Customer Success portfolio overview displaying demonstration renewal health scores, expansion pipeline, and customer sentiment signals.",
       },
       twinAction: {
         id: "twin-action",
@@ -236,18 +239,18 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
         route: "/workspace/accounts/acme-corp",
         desktop: "/images/workbench/account-success/twin-action.webp",
         badge: "Human-in-the-Loop Gate",
-        alt: "Context-aware Spine Twin preparing an account retention intervention with reviewable evidence awaiting user authorization.",
+        alt: "Context-aware Spine Twin preparing an account retention intervention with reviewable demonstration evidence awaiting user authorization.",
       },
     },
     valueNarrative: {
       whatUsersSee:
-        "Comprehensive account overview with story readiness scores (100%), verified domain coverage (CRM, support tickets, product telemetry), risk indicators, and contextual Twin recommendations.",
+        "Comprehensive account overview displaying demonstration fixture data: story readiness score (100%), simulated domain coverage (CRM, support tickets, product telemetry), risk indicators, and contextual Twin recommendations.",
       whatTheyCanDo:
         "Review unified customer health signals, examine open support escalation risks, evaluate contract renewals, and approve Twin-prepared recovery plans.",
       whatManualWorkItReduces:
         "Prevents spending hours before customer check-ins digging through Jira tickets, Zendesk cases, and CRM notes to understand client sentiment.",
       whyItMatters:
-        "Enables proactive churn prevention by grounding account decisions in authoritative cross-department signals rather than guesswork.",
+        "Enables proactive churn prevention by relating customer signals across tools rather than relying on disconnected status updates.",
     },
   },
 
@@ -262,7 +265,7 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
         route: "/workspace/work/technical-account-success/integration-health",
         desktop: "/images/workbench/technical-account-success/integration-health.webp",
         badge: "Connector Status",
-        alt: "Authentic Technical Integration Health view showing API sync latency, webhook thresholds, and customer architecture connections.",
+        alt: "Authentic Technical Integration Health view showing API sync latency, webhook thresholds, and customer architecture connections from demonstration state.",
       },
       dashboard: {
         id: "dashboard",
@@ -270,12 +273,12 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
         route: "/workspace/work/technical-account-success/dashboard",
         desktop: "/images/workbench/technical-account-success/dashboard.webp",
         badge: "Technical Portfolio",
-        alt: "Technical account management portfolio dashboard showing active customer environments and API error rates.",
+        alt: "Technical account management portfolio dashboard showing demonstration customer environments and API error rates.",
       },
     },
     valueNarrative: {
       whatUsersSee:
-        "Real-time API integration status, data connector sync latency, webhook error thresholds, and customer architecture dependency maps.",
+        "Simulated connector status, API synchronization health, webhook error thresholds, and customer architecture dependency maps from demonstration fixture state.",
       whatTheyCanDo:
         "Detect integration anomalies before customers report outages, inspect endpoint payload schemas, and coordinate fixes with engineering.",
       whatManualWorkItReduces:
@@ -296,7 +299,7 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
         route: "/workspace/work/bizops/workflows",
         desktop: "/images/workbench/bizops/workflows.webp",
         badge: "Workflow Orchestration",
-        alt: "Authentic BizOps Workflows view showing cross-functional execution processes, active pipelines, and handoff stages.",
+        alt: "Authentic BizOps Workflows view showing cross-functional execution processes, active pipelines, and handoff stages from demonstration data.",
       },
       dashboard: {
         id: "command-center",
@@ -304,7 +307,7 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
         route: "/workspace/work/bizops/command-center",
         desktop: "/images/workbench/bizops/command-center.webp",
         badge: "Command Center",
-        alt: "Business Operations command center monitoring company bottlenecks, team capacity, and operational throughput.",
+        alt: "Business Operations command center monitoring demonstration company bottlenecks, team capacity, and operational throughput.",
       },
       secondary: {
         id: "strategic-hub",
@@ -312,12 +315,12 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
         route: "/workspace/work/bizops/strategic-hub",
         desktop: "/images/workbench/bizops/strategic-hub.webp",
         badge: "Execution Alignment",
-        alt: "Strategic alignment view connecting operational milestones with executive quarterly goals.",
+        alt: "Strategic alignment view connecting operational milestones with executive quarterly goals in demonstration mode.",
       },
     },
     valueNarrative: {
       whatUsersSee:
-        "Cross-functional operational workflows, active execution pipelines, bottlenecks across handoffs, and team capacity utilization meters.",
+        "Cross-functional operational workflows, active execution pipelines, bottlenecks across handoffs, and team capacity utilization meters (demonstration state).",
       whatTheyCanDo:
         "Reallocate workload across operational bottlenecks, trigger automated handoff protocols, and audit cross-departmental SLA adherence.",
       whatManualWorkItReduces:
@@ -337,8 +340,8 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
         title: "Revenue Forecast",
         route: "/workspace/work/revops/forecast",
         desktop: "/images/workbench/revops/forecast.webp",
-        badge: "Predictive Forecast",
-        alt: "Authentic RevOps Forecast view showing funnel conversion velocity, quote-to-cash timing, and forecast confidence bands.",
+        badge: "Demo Forecast",
+        alt: "Authentic RevOps Forecast view showing demonstration funnel conversion velocity, quote-to-cash timing, and forecast confidence bands.",
       },
       dashboard: {
         id: "dashboard",
@@ -346,7 +349,7 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
         route: "/workspace/work/revops/dashboard",
         desktop: "/images/workbench/revops/dashboard.webp",
         badge: "Funnel Metrics",
-        alt: "Revenue Operations dashboard detailing pipeline conversion rates and sales velocity metrics.",
+        alt: "Revenue Operations dashboard detailing demonstration pipeline conversion rates and sales velocity metrics.",
       },
       secondary: {
         id: "pipeline",
@@ -354,18 +357,18 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
         route: "/workspace/work/revops/pipeline",
         desktop: "/images/workbench/revops/pipeline.webp",
         badge: "Pipeline Governance",
-        alt: "RevOps pipeline alignment screen showing cross-system deal hygiene and CRM stage progression.",
+        alt: "RevOps pipeline alignment screen showing demonstration cross-system deal hygiene and CRM stage progression.",
       },
     },
     valueNarrative: {
       whatUsersSee:
-        "Funnel conversion rates, quote-to-cash cycle duration, stage-by-stage pipeline velocity, and revenue forecast confidence bands.",
+        "Funnel conversion rates, quote-to-cash cycle duration, stage-by-stage pipeline velocity, and revenue forecast confidence bands from demonstration fixture data.",
       whatTheyCanDo:
         "Model conversion scenarios, adjust sales capacity targets, evaluate win-loss patterns, and optimize the quote-to-cash pipeline.",
       whatManualWorkItReduces:
         "Eliminates complex, fragile Excel forecasting macros and multi-hour data-cleaning cycles every quarter-end.",
       whyItMatters:
-        "Provides executive leadership with defensible, data-backed revenue projections grounded in live pipeline evidence.",
+        "Provides executive leadership with defensible, data-backed revenue projections grounded in connected pipeline records.",
     },
   },
 
@@ -380,7 +383,7 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
         route: "/workspace/work/product-engineering/roadmap",
         desktop: "/images/workbench/product-engineering/roadmap.webp",
         badge: "Roadmap Initiatives",
-        alt: "Authentic Product Roadmap view showing initiatives (Unified Twin Reasoning, Multi-Cloud Gateway, Policy Enforcement) with quarter timelines.",
+        alt: "Authentic Product Roadmap view showing demonstration initiatives (Unified Twin Reasoning, Multi-Cloud Gateway, Policy Enforcement) with quarter timelines.",
       },
       dashboard: {
         id: "dashboard",
@@ -388,7 +391,7 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
         route: "/workspace/work/product-engineering/dashboard",
         desktop: "/images/workbench/product-engineering/dashboard.webp",
         badge: "Delivery Velocity",
-        alt: "Engineering delivery dashboard tracking release velocity, open PRs, and system health metrics.",
+        alt: "Engineering delivery dashboard tracking release velocity, open PRs, and system health metrics in demonstration state.",
       },
       secondary: {
         id: "sprints",
@@ -396,7 +399,7 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
         route: "/workspace/work/product-engineering/sprints",
         desktop: "/images/workbench/product-engineering/sprints.webp",
         badge: "Sprint Tracking",
-        alt: "Engineering sprint tracking board connecting Jira work items to product commitments.",
+        alt: "Engineering sprint tracking board connecting demonstration Jira work items to product commitments.",
       },
     },
     valueNarrative: {
@@ -422,7 +425,7 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
         route: "/workspace/work/service/sla-dashboard",
         desktop: "/images/workbench/service/sla.webp",
         badge: "SLA Compliance",
-        alt: "Authentic Professional Services SLA view showing milestone compliance rates, delivery timelines, and project health.",
+        alt: "Authentic Professional Services SLA view showing demonstration milestone compliance rates, delivery timelines, and project health.",
       },
       dashboard: {
         id: "dashboard",
@@ -430,12 +433,12 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
         route: "/workspace/work/service/dashboard",
         desktop: "/images/workbench/service/dashboard.webp",
         badge: "Delivery Projects",
-        alt: "Services delivery dashboard tracking client engagement milestones and consultant utilization.",
+        alt: "Services delivery dashboard tracking client engagement milestones and consultant utilization in demonstration state.",
       },
     },
     valueNarrative: {
       whatUsersSee:
-        "Client delivery milestones, project SLA compliance rates, resource allocation timelines, and milestone deliverables.",
+        "Client delivery milestones, project SLA compliance rates, resource allocation timelines, and milestone deliverables (demonstration state).",
       whatTheyCanDo:
         "Monitor implementation health, detect delivery delay risks early, and coordinate resource allocation across client projects.",
       whatManualWorkItReduces:
@@ -456,7 +459,7 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
         route: "/workspace/work/support/tickets",
         desktop: "/images/workbench/support/tickets.webp",
         badge: "Triage Queue",
-        alt: "Authentic Support Tickets view showing incident priority, customer tier, response times, and resolution status.",
+        alt: "Authentic Support Tickets view showing demonstration incidents: priority, customer tier, response times, and resolution status.",
       },
       dashboard: {
         id: "dashboard",
@@ -464,12 +467,12 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
         route: "/workspace/work/support/dashboard",
         desktop: "/images/workbench/support/dashboard.webp",
         badge: "Queue Metrics",
-        alt: "Customer support dashboard tracking ticket volumes, average handle time, and CSAT ratings.",
+        alt: "Customer support dashboard tracking ticket volumes, average handle time, and CSAT ratings in demonstration state.",
       },
     },
     valueNarrative: {
       whatUsersSee:
-        "Triage queues categorized by priority and customer tier, first-response time metrics, ticket resolution velocity, and recurring issue tags.",
+        "Triage queues categorized by priority and customer tier, response time metrics, ticket resolution velocity, and recurring issue tags (demonstration state).",
       whatTheyCanDo:
         "Escalate critical customer incidents to product engineering with attached diagnostic evidence, assign tickets to domain specialists, and track SLAs.",
       whatManualWorkItReduces:
@@ -490,7 +493,7 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
         route: "/workspace/work/humanresources/people",
         desktop: "/images/workbench/humanresources/people.webp",
         badge: "Headcount Directory",
-        alt: "Authentic People Directory view showing employee profiles, role assignments, department structures, and reporting hierarchy.",
+        alt: "Authentic People Directory view showing demonstration employee profiles, role assignments, department structures, and reporting hierarchy.",
       },
       dashboard: {
         id: "dashboard",
@@ -498,7 +501,7 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
         route: "/workspace/work/humanresources/dashboard",
         desktop: "/images/workbench/humanresources/dashboard.webp",
         badge: "People Analytics",
-        alt: "Human resources executive dashboard tracking headcount growth, open requisitions, and retention metrics.",
+        alt: "Human resources executive dashboard tracking demonstration headcount growth, open requisitions, and retention metrics.",
       },
       secondary: {
         id: "positions",
@@ -506,12 +509,12 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
         route: "/workspace/work/humanresources/positions",
         desktop: "/images/workbench/humanresources/positions.webp",
         badge: "Hiring Requisitions",
-        alt: "Organizational open positions grid tracking recruiting pipelines and hiring stages.",
+        alt: "Organizational open positions grid tracking recruiting pipelines and hiring stages in demonstration state.",
       },
     },
     valueNarrative: {
       whatUsersSee:
-        "Verified organizational headcount, team role assignments, open requisitions, and departmental reporting lines.",
+        "Organizational headcount, team role assignments, open requisitions, and departmental reporting lines (demonstration state).",
       whatTheyCanDo:
         "Review organizational capacity, monitor hiring pipeline progress, and verify team role definitions against business goals.",
       whatManualWorkItReduces:
@@ -532,7 +535,7 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
         route: "/workspace/work/legal/contracts",
         desktop: "/images/workbench/legal/contracts.webp",
         badge: "Executed Agreements",
-        alt: "Authentic Legal Contracts view showing executed agreements, renewal dates, counterparty details, and governing clauses.",
+        alt: "Authentic Legal Contracts view showing demonstration executed agreements, renewal dates, counterparty details, and governing clauses.",
       },
       dashboard: {
         id: "dashboard",
@@ -540,7 +543,7 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
         route: "/workspace/work/legal/dashboard",
         desktop: "/images/workbench/legal/dashboard.webp",
         badge: "Legal Operations",
-        alt: "Legal operations dashboard tracking contract review turnaround, active matters, and risk exposure.",
+        alt: "Legal operations dashboard tracking contract review turnaround, active matters, and risk exposure in demonstration state.",
       },
       secondary: {
         id: "compliance",
@@ -548,12 +551,12 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
         route: "/workspace/work/legal/compliance",
         desktop: "/images/workbench/legal/compliance.webp",
         badge: "Regulatory Controls",
-        alt: "Corporate compliance register tracking data privacy obligations and governance audits.",
+        alt: "Corporate compliance register tracking data privacy obligations and governance audits in demonstration mode.",
       },
     },
     valueNarrative: {
       whatUsersSee:
-        "Executed contract repository, renewal and termination notification schedules, compliance policy controls, and regulatory audit checklists.",
+        "Executed contract repository, renewal and termination notification schedules, compliance policy controls, and regulatory audit checklists (demonstration state).",
       whatTheyCanDo:
         "Search signed MSAs and DPAs, track auto-renewal deadlines, and verify organizational adherence to security and privacy policies.",
       whatManualWorkItReduces:
@@ -574,7 +577,7 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
         route: "/workspace/work/content/articles",
         desktop: "/images/workbench/content/articles.webp",
         badge: "Editorial Pipeline",
-        alt: "Authentic Content Articles view showing publication drafts, author assignments, and review states.",
+        alt: "Authentic Content Articles view showing demonstration publication drafts, author assignments, and review states.",
       },
       dashboard: {
         id: "dashboard",
@@ -582,7 +585,7 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
         route: "/workspace/work/content/dashboard",
         desktop: "/images/workbench/content/dashboard.webp",
         badge: "Editorial Performance",
-        alt: "Content editorial dashboard tracking publication velocity and article engagement signals.",
+        alt: "Content editorial dashboard tracking publication velocity and article engagement signals in demonstration state.",
       },
       secondary: {
         id: "calendar",
@@ -590,12 +593,12 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
         route: "/workspace/work/content/calendar",
         desktop: "/images/workbench/content/calendar.webp",
         badge: "Release Schedule",
-        alt: "Editorial calendar scheduling upcoming releases and social distribution flights.",
+        alt: "Editorial calendar scheduling upcoming releases and social distribution flights in demonstration state.",
       },
     },
     valueNarrative: {
       whatUsersSee:
-        "Editorial production queue, publication schedule, author assignments, and draft review states linked to marketing campaign themes.",
+        "Editorial production queue, publication schedule, author assignments, and draft review states linked to marketing campaign themes (demonstration state).",
       whatTheyCanDo:
         "Manage publication pipelines, coordinate editorial review workflows, and schedule releases aligned with product milestones.",
       whatManualWorkItReduces:
@@ -616,7 +619,7 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
         route: "/workspace/work/business-intelligence/metrics",
         desktop: "/images/workbench/business-intelligence/metrics.webp",
         badge: "Metric Catalog",
-        alt: "Authentic Business Intelligence Metrics view showing cross-department trend lines, metric definitions, and data lineage.",
+        alt: "Authentic Business Intelligence Metrics view showing cross-department trend lines, metric definitions, and data lineage in demonstration state.",
       },
       dashboard: {
         id: "dashboard",
@@ -624,12 +627,12 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
         route: "/workspace/work/business-intelligence/dashboard",
         desktop: "/images/workbench/business-intelligence/dashboard.webp",
         badge: "Executive Analytics",
-        alt: "Business intelligence executive analytics overview aggregating financial and operational performance indicators.",
+        alt: "Business intelligence executive analytics overview aggregating financial and operational performance indicators in demonstration state.",
       },
     },
     valueNarrative: {
       whatUsersSee:
-        "Unified metric dashboards, cross-department trend lines, anomaly detections, and verified data model lineage.",
+        "Unified metric dashboards, cross-department trend lines, anomaly detections, and verified data model lineage (demonstration state).",
       whatTheyCanDo:
         "Slice operational KPIs by cohort or region, explore metric correlations, and export verified datasets for strategic planning.",
       whatManualWorkItReduces:
@@ -650,7 +653,7 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
         route: "/workspace/work/campaigns/campaigns",
         desktop: "/images/workbench/campaigns/campaigns.webp",
         badge: "Omnichannel Flights",
-        alt: "Authentic Campaigns view showing multi-channel execution flights, channel spend, and creative deliverables.",
+        alt: "Authentic Campaigns view showing demonstration execution flights, channel spend, and creative deliverables.",
       },
       dashboard: {
         id: "dashboard",
@@ -658,12 +661,12 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
         route: "/workspace/work/campaigns/dashboard",
         desktop: "/images/workbench/campaigns/dashboard.webp",
         badge: "Flight Progress",
-        alt: "Campaign operations dashboard tracking launch schedules and spend efficiency.",
+        alt: "Campaign operations dashboard tracking launch schedules and spend efficiency in demonstration state.",
       },
     },
     valueNarrative: {
       whatUsersSee:
-        "Active campaign flight schedules, budget utilization across channels, creative asset statuses, and audience engagement benchmarks.",
+        "Active campaign flight schedules, budget utilization across channels, creative asset statuses, and audience engagement benchmarks (demonstration state).",
       whatTheyCanDo:
         "Coordinate multi-channel campaign launches, adjust flight timing, and verify creative approval gates before publishing.",
       whatManualWorkItReduces:
@@ -684,7 +687,7 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
         route: "/workspace/work/knowledge-management/knowledge",
         desktop: "/images/workbench/knowledge-management/knowledge.webp",
         badge: "Verified SOPs",
-        alt: "Authentic Knowledge Management view showing corporate documentation, policy guides, and institutional SOPs.",
+        alt: "Authentic Knowledge Management view showing corporate documentation, policy guides, and institutional SOPs in demonstration state.",
       },
       dashboard: {
         id: "dashboard",
@@ -692,12 +695,12 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
         route: "/workspace/work/knowledge-management/dashboard",
         desktop: "/images/workbench/knowledge-management/dashboard.webp",
         badge: "Knowledge Freshness",
-        alt: "Knowledge management dashboard tracking documentation coverage and article staleness.",
+        alt: "Knowledge management dashboard tracking documentation coverage and article staleness in demonstration state.",
       },
     },
     valueNarrative: {
       whatUsersSee:
-        "Curated corporate documentation, policy guides, procedural handbooks, and contextual search results grounded in verified company evidence.",
+        "Curated corporate documentation, policy guides, procedural handbooks, and contextual search results grounded in demonstration company evidence.",
       whatTheyCanDo:
         "Search verified institutional knowledge, publish SOP updates, and verify document freshness dates.",
       whatManualWorkItReduces:
@@ -718,7 +721,7 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
         route: "/workspace/work/book-of-records/audit-trail",
         desktop: "/images/workbench/book-of-records/audit-trail.webp",
         badge: "Verifiable Ledger",
-        alt: "Authentic Book of Records Audit Trail view displaying timestamped decisions, policy gates, and verification outcomes.",
+        alt: "Authentic Book of Records Audit Trail view displaying timestamped decisions, policy gates, and verification outcomes in demonstration state.",
       },
       dashboard: {
         id: "dashboard",
@@ -726,7 +729,7 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
         route: "/workspace/work/book-of-records/dashboard",
         desktop: "/images/workbench/book-of-records/dashboard.webp",
         badge: "Governance Status",
-        alt: "Book of Records governance dashboard displaying system event verifications and compliance integrity.",
+        alt: "Book of Records governance dashboard displaying system event verifications and compliance integrity in demonstration state.",
       },
       secondary: {
         id: "decisions",
@@ -734,12 +737,12 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
         route: "/workspace/work/book-of-records/decisions",
         desktop: "/images/workbench/book-of-records/decisions.webp",
         badge: "Decision History",
-        alt: "Verified decision register capturing human-in-the-loop approvals and policy sign-offs.",
+        alt: "Verified decision register capturing human-in-the-loop approvals and policy sign-offs in demonstration state.",
       },
     },
     valueNarrative: {
       whatUsersSee:
-        "Cryptographically verifiable ledger of executive decisions, policy changes, approval gate logs, and cross-system data modifications.",
+        "Verifiable ledger of executive decisions, policy changes, approval gate logs, and cross-system data modifications from demonstration state.",
       whatTheyCanDo:
         "Review governance audit logs, verify who authorized consequential actions, and inspect complete lineage from decision to outcome.",
       whatManualWorkItReduces:
@@ -761,7 +764,7 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
         desktop: "/images/workbench/common/home.webp",
         mobile: "/images/workbench/common/home-mobile.webp",
         badge: "Primary Surface",
-        alt: "Authentic Personal Home showing canonical Workbench shell, left navigation, global command bar, and contextual Spine Twin panel.",
+        alt: "Authentic Personal Home showing canonical Workbench shell, left navigation, global command bar, and contextual Spine Twin panel in demonstration state.",
       },
       dashboard: {
         id: "my-work",
@@ -769,7 +772,7 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
         route: "/workspace/my-work",
         desktop: "/images/workbench/common/my-work.webp",
         badge: "My Work",
-        alt: "Personal My Work view consolidating cross-domain assignments, approvals, and daily priorities.",
+        alt: "Personal My Work view consolidating demonstration cross-domain assignments, approvals, and daily priorities.",
       },
       secondary: {
         id: "tasks",
@@ -777,12 +780,12 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
         route: "/workspace/tasks",
         desktop: "/images/workbench/common/tasks.webp",
         badge: "Unified Tasks",
-        alt: "Personal task tracker with priority ratings, due dates, and connected business records.",
+        alt: "Personal task tracker with demonstration priority ratings, due dates, and connected business records.",
       },
     },
     valueNarrative: {
       whatUsersSee:
-        "Unified personal workbench with prioritized tasks, pending approvals, recent work streams, personal notes, and contextual Spine Twin assistant.",
+        "Unified personal workbench with prioritized tasks, pending approvals, recent work streams, personal notes, and contextual Spine Twin assistant (demonstration state).",
       whatTheyCanDo:
         "Review daily action items, approve pending requests, launch quick search via ⌘K, capture notes, and interact with the contextual Twin.",
       whatManualWorkItReduces:
@@ -795,13 +798,16 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
 
 /**
  * Resolves a domain identifier or alias to its canonical screenshot narrative.
+ * Returns undefined if the projection has no published authentic screenshot catalogue.
+ * Prevents unrelated fallback to FounderOps for unmapped or internal projections.
  */
-export function getDomainScreenshotNarrative(domainId?: string): WorkbenchDomainNarrative {
+export function getDomainScreenshotNarrative(domainId?: string): WorkbenchDomainNarrative | undefined {
   if (!domainId) return WORKBENCH_SCREENSHOT_CATALOG.founderops;
 
   const normalized = domainId.toLowerCase().trim();
 
-  // Alias lookup
+  // Alias lookup: Only map verified aliases to their exact domain
+  // NOTE: 'ops' is NOT mapped to 'operations' because technical Ops is a separate, unmapped projection.
   const aliases: Record<string, string> = {
     founder: "founderops",
     founderops: "founderops",
@@ -817,7 +823,6 @@ export function getDomainScreenshotNarrative(domainId?: string): WorkbenchDomain
     operations: "operations",
     "business-ops": "operations",
     bizops: "operations",
-    ops: "operations",
     revops: "revops",
     productengineering: "productengineering",
     "product-engineering": "productengineering",
@@ -825,6 +830,7 @@ export function getDomainScreenshotNarrative(domainId?: string): WorkbenchDomain
     service: "service",
     services: "service",
     support: "support",
+    "customer-support": "support",
     humanresources: "humanresources",
     "human-resources": "humanresources",
     hr: "humanresources",
@@ -835,12 +841,15 @@ export function getDomainScreenshotNarrative(domainId?: string): WorkbenchDomain
     campaigns: "campaigns",
     "knowledge-management": "knowledge-management",
     knowledge: "knowledge-management",
+    memoryandknowledge: "knowledge-management",
     "book-of-records": "book-of-records",
     personal: "common",
     common: "common",
     home: "common",
   };
 
-  const canonicalKey = aliases[normalized] ?? normalized;
-  return WORKBENCH_SCREENSHOT_CATALOG[canonicalKey] ?? WORKBENCH_SCREENSHOT_CATALOG.founderops;
+  const canonicalKey = aliases[normalized];
+  if (!canonicalKey) return undefined;
+
+  return WORKBENCH_SCREENSHOT_CATALOG[canonicalKey];
 }

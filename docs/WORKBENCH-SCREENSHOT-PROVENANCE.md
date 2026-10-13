@@ -1,6 +1,8 @@
 # Workbench Screenshot Provenance Manifest
 
 > **Audit & Visual QA Contract:** Every screenshot published to the Spine marketing website is captured directly from the authentic local `spineworkspace-live` Workbench application running genuine React components, styles, and approved deterministic demonstration fixtures. No synthetic, AI-generated, or mockup images are permitted.
+>
+> **Demonstration Data Notice:** All numerical metrics, MRR/pipeline values, invoice totals, and customer readiness scores reflect deterministic demonstration fixtures used in non-production QA testing. They do NOT represent audited corporate statements, verified production results, or live customer telemetry.
 
 ## Source Execution Context
 

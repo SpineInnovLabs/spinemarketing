@@ -25,6 +25,7 @@ assert(wrangler.main === "worker/index.ts", "static asset Worker entry must rema
 assert(wrangler.assets?.directory === "./out", "static assets must be served from out/");
 assert(wrangler.assets?.binding === "ASSETS", "Worker must bind static assets");
 assert(wrangler.env?.prod?.routes?.some(r => r.pattern === "spineinnovlabs.spineworkspace.com" && r.custom_domain === true), "production custom domain missing");
+assert(wrangler.env?.prod?.routes?.some(r => r.pattern === "spineinnovtech.spineworkspace.com" && r.custom_domain === true), "spineinnovtech custom domain missing");
 assert(wrangler.env.prod.vars?.CANONICAL_REDIRECTS_ENABLED === "false", "do not enable canonical apex cutover without approval");
 assert(/output:\s*['"]export['"]/.test(next), "Next.js must remain static export");
 assert(worker.includes("env.ASSETS.fetch(request)"), "Worker must serve static asset binding");

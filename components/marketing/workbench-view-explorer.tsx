@@ -12,9 +12,7 @@ import {
   Smartphone,
   Eye,
   CheckCircle2,
-  Workflow,
-  Sparkles,
-  ExternalLink,
+  AlertCircle,
 } from "lucide-react";
 import { SHARED_WORKBENCH_SHELL, WORKBENCH_SOURCE_DOMAINS } from "@/lib/workbench-source-views";
 import {
@@ -23,6 +21,11 @@ import {
 } from "@/lib/workbench-screenshots";
 
 const DEFAULT_DOMAIN = "founderops";
+
+// Only expose public, customer-facing operational domains with verified visual runtime captures
+const PUBLIC_WORKBENCH_DOMAINS = WORKBENCH_SOURCE_DOMAINS.filter(
+  (item) => item.audience !== "internal" && item.id !== "brandstore" && item.id !== "ops"
+);
 
 const DOMAIN_TO_SOLUTION_PATH: Record<string, string> = {
   founderops: "/solutions/founders",
@@ -35,7 +38,6 @@ const DOMAIN_TO_SOLUTION_PATH: Record<string, string> = {
   "technical-account-success": "/solutions/customer-success",
   operations: "/solutions/operations",
   bizops: "/solutions/operations",
-  ops: "/solutions/operations",
   revops: "/solutions/revops",
   productengineering: "/solutions/product-engineering",
   product: "/solutions/product-engineering",
@@ -57,7 +59,7 @@ export function WorkbenchViewExplorer({
 }) {
   const id = useId();
   const [selected, setSelected] = useState(
-    WORKBENCH_SOURCE_DOMAINS.some((domain) => domain.id === initialDomain)
+    PUBLIC_WORKBENCH_DOMAINS.some((domain) => domain.id === initialDomain)
       ? initialDomain
       : DEFAULT_DOMAIN
   );
@@ -67,7 +69,7 @@ export function WorkbenchViewExplorer({
   const [showAll, setShowAll] = useState(false);
 
   const domain = useMemo(
-    () => WORKBENCH_SOURCE_DOMAINS.find((item) => item.id === selected) ?? WORKBENCH_SOURCE_DOMAINS[0],
+    () => PUBLIC_WORKBENCH_DOMAINS.find((item) => item.id === selected) ?? PUBLIC_WORKBENCH_DOMAINS[0],
     [selected]
   );
 
@@ -77,6 +79,7 @@ export function WorkbenchViewExplorer({
   );
 
   const screenshotOptions = useMemo(() => {
+    if (!narrative) return [];
     const options: { key: string; label: string; item: WorkbenchScreenshotItem }[] = [
       { key: "primary", label: narrative.screenshots.primary.title, item: narrative.screenshots.primary },
     ];
@@ -93,11 +96,12 @@ export function WorkbenchViewExplorer({
   }, [narrative]);
 
   const currentScreenshot = useMemo(() => {
+    if (!narrative) return undefined;
     const match = screenshotOptions.find((opt) => opt.key === selectedViewKey);
     return match ? match.item : narrative.screenshots.primary;
   }, [screenshotOptions, selectedViewKey, narrative]);
 
-  const hasMobile = Boolean(currentScreenshot.mobile);
+  const hasMobile = Boolean(currentScreenshot?.mobile);
 
   const sortedViews = useMemo(() => {
     const featured = new Set(domain.featured);
@@ -120,7 +124,7 @@ export function WorkbenchViewExplorer({
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div className="inline-flex items-center gap-2 rounded-full border border-[#BBDDF8] bg-white px-3.5 py-1 text-xs font-semibold text-[#006FE8]">
             <span className="h-2 w-2 rounded-full bg-[#006FE8]" />
-            Authentic Workbench Runtime · Verified Visual Evidence
+            Authentic Workbench Runtime · Deterministic Demonstration State
           </div>
           <span className="text-xs font-medium text-[#577592]">
             Captured from local Next.js 16 Workbench with deterministic QA state
@@ -138,7 +142,7 @@ export function WorkbenchViewExplorer({
             <p className="mt-4 text-[16px] leading-7 text-[#4E607A]">
               Explore the real Workbench application. Every screenshot below is captured
               directly from the authentic codebase—preserving the canonical left navigation shell,
-              role-specific Work projections, live telemetry cards, and context-aware Spine Twin controls.
+              role-specific Work projections, demonstration telemetry cards, and context-aware Spine Twin controls.
             </p>
           </div>
 
@@ -157,10 +161,9 @@ export function WorkbenchViewExplorer({
               }}
               className="min-h-12 w-full rounded-xl border border-[#A7C7E9] bg-white px-4 text-sm font-semibold text-[#082B5E] shadow-sm transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#006FE8]"
             >
-              {WORKBENCH_SOURCE_DOMAINS.map((item) => (
+              {PUBLIC_WORKBENCH_DOMAINS.map((item) => (
                 <option key={item.id} value={item.id}>
                   {item.title}
-                  {item.audience === "internal" ? " (Internal)" : ""}
                 </option>
               ))}
             </select>
@@ -200,7 +203,7 @@ export function WorkbenchViewExplorer({
             </button>
           </div>
 
-          {activeTab === "screenshot" && (
+          {activeTab === "screenshot" && narrative && screenshotOptions.length > 0 && (
             <div className="flex flex-wrap items-center gap-2">
               {screenshotOptions.map((opt) => (
                 <button
@@ -251,155 +254,176 @@ export function WorkbenchViewExplorer({
         {/* TAB 1: AUTHENTIC SCREENSHOT & 4-PART VALUE NARRATIVE */}
         {activeTab === "screenshot" && (
           <div className="mt-8 space-y-10">
-            {/* Screenshot Frame */}
-            <div className="overflow-hidden rounded-2xl border border-[#CCE3F5] bg-white shadow-[0_22px_75px_rgba(15,70,130,.09)]">
-              {/* Window Header Bar */}
-              <div className="flex flex-wrap items-center justify-between border-b border-[#E2EEF8] bg-[#F7FAFD] px-5 py-3 text-xs">
-                <div className="flex items-center gap-2">
-                  <span className="h-3 w-3 rounded-full bg-[#FF5F56]" />
-                  <span className="h-3 w-3 rounded-full bg-[#FFBD2E]" />
-                  <span className="h-3 w-3 rounded-full bg-[#27C93F]" />
-                  <span className="ml-3 font-mono text-[11px] font-semibold text-[#5A7391]">
-                    {currentScreenshot.route}
-                  </span>
-                </div>
-
-                <div className="flex items-center gap-3">
-                  {currentScreenshot.badge && (
-                    <span className="rounded-full border border-[#CCE3F5] bg-[#EBF5FF] px-2.5 py-0.5 font-semibold text-[#006FE8]">
-                      {currentScreenshot.badge}
-                    </span>
-                  )}
-                  <span className="hidden font-mono text-[11px] text-[#7189A6] sm:inline">
-                    {isMobileView ? "390 × 844 px (Mobile)" : "1440 × 900 px (Desktop)"}
-                  </span>
-                </div>
-              </div>
-
-              {/* Image Container */}
-              <div className="relative flex justify-center bg-[#F1F6FB] p-2 sm:p-4 lg:p-6">
-                {isMobileView && currentScreenshot.mobile ? (
-                  <div className="relative mx-auto max-w-[390px] overflow-hidden rounded-[2.5rem] border-[8px] border-[#1A2E46] shadow-2xl">
-                    <Image
-                      src={currentScreenshot.mobile}
-                      alt={currentScreenshot.alt}
-                      width={390}
-                      height={844}
-                      className="h-auto w-full object-cover"
-                      priority
-                    />
-                  </div>
-                ) : (
-                  <div className="relative w-full overflow-hidden rounded-xl border border-[#D5E5F5] bg-white shadow-sm">
-                    <Image
-                      src={currentScreenshot.desktop}
-                      alt={currentScreenshot.alt}
-                      width={1440}
-                      height={900}
-                      className="h-auto w-full object-cover"
-                      priority
-                    />
-                  </div>
-                )}
-              </div>
-
-              {/* Image Footer with Real Route Provenance */}
-              <div className="flex flex-wrap items-center justify-between gap-4 border-t border-[#E2EEF8] bg-white px-5 py-3 text-xs text-[#577292]">
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="h-4 w-4 text-[#006FE8]" />
-                  <span>
-                    <strong>Authentic capture:</strong> {currentScreenshot.title} in{" "}
-                    <code>{domain.title}</code> projection.
-                  </span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <ShieldCheck className="h-4 w-4 text-[#208050]" />
-                  <span>Verified QA Seam (Deterministic Demo Fixture)</span>
-                </div>
-              </div>
-            </div>
-
-            {/* THE 4-PART VALUE NARRATIVE CARDS */}
-            <div className="space-y-4">
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-xs font-bold uppercase tracking-[.18em] text-[#006FE8]">
-                    Value Architecture · {domain.title} Workbench
-                  </p>
-                  <h3 className="mt-1 text-xl font-semibold text-[#082B5E]">
-                    {narrative.tagline}
-                  </h3>
-                </div>
-                <Link
-                  href={DOMAIN_TO_SOLUTION_PATH[domain.id] ?? "/solutions"}
-                  className="hidden items-center gap-1.5 text-xs font-semibold text-[#006FE8] hover:underline sm:inline-flex"
+            {!narrative || !currentScreenshot ? (
+              <div className="rounded-2xl border border-[#CCE3F5] bg-white p-8 text-center shadow-sm">
+                <AlertCircle className="mx-auto h-8 w-8 text-[#577292]" />
+                <h3 className="mt-3 text-lg font-semibold text-[#082B5E]">
+                  Authentic Screenshot Not Published
+                </h3>
+                <p className="mx-auto mt-2 max-w-md text-sm text-[#4E607A]">
+                  The projection <code>{domain.title}</code> is an internal or infrastructure-specific capability without an approved public marketing screenshot.
+                </p>
+                <button
+                  type="button"
+                  onClick={() => setActiveTab("inventory")}
+                  className="mt-4 inline-flex items-center gap-2 rounded-xl bg-[#006FE8] px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#0055B8]"
                 >
-                  Explore {domain.title} Solution <ArrowRight className="h-3.5 w-3.5" />
-                </Link>
+                  View Declared Component Catalog <ArrowRight className="h-4 w-4" />
+                </button>
               </div>
+            ) : (
+              <>
+                {/* Screenshot Frame */}
+                <div className="overflow-hidden rounded-2xl border border-[#CCE3F5] bg-white shadow-[0_22px_75px_rgba(15,70,130,.09)]">
+                  {/* Window Header Bar */}
+                  <div className="flex flex-wrap items-center justify-between border-b border-[#E2EEF8] bg-[#F7FAFD] px-5 py-3 text-xs">
+                    <div className="flex items-center gap-2">
+                      <span className="h-3 w-3 rounded-full bg-[#FF5F56]" />
+                      <span className="h-3 w-3 rounded-full bg-[#FFBD2E]" />
+                      <span className="h-3 w-3 rounded-full bg-[#27C93F]" />
+                      <span className="ml-3 font-mono text-[11px] font-semibold text-[#5A7391]">
+                        {currentScreenshot.route}
+                      </span>
+                    </div>
 
-              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                {/* 1. What users see */}
-                <article className="rounded-2xl border border-[#CCE3F5] bg-white p-5 shadow-sm">
-                  <div className="flex items-center gap-2">
-                    <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#EBF5FF] text-xs font-bold text-[#006FE8]">
-                      01
-                    </span>
-                    <h4 className="text-sm font-bold uppercase tracking-wider text-[#082B5E]">
-                      What users see
-                    </h4>
+                    <div className="flex items-center gap-3">
+                      {currentScreenshot.badge && (
+                        <span className="rounded-full border border-[#CCE3F5] bg-[#EBF5FF] px-2.5 py-0.5 font-semibold text-[#006FE8]">
+                          {currentScreenshot.badge}
+                        </span>
+                      )}
+                      <span className="hidden font-mono text-[11px] text-[#7189A6] sm:inline">
+                        {isMobileView ? "390 × 844 px (Mobile)" : "1440 × 900 px (Desktop)"}
+                      </span>
+                    </div>
                   </div>
-                  <p className="mt-3.5 text-xs leading-6 text-[#4E607A]">
-                    {narrative.valueNarrative.whatUsersSee}
-                  </p>
-                </article>
 
-                {/* 2. What they can do */}
-                <article className="rounded-2xl border border-[#CCE3F5] bg-white p-5 shadow-sm">
-                  <div className="flex items-center gap-2">
-                    <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#EBF5FF] text-xs font-bold text-[#006FE8]">
-                      02
-                    </span>
-                    <h4 className="text-sm font-bold uppercase tracking-wider text-[#082B5E]">
-                      What they can do
-                    </h4>
+                  {/* Image Container */}
+                  <div className="relative flex justify-center bg-[#F1F6FB] p-2 sm:p-4 lg:p-6">
+                    {isMobileView && currentScreenshot.mobile ? (
+                      <div className="relative mx-auto max-w-[390px] overflow-hidden rounded-[2.5rem] border-[8px] border-[#1A2E46] shadow-2xl">
+                        <Image
+                          src={currentScreenshot.mobile}
+                          alt={currentScreenshot.alt}
+                          width={390}
+                          height={844}
+                          className="h-auto w-full object-cover"
+                          priority
+                        />
+                      </div>
+                    ) : (
+                      <div className="relative w-full overflow-hidden rounded-xl border border-[#D5E5F5] bg-white shadow-sm">
+                        <Image
+                          src={currentScreenshot.desktop}
+                          alt={currentScreenshot.alt}
+                          width={1440}
+                          height={900}
+                          className="h-auto w-full object-cover"
+                          priority
+                        />
+                      </div>
+                    )}
                   </div>
-                  <p className="mt-3.5 text-xs leading-6 text-[#4E607A]">
-                    {narrative.valueNarrative.whatTheyCanDo}
-                  </p>
-                </article>
 
-                {/* 3. What manual work it reduces */}
-                <article className="rounded-2xl border border-[#CCE3F5] bg-white p-5 shadow-sm">
-                  <div className="flex items-center gap-2">
-                    <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#EBF5FF] text-xs font-bold text-[#006FE8]">
-                      03
-                    </span>
-                    <h4 className="text-sm font-bold uppercase tracking-wider text-[#082B5E]">
-                      Manual work reduced
-                    </h4>
+                  {/* Image Footer with Real Route Provenance */}
+                  <div className="flex flex-wrap items-center justify-between gap-4 border-t border-[#E2EEF8] bg-white px-5 py-3 text-xs text-[#577292]">
+                    <div className="flex items-center gap-2">
+                      <CheckCircle2 className="h-4 w-4 text-[#006FE8]" />
+                      <span>
+                        <strong>Authentic capture:</strong> {currentScreenshot.title} in{" "}
+                        <code>{domain.title}</code> projection.
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <ShieldCheck className="h-4 w-4 text-[#208050]" />
+                      <span>Deterministic Demo State (Safe Non-Production QA Seam)</span>
+                    </div>
                   </div>
-                  <p className="mt-3.5 text-xs leading-6 text-[#4E607A]">
-                    {narrative.valueNarrative.whatManualWorkItReduces}
-                  </p>
-                </article>
+                </div>
 
-                {/* 4. Why it matters */}
-                <article className="rounded-2xl border border-[#CCE3F5] bg-white p-5 shadow-sm">
-                  <div className="flex items-center gap-2">
-                    <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#EBF5FF] text-xs font-bold text-[#006FE8]">
-                      04
-                    </span>
-                    <h4 className="text-sm font-bold uppercase tracking-wider text-[#082B5E]">
-                      Why it matters
-                    </h4>
+                {/* THE 4-PART VALUE NARRATIVE CARDS */}
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-xs font-bold uppercase tracking-[.18em] text-[#006FE8]">
+                        Value Architecture · {domain.title} Workbench
+                      </p>
+                      <h3 className="mt-1 text-xl font-semibold text-[#082B5E]">
+                        {narrative.tagline}
+                      </h3>
+                    </div>
+                    <Link
+                      href={DOMAIN_TO_SOLUTION_PATH[domain.id] ?? "/solutions"}
+                      className="hidden items-center gap-1.5 text-xs font-semibold text-[#006FE8] hover:underline sm:inline-flex"
+                    >
+                      Explore {domain.title} Solution <ArrowRight className="h-3.5 w-3.5" />
+                    </Link>
                   </div>
-                  <p className="mt-3.5 text-xs leading-6 text-[#4E607A]">
-                    {narrative.valueNarrative.whyItMatters}
-                  </p>
-                </article>
-              </div>
-            </div>
+
+                  <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                    {/* 1. What users see */}
+                    <article className="rounded-2xl border border-[#CCE3F5] bg-white p-5 shadow-sm">
+                      <div className="flex items-center gap-2">
+                        <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#EBF5FF] text-xs font-bold text-[#006FE8]">
+                          01
+                        </span>
+                        <h4 className="text-sm font-bold uppercase tracking-wider text-[#082B5E]">
+                          What users see
+                        </h4>
+                      </div>
+                      <p className="mt-3.5 text-xs leading-6 text-[#4E607A]">
+                        {narrative.valueNarrative.whatUsersSee}
+                      </p>
+                    </article>
+
+                    {/* 2. What they can do */}
+                    <article className="rounded-2xl border border-[#CCE3F5] bg-white p-5 shadow-sm">
+                      <div className="flex items-center gap-2">
+                        <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#EBF5FF] text-xs font-bold text-[#006FE8]">
+                          02
+                        </span>
+                        <h4 className="text-sm font-bold uppercase tracking-wider text-[#082B5E]">
+                          What they can do
+                        </h4>
+                      </div>
+                      <p className="mt-3.5 text-xs leading-6 text-[#4E607A]">
+                        {narrative.valueNarrative.whatTheyCanDo}
+                      </p>
+                    </article>
+
+                    {/* 3. What manual work it reduces */}
+                    <article className="rounded-2xl border border-[#CCE3F5] bg-white p-5 shadow-sm">
+                      <div className="flex items-center gap-2">
+                        <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#EBF5FF] text-xs font-bold text-[#006FE8]">
+                          03
+                        </span>
+                        <h4 className="text-sm font-bold uppercase tracking-wider text-[#082B5E]">
+                          Manual work reduced
+                        </h4>
+                      </div>
+                      <p className="mt-3.5 text-xs leading-6 text-[#4E607A]">
+                        {narrative.valueNarrative.whatManualWorkItReduces}
+                      </p>
+                    </article>
+
+                    {/* 4. Why it matters */}
+                    <article className="rounded-2xl border border-[#CCE3F5] bg-white p-5 shadow-sm">
+                      <div className="flex items-center gap-2">
+                        <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#EBF5FF] text-xs font-bold text-[#006FE8]">
+                          04
+                        </span>
+                        <h4 className="text-sm font-bold uppercase tracking-wider text-[#082B5E]">
+                          Why it matters
+                        </h4>
+                      </div>
+                      <p className="mt-3.5 text-xs leading-6 text-[#4E607A]">
+                        {narrative.valueNarrative.whyItMatters}
+                      </p>
+                    </article>
+                  </div>
+                </div>
+              </>
+            )}
           </div>
         )}
 
@@ -504,8 +528,9 @@ export function WorkbenchViewExplorer({
           <p className="max-w-2xl text-xs leading-6 text-[#596F89]">
             <ShieldCheck className="mr-1 inline h-4 w-4 align-[-3px] text-[#006FE8]" aria-hidden="true" />
             Every visual asset is captured from the genuine local Spine Workspace Workbench application
-            running real React components and deterministic demo state. Projections adapt based on
-            connected sources, credentials, and organizational permissions.
+            running real React components with deterministic demo state. Metrics and figures reflect
+            demonstration fixtures, not audited production data. Projections adapt based on connected
+            sources, credentials, and organizational permissions.
           </p>
           <Link
             href="/product/the-adaptive-workspace"
