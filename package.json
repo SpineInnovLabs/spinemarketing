@@ -24,7 +24,7 @@
     "verify:live": "node scripts/verify-live-site.mjs",
     "build:cloudflare": "npm run lint && npm run audit:site && npm run check:cloudflare && npm run typecheck && npm run build && npm run verify:artifact",
     "deploy:cloudflare": "npm run verify:artifact && wrangler deploy --env prod && npm run verify:live",
-    "test:edge": "tsx --test scripts/test-edge-response.ts"
+    "test:edge": "tsx --test scripts/test-edge-response.mjs"
   },
   "dependencies": {
     "@portabletext/react": "^8.0.1",
