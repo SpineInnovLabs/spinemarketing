@@ -308,9 +308,28 @@ export function WorkbenchViewExplorer({
               </div>
             ) : (
               <>
-                {/* Screenshot Frame - Constrained and Centered for Balanced SaaS Showcase */}
-                <div className="mx-auto w-full max-w-4xl lg:max-w-[960px]">
-                  <div className="overflow-hidden rounded-2xl border border-[#CCE3F5] bg-white shadow-[0_18px_55px_rgba(15,70,130,.08)]">
+                {/* Section Header: Domain Tagline & Deep Dive CTA */}
+                <div className="flex flex-wrap items-center justify-between gap-4">
+                  <div>
+                    <p className="text-xs font-bold uppercase tracking-[.18em] text-[#006FE8]">
+                      Value Architecture · {domain.title} Workbench
+                    </p>
+                    <h3 className="mt-1 text-xl sm:text-2xl font-semibold text-[#082B5E]">
+                      {narrative.tagline}
+                    </h3>
+                  </div>
+                  <Link
+                    href={DOMAIN_TO_SOLUTION_PATH[domain.id] ?? "/solutions"}
+                    className="inline-flex items-center gap-1.5 rounded-xl border border-[#CCE3F5] bg-white px-4 py-2 text-xs font-semibold text-[#006FE8] shadow-xs transition-colors hover:bg-[#EBF5FF]"
+                  >
+                    Explore {domain.title} Solution <ArrowRight className="h-3.5 w-3.5" />
+                  </Link>
+                </div>
+
+                {/* BENTO GRID: Workbench Showcase & 4-Part Architecture */}
+                <div className="grid grid-cols-1 gap-5 lg:grid-cols-3">
+                  {/* BENTO CELL 1: Hero Authentic Workbench Screenshot (Spans 2 cols on lg) */}
+                  <div className="flex flex-col overflow-hidden rounded-2xl border border-[#CCE3F5] bg-white shadow-[0_18px_55px_rgba(15,70,130,.08)] lg:col-span-2">
                     {/* Window Header Bar */}
                     <div className="flex flex-wrap items-center justify-between border-b border-[#E2EEF8] bg-[#F7FAFD] px-4 py-2.5 text-xs sm:px-5 sm:py-3">
                       <div className="flex items-center gap-2">
@@ -344,7 +363,7 @@ export function WorkbenchViewExplorer({
                     </div>
 
                     {/* Image Container */}
-                    <div className="relative flex justify-center bg-[#F1F6FB] p-2 sm:p-4">
+                    <div className="relative flex flex-1 items-center justify-center bg-[#F1F6FB] p-2 sm:p-4">
                       <ResponsiveWorkbenchScreenshot
                         src={isMobileView && currentScreenshot.mobile ? currentScreenshot.mobile : currentScreenshot.desktop}
                         alt={currentScreenshot.alt}
@@ -373,6 +392,132 @@ export function WorkbenchViewExplorer({
                         </div>
                       </div>
                     </div>
+                  </div>
+
+                  {/* BENTO RIGHT STACK: 01 & 02 alongside Hero Screenshot */}
+                  <div className="flex flex-col gap-5">
+                    {/* BENTO CELL 2: What users see */}
+                    <article className="flex flex-1 flex-col justify-between rounded-2xl border border-[#CCE3F5] bg-gradient-to-br from-white to-[#F8FBFE] p-5 shadow-sm transition-all hover:border-[#96C7F2] hover:shadow-md">
+                      <div>
+                        <div className="flex items-center justify-between">
+                          <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-[#EBF5FF] text-xs font-bold text-[#006FE8]">
+                            01
+                          </span>
+                          <span className="text-[11px] font-semibold uppercase tracking-wider text-[#006FE8]">
+                            Visual Projection
+                          </span>
+                        </div>
+                        <h4 className="mt-3.5 text-base font-bold text-[#082B5E]">
+                          What users see
+                        </h4>
+                        <p className="mt-2 text-xs leading-6 text-[#4E607A]">
+                          {narrative.valueNarrative.whatUsersSee}
+                        </p>
+                      </div>
+                      <div className="mt-4 flex items-center gap-1.5 border-t border-[#EDF4FA] pt-3 text-[11px] font-semibold text-[#006FE8]">
+                        <Eye className="h-3.5 w-3.5" />
+                        <span>Canonical Shell Navigation Active</span>
+                      </div>
+                    </article>
+
+                    {/* BENTO CELL 3: What they can do */}
+                    <article className="flex flex-1 flex-col justify-between rounded-2xl border border-[#CCE3F5] bg-gradient-to-br from-white to-[#F8FBFE] p-5 shadow-sm transition-all hover:border-[#96C7F2] hover:shadow-md">
+                      <div>
+                        <div className="flex items-center justify-between">
+                          <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-[#EBF5FF] text-xs font-bold text-[#006FE8]">
+                            02
+                          </span>
+                          <span className="text-[11px] font-semibold uppercase tracking-wider text-[#006FE8]">
+                            Operator Action
+                          </span>
+                        </div>
+                        <h4 className="mt-3.5 text-base font-bold text-[#082B5E]">
+                          What they can do
+                        </h4>
+                        <p className="mt-2 text-xs leading-6 text-[#4E607A]">
+                          {narrative.valueNarrative.whatTheyCanDo}
+                        </p>
+                      </div>
+                      <div className="mt-4 flex items-center gap-1.5 border-t border-[#EDF4FA] pt-3 text-[11px] font-semibold text-[#006FE8]">
+                        <CheckCircle2 className="h-3.5 w-3.5" />
+                        <span>Governed Action Gateways</span>
+                      </div>
+                    </article>
+                  </div>
+
+                  {/* BENTO ROW 2: Three equal cards across the 3 columns */}
+                  {/* BENTO CELL 4: Manual work reduced */}
+                  <article className="flex flex-col justify-between rounded-2xl border border-[#CCE3F5] bg-white p-5 shadow-sm transition-all hover:border-[#96C7F2] hover:shadow-md">
+                    <div>
+                      <div className="flex items-center justify-between">
+                        <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-[#EBF5FF] text-xs font-bold text-[#006FE8]">
+                          03
+                        </span>
+                        <span className="text-[11px] font-semibold uppercase tracking-wider text-[#006FE8]">
+                          Efficiency
+                        </span>
+                      </div>
+                      <h4 className="mt-3.5 text-base font-bold text-[#082B5E]">
+                        Manual work reduced
+                      </h4>
+                      <p className="mt-2 text-xs leading-6 text-[#4E607A]">
+                        {narrative.valueNarrative.whatManualWorkItReduces}
+                      </p>
+                    </div>
+                    <div className="mt-4 flex items-center gap-1.5 border-t border-[#EDF4FA] pt-3 text-[11px] font-semibold text-[#5A7391]">
+                      <LayoutDashboard className="h-3.5 w-3.5 text-[#006FE8]" />
+                      <span>Zero Cross-App Context Hunting</span>
+                    </div>
+                  </article>
+
+                  {/* BENTO CELL 5: Why it matters */}
+                  <article className="flex flex-col justify-between rounded-2xl border border-[#CCE3F5] bg-white p-5 shadow-sm transition-all hover:border-[#96C7F2] hover:shadow-md">
+                    <div>
+                      <div className="flex items-center justify-between">
+                        <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-[#EBF5FF] text-xs font-bold text-[#208050]">
+                          04
+                        </span>
+                        <span className="text-[11px] font-semibold uppercase tracking-wider text-[#208050]">
+                          Governance
+                        </span>
+                      </div>
+                      <h4 className="mt-3.5 text-base font-bold text-[#082B5E]">
+                        Why it matters
+                      </h4>
+                      <p className="mt-2 text-xs leading-6 text-[#4E607A]">
+                        {narrative.valueNarrative.whyItMatters}
+                      </p>
+                    </div>
+                    <div className="mt-4 flex items-center gap-1.5 border-t border-[#EDF4FA] pt-3 text-[11px] font-semibold text-[#208050]">
+                      <ShieldCheck className="h-3.5 w-3.5" />
+                      <span>Auditable Decision Continuity</span>
+                    </div>
+                  </article>
+
+                  {/* BENTO CELL 6: Domain Solution Gateway */}
+                  <div className="flex flex-col justify-between rounded-2xl border border-[#CCE3F5] bg-gradient-to-br from-[#082B5E] to-[#0E3D7D] p-5 text-white shadow-sm">
+                    <div>
+                      <div className="flex items-center justify-between">
+                        <span className="rounded-full bg-white/10 px-2.5 py-0.5 text-[10px] font-semibold tracking-wider text-[#A4D0FF] uppercase">
+                          Domain Catalog
+                        </span>
+                        <span className="font-mono text-xs text-[#CCE3F5]">
+                          {domain.views.length} Views
+                        </span>
+                      </div>
+                      <h4 className="mt-3 text-lg font-bold text-white">
+                        {domain.title} Solution
+                      </h4>
+                      <p className="mt-2 text-xs leading-6 text-[#D6E8F8]">
+                        Explore the complete declared view registry, connector bindings, and governed automation workflows for {domain.title}.
+                      </p>
+                    </div>
+                    <Link
+                      href={DOMAIN_TO_SOLUTION_PATH[domain.id] ?? "/solutions"}
+                      className="mt-4 inline-flex items-center justify-center gap-2 rounded-xl bg-[#006FE8] px-4 py-2.5 text-xs font-semibold text-white shadow-sm transition-colors hover:bg-[#2B8BF4]"
+                    >
+                      Open {domain.title} Deep-Dive <ArrowRight className="h-4 w-4" />
+                    </Link>
                   </div>
                 </div>
 
@@ -425,88 +570,6 @@ export function WorkbenchViewExplorer({
                     </div>
                   </div>
                 )}
-
-                {/* THE 4-PART VALUE NARRATIVE CARDS */}
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <p className="text-xs font-bold uppercase tracking-[.18em] text-[#006FE8]">
-                        Value Architecture · {domain.title} Workbench
-                      </p>
-                      <h3 className="mt-1 text-xl font-semibold text-[#082B5E]">
-                        {narrative.tagline}
-                      </h3>
-                    </div>
-                    <Link
-                      href={DOMAIN_TO_SOLUTION_PATH[domain.id] ?? "/solutions"}
-                      className="hidden items-center gap-1.5 text-xs font-semibold text-[#006FE8] hover:underline sm:inline-flex"
-                    >
-                      Explore {domain.title} Solution <ArrowRight className="h-3.5 w-3.5" />
-                    </Link>
-                  </div>
-
-                  <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                    {/* 1. What users see */}
-                    <article className="rounded-2xl border border-[#CCE3F5] bg-white p-5 shadow-sm">
-                      <div className="flex items-center gap-2">
-                        <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#EBF5FF] text-xs font-bold text-[#006FE8]">
-                          01
-                        </span>
-                        <h4 className="text-sm font-bold uppercase tracking-wider text-[#082B5E]">
-                          What users see
-                        </h4>
-                      </div>
-                      <p className="mt-3.5 text-xs leading-6 text-[#4E607A]">
-                        {narrative.valueNarrative.whatUsersSee}
-                      </p>
-                    </article>
-
-                    {/* 2. What they can do */}
-                    <article className="rounded-2xl border border-[#CCE3F5] bg-white p-5 shadow-sm">
-                      <div className="flex items-center gap-2">
-                        <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#EBF5FF] text-xs font-bold text-[#006FE8]">
-                          02
-                        </span>
-                        <h4 className="text-sm font-bold uppercase tracking-wider text-[#082B5E]">
-                          What they can do
-                        </h4>
-                      </div>
-                      <p className="mt-3.5 text-xs leading-6 text-[#4E607A]">
-                        {narrative.valueNarrative.whatTheyCanDo}
-                      </p>
-                    </article>
-
-                    {/* 3. What manual work it reduces */}
-                    <article className="rounded-2xl border border-[#CCE3F5] bg-white p-5 shadow-sm">
-                      <div className="flex items-center gap-2">
-                        <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#EBF5FF] text-xs font-bold text-[#006FE8]">
-                          03
-                        </span>
-                        <h4 className="text-sm font-bold uppercase tracking-wider text-[#082B5E]">
-                          Manual work reduced
-                        </h4>
-                      </div>
-                      <p className="mt-3.5 text-xs leading-6 text-[#4E607A]">
-                        {narrative.valueNarrative.whatManualWorkItReduces}
-                      </p>
-                    </article>
-
-                    {/* 4. Why it matters */}
-                    <article className="rounded-2xl border border-[#CCE3F5] bg-white p-5 shadow-sm">
-                      <div className="flex items-center gap-2">
-                        <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#EBF5FF] text-xs font-bold text-[#006FE8]">
-                          04
-                        </span>
-                        <h4 className="text-sm font-bold uppercase tracking-wider text-[#082B5E]">
-                          Why it matters
-                        </h4>
-                      </div>
-                      <p className="mt-3.5 text-xs leading-6 text-[#4E607A]">
-                        {narrative.valueNarrative.whyItMatters}
-                      </p>
-                    </article>
-                  </div>
-                </div>
               </>
             )}
           </div>
