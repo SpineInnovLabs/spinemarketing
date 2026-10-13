@@ -60,7 +60,10 @@ function withSecurityHeaders(response: Response, request: Request): Response {
     headers.set("Cache-Control", "public, max-age=0, must-revalidate");
   }
 
-  return new Response(response.body, {
+  // 204, 205 and 304 must never be reconstructed with a response body.
+  // Explicitly discard one even if a fetcher exposes a non-null stream.
+  const body = [204, 205, 304].includes(response.status) ? null : response.body;
+  return new Response(body, {
     status: response.status,
     statusText: response.statusText,
     headers,
