@@ -1,6 +1,6 @@
 "use client";
 
-import { useId, useMemo, useState } from "react";
+import { useId, useMemo, useState, useEffect } from "react";
 import Link from "next/link";
 import { ResponsiveWorkbenchScreenshot } from "@/components/marketing/responsive-workbench-screenshot";
 import {
@@ -13,6 +13,8 @@ import {
   Eye,
   CheckCircle2,
   AlertCircle,
+  Maximize2,
+  X,
 } from "lucide-react";
 import { SHARED_WORKBENCH_SHELL, WORKBENCH_SOURCE_DOMAINS } from "@/lib/workbench-source-views";
 import {
@@ -67,6 +69,16 @@ export function WorkbenchViewExplorer({
   const [selectedViewKey, setSelectedViewKey] = useState<string>("primary");
   const [isMobileView, setIsMobileView] = useState(false);
   const [showAll, setShowAll] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  useEffect(() => {
+    if (!isExpanded) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setIsExpanded(false);
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [isExpanded]);
 
   const domain = useMemo(
     () => PUBLIC_WORKBENCH_DOMAINS.find((item) => item.id === selected) ?? PUBLIC_WORKBENCH_DOMAINS[0],
@@ -296,56 +308,123 @@ export function WorkbenchViewExplorer({
               </div>
             ) : (
               <>
-                {/* Screenshot Frame */}
-                <div className="overflow-hidden rounded-2xl border border-[#CCE3F5] bg-white shadow-[0_22px_75px_rgba(15,70,130,.09)]">
-                  {/* Window Header Bar */}
-                  <div className="flex flex-wrap items-center justify-between border-b border-[#E2EEF8] bg-[#F7FAFD] px-5 py-3 text-xs">
-                    <div className="flex items-center gap-2">
-                      <span className="h-3 w-3 rounded-full bg-[#FF5F56]" />
-                      <span className="h-3 w-3 rounded-full bg-[#FFBD2E]" />
-                      <span className="h-3 w-3 rounded-full bg-[#27C93F]" />
-                      <span className="ml-3 font-mono text-[11px] font-semibold text-[#5A7391]">
-                        {currentScreenshot.route}
-                      </span>
-                    </div>
-
-                    <div className="flex items-center gap-3">
-                      {currentScreenshot.badge && (
-                        <span className="rounded-full border border-[#CCE3F5] bg-[#EBF5FF] px-2.5 py-0.5 font-semibold text-[#006FE8]">
-                          {currentScreenshot.badge}
+                {/* Screenshot Frame - Constrained and Centered for Balanced SaaS Showcase */}
+                <div className="mx-auto w-full max-w-4xl lg:max-w-[960px]">
+                  <div className="overflow-hidden rounded-2xl border border-[#CCE3F5] bg-white shadow-[0_18px_55px_rgba(15,70,130,.08)]">
+                    {/* Window Header Bar */}
+                    <div className="flex flex-wrap items-center justify-between border-b border-[#E2EEF8] bg-[#F7FAFD] px-4 py-2.5 text-xs sm:px-5 sm:py-3">
+                      <div className="flex items-center gap-2">
+                        <span className="h-3 w-3 rounded-full bg-[#FF5F56]" />
+                        <span className="h-3 w-3 rounded-full bg-[#FFBD2E]" />
+                        <span className="h-3 w-3 rounded-full bg-[#27C93F]" />
+                        <span className="ml-3 font-mono text-[11px] font-semibold text-[#5A7391]">
+                          {currentScreenshot.route}
                         </span>
-                      )}
-                      <span className="hidden font-mono text-[11px] text-[#7189A6] sm:inline">
-                        {isMobileView ? "390 × 844 px (Mobile)" : "1440 × 900 px (Desktop)"}
-                      </span>
-                    </div>
-                  </div>
+                      </div>
 
-                  {/* Image Container */}
-                  <div className="relative flex justify-center bg-[#F1F6FB] p-2 sm:p-4 lg:p-6">
-                    <ResponsiveWorkbenchScreenshot
-                      src={isMobileView && currentScreenshot.mobile ? currentScreenshot.mobile : currentScreenshot.desktop}
-                      alt={currentScreenshot.alt}
-                      isMobile={isMobileView && Boolean(currentScreenshot.mobile)}
-                      priority
-                    />
-                  </div>
-
-                  {/* Image Footer with Real Route Provenance */}
-                  <div className="flex flex-wrap items-center justify-between gap-4 border-t border-[#E2EEF8] bg-white px-5 py-3 text-xs text-[#577292]">
-                    <div className="flex items-center gap-2">
-                      <CheckCircle2 className="h-4 w-4 text-[#006FE8]" />
-                      <span>
-                        <strong>Authentic capture:</strong> {currentScreenshot.title} in{" "}
-                        <code>{domain.title}</code> projection.
-                      </span>
+                      <div className="flex items-center gap-2 sm:gap-3">
+                        {currentScreenshot.badge && (
+                          <span className="rounded-full border border-[#CCE3F5] bg-[#EBF5FF] px-2.5 py-0.5 font-semibold text-[#006FE8]">
+                            {currentScreenshot.badge}
+                          </span>
+                        )}
+                        <span className="hidden font-mono text-[11px] text-[#7189A6] sm:inline">
+                          {isMobileView ? "390 × 844 px (Mobile)" : "1440 × 900 px (Desktop)"}
+                        </span>
+                        <button
+                          type="button"
+                          onClick={() => setIsExpanded(true)}
+                          className="inline-flex items-center gap-1.5 rounded-lg border border-[#CCE3F5] bg-white px-2.5 py-1 text-[11px] font-semibold text-[#3A5678] shadow-2xs transition-colors hover:bg-[#EAF4FF] hover:text-[#006FE8]"
+                          title="Expand screenshot in full size view"
+                        >
+                          <Maximize2 className="h-3.5 w-3.5 text-[#006FE8]" />
+                          <span className="hidden sm:inline">Expand</span>
+                        </button>
+                      </div>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <ShieldCheck className="h-4 w-4 text-[#208050]" />
-                      <span>Deterministic Demo State (Safe Non-Production QA Seam)</span>
+
+                    {/* Image Container */}
+                    <div className="relative flex justify-center bg-[#F1F6FB] p-2 sm:p-4">
+                      <ResponsiveWorkbenchScreenshot
+                        src={isMobileView && currentScreenshot.mobile ? currentScreenshot.mobile : currentScreenshot.desktop}
+                        alt={currentScreenshot.alt}
+                        isMobile={isMobileView && Boolean(currentScreenshot.mobile)}
+                        priority
+                        onClick={() => setIsExpanded(true)}
+                      />
+                    </div>
+
+                    {/* Image Footer with Real Route Provenance */}
+                    <div className="flex flex-wrap items-center justify-between gap-3 border-t border-[#E2EEF8] bg-white px-4 py-2.5 text-xs text-[#577292] sm:px-5">
+                      <div className="flex items-center gap-2">
+                        <CheckCircle2 className="h-4 w-4 text-[#006FE8]" />
+                        <span>
+                          <strong>Authentic capture:</strong> {currentScreenshot.title} in{" "}
+                          <code>{domain.title}</code> projection.
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <span className="hidden text-[11px] text-[#839BB7] sm:inline">
+                          Click image to expand
+                        </span>
+                        <div className="flex items-center gap-1.5">
+                          <ShieldCheck className="h-4 w-4 text-[#208050]" />
+                          <span>Deterministic Demo State</span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
+
+                {/* Full-Size Interactive Lightbox Modal */}
+                {isExpanded && (
+                  <div
+                    role="dialog"
+                    aria-modal="true"
+                    aria-label="Full size authentic Workbench screenshot"
+                    className="fixed inset-0 z-50 flex items-center justify-center bg-[#082B5E]/85 p-3 backdrop-blur-sm sm:p-6 lg:p-10"
+                    onClick={() => setIsExpanded(false)}
+                  >
+                    <div
+                      className="relative flex max-h-[94vh] w-full max-w-7xl flex-col overflow-hidden rounded-2xl border border-[#CCE3F5] bg-white shadow-2xl"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <div className="flex items-center justify-between border-b border-[#E2EEF8] bg-[#F7FAFD] px-5 py-3 text-xs">
+                        <div className="flex items-center gap-2">
+                          <span className="h-3 w-3 rounded-full bg-[#FF5F56]" />
+                          <span className="h-3 w-3 rounded-full bg-[#FFBD2E]" />
+                          <span className="h-3 w-3 rounded-full bg-[#27C93F]" />
+                          <span className="ml-3 font-mono text-xs font-semibold text-[#5A7391]">
+                            {currentScreenshot.route}
+                          </span>
+                        </div>
+                        <div className="flex items-center gap-3">
+                          <span className="rounded-full border border-[#CCE3F5] bg-[#EBF5FF] px-2.5 py-0.5 font-semibold text-[#006FE8]">
+                            {currentScreenshot.badge ?? "Authentic Capture"}
+                          </span>
+                          <span className="hidden font-mono text-xs text-[#7189A6] sm:inline">
+                            1440 × 900 px (Full Scale)
+                          </span>
+                          <button
+                            type="button"
+                            onClick={() => setIsExpanded(false)}
+                            className="rounded-lg p-1.5 text-[#5A7391] transition-colors hover:bg-[#E2EEF8] hover:text-[#082B5E]"
+                            aria-label="Close full size view"
+                          >
+                            <X className="h-5 w-5" />
+                          </button>
+                        </div>
+                      </div>
+                      <div className="flex flex-1 items-center justify-center overflow-auto bg-[#0C1E38] p-2 sm:p-4">
+                        <img
+                          src={isMobileView && currentScreenshot.mobile ? currentScreenshot.mobile : currentScreenshot.desktop}
+                          alt={currentScreenshot.alt}
+                          className="h-auto max-h-[82vh] w-auto max-w-full rounded-lg object-contain shadow-lg"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                )}
 
                 {/* THE 4-PART VALUE NARRATIVE CARDS */}
                 <div className="space-y-4">

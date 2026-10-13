@@ -8,6 +8,8 @@ interface ResponsiveWorkbenchScreenshotProps {
   isMobile?: boolean;
   priority?: boolean;
   className?: string;
+  maxHeight?: string;
+  onClick?: () => void;
 }
 
 export function ResponsiveWorkbenchScreenshot({
@@ -16,12 +18,19 @@ export function ResponsiveWorkbenchScreenshot({
   isMobile = false,
   priority = false,
   className = "",
+  maxHeight = "min(520px, 65vh)",
+  onClick,
 }: ResponsiveWorkbenchScreenshotProps) {
   const basePath = src.replace(/\.webp$/, "");
 
   if (isMobile) {
     return (
-      <div className="relative mx-auto max-w-[390px] overflow-hidden rounded-[2.5rem] border-[8px] border-[#1A2E46] shadow-2xl">
+      <div
+        className={`relative mx-auto max-w-[390px] overflow-hidden rounded-[2.5rem] border-[8px] border-[#1A2E46] shadow-2xl ${
+          onClick ? "cursor-pointer transition-transform hover:scale-[1.01]" : ""
+        } ${className}`}
+        onClick={onClick}
+      >
         <picture>
           <source
             type="image/webp"
@@ -48,11 +57,16 @@ export function ResponsiveWorkbenchScreenshot({
   }
 
   return (
-    <div className={`relative w-full overflow-hidden rounded-xl border border-[#D5E5F5] bg-white shadow-sm ${className}`}>
+    <div
+      className={`relative mx-auto flex w-full max-w-full items-center justify-center overflow-hidden rounded-xl border border-[#D5E5F5] bg-white shadow-sm ${
+        onClick ? "cursor-pointer transition-transform hover:scale-[1.005]" : ""
+      } ${className}`}
+      onClick={onClick}
+    >
       {/* Scrollable containment on narrow viewports <= 480px */}
-      <div className="w-full overflow-x-auto scrollbar-thin scrollbar-thumb-[#CCE3F5]">
-        <div className="min-w-[440px] sm:min-w-0">
-          <picture>
+      <div className="flex w-full justify-center overflow-x-auto scrollbar-thin scrollbar-thumb-[#CCE3F5]">
+        <div className="flex min-w-[440px] items-center justify-center sm:min-w-0">
+          <picture className="flex w-full items-center justify-center">
             <source
               type="image/webp"
               srcSet={`
@@ -63,7 +77,7 @@ export function ResponsiveWorkbenchScreenshot({
                 ${basePath}-2880w.webp 2880w,
                 ${src} 1440w
               `}
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 95vw, 1280px"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 960px"
             />
             <img
               src={src}
@@ -72,8 +86,11 @@ export function ResponsiveWorkbenchScreenshot({
               height={900}
               loading={priority ? "eager" : "lazy"}
               decoding="async"
-              className="h-auto w-full object-contain aspect-[16/10]"
-              style={{ aspectRatio: "16 / 10" }}
+              className="h-auto w-auto max-w-full object-contain aspect-[16/10]"
+              style={{
+                aspectRatio: "16 / 10",
+                maxHeight: maxHeight,
+              }}
             />
           </picture>
         </div>
