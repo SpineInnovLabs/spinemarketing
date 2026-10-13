@@ -50,48 +50,45 @@ export function PageHero({
 
   return (
     <>
-    <section className={ice
-      ? "relative overflow-x-clip border-b border-[#D9E4EF] bg-white pt-[88px] pb-14 sm:pb-16 lg:pt-[108px] lg:pb-20"
-      : "relative overflow-x-clip border-b border-[#D9E4EF] bg-white pt-[96px] pb-12 lg:pt-[108px] lg:pb-16"}>
-      {ice ? <HeroWash /> : null}
-      <div className={`mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-12 ${ice ? "relative" : ""}`}>
+    <section className="relative overflow-x-clip border-b border-[#D6E8F8] bg-gradient-to-b from-[#F5F9FD] via-[#FAFCFF] to-white pt-[96px] pb-14 sm:pb-16 lg:pt-[112px] lg:pb-20">
+      <HeroWash />
+      <div className="relative mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-12">
         <div className={art ? "grid items-center gap-10 lg:grid-cols-[minmax(0,0.45fr)_minmax(0,0.55fr)] lg:items-center lg:gap-12" : "max-w-[880px]"}>
           <div className="min-w-0 text-left">
-            {badge && ice ? (
-              <motion.p {...rise} className="mb-5 text-[12px] font-bold uppercase tracking-[0.14em] text-[#0176D3]">
-                {badge}
-              </motion.p>
-            ) : badge ? (
-              <motion.p {...rise} className="mb-4 inline-flex items-center gap-2 rounded-md border border-[#D9E4EF] bg-[#F3F6F9] px-3 py-1 text-[12px] font-semibold uppercase tracking-[0.06em] text-[#032D60]">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#0176D3]" />
+            {badge ? (
+              <motion.p {...rise} className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#BCD9F5] bg-[#EAF4FF] px-3.5 py-1 text-[12px] font-bold uppercase tracking-[0.08em] text-[#006FE8] shadow-sm">
+                <span className="h-1.5 w-1.5 rounded-full bg-[#006FE8]" />
                 {badge}
               </motion.p>
             ) : null}
             <motion.h1
               {...rise}
-              className={`max-w-full whitespace-pre-line text-balance text-[#032D60] ${ice ? "text-[length:min(clamp(2.05rem,4.6vw,3.65rem),var(--marketing-title-size))] font-bold leading-[1.08] tracking-[-0.03em]" : "text-[length:min(clamp(2rem,4.4vw,3.5rem),var(--marketing-title-size))] font-semibold leading-[1.12] tracking-[-0.03em]"}`}
+              className="max-w-full whitespace-pre-line text-balance text-[#032D60] text-[length:min(clamp(2.25rem,4.8vw,3.75rem),var(--marketing-title-size))] font-bold leading-[1.08] tracking-[-0.035em]"
             >
               {headline}
             </motion.h1>
             {subhead && (
-              <motion.p {...rise} className={`max-w-xl leading-[1.6] text-[#33465B] ${ice ? "mt-5 text-[16px] sm:text-[length:min(17px,var(--marketing-body-size))]" : "mt-4 text-[length:min(17px,var(--marketing-body-size))]"}`}>
+              <motion.p {...rise} className="mt-5 max-w-xl text-[16px] sm:text-[length:min(17px,var(--marketing-body-size))] leading-[1.65] text-[#3A506B]">
                 {subhead}
               </motion.p>
             )}
-            {principle && !ice && (
-              <p className="mt-4 text-[14px] font-semibold text-[#032D60]">{principle}</p>
+            {principle && (
+              <p className="mt-5 flex items-center gap-3 text-[13px] leading-snug text-[#526479]">
+                <span className="h-px w-8 shrink-0 bg-[#C5D4E4]" aria-hidden />
+                <span className="font-medium">{principle}</span>
+              </p>
             )}
             {(primaryCta || secondaryCta) && (
-              <div className={`mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-start ${ice ? "items-start" : "items-stretch"}`}>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-start items-stretch">
                 {primaryCta && (
                   <Button
                     size="lg"
-                    className={ice ? "h-11 rounded-[10px] bg-[#0176D3] px-5 text-[14px] font-semibold text-white hover:bg-[#0B5CAB]" : "h-10 rounded-[10px] bg-[#0176D3] px-5 text-[14px] font-semibold text-white hover:bg-[#0B5CAB]"}
+                    className="h-11 rounded-[10px] bg-[#0176D3] px-6 text-[14px] font-semibold text-white shadow-[0_4px_14px_rgba(1,118,211,0.25)] hover:bg-[#0B5CAB] hover:shadow-[0_6px_20px_rgba(1,118,211,0.35)] transition-all"
                     asChild
                   >
                     <Link href={primaryCta.href}>
                       {primaryCta.label}
-                      {ice ? null : <ArrowRight className="ml-2 h-4 w-4" />}
+                      <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>
                 )}
@@ -99,7 +96,7 @@ export function PageHero({
                   <Button
                     size="lg"
                     variant="outline"
-                    className={ice ? "h-11 rounded-[10px] border-[#C5D4E4] bg-white px-5 text-[14px] font-semibold text-[#032D60] hover:bg-[#F3F6F9]" : "h-10 rounded-[10px] border-[#D9E4EF] bg-white px-5 text-[14px] font-semibold text-[#032D60] hover:bg-[#F3F6F9]"}
+                    className="h-11 rounded-[10px] border border-[#C5D4E4] bg-white px-6 text-[14px] font-semibold text-[#032D60] shadow-sm hover:bg-[#F3F6F9] transition-all"
                     asChild
                   >
                     {secondaryCta.href.startsWith("http") ? (
@@ -107,18 +104,11 @@ export function PageHero({
                     ) : (
                       <Link href={secondaryCta.href}>
                         {secondaryCta.label}
-                        {ice ? <ArrowRight className="h-4 w-4" aria-hidden /> : null}
                       </Link>
                     )}
                   </Button>
                 )}
               </div>
-            )}
-            {principle && ice && (
-              <p className="mt-8 flex items-center gap-3 text-[13px] leading-snug text-[#526479]">
-                <span className="h-px w-8 shrink-0 bg-[#C5D4E4]" aria-hidden />
-                <span>{principle}</span>
-              </p>
             )}
           </div>
           {art ? (

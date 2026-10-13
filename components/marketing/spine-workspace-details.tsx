@@ -1,8 +1,9 @@
 import Link from "next/link";
-import Image from "next/image";
+import { ResponsiveWorkbenchScreenshot } from "./responsive-workbench-screenshot";
 import { WorkspaceAuthActions } from "./workspace-auth-actions";
 import { WorkspaceBenefits } from "./workspace-benefits";
 import { WorkspaceSubscriptionValue } from "./workspace-subscription-value";
+import { WorkbenchViewExplorer } from "./workbench-view-explorer";
 import {
   ArrowRight,
   Database,
@@ -131,16 +132,28 @@ export function SpineWorkspaceDetails() {
           </p>
         </div>
         <figure className="innovtech-product-illustration">
-          <Image
-            src="/images/product-shared-context.png"
-            alt="Original concept illustration of account, finance, and operations teams working from a shared business context with evidence beside a reviewable decision."
-            width={1387}
-            height={1134}
-            priority
-            className="h-auto w-full rounded-2xl"
-          />
+          <div className="overflow-hidden rounded-2xl border border-[#CCE3F5] bg-white shadow-[0_20px_60px_rgba(15,70,130,.12)]">
+            <div className="flex items-center justify-between border-b border-[#E2EEF8] bg-[#F7FAFD] px-4 py-2.5 text-xs">
+              <div className="flex items-center gap-1.5">
+                <span className="h-2.5 w-2.5 rounded-full bg-[#FF5F56]" />
+                <span className="h-2.5 w-2.5 rounded-full bg-[#FFBD2E]" />
+                <span className="h-2.5 w-2.5 rounded-full bg-[#27C93F]" />
+                <span className="ml-2 font-mono text-[11px] font-semibold text-[#5A7391]">
+                  /workspace/home
+                </span>
+              </div>
+              <span className="rounded-full border border-[#CCE3F5] bg-[#EBF5FF] px-2 py-0.5 text-[10px] font-semibold text-[#006FE8]">
+                Authentic Workbench
+              </span>
+            </div>
+            <ResponsiveWorkbenchScreenshot
+              src="/images/workbench/common/home.webp"
+              alt="Authentic Spine Workspace Workbench showing canonical shell navigation, unified search bar, and contextual Spine Twin panel."
+              priority
+            />
+          </div>
           <figcaption>
-            Concept illustration of shared work across roles.
+            Authentic Spine Workspace Workbench. Governed business context with canonical shell navigation and contextual Twin assistance.
           </figcaption>
         </figure>
       </section>
@@ -208,6 +221,7 @@ export function SpineWorkspaceDetails() {
           See the underlying workflow <ArrowRight size={18} />
         </Link>
       </section>
+      <WorkbenchViewExplorer initialDomain="founderops" />
       <WorkspaceSubscriptionValue />
       <section id="technology" className="innovtech-section">
         <p className="innovtech-eyebrow">THE TECHNOLOGY UNDERNEATH</p>

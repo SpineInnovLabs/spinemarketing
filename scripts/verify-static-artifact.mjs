@@ -33,8 +33,12 @@ for (const category of ["Company", "Technology", "Solutions", "Insights", "Devel
 if (text.includes("Good morning, Operator") || text.includes("Customer Zero")) {
   throw new Error("Authenticated/demo workspace content must not become public corporate homepage.");
 }
-if (!sitemap.includes("spineinnovlabs.spineworkspace.com")) {
-  throw new Error("Sitemap is missing current production corporate origin.");
+if (!sitemap.includes("spineinnovtech.spineworkspace.com") || sitemap.includes("spineinnovlabs.spineworkspace.com")) {
+  throw new Error("Sitemap must use spineinnovtech.spineworkspace.com and contain zero spineinnovlabs occurrences.");
+}
+const llmsTxt = readFileSync("out/llms.txt", "utf8");
+if (!llmsTxt.includes("https://spineinnovtech.spineworkspace.com") || llmsTxt.includes("spineinnovlabs")) {
+  throw new Error("llms.txt must exist, list spineinnovtech.spineworkspace.com URLs, and contain zero spineinnovlabs occurrences.");
 }
 if (statSync("out/index.html").size < 1024) {
   throw new Error("Suspiciously small production HTML.");

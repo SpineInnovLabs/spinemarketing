@@ -3,6 +3,7 @@ import { DraftProvider } from "@/components/workspace/draft-store";
 
 export const metadata: Metadata = {
   robots: { index: false, follow: false },
+  alternates: { canonical: "/login" },
 };
 
 export default function EnterLayout({ children }: { children: React.ReactNode }) {

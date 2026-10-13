@@ -1,7 +1,7 @@
 {
   "note": "Repository-side documented settings for Cloudflare Workers Builds. Cloudflare dashboard owns the actual Git integration, secrets, and build triggers.",
   "worker": "spineinnovlabs-marketing",
-  "account": "a1bbbb12a32cdbb68dd170b09fe8b5f3",
+  "account": "3b815e3cd31a7ce892c2c65ea8873387",
   "repository": "SpineInnovLabs/spinemarketing",
   "productionBranch": "main",
   "rootDirectory": ".",
@@ -9,7 +9,7 @@
   "deployCommand": "npm run deploy:cloudflare",
   "previewBuilds": "disabled until production validated; if enabled later use separate dev worker, never a production custom domain",
   "buildVariables": {
-    "NEXT_PUBLIC_SITE_URL": "https://spineinnovlabs.spineworkspace.com",
+    "NEXT_PUBLIC_SITE_URL": "https://spineinnovtech.spineworkspace.com",
     "CONTENT_PROVIDER": "sanity",
     "SANITY_DATASET": "production",
     "NODE_VERSION": "22"
