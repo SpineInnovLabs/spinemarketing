@@ -1,56 +1,52 @@
 /**
- * Purges the entire Cloudflare Edge Cache for spineworkspace.com zone
- * so normal visitors instantly receive fresh production releases.
+ * Invalidate only the corporate marketing hostnames after a successful deploy.
+ * The product, Workbench, auth and API hosts share this Cloudflare zone;
+ * never use purge_everything here. A failed purge fails the release gate.
  */
 import { execSync } from "node:child_process";
 
 const ZONE_ID = "e400477f3fc2b13a70dd3d63407ce21b";
+const MARKETING_HOSTS = ["spineinnovtech.spineworkspace.com", "spineinnovlabs.spineworkspace.com"];
 
-let apiToken = "";
+function readToken() {
+  const processToken = process.env.CLOUDFLARE_API_TOKEN?.trim();
+  if (processToken) return processToken;
 
-// 1. Try extracting active production Cloudflare token from Infisical vault
-try {
-  const envOut = execSync(
-    "infisical export --projectId=6b21acb7-79c9-48bf-82e7-bf1a4dc9c031 --env=prod --format=dotenv",
-    { encoding: "utf8", stdio: ["ignore", "pipe", "ignore"] }
-  );
-  for (const line of envOut.split("\n")) {
-    const trimmed = line.trim();
-    if (trimmed.startsWith("CLOUDFLARE_API_TOKEN=")) {
-      apiToken = trimmed.slice("CLOUDFLARE_API_TOKEN=".length).replace(/^["'\s]+|["'\s]+$/g, "");
-      break;
-    }
+  // Keep supporting the existing Infisical-backed deployment environment.
+  try {
+    const envOut = execSync(
+      "infisical export --projectId=6b21acb7-79c9-48bf-82e7-bf1a4dc9c031 --env=prod --format=dotenv",
+      { encoding: "utf8", stdio: ["ignore", "pipe", "ignore"] },
+    );
+    const line = envOut.split("\n").find((item) => item.trim().startsWith("CLOUDFLARE_API_TOKEN="));
+    return line?.trim().slice("CLOUDFLARE_API_TOKEN=".length).replace(/^["'\s]+|["'\s]+$/g, "") ?? "";
+  } catch {
+    return "";
   }
-} catch {
-  // Infisical not available
 }
 
-// 2. Fall back to process.env if Infisical did not provide a token
-if (!apiToken) {
-  apiToken = (process.env.CLOUDFLARE_API_TOKEN || "").replace(/^["'\s]+|["'\s]+$/g, "");
-}
-
-if (!apiToken) {
-  console.warn("⚠️ Warning: CLOUDFLARE_API_TOKEN not found. Skipping cache purge step.");
-  process.exit(0);
+const token = readToken();
+if (!token) {
+  console.error("Marketing cache purge blocked: CLOUDFLARE_API_TOKEN unavailable. Release not verified.");
+  process.exit(1);
 }
 
 try {
-  const res = await fetch(`https://api.cloudflare.com/client/v4/zones/${ZONE_ID}/purge_cache`, {
+  const response = await fetch("https://api.cloudflare.com/client/v4/zones/" + ZONE_ID + "/purge_cache", {
     method: "POST",
     headers: {
-      Authorization: `Bearer ${apiToken}`,
+      Authorization: "Bearer " + token,
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ purge_everything: true }),
+    body: JSON.stringify({ hosts: MARKETING_HOSTS }),
+    signal: AbortSignal.timeout(20000),
   });
-
-  const data = await res.json();
-  if (data.success) {
-    console.log("✓ Cloudflare edge cache purged successfully (purge_everything: true).");
-  } else {
-    console.warn("⚠️ Warning: Cloudflare cache purge failed:", data.errors);
+  const result = await response.json();
+  if (!response.ok || result?.success !== true) {
+    throw new Error("HTTP " + response.status + ": " + JSON.stringify(result?.errors ?? []).slice(0, 750));
   }
-} catch (err) {
-  console.warn("⚠️ Warning: Cloudflare cache purge request failed:", err.message);
+  console.log("Cloudflare accepted cache invalidation for marketing hosts: " + MARKETING_HOSTS.join(", "));
+} catch (error) {
+  console.error("Marketing-only cache purge failed; release verification must fail:", error.message);
+  process.exitCode = 1;
 }
