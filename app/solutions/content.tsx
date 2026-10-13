@@ -9,21 +9,24 @@ export function SolutionsContent() {
   const specialistSolutions = Object.entries(SOLUTION_DOMAINS).filter(([slug]) => !functionSlugs.has(slug));
   return (
     <>
-      <section className="relative overflow-hidden bg-[#F0F8FF] px-5 pb-24 pt-40 text-[#052858] sm:px-8 lg:pb-32 innovtech-reference-surface">
-        <div className="pointer-events-none absolute -right-20 -top-40 h-[550px] w-[550px] rounded-full bg-[#2F66C7]/25 blur-[100px]" aria-hidden />
+      <section className="relative overflow-hidden border-b border-[#D6E8F8] bg-gradient-to-b from-[#EBF5FE] via-[#F3F9FF] to-white px-5 pb-24 pt-36 text-[#052858] sm:px-8 lg:pb-32 innovtech-reference-surface">
+        <div className="pointer-events-none absolute -right-20 -top-40 h-[550px] w-[550px] rounded-full bg-[#2F66C7]/20 blur-[100px]" aria-hidden />
         <div className="relative mx-auto max-w-[1220px]">
-          <p className="text-xs font-semibold uppercase tracking-[.22em] text-[#4C5C73]">Solutions / Spine InnovTech</p>
-          <h1 className="mt-7 max-w-[1000px] text-[length:min(clamp(3.2rem,6vw,6.3rem),var(--marketing-title-size))] font-semibold leading-[1.06] tracking-[-.065em]">
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#BCD9F5] bg-white px-3.5 py-1 text-xs font-bold uppercase tracking-[.1em] text-[#006FE8] shadow-sm">
+            <span className="h-1.5 w-1.5 rounded-full bg-[#006FE8]" />
+            Solutions Catalogue · Spine InnovTech
+          </div>
+          <h1 className="mt-4 max-w-[1000px] text-[length:min(clamp(3.2rem,6vw,5.6rem),var(--marketing-title-size))] font-bold leading-[1.06] tracking-[-.055em] text-[#032D60]">
             One business context. <span className="text-[#0072E5]">Different work.</span>
           </h1>
-          <p className="mt-8 max-w-[790px] text-[length:min(18px,var(--marketing-body-size))] leading-[1.85] text-[#4C5C73]">
-            Finance, customer success, product and leadership need different perspectives, not disconnected versions of business truth. Explore how the same contextual workspace can support different responsibilities, goals and decisions.
+          <p className="mt-6 max-w-[790px] text-[length:min(18px,var(--marketing-body-size))] leading-[1.8] text-[#415570]">
+            Finance, customer success, product, and leadership need different perspectives, not disconnected versions of business truth. Explore how the same contextual workspace supports different responsibilities, goals, and decisions.
           </p>
           <div className="mt-9 flex flex-wrap gap-3">
-            <a href="/product" className="inline-flex min-h-12 items-center gap-2 rounded-full bg-[#B0CEFF] px-6 text-sm font-semibold text-[#102B51] transition hover:bg-white">
-              Explore SpineWorkspace <ArrowUpRight className="h-4 w-4" aria-hidden />
-            </a>
-            <Link href="/contact" className="inline-flex min-h-12 items-center gap-2 rounded-full border border-[#006FE8] bg-white px-6 text-sm font-semibold text-[#082B5E] transition hover:bg-[#EBF7FF]">
+            <Link href="/product" className="inline-flex min-h-12 items-center gap-2 rounded-xl bg-[#006FE8] px-6 text-sm font-semibold text-white shadow-[0_4px_14px_rgba(0,111,232,0.25)] transition hover:bg-[#0055B8]">
+              Explore SpineWorkspace <ArrowRight className="h-4 w-4" aria-hidden />
+            </Link>
+            <Link href="/contact" className="inline-flex min-h-12 items-center gap-2 rounded-xl border border-[#C2D8EE] bg-white px-6 text-sm font-semibold text-[#082B5E] shadow-sm transition hover:bg-[#F3F9FF]">
               Discuss your use case <ArrowRight className="h-4 w-4" aria-hidden />
             </Link>
           </div>

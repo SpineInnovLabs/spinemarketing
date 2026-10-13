@@ -6,6 +6,7 @@ import { FinalCTA } from "@/components/final-cta"
 import { TheAdaptiveWorkspaceContent } from "./content"
 import { WorkspaceGather } from "./sticky-sections"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
+import { WorkbenchViewExplorer } from "@/components/marketing/workbench-view-explorer"
 
 export const metadata: Metadata = {
   title: "The Adaptive Workspace | Spine InnovTech",
@@ -30,6 +31,7 @@ export default function TheAdaptiveWorkspacePage() {
       <Header />
       <main id="main">
         <TheAdaptiveWorkspaceContent />
+        <WorkbenchViewExplorer initialDomain="account-success" />
         <WorkspaceGather />
         <FinalCTA />
       </main>
