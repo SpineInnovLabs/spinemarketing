@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { WorkspaceBenefits } from "./workspace-benefits";
+import { WorkbenchViewExplorer } from "./workbench-view-explorer";
 
 const approach = [
   [
@@ -185,25 +186,41 @@ export function InnovLabsHome() {
               Connected systems. Shared context. Governed intelligence.
             </p>
           </div>
-          <figure className="mx-auto w-full max-w-[640px]">
-            <Image
-              src="/images/corporate-context-flow.webp"
-              alt="Source documents, databases and work records connect to shared business context, then to a person and AI, an approval gate, and a verified outcome."
-              width={1315}
-              height={1196}
-              sizes="(min-width: 1320px) 568px, (min-width: 1024px) 46vw, (min-width: 640px) 640px, calc(100vw - 40px)"
-              priority
-              className="h-auto w-full rounded-2xl"
-            />
-            <figcaption className="mt-4 text-[12px] leading-6 text-[#4E607A]">
-              Concept illustration. Source systems remain authoritative;
-              consequential work requires authorization and verification.
+          <figure className="mx-auto w-full max-w-[680px]">
+            <div className="overflow-hidden rounded-2xl border border-[#CCE3F5] bg-white shadow-[0_20px_60px_rgba(15,70,130,.12)]">
+              <div className="flex items-center justify-between border-b border-[#E2EEF8] bg-[#F7FAFD] px-4 py-2.5 text-xs">
+                <div className="flex items-center gap-1.5">
+                  <span className="h-2.5 w-2.5 rounded-full bg-[#FF5F56]" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-[#FFBD2E]" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-[#27C93F]" />
+                  <span className="ml-2 font-mono text-[11px] font-semibold text-[#5A7391]">
+                    /workspace/home
+                  </span>
+                </div>
+                <span className="rounded-full border border-[#CCE3F5] bg-[#EBF5FF] px-2 py-0.5 text-[10px] font-semibold text-[#006FE8]">
+                  Authentic Workbench
+                </span>
+              </div>
+              <Image
+                src="/images/workbench/common/home.webp"
+                alt="Authentic Spine Workspace Workbench showing canonical shell navigation, unified search bar, and contextual Spine Twin panel."
+                width={1440}
+                height={900}
+                sizes="(min-width: 1320px) 680px, (min-width: 1024px) 48vw, (min-width: 640px) 640px, calc(100vw - 40px)"
+                priority
+                className="h-auto w-full"
+              />
+            </div>
+            <figcaption className="mt-3 text-[12px] leading-6 text-[#4E607A]">
+              Authentic Spine Workspace Workbench. Governed business context with canonical shell navigation, human-in-the-loop controls, and contextual Twin assistance.
             </figcaption>
           </figure>
         </div>
       </section>
 
       <WorkspaceBenefits />
+
+      <WorkbenchViewExplorer initialDomain="founderops" />
 
       <section
         id="why-we-exist"

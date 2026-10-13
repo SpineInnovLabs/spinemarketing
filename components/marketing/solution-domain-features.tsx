@@ -22,10 +22,15 @@ export function SolutionDomainFeatures({ slug }: { slug: string }) {
     "business-ops": "operations",
     services: "service",
     support: "support",
+    "customer-support": "support",
     "product-engineering": "productengineering",
     individual: "personal",
     "human-resources": "humanresources",
     legal: "legal",
+    memoryandknowledge: "knowledge-management",
+    campaigns: "campaigns",
+    "business-intelligence": "business-intelligence",
+    "book-of-records": "book-of-records",
   };
   const workbenchId = associatedWorkbench[slug];
   return (
