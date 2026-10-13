@@ -23,7 +23,8 @@
     "verify:artifact": "node scripts/verify-static-artifact.mjs && node scripts/verify-corporate-coverage.mjs",
     "verify:live": "node scripts/verify-live-site.mjs",
     "build:cloudflare": "npm run lint && npm run audit:site && npm run check:cloudflare && npm run typecheck && npm run build && npm run verify:artifact",
-    "deploy:cloudflare": "npm run verify:artifact && wrangler deploy --env prod && npm run verify:live"
+    "deploy:cloudflare": "npm run verify:artifact && wrangler deploy --env prod && npm run verify:live",
+    "test:edge": "tsx --test scripts/test-edge-response.ts"
   },
   "dependencies": {
     "@portabletext/react": "^8.0.1",
