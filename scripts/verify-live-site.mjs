@@ -1,27 +1,72 @@
 /**
- * Post-Wrangler production acceptance. Fails when CDN/Worker still serves the
- * previous release. This check runs on Cloudflare Builds after deployment.
+ * Production acceptance from an ordinary visitor's perspective.
+ * No cache-busting parameter and no no-cache request headers: those can mask
+ * stale content that Cloudflare still serves at the canonical URL.
  */
 const origin = "https://spineinnovtech.spineworkspace.com";
 const retries = Number(process.env.SPINE_DEPLOY_VERIFY_ATTEMPTS || 8);
-let last = "no response";
-for (let attempt = 1; attempt <= retries; attempt++) {
-  try {
-    const url = new URL(origin);
-    url.searchParams.set("_release_check", String(Date.now()));
-    const response = await fetch(url, { headers: { "Cache-Control": "no-cache" }, redirect: "follow", signal: AbortSignal.timeout(20000) });
-    const html = await response.text();
-    if (response.ok && new URL(response.url).hostname === new URL(origin).hostname &&
-        html.includes("Building the intelligence behind") && html.includes("Spine InnovTech") &&
-        !html.includes("Good morning, Operator")) {
-      console.log(`Cloudflare production verified: ${origin} (HTTP ${response.status})`);
-      process.exit(0);
+const checks = [
+  {
+    path: "/",
+    verify: (body) => body.includes("Building the intelligence behind") && body.includes("Spine InnovTech") && !body.includes("Good morning, Operator"),
+  },
+  {
+    path: "/contact",
+    verify: (body) => body.includes("Common questions") && body.includes("How do I get pricing?") && body.includes("Do I need to replace my current tools?"),
+  },
+  {
+    path: "/docs",
+    verify: (body) => body.includes("Spine InnovTech Documentation") && !body.includes("Spine Innov Labs"),
+  },
+  {
+    path: "/llms.txt",
+    verify: (body) => body.includes("# Spine InnovTech") && body.includes("Canonical Domain: " + origin),
+  },
+  {
+    path: "/sitemap.xml",
+    verify: (body) => body.includes(origin) && !body.includes("spineinnovlabs.spineworkspace.com"),
+  },
+];
+
+async function inspect() {
+  const failures = [];
+  for (const { path, verify } of checks) {
+    try {
+      const response = await fetch(origin + path, {
+        redirect: "follow",
+        signal: AbortSignal.timeout(20000),
+      });
+      const body = await response.text();
+      if (!response.ok || new URL(response.url).hostname !== new URL(origin).hostname || !verify(body)) {
+        failures.push(path + ": HTTP " + response.status + "; latest content not verified");
+      }
+    } catch (error) {
+      failures.push(path + ": " + error.message);
     }
-    last = `HTTP ${response.status}; final host ${new URL(response.url).hostname}; corporate hero ${html.includes("Building the intelligence behind")}`;
-  } catch (error) {
-    last = String(error);
   }
-  if (attempt < retries) await new Promise(resolve => setTimeout(resolve, 7000));
+  try {
+    const legacy = await fetch("https://spineinnovlabs.spineworkspace.com/pricing?release_check=1", {
+      redirect: "manual",
+      signal: AbortSignal.timeout(20000),
+    });
+    if (legacy.status !== 301 || legacy.headers.get("location") !== origin + "/pricing?release_check=1") {
+      failures.push("/pricing legacy redirect: HTTP " + legacy.status + ", unexpected Location");
+    }
+  } catch (error) {
+    failures.push("/pricing legacy redirect: " + error.message);
+  }
+  return failures;
 }
-console.error("Cloudflare deploy completed but live corporate homepage verification failed:", last);
+
+let failures = [];
+for (let attempt = 1; attempt <= retries; attempt++) {
+  failures = await inspect();
+  if (!failures.length) {
+    console.log("Cloudflare marketing release verified at ordinary visitor URLs (5 pages + legacy redirect): " + origin);
+    process.exit(0);
+  }
+  if (attempt < retries) await new Promise((resolve) => setTimeout(resolve, 7000));
+}
+console.error("Marketing deploy completed, but normal visitor release verification failed:");
+for (const failure of failures) console.error(" - " + failure);
 process.exitCode = 1;
