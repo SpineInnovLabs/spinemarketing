@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
+import { ResponsiveWorkbenchScreenshot } from "./responsive-workbench-screenshot";
 import { WorkspaceAuthActions } from "./workspace-auth-actions";
 import { WorkspaceBenefits } from "./workspace-benefits";
 import { WorkspaceSubscriptionValue } from "./workspace-subscription-value";
@@ -146,13 +146,10 @@ export function SpineWorkspaceDetails() {
                 Authentic Workbench
               </span>
             </div>
-            <Image
+            <ResponsiveWorkbenchScreenshot
               src="/images/workbench/common/home.webp"
               alt="Authentic Spine Workspace Workbench showing canonical shell navigation, unified search bar, and contextual Spine Twin panel."
-              width={1440}
-              height={900}
               priority
-              className="h-auto w-full"
             />
           </div>
           <figcaption>

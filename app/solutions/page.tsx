@@ -38,10 +38,10 @@ export default function SolutionsPage() {
         </section>
         <StatsBar
           stats={[
-            { value: 6, suffix: "", label: "Industries served" },
-            { value: 6, suffix: "", label: "Roles supported" },
-            { value: 3, suffix: "", label: "Function workspaces" },
-            { value: 1, suffix: "", label: "Unified Spine" },
+            { value: 13, suffix: "", label: "Business domains" },
+            { value: 151, suffix: "", label: "Workbench views" },
+            { value: 65, suffix: "", label: "Connector configurations" },
+            { value: 1, suffix: "", label: "Unified workspace" },
           ]}
         />
         <BenefitsGrid

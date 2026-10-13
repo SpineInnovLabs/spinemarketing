@@ -17,30 +17,32 @@ const fade = (delay = 0) => ({
 
 const contactFAQs = [
   {
-    question: "What can I contact Spine InnovTech about?",
-    answer: "Company partnerships, enterprise integrations, business-context architecture, responsible AI design and questions about our flagship product, SpineWorkspace.",
+    question: "How do I get pricing?",
+    answer: "Submit a request through our contact form with your expected team size, connectors, and deployment requirements. We provide a transparent written commercial quote tailored to your environment, including workspace seats, connector limits, and dedicated onboarding support.",
   },
   {
-    question: "Do we need to replace our existing tools?",
-    answer: "Our architecture is designed to work around existing systems of record. Whether an integration is possible depends on each provider's supported interfaces, permissions and your organisation's requirements.",
+    question: "Is my data safe with SpineWorkspace?",
+    answer: "Yes. SpineWorkspace enforces strict tenant isolation, encrypted connector credential storage, and role-based access control. In accordance with our privacy policy, customer business data and connector context are never used to train generalized foundation models.",
   },
   {
-    question: "Does discovering an AI capability authorize its use?",
-    answer: "No. Discovery shows what is available; use of a capability requires the appropriate permissions, policy and approval before consequential execution.",
-  },
-  {
-    question: "Can you guarantee a project timeline?",
-    answer: "Not before understanding the project. Scope and timing depend on the connected systems, data availability, security constraints, review process and acceptance criteria.",
-  },
-  {
-    question: "Where can I review your approach to security?",
+    question: "Which tools do you connect?",
     answer: (
       <span>
-        We describe our architecture and principles on the{" "}
-        <Link href="/security" className="text-[#225FAB] underline underline-offset-2">security page</Link>.
-        Specific controls and contractual commitments should be validated for each deployment.
+        SpineWorkspace connects across CRM, ERP, project management, code repositories, communication, and document systems—spanning over 65 connector configurations. Explore our{" "}
+        <Link href="/platform/integrations" className="text-[#0176D3] underline underline-offset-2 hover:text-[#0B5CAB]">
+          integrations catalog
+        </Link>
+        . Source systems of record remain fully authoritative, with Spine maintaining unified read context and bi-directional coordination.
       </span>
     ),
+  },
+  {
+    question: "Do I need to replace my current tools?",
+    answer: "No. SpineWorkspace is designed around a read-and-propose architecture that complements your existing systems of record. The tools you already use keep the primary record; Spine Twin analyzes context and prepares proposed actions, but any consequential changes require explicit human approval before write-back.",
+  },
+  {
+    question: "How long does setup take?",
+    answer: "Initial configuration typically takes a few hours to connect your tools via secure OAuth, map core business entities, and establish governance boundaries—mirroring the onboarding steps below. Your team can conduct their first operational context review shortly after connectors are authenticated.",
   },
 ];
 
@@ -75,23 +77,23 @@ export function ContactContent({
 }) {
   return (
     <>
-      <section className="border-b border-[#E5E5E5] bg-white pt-[120px] pb-16">
+      <section className="relative overflow-hidden border-b border-[#D6E8F8] bg-gradient-to-b from-[#F3F8FD] via-[#FAFCFE] to-white pt-[130px] pb-20">
         <div className="relative mx-auto max-w-[900px] px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ type: "spring", damping: 16, stiffness: 52, delay: 0.1 }}
-            className="mb-6 inline-flex items-center gap-2 rounded-md border border-[#E5E5E5] bg-[#F3F6F9] px-3 py-1 text-[12px] font-semibold uppercase tracking-[0.06em] text-[#032D60]"
+            className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#BCD9F5] bg-white px-3.5 py-1 text-[12px] font-bold uppercase tracking-[0.08em] text-[#006FE8] shadow-sm"
           >
-            <span className="h-1.5 w-1.5 rounded-full bg-[#0176D3]" />
-            Contact
+            <span className="h-1.5 w-1.5 rounded-full bg-[#006FE8]" />
+            Corporate Contact & Inquiry
           </motion.div>
 
           <motion.h1
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ type: "spring", damping: 16, stiffness: 52, delay: 0.2 }}
-            className="text-[length:min(40px,var(--marketing-title-size))] font-semibold leading-[1.1] tracking-[-0.03em] text-[#032D60] sm:text-[length:min(48px,var(--marketing-title-size))]"
+            className="text-[length:min(44px,var(--marketing-title-size))] font-bold leading-[1.08] tracking-[-0.035em] text-[#032D60] sm:text-[length:min(52px,var(--marketing-title-size))]"
           >
             Talk to <span className="text-[#0176D3]">Spine InnovTech.</span>
           </motion.h1>
@@ -100,7 +102,7 @@ export function ContactContent({
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ type: "spring", damping: 16, stiffness: 52, delay: 0.35 }}
-            className="mx-auto mt-5 max-w-2xl text-[length:min(17px,var(--marketing-body-size))] leading-[1.6] text-[#444]"
+            className="mx-auto mt-5 max-w-2xl text-[length:min(18px,var(--marketing-body-size))] leading-[1.65] text-[#3E5168]"
           >
             Whether you want a demo, have a question, or want to explore how
             SpineWorkspace fits your existing environment — we&apos;re here.

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { ResponsiveWorkbenchScreenshot } from "./responsive-workbench-screenshot";
 import { WorkspaceBenefits } from "./workspace-benefits";
 import { WorkbenchViewExplorer } from "./workbench-view-explorer";
 
@@ -148,9 +149,9 @@ function TextLink({
 export function InnovLabsHome() {
   return (
     <div className="bg-white text-[#082B5E]">
-      <section aria-labelledby="company-title" className="bg-[#F0F8FF]">
+      <section aria-labelledby="company-title" className="relative overflow-hidden border-b border-[#D6E8F8] bg-gradient-to-b from-[#EBF5FE] via-[#F4FAFF] to-white">
         <div
-          className={`${container} grid items-center gap-12 py-16 sm:py-20 lg:min-h-[740px] lg:grid-cols-[1.04fr_.96fr] lg:gap-10`}
+          className={`${container} grid items-center gap-12 py-16 sm:py-24 lg:min-h-[760px] lg:grid-cols-[1.04fr_.96fr] lg:gap-12`}
         >
           <div>
             <SectionLabel>
@@ -158,7 +159,7 @@ export function InnovLabsHome() {
             </SectionLabel>
             <h1
               id="company-title"
-              className="mt-6 max-w-[700px] text-[length:min(clamp(2.65rem,4.8vw,4.8rem),var(--marketing-title-size))] font-semibold leading-[1.08] tracking-[-.05em]"
+              className="mt-6 max-w-[700px] text-[length:min(clamp(2.75rem,5.2vw,4.85rem),var(--marketing-title-size))] font-bold leading-[1.06] tracking-[-.05em] text-[#032D60]"
             >
               Building the intelligence behind{" "}
               <span className="text-[#006FE8]">connected business.</span>
@@ -174,7 +175,7 @@ export function InnovLabsHome() {
               work, and act with clarity and accountability.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/product" className={button}>
+              <Link href="/product" className={`${button} shadow-[0_4px_14px_rgba(0,111,232,0.25)] hover:shadow-[0_6px_20px_rgba(0,111,232,0.35)]`}>
                 Discover SpineWorkspace{" "}
                 <ArrowRight className="h-4 w-4" aria-hidden />
               </Link>
@@ -187,7 +188,7 @@ export function InnovLabsHome() {
             </p>
           </div>
           <figure className="mx-auto w-full max-w-[680px]">
-            <div className="overflow-hidden rounded-2xl border border-[#CCE3F5] bg-white shadow-[0_20px_60px_rgba(15,70,130,.12)]">
+            <div className="overflow-hidden rounded-2xl border border-[#CCE3F5] bg-white shadow-[0_22px_70px_rgba(15,70,130,.14)]">
               <div className="flex items-center justify-between border-b border-[#E2EEF8] bg-[#F7FAFD] px-4 py-2.5 text-xs">
                 <div className="flex items-center gap-1.5">
                   <span className="h-2.5 w-2.5 rounded-full bg-[#FF5F56]" />
@@ -201,14 +202,10 @@ export function InnovLabsHome() {
                   Authentic Workbench
                 </span>
               </div>
-              <Image
+              <ResponsiveWorkbenchScreenshot
                 src="/images/workbench/common/home.webp"
                 alt="Authentic Spine Workspace Workbench showing canonical shell navigation, unified search bar, and contextual Spine Twin panel."
-                width={1440}
-                height={900}
-                sizes="(min-width: 1320px) 680px, (min-width: 1024px) 48vw, (min-width: 640px) 640px, calc(100vw - 40px)"
                 priority
-                className="h-auto w-full"
               />
             </div>
             <figcaption className="mt-3 text-[12px] leading-6 text-[#4E607A]">

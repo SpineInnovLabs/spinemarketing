@@ -39,9 +39,9 @@
         }
       ],
       "vars": {
-        "CANONICAL_REDIRECTS_ENABLED": "false",
-        "CANONICAL_SITE_URL": "https://spineinnovlabs.com",
-        "LEGACY_REDIRECT_HOSTS": "spineinnovlabs.spineworkspace.com,spineinnovtech.spineworkspace.com,www.spineinnovlabs.com"
+        "CANONICAL_REDIRECTS_ENABLED": "true",
+        "CANONICAL_SITE_URL": "https://spineinnovtech.spineworkspace.com",
+        "LEGACY_REDIRECT_HOSTS": "spineinnovlabs.spineworkspace.com,www.spineinnovlabs.com,spineinnovlabs.com"
       }
     }
   }

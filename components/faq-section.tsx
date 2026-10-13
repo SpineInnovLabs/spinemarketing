@@ -1,12 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 
 interface FAQItem {
   question: string;
@@ -82,20 +76,18 @@ export function FAQSection({ heading, subheading, items }: FAQSectionProps) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ type: "spring", damping: 18, stiffness: 70, delay: 0.1 }}
-          className="rounded-md border border-[#E5E5E5] bg-white px-2"
+          className="divide-y divide-[#E5E5E5] rounded-lg border border-[#E5E5E5] bg-white shadow-[0_1px_3px_rgba(0,0,0,0.05)]"
         >
-          <Accordion type="single" collapsible className="w-full">
-            {items.map((item, i) => (
-              <AccordionItem key={i} value={`item-${i}`} className="border-[#E5E5E5] px-4">
-                <AccordionTrigger className="text-left text-[15px] font-semibold text-[#032D60] hover:text-[#0176D3] hover:no-underline">
-                  {item.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-[14px] leading-relaxed text-[#444]">
-                  {item.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+          {items.map((item, i) => (
+            <article key={i} className="p-6">
+              <h3 className="text-[16px] font-semibold tracking-[-0.02em] text-[#032D60]">
+                {item.question}
+              </h3>
+              <div className="mt-2.5 text-[14px] leading-[1.65] text-[#444]">
+                {item.answer}
+              </div>
+            </article>
+          ))}
         </motion.div>
       </div>
     </section>

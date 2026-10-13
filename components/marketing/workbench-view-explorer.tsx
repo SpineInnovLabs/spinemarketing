@@ -2,7 +2,7 @@
 
 import { useId, useMemo, useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import { ResponsiveWorkbenchScreenshot } from "@/components/marketing/responsive-workbench-screenshot";
 import {
   ArrowRight,
   LayoutDashboard,
@@ -170,6 +170,29 @@ export function WorkbenchViewExplorer({
           </div>
         </div>
 
+        {/* Quick Domain Selector Chips (Touch & Keyboard accessible) */}
+        <div className="mt-5 flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none" role="navigation" aria-label="Workbench Domain Quick Selection">
+          {PUBLIC_WORKBENCH_DOMAINS.map((item) => (
+            <button
+              key={item.id}
+              type="button"
+              onClick={() => {
+                setSelected(item.id);
+                setSelectedViewKey("primary");
+                setIsMobileView(false);
+                setShowAll(false);
+              }}
+              className={`whitespace-nowrap rounded-lg px-3.5 py-1.5 text-xs font-semibold transition-all ${
+                selected === item.id
+                  ? "bg-[#006FE8] text-white shadow-sm"
+                  : "border border-[#CCE3F5] bg-white text-[#335377] hover:bg-[#EBF5FF] hover:text-[#082B5E]"
+              }`}
+            >
+              {item.title}
+            </button>
+          ))}
+        </div>
+
         {/* View Switcher: Interactive Screenshots vs Extracted Inventory */}
         <div className="mt-8 flex flex-wrap items-center justify-between gap-4 border-b border-[#D6E8F8] pb-4">
           <div className="flex items-center gap-2" role="tablist" aria-label="Workbench Explorer Tabs">
@@ -300,29 +323,12 @@ export function WorkbenchViewExplorer({
 
                   {/* Image Container */}
                   <div className="relative flex justify-center bg-[#F1F6FB] p-2 sm:p-4 lg:p-6">
-                    {isMobileView && currentScreenshot.mobile ? (
-                      <div className="relative mx-auto max-w-[390px] overflow-hidden rounded-[2.5rem] border-[8px] border-[#1A2E46] shadow-2xl">
-                        <Image
-                          src={currentScreenshot.mobile}
-                          alt={currentScreenshot.alt}
-                          width={390}
-                          height={844}
-                          className="h-auto w-full object-cover"
-                          priority
-                        />
-                      </div>
-                    ) : (
-                      <div className="relative w-full overflow-hidden rounded-xl border border-[#D5E5F5] bg-white shadow-sm">
-                        <Image
-                          src={currentScreenshot.desktop}
-                          alt={currentScreenshot.alt}
-                          width={1440}
-                          height={900}
-                          className="h-auto w-full object-cover"
-                          priority
-                        />
-                      </div>
-                    )}
+                    <ResponsiveWorkbenchScreenshot
+                      src={isMobileView && currentScreenshot.mobile ? currentScreenshot.mobile : currentScreenshot.desktop}
+                      alt={currentScreenshot.alt}
+                      isMobile={isMobileView && Boolean(currentScreenshot.mobile)}
+                      priority
+                    />
                   </div>
 
                   {/* Image Footer with Real Route Provenance */}
