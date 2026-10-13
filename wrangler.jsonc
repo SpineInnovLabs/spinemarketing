@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
-  "account_id": "a1bbbb12a32cdbb68dd170b09fe8b5f3",
+  "account_id": "3b815e3cd31a7ce892c2c65ea8873387",
   "name": "spineinnovlabs-marketing",
   "main": "worker/index.ts",
   "compatibility_date": "2026-10-03",
