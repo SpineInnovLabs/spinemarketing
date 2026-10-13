@@ -1,5 +1,4 @@
 # Cloudflare asset redirects take precedence over exported static pages.
-/docs https://docs.spineworkspace.com/ 301
 /platform/the-adaptive-spine /platform/spine-fabric 301
 /ai /twin 301
 /why /about 301

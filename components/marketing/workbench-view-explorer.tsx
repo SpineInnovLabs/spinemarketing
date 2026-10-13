@@ -363,7 +363,7 @@ export function WorkbenchViewExplorer({
                     </div>
 
                     {/* Image Container */}
-                    <div className="relative flex flex-1 items-center justify-center bg-[#F1F6FB] p-2 sm:p-4">
+                    <div className="relative flex flex-1 items-center justify-center bg-white p-2 sm:p-4">
                       <ResponsiveWorkbenchScreenshot
                         src={isMobileView && currentScreenshot.mobile ? currentScreenshot.mobile : currentScreenshot.desktop}
                         alt={currentScreenshot.alt}
@@ -397,7 +397,7 @@ export function WorkbenchViewExplorer({
                   {/* BENTO RIGHT STACK: 01 & 02 alongside Hero Screenshot */}
                   <div className="flex flex-col gap-5">
                     {/* BENTO CELL 2: What users see */}
-                    <article className="flex flex-1 flex-col justify-between rounded-2xl border border-[#CCE3F5] bg-gradient-to-br from-white to-[#F8FBFE] p-5 shadow-sm transition-all hover:border-[#96C7F2] hover:shadow-md">
+                    <article className="flex flex-1 flex-col justify-between rounded-2xl border border-[#CCE3F5] bg-white p-5 shadow-sm transition-all hover:border-[#96C7F2] hover:shadow-md">
                       <div>
                         <div className="flex items-center justify-between">
                           <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-[#EBF5FF] text-xs font-bold text-[#006FE8]">
@@ -421,7 +421,7 @@ export function WorkbenchViewExplorer({
                     </article>
 
                     {/* BENTO CELL 3: What they can do */}
-                    <article className="flex flex-1 flex-col justify-between rounded-2xl border border-[#CCE3F5] bg-gradient-to-br from-white to-[#F8FBFE] p-5 shadow-sm transition-all hover:border-[#96C7F2] hover:shadow-md">
+                    <article className="flex flex-1 flex-col justify-between rounded-2xl border border-[#CCE3F5] bg-white p-5 shadow-sm transition-all hover:border-[#96C7F2] hover:shadow-md">
                       <div>
                         <div className="flex items-center justify-between">
                           <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-[#EBF5FF] text-xs font-bold text-[#006FE8]">

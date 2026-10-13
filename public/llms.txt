@@ -6,6 +6,7 @@ Canonical Domain: https://spineinnovtech.spineworkspace.com
 Documentation Index: https://spineinnovtech.spineworkspace.com/llms.txt
 
 ## Platform Architecture & Technical Documentation
+- [Documentation Hub](https://spineinnovtech.spineworkspace.com/docs): Technical documentation hub, architecture specifications, and API reference.
 - [Platform Architecture](https://spineinnovtech.spineworkspace.com/platform): Overview of the Spine platform, twin architecture, and contextual continuity layer.
 - [Spine Fabric](https://spineinnovtech.spineworkspace.com/platform/spine-fabric): Contextual continuity layer connecting source systems without data duplication.
 - [How It Works](https://spineinnovtech.spineworkspace.com/platform/how-it-works): Deterministic ingestion, entity resolution, and governance boundaries.

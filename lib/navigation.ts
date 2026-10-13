@@ -12,7 +12,7 @@ export type NavItem = {
   connectorMarks?: ConnectorNavMark[]; kindMarks?: KindNavMark[]; external?: boolean;
 };
 
-export const DOCS_URL = "https://docs.spineworkspace.com/";
+export const DOCS_URL = "/docs";
 
 export const headerNavigation: NavItem[] = [
   {
@@ -67,7 +67,7 @@ export const headerNavigation: NavItem[] = [
     { name: "Developer overview", href: "/developers", icon: Code2, desc: "Architecture and integration concepts" },
     { name: "Integrations", href: "/integrations", icon: Workflow, desc: "Connected tools and capabilities" },
     { name: "Host connected environments", href: "/host-connected-environment", icon: Network, desc: "Working with compatible AI hosts" },
-    { name: "Documentation", href: DOCS_URL, icon: BookOpen, desc: "Published technical documentation", external: true },
+    { name: "Documentation", href: DOCS_URL, icon: BookOpen, desc: "Published technical documentation" },
   ] },
   { label: "Pricing", href: "/pricing" },
 ];
@@ -94,7 +94,7 @@ export const footerColumns: FooterColumn[] = [
   ] },
   { heading: "Trust & legal", links: [
     { name: "Security", href: "/security" }, { name: "Privacy", href: "/privacy" },
-    { name: "Terms", href: "/terms" }, { name: "Documentation", href: DOCS_URL, external: true },
+    { name: "Terms", href: "/terms" }, { name: "Documentation", href: DOCS_URL },
   ] },
 ];
 

@@ -5,7 +5,6 @@
     "cleanUrls": true,
     "trailingSlash": false,
     "redirects": [
-      { "source": "/docs", "destination": "https://docs.spineworkspace.com/", "type": 301 },
       { "source": "/platform/the-adaptive-spine", "destination": "/platform/spine-fabric", "type": 301 },
       { "source": "/ai", "destination": "/twin", "type": 301 },
       { "source": "/why", "destination": "/about", "type": 301 },

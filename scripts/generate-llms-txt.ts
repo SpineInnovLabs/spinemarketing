@@ -10,6 +10,7 @@ Canonical Domain: ${absoluteUrl("/")}
 Documentation Index: ${absoluteUrl("/llms.txt")}
 
 ## Platform Architecture & Technical Documentation
+- [Documentation Hub](${absoluteUrl("/docs")}): Technical documentation hub, architecture specifications, and API reference.
 - [Platform Architecture](${absoluteUrl("/platform")}): Overview of the Spine platform, twin architecture, and contextual continuity layer.
 - [Spine Fabric](${absoluteUrl("/platform/spine-fabric")}): Contextual continuity layer connecting source systems without data duplication.
 - [How It Works](${absoluteUrl("/platform/how-it-works")}): Deterministic ingestion, entity resolution, and governance boundaries.

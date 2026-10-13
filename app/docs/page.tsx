@@ -1,13 +1,312 @@
-import type { Metadata } from "next";
-import { RedirectPage } from "@/components/redirect-page";
-import { DOCS_URL } from "@/lib/navigation";
+import Link from "next/link";
+import { createPageMetadata, breadcrumb } from "@/lib/page-metadata";
+import { MarketingPageShell } from "@/components/marketing/marketing-page-shell";
+import {
+  BookOpen,
+  Code2,
+  FileCode2,
+  Layers3,
+  Network,
+  ShieldCheck,
+  Workflow,
+  Sparkles,
+  ArrowRight,
+  ExternalLink,
+  CheckCircle2,
+  Lock,
+  Cpu,
+  Terminal,
+} from "lucide-react";
 
-export const metadata: Metadata = {
-  title: "Documentation | Spine InnovTech",
-  description: "SpineWorkspace documentation.",
-  alternates: { canonical: "/docs" },
-};
+export const metadata = createPageMetadata({
+  title: "Documentation | Technical Reference & Architecture",
+  description:
+    "Comprehensive documentation for Spine InnovTech and SpineWorkspace: architecture, Spine Fabric, governed runtime, connectors, and machine-readable llms.txt index.",
+  path: "/docs",
+});
+
+const DOC_SECTIONS = [
+  {
+    title: "Platform Architecture & Fabric",
+    description: "Core distributed topology, business context engine, and deterministic entity resolution.",
+    icon: Network,
+    badge: "Architecture",
+    docs: [
+      {
+        title: "Spine Fabric Context Engine",
+        href: "/platform/spine-fabric",
+        desc: "Contextual continuity layer binding disparate business entities without data replication.",
+      },
+      {
+        title: "Deterministic Ingestion & How It Works",
+        href: "/platform/how-it-works",
+        desc: "Pipeline specifications from raw source event to reconciled business entity state.",
+      },
+      {
+        title: "Platform Architecture Overview",
+        href: "/platform",
+        desc: "High-level system topology, twin runtime interaction, and decoupled data models.",
+      },
+      {
+        title: "Cloud Infrastructure & Isolation",
+        href: "/platform/infrastructure",
+        desc: "Tenant isolation, edge routing, compute boundaries, and failover mechanics.",
+      },
+    ],
+  },
+  {
+    title: "Governed Runtime & Security",
+    description: "Access control policies, action gateway verification, and audit trail guarantees.",
+    icon: ShieldCheck,
+    badge: "Trust & Governance",
+    docs: [
+      {
+        title: "Governed Runtime & Reconciliation",
+        href: "/governance",
+        desc: "Read-and-propose operational model with strict verification before write execution.",
+      },
+      {
+        title: "Approval Gate Twin Queues",
+        href: "/product/approval-gate-twin",
+        desc: "Human-in-the-loop operational review workflows and reversible transaction gates.",
+      },
+      {
+        title: "Security & Encryption Architecture",
+        href: "/security",
+        desc: "Data-in-flight and data-at-rest encryption, tenant boundaries, and audit logging.",
+      },
+      {
+        title: "Business Context Integrity",
+        href: "/business-context",
+        desc: "Maintaining durable cryptographic context trails across SaaS and ERP boundaries.",
+      },
+    ],
+  },
+  {
+    title: "Adaptive Workbenches & AI Twin",
+    description: "Domain-specific projections and context-aware intelligence running inside policy bounds.",
+    icon: Layers3,
+    badge: "Runtime Workbenches",
+    docs: [
+      {
+        title: "The Adaptive Workspace",
+        href: "/product/the-adaptive-workspace",
+        desc: "13 domain projections adapting visually and functionally to operational roles.",
+      },
+      {
+        title: "Spine Twin Operating Principles",
+        href: "/twin",
+        desc: "AI assistant constrained to authorized entity contexts with zero hallucinated writes.",
+      },
+      {
+        title: "Multi-Session Task Continuity",
+        href: "/continuity",
+        desc: "Durable cross-session state persistence for complex long-running operations.",
+      },
+      {
+        title: "SpineWorkspace Product Details",
+        href: "/product",
+        desc: "Flagship unified workspace environment for cross-functional operators and AI.",
+      },
+    ],
+  },
+  {
+    title: "Integrations & Developer Protocol",
+    description: "Connecting external systems of record, MCP endpoints, and bespoke AI environments.",
+    icon: Code2,
+    badge: "Extensibility",
+    docs: [
+      {
+        title: "Connected Capabilities & 65+ Connectors",
+        href: "/integrations",
+        desc: "Pre-built connector specifications for ERP, CRM, code repositories, and messaging.",
+      },
+      {
+        title: "Developer Overview & API Access",
+        href: "/developers",
+        desc: "Model Context Protocol (MCP) server endpoints, developer guides, and auth keys.",
+      },
+      {
+        title: "Host-Connected Environments",
+        href: "/host-connected-environment",
+        desc: "Deploying Spine context natively inside enterprise AI hosts and private clusters.",
+      },
+      {
+        title: "Release Notes & Changelog",
+        href: "/changelog",
+        desc: "Detailed dated technical history of platform additions, schema updates, and fixes.",
+      },
+    ],
+  },
+];
 
 export default function DocsPage() {
-  return <RedirectPage to={DOCS_URL} />;
+  const breadcrumbs = breadcrumb("/docs", "Documentation");
+
+  return (
+    <MarketingPageShell breadcrumbs={breadcrumbs}>
+      {/* Hero Section */}
+      <section className="relative overflow-hidden border-b border-[#D6E8F8] bg-gradient-to-b from-[#F5F9FD] via-[#FAFCFF] to-white pt-24 pb-14 sm:pt-28 sm:pb-16 lg:pt-32 lg:pb-20">
+        <div className="mx-auto max-w-6xl px-5 sm:px-8">
+          <div className="inline-flex items-center gap-2 rounded-full border border-[#BCD9F5] bg-[#EAF4FF] px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[#006FE8] shadow-xs">
+            <BookOpen className="h-3.5 w-3.5" />
+            <span>Technical Documentation Hub</span>
+          </div>
+
+          <h1 className="mt-4 text-3xl font-extrabold tracking-tight text-[#082B5E] sm:text-4xl lg:text-5xl">
+            Spine InnovTech Documentation
+          </h1>
+
+          <p className="mt-4 max-w-3xl text-base leading-relaxed text-[#335377] sm:text-lg">
+            Comprehensive architectural references, runtime execution specifications, governance models,
+            and connector manifests for Spine InnovTech and the SpineWorkspace platform.
+          </p>
+
+          <div className="mt-8 flex flex-wrap items-center gap-4">
+            <Link
+              href="/developers"
+              className="inline-flex items-center gap-2 rounded-xl bg-[#006FE8] px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-[#0055B8]"
+            >
+              <Terminal className="h-4 w-4" />
+              <span>Developer Overview</span>
+            </Link>
+            <a
+              href="/llms.txt"
+              className="inline-flex items-center gap-2 rounded-xl border border-[#CCE3F5] bg-white px-5 py-2.5 text-sm font-semibold text-[#006FE8] shadow-xs transition hover:bg-[#EBF5FF]"
+            >
+              <FileCode2 className="h-4 w-4" />
+              <span>Machine-Readable /llms.txt</span>
+              <ExternalLink className="h-3.5 w-3.5 opacity-60" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Machine-Readable /llms.txt Banner */}
+      <section className="border-b border-[#E2EEF8] bg-[#F7FAFD] py-6">
+        <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-4 px-5 sm:flex-row sm:items-center sm:px-8">
+          <div className="flex items-center gap-3">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#006FE8]/10 text-[#006FE8]">
+              <Cpu className="h-5 w-5" />
+            </div>
+            <div>
+              <p className="text-sm font-bold text-[#082B5E]">
+                Autonomous Agents &amp; LLM Context Index
+              </p>
+              <p className="text-xs text-[#526D8B]">
+                Looking to index Spine InnovTech documentation for AI models or MCP agents? We maintain a structured{" "}
+                <code className="rounded bg-white px-1.5 py-0.5 font-mono text-[11px] text-[#006FE8] border border-[#CCE3F5]">
+                  /llms.txt
+                </code>{" "}
+                index.
+              </p>
+            </div>
+          </div>
+          <a
+            href="/llms.txt"
+            className="inline-flex shrink-0 items-center gap-1.5 text-xs font-semibold text-[#006FE8] hover:underline"
+          >
+            <span>Read /llms.txt</span>
+            <ArrowRight className="h-3.5 w-3.5" />
+          </a>
+        </div>
+      </section>
+
+      {/* Documentation Categories Grid */}
+      <section className="py-14 sm:py-16 lg:py-20">
+        <div className="mx-auto max-w-6xl px-5 sm:px-8">
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
+            {DOC_SECTIONS.map((section) => {
+              const Icon = section.icon;
+              return (
+                <div
+                  key={section.title}
+                  className="flex flex-col rounded-2xl border border-[#CCE3F5] bg-white p-6 shadow-sm transition hover:border-[#96C7F2] hover:shadow-md sm:p-8"
+                >
+                  <div className="flex items-center justify-between">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#EBF5FF] text-[#006FE8]">
+                      <Icon className="h-6 w-6" />
+                    </div>
+                    <span className="rounded-full border border-[#CCE3F5] bg-[#F0F8FF] px-3 py-1 text-xs font-semibold text-[#006FE8]">
+                      {section.badge}
+                    </span>
+                  </div>
+
+                  <h2 className="mt-5 text-xl font-bold text-[#082B5E]">
+                    {section.title}
+                  </h2>
+                  <p className="mt-1 text-xs leading-5 text-[#556F8E]">
+                    {section.description}
+                  </p>
+
+                  <div className="mt-6 divide-y divide-[#EBF2F9] border-t border-[#EBF2F9]">
+                    {section.docs.map((doc) => (
+                      <Link
+                        key={doc.title}
+                        href={doc.href}
+                        className="group flex items-start justify-between gap-4 py-3.5 transition hover:text-[#006FE8]"
+                      >
+                        <div>
+                          <p className="text-sm font-semibold text-[#082B5E] group-hover:text-[#006FE8]">
+                            {doc.title}
+                          </p>
+                          <p className="mt-0.5 text-xs text-[#526D8B] line-clamp-1">
+                            {doc.desc}
+                          </p>
+                        </div>
+                        <ArrowRight className="mt-1 h-4 w-4 shrink-0 text-[#8CA6C3] transition group-hover:translate-x-0.5 group-hover:text-[#006FE8]" />
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Trust & Guarantees Strip */}
+      <section className="border-t border-[#D6E8F8] bg-[#F4F9FD] py-12">
+        <div className="mx-auto max-w-6xl px-5 sm:px-8">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
+            <div className="flex items-start gap-3.5">
+              <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[#208050]" />
+              <div>
+                <h3 className="text-sm font-bold text-[#082B5E]">
+                  Systems of Record Authoritative
+                </h3>
+                <p className="mt-1 text-xs text-[#526D8B]">
+                  Spine Fabric never replaces your databases or CRM. All writes remain governed and verified.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-3.5">
+              <Lock className="mt-0.5 h-5 w-5 shrink-0 text-[#006FE8]" />
+              <div>
+                <h3 className="text-sm font-bold text-[#082B5E]">
+                  Zero AI Training on Data
+                </h3>
+                <p className="mt-1 text-xs text-[#526D8B]">
+                  Customer business context and operational entities are never retained or used to train third-party models.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-3.5">
+              <Workflow className="mt-0.5 h-5 w-5 shrink-0 text-[#006FE8]" />
+              <div>
+                <h3 className="text-sm font-bold text-[#082B5E]">
+                  Deterministic Action Gates
+                </h3>
+                <p className="mt-1 text-xs text-[#526D8B]">
+                  Every proposed action requires explicit policy validation and optional human-in-the-loop review.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </MarketingPageShell>
+  );
 }

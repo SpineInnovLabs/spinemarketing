@@ -56,8 +56,24 @@ function withSecurityHeaders(response: Response, request: Request): Response {
   }
 
   const contentType = headers.get("content-type") ?? "";
-  if (contentType.includes("text/html") && !headers.has("Cache-Control")) {
+  const isDocumentOrData =
+    contentType.includes("text/html") ||
+    contentType.includes("text/plain") ||
+    contentType.includes("application/xml") ||
+    contentType.includes("text/xml") ||
+    contentType.includes("application/json") ||
+    url.pathname === "/llms.txt" ||
+    url.pathname === "/sitemap.xml" ||
+    url.pathname === "/robots.txt" ||
+    url.pathname === "/rss.xml";
+
+  if (isDocumentOrData) {
+    // Unconditionally overwrite asset-level cache headers so Cloudflare edge and normal visitors always see fresh release state
     headers.set("Cache-Control", "public, max-age=0, must-revalidate");
+    headers.set("CDN-Cache-Control", "public, max-age=0, must-revalidate");
+    headers.set("Cloudflare-CDN-Cache-Control", "public, max-age=0, must-revalidate");
+  } else if (url.pathname.startsWith("/_next/static/") || url.pathname.startsWith("/images/")) {
+    headers.set("Cache-Control", "public, max-age=31536000, immutable");
   }
 
   return new Response(response.body, {

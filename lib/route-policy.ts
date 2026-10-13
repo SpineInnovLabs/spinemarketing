@@ -37,9 +37,8 @@ export const ROUTE_DECISIONS: RouteDecision[] = [
   },
   {
     path: "/docs",
-    action: "redirect",
-    destination: "https://docs.spineworkspace.com/",
-    reason: "Local page redirects. Documentation lives at docs.spineworkspace.com. Not listed in this sitemap.",
+    action: "keep",
+    reason: "Spine InnovTech documentation hub, technical architecture, and machine-readable reference.",
   },
   {
     path: "/platform/the-adaptive-spine",
