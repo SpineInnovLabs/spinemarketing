@@ -7,6 +7,7 @@ import { WorkbenchViewExplorer } from "./workbench-view-explorer";
 import { ThreeProductPillars } from "./three-product-pillars";
 import { WorkbenchGuidedDemo } from "./workbench-guided-demo";
 import { FabricProofShowcase } from "./fabric-proof-showcase";
+import { SpineNetworkContinuity } from "./spine-network-continuity";
 import {
   ArrowRight,
   Database,
@@ -150,7 +151,7 @@ export function SpineWorkspaceDetails() {
             </div>
             <ResponsiveWorkbenchScreenshot
               src="/images/workbench/common/home.webp"
-              alt="Authentic Spine Workspace Workbench showing canonical shell navigation, unified search bar, and contextual Spine Twin panel."
+              alt="Spine Workspace Workbench application screen showing navigation, shared work areas and Spine Twin."
               priority
             />
           </div>
@@ -162,6 +163,7 @@ export function SpineWorkspaceDetails() {
       <ThreeProductPillars compact />
       <WorkbenchGuidedDemo />
       <FabricProofShowcase />
+      <SpineNetworkContinuity />
       <WorkspaceBenefits detailed />
       <section id="features" className="innovtech-section">
         <p className="innovtech-eyebrow">THE WORKSPACE, IN DETAIL</p>
