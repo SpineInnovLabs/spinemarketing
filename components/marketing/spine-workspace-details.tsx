@@ -4,6 +4,9 @@ import { WorkspaceAuthActions } from "./workspace-auth-actions";
 import { WorkspaceBenefits } from "./workspace-benefits";
 import { WorkspaceSubscriptionValue } from "./workspace-subscription-value";
 import { WorkbenchViewExplorer } from "./workbench-view-explorer";
+import { ThreeProductPillars } from "./three-product-pillars";
+import { WorkbenchGuidedDemo } from "./workbench-guided-demo";
+import { FabricProofShowcase } from "./fabric-proof-showcase";
 import {
   ArrowRight,
   Database,
@@ -99,18 +102,17 @@ export function SpineWorkspaceDetails() {
             SPINEWORKSPACE · BUSINESS CONTEXT FOR HUMANS & AI
           </p>
           <h1 id="product-title">
-            Your tools have the information. Your team needs the whole picture.
+            One business context. 13 domains. Ready-to-work views.
           </h1>
           <p className="innovtech-hero-description">
-            Bring work, priorities, decisions, and evidence together across the
-            tools you already use. Give people and AI the context to understand
-            what matters, prepare the next step, and carry work forward with
-            control.
+            Ingest and retrieve authorized business context from the systems you use.
+            Project that context from one Spine Fabric into role-specific views,
+            with prebuilt operational workflows for humans and AI.
           </p>
           <ul className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-xs font-semibold text-[#245EA9]" aria-label="Product principles">
-            <li>Work across existing tools</li>
-            <li>Context-aware AI</li>
-            <li>Human-controlled actions</li>
+            <li>Governed truth and context</li>
+            <li>13 domain projections</li>
+            <li>Ready-to-work views</li>
           </ul>
           <WorkspaceAuthActions />
           <div className="innovtech-actions">
@@ -143,7 +145,7 @@ export function SpineWorkspaceDetails() {
                 </span>
               </div>
               <span className="rounded-full border border-[#CCE3F5] bg-[#EBF5FF] px-2 py-0.5 text-[10px] font-semibold text-[#006FE8]">
-                Authentic Workbench
+                Live Workbench View
               </span>
             </div>
             <ResponsiveWorkbenchScreenshot
@@ -153,10 +155,13 @@ export function SpineWorkspaceDetails() {
             />
           </div>
           <figcaption>
-            Authentic Spine Workspace Workbench. Governed business context with canonical shell navigation and contextual Twin assistance.
+            Spine Workspace Workbench: shared business context and role-specific work.
           </figcaption>
         </figure>
       </section>
+      <ThreeProductPillars compact />
+      <WorkbenchGuidedDemo />
+      <FabricProofShowcase />
       <WorkspaceBenefits detailed />
       <section id="features" className="innovtech-section">
         <p className="innovtech-eyebrow">THE WORKSPACE, IN DETAIL</p>
