@@ -7,6 +7,7 @@ import { WorkbenchViewExplorer } from "./workbench-view-explorer";
 import { ThreeProductPillars } from "./three-product-pillars";
 import { WorkbenchGuidedDemo } from "./workbench-guided-demo";
 import { FabricProofShowcase } from "./fabric-proof-showcase";
+import { SpineNetworkContinuity } from "./spine-network-continuity";
 
 const approach = [
   [
@@ -206,7 +207,7 @@ export function InnovLabsHome() {
               </div>
               <ResponsiveWorkbenchScreenshot
                 src="/images/workbench/common/home.webp"
-                alt="Authentic Spine Workspace Workbench showing canonical shell navigation, unified search bar, and contextual Spine Twin panel."
+                alt="Spine Workspace Workbench application screen showing navigation, shared work areas and Spine Twin."
                 priority
               />
             </div>
@@ -219,6 +220,7 @@ export function InnovLabsHome() {
 
       <ThreeProductPillars />
       <FabricProofShowcase />
+      <SpineNetworkContinuity />
       <WorkbenchGuidedDemo />
       <WorkspaceBenefits />
 
