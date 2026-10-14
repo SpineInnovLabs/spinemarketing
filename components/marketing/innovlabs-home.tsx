@@ -4,6 +4,9 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { ResponsiveWorkbenchScreenshot } from "./responsive-workbench-screenshot";
 import { WorkspaceBenefits } from "./workspace-benefits";
 import { WorkbenchViewExplorer } from "./workbench-view-explorer";
+import { ThreeProductPillars } from "./three-product-pillars";
+import { WorkbenchGuidedDemo } from "./workbench-guided-demo";
+import { FabricProofShowcase } from "./fabric-proof-showcase";
 
 const approach = [
   [
@@ -161,18 +164,17 @@ export function InnovLabsHome() {
               id="company-title"
               className="mt-6 max-w-[700px] text-[length:min(clamp(2.75rem,5.2vw,4.85rem),var(--marketing-title-size))] font-bold leading-[1.06] tracking-[-.05em] text-[#032D60]"
             >
-              Building the intelligence behind{" "}
-              <span className="text-[#006FE8]">connected business.</span>
+              One business context.{" "}
+              <span className="text-[#006FE8]">Every domain. Ready for work.</span>
             </h1>
             <p className={`${body} mt-7 max-w-[590px]`}>
-              Business already runs across people, applications, decisions, and
-              AI. The challenge is not a lack of tools. It is the missing
-              context between them.
+              Business systems already hold the records. Spine Workspace assembles the
+              governed context people and AI need to understand their work.
             </p>
             <p className={`${body} mt-4 max-w-[590px]`}>
-              Spine InnovTech builds the technology that connects those
-              pieces—so people and AI can understand what matters, coordinate
-              work, and act with clarity and accountability.
+              One Spine Fabric powers role-relevant views across 13 business domains.
+              Start with ready-built operational workspaces—without custom
+              application development for supported standard workflows.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href="/product" className={`${button} shadow-[0_4px_14px_rgba(0,111,232,0.25)] hover:shadow-[0_6px_20px_rgba(0,111,232,0.35)]`}>
@@ -184,7 +186,7 @@ export function InnovLabsHome() {
               </Link>
             </div>
             <p className="mt-8 border-t border-[#CBE5FA] pt-5 text-[13px] font-medium text-[#4E607A]">
-              Connected systems. Shared context. Governed intelligence.
+              Context once. Project everywhere. Ready for work.
             </p>
           </div>
           <figure className="mx-auto w-full max-w-[680px]">
@@ -199,7 +201,7 @@ export function InnovLabsHome() {
                   </span>
                 </div>
                 <span className="rounded-full border border-[#CCE3F5] bg-[#EBF5FF] px-2 py-0.5 text-[10px] font-semibold text-[#006FE8]">
-                  Authentic Workbench
+                  Live Workbench View
                 </span>
               </div>
               <ResponsiveWorkbenchScreenshot
@@ -209,12 +211,15 @@ export function InnovLabsHome() {
               />
             </div>
             <figcaption className="mt-3 text-[12px] leading-6 text-[#4E607A]">
-              Authentic Spine Workspace Workbench. Governed business context with canonical shell navigation, human-in-the-loop controls, and contextual Twin assistance.
+              Spine Workspace Workbench: shared navigation, contextual work and Spine Twin.
             </figcaption>
           </figure>
         </div>
       </section>
 
+      <ThreeProductPillars />
+      <FabricProofShowcase />
+      <WorkbenchGuidedDemo />
       <WorkspaceBenefits />
 
       <WorkbenchViewExplorer initialDomain="founderops" />
