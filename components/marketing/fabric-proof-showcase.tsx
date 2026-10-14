@@ -22,7 +22,7 @@ export function FabricProofShowcase() {
           One customer situation, visible where the work happens.
         </h2>
         <p className="mt-4 max-w-[870px] text-base leading-8 text-[#4E607A]">
-          Illustrative scenario: a fictional customer has an upcoming renewal, an unpaid invoice and an active engineering incident. Each authorized team gets a role-specific view of related business context, rather than rebuilding the account story in a separate silo.
+          Example: a fictional customer has an upcoming renewal, an unpaid invoice and an active engineering incident. Each authorized team gets a role-specific view of related business context, rather than rebuilding the account story in a separate silo.
         </p>
         <div className="mt-7 rounded-3xl border border-[#CBE5FA] bg-white p-5 shadow-sm sm:p-7">
           <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#E0EEF9] pb-4">
@@ -53,7 +53,7 @@ export function FabricProofShowcase() {
               </article>
             ))}
           </div>
-          <p className="mt-4 text-xs leading-6 text-[#5F7692]">Evidence-model illustration only. Real states must come from verified host grants, activated capabilities, ingestion lineage and authorized retrieval—not these static cards.</p>
+          <p className="mt-4 text-xs leading-6 text-[#5F7692]">Host-connection verification requires real grants, activated capabilities, ingestion lineage and authorized retrieval. These stages describe the intended evidence contract, not verified connections.</p>
         </div>
       </div>
     </section>
