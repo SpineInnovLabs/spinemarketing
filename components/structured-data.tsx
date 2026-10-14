@@ -1,4 +1,5 @@
 import { absoluteUrl, publicSiteUrl } from "@/lib/site-url";
+import { COMPANY_LEGAL_NAME } from "@/lib/company";
 
 export function BreadcrumbJsonLd({ items }: { items: { name: string; url: string }[] }) {
   const data = {
@@ -124,6 +125,7 @@ export function ArticleJsonLd({
     publisher: {
       "@type": "Organization",
       name: "Spine InnovTech",
+      legalName: COMPANY_LEGAL_NAME,
       url: publicSiteUrl,
     },
     ...(imageUrl ? { image: [imageUrl] } : {}),
