@@ -541,7 +541,7 @@ export function WorkbenchViewExplorer({
                         </div>
                         <div className="flex items-center gap-3">
                           <span className="rounded-full border border-[#CCE3F5] bg-[#EBF5FF] px-2.5 py-0.5 font-semibold text-[#006FE8]">
-                            {currentScreenshot.badge ?? "Authentic Capture"}
+                            "Live Workbench View"
                           </span>
                           <span className="hidden font-mono text-xs text-[#7189A6] sm:inline">
                             1440 × 900 px (Full Scale)
