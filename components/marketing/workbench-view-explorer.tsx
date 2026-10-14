@@ -1,6 +1,6 @@
 "use client";
 
-import { useId, useMemo, useState, useEffect } from "react";
+import { useId, useMemo, useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { ResponsiveWorkbenchScreenshot } from "@/components/marketing/responsive-workbench-screenshot";
 import {
@@ -17,6 +17,7 @@ import {
   X,
 } from "lucide-react";
 import { SHARED_WORKBENCH_SHELL, WORKBENCH_SOURCE_DOMAINS } from "@/lib/workbench-source-views";
+import { getWorkbenchCaptureReview } from "@/lib/workbench-capture-review";
 import {
   getDomainScreenshotNarrative,
   type WorkbenchScreenshotItem,
@@ -70,14 +71,21 @@ export function WorkbenchViewExplorer({
   const [isMobileView, setIsMobileView] = useState(false);
   const [showAll, setShowAll] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
+  const dialogRef = useRef<HTMLDialogElement>(null);
 
   useEffect(() => {
     if (!isExpanded) return;
-    const onKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setIsExpanded(false);
+    const dialog = dialogRef.current;
+    if (!dialog) return;
+    const previousFocus = document.activeElement;
+    const previousOverflow = document.body.style.overflow;
+    dialog.showModal();
+    document.body.style.overflow = "hidden";
+    return () => {
+      dialog.close();
+      document.body.style.overflow = previousOverflow;
+      if (previousFocus instanceof HTMLElement) previousFocus.focus();
     };
-    window.addEventListener("keydown", onKeyDown);
-    return () => window.removeEventListener("keydown", onKeyDown);
   }, [isExpanded]);
 
   const domain = useMemo(
@@ -104,13 +112,16 @@ export function WorkbenchViewExplorer({
     if (narrative.screenshots.twinAction) {
       options.push({ key: "twinAction", label: narrative.screenshots.twinAction.title, item: narrative.screenshots.twinAction });
     }
-    return options;
+    return options.filter(({ item }) => {
+      const review = getWorkbenchCaptureReview(item.desktop);
+      return review && !review.exclude;
+    });
   }, [narrative]);
 
   const currentScreenshot = useMemo(() => {
     if (!narrative) return undefined;
     const match = screenshotOptions.find((opt) => opt.key === selectedViewKey);
-    return match ? match.item : narrative.screenshots.primary;
+    return match?.item ?? screenshotOptions[0]?.item;
   }, [screenshotOptions, selectedViewKey, narrative]);
 
   const hasMobile = Boolean(currentScreenshot?.mobile);
@@ -156,6 +167,10 @@ export function WorkbenchViewExplorer({
               the relevant projection within a consistent navigation shell, with access to shared
               business context, operational views and Spine Twin.
             </p>
+            <p className="mt-3 text-xs leading-6 text-[#596F89]">
+              The catalog includes additional role, shared-shell and specialist projections
+              alongside the 13 core business domains.
+            </p>
           </div>
 
           <div className="w-full max-w-sm">
@@ -188,6 +203,7 @@ export function WorkbenchViewExplorer({
             <button
               key={item.id}
               type="button"
+              aria-pressed={selected === item.id}
               onClick={() => {
                 setSelected(item.id);
                 setSelectedViewKey("primary");
@@ -207,11 +223,10 @@ export function WorkbenchViewExplorer({
 
         {/* View Switcher: Interactive Screenshots vs Extracted Inventory */}
         <div className="mt-8 flex flex-wrap items-center justify-between gap-4 border-b border-[#D6E8F8] pb-4">
-          <div className="flex items-center gap-2" role="tablist" aria-label="Workbench Explorer Tabs">
+          <div className="flex flex-wrap items-center gap-2" role="group" aria-label="Workbench Explorer Views">
             <button
               type="button"
-              role="tab"
-              aria-selected={activeTab === "screenshot"}
+              aria-pressed={activeTab === "screenshot"}
               onClick={() => setActiveTab("screenshot")}
               className={`inline-flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition-all ${
                 activeTab === "screenshot"
@@ -224,8 +239,7 @@ export function WorkbenchViewExplorer({
             </button>
             <button
               type="button"
-              role="tab"
-              aria-selected={activeTab === "inventory"}
+              aria-pressed={activeTab === "inventory"}
               onClick={() => setActiveTab("inventory")}
               className={`inline-flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition-all ${
                 activeTab === "inventory"
@@ -263,8 +277,9 @@ export function WorkbenchViewExplorer({
                   <button
                     type="button"
                     aria-label="Desktop Viewport (1440x900)"
+                    aria-pressed={!isMobileView}
                     onClick={() => setIsMobileView(false)}
-                    className={`rounded-md p-1.5 text-xs transition-colors ${
+                    className={`min-h-11 min-w-11 rounded-md p-3 text-xs transition-colors ${
                       !isMobileView ? "bg-[#006FE8] text-white" : "text-[#587391] hover:text-[#082B5E]"
                     }`}
                   >
@@ -273,8 +288,9 @@ export function WorkbenchViewExplorer({
                   <button
                     type="button"
                     aria-label="Mobile Viewport (390x844)"
+                    aria-pressed={isMobileView}
                     onClick={() => setIsMobileView(true)}
-                    className={`rounded-md p-1.5 text-xs transition-colors ${
+                    className={`min-h-11 min-w-11 rounded-md p-3 text-xs transition-colors ${
                       isMobileView ? "bg-[#006FE8] text-white" : "text-[#587391] hover:text-[#082B5E]"
                     }`}
                   >
@@ -342,14 +358,15 @@ export function WorkbenchViewExplorer({
                       </div>
 
                       <div className="flex items-center gap-2 sm:gap-3">
-                        <span className="rounded-full border border-[#CCE3F5] bg-[#EBF5FF] px-2.5 py-0.5 font-semibold text-[#006FE8]">Live Workbench View</span>
+                        <span className="rounded-full border border-[#CCE3F5] bg-[#EBF5FF] px-2.5 py-0.5 font-semibold text-[#006FE8]">Live Workbench Views</span>
                         <span className="hidden font-mono text-[11px] text-[#7189A6] sm:inline">
                           {isMobileView ? "390 × 844 px (Mobile)" : "1440 × 900 px (Desktop)"}
                         </span>
                         <button
                           type="button"
+                          aria-label="Expand Workbench screenshot"
                           onClick={() => setIsExpanded(true)}
-                          className="inline-flex items-center gap-1.5 rounded-lg border border-[#CCE3F5] bg-white px-2.5 py-1 text-[11px] font-semibold text-[#3A5678] shadow-2xs transition-colors hover:bg-[#EAF4FF] hover:text-[#006FE8]"
+                          className="inline-flex min-h-11 min-w-11 items-center justify-center gap-1.5 rounded-lg border border-[#CCE3F5] bg-white px-2.5 py-1 text-[11px] font-semibold text-[#3A5678] shadow-2xs transition-colors hover:bg-[#EAF4FF] hover:text-[#006FE8] focus-visible:outline-2 focus-visible:outline-[#006FE8]"
                           title="Expand screenshot in full size view"
                         >
                           <Maximize2 className="h-3.5 w-3.5 text-[#006FE8]" />
@@ -362,7 +379,7 @@ export function WorkbenchViewExplorer({
                     <div className="relative flex flex-1 items-center justify-center bg-white p-2 sm:p-4">
                       <ResponsiveWorkbenchScreenshot
                         src={isMobileView && currentScreenshot.mobile ? currentScreenshot.mobile : currentScreenshot.desktop}
-                        alt={currentScreenshot.alt}
+                        alt={getWorkbenchCaptureReview(isMobileView && currentScreenshot.mobile ? currentScreenshot.mobile : currentScreenshot.desktop)?.description ?? currentScreenshot.alt}
                         isMobile={isMobileView && Boolean(currentScreenshot.mobile)}
                         priority
                         onClick={() => setIsExpanded(true)}
@@ -407,12 +424,12 @@ export function WorkbenchViewExplorer({
                           What users see
                         </h4>
                         <p className="mt-2 text-xs leading-6 text-[#4E607A]">
-                          {narrative.valueNarrative.whatUsersSee}
+                          {getWorkbenchCaptureReview(currentScreenshot.desktop)?.description}
                         </p>
                       </div>
                       <div className="mt-4 flex items-center gap-1.5 border-t border-[#EDF4FA] pt-3 text-[11px] font-semibold text-[#006FE8]">
                         <Eye className="h-3.5 w-3.5" />
-                        <span>Canonical Shell Navigation Active</span>
+                        <span>Shared Workbench navigation</span>
                       </div>
                     </article>
 
@@ -428,7 +445,7 @@ export function WorkbenchViewExplorer({
                           </span>
                         </div>
                         <h4 className="mt-3.5 text-base font-bold text-[#082B5E]">
-                          What they can do
+                          Workflow purpose
                         </h4>
                         <p className="mt-2 text-xs leading-6 text-[#4E607A]">
                           {narrative.valueNarrative.whatTheyCanDo}
@@ -436,7 +453,7 @@ export function WorkbenchViewExplorer({
                       </div>
                       <div className="mt-4 flex items-center gap-1.5 border-t border-[#EDF4FA] pt-3 text-[11px] font-semibold text-[#006FE8]">
                         <CheckCircle2 className="h-3.5 w-3.5" />
-                        <span>Governed Action Gateways</span>
+                        <span>Actions follow workspace policy</span>
                       </div>
                     </article>
                   </div>
@@ -454,7 +471,7 @@ export function WorkbenchViewExplorer({
                         </span>
                       </div>
                       <h4 className="mt-3.5 text-base font-bold text-[#082B5E]">
-                        Manual work reduced
+                        Work it can simplify
                       </h4>
                       <p className="mt-2 text-xs leading-6 text-[#4E607A]">
                         {narrative.valueNarrative.whatManualWorkItReduces}
@@ -519,37 +536,51 @@ export function WorkbenchViewExplorer({
 
                 {/* Full-Size Interactive Lightbox Modal */}
                 {isExpanded && (
-                  <div
-                    role="dialog"
-                    aria-modal="true"
+                  <dialog
+                    ref={dialogRef}
+                    onClose={() => setIsExpanded(false)}
+                    onKeyDown={(event) => {
+                      if (event.key !== "Tab") return;
+                      const controls = event.currentTarget.querySelectorAll<HTMLElement>('button, a[href], [tabindex="0"]');
+                      const first = controls[0];
+                      const last = controls[controls.length - 1];
+                      if (!first || !last) return;
+                      if (event.shiftKey && document.activeElement === first) {
+                        event.preventDefault();
+                        last.focus();
+                      } else if (!event.shiftKey && document.activeElement === last) {
+                        event.preventDefault();
+                        first.focus();
+                      }
+                    }}
                     aria-label="Full size authentic Workbench screenshot"
-                    className="fixed inset-0 z-50 flex items-center justify-center bg-[#082B5E]/85 p-3 backdrop-blur-sm sm:p-6 lg:p-10"
-                    onClick={() => setIsExpanded(false)}
+                    className="fixed inset-0 z-50 m-0 flex h-dvh max-h-none w-screen max-w-none items-center justify-center bg-[#082B5E]/85 p-3 backdrop-blur-sm sm:p-6 lg:p-10"
+                    onClick={(event) => { if (event.target === event.currentTarget) dialogRef.current?.close(); }}
                   >
                     <div
                       className="relative flex max-h-[94vh] w-full max-w-7xl flex-col overflow-hidden rounded-2xl border border-[#CCE3F5] bg-white shadow-2xl"
                       onClick={(e) => e.stopPropagation()}
                     >
-                      <div className="flex items-center justify-between border-b border-[#E2EEF8] bg-[#F7FAFD] px-5 py-3 text-xs">
-                        <div className="flex items-center gap-2">
+                      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#E2EEF8] bg-[#F7FAFD] px-5 py-3 text-xs">
+                        <div className="flex min-w-0 items-center gap-2">
                           <span className="h-3 w-3 rounded-full bg-[#FF5F56]" />
                           <span className="h-3 w-3 rounded-full bg-[#FFBD2E]" />
                           <span className="h-3 w-3 rounded-full bg-[#27C93F]" />
-                          <span className="ml-3 font-mono text-xs font-semibold text-[#5A7391]">
+                          <span className="ml-3 break-all font-mono text-xs font-semibold text-[#5A7391]">
                             {currentScreenshot.route}
                           </span>
                         </div>
                         <div className="flex items-center gap-3">
                           <span className="rounded-full border border-[#CCE3F5] bg-[#EBF5FF] px-2.5 py-0.5 font-semibold text-[#006FE8]">
-                            "Live Workbench View"
+                            Live Workbench Views
                           </span>
                           <span className="hidden font-mono text-xs text-[#7189A6] sm:inline">
-                            1440 × 900 px (Full Scale)
+                            {isMobileView ? "390 × 844 px" : "1440 × 900 px"} (Full Scale)
                           </span>
                           <button
                             type="button"
-                            onClick={() => setIsExpanded(false)}
-                            className="rounded-lg p-1.5 text-[#5A7391] transition-colors hover:bg-[#E2EEF8] hover:text-[#082B5E]"
+                            onClick={() => dialogRef.current?.close()}
+                            className="min-h-11 min-w-11 rounded-lg p-3 text-[#5A7391] transition-colors hover:bg-[#E2EEF8] hover:text-[#082B5E] focus-visible:outline-2 focus-visible:outline-[#006FE8]"
                             aria-label="Close full size view"
                           >
                             <X className="h-5 w-5" />
@@ -559,12 +590,12 @@ export function WorkbenchViewExplorer({
                       <div className="flex flex-1 items-center justify-center overflow-auto bg-[#0C1E38] p-2 sm:p-4">
                         <img
                           src={isMobileView && currentScreenshot.mobile ? currentScreenshot.mobile : currentScreenshot.desktop}
-                          alt={currentScreenshot.alt}
+                          alt={getWorkbenchCaptureReview(isMobileView && currentScreenshot.mobile ? currentScreenshot.mobile : currentScreenshot.desktop)?.description ?? currentScreenshot.alt}
                           className="h-auto max-h-[82vh] w-auto max-w-full rounded-lg object-contain shadow-lg"
                         />
                       </div>
                     </div>
-                  </div>
+                  </dialog>
                 )}
               </>
             )}
@@ -673,7 +704,8 @@ export function WorkbenchViewExplorer({
             <ShieldCheck className="mr-1 inline h-4 w-4 align-[-3px] text-[#006FE8]" aria-hidden="true" />
             Screens are captures from the actual Spine Workspace Workbench application. The capture
             environment used QA fixture records; figures shown are not verified customer data or
-            operational performance. Production content depends on connected sources, access and policy.
+            operational performance. Workflow descriptions explain intended use; captures do not
+            establish completed actions. Empty collections remain empty. Production content depends on connected sources, access and policy.
           </p>
           <Link
             href="/product/the-adaptive-workspace"

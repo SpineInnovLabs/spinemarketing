@@ -50,9 +50,9 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
         id: "cockpit",
         title: "Founder's Cockpit",
         route: "/workspace/work/founderops/founder-ops",
-        desktop: "/images/workbench/founderops/cockpit.webp",
-        mobile: "/images/workbench/founderops/cockpit-mobile.webp",
-        badge: "Live Workbench View",
+        desktop: "/images/workbench/founderops/cockpit-20261014.webp",
+        mobile: "/images/workbench/founderops/cockpit-20261014-mobile.webp",
+        badge: "Live Workbench Views",
         alt: "Authentic Founder's Cockpit displaying deterministic demonstration metrics: MRR ($94K), aggregate pipeline ($625K), client count, open deals, and top deals by value with named client contacts.",
       },
       dashboard: {
@@ -60,7 +60,7 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
         title: "Executive Overview",
         route: "/workspace/work/founderops/dashboard",
         desktop: "/images/workbench/founderops/dashboard.webp",
-        badge: "Live Workbench View",
+        badge: "Live Workbench Views",
         alt: "FounderOps executive dashboard with demonstration performance indicators and cross-functional company updates.",
       },
       secondary: {
@@ -95,7 +95,7 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
         route: "/workspace/work/salesops/pipeline",
         desktop: "/images/workbench/sales/pipeline.webp",
         mobile: "/images/workbench/sales/pipeline-mobile.webp",
-        badge: "Live Workbench View",
+        badge: "Live Workbench Views",
         alt: "Authentic Sales Pipeline displaying deterministic demonstration deal stages: Proposal ($180K), Negotiation ($350K), and Discovery ($95K) with opportunity ledger.",
       },
       dashboard: {
@@ -103,7 +103,7 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
         title: "Sales Dashboard",
         route: "/workspace/work/salesops/dashboard",
         desktop: "/images/workbench/sales/dashboard.webp",
-        badge: "Live Workbench View",
+        badge: "Live Workbench Views",
         alt: "Sales performance dashboard tracking demonstration quota pacing and deal velocity.",
       },
       secondary: {
@@ -137,7 +137,7 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
         title: "Marketing Attribution",
         route: "/workspace/work/marketing/attribution",
         desktop: "/images/workbench/marketing/attribution.webp",
-        badge: "Live Workbench View",
+        badge: "Live Workbench Views",
         alt: "Authentic Marketing Attribution view showing multi-channel conversion signals, budget allocation, and downstream pipeline influence from demonstration data.",
       },
       dashboard: {
@@ -179,7 +179,7 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
         title: "Invoices Ledger",
         route: "/workspace/work/finance/invoices",
         desktop: "/images/workbench/finance/invoices.webp",
-        badge: "Live Workbench View",
+        badge: "Live Workbench Views",
         alt: "Authentic Invoices view showing demonstration records: invoice numbers, customer accounts (Acme, Stripe, Figma), billed amounts, payment status, and due dates.",
       },
       dashboard: {
@@ -214,15 +214,15 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
   "account-success": {
     domainId: "account-success",
     domainTitle: "Account Success",
-    tagline: "Account Health & Governed Twin Action",
+    tagline: "Account Story & Domain Coverage",
     screenshots: {
       primary: {
         id: "account-health",
-        title: "Account Health Overview",
+        title: "Account Story Overview",
         route: "/workspace/accounts/acme-corp",
         desktop: "/images/workbench/account-success/account-health.webp",
         mobile: "/images/workbench/account-success/account-health-mobile.webp",
-        badge: "Live Workbench View",
+        badge: "Live Workbench Views",
         alt: "Authentic Account Success view displaying deterministic demonstration fixture: Acme Corp story readiness score (100%), verified domain coverage indicators, and health signals.",
       },
       dashboard: {
@@ -340,7 +340,7 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
         title: "Revenue Forecast",
         route: "/workspace/work/revops/forecast",
         desktop: "/images/workbench/revops/forecast.webp",
-        badge: "Live Workbench View",
+        badge: "Live Workbench Views",
         alt: "Authentic RevOps Forecast view showing demonstration funnel conversion velocity, quote-to-cash timing, and forecast confidence bands.",
       },
       dashboard: {
@@ -754,44 +754,24 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
 
   common: {
     domainId: "common",
-    domainTitle: "Personal Home & Shell",
-    tagline: "Personal Home, My Work & Governed Work Surface",
+    domainTitle: "Shared Workbench Shell",
+    tagline: "Shared Navigation & Role-Specific Work",
     screenshots: {
       primary: {
-        id: "home",
-        title: "Personal Home",
-        route: "/workspace/home",
-        desktop: "/images/workbench/common/home.webp",
-        mobile: "/images/workbench/common/home-mobile.webp",
-        badge: "Primary Surface",
-        alt: "Authentic Personal Home showing canonical Workbench shell, left navigation, global command bar, and contextual Spine Twin panel in demonstration state.",
-      },
-      dashboard: {
-        id: "my-work",
-        title: "My Work Hub",
-        route: "/workspace/my-work",
-        desktop: "/images/workbench/common/my-work.webp",
-        badge: "My Work",
-        alt: "Personal My Work view consolidating demonstration cross-domain assignments, approvals, and daily priorities.",
-      },
-      secondary: {
-        id: "tasks",
-        title: "Priority Tasks",
-        route: "/workspace/tasks",
-        desktop: "/images/workbench/common/tasks.webp",
-        badge: "Unified Tasks",
-        alt: "Personal task tracker with demonstration priority ratings, due dates, and connected business records.",
+        id: "shared-shell",
+        title: "Workbench Shell · FounderOps",
+        route: "/workspace/work/founderops/founder-ops",
+        desktop: "/images/workbench/founderops/cockpit-20261014.webp",
+        mobile: "/images/workbench/founderops/cockpit-20261014-mobile.webp",
+        badge: "Live Workbench Views",
+        alt: "Authentic shared Workbench navigation around a populated FounderOps QA capture.",
       },
     },
     valueNarrative: {
-      whatUsersSee:
-      "Unified personal workbench with prioritized tasks, pending approvals, recent work streams, personal notes, and contextual Spine Twin assistant .",
-      whatTheyCanDo:
-        "Review daily action items, approve pending requests, launch quick search via ⌘K, capture notes, and interact with the contextual Twin.",
-      whatManualWorkItReduces:
-        "Eliminates checking six separate inboxes, task trackers, and notification centers every morning.",
-      whyItMatters:
-        "Gives every team member a coherent, focused starting point each morning with zero context switching.",
+      whatUsersSee: "Shared navigation around the FounderOps projection.",
+      whatTheyCanDo: "Move between common work areas and role-specific views within one shell, subject to workspace permissions.",
+      whatManualWorkItReduces: "A consistent shell can reduce repeated navigation across departmental tools.",
+      whyItMatters: "Roles share a work environment while retaining separate permissions and relevant context.",
     },
   },
 };

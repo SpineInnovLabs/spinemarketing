@@ -5,6 +5,7 @@
 import { readFileSync, statSync } from "node:fs";
 import "./verify-domain-solutions.mjs";
 import "./verify-auth-entry.mjs";
+import "./verify-workbench-artifact.mjs";
 const text = readFileSync("out/index.html", "utf8");
 const sitemap = readFileSync("out/sitemap.xml", "utf8");
 const product = readFileSync("out/product.html", "utf8");
@@ -23,8 +24,8 @@ const productAlias = redirects.find(([source]) => source === "/spineworkspace");
 if (!productAlias || productAlias[1] !== "/product" || productAlias[2] !== "301") {
   throw new Error("Legacy /spineworkspace entry must redirect internally to /product.");
 }
-if (!text.includes("Building the intelligence behind") || !text.includes("Spine InnovTech")) {
-  throw new Error("Static export missing company-led corporate hero/company identity.");
+if (!text.includes("One business context.") || !text.includes("Every domain. Ready for work.") || !text.includes("Spine InnovTech")) {
+  throw new Error("Static export missing three-strength corporate hero/company identity.");
 }
 const header = text.match(/<header\b[\s\S]*?<\/header>/)?.[0] ?? "";
 for (const category of ["Company", "Technology", "Solutions", "Insights", "Developers"]) {

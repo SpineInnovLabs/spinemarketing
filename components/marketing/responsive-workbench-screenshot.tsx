@@ -22,14 +22,25 @@ export function ResponsiveWorkbenchScreenshot({
   onClick,
 }: ResponsiveWorkbenchScreenshotProps) {
   const basePath = src.replace(/\.webp$/, "");
+  const interactionProps = onClick ? {
+    role: "button",
+    tabIndex: 0,
+    "aria-label": "Expand Workbench screenshot",
+    onKeyDown: (event: React.KeyboardEvent<HTMLDivElement>) => {
+      if (event.key !== "Enter" && event.key !== " ") return;
+      event.preventDefault();
+      onClick();
+    },
+  } : {};
 
   if (isMobile) {
     return (
       <div
         className={`relative mx-auto max-w-[390px] overflow-hidden rounded-[2.5rem] border-[8px] border-[#1A2E46] shadow-2xl ${
-          onClick ? "cursor-pointer transition-transform hover:scale-[1.01]" : ""
+          onClick ? "cursor-pointer transition-transform hover:scale-[1.01] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#006FE8]" : ""
         } ${className}`}
         onClick={onClick}
+        {...interactionProps}
       >
         <picture>
           <source
@@ -58,10 +69,11 @@ export function ResponsiveWorkbenchScreenshot({
 
   return (
     <div
-      className={`relative mx-auto flex w-full max-w-full items-center justify-center overflow-hidden rounded-xl border border-[#D5E5F5] bg-white shadow-sm ${
-        onClick ? "cursor-pointer transition-transform hover:scale-[1.005]" : ""
+      className={`relative mx-auto flex w-full max-w-full flex-col items-center justify-center overflow-hidden rounded-xl border border-[#D5E5F5] bg-white shadow-sm ${
+        onClick ? "cursor-pointer transition-transform hover:scale-[1.005] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#006FE8]" : ""
       } ${className}`}
       onClick={onClick}
+      {...interactionProps}
     >
       {/* Scrollable containment on narrow viewports <= 480px */}
       <div className="flex w-full justify-center overflow-x-auto scrollbar-thin scrollbar-thumb-[#CCE3F5]">

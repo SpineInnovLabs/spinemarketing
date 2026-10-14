@@ -8,6 +8,7 @@ import { ThreeProductPillars } from "./three-product-pillars";
 import { WorkbenchGuidedDemo } from "./workbench-guided-demo";
 import { FabricProofShowcase } from "./fabric-proof-showcase";
 import { SpineNetworkContinuity } from "./spine-network-continuity";
+import { WorkbenchShellRecording } from "./workbench-shell-recording";
 import {
   ArrowRight,
   Database,
@@ -136,32 +137,33 @@ export function SpineWorkspaceDetails() {
         </div>
         <figure className="innovtech-product-illustration">
           <div className="overflow-hidden rounded-2xl border border-[#CCE3F5] bg-white shadow-[0_20px_60px_rgba(15,70,130,.12)]">
-            <div className="flex items-center justify-between border-b border-[#E2EEF8] bg-[#F7FAFD] px-4 py-2.5 text-xs">
+            <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[#E2EEF8] bg-[#F7FAFD] px-4 py-2.5 text-xs">
               <div className="flex items-center gap-1.5">
                 <span className="h-2.5 w-2.5 rounded-full bg-[#FF5F56]" />
                 <span className="h-2.5 w-2.5 rounded-full bg-[#FFBD2E]" />
                 <span className="h-2.5 w-2.5 rounded-full bg-[#27C93F]" />
-                <span className="ml-2 font-mono text-[11px] font-semibold text-[#5A7391]">
-                  /workspace/home
+                <span className="ml-2 hidden font-mono text-[11px] font-semibold text-[#5A7391] sm:inline">
+                  /workspace/work/founderops/founder-ops
                 </span>
               </div>
               <span className="rounded-full border border-[#CCE3F5] bg-[#EBF5FF] px-2 py-0.5 text-[10px] font-semibold text-[#006FE8]">
-                Live Workbench View
+                Live Workbench Views
               </span>
             </div>
             <ResponsiveWorkbenchScreenshot
-              src="/images/workbench/common/home.webp"
-              alt="Spine Workspace Workbench application screen showing navigation, shared work areas and Spine Twin."
+              src="/images/workbench/founderops/cockpit-20261014.webp"
+              alt="Authentic Workbench shell and FounderOps cockpit showing captured QA revenue, deals and customer summaries."
               priority
             />
           </div>
           <figcaption>
-            Spine Workspace Workbench: shared business context and role-specific work.
+            Workbench shell with the FounderOps projection. Captured QA records; figures are not live customer telemetry.
           </figcaption>
         </figure>
       </section>
       <ThreeProductPillars compact />
       <WorkbenchGuidedDemo />
+      <WorkbenchShellRecording />
       <FabricProofShowcase />
       <SpineNetworkContinuity />
       <WorkspaceBenefits detailed />

@@ -310,9 +310,9 @@ export const pages = {
 
   hostConnectedEnvironment: {
     meta: {
-      title: "Host Connected Environments & Verified Capabilities | Spine Workspace",
+      title: "Host Connection Evidence | Spine Workspace",
       description:
-        "Each tool stays itself. SpineWorkspace shares the record and the evidence for the work. The tools do not have to talk to each other directly.",
+        "Understand the separate evidence for host identity, capability discovery, authorization, invocation and reconciliation, with independent authority across hosts.",
       path: "/host-connected-environment",
     },
     hero: {
@@ -324,23 +324,23 @@ export const pages = {
     },
     sections: [
       {
-        headline: "What stays with the tools you already use.",
+        headline: "A connected host starts the evidence chain.",
         body:
-          "The tools, files, conversations, and workflows already open for that person. SpineWorkspace connects to them. It does not replace them.",
+          "The intended connection experience identifies the host binding, principal, tenant, workspace and permitted scopes. That identity evidence does not establish access to the host's private applications or connectors.",
       },
       {
-        headline: "SpineWorkspace sees what is actually connected.",
+        headline: "Discovered capabilities still require authority.",
         body:
-          "It does not assume a connection that is not there. It sees which tools are available and working right now.",
+          "A capability may be explicitly host-exposed, separately bound to Spine or unavailable. Discovery metadata does not grant permission. Current consent, scopes, membership and capability policy determine what may be used.",
       },
       {
-        headline: "Use what is already open.",
-        body: "The work uses the tools already open for that person before it reaches for anything else.",
+        headline: "Verify the invocation and its outcome separately.",
+        body: "The five required stages are identity verification, capability discovery, authorization, safe invocation and reconciliation. An ingestion acknowledgement must be followed by canonical materialization, source lineage and authorized retrieval before data readiness is proven.",
       },
       {
-        headline: "Work continues across the tools you already use.",
+        headline: "Carry the work forward with independent permissions.",
         body:
-          "The record, the evidence, and earlier decisions travel with the work. Something started in one tool can continue in another without rebuilding the story.",
+          "Spine Network is designed to preserve the same entity, versioned context, work item and checkpoint across compatible hosts. Each destination re-evaluates authority and produces its own retrieval trace. Private host memory, credentials and privileges do not transfer. These are evidence requirements, not a claim of a verified production handoff.",
       },
     ],
     crossLinks: {

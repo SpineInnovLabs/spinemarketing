@@ -88,3 +88,47 @@
 1. **Common Shell (`common/`):** Displays the canonical `WORKBENCH_SHELL` left navigation bar (Home, My Work, Communications, Personal, Work, Platform, Administration), unified search, breadcrumbs, and live contextual Twin panel.
 2. **Domain Workspaces:** All 18 registered operational domains adapt the Work section in accordance with the tenant projection while preserving the persistent shell.
 3. **Twin Invariants:** Authentic Twin panels render either live contextual assistance or pending action proposals awaiting human-in-the-loop governance approval.
+
+## October 14 shell refresh and visual review
+
+Two additional captures come from the actual local application at source commit
+`8d62ba3cd88573539aa7be98e293e966cfa1fbd2`, on branch
+`feat/workbench-design-system-parity`. The source checkout included unrelated ongoing
+changes in `packages/contracts/src/platform/index.ts`,
+`packages/spine-network/src/harness.ts` and
+`packages/contracts/src/platform/multimodal-context.ts`. No application UI,
+authorization or fixture-source code was changed for the captures.
+The existing non-production `x-workbench-qa` identity path and the existing
+`COMMON_ENTITIES` fixture from `scripts/capture-workbench-library.mjs` were used.
+External browser requests were blocked and gateway URLs pointed to local loopback.
+The Next.js development toolbar was excluded; no application screen or data was composited.
+
+| Category | Domain | Asset Path | Route | Fixture / State | Viewport | Size |
+|---|---|---|---|---|---|---|
+| FounderOps refresh | `founderops` | [`images/workbench/founderops/cockpit-20261014.webp`](/images/workbench/founderops/cockpit-20261014.webp) | `/workspace/work/founderops/founder-ops` | `deterministic-common-entities` | 1440×900 (desktop) | Lossless WebP |
+| FounderOps refresh | `founderops` | [`images/workbench/founderops/cockpit-20261014-mobile.webp`](/images/workbench/founderops/cockpit-20261014-mobile.webp) | `/workspace/work/founderops/founder-ops` | `deterministic-common-entities` | 390×844 (mobile) | Lossless WebP |
+
+The original 59 captures remain archived. Visual inspection found unavailable or
+authorization-error states in the common captures, invalid NaN totals in RevOps
+pipeline, and no visible Twin proposal in the file named `twin-action.webp`.
+These are excluded from public showcase selection. Empty domain collections remain
+visible as empty layouts; captions must not describe records or results absent
+from the image. `lib/workbench-capture-review.ts` records the inspected contents.
+
+The refreshed shell contains a QA host-status badge. It is fixture UI, not independent
+proof of host identity, capability authorization, provider execution or data ingestion.
+
+## Recorded shell walkthrough
+
+`public/videos/workbench/workbench-shell-20261014.mp4` is a genuine recording of
+real React UI interactions in the same local QA application. It is not a slideshow,
+image animation or synthesized application behavior. The silent 1440×900 H.264 MP4
+runs for 26.48 seconds and includes English scene descriptions plus a text transcript.
+The first eight seconds of initial server loading and pre-hydration state were trimmed;
+playback speed and the subsequent interface sequence are unchanged.
+
+The recording shows sales, campaign and operations sections opening/closing, followed
+by work-view search opening and dismissal. It does not invoke a provider, approve a
+proposal, verify a connection or prove live data ingestion. Base commit, contemporaneous
+unrelated source-tree changes, tool, fixture path, editing and SHA-256 digests are recorded
+in `docs/WORKBENCH-RECORDING-PROVENANCE.json`.

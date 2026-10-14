@@ -5,8 +5,8 @@ const hostStages = [
   { label: "Host identity", detail: "One Auth session, actor, tenant and workspace", icon: LockKeyhole },
   { label: "Capability discovery", detail: "Host-exposed tools or independently authorized Spine bindings", icon: Cable },
   { label: "Authority to use", detail: "One Access permissions, scopes and capability policy", icon: ShieldCheck },
-  { label: "Execution evidence", detail: "Invocation result, provider reference and correlation trace", icon: CheckCircle2 },
-  { label: "Context continuity", detail: "Versioned context, work item and permitted host handoff", icon: Database },
+  { label: "Capability invoked", detail: "Safe authorized operation, result and correlation trace", icon: CheckCircle2 },
+  { label: "Execution reconciled", detail: "Provider receipt, outcome and timestamp; canonical destination when ingestion is requested", icon: Database },
 ] as const;
 
 export function SpineNetworkContinuity() {
@@ -55,7 +55,8 @@ export function SpineNetworkContinuity() {
             </article>
           ))}
         </div>
-        <p className="mt-5 text-xs leading-6 text-[#55738D]">Host connection is not proof of source access. Source access is not proof of ingestion. Cross-host continuity is subject to independent authorization at every step.</p>
+        <p className="mt-5 text-xs leading-6 text-[#55738D]">These cards describe required evidence, not verified connection statuses. Host connection does not prove source access; a queue acknowledgement does not prove canonical materialization or authorized retrieval.</p>
+        <p className="mt-3 text-xs leading-6 text-[#55738D]">A cross-host continuation must retain the same canonical entity, context version, work item and checkpoint, with source references and a new retrieval trace. Each destination re-evaluates tenant, workspace, subject and capability policy. Private host memory, credentials and privileges do not transfer.</p>
       </div>
     </section>
   );
