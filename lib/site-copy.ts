@@ -41,16 +41,16 @@ export type UseCasePageCopy = NarrativePageCopy & {
 export const pages = {
   spineworkspace: {
     meta: {
-      title: "SpineWorkspace — Truth and context in one governed workspace",
+      title: "Spine Workspace — One Fabric, 13 Domain Workspaces",
       description:
         "SpineWorkspace brings authoritative truth and the context for the current task together. Source systems stay authoritative.",
       path: "/spineworkspace",
     },
     hero: {
-      badge: "Governed AI workspace",
-      headline: "Work from the full business story — not fragments.",
+      badge: "Spine Workspace · Business Context Workbench",
+      headline: "One business context. Every domain. Ready to work.",
       subhead:
-        "SpineWorkspace brings authorized truth and the context for this task into one governed workspace. People and AI prepare, review, and move work forward. Your systems remain authoritative. Your people remain accountable.",
+        "Spine Workspace connects authorized source records into one governed business-context Fabric, projects role-relevant views across 13 domains and provides ready-built workflows. Original source systems remain authoritative.",
       primaryCta: { label: "See a workflow", href: "/product#how-it-works" },
       secondaryCta: { label: "Book a tailored demo", href: "/contact?intent=demo" },
     },
@@ -157,15 +157,15 @@ export const pages = {
 
   businessContext: {
     meta: {
-      title: "Spine Context Assembler",
-      description: "Spine Context Assembler assembles the records, evidence, and earlier decisions for this task. The tools keep the record.",
+      title: "Business Context — Ingestion & Retrieval | Spine Workspace",
+      description: "Discover, ingest, relate and retrieve governed context with source provenance and role-aware access. Original systems remain authoritative.",
       path: "/business-context",
     },
     hero: {
-      badge: "Spine Context Assembler",
-      headline: "One governed picture of the work.",
+      badge: "SPINE FABRIC · TRUTH AND CONTEXT",
+      headline: "Ingest the truth. Retrieve the context.",
       subhead:
-        "Spine Context Assembler is a SpineWorkspace capability. It assembles the context for this task. The tools keep the record.",
+        "Spine Fabric is the governed contextual operating plane behind the Workbench. It relates authorized source records, events, relationships and evidence so humans and AI can retrieve the context relevant to their work.",
       primaryCta: { label: "See how work is shown", href: "/adaptive-workspace" },
     },
     sections: [
@@ -268,14 +268,14 @@ export const pages = {
 
   adaptiveWorkspace: {
     meta: {
-      title: "Spine Adaptive Auto Tuner",
-      description: "Spine Adaptive Auto Tuner fits the workspace to the person, the task, and the role.",
+      title: "13 Domain Views from One Fabric | Spine Workspace",
+      description: "See how Spine Fabric powers authorized, role-specific Workbench views without creating a separate data silo for each team.",
       path: "/adaptive-workspace",
     },
     hero: {
-      badge: "Spine Adaptive Auto Tuner",
-      headline: "One Work. A view that fits the role.",
-      subhead: "Spine Adaptive Auto Tuner is a SpineWorkspace capability. Sales, operations, and leadership open the same work and see what they need to decide.",
+      badge: "ONE FABRIC · 13 DOMAINS",
+      headline: "Different domain views. One business context.",
+      subhead: "Sales, Account Success, Finance, Engineering, Operations and leadership use role-relevant views of the same governed business context. Supported standard work starts from prebuilt views rather than custom departmental development.",
       primaryCta: { label: "Explore adaptive work", href: "/host-connected-environment" },
     },
     sections: [
@@ -310,16 +310,16 @@ export const pages = {
 
   hostConnectedEnvironment: {
     meta: {
-      title: "The tools you already use — Each tool stays itself",
+      title: "Host Connected Environments & Verified Capabilities | Spine Workspace",
       description:
         "Each tool stays itself. SpineWorkspace shares the record and the evidence for the work. The tools do not have to talk to each other directly.",
       path: "/host-connected-environment",
     },
     hero: {
-      badge: "The tools you already use",
-      headline: "Your tools stay themselves. The work still moves.",
+      badge: "SPINE NETWORK · HOST CONNECTIONS",
+      headline: "Know what your host can actually access.",
       subhead:
-        "Each tool stays itself. SpineWorkspace shares the record and the evidence for the work. The tools do not have to do each other's jobs.",
+        "Host identity, discovered tools, authorized capabilities and verified execution are distinct. Spine Network preserves independent host bindings while source systems retain control of their records.",
       primaryCta: { label: "See how work continues", href: "/continuity" },
     },
     sections: [
@@ -387,13 +387,13 @@ export const pages = {
 
   continuity: {
     meta: {
-      title: "Continuity — Work should continue without rebuilding the story",
+      title: "Cross-Host Continuity — One Context, Multiple AI Hosts",
       description: "Business memory, work state, checkpoints, evidence, and outcomes stay connected across sessions and hosts.",
       path: "/continuity",
     },
     hero: {
       badge: "Continuity",
-      headline: "Work should continue without rebuilding the story.",
+      headline: "One work item. Multiple hosts. Independent authority.",
       primaryCta: { label: "See continuity proof", href: "/proof" },
     },
     sections: [
@@ -403,7 +403,7 @@ export const pages = {
       },
       {
         headline: "Business memory that persists.",
-        body: "Business memory, work state, checkpoints, evidence, and outcomes stay connected—so the story survives every session and every host.",
+        body: "Versioned context and authorized work state can be resumed across compatible AI hosts through Spine Network. Each host is re-authorized and never inherits another host's private credentials.",
       },
       {
         headline: "Three memory scopes.",
