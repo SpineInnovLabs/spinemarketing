@@ -136,10 +136,10 @@ export function WorkbenchViewExplorer({
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div className="inline-flex items-center gap-2 rounded-full border border-[#BBDDF8] bg-white px-3.5 py-1 text-xs font-semibold text-[#006FE8]">
             <span className="h-2 w-2 rounded-full bg-[#006FE8]" />
-            Authentic Workbench Runtime · Deterministic Demonstration State
+            Live Workbench Views
           </div>
           <span className="text-xs font-medium text-[#577592]">
-            Captured from local Next.js 16 Workbench with deterministic QA state
+            Actual Workbench application captures
           </span>
         </div>
 
@@ -149,12 +149,12 @@ export function WorkbenchViewExplorer({
               id={`${id}-title`}
               className="text-[length:min(clamp(2rem,4vw,3.2rem),var(--marketing-heading-size))] font-semibold leading-[1.13] tracking-[-.04em]"
             >
-              One familiar Workbench. Authentic views for every role.
+              Live Workbench Views. One Fabric across domains.
             </h2>
             <p className="mt-4 text-[16px] leading-7 text-[#4E607A]">
-              Explore the real Workbench application. Every screenshot below is captured
-              directly from the authentic codebase—preserving the canonical left navigation shell,
-              role-specific Work projections, demonstration telemetry cards, and context-aware Spine Twin controls.
+              Explore actual Workbench screens captured from the running application. Each role sees
+              the relevant projection within a consistent navigation shell, with access to shared
+              business context, operational views and Spine Twin.
             </p>
           </div>
 
@@ -220,7 +220,7 @@ export function WorkbenchViewExplorer({
               }`}
             >
               <Eye className="h-4 w-4" aria-hidden="true" />
-              Authentic Workbench Screenshots
+              Live Workbench Views
             </button>
             <button
               type="button"
@@ -286,14 +286,14 @@ export function WorkbenchViewExplorer({
           )}
         </div>
 
-        {/* TAB 1: AUTHENTIC SCREENSHOT & 4-PART VALUE NARRATIVE */}
+        {/* TAB 1: WORKBENCH SCREENSHOTS AND DOMAIN VALUE */}
         {activeTab === "screenshot" && (
           <div className="mt-8 space-y-10">
             {!narrative || !currentScreenshot ? (
               <div className="rounded-2xl border border-[#CCE3F5] bg-white p-8 text-center shadow-sm">
                 <AlertCircle className="mx-auto h-8 w-8 text-[#577292]" />
                 <h3 className="mt-3 text-lg font-semibold text-[#082B5E]">
-                  Authentic Screenshot Not Published
+                  Workbench Capture Not Available
                 </h3>
                 <p className="mx-auto mt-2 max-w-md text-sm text-[#4E607A]">
                   The projection <code>{domain.title}</code> is an internal or infrastructure-specific capability without an approved public marketing screenshot.
@@ -330,7 +330,7 @@ export function WorkbenchViewExplorer({
                 <div className="grid grid-cols-1 gap-5 lg:grid-cols-3">
                   {/* BENTO CELL 1: Hero Authentic Workbench Screenshot (Spans 2 cols on lg) */}
                   <div className="flex flex-col overflow-hidden rounded-2xl border border-[#CCE3F5] bg-white shadow-[0_18px_55px_rgba(15,70,130,.08)] lg:col-span-2">
-                    {/* Window Header Bar */}
+                    {/* Workbench Capture Window Header */}
                     <div className="flex flex-wrap items-center justify-between border-b border-[#E2EEF8] bg-[#F7FAFD] px-4 py-2.5 text-xs sm:px-5 sm:py-3">
                       <div className="flex items-center gap-2">
                         <span className="h-3 w-3 rounded-full bg-[#FF5F56]" />
@@ -342,11 +342,7 @@ export function WorkbenchViewExplorer({
                       </div>
 
                       <div className="flex items-center gap-2 sm:gap-3">
-                        {currentScreenshot.badge && (
-                          <span className="rounded-full border border-[#CCE3F5] bg-[#EBF5FF] px-2.5 py-0.5 font-semibold text-[#006FE8]">
-                            {currentScreenshot.badge}
-                          </span>
-                        )}
+                        <span className="rounded-full border border-[#CCE3F5] bg-[#EBF5FF] px-2.5 py-0.5 font-semibold text-[#006FE8]">Live Workbench View</span>
                         <span className="hidden font-mono text-[11px] text-[#7189A6] sm:inline">
                           {isMobileView ? "390 × 844 px (Mobile)" : "1440 × 900 px (Desktop)"}
                         </span>
@@ -378,7 +374,7 @@ export function WorkbenchViewExplorer({
                       <div className="flex items-center gap-2">
                         <CheckCircle2 className="h-4 w-4 text-[#006FE8]" />
                         <span>
-                          <strong>Authentic capture:</strong> {currentScreenshot.title} in{" "}
+                          <strong>Workbench view:</strong> {currentScreenshot.title} in{" "}
                           <code>{domain.title}</code> projection.
                         </span>
                       </div>
@@ -388,7 +384,7 @@ export function WorkbenchViewExplorer({
                         </span>
                         <div className="flex items-center gap-1.5">
                           <ShieldCheck className="h-4 w-4 text-[#208050]" />
-                          <span>Deterministic Demo State</span>
+                          <span>Captured UI</span>
                         </div>
                       </div>
                     </div>
@@ -466,7 +462,7 @@ export function WorkbenchViewExplorer({
                     </div>
                     <div className="mt-4 flex items-center gap-1.5 border-t border-[#EDF4FA] pt-3 text-[11px] font-semibold text-[#5A7391]">
                       <LayoutDashboard className="h-3.5 w-3.5 text-[#006FE8]" />
-                      <span>Zero Cross-App Context Hunting</span>
+                      <span>Connected context across work</span>
                     </div>
                   </article>
 
@@ -675,10 +671,9 @@ export function WorkbenchViewExplorer({
         <div className="mt-10 flex flex-col gap-4 border-t border-[#D6E8F8] pt-6 sm:flex-row sm:items-start sm:justify-between">
           <p className="max-w-2xl text-xs leading-6 text-[#596F89]">
             <ShieldCheck className="mr-1 inline h-4 w-4 align-[-3px] text-[#006FE8]" aria-hidden="true" />
-            Every visual asset is captured from the genuine local Spine Workspace Workbench application
-            running real React components with deterministic demo state. Metrics and figures reflect
-            demonstration fixtures, not audited production data. Projections adapt based on connected
-            sources, credentials, and organizational permissions.
+            Screens are captures from the actual Spine Workspace Workbench application. The capture
+            environment used QA fixture records; figures shown are not verified customer data or
+            operational performance. Production content depends on connected sources, access and policy.
           </p>
           <Link
             href="/product/the-adaptive-workspace"
