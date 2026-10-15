@@ -6,6 +6,7 @@ import { ResponsiveWorkbenchScreenshot } from "@/components/marketing/responsive
 import { WorkbenchShellRecording } from "./workbench-shell-recording";
 import { WorkbenchCanvasShowcase } from "./workbench-canvas-showcase";
 import { WorkbenchCustomerJourney } from "./workbench-customer-journey";
+import mediaStyles from "./responsive-media.module.css";
 import {
   ArrowRight,
   LayoutDashboard,
@@ -607,10 +608,10 @@ export function WorkbenchViewExplorer({
                     onClick={(event) => { if (event.target === event.currentTarget) dialogRef.current?.close(); }}
                   >
                     <div
-                      className="relative flex max-h-[94vh] w-full max-w-7xl flex-col overflow-hidden rounded-2xl border border-[#CCE3F5] bg-white shadow-2xl"
+                      className="relative flex h-full min-h-0 w-full max-w-7xl flex-col overflow-hidden rounded-2xl border border-[#CCE3F5] bg-white shadow-2xl"
                       onClick={(e) => e.stopPropagation()}
                     >
-                      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#E2EEF8] bg-[#F7FAFD] px-5 py-3 text-xs">
+                      <div className="flex shrink-0 flex-wrap items-center justify-between gap-3 border-b border-[#E2EEF8] bg-[#F7FAFD] px-5 py-3 text-xs">
                         <div className="flex min-w-0 items-center gap-2">
                           <span className="h-3 w-3 rounded-full bg-[#FF5F56]" />
                           <span className="h-3 w-3 rounded-full bg-[#FFBD2E]" />
@@ -624,7 +625,7 @@ export function WorkbenchViewExplorer({
                             Live Workbench Views
                           </span>
                           <span className="hidden font-mono text-xs text-[#7189A6] sm:inline">
-                            {isMobileView ? "390 × 844 px" : "1440 × 900 px"} (Full Scale)
+                            {isMobileView ? "390 × 844 px" : "1440 × 900 px"} · Fit to screen
                           </span>
                           <button
                             type="button"
@@ -636,11 +637,11 @@ export function WorkbenchViewExplorer({
                           </button>
                         </div>
                       </div>
-                      <div className="flex flex-1 items-center justify-center overflow-auto bg-[#0C1E38] p-2 sm:p-4">
+                      <div className={`${mediaStyles.fitRegion} min-h-0 flex-1 overflow-auto bg-[#0C1E38] p-2 sm:p-4`}>
                         <img
                           src={isMobileView && currentScreenshot.mobile ? currentScreenshot.mobile : currentScreenshot.desktop}
                           alt={getWorkbenchCaptureReview(isMobileView && currentScreenshot.mobile ? currentScreenshot.mobile : currentScreenshot.desktop)?.description ?? currentScreenshot.alt}
-                          className="h-auto max-h-[82vh] w-auto max-w-full rounded-lg object-contain shadow-lg"
+                          className={mediaStyles.fitImage}
                         />
                       </div>
                     </div>

@@ -2,6 +2,7 @@
 
 import { useEffect, useId, useRef, useState } from "react";
 import { Maximize2, X } from "lucide-react";
+import mediaStyles from "./responsive-media.module.css";
 
 const views = [
   { id: "workbench", label: "Workbench", title: "The role-based operating view.", detail: "The application’s Workbench surface brings records, priorities and contextual actions into the same workspace. Metrics without a binding remain unbound." },
@@ -89,8 +90,8 @@ export function WorkbenchCanvasShowcase() {
               <Maximize2 className="h-4 w-4" aria-hidden />Enlarge view
             </button>
           </figcaption>
-          <button type="button" onClick={() => { setActualSize(false); setExpanded(true); }} aria-label={`Enlarge ${imageLabel} application capture`} className="block w-full cursor-zoom-in bg-[#F7FAFD] text-left focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-[#006FE8]">
-            <img src={imagePath} alt={`Captured SpineWorkspace frontend: ${imageLabel}, including the native blue sidebar, top bar, workspace controls and QA account menu.`} width={1600} height={imageHeight} loading="lazy" className="h-auto w-full" />
+          <button type="button" onClick={() => { setActualSize(false); setExpanded(true); }} aria-label={`Enlarge ${imageLabel} application capture`} className={`${mediaStyles.frame} w-full cursor-zoom-in bg-[#F7FAFD] text-left focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-[#006FE8]`}>
+            <img src={imagePath} alt={`Captured SpineWorkspace frontend: ${imageLabel}, including the native blue sidebar, top bar, workspace controls and QA account menu.`} width={1600} height={imageHeight} loading="lazy" className={mediaStyles.media} />
           </button>
         </figure>
       </div>
@@ -105,8 +106,8 @@ export function WorkbenchCanvasShowcase() {
                 <button type="button" onClick={() => dialogRef.current?.close()} aria-label="Close enlarged application view" className={`${choiceStyle} inline-flex min-w-11 items-center justify-center text-[#315775] hover:bg-[#EBF5FF]`}><X className="h-5 w-5" aria-hidden /></button>
               </div>
             </div>
-            <div tabIndex={0} role="region" aria-label="Scrollable application capture" className="min-h-0 flex-1 overflow-auto bg-[#F0F8FF] p-2 focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-[#006FE8]">
-              <img src={imagePath} alt={`Full ${imageLabel} capture from the application components with QA fixture data.`} width={1600} height={imageHeight} className={actualSize ? "h-auto w-[1600px] max-w-none" : "mx-auto h-auto max-w-full"} />
+            <div tabIndex={0} role="region" aria-label="Scrollable application capture" className={`${actualSize ? "" : mediaStyles.fitRegion} min-h-0 flex-1 overflow-auto bg-[#F0F8FF] p-2 focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-[#006FE8]`}>
+              <img src={imagePath} alt={`Full ${imageLabel} capture from the application components with QA fixture data.`} width={1600} height={imageHeight} className={actualSize ? "h-auto w-[1600px] max-w-none" : mediaStyles.fitImage} />
             </div>
             <p className="shrink-0 border-t border-[#D9E8F4] px-3 py-2 text-xs leading-5 text-[#596F89]">QA fixture capture. Choose Actual size and scroll to read the full sidebar and view.</p>
           </div>

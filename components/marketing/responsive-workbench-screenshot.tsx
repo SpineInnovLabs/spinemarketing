@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import mediaStyles from "./responsive-media.module.css";
 
 interface ResponsiveWorkbenchScreenshotProps {
   src: string;
@@ -18,7 +19,7 @@ export function ResponsiveWorkbenchScreenshot({
   isMobile = false,
   priority = false,
   className = "",
-  maxHeight = "min(520px, 65vh)",
+  maxHeight,
   onClick,
 }: ResponsiveWorkbenchScreenshotProps) {
   const basePath = src.replace(/\.webp$/, "");
@@ -36,13 +37,13 @@ export function ResponsiveWorkbenchScreenshot({
   if (isMobile) {
     return (
       <div
-        className={`relative mx-auto max-w-[390px] overflow-hidden rounded-[2.5rem] border-[8px] border-[#1A2E46] shadow-2xl ${
+        className={`${mediaStyles.phone} relative mx-auto max-w-[390px] overflow-hidden rounded-[2.5rem] border-[8px] border-[#1A2E46] shadow-2xl ${
           onClick ? "cursor-pointer transition-transform hover:scale-[1.01] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#006FE8]" : ""
         } ${className}`}
         onClick={onClick}
         {...interactionProps}
       >
-        <picture>
+        <picture className="block min-w-0">
           <source
             type="image/webp"
             srcSet={`
@@ -59,8 +60,8 @@ export function ResponsiveWorkbenchScreenshot({
             height={844}
             loading={priority ? "eager" : "lazy"}
             decoding="async"
-            className="h-auto w-full object-cover"
-            style={{ aspectRatio: "390 / 844" }}
+            className={mediaStyles.media}
+            style={{ maxHeight }}
           />
         </picture>
       </div>
@@ -75,7 +76,6 @@ export function ResponsiveWorkbenchScreenshot({
       onClick={onClick}
       {...interactionProps}
     >
-      {/* Scrollable containment on narrow viewports <= 480px */}
       <div className="flex w-full justify-center">
         <div className="flex min-w-0 w-full items-center justify-center">
           <picture className="flex w-full items-center justify-center">
@@ -98,11 +98,8 @@ export function ResponsiveWorkbenchScreenshot({
               height={900}
               loading={priority ? "eager" : "lazy"}
               decoding="async"
-              className="h-auto w-auto max-w-full object-contain aspect-[16/10]"
-              style={{
-                aspectRatio: "16 / 10",
-                maxHeight: maxHeight,
-              }}
+              className={mediaStyles.media}
+              style={{ maxHeight }}
             />
           </picture>
         </div>

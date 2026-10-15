@@ -4,6 +4,7 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { ResponsiveWorkbenchScreenshot } from "./responsive-workbench-screenshot";
 import { WorkspaceBenefits } from "./workspace-benefits";
 import { WorkbenchViewExplorer } from "./workbench-view-explorer";
+import mediaStyles from "./responsive-media.module.css";
 
 const approach = [
   [
@@ -364,7 +365,7 @@ export function InnovLabsHome() {
               alt="Original architecture illustration connecting the Spine Fabric foundation, human Workbench, Twin assistance, Runtime authorization, and existing source systems through connected capabilities."
               width={1774}
               height={887}
-              className="h-auto w-full rounded-2xl"
+              className={`${mediaStyles.media} rounded-2xl`}
             />
             <figcaption className="mt-3 text-[12px] leading-6 text-[#4E607A]">
               Conceptual architecture: complementary parts of one governed
