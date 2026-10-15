@@ -3,6 +3,7 @@
 import { useId, useMemo, useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { ResponsiveWorkbenchScreenshot } from "@/components/marketing/responsive-workbench-screenshot";
+import { WorkbenchShellRecording } from "./workbench-shell-recording";
 import {
   ArrowRight,
   LayoutDashboard,
@@ -11,6 +12,7 @@ import {
   Monitor,
   Smartphone,
   Eye,
+  Play,
   CheckCircle2,
   AlertCircle,
   Maximize2,
@@ -66,12 +68,30 @@ export function WorkbenchViewExplorer({
       ? initialDomain
       : DEFAULT_DOMAIN
   );
-  const [activeTab, setActiveTab] = useState<"screenshot" | "inventory">("screenshot");
+  const [activeTab, setActiveTab] = useState<"screenshot" | "recording" | "inventory">("screenshot");
   const [selectedViewKey, setSelectedViewKey] = useState<string>("primary");
   const [isMobileView, setIsMobileView] = useState(false);
   const [showAll, setShowAll] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
   const dialogRef = useRef<HTMLDialogElement>(null);
+  const recordingRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const revealLinkedRecording = () => {
+      if (window.location.hash === "#workbench-recording") setActiveTab("recording");
+    };
+    revealLinkedRecording();
+    window.addEventListener("hashchange", revealLinkedRecording);
+    return () => window.removeEventListener("hashchange", revealLinkedRecording);
+  }, []);
+
+  useEffect(() => {
+    if (activeTab !== "recording") {
+      recordingRef.current?.querySelector("video")?.pause();
+    } else if (window.location.hash === "#workbench-recording") {
+      recordingRef.current?.scrollIntoView({ block: "start" });
+    }
+  }, [activeTab]);
 
   useEffect(() => {
     if (!isExpanded) return;
@@ -173,7 +193,7 @@ export function WorkbenchViewExplorer({
             </p>
           </div>
 
-          <div className="w-full max-w-sm">
+          <div hidden={activeTab === "recording"} className="w-full max-w-sm">
             <label htmlFor={`${id}-select`} className="mb-2 block text-xs font-semibold uppercase tracking-wider text-[#082B5E]">
               Select a Workbench domain
             </label>
@@ -198,6 +218,7 @@ export function WorkbenchViewExplorer({
         </div>
 
         {/* Quick Domain Selector Chips (Touch & Keyboard accessible) */}
+        <div hidden={activeTab === "recording"}>
         <div className="mt-5 flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none" role="navigation" aria-label="Workbench Domain Quick Selection">
           {PUBLIC_WORKBENCH_DOMAINS.map((item) => (
             <button
@@ -220,6 +241,7 @@ export function WorkbenchViewExplorer({
             </button>
           ))}
         </div>
+        </div>
 
         {/* View Switcher: Interactive Screenshots vs Extracted Inventory */}
         <div className="mt-8 flex flex-wrap items-center justify-between gap-4 border-b border-[#D6E8F8] pb-4">
@@ -228,7 +250,7 @@ export function WorkbenchViewExplorer({
               type="button"
               aria-pressed={activeTab === "screenshot"}
               onClick={() => setActiveTab("screenshot")}
-              className={`inline-flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition-all ${
+              className={`inline-flex min-h-11 items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition-all ${
                 activeTab === "screenshot"
                   ? "bg-[#006FE8] text-white shadow-sm"
                   : "bg-white text-[#3C577A] hover:bg-[#E2F0FD] hover:text-[#082B5E]"
@@ -239,9 +261,23 @@ export function WorkbenchViewExplorer({
             </button>
             <button
               type="button"
+              aria-pressed={activeTab === "recording"}
+              aria-controls="workbench-recording"
+              onClick={() => setActiveTab("recording")}
+              className={`inline-flex min-h-11 items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition-all ${
+                activeTab === "recording"
+                  ? "bg-[#006FE8] text-white shadow-sm"
+                  : "bg-white text-[#3C577A] hover:bg-[#E2F0FD] hover:text-[#082B5E]"
+              }`}
+            >
+              <Play className="h-4 w-4" aria-hidden="true" />
+              Watch the shell recording
+            </button>
+            <button
+              type="button"
               aria-pressed={activeTab === "inventory"}
               onClick={() => setActiveTab("inventory")}
-              className={`inline-flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition-all ${
+              className={`inline-flex min-h-11 items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition-all ${
                 activeTab === "inventory"
                   ? "bg-[#006FE8] text-white shadow-sm"
                   : "bg-white text-[#3C577A] hover:bg-[#E2F0FD] hover:text-[#082B5E]"
@@ -352,7 +388,7 @@ export function WorkbenchViewExplorer({
                         <span className="h-3 w-3 rounded-full bg-[#FF5F56]" />
                         <span className="h-3 w-3 rounded-full bg-[#FFBD2E]" />
                         <span className="h-3 w-3 rounded-full bg-[#27C93F]" />
-                        <span className="ml-3 font-mono text-[11px] font-semibold text-[#5A7391]">
+                        <span className="ml-3 break-all font-mono text-[11px] font-semibold text-[#5A7391]">
                           {currentScreenshot.route}
                         </span>
                       </div>
@@ -602,7 +638,11 @@ export function WorkbenchViewExplorer({
           </div>
         )}
 
-        {/* TAB 2: DECLARED VIEW INVENTORY */}
+        <div ref={recordingRef} hidden={activeTab !== "recording"} className="mt-8 scroll-mt-24">
+          <WorkbenchShellRecording />
+        </div>
+
+        {/* DECLARED VIEW INVENTORY */}
         {activeTab === "inventory" && (
           <div className="mt-8 grid overflow-hidden rounded-2xl border border-[#CBE1F5] bg-white shadow-[0_18px_65px_rgba(25,80,140,.07)] lg:grid-cols-[275px_minmax(0,1fr)]">
             <aside

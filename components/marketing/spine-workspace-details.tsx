@@ -4,11 +4,6 @@ import { WorkspaceAuthActions } from "./workspace-auth-actions";
 import { WorkspaceBenefits } from "./workspace-benefits";
 import { WorkspaceSubscriptionValue } from "./workspace-subscription-value";
 import { WorkbenchViewExplorer } from "./workbench-view-explorer";
-import { ThreeProductPillars } from "./three-product-pillars";
-import { WorkbenchGuidedDemo } from "./workbench-guided-demo";
-import { FabricProofShowcase } from "./fabric-proof-showcase";
-import { SpineNetworkContinuity } from "./spine-network-continuity";
-import { WorkbenchShellRecording } from "./workbench-shell-recording";
 import {
   ArrowRight,
   Database,
@@ -90,6 +85,13 @@ const technology = [
     body: "Brings connectors, MCP servers, plugins, and reusable capabilities into the work.",
     href: "/integrations",
   },
+  {
+    icon: Network,
+    name: "Spine Network",
+    label: "Continuity across AI hosts",
+    body: "Designed to carry authorized context and work state between compatible hosts. Each host verifies identity, discovers capabilities, checks authority, invokes permitted tools and reconciles results independently.",
+    href: "/host-connected-environment",
+  },
 ];
 
 export function SpineWorkspaceDetails() {
@@ -104,7 +106,7 @@ export function SpineWorkspaceDetails() {
             SPINEWORKSPACE · BUSINESS CONTEXT FOR HUMANS & AI
           </p>
           <h1 id="product-title">
-            One business context. 13 domains. Ready-to-work views.
+            Your tools have the information. Your team needs the whole picture.
           </h1>
           <p className="innovtech-hero-description">
             Ingest and retrieve authorized business context from the systems you use.
@@ -161,11 +163,6 @@ export function SpineWorkspaceDetails() {
           </figcaption>
         </figure>
       </section>
-      <ThreeProductPillars compact />
-      <WorkbenchGuidedDemo />
-      <WorkbenchShellRecording />
-      <FabricProofShowcase />
-      <SpineNetworkContinuity />
       <WorkspaceBenefits detailed />
       <section id="features" className="innovtech-section">
         <p className="innovtech-eyebrow">THE WORKSPACE, IN DETAIL</p>
@@ -201,6 +198,11 @@ export function SpineWorkspaceDetails() {
           <br />
           Review. Move forward.
         </h2>
+        <p className="innovtech-section-intro">
+          A renewal review can relate a customer&apos;s contract, invoice and
+          service incident. Account Success, Finance and Engineering each see
+          the permitted evidence through their own view of the same Fabric.
+        </p>
         <div className="innovtech-feature-grid">
           {[
             {

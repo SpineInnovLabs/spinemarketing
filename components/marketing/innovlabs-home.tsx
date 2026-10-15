@@ -4,11 +4,6 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { ResponsiveWorkbenchScreenshot } from "./responsive-workbench-screenshot";
 import { WorkspaceBenefits } from "./workspace-benefits";
 import { WorkbenchViewExplorer } from "./workbench-view-explorer";
-import { ThreeProductPillars } from "./three-product-pillars";
-import { WorkbenchGuidedDemo } from "./workbench-guided-demo";
-import { FabricProofShowcase } from "./fabric-proof-showcase";
-import { SpineNetworkContinuity } from "./spine-network-continuity";
-import { WorkbenchShellRecording } from "./workbench-shell-recording";
 
 const approach = [
   [
@@ -62,6 +57,12 @@ const technology = [
     label: "Connected capabilities",
     body: "A path to approved connectors, MCP servers, tools, and reusable capabilities.",
     href: "/integrations",
+  },
+  {
+    name: "Spine Network",
+    label: "Continuity across AI hosts",
+    body: "Designed to continue work across compatible AI hosts using the same governed context and work state. Each host independently verifies identity, discovers capabilities, checks authority, invokes permitted tools and reconciles results.",
+    href: "/host-connected-environment",
   },
 ];
 const roles = [
@@ -158,7 +159,7 @@ export function InnovLabsHome() {
         <div
           className={`${container} grid items-center gap-12 py-16 sm:py-24 lg:min-h-[760px] lg:grid-cols-[1.04fr_.96fr] lg:gap-12`}
         >
-          <div>
+          <div className="min-w-0">
             <SectionLabel>
               SPINE INNOVTECH · TECHNOLOGY & AI INNOVATION
             </SectionLabel>
@@ -166,17 +167,18 @@ export function InnovLabsHome() {
               id="company-title"
               className="mt-6 max-w-[700px] text-[length:min(clamp(2.75rem,5.2vw,4.85rem),var(--marketing-title-size))] font-bold leading-[1.06] tracking-[-.05em] text-[#032D60]"
             >
-              One business context.{" "}
-              <span className="text-[#006FE8]">Every domain. Ready for work.</span>
+              Building the intelligence behind{" "}
+              <span className="text-[#006FE8]">connected business.</span>
             </h1>
             <p className={`${body} mt-7 max-w-[590px]`}>
-              Business systems already hold the records. Spine Workspace assembles the
-              governed context people and AI need to understand their work.
+              Business already runs across people, applications, decisions, and
+              AI. The challenge is not a lack of tools. It is the missing
+              context between them.
             </p>
             <p className={`${body} mt-4 max-w-[590px]`}>
-              One Spine Fabric powers role-relevant views across 13 business domains.
-              Start with ready-built operational workspaces—without custom
-              application development for supported standard workflows.
+              Spine InnovTech builds the technology that connects those
+              pieces—so people and AI can understand what matters, coordinate
+              work, and act with clarity and accountability.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href="/product" className={`${button} shadow-[0_4px_14px_rgba(0,111,232,0.25)] hover:shadow-[0_6px_20px_rgba(0,111,232,0.35)]`}>
@@ -188,10 +190,10 @@ export function InnovLabsHome() {
               </Link>
             </div>
             <p className="mt-8 border-t border-[#CBE5FA] pt-5 text-[13px] font-medium text-[#4E607A]">
-              Context once. Project everywhere. Ready for work.
+              Connected systems. Shared context. Governed intelligence.
             </p>
           </div>
-          <figure className="mx-auto w-full max-w-[680px]">
+          <figure className="mx-auto min-w-0 w-full max-w-[680px]">
             <div className="overflow-hidden rounded-2xl border border-[#CCE3F5] bg-white shadow-[0_22px_70px_rgba(15,70,130,.14)]">
               <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[#E2EEF8] bg-[#F7FAFD] px-4 py-2.5 text-xs">
                 <div className="flex items-center gap-1.5">
@@ -219,11 +221,6 @@ export function InnovLabsHome() {
         </div>
       </section>
 
-      <ThreeProductPillars />
-      <FabricProofShowcase />
-      <SpineNetworkContinuity />
-      <WorkbenchGuidedDemo />
-      <WorkbenchShellRecording />
       <WorkspaceBenefits />
 
       <WorkbenchViewExplorer initialDomain="founderops" />
@@ -375,11 +372,11 @@ export function InnovLabsHome() {
             </figcaption>
           </figure>
           <div className="mt-10 grid gap-4 md:grid-cols-2">
-            {technology.map((part, index) => (
+            {technology.map((part) => (
               <Link
                 key={part.name}
                 href={part.href}
-                className={`group rounded-2xl border border-[#CBE5FA] bg-white p-7 hover:border-[#006FE8] focus-visible:outline-2 focus-visible:outline-[#006FE8] ${index === 4 ? "md:col-span-2" : ""}`}
+                className="group rounded-2xl border border-[#CBE5FA] bg-white p-7 hover:border-[#006FE8] focus-visible:outline-2 focus-visible:outline-[#006FE8]"
               >
                 <div className="flex items-start justify-between gap-4">
                   <div>

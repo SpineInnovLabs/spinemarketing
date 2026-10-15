@@ -14,11 +14,11 @@ export const metadata: Metadata = {
     types: { "application/rss+xml": "/rss.xml" },
   },
   title: {
-    default: "Spine Workspace | One Business Context, Every Domain, Ready for Work",
+    default: "Spine InnovTech | Intelligence for Connected Business",
     template: "%s",
   },
   description:
-    "Spine Workspace brings governed business context to 13 domain workspaces with ready-built views for humans and AI. Source systems remain authoritative.",
+    "Technology and AI innovation for shared business context, governed action, and connected work. Meet the company behind SpineWorkspace.",
   icons: {
     icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
     apple: "/icon.svg",

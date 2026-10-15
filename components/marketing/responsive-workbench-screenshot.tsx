@@ -76,8 +76,8 @@ export function ResponsiveWorkbenchScreenshot({
       {...interactionProps}
     >
       {/* Scrollable containment on narrow viewports <= 480px */}
-      <div className="flex w-full justify-center overflow-x-auto scrollbar-thin scrollbar-thumb-[#CCE3F5]">
-        <div className="flex min-w-[440px] items-center justify-center sm:min-w-0">
+      <div className="flex w-full justify-center">
+        <div className="flex min-w-0 w-full items-center justify-center">
           <picture className="flex w-full items-center justify-center">
             <source
               type="image/webp"
@@ -106,11 +106,6 @@ export function ResponsiveWorkbenchScreenshot({
             />
           </picture>
         </div>
-      </div>
-      <div className="flex sm:hidden items-center justify-between px-3 py-1 bg-[#F7FAFD] border-t border-[#E2EEF8] text-[10px] text-[#5A7391]">
-        <span>← Shell Navigation</span>
-        <span className="font-medium text-[#006FE8]">Scroll to explore view</span>
-        <span>Twin Panel →</span>
       </div>
     </div>
   );

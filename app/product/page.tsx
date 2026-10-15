@@ -4,7 +4,7 @@ import { Footer } from "@/components/footer";
 import { SpineWorkspaceDetails } from "@/components/marketing/spine-workspace-details";
 
 export const metadata: Metadata = {
-  title: "Spine Workspace — One Fabric, 13 Domains, Ready-to-Work Views",
+  title: "SpineWorkspace — Product, Features & Technology | Spine InnovTech",
   description:
     "Discover Spine Workspace: governed truth and context, one Fabric projected across 13 domains, and ready-to-work operational views for humans and AI.",
   alternates: { canonical: "/product" },

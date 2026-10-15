@@ -1,11 +1,9 @@
 export function WorkbenchShellRecording() {
   return (
-    <section id="workbench-recording" aria-labelledby="workbench-recording-title" className="scroll-mt-20 bg-[#F0F8FF] py-16 lg:py-24">
-      <div className="mx-auto max-w-[1320px] px-5 sm:px-8 lg:px-12">
-        <p className="text-[11px] font-semibold uppercase tracking-[.2em] text-[#006FE8]">Live Workbench Views</p>
-        <h2 id="workbench-recording-title" className="mt-4 text-[length:min(clamp(2rem,4vw,3.3rem),var(--marketing-heading-size))] font-semibold leading-tight tracking-[-.04em] text-[#082B5E]">Inside the Workbench shell.</h2>
-        <p className="mt-4 max-w-[870px] text-base leading-8 text-[#4E607A]">Watch the shared navigation, operating view and work-view search respond in a recording of the actual Workbench application.</p>
-        <div className="mt-8 overflow-hidden rounded-3xl border border-[#CBE5FA] bg-white shadow-[0_18px_60px_rgba(15,70,130,.09)]">
+    <div id="workbench-recording" aria-labelledby="workbench-recording-title" className="scroll-mt-24">
+        <h3 id="workbench-recording-title" className="text-xl font-semibold text-[#082B5E] sm:text-2xl">Inside the Workbench shell.</h3>
+        <p className="mt-3 max-w-[870px] text-sm leading-7 text-[#4E607A]">Watch the shared navigation, operating view and work-view search respond in a recording of the actual Workbench application.</p>
+        <div className="mt-6 overflow-hidden rounded-2xl border border-[#CCE3F5] bg-white">
           <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[#D8E7F4] px-5 py-3 text-xs font-semibold text-[#082B5E]">
             <span>Workbench shell · FounderOps</span>
             <span className="rounded-full border border-[#CBE5FA] bg-[#E8F4FF] px-3 py-1 text-[#006FE8]">Live Workbench Views</span>
@@ -21,7 +19,6 @@ export function WorkbenchShellRecording() {
           <summary className="w-fit cursor-pointer rounded-sm font-semibold text-[#006FE8] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#006FE8]">Read the walkthrough transcript</summary>
           <p className="mt-3 max-w-[950px]">The FounderOps view sits inside the shared Workbench navigation. Sales &amp; Pipeline collapses and expands to show fixture opportunities and contacts. Marketing &amp; Campaigns opens its fixture rows. Operations opens workflow and task rows. Work-view search opens and is dismissed. No consequential action or external provider operation is performed.</p>
         </details>
-      </div>
-    </section>
+    </div>
   );
 }
