@@ -33,18 +33,34 @@ The supplied *Spine Workspace UI Blueprint.png* is a visual reference for
 document, database, graph and Twin surfaces. Its sample metrics and statuses
 are not runtime evidence and were not promoted into customer claims.
 
-Canvas captures separately render the application's unmodified `CanvasSurface`
-component in an isolated local harness with its existing unit-test records and
-graph envelope. The current `/workspace/workbench` page supplies no records to
-`UnifiedWorkbench`, so these are component captures, not proof of that route's
-connected hydration. No application source/authentication/authorization code
-was changed. The navy selector around the images belongs to the marketing UI.
+The public Canvas selector now uses complete captures of the application's
+unmodified `IAAppShell`, `IASidebar`, `DepartmentProvider` and
+`UnifiedWorkbench`, including its role, Canvas and Library surfaces. Its
+seven sidebar groups and native nested menus come from the application
+components and current navigation manifests. Six additional captures show
+each expandable sidebar group, including inactive items and administrator
+controls for the QA profile. Marketing selection controls sit outside the
+captured shell; the earlier four-item marketing sidebar has been removed.
+
+These components are composed in a local QA preview with existing unit-test
+records, graph envelope and the application's compiled CSS and font classes.
+A preview-only Next navigation adapter supplies the route; the existing
+non-production identity handler supplies the Visual QA identity. The current
+`/workspace/workbench` page supplies no records to `UnifiedWorkbench`, so the
+populated component captures are not proof of that route's connected
+hydration. Sync and Host Verified labels originate in the UI and are not
+independent evidence of connections or effects. No application source,
+authentication or authorization code was changed. No action was approved or
+executed, and browser requests other than GET were blocked during capture.
 
 Capture dimensions, source-file digests, report digest and capture digests are
-recorded in `WORKBENCH-CANVAS-PROVENANCE.json`.
+recorded in `WORKBENCH-CANVAS-PROVENANCE.json` for the archived isolated
+captures and `WORKBENCH-NATIVE-SHELL-PROVENANCE.json` for the public shell
+captures.
 
 Phone captures were also inspected. The native component clips some controls
 and text at 390 px. These captures are retained in the archive but excluded
 from the public selector. Marketing scales the complete desktop captures on
-phones and provides full-size image links. This does not establish native
+phones and provides an accessible enlargement dialog with fit and actual-size
+scrolling. This does not establish native
 application mobile parity; application layout repairs remain separate work.

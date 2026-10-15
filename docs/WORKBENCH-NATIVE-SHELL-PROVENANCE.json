@@ -1,0 +1,162 @@
+{
+  "sourceCommit": "095fd8017c905c25be2832b02be3b35deabc8fe6",
+  "sourceStatus": "M apps/web/app/api/workbench/tool/[tool]/route.ts\n M apps/web/components/workbenches/inbox-workbench.test.tsx\n M apps/web/components/workbenches/inbox-workbench.tsx\n M apps/web/lib/inbox-list.ts\n?? apps/web/app/api/workbench/tool/[tool]/route.test.ts\n?? scripts/verify-real-browser-journey.mjs",
+  "capturedAt": "2026-10-15T10:12:01.156Z",
+  "renderer": "Unmodified IAAppShell, IASidebar, DepartmentProvider and UnifiedWorkbench components from the application source, composed in a local QA preview. Actual application compiled CSS, font classes, navigation manifests and component state; preview-only Next navigation adapter.",
+  "fixture": "The two records from canvas-surface.test.tsx, account-success projection manifest for QA menu, and graph envelope from canvas-nodes-from-payload.test.ts. Visual QA identity via existing non-production identity handler.",
+  "nativeRouteLimitation": "/workspace/workbench?surface=canvas supplies no records in this checkout. Populated captures use the components’ existing records prop in the QA composition; they are not evidence that the native route is connected.",
+  "network": "Loopback and public source-logo CDN only; non-GET browser requests blocked. No real credentials, customer data or provider actions.",
+  "sourceFiles": [
+    {
+      "path": "apps/web/components/shell/ia-sidebar.tsx",
+      "sha256": "ce8bbc692e6beed9af21bec3046382092fd267f39c0290f280c43135f4c5dcba"
+    },
+    {
+      "path": "apps/web/components/shell/ia-app-shell.tsx",
+      "sha256": "d0fea39d7b34024b339e75c6d7530b85db8fe5879841bdae8045110abb233e1a"
+    },
+    {
+      "path": "apps/web/components/providers/department-provider.tsx",
+      "sha256": "191eb0ffe38f4deaf9e38d51fb25a1e5a75799ad4f38fe633cba4bbcb9a506d1"
+    },
+    {
+      "path": "apps/web/components/workbench/unified-workbench.tsx",
+      "sha256": "28d4a08f483677d8a39605761f1c336c38712262c94961d667e496defbbda575"
+    },
+    {
+      "path": "apps/web/components/workbench/surfaces/canvas-workspace-surface.tsx",
+      "sha256": "a58e129fa9449e8bca2b0af16b1584d33a080cc8e0639d0182795b2a25446025"
+    },
+    {
+      "path": "apps/web/components/workbench/surfaces/role-workbench-surface.tsx",
+      "sha256": "2c826a78f9820d1a0d99050411629f49b2195bf8dd0985451b933fbdff66d676"
+    },
+    {
+      "path": "apps/web/components/workbench/surfaces/workbench-library-surface.tsx",
+      "sha256": "c4a17065e0a18c67ef978aec3660b5f93324c05bec4443a9d33e742c91650558"
+    },
+    {
+      "path": "apps/web/components/projections/canvas-surface.tsx",
+      "sha256": "dfdd36fb8d9a97f498a47c6ca76782cf784b591958cdcec3b6b7c85e4177aa56"
+    },
+    {
+      "path": "apps/web/components/projections/canvas-surface.test.tsx",
+      "sha256": "16a40df2178df2b83c5b21db244479a9593971df6c021fe919f4a61d1904eb61"
+    },
+    {
+      "path": "apps/web/components/projections/canvas-nodes-from-payload.test.ts",
+      "sha256": "793e1c07454f7f2f09cc47785ba1c6a54f26ad7971dfe1e6c94a3fd5f4b3c541"
+    },
+    {
+      "path": "packages/workbench-config/src/workbench-shell.ts",
+      "sha256": "7db83ae12519fff0324f3ec69a55eff97532f3745244c8dff6994dad31018986"
+    },
+    {
+      "path": "packages/workbench-config/src/work-packages.ts",
+      "sha256": "9feb26bfaa4ab4526279bb6570dc8386c861412ee30b2afa0201829c78d56bed"
+    },
+    {
+      "path": "apps/web/lib/projection-registry/work/account-success.ts",
+      "sha256": "c52d37360576ad1185fe0cc9773f22cf35a72adffb2e4e21b62658e91818b53b"
+    }
+  ],
+  "captures": [
+    {
+      "id": "document",
+      "path": "public/images/workbench/native-shell/document-20261015.webp",
+      "width": 1600,
+      "height": 1100,
+      "sha256": "4087365e54e360944e8742e5015ef87a4269befcd73bf0038564216c66790151",
+      "detail": "Native IASidebar, IAAppShell and UnifiedWorkbench with the two existing CanvasSurface QA records. All seven sidebar groups visible. Title shortened using the actual editable field."
+    },
+    {
+      "id": "database",
+      "path": "public/images/workbench/native-shell/database-20261015.webp",
+      "width": 1600,
+      "height": 1100,
+      "sha256": "0c3f11d8668a49e9ef09e50ab9afa96e2b91189fd65a8dc549f87340f9842431",
+      "detail": "Changed the native inner Database control and verified search filters the existing two QA records."
+    },
+    {
+      "id": "graph",
+      "path": "public/images/workbench/native-shell/graph-20261015.webp",
+      "width": 1600,
+      "height": 1100,
+      "sha256": "db8cbe1c3429f373b97cdc92b3f2a3982a912ea7effb4a663c345323ff6b48a4",
+      "detail": "Changed native Context Graph control. Existing multimodal graph unit-test envelope delivered through SSE handler; positions only arranged into columns."
+    },
+    {
+      "id": "blocks",
+      "path": "public/images/workbench/native-shell/blocks-20261015.webp",
+      "width": 1600,
+      "height": 1100,
+      "sha256": "c78bc4666b6110586ce3be3596a352381970edcf4d43df4753c9511dace3ba00",
+      "detail": "Opened the native Canvas UI Library panel; no blocks or actions executed."
+    },
+    {
+      "id": "library",
+      "path": "public/images/workbench/native-shell/library-20261015.webp",
+      "width": 1600,
+      "height": 1100,
+      "sha256": "7845e4aee5c31d0e435d71366543872fda4648acc7493b7f08e505b70095389f",
+      "detail": "Native S4 Workbench and Canvas Library; no Load Layout action invoked."
+    },
+    {
+      "id": "workbench",
+      "path": "public/images/workbench/native-shell/workbench-20261015.webp",
+      "width": 1600,
+      "height": 1100,
+      "sha256": "63cca62503bb930634df070d2693e72eefb5ffcf23c310f5020e5f3d412599d5",
+      "detail": "Native S1 RoleWorkbenchSurface, using the existing two QA records. Source metrics remain unbound."
+    },
+    {
+      "id": "navigation-my-work",
+      "path": "public/images/workbench/native-shell/navigation-my-work-20261015.webp",
+      "width": 1600,
+      "height": 1100,
+      "sha256": "a000c41e38489d7ad26e9bc645209e254aac93940c83e525e693f4f2b183d4fd",
+      "detail": "Expanded only My Work using the real sidebar button; child labels, nesting, inactive states and permissions are rendered by IASidebar."
+    },
+    {
+      "id": "navigation-communications",
+      "path": "public/images/workbench/native-shell/navigation-communications-20261015.webp",
+      "width": 1600,
+      "height": 1100,
+      "sha256": "599b36c005a35e15c0f10154ac8d7a21ad8ef9923300896355b4ee03e9505b87",
+      "detail": "Expanded only Communications using the real sidebar button; child labels, nesting, inactive states and permissions are rendered by IASidebar."
+    },
+    {
+      "id": "navigation-personal",
+      "path": "public/images/workbench/native-shell/navigation-personal-20261015.webp",
+      "width": 1600,
+      "height": 1100,
+      "sha256": "05f962ab5cd828fb070ac814e3f101caafbdae78cb7815283a40f06e69d88481",
+      "detail": "Expanded only Personal using the real sidebar button; child labels, nesting, inactive states and permissions are rendered by IASidebar."
+    },
+    {
+      "id": "navigation-work",
+      "path": "public/images/workbench/native-shell/navigation-work-20261015.webp",
+      "width": 1600,
+      "height": 1680,
+      "sha256": "0592b49aa2a5f7167bdd252e828adb16d242548b447b4bfa66d7454e1a5abeee",
+      "detail": "Expanded only Work using the real sidebar button; child labels, nesting, inactive states and permissions are rendered by IASidebar."
+    },
+    {
+      "id": "navigation-platform",
+      "path": "public/images/workbench/native-shell/navigation-platform-20261015.webp",
+      "width": 1600,
+      "height": 1100,
+      "sha256": "8aee6cb44c197de5492a325ef1484bc500875ea88b900439e5dfb3bc2739a2c0",
+      "detail": "Expanded only Platform using the real sidebar button; child labels, nesting, inactive states and permissions are rendered by IASidebar."
+    },
+    {
+      "id": "navigation-administration",
+      "path": "public/images/workbench/native-shell/navigation-administration-20261015.webp",
+      "width": 1600,
+      "height": 1100,
+      "sha256": "d7e608cd5d8d2a7f4d40729b14e51ae0a67fb540edbdbb087f805095337677e4",
+      "detail": "Expanded only Administration using the real sidebar button; child labels, nesting, inactive states and permissions are rendered by IASidebar."
+    }
+  ],
+  "boundary": "Native sync, Host Verified, source and action labels are part of the captured component UI. They do not substantiate a connected host, persisted edits, live customer telemetry, authorized execution, or verified provider effects. The routed application was not edited."
+}

@@ -50,4 +50,20 @@ for (const capture of canvas.captures) {
     assert.equal(digest, capture.sha256, `Canvas capture provenance digest mismatch: ${file}`);
   }
 }
+const nativeShell = JSON.parse(await readFile("docs/WORKBENCH-NATIVE-SHELL-PROVENANCE.json", "utf8"));
+for (const capture of nativeShell.captures) {
+  for (const file of [capture.path, "out/" + capture.path.replace(/^public\//, "")]) {
+    const digest = createHash("sha256").update(await readFile(file)).digest("hex");
+    assert.equal(digest, capture.sha256, `Native shell capture provenance digest mismatch: ${file}`);
+    const dimensions = await sharp(file).metadata();
+    assert.equal(dimensions.width, capture.width, `Native shell capture width mismatch: ${file}`);
+    assert.equal(dimensions.height, capture.height, `Native shell capture height mismatch: ${file}`);
+  }
+}
+for (const route of ["index", "product"]) {
+  const html = await readFile(`out/${route}.html`, "utf8");
+  assert.ok(html.includes("Sidebar structure"), `Missing native sidebar explorer: ${route}`);
+  assert.ok(html.includes("/images/workbench/native-shell/document-20261015.webp"), `Missing complete native shell: ${route}`);
+  assert.ok(!html.includes("/images/workbench/canvas/document-20261015.webp"), `Superseded isolated component is still rendered: ${route}`);
+}
 console.log(`Workbench captures verified: ${primary.length} provenance entries, ${files.length} image assets, rendered labels and image references.`);
