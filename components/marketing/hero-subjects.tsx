@@ -4,6 +4,7 @@ import { FileText, Flag, Inbox, Landmark, MessageSquare, MousePointer2, SquareCh
 import { AppLogo } from "@/components/marketing/app-logo";
 import { heroGlassClass } from "@/components/marketing/page-hero";
 import { integrationLogo } from "@/lib/integration-logos";
+import mediaStyles from "./responsive-media.module.css";
 
 const CLUSTER = ["Salesforce", "Slack", "HubSpot", "Stripe", "Jira", "Notion"].map((name) => integrationLogo(name));
 
@@ -26,7 +27,7 @@ export function DataFabricPanel() {
         height={398}
         loading="lazy"
         decoding="async"
-        className="h-auto w-full object-contain"
+        className={mediaStyles.media}
       />
     </div>
   );
@@ -102,7 +103,7 @@ export function RenewalReviewPanel() {
             loading="eager"
             fetchPriority="high"
             decoding="async"
-            className="mx-auto block aspect-[480/495] h-auto w-full max-w-full rounded-[16px] object-contain"
+            className={`${mediaStyles.media} rounded-[16px]`}
           />
         </div>
       </div>

@@ -1,3 +1,5 @@
+import mediaStyles from "./responsive-media.module.css";
+
 export function WorkbenchShellRecording() {
   return (
     <div id="workbench-recording" aria-labelledby="workbench-recording-title" className="scroll-mt-24">
@@ -8,11 +10,13 @@ export function WorkbenchShellRecording() {
             <span>Workbench shell · FounderOps</span>
             <span className="rounded-full border border-[#CBE5FA] bg-[#E8F4FF] px-3 py-1 text-[#006FE8]">Live Workbench Views</span>
           </div>
-          <video controls playsInline preload="none" width={1440} height={900} poster="/images/workbench/founderops/cockpit-20261014.webp" aria-label="Recorded Workbench shell walkthrough" aria-describedby="workbench-recording-provenance" className="aspect-[16/10] h-auto w-full bg-white">
-            <source src="/videos/workbench/workbench-shell-20261014.mp4" type="video/mp4" />
-            <track kind="captions" src="/videos/workbench/workbench-shell-20261014.vtt" srcLang="en" label="English scene descriptions" default />
-            <a href="/videos/workbench/workbench-shell-20261014.mp4">Download the Workbench shell recording</a>
-          </video>
+          <div className={`${mediaStyles.frame} bg-[#F7FAFD]`}>
+            <video controls playsInline preload="none" width={1440} height={900} poster="/images/workbench/founderops/cockpit-20261014.webp" aria-label="Recorded Workbench shell walkthrough" aria-describedby="workbench-recording-provenance" className={`${mediaStyles.media} bg-white`}>
+              <source src="/videos/workbench/workbench-shell-20261014.mp4" type="video/mp4" />
+              <track kind="captions" src="/videos/workbench/workbench-shell-20261014.vtt" srcLang="en" label="English scene descriptions" default />
+              <a href="/videos/workbench/workbench-shell-20261014.mp4">Download the Workbench shell recording</a>
+            </video>
+          </div>
         </div>
         <p id="workbench-recording-provenance" className="mt-4 max-w-[1080px] text-xs leading-6 text-[#5E738B]">Recorded October 14 from the actual local Workbench using existing QA fixtures. The recording shows real interface interactions. Figures, workflow states and the host-status badge are fixture content; they do not establish live customer telemetry, verified host access or completed provider execution.</p>
         <details className="mt-3 text-xs leading-6 text-[#4E607A]">

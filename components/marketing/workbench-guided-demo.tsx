@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ArrowRight, ChevronLeft, ChevronRight, Pause, Play } from "lucide-react";
+import mediaStyles from "./responsive-media.module.css";
 
 const frames = [
   { id: "overview", title: "Start with a shared operating view", domain: "FounderOps", route: "/workspace/work/founderops/founder-ops", src: "/images/workbench/founderops/cockpit-20261014.webp", detail: "The captured fixture connects revenue, clients and open deals to stages and named contacts within the shared shell." },
@@ -54,7 +55,7 @@ export function WorkbenchGuidedDemo() {
           </div>
           <div className="grid items-center gap-0 lg:grid-cols-[1.45fr_.55fr]">
             <div className="bg-white p-3 sm:p-5">
-              <img key={frame.id} src={frame.src} alt={"Workbench screenshot: " + frame.title + ". Captured from the actual Workbench application."} width={1440} height={900} loading={active === 0 ? "eager" : "lazy"} className="h-auto w-full rounded-xl border border-[#D7E6F3] object-contain" />
+              <img key={frame.id} src={frame.src} alt={"Workbench screenshot: " + frame.title + ". Captured from the actual Workbench application."} width={1440} height={900} loading={active === 0 ? "eager" : "lazy"} className={`${mediaStyles.media} rounded-xl border border-[#D7E6F3]`} />
             </div>
             <div className="p-6 sm:p-8" aria-live={playing ? "off" : "polite"} aria-atomic="true">
               <p className="text-xs font-semibold uppercase tracking-widest text-[#006FE8]">Scene {String(active + 1).padStart(2, "0")}</p>
