@@ -43,4 +43,11 @@ for (const asset of recording.assets) {
     assert.equal(digest, asset.sha256, `Recording provenance digest mismatch: ${file}`);
   }
 }
+const canvas = JSON.parse(await readFile("docs/WORKBENCH-CANVAS-PROVENANCE.json", "utf8"));
+for (const capture of canvas.captures) {
+  for (const file of [capture.path, "out/" + capture.path.replace(/^public\//, "")]) {
+    const digest = createHash("sha256").update(await readFile(file)).digest("hex");
+    assert.equal(digest, capture.sha256, `Canvas capture provenance digest mismatch: ${file}`);
+  }
+}
 console.log(`Workbench captures verified: ${primary.length} provenance entries, ${files.length} image assets, rendered labels and image references.`);

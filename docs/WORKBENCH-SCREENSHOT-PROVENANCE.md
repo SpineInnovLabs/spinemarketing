@@ -132,3 +132,28 @@ by work-view search opening and dismissal. It does not invoke a provider, approv
 proposal, verify a connection or prove live data ingestion. Base commit, contemporaneous
 unrelated source-tree changes, tool, fixture path, editing and SHA-256 digests are recorded
 in `docs/WORKBENCH-RECORDING-PROVENANCE.json`.
+
+## Canvas component captures — October 15
+
+These captures render the unmodified application CanvasSurface component in an
+isolated local preview using existing QA records and a graph-test envelope.
+They do not establish authenticated route hydration, live source sync, saved
+edits or provider effects. The graph fixture positions were arranged into two
+columns; semantic nodes, statuses and edges are unchanged. Phone graph capture
+uses the component’s native zoom-out control. The editable title was changed
+to Acme Renewal Plan through the actual UI. No pixels or business values were
+synthesized. The marketing navy selector is separate from these captures.
+Source/report/capture digests: WORKBENCH-CANVAS-PROVENANCE.json.
+
+| Capture | Dimensions |
+| --- | --- |
+| [document desktop](/images/workbench/canvas/document-20261015.webp) | 960×900 |
+| [database desktop](/images/workbench/canvas/database-20261015.webp) | 960×900 |
+| [graph desktop](/images/workbench/canvas/graph-20261015.webp) | 960×900 |
+| [library desktop](/images/workbench/canvas/library-20261015.webp) | 960×900 |
+| [document mobile](/images/workbench/canvas/document-20261015-mobile.webp) | 390×844 |
+| [database mobile](/images/workbench/canvas/database-20261015-mobile.webp) | 390×844 |
+| [graph mobile](/images/workbench/canvas/graph-20261015-mobile.webp) | 390×844 |
+| [library mobile](/images/workbench/canvas/library-20261015-mobile.webp) | 390×844 |
+
+Capture review: the October 15 phone component captures are archived only because the native component clips some text/controls at 390 px. The public canvas selector uses complete desktop captures at all widths, with links to inspect full-size images. This does not establish native app mobile parity.

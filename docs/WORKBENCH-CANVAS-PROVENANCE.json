@@ -1,0 +1,106 @@
+{
+  "sourceCommit": "095fd8017c905c25be2832b02be3b35deabc8fe6",
+  "sourceStatus": "M apps/web/app/api/workbench/tool/[tool]/route.ts\n M apps/web/components/workbenches/inbox-workbench.test.tsx\n M apps/web/components/workbenches/inbox-workbench.tsx\n M apps/web/lib/inbox-list.ts\n?? apps/web/app/api/workbench/tool/[tool]/route.test.ts\n?? scripts/verify-real-browser-journey.mjs",
+  "capturedAt": "2026-10-15T09:32:48.858Z",
+  "renderer": "Unmodified application CanvasSurface in an isolated Vite capture harness; application compiled CSS",
+  "fixture": "canvas-surface.test.tsx mockRecords; canvas-nodes-from-payload.test.ts existing multimodal envelope delivered through the component SSE handler; positions arranged into two columns without changing semantic data",
+  "titleInteraction": "Typed Acme Renewal Plan in the actual editable title field; native Zoom Out used for the phone graph",
+  "network": "Loopback and public source-logo CDN only; no provider operations",
+  "captures": [
+    {
+      "mode": "document",
+      "path": "public/images/workbench/canvas/document-20261015.webp",
+      "width": 960,
+      "height": 900,
+      "sha256": "a39b95f707de860e00fb4210fa802b3ca03c74759879cea7e1db3f72f3256af8",
+      "publicShowcase": true
+    },
+    {
+      "mode": "database",
+      "path": "public/images/workbench/canvas/database-20261015.webp",
+      "width": 960,
+      "height": 900,
+      "sha256": "11afcb10cf49347acad6bdce385e81d55b9ce20041228dbf534f5d6fa0ddb1c7",
+      "publicShowcase": true
+    },
+    {
+      "mode": "graph",
+      "path": "public/images/workbench/canvas/graph-20261015.webp",
+      "width": 960,
+      "height": 900,
+      "sha256": "ba8f30b371beeff727074a4cf0eca450f2893b682ded277cf32839e8418638f1",
+      "publicShowcase": true
+    },
+    {
+      "mode": "library",
+      "path": "public/images/workbench/canvas/library-20261015.webp",
+      "width": 960,
+      "height": 900,
+      "sha256": "3f1bc392e73006e435690f7199ba70ef86b5fe1e6421772618e9e6c2a2513581",
+      "publicShowcase": true
+    },
+    {
+      "mode": "document",
+      "path": "public/images/workbench/canvas/document-20261015-mobile.webp",
+      "width": 390,
+      "height": 844,
+      "sha256": "77219fb1d133138704176700f6af9d8934af84bfead07db19e84889ce25bd7ce",
+      "publicShowcase": false,
+      "review": "Archive only: native component clips some controls and text at 390px. Marketing uses complete desktop captures on phones with full-size links."
+    },
+    {
+      "mode": "database",
+      "path": "public/images/workbench/canvas/database-20261015-mobile.webp",
+      "width": 390,
+      "height": 844,
+      "sha256": "0e5691ac496bd8fae506799a47437f5db81a9c5821ca82c8d9eab6b0cd921e7a",
+      "publicShowcase": false,
+      "review": "Archive only: native component clips some controls and text at 390px. Marketing uses complete desktop captures on phones with full-size links."
+    },
+    {
+      "mode": "graph",
+      "path": "public/images/workbench/canvas/graph-20261015-mobile.webp",
+      "width": 390,
+      "height": 844,
+      "sha256": "025a303d96558e875b1c5f843e9f7b498c2758a0d0afba27f338b675971314c2",
+      "publicShowcase": false,
+      "review": "Archive only: native component clips some controls and text at 390px. Marketing uses complete desktop captures on phones with full-size links."
+    },
+    {
+      "mode": "library",
+      "path": "public/images/workbench/canvas/library-20261015-mobile.webp",
+      "width": 390,
+      "height": 844,
+      "sha256": "7cac839f5496621e2e48cf30f5e19bdb768913b6f5b20b4f7f1bc21a932329aa",
+      "publicShowcase": false,
+      "review": "Archive only: native component clips some controls and text at 390px. Marketing uses complete desktop captures on phones with full-size links."
+    }
+  ],
+  "sourceFiles": [
+    {
+      "path": "apps/web/components/projections/canvas-surface.tsx",
+      "sha256": "dfdd36fb8d9a97f498a47c6ca76782cf784b591958cdcec3b6b7c85e4177aa56"
+    },
+    {
+      "path": "apps/web/components/canvas/interactive-canvas-surface.tsx",
+      "sha256": "90065792b977155bb13053c370d2b55814e2aee1d1496b7523cee5038dbae249"
+    },
+    {
+      "path": "apps/web/components/projections/canvas-surface.test.tsx",
+      "sha256": "16a40df2178df2b83c5b21db244479a9593971df6c021fe919f4a61d1904eb61"
+    },
+    {
+      "path": "apps/web/components/projections/canvas-nodes-from-payload.test.ts",
+      "sha256": "793e1c07454f7f2f09cc47785ba1c6a54f26ad7971dfe1e6c94a3fd5f4b3c541"
+    },
+    {
+      "path": "scripts/verify-e2e-customer-journey.mjs",
+      "sha256": "77651f54a80558e2b9c61869101aeb6e33677788fca5812e3fe24dc63afeceb7"
+    },
+    {
+      "path": "docs/evidence/2026-10-15/e2e-customer-journey/e2e-journey-evidence-report.json",
+      "sha256": "05fce5bb8de6bea9df985ab2fd01e432ced8618693dd982494b458c90b7cf169"
+    }
+  ],
+  "boundary": "Actual application component rendered with existing QA inputs in an isolated capture harness. Not a full authenticated route or connected customer proof. Native sync/source/action labels are component UI, not independently verified effects. Blue marketing selector is outside the captured component."
+}

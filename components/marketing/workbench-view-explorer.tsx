@@ -4,6 +4,8 @@ import { useId, useMemo, useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { ResponsiveWorkbenchScreenshot } from "@/components/marketing/responsive-workbench-screenshot";
 import { WorkbenchShellRecording } from "./workbench-shell-recording";
+import { WorkbenchCanvasShowcase } from "./workbench-canvas-showcase";
+import { WorkbenchCustomerJourney } from "./workbench-customer-journey";
 import {
   ArrowRight,
   LayoutDashboard,
@@ -68,7 +70,7 @@ export function WorkbenchViewExplorer({
       ? initialDomain
       : DEFAULT_DOMAIN
   );
-  const [activeTab, setActiveTab] = useState<"screenshot" | "recording" | "inventory">("screenshot");
+  const [activeTab, setActiveTab] = useState<"canvas" | "journey" | "screenshot" | "recording" | "inventory">("canvas");
   const [selectedViewKey, setSelectedViewKey] = useState<string>("primary");
   const [isMobileView, setIsMobileView] = useState(false);
   const [showAll, setShowAll] = useState(false);
@@ -170,7 +172,7 @@ export function WorkbenchViewExplorer({
             Live Workbench Views
           </div>
           <span className="text-xs font-medium text-[#577592]">
-            Actual Workbench application captures
+            Workbench screens and canvas views
           </span>
         </div>
 
@@ -183,7 +185,7 @@ export function WorkbenchViewExplorer({
               Live Workbench Views. One Fabric across domains.
             </h2>
             <p className="mt-4 text-[16px] leading-7 text-[#4E607A]">
-              Explore actual Workbench screens captured from the running application. Each role sees
+              Explore Workbench screens and document, database and context-graph views. Each role sees
               the relevant projection within a consistent navigation shell, with access to shared
               business context, operational views and Spine Twin.
             </p>
@@ -193,7 +195,7 @@ export function WorkbenchViewExplorer({
             </p>
           </div>
 
-          <div hidden={activeTab === "recording"} className="w-full max-w-sm">
+          <div hidden={activeTab !== "screenshot" && activeTab !== "inventory"} className="w-full max-w-sm">
             <label htmlFor={`${id}-select`} className="mb-2 block text-xs font-semibold uppercase tracking-wider text-[#082B5E]">
               Select a Workbench domain
             </label>
@@ -218,7 +220,7 @@ export function WorkbenchViewExplorer({
         </div>
 
         {/* Quick Domain Selector Chips (Touch & Keyboard accessible) */}
-        <div hidden={activeTab === "recording"}>
+        <div hidden={activeTab !== "screenshot" && activeTab !== "inventory"}>
         <div className="mt-5 flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none" role="navigation" aria-label="Workbench Domain Quick Selection">
           {PUBLIC_WORKBENCH_DOMAINS.map((item) => (
             <button
@@ -246,6 +248,14 @@ export function WorkbenchViewExplorer({
         {/* View Switcher: Interactive Screenshots vs Extracted Inventory */}
         <div className="mt-8 flex flex-wrap items-center justify-between gap-4 border-b border-[#D6E8F8] pb-4">
           <div className="flex flex-wrap items-center gap-2" role="group" aria-label="Workbench Explorer Views">
+            {([
+              { key: "canvas", label: "Canvas views", target: "workbench-canvas" },
+              { key: "journey", label: "Customer journey", target: "workbench-customer-journey" },
+            ] as const).map(({ key, label, target }) => (
+              <button key={key} type="button" aria-pressed={activeTab === key} aria-controls={target} onClick={() => setActiveTab(key)} className={`inline-flex min-h-11 items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#006FE8] ${activeTab === key ? "bg-[#006FE8] text-white shadow-sm" : "bg-white text-[#3C577A] hover:bg-[#E2F0FD] hover:text-[#082B5E]"}`}>
+                {label}
+              </button>
+            ))}
             <button
               type="button"
               aria-pressed={activeTab === "screenshot"}
@@ -338,7 +348,10 @@ export function WorkbenchViewExplorer({
           )}
         </div>
 
-        {/* TAB 1: WORKBENCH SCREENSHOTS AND DOMAIN VALUE */}
+        <div hidden={activeTab !== "canvas"}><WorkbenchCanvasShowcase /></div>
+        <div hidden={activeTab !== "journey"}><WorkbenchCustomerJourney /></div>
+
+        {/* WORKBENCH SCREENSHOTS AND DOMAIN VALUE */}
         {activeTab === "screenshot" && (
           <div className="mt-8 space-y-10">
             {!narrative || !currentScreenshot ? (
