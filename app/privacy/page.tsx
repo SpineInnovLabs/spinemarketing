@@ -3,6 +3,7 @@ import { absoluteUrl } from "@/lib/site-url"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { BreadcrumbJsonLd } from "@/components/structured-data"
+import { COMPANY_LEGAL_NAME } from "@/lib/company"
 
 export const metadata: Metadata = {
   title: "Privacy Policy | Spine InnovTech",
@@ -26,7 +27,7 @@ export default function PrivacyPage() {
       <main id="main">
         <section className="mx-auto max-w-[800px] px-6 pt-[140px] pb-24 md:px-16">
           <h1 className="text-[length:min(36px,var(--marketing-title-size))] font-semibold tracking-[-0.04em] leading-[1.2] sm:text-[length:min(44px,var(--marketing-title-size))]">Privacy Policy</h1>
-          <p className="mt-4 text-[15px] font-medium text-muted-foreground">Spine InnovTech Private Limited</p>
+          <p className="mt-4 text-[15px] font-medium text-muted-foreground">{COMPANY_LEGAL_NAME}</p>
           <p className="mt-4 text-[15px] font-medium text-muted-foreground">Last updated: April 2026</p>
 
           <div className="mt-12 space-y-10 text-[15px] font-medium leading-[1.7] text-foreground/80">

@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     template: "%s",
   },
   description:
-    "Spine InnovTech builds intelligent, context-aware technology for connected business — and SpineWorkspace, where humans and AI work from shared business context.",
+    "Technology and AI innovation for shared business context, governed action, and connected work. Meet the company behind SpineWorkspace.",
   icons: {
     icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
     apple: "/icon.svg",

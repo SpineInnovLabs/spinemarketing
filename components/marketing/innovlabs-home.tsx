@@ -58,6 +58,12 @@ const technology = [
     body: "A path to approved connectors, MCP servers, tools, and reusable capabilities.",
     href: "/integrations",
   },
+  {
+    name: "Spine Network",
+    label: "Continuity across AI hosts",
+    body: "Designed to continue work across compatible AI hosts using the same governed context and work state. Each host independently verifies identity, discovers capabilities, checks authority, invokes permitted tools and reconciles results.",
+    href: "/host-connected-environment",
+  },
 ];
 const roles = [
   [
@@ -153,7 +159,7 @@ export function InnovLabsHome() {
         <div
           className={`${container} grid items-center gap-12 py-16 sm:py-24 lg:min-h-[760px] lg:grid-cols-[1.04fr_.96fr] lg:gap-12`}
         >
-          <div>
+          <div className="min-w-0">
             <SectionLabel>
               SPINE INNOVTECH · TECHNOLOGY & AI INNOVATION
             </SectionLabel>
@@ -187,29 +193,29 @@ export function InnovLabsHome() {
               Connected systems. Shared context. Governed intelligence.
             </p>
           </div>
-          <figure className="mx-auto w-full max-w-[680px]">
+          <figure className="mx-auto min-w-0 w-full max-w-[680px]">
             <div className="overflow-hidden rounded-2xl border border-[#CCE3F5] bg-white shadow-[0_22px_70px_rgba(15,70,130,.14)]">
-              <div className="flex items-center justify-between border-b border-[#E2EEF8] bg-[#F7FAFD] px-4 py-2.5 text-xs">
+              <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[#E2EEF8] bg-[#F7FAFD] px-4 py-2.5 text-xs">
                 <div className="flex items-center gap-1.5">
                   <span className="h-2.5 w-2.5 rounded-full bg-[#FF5F56]" />
                   <span className="h-2.5 w-2.5 rounded-full bg-[#FFBD2E]" />
                   <span className="h-2.5 w-2.5 rounded-full bg-[#27C93F]" />
-                  <span className="ml-2 font-mono text-[11px] font-semibold text-[#5A7391]">
-                    /workspace/home
+                  <span className="ml-2 hidden font-mono text-[11px] font-semibold text-[#5A7391] sm:inline">
+                    /workspace/work/founderops/founder-ops
                   </span>
                 </div>
                 <span className="rounded-full border border-[#CCE3F5] bg-[#EBF5FF] px-2 py-0.5 text-[10px] font-semibold text-[#006FE8]">
-                  Authentic Workbench
+                  Live Workbench Views
                 </span>
               </div>
               <ResponsiveWorkbenchScreenshot
-                src="/images/workbench/common/home.webp"
-                alt="Authentic Spine Workspace Workbench showing canonical shell navigation, unified search bar, and contextual Spine Twin panel."
+                src="/images/workbench/founderops/cockpit-20261014.webp"
+                alt="Authentic Workbench shell and FounderOps cockpit showing captured QA revenue, deals and customer summaries."
                 priority
               />
             </div>
             <figcaption className="mt-3 text-[12px] leading-6 text-[#4E607A]">
-              Authentic Spine Workspace Workbench. Governed business context with canonical shell navigation, human-in-the-loop controls, and contextual Twin assistance.
+              Workbench shell and FounderOps cockpit. Captured QA records; figures are not live customer telemetry.
             </figcaption>
           </figure>
         </div>
@@ -366,11 +372,11 @@ export function InnovLabsHome() {
             </figcaption>
           </figure>
           <div className="mt-10 grid gap-4 md:grid-cols-2">
-            {technology.map((part, index) => (
+            {technology.map((part) => (
               <Link
                 key={part.name}
                 href={part.href}
-                className={`group rounded-2xl border border-[#CBE5FA] bg-white p-7 hover:border-[#006FE8] focus-visible:outline-2 focus-visible:outline-[#006FE8] ${index === 4 ? "md:col-span-2" : ""}`}
+                className="group rounded-2xl border border-[#CBE5FA] bg-white p-7 hover:border-[#006FE8] focus-visible:outline-2 focus-visible:outline-[#006FE8]"
               >
                 <div className="flex items-start justify-between gap-4">
                   <div>

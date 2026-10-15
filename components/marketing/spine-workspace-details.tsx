@@ -85,6 +85,13 @@ const technology = [
     body: "Brings connectors, MCP servers, plugins, and reusable capabilities into the work.",
     href: "/integrations",
   },
+  {
+    icon: Network,
+    name: "Spine Network",
+    label: "Continuity across AI hosts",
+    body: "Designed to carry authorized context and work state between compatible hosts. Each host verifies identity, discovers capabilities, checks authority, invokes permitted tools and reconciles results independently.",
+    href: "/host-connected-environment",
+  },
 ];
 
 export function SpineWorkspaceDetails() {
@@ -102,15 +109,14 @@ export function SpineWorkspaceDetails() {
             Your tools have the information. Your team needs the whole picture.
           </h1>
           <p className="innovtech-hero-description">
-            Bring work, priorities, decisions, and evidence together across the
-            tools you already use. Give people and AI the context to understand
-            what matters, prepare the next step, and carry work forward with
-            control.
+            Ingest and retrieve authorized business context from the systems you use.
+            Project that context from one Spine Fabric into role-specific views,
+            with prebuilt operational workflows for humans and AI.
           </p>
           <ul className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-xs font-semibold text-[#245EA9]" aria-label="Product principles">
-            <li>Work across existing tools</li>
-            <li>Context-aware AI</li>
-            <li>Human-controlled actions</li>
+            <li>Governed truth and context</li>
+            <li>13 domain projections</li>
+            <li>Ready-to-work views</li>
           </ul>
           <WorkspaceAuthActions />
           <div className="innovtech-actions">
@@ -133,27 +139,27 @@ export function SpineWorkspaceDetails() {
         </div>
         <figure className="innovtech-product-illustration">
           <div className="overflow-hidden rounded-2xl border border-[#CCE3F5] bg-white shadow-[0_20px_60px_rgba(15,70,130,.12)]">
-            <div className="flex items-center justify-between border-b border-[#E2EEF8] bg-[#F7FAFD] px-4 py-2.5 text-xs">
+            <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[#E2EEF8] bg-[#F7FAFD] px-4 py-2.5 text-xs">
               <div className="flex items-center gap-1.5">
                 <span className="h-2.5 w-2.5 rounded-full bg-[#FF5F56]" />
                 <span className="h-2.5 w-2.5 rounded-full bg-[#FFBD2E]" />
                 <span className="h-2.5 w-2.5 rounded-full bg-[#27C93F]" />
-                <span className="ml-2 font-mono text-[11px] font-semibold text-[#5A7391]">
-                  /workspace/home
+                <span className="ml-2 hidden font-mono text-[11px] font-semibold text-[#5A7391] sm:inline">
+                  /workspace/work/founderops/founder-ops
                 </span>
               </div>
               <span className="rounded-full border border-[#CCE3F5] bg-[#EBF5FF] px-2 py-0.5 text-[10px] font-semibold text-[#006FE8]">
-                Authentic Workbench
+                Live Workbench Views
               </span>
             </div>
             <ResponsiveWorkbenchScreenshot
-              src="/images/workbench/common/home.webp"
-              alt="Authentic Spine Workspace Workbench showing canonical shell navigation, unified search bar, and contextual Spine Twin panel."
+              src="/images/workbench/founderops/cockpit-20261014.webp"
+              alt="Authentic Workbench shell and FounderOps cockpit showing captured QA revenue, deals and customer summaries."
               priority
             />
           </div>
           <figcaption>
-            Authentic Spine Workspace Workbench. Governed business context with canonical shell navigation and contextual Twin assistance.
+            Workbench shell with the FounderOps projection. Captured QA records; figures are not live customer telemetry.
           </figcaption>
         </figure>
       </section>
@@ -192,6 +198,11 @@ export function SpineWorkspaceDetails() {
           <br />
           Review. Move forward.
         </h2>
+        <p className="innovtech-section-intro">
+          A renewal review can relate a customer&apos;s contract, invoice and
+          service incident. Account Success, Finance and Engineering each see
+          the permitted evidence through their own view of the same Fabric.
+        </p>
         <div className="innovtech-feature-grid">
           {[
             {

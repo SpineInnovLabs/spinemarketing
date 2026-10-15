@@ -47,7 +47,7 @@ check(
 const home = read("app/page.tsx");
 const banner = read("components/marketing/innovlabs-home.tsx");
 check(home.includes("InnovLabsHome"), "homepage no longer renders Spine InnovTech");
-check(banner.includes("Building the intelligence behind"), "company-led corporate hero text missing");
+check(banner.includes("SPINE INNOVTECH") && banner.includes("Building the intelligence behind") && banner.includes("connected business."), "company identity and corporate hero missing");
 for (const asset of ["public/og.png", "public/icon.svg"]) {
   check(existsSync(asset), `missing shared metadata asset ${asset}`);
 }

@@ -1,20 +1,27 @@
 import Link from "next/link";
-import { ArrowRight, Database, FileSearch, History, ShieldCheck, Sparkles, Users } from "lucide-react";
+import { ArrowRight, Database, History, Layers3, PanelsTopLeft, ShieldCheck, Sparkles } from "lucide-react";
 
 const benefits = [
   {
-    icon: Users,
-    title: "One place to see relevant work",
-    body: "Bring priorities, tasks, approvals and related context into a workspace for your role. Spend less effort checking separate applications to understand the work you own.",
-    href: "/product/the-adaptive-workspace",
-    link: "Explore your work surface",
+    icon: Database,
+    title: "Governed business context",
+    body: "Ingest authorized records and retrieve the context for your work. Spine Fabric relates customers, conversations, decisions and evidence, preserving source lineage and permissions. Your existing applications remain the systems of record.",
+    href: "/business-context",
+    link: "Explore business context",
   },
   {
-    icon: Database,
-    title: "Connected business context",
-    body: "Understand how customers, conversations, tasks and decisions relate across authorized systems. Your existing tools remain the systems of record, with the relevant business picture brought together for review.",
-    href: "/integrations",
-    link: "Explore connected tools",
+    icon: Layers3,
+    title: "One Fabric across 13 domains",
+    body: "Sales, Finance, Account Success and other teams use role-relevant views of the same governed Fabric. Customer relationships, work and evidence stay connected across domains, with each view respecting the participant’s access.",
+    href: "/product#workbench-views",
+    link: "Explore domain views",
+  },
+  {
+    icon: PanelsTopLeft,
+    title: "Ready-to-work Workbench views",
+    body: "Start with standard views for tasks, records, signals and decisions, without commissioning a custom departmental application for supported workflows. What appears depends on connected sources, your role and authorized capabilities.",
+    href: "/product#workbench-views",
+    link: "Explore Workbench views",
   },
   {
     icon: Sparkles,
@@ -26,16 +33,9 @@ const benefits = [
   {
     icon: History,
     title: "Work continuity",
-    body: "Keep the history, decisions and outcomes needed to resume a task or hand it over. Give the next person a clearer starting point without repeatedly reconstructing the same story.",
-    href: "/continuity",
+    body: "Keep the history, decisions and outcomes needed to resume a task. Spine Network is designed to preserve context version, work item and checkpoint across compatible hosts, with independent permission checks and a new retrieval trace. Private credentials and privileges do not transfer.",
+    href: "/host-connected-environment",
     link: "Explore work continuity",
-  },
-  {
-    icon: FileSearch,
-    title: "Evidence-backed decisions",
-    body: "Inspect the sources behind a recommendation and keep missing or stale context visible. Review the evidence alongside the decision you need to make.",
-    href: "/business-context",
-    link: "Explore business context",
   },
   {
     icon: ShieldCheck,
@@ -47,7 +47,7 @@ const benefits = [
 ];
 
 export function WorkspaceBenefits({ detailed = false }: { detailed?: boolean }) {
-  const visibleBenefits = detailed ? benefits : [benefits[0], benefits[2], benefits[5]];
+  const visibleBenefits = detailed ? benefits : benefits.slice(0, 3);
   return (
     <section
       id={detailed ? "benefits" : "why-spineworkspace"}

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowUpRight, Mail } from "lucide-react";
 import { SpineLogo } from "@/components/spine-logo";
 import { footerColumns } from "@/lib/navigation";
+import { COMPANY_LEGAL_NAME } from "@/lib/company";
 
 export function Footer() {
   return (
@@ -76,7 +77,7 @@ export function Footer() {
         </div>
         <div className="flex flex-wrap items-center justify-between gap-4 py-7">
           <p className="text-[12px] text-[#CBD9EB]">
-            © {new Date().getFullYear()} Spine InnovTech Private Limited. Built
+            © {new Date().getFullYear()} {COMPANY_LEGAL_NAME}. Built
             in Coimbatore, TamilNadu, India.
           </p>
           <Link

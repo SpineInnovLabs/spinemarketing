@@ -50,9 +50,9 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
         id: "cockpit",
         title: "Founder's Cockpit",
         route: "/workspace/work/founderops/founder-ops",
-        desktop: "/images/workbench/founderops/cockpit.webp",
-        mobile: "/images/workbench/founderops/cockpit-mobile.webp",
-        badge: "Demo Fixture",
+        desktop: "/images/workbench/founderops/cockpit-20261014.webp",
+        mobile: "/images/workbench/founderops/cockpit-20261014-mobile.webp",
+        badge: "Live Workbench Views",
         alt: "Authentic Founder's Cockpit displaying deterministic demonstration metrics: MRR ($94K), aggregate pipeline ($625K), client count, open deals, and top deals by value with named client contacts.",
       },
       dashboard: {
@@ -60,7 +60,7 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
         title: "Executive Overview",
         route: "/workspace/work/founderops/dashboard",
         desktop: "/images/workbench/founderops/dashboard.webp",
-        badge: "Demo Overview",
+        badge: "Live Workbench Views",
         alt: "FounderOps executive dashboard with demonstration performance indicators and cross-functional company updates.",
       },
       secondary: {
@@ -74,7 +74,7 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
     },
     valueNarrative: {
       whatUsersSee:
-        "High-level operational cockpit displaying demonstration fixture metrics: MRR ($94K), aggregate pipeline value ($625K), active client count (4), open deals (3), overdue tasks, top deals by value with named client contacts, and cross-company OKR progress.",
+      "High-level operational cockpit displaying captured QA metrics: MRR ($94K), aggregate pipeline value ($625K), active client count (4), open deals (3), overdue tasks, top deals by value with named client contacts, and cross-company OKR progress.",
       whatTheyCanDo:
         "Drill down into individual high-value deals, review company-wide operational items, monitor client health indicators, and direct executive attention to overdue commitments.",
       whatManualWorkItReduces:
@@ -95,7 +95,7 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
         route: "/workspace/work/salesops/pipeline",
         desktop: "/images/workbench/sales/pipeline.webp",
         mobile: "/images/workbench/sales/pipeline-mobile.webp",
-        badge: "Demo Pipeline",
+        badge: "Live Workbench Views",
         alt: "Authentic Sales Pipeline displaying deterministic demonstration deal stages: Proposal ($180K), Negotiation ($350K), and Discovery ($95K) with opportunity ledger.",
       },
       dashboard: {
@@ -103,7 +103,7 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
         title: "Sales Dashboard",
         route: "/workspace/work/salesops/dashboard",
         desktop: "/images/workbench/sales/dashboard.webp",
-        badge: "Demo Performance",
+        badge: "Live Workbench Views",
         alt: "Sales performance dashboard tracking demonstration quota pacing and deal velocity.",
       },
       secondary: {
@@ -117,7 +117,7 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
     },
     valueNarrative: {
       whatUsersSee:
-        "Opportunity ledger displaying deterministic demo deals categorized by Proposal ($180K), Negotiation ($350K), and Discovery ($95K) with win probability bars, stage tags, and deal owners.",
+      "Opportunity ledger displaying captured QA deals categorized by Proposal ($180K), Negotiation ($350K), and Discovery ($95K) with win probability bars, stage tags, and deal owners.",
       whatTheyCanDo:
         "Filter opportunities by stage, inspect deal velocity, launch new opportunity flows, and review commercial requirements directly beside customer context.",
       whatManualWorkItReduces:
@@ -137,7 +137,7 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
         title: "Marketing Attribution",
         route: "/workspace/work/marketing/attribution",
         desktop: "/images/workbench/marketing/attribution.webp",
-        badge: "Demo Attribution",
+        badge: "Live Workbench Views",
         alt: "Authentic Marketing Attribution view showing multi-channel conversion signals, budget allocation, and downstream pipeline influence from demonstration data.",
       },
       dashboard: {
@@ -159,7 +159,7 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
     },
     valueNarrative: {
       whatUsersSee:
-        "Multi-channel campaign attribution cards, budget allocations, conversion signals, and audience acquisition funnels connected to downstream customer milestones (demonstration state).",
+      "Multi-channel campaign attribution cards, budget allocations, conversion signals, and audience acquisition funnels connected to downstream customer milestones .",
       whatTheyCanDo:
         "Evaluate lead acquisition velocity, review campaign performance metrics, adjust channel mix, and verify downstream pipeline attribution.",
       whatManualWorkItReduces:
@@ -179,7 +179,7 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
         title: "Invoices Ledger",
         route: "/workspace/work/finance/invoices",
         desktop: "/images/workbench/finance/invoices.webp",
-        badge: "Demo Receivables",
+        badge: "Live Workbench Views",
         alt: "Authentic Invoices view showing demonstration records: invoice numbers, customer accounts (Acme, Stripe, Figma), billed amounts, payment status, and due dates.",
       },
       dashboard: {
@@ -201,7 +201,7 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
     },
     valueNarrative: {
       whatUsersSee:
-        "Centralized invoice ledger displaying demonstration records: invoice numbers, customer accounts (Acme, Stripe, Figma), billed amounts, payment status (Paid, Sent, Overdue), and issue/due dates.",
+      "Centralized invoice ledger displaying visible: invoice numbers, customer accounts (Acme, Stripe, Figma), billed amounts, payment status (Paid, Sent, Overdue), and issue/due dates.",
       whatTheyCanDo:
         "Filter receivables by status, track payment aging, initiate new customer invoices, and cross-reference billing terms against signed contracts.",
       whatManualWorkItReduces:
@@ -214,15 +214,15 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
   "account-success": {
     domainId: "account-success",
     domainTitle: "Account Success",
-    tagline: "Account Health & Governed Twin Action",
+    tagline: "Account Story & Domain Coverage",
     screenshots: {
       primary: {
         id: "account-health",
-        title: "Account Health Overview",
+        title: "Account Story Overview",
         route: "/workspace/accounts/acme-corp",
         desktop: "/images/workbench/account-success/account-health.webp",
         mobile: "/images/workbench/account-success/account-health-mobile.webp",
-        badge: "Demo Fixture",
+        badge: "Live Workbench Views",
         alt: "Authentic Account Success view displaying deterministic demonstration fixture: Acme Corp story readiness score (100%), verified domain coverage indicators, and health signals.",
       },
       dashboard: {
@@ -244,7 +244,7 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
     },
     valueNarrative: {
       whatUsersSee:
-        "Comprehensive account overview displaying demonstration fixture data: story readiness score (100%), simulated domain coverage (CRM, support tickets, product telemetry), risk indicators, and contextual Twin recommendations.",
+      "Comprehensive account overview displaying captured QA data: story readiness score (100%), simulated domain coverage (CRM, support tickets, product telemetry), risk indicators, and contextual Twin recommendations.",
       whatTheyCanDo:
         "Review unified customer health signals, examine open support escalation risks, evaluate contract renewals, and approve Twin-prepared recovery plans.",
       whatManualWorkItReduces:
@@ -278,7 +278,7 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
     },
     valueNarrative: {
       whatUsersSee:
-        "Simulated connector status, API synchronization health, webhook error thresholds, and customer architecture dependency maps from demonstration fixture state.",
+      "Simulated connector status, API synchronization health, webhook error thresholds, and customer architecture dependency maps from captured QA state.",
       whatTheyCanDo:
         "Detect integration anomalies before customers report outages, inspect endpoint payload schemas, and coordinate fixes with engineering.",
       whatManualWorkItReduces:
@@ -320,7 +320,7 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
     },
     valueNarrative: {
       whatUsersSee:
-        "Cross-functional operational workflows, active execution pipelines, bottlenecks across handoffs, and team capacity utilization meters (demonstration state).",
+      "Cross-functional operational workflows, active execution pipelines, bottlenecks across handoffs, and team capacity utilization meters .",
       whatTheyCanDo:
         "Reallocate workload across operational bottlenecks, trigger automated handoff protocols, and audit cross-departmental SLA adherence.",
       whatManualWorkItReduces:
@@ -340,7 +340,7 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
         title: "Revenue Forecast",
         route: "/workspace/work/revops/forecast",
         desktop: "/images/workbench/revops/forecast.webp",
-        badge: "Demo Forecast",
+        badge: "Live Workbench Views",
         alt: "Authentic RevOps Forecast view showing demonstration funnel conversion velocity, quote-to-cash timing, and forecast confidence bands.",
       },
       dashboard: {
@@ -362,7 +362,7 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
     },
     valueNarrative: {
       whatUsersSee:
-        "Funnel conversion rates, quote-to-cash cycle duration, stage-by-stage pipeline velocity, and revenue forecast confidence bands from demonstration fixture data.",
+      "Funnel conversion rates, quote-to-cash cycle duration, stage-by-stage pipeline velocity, and revenue forecast confidence bands from captured QA data.",
       whatTheyCanDo:
         "Model conversion scenarios, adjust sales capacity targets, evaluate win-loss patterns, and optimize the quote-to-cash pipeline.",
       whatManualWorkItReduces:
@@ -404,7 +404,7 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
     },
     valueNarrative: {
       whatUsersSee:
-        "Multi-quarter roadmap initiatives (Unified Twin Reasoning, Multi-Cloud Gateway, Policy Enforcement) with status filters and sprint progress indicators.",
+      "Multi-quarter roadmap initiatives (Unified Twin Reasoning, Multi-Cloud Gateway, Policy Enforcement) with status filters and sprint progress indicators.",
       whatTheyCanDo:
         "Connect technical epics directly to customer requirements, prioritize feature delivery, monitor sprint completion, and triage technical blockers.",
       whatManualWorkItReduces:
@@ -438,7 +438,7 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
     },
     valueNarrative: {
       whatUsersSee:
-        "Client delivery milestones, project SLA compliance rates, resource allocation timelines, and milestone deliverables (demonstration state).",
+      "Client delivery milestones, project SLA compliance rates, resource allocation timelines, and milestone deliverables .",
       whatTheyCanDo:
         "Monitor implementation health, detect delivery delay risks early, and coordinate resource allocation across client projects.",
       whatManualWorkItReduces:
@@ -472,7 +472,7 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
     },
     valueNarrative: {
       whatUsersSee:
-        "Triage queues categorized by priority and customer tier, response time metrics, ticket resolution velocity, and recurring issue tags (demonstration state).",
+      "Triage queues categorized by priority and customer tier, response time metrics, ticket resolution velocity, and recurring issue tags .",
       whatTheyCanDo:
         "Escalate critical customer incidents to product engineering with attached diagnostic evidence, assign tickets to domain specialists, and track SLAs.",
       whatManualWorkItReduces:
@@ -514,7 +514,7 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
     },
     valueNarrative: {
       whatUsersSee:
-        "Organizational headcount, team role assignments, open requisitions, and departmental reporting lines (demonstration state).",
+      "Organizational headcount, team role assignments, open requisitions, and departmental reporting lines .",
       whatTheyCanDo:
         "Review organizational capacity, monitor hiring pipeline progress, and verify team role definitions against business goals.",
       whatManualWorkItReduces:
@@ -556,7 +556,7 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
     },
     valueNarrative: {
       whatUsersSee:
-        "Executed contract repository, renewal and termination notification schedules, compliance policy controls, and regulatory audit checklists (demonstration state).",
+      "Executed contract repository, renewal and termination notification schedules, compliance policy controls, and regulatory audit checklists .",
       whatTheyCanDo:
         "Search signed MSAs and DPAs, track auto-renewal deadlines, and verify organizational adherence to security and privacy policies.",
       whatManualWorkItReduces:
@@ -598,7 +598,7 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
     },
     valueNarrative: {
       whatUsersSee:
-        "Editorial production queue, publication schedule, author assignments, and draft review states linked to marketing campaign themes (demonstration state).",
+      "Editorial production queue, publication schedule, author assignments, and draft review states linked to marketing campaign themes .",
       whatTheyCanDo:
         "Manage publication pipelines, coordinate editorial review workflows, and schedule releases aligned with product milestones.",
       whatManualWorkItReduces:
@@ -632,7 +632,7 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
     },
     valueNarrative: {
       whatUsersSee:
-        "Unified metric dashboards, cross-department trend lines, anomaly detections, and verified data model lineage (demonstration state).",
+      "Unified metric dashboards, cross-department trend lines, anomaly detections, and verified data model lineage .",
       whatTheyCanDo:
         "Slice operational KPIs by cohort or region, explore metric correlations, and export verified datasets for strategic planning.",
       whatManualWorkItReduces:
@@ -666,7 +666,7 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
     },
     valueNarrative: {
       whatUsersSee:
-        "Active campaign flight schedules, budget utilization across channels, creative asset statuses, and audience engagement benchmarks (demonstration state).",
+      "Active campaign flight schedules, budget utilization across channels, creative asset statuses, and audience engagement benchmarks .",
       whatTheyCanDo:
         "Coordinate multi-channel campaign launches, adjust flight timing, and verify creative approval gates before publishing.",
       whatManualWorkItReduces:
@@ -700,7 +700,7 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
     },
     valueNarrative: {
       whatUsersSee:
-        "Curated corporate documentation, policy guides, procedural handbooks, and contextual search results grounded in demonstration company evidence.",
+      "Curated corporate documentation, policy guides, procedural handbooks, and contextual search results grounded in captured QA company evidence.",
       whatTheyCanDo:
         "Search verified institutional knowledge, publish SOP updates, and verify document freshness dates.",
       whatManualWorkItReduces:
@@ -742,7 +742,7 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
     },
     valueNarrative: {
       whatUsersSee:
-        "Verifiable ledger of executive decisions, policy changes, approval gate logs, and cross-system data modifications from demonstration state.",
+      "Verifiable ledger of executive decisions, policy changes, approval gate logs, and cross-system data modifications from captured QA data.",
       whatTheyCanDo:
         "Review governance audit logs, verify who authorized consequential actions, and inspect complete lineage from decision to outcome.",
       whatManualWorkItReduces:
@@ -754,44 +754,24 @@ export const WORKBENCH_SCREENSHOT_CATALOG: Record<string, WorkbenchDomainNarrati
 
   common: {
     domainId: "common",
-    domainTitle: "Personal Home & Shell",
-    tagline: "Personal Home, My Work & Governed Work Surface",
+    domainTitle: "Shared Workbench Shell",
+    tagline: "Shared Navigation & Role-Specific Work",
     screenshots: {
       primary: {
-        id: "home",
-        title: "Personal Home",
-        route: "/workspace/home",
-        desktop: "/images/workbench/common/home.webp",
-        mobile: "/images/workbench/common/home-mobile.webp",
-        badge: "Primary Surface",
-        alt: "Authentic Personal Home showing canonical Workbench shell, left navigation, global command bar, and contextual Spine Twin panel in demonstration state.",
-      },
-      dashboard: {
-        id: "my-work",
-        title: "My Work Hub",
-        route: "/workspace/my-work",
-        desktop: "/images/workbench/common/my-work.webp",
-        badge: "My Work",
-        alt: "Personal My Work view consolidating demonstration cross-domain assignments, approvals, and daily priorities.",
-      },
-      secondary: {
-        id: "tasks",
-        title: "Priority Tasks",
-        route: "/workspace/tasks",
-        desktop: "/images/workbench/common/tasks.webp",
-        badge: "Unified Tasks",
-        alt: "Personal task tracker with demonstration priority ratings, due dates, and connected business records.",
+        id: "shared-shell",
+        title: "Workbench Shell · FounderOps",
+        route: "/workspace/work/founderops/founder-ops",
+        desktop: "/images/workbench/founderops/cockpit-20261014.webp",
+        mobile: "/images/workbench/founderops/cockpit-20261014-mobile.webp",
+        badge: "Live Workbench Views",
+        alt: "Authentic shared Workbench navigation around a populated FounderOps QA capture.",
       },
     },
     valueNarrative: {
-      whatUsersSee:
-        "Unified personal workbench with prioritized tasks, pending approvals, recent work streams, personal notes, and contextual Spine Twin assistant (demonstration state).",
-      whatTheyCanDo:
-        "Review daily action items, approve pending requests, launch quick search via ⌘K, capture notes, and interact with the contextual Twin.",
-      whatManualWorkItReduces:
-        "Eliminates checking six separate inboxes, task trackers, and notification centers every morning.",
-      whyItMatters:
-        "Gives every team member a coherent, focused starting point each morning with zero context switching.",
+      whatUsersSee: "Shared navigation around the FounderOps projection.",
+      whatTheyCanDo: "Move between common work areas and role-specific views within one shell, subject to workspace permissions.",
+      whatManualWorkItReduces: "A consistent shell can reduce repeated navigation across departmental tools.",
+      whyItMatters: "Roles share a work environment while retaining separate permissions and relevant context.",
     },
   },
 };

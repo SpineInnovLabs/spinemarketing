@@ -22,14 +22,25 @@ export function ResponsiveWorkbenchScreenshot({
   onClick,
 }: ResponsiveWorkbenchScreenshotProps) {
   const basePath = src.replace(/\.webp$/, "");
+  const interactionProps = onClick ? {
+    role: "button",
+    tabIndex: 0,
+    "aria-label": "Expand Workbench screenshot",
+    onKeyDown: (event: React.KeyboardEvent<HTMLDivElement>) => {
+      if (event.key !== "Enter" && event.key !== " ") return;
+      event.preventDefault();
+      onClick();
+    },
+  } : {};
 
   if (isMobile) {
     return (
       <div
         className={`relative mx-auto max-w-[390px] overflow-hidden rounded-[2.5rem] border-[8px] border-[#1A2E46] shadow-2xl ${
-          onClick ? "cursor-pointer transition-transform hover:scale-[1.01]" : ""
+          onClick ? "cursor-pointer transition-transform hover:scale-[1.01] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#006FE8]" : ""
         } ${className}`}
         onClick={onClick}
+        {...interactionProps}
       >
         <picture>
           <source
@@ -58,14 +69,15 @@ export function ResponsiveWorkbenchScreenshot({
 
   return (
     <div
-      className={`relative mx-auto flex w-full max-w-full items-center justify-center overflow-hidden rounded-xl border border-[#D5E5F5] bg-white shadow-sm ${
-        onClick ? "cursor-pointer transition-transform hover:scale-[1.005]" : ""
+      className={`relative mx-auto flex w-full max-w-full flex-col items-center justify-center overflow-hidden rounded-xl border border-[#D5E5F5] bg-white shadow-sm ${
+        onClick ? "cursor-pointer transition-transform hover:scale-[1.005] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#006FE8]" : ""
       } ${className}`}
       onClick={onClick}
+      {...interactionProps}
     >
       {/* Scrollable containment on narrow viewports <= 480px */}
-      <div className="flex w-full justify-center overflow-x-auto scrollbar-thin scrollbar-thumb-[#CCE3F5]">
-        <div className="flex min-w-[440px] items-center justify-center sm:min-w-0">
+      <div className="flex w-full justify-center">
+        <div className="flex min-w-0 w-full items-center justify-center">
           <picture className="flex w-full items-center justify-center">
             <source
               type="image/webp"
@@ -94,11 +106,6 @@ export function ResponsiveWorkbenchScreenshot({
             />
           </picture>
         </div>
-      </div>
-      <div className="flex sm:hidden items-center justify-between px-3 py-1 bg-[#F7FAFD] border-t border-[#E2EEF8] text-[10px] text-[#5A7391]">
-        <span>← Shell Navigation</span>
-        <span className="font-medium text-[#006FE8]">Scroll to explore view</span>
-        <span>Twin Panel →</span>
       </div>
     </div>
   );

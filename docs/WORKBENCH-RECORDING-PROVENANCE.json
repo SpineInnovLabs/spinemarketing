@@ -1,0 +1,49 @@
+{
+  "capturedAt": "2026-10-14T13:31:00.191Z",
+  "sourceCommit": "8d62ba3cd88573539aa7be98e293e966cfa1fbd2",
+  "sourceStatus": "M packages/contracts/src/platform/index.ts\n M packages/spine-network/src/harness.ts\n?? packages/contracts/src/platform/multimodal-context.ts",
+  "route": "/workspace/work/founderops/founder-ops",
+  "viewport": "1440x900",
+  "tool": "Playwright 1.62.1 / headless Chrome",
+  "fixtureSource": "scripts/capture-workbench-library.mjs COMMON_ENTITIES",
+  "qaIdentity": "existing non-production x-workbench-qa path",
+  "externalNetwork": "blocked",
+  "interactions": [
+    "collapse and expand sales",
+    "expand and collapse campaigns",
+    "expand and collapse operations",
+    "open work-view search and dismiss"
+  ],
+  "boundary": "Recorded application UI and fixture state; no provider execution, live data ingestion or verified host connection proof",
+  "developmentToolbar": "excluded from capture",
+  "editing": {
+    "trimmedLeadingSeconds": 8,
+    "reason": "Remove initial development-server loading and pre-hydration error state",
+    "speed": "unchanged",
+    "compositing": "none",
+    "encoding": "H.264 yuv420p; 1440x900; silent MP4; faststart",
+    "durationSeconds": 26.48
+  },
+  "assets": [
+    {
+      "path": "public/videos/workbench/workbench-shell-20261014.mp4",
+      "size": 545600,
+      "sha256": "6d4bb557afbfc82026464774f787befec9ea86ed2f019b9a05fd469969394f9d"
+    },
+    {
+      "path": "public/videos/workbench/workbench-shell-20261014.vtt",
+      "size": 500,
+      "sha256": "f7abe5a1cc4fef73a5f50d5db96b520a3eaf580d85e58c40b050cd025bd19ed0"
+    },
+    {
+      "path": "public/images/workbench/founderops/cockpit-20261014.webp",
+      "size": 49934,
+      "sha256": "bd678c0685bf82882d297bfaa3388ea1841b1e8f5316f93a6433d513197f1ec5"
+    },
+    {
+      "path": "public/images/workbench/founderops/cockpit-20261014-mobile.webp",
+      "size": 22960,
+      "sha256": "baf1f47ce273a9eb78364b93a7162ee1a8a0c9ac3a6a5bc4e2932db13f93c01c"
+    }
+  ]
+}

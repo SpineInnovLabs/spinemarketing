@@ -88,3 +88,126 @@
 1. **Common Shell (`common/`):** Displays the canonical `WORKBENCH_SHELL` left navigation bar (Home, My Work, Communications, Personal, Work, Platform, Administration), unified search, breadcrumbs, and live contextual Twin panel.
 2. **Domain Workspaces:** All 18 registered operational domains adapt the Work section in accordance with the tenant projection while preserving the persistent shell.
 3. **Twin Invariants:** Authentic Twin panels render either live contextual assistance or pending action proposals awaiting human-in-the-loop governance approval.
+
+## October 14 shell refresh and visual review
+
+Two additional captures come from the actual local application at source commit
+`8d62ba3cd88573539aa7be98e293e966cfa1fbd2`, on branch
+`feat/workbench-design-system-parity`. The source checkout included unrelated ongoing
+changes in `packages/contracts/src/platform/index.ts`,
+`packages/spine-network/src/harness.ts` and
+`packages/contracts/src/platform/multimodal-context.ts`. No application UI,
+authorization or fixture-source code was changed for the captures.
+The existing non-production `x-workbench-qa` identity path and the existing
+`COMMON_ENTITIES` fixture from `scripts/capture-workbench-library.mjs` were used.
+External browser requests were blocked and gateway URLs pointed to local loopback.
+The Next.js development toolbar was excluded; no application screen or data was composited.
+
+| Category | Domain | Asset Path | Route | Fixture / State | Viewport | Size |
+|---|---|---|---|---|---|---|
+| FounderOps refresh | `founderops` | [`images/workbench/founderops/cockpit-20261014.webp`](/images/workbench/founderops/cockpit-20261014.webp) | `/workspace/work/founderops/founder-ops` | `deterministic-common-entities` | 1440×900 (desktop) | Lossless WebP |
+| FounderOps refresh | `founderops` | [`images/workbench/founderops/cockpit-20261014-mobile.webp`](/images/workbench/founderops/cockpit-20261014-mobile.webp) | `/workspace/work/founderops/founder-ops` | `deterministic-common-entities` | 390×844 (mobile) | Lossless WebP |
+
+The original 59 captures remain archived. Visual inspection found unavailable or
+authorization-error states in the common captures, invalid NaN totals in RevOps
+pipeline, and no visible Twin proposal in the file named `twin-action.webp`.
+These are excluded from public showcase selection. Empty domain collections remain
+visible as empty layouts; captions must not describe records or results absent
+from the image. `lib/workbench-capture-review.ts` records the inspected contents.
+
+The refreshed shell contains a QA host-status badge. It is fixture UI, not independent
+proof of host identity, capability authorization, provider execution or data ingestion.
+
+## Recorded shell walkthrough
+
+`public/videos/workbench/workbench-shell-20261014.mp4` is a genuine recording of
+real React UI interactions in the same local QA application. It is not a slideshow,
+image animation or synthesized application behavior. The silent 1440×900 H.264 MP4
+runs for 26.48 seconds and includes English scene descriptions plus a text transcript.
+The first eight seconds of initial server loading and pre-hydration state were trimmed;
+playback speed and the subsequent interface sequence are unchanged.
+
+The recording shows sales, campaign and operations sections opening/closing, followed
+by work-view search opening and dismissal. It does not invoke a provider, approve a
+proposal, verify a connection or prove live data ingestion. Base commit, contemporaneous
+unrelated source-tree changes, tool, fixture path, editing and SHA-256 digests are recorded
+in `docs/WORKBENCH-RECORDING-PROVENANCE.json`.
+
+## Canvas component captures — October 15
+
+These captures render the unmodified application CanvasSurface component in an
+isolated local preview using existing QA records and a graph-test envelope.
+They do not establish authenticated route hydration, live source sync, saved
+edits or provider effects. The graph fixture positions were arranged into two
+columns; semantic nodes, statuses and edges are unchanged. Phone graph capture
+uses the component’s native zoom-out control. The editable title was changed
+to Acme Renewal Plan through the actual UI. No pixels or business values were
+synthesized. These isolated captures are now archived only; the public
+selector uses the complete native shell captures documented below.
+Source/report/capture digests: WORKBENCH-CANVAS-PROVENANCE.json.
+
+| Capture | Dimensions |
+| --- | --- |
+| [document desktop](/images/workbench/canvas/document-20261015.webp) | 960×900 |
+| [database desktop](/images/workbench/canvas/database-20261015.webp) | 960×900 |
+| [graph desktop](/images/workbench/canvas/graph-20261015.webp) | 960×900 |
+| [library desktop](/images/workbench/canvas/library-20261015.webp) | 960×900 |
+| [document mobile](/images/workbench/canvas/document-20261015-mobile.webp) | 390×844 |
+| [database mobile](/images/workbench/canvas/database-20261015-mobile.webp) | 390×844 |
+| [graph mobile](/images/workbench/canvas/graph-20261015-mobile.webp) | 390×844 |
+| [library mobile](/images/workbench/canvas/library-20261015-mobile.webp) | 390×844 |
+
+Capture review: the October 15 phone component captures clip some text/controls at 390 px. All eight isolated component captures are archived and superseded in the public selector by the complete native shell captures. Marketing offers fit-to-screen and actual-size inspection of the desktop captures; this does not establish native app mobile parity.
+
+## Complete native shell captures — October 15
+
+The public Canvas selector uses 12 full-frame captures of the application's
+unmodified IAAppShell, IASidebar, DepartmentProvider and UnifiedWorkbench
+components in a local QA composition. The actual application CSS and font
+classes are retained. The navy sidebar is rendered by IASidebar, including
+Home, My Work, Communications, Personal, adaptive Work, Platform and
+Administration. Nested sections, inactive entries and the QA administrator's
+controls come from the source components and navigation manifests.
+
+The six workspace captures show S1 Workbench, Canvas Document, Database,
+Context Graph, the Canvas UI Library panel and S4 Workbench Library. Six more
+captures expand the sidebar groups using the native buttons. Work uses a
+taller viewport so the complete Account Success package and lower groups can
+be inspected. The graph was zoomed out twice using the real control.
+
+Source commit: `095fd8017c905c25be2832b02be3b35deabc8fe6`. The source checkout
+contained unrelated in-progress changes, recorded verbatim in the JSON
+provenance. No application files were edited. The preview uses a local Next
+navigation adapter, the existing non-production Visual QA identity handler,
+two existing Canvas unit-test records and the existing multimodal graph-test
+envelope. Graph positions alone are arranged into two columns. No rendered
+pixels, business values, navigation groups or action outcomes are synthesized.
+
+The native `/workspace/workbench` route currently supplies no records; these
+populated captures use the components' normal records prop. They do not
+establish routed data hydration. Native Host Verified, Live Synced and source
+labels are UI content, not independently verified host identity, live customer
+telemetry, saved edits or provider effects. No approval or execution control
+was invoked. Non-GET browser requests were blocked. SHA-256 digests, source
+files, dimensions and the detailed boundary are recorded in
+`WORKBENCH-NATIVE-SHELL-PROVENANCE.json`.
+
+The marketing selector is outside the captured application chrome. It offers
+keyboard selection, enlargement, fit-to-screen and actual-size scrolling.
+Complete desktop captures are used on phones; native phone layout parity is
+not claimed. The original gallery and genuine recorded walkthrough remain.
+
+| Capture | Dimensions |
+| --- | --- |
+| [document](/images/workbench/native-shell/document-20261015.webp) | 1600×1100 |
+| [database](/images/workbench/native-shell/database-20261015.webp) | 1600×1100 |
+| [graph](/images/workbench/native-shell/graph-20261015.webp) | 1600×1100 |
+| [blocks](/images/workbench/native-shell/blocks-20261015.webp) | 1600×1100 |
+| [library](/images/workbench/native-shell/library-20261015.webp) | 1600×1100 |
+| [workbench](/images/workbench/native-shell/workbench-20261015.webp) | 1600×1100 |
+| [navigation-my-work](/images/workbench/native-shell/navigation-my-work-20261015.webp) | 1600×1100 |
+| [navigation-communications](/images/workbench/native-shell/navigation-communications-20261015.webp) | 1600×1100 |
+| [navigation-personal](/images/workbench/native-shell/navigation-personal-20261015.webp) | 1600×1100 |
+| [navigation-work](/images/workbench/native-shell/navigation-work-20261015.webp) | 1600×1680 |
+| [navigation-platform](/images/workbench/native-shell/navigation-platform-20261015.webp) | 1600×1100 |
+| [navigation-administration](/images/workbench/native-shell/navigation-administration-20261015.webp) | 1600×1100 |

@@ -6,7 +6,7 @@ import { SpineWorkspaceDetails } from "@/components/marketing/spine-workspace-de
 export const metadata: Metadata = {
   title: "SpineWorkspace — Product, Features & Technology | Spine InnovTech",
   description:
-    "Explore SpineWorkspace: shared business context, a workspace for your role, your AI Twin, evidence-backed decisions, and governed next steps.",
+    "Discover Spine Workspace: governed truth and context, one Fabric projected across 13 domains, and ready-to-work operational views for humans and AI.",
   alternates: { canonical: "/product" },
 };
 
