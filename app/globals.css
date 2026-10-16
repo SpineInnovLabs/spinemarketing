@@ -1632,6 +1632,7 @@ html[data-theme="dark"] .arvio-badge {
   }
 }
 @media (prefers-reduced-motion: reduce) {
+  html,
   .innovtech-page *,
   .innovtech-header * {
     scroll-behavior: auto;

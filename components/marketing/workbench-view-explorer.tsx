@@ -30,6 +30,13 @@ import {
 } from "@/lib/workbench-screenshots";
 
 const DEFAULT_DOMAIN = "founderops";
+type ExplorerTab = "dashboard" | "canvas" | "journey" | "screenshot" | "recording" | "inventory";
+const linkedTabs = new Map<string, ExplorerTab>([
+  ["#workbench-dashboards", "dashboard"],
+  ["#workbench-canvas", "canvas"],
+  ["#workbench-customer-journey", "journey"],
+  ["#workbench-recording", "recording"],
+]);
 
 // Only expose public, customer-facing operational domains with verified visual runtime captures
 const PUBLIC_WORKBENCH_DOMAINS = WORKBENCH_SOURCE_DOMAINS.filter(
@@ -72,7 +79,7 @@ export function WorkbenchViewExplorer({
       ? initialDomain
       : DEFAULT_DOMAIN
   );
-  const [activeTab, setActiveTab] = useState<"dashboard" | "canvas" | "journey" | "screenshot" | "recording" | "inventory">("dashboard");
+  const [activeTab, setActiveTab] = useState<ExplorerTab>("dashboard");
   const [selectedViewKey, setSelectedViewKey] = useState<string>("primary");
   const [isMobileView, setIsMobileView] = useState(false);
   const [showAll, setShowAll] = useState(false);
@@ -81,19 +88,21 @@ export function WorkbenchViewExplorer({
   const recordingRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const revealLinkedRecording = () => {
-      if (window.location.hash === "#workbench-recording") setActiveTab("recording");
+    const revealLinkedView = () => {
+      const tab = linkedTabs.get(window.location.hash);
+      if (tab) setActiveTab(tab);
     };
-    revealLinkedRecording();
-    window.addEventListener("hashchange", revealLinkedRecording);
-    return () => window.removeEventListener("hashchange", revealLinkedRecording);
+    revealLinkedView();
+    window.addEventListener("hashchange", revealLinkedView);
+    return () => window.removeEventListener("hashchange", revealLinkedView);
   }, []);
 
   useEffect(() => {
     if (activeTab !== "recording") {
       recordingRef.current?.querySelector("video")?.pause();
-    } else if (window.location.hash === "#workbench-recording") {
-      recordingRef.current?.scrollIntoView({ block: "start" });
+    }
+    if (linkedTabs.get(window.location.hash) === activeTab) {
+      document.getElementById(window.location.hash.slice(1))?.scrollIntoView({ block: "start" });
     }
   }, [activeTab]);
 

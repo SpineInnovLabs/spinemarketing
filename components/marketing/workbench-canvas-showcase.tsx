@@ -55,7 +55,7 @@ export function WorkbenchCanvasShowcase() {
   }, [expanded]);
 
   return (
-    <div className="mt-8" id="workbench-canvas">
+    <div className="mt-8 scroll-mt-24" id="workbench-canvas">
       <div className="overflow-hidden rounded-2xl border border-[#CCE3F5] bg-white">
         <div className="border-b border-[#E2EEF8] bg-[#F7FAFD] p-4 sm:p-5">
           <div className="flex flex-wrap gap-2" role="group" aria-label="Workbench view selection">
