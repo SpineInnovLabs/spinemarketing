@@ -89,7 +89,7 @@ export function ResponsiveWorkbenchScreenshot({
                 ${basePath}-2880w.webp 2880w,
                 ${src} 1440w
               `}
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 960px"
+              sizes="(max-width: 640px) 100vw, (max-width: 1279px) 90vw, 1280px"
             />
             <img
               src={src}
@@ -98,7 +98,7 @@ export function ResponsiveWorkbenchScreenshot({
               height={900}
               loading={priority ? "eager" : "lazy"}
               decoding="async"
-              className={mediaStyles.media}
+              className={mediaStyles.desktopMedia}
               style={{ maxHeight }}
             />
           </picture>

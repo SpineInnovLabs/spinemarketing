@@ -255,3 +255,12 @@ pixels were not reconstructed. Captures were encoded as lossless WebP.
 | [editing](/images/workbench/editable-dashboard/editing-20261015.webp) | 1600×1100 |
 | [draft](/images/workbench/editable-dashboard/draft-20261015.webp) | 1600×1100 |
 | [filter](/images/workbench/editable-dashboard/filter-20261015.webp) | 1600×1100 |
+
+## Marketing preview framing — October 16, 2026
+
+Dashboard, Canvas and hero previews use CSS viewport bounds to trim unused
+space on desktop and show a larger relevant detail on phones. Phone previews
+identify this framing and link to enlargement. The complete, original capture
+remains available through Fit to screen and Actual size. No capture pixels,
+fixture records, source dimensions or provenance digests are changed by this
+presentation. Recordings retain their original aspect ratio and controls.
