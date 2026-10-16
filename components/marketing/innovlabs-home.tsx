@@ -37,7 +37,7 @@ export function InnovLabsHome() {
             <p className="text-[11px] font-semibold uppercase tracking-[.2em] text-[#0055B8]">SPINEWORKSPACE · OPERATIONAL CONTINUITY</p>
             <h1 id="company-title" className="mt-6 max-w-[700px] text-[length:min(clamp(2.75rem,5.2vw,4.85rem),var(--marketing-title-size))] font-bold leading-[1.02] tracking-[-.055em] text-[#032D60]">The operational workspace that is ready on day one.</h1>
             <p className="mt-7 max-w-[620px] text-xl font-medium leading-8 text-[#082B5E]">Context you own. AI you rent. Approval in between.</p>
-            <p className={body + " mt-4 max-w-[620px]"}><p>SpineWorkspace connects the tools you already use, anchors every account to one shared truth, and turns operational data into clear priorities, accountable work, and governed AI-assisted action.</p>
+            <p className={body + " mt-4 max-w-[620px]"}>SpineWorkspace connects the tools you already use, anchors every account to one shared truth, and turns operational data into clear priorities, accountable work, and governed AI-assisted action.</p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href="#how-it-works" className={button}>See how it works <ArrowRight className="h-4 w-4" aria-hidden /></Link>
               <Link href="#why-spine" className="inline-flex min-h-12 items-center gap-2 rounded-xl border border-[#A7C7E9] px-5 text-[14px] font-semibold text-[#082B5E] hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#006FE8]">Why SpineWorkspace</Link>
