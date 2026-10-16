@@ -519,25 +519,27 @@ export const pages = {
 
   developers: {
     meta: {
-      title: "Developers — Build with SpineWorkspace",
-      description: "Connect the tools, files, and conversations your team already uses.",
+      title: "Developers — Evaluate Your SpineWorkspace Integration",
+      description: "Review connector coverage, events, AI host access and permissions for your SpineWorkspace integration.",
       path: "/developers",
     },
     hero: {
       badge: "Developers",
-      headline: "Build with SpineWorkspace.",
-      subhead: "Connect the tools, files, and conversations your team already uses. The tools keep the record.",
+      headline: "Evaluate your integration.",
+      subhead: "Review the connections, events and access controls your team needs. Your existing tools keep the record.",
       primaryCta: { label: "Read the docs", href: DOCS_URL },
     },
     sections: [
       {
-        headline: "Integration paths.",
+        id: "integration-paths",
+        headline: "Choose your technical starting point.",
+        body: "Supported providers, operations and deployment access are confirmed for your environment.",
         cards: [
-          { title: "Integrations", description: "Connect the apps your team already opens.", href: "/platform/integrations" },
-          { title: "Tools already open", description: "Use the tools, files, and conversations already in front of that person.", href: DOCS_URL },
-          { title: "Use what is already open", description: "The work uses what is already open before it reaches for anything else.", href: "/twin" },
-          { title: "Sign-in and permission", description: "Who may sign in, and what that person is allowed to see.", href: DOCS_URL },
-          { title: "Reference docs", description: "Full platform and product documentation.", href: DOCS_URL },
+          { title: "Connector catalog", description: "Find relevant tools, then confirm supported operations and access.", href: "/integrations" },
+          { title: "Events and webhooks", description: "Review supported event ingestion and the setup required for your environment.", href: "/platform/integrations#integration-methods" },
+          { title: "AI hosts and MCP", description: "Understand host identity, capability discovery, authorization and verified outcomes.", href: "/host-connected-environment" },
+          { title: "Security and permissions", description: "Review tenant boundaries, access scopes and action controls.", href: "/security" },
+          { title: "Technical reference", description: "Explore the architecture and request the integration details your team needs.", href: DOCS_URL },
         ],
       },
     ],
