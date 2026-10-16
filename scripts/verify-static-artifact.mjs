@@ -14,7 +14,7 @@ const redirects = readFileSync("out/_redirects", "utf8")
   .map(line => line.trim())
   .filter(line => line && !line.startsWith("#"))
   .map(line => line.split(/\s+/));
-if (!product.includes("Explore the features") || !product.includes("Governed next steps")) {
+if (!product.includes("A workspace for connected business work.") || !product.includes('id="features"') || !product.includes('id="how-it-works"')) {
   throw new Error("Static export missing local Spine Workspace product features.");
 }
 if (redirects.some(([source]) => source.replace(/\/$/, "") === "/product")) {
@@ -24,8 +24,21 @@ const productAlias = redirects.find(([source]) => source === "/spineworkspace");
 if (!productAlias || productAlias[1] !== "/product" || productAlias[2] !== "301") {
   throw new Error("Legacy /spineworkspace entry must redirect internally to /product.");
 }
-if (!text.includes("Building the intelligence behind") || !text.includes("connected business.") || !text.includes("Spine InnovTech")) {
+if (!text.includes("SpineWorkspace connects your tools, context and team.") || !text.includes("Spine InnovTech")) {
   throw new Error("Static export missing corporate hero/company identity.");
+}
+const pricing = readFileSync("out/pricing.html", "utf8");
+const pricingText = pricing.replace(/<script\b[\s\S]*?<\/script>/g, "").replace(/<[^>]*>/g, " ").replace(/\s+/g, " ");
+const pricingSchemas = [...pricing.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map((match) => JSON.parse(match[1]));
+const applicationOffer = pricingSchemas.find((schema) => schema["@type"] === "SoftwareApplication")?.offers;
+if (!pricingText.includes("US$49") || !/per user \/ month/.test(pricingText) || !pricingText.includes("Billed monthly") || !pricingText.includes("AI/provider usage and custom setup are scoped separately.")) {
+  throw new Error("Starting price must show currency, per-user monthly billing and separately scoped costs.");
+}
+if (applicationOffer?.price !== 49 || applicationOffer.priceCurrency !== "USD" || applicationOffer.priceSpecification?.unitText !== "user per month" || applicationOffer.priceSpecification?.billingDuration !== "P1M") {
+  throw new Error("Pricing structured offer must match the visible monthly subscription.");
+}
+for (const [route, html] of [["/", text], ["/product", product]]) {
+  if (!html.includes("US$49") || !html.includes('href="/pricing"')) throw new Error(`${route} must expose the starting price and full pricing terms.`);
 }
 const header = text.match(/<header\b[\s\S]*?<\/header>/)?.[0] ?? "";
 for (const category of ["Company", "Technology", "Solutions", "Insights", "Developers"]) {

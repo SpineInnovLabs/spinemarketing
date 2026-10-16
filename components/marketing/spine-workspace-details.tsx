@@ -1,141 +1,45 @@
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+import { STARTER_PRICING } from "@/lib/pricing";
 import { ResponsiveWorkbenchScreenshot } from "./responsive-workbench-screenshot";
 import { WorkspaceAuthActions } from "./workspace-auth-actions";
-import { WorkspaceBenefits } from "./workspace-benefits";
+import { WorkspaceBenefits, WorkspaceSolutions } from "./workspace-benefits";
 import { WorkspaceSubscriptionValue } from "./workspace-subscription-value";
 import { WorkbenchViewExplorer } from "./workbench-view-explorer";
-import {
-  ArrowRight,
-  Database,
-  FileText,
-  Layers3,
-  Network,
-  ShieldCheck,
-  Sparkles,
-  Target,
-  Users,
-  Workflow,
-} from "lucide-react";
 
-const features = [
+const workflow = [
   {
-    icon: Target,
-    title: "Goals and priorities",
-    body: "Keep the purpose of the work visible. Bring goals, priorities, and related signals together so the next step has a clear business reason.",
+    title: "Gather the context",
+    body: "Start with a customer, goal or task. Bring its related records and source evidence into the review.",
   },
   {
-    icon: Database,
-    title: "Connected business context",
-    body: "Relate customer records, conversations, decisions, and evidence across your existing tools. Source systems remain authoritative.",
+    title: "Prepare with your Twin",
+    body: "Ask your AI Twin to summarize the situation, investigate the evidence and propose a useful next step.",
   },
   {
-    icon: Users,
-    title: "A workspace for your role",
-    body: "Bring relevant work and context to the person responsible. Different teams can work from a shared business picture.",
+    title: "Review with authority",
+    body: "People review the proposal. Consequential actions require authorization, and their outcomes must be checked.",
   },
-  {
-    icon: Sparkles,
-    title: "Your context-aware Twin",
-    body: "An AI counterpart helps gather understanding, prepare work, and propose useful next steps. People retain judgment and accountability.",
-  },
-  {
-    icon: FileText,
-    title: "Evidence beside decisions",
-    body: "Review the sources behind a conclusion. Missing or stale context stays visible instead of becoming a confident assumption.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Governed next steps",
-    body: "Keep proposals separate from execution. Consequential actions require appropriate authority, followed by observation and verification.",
-  },
-];
-const technology = [
-  {
-    icon: Network,
-    name: "Spine Fabric",
-    label: "Business-context foundation",
-    body: "Connects entities, relationships, signals, decisions, evidence, and continuity.",
-    href: "/platform/spine-fabric",
-  },
-  {
-    icon: Layers3,
-    name: "Spine Workbench",
-    label: "Human work surface",
-    body: "Brings the relevant context and priorities into an adaptive workspace.",
-    href: "/product/the-adaptive-workspace",
-  },
-  {
-    icon: Sparkles,
-    name: "Spine Twin",
-    label: "AI counterpart",
-    body: "Gathers context, prepares work, and proposes informed next steps.",
-    href: "/twin",
-  },
-  {
-    icon: ShieldCheck,
-    name: "Spine Runtime",
-    label: "Execution and assurance",
-    body: "Coordinates authorized execution, observation, and reconciliation.",
-    href: "/governance",
-  },
-  {
-    icon: Workflow,
-    name: "Connected capabilities",
-    label: "Tools and integrations",
-    body: "Brings connectors, MCP servers, plugins, and reusable capabilities into the work.",
-    href: "/integrations",
-  },
-  {
-    icon: Network,
-    name: "Spine Network",
-    label: "Continuity across AI hosts",
-    body: "Designed to carry authorized context and work state between compatible hosts. Each host verifies identity, discovers capabilities, checks authority, invokes permitted tools and reconciles results independently.",
-    href: "/host-connected-environment",
-  },
-];
+] as const;
 
 export function SpineWorkspaceDetails() {
   return (
     <div className="innovtech-page">
-      <section
-        className="innovtech-product innovtech-product-overview"
-        aria-labelledby="product-title"
-      >
+      <section className="innovtech-product innovtech-product-overview" aria-labelledby="product-title">
         <div className="innovtech-product-copy">
-          <p className="innovtech-eyebrow">
-            SPINEWORKSPACE · BUSINESS CONTEXT FOR HUMANS & AI
-          </p>
-          <h1 id="product-title">
-            Your tools have the information. Your team needs the whole picture.
-          </h1>
+          <p className="innovtech-eyebrow">SPINEWORKSPACE · YOUR TEAM AND AI, IN CONTEXT</p>
+          <h1 id="product-title">A workspace for connected business work.</h1>
           <p className="innovtech-hero-description">
-            Ingest and retrieve authorized business context from the systems you use.
-            Project that context from one Spine Fabric into role-specific views,
-            with prebuilt operational workflows for humans and AI.
+            Bring customer records, priorities and evidence into one place.
+            Use editable dashboards for day-to-day operations and Canvas views for documents, tables and graphs.
+            Your AI Twin helps prepare the next step; your team keeps control.
           </p>
-          <ul className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-xs font-semibold text-[#245EA9]" aria-label="Product principles">
-            <li>Governed truth and context</li>
-            <li>13 domain projections</li>
-            <li>Ready-to-work views</li>
-          </ul>
+          <p className="mt-5 text-sm font-semibold text-[#245EA9]">From {STARTER_PRICING.displayPrice}/{STARTER_PRICING.unit}/{STARTER_PRICING.interval} · {STARTER_PRICING.billing.toLowerCase()}</p>
           <WorkspaceAuthActions />
           <div className="innovtech-actions">
-            <Link
-              href="/product/how-it-works"
-              className="innovtech-button innovtech-button-secondary"
-            >
-              See how it works <ArrowRight size={18} aria-hidden />
-            </Link>
-            <Link
-              href="/pricing"
-              className="innovtech-button innovtech-button-secondary"
-            >
-              Subscriptions & pricing <ArrowRight size={18} aria-hidden />
-            </Link>
+            <Link href="#workbench-views" className="innovtech-text-link">See the workspace <ArrowRight size={18} aria-hidden /></Link>
+            <Link href="/pricing" className="innovtech-text-link">See pricing <ArrowRight size={18} aria-hidden /></Link>
           </div>
-          <p className="innovtech-governance">
-            Humans govern the business. AI helps the business work.
-          </p>
         </div>
         <figure className="innovtech-product-illustration">
           <div className="overflow-hidden rounded-2xl border border-[#CCE3F5] bg-white shadow-[0_20px_60px_rgba(15,70,130,.12)]">
@@ -144,167 +48,42 @@ export function SpineWorkspaceDetails() {
                 <span className="h-2.5 w-2.5 rounded-full bg-[#FF5F56]" />
                 <span className="h-2.5 w-2.5 rounded-full bg-[#FFBD2E]" />
                 <span className="h-2.5 w-2.5 rounded-full bg-[#27C93F]" />
-                <span className="ml-2 hidden font-mono text-[11px] font-semibold text-[#5A7391] sm:inline">
-                  /workspace/work/founderops/founder-ops
-                </span>
+                <span className="ml-2 hidden font-mono text-[11px] font-semibold text-[#5A7391] sm:inline">/workspace/work/founderops/founder-ops</span>
               </div>
-              <span className="rounded-full border border-[#CCE3F5] bg-[#EBF5FF] px-2 py-0.5 text-[10px] font-semibold text-[#006FE8]">
-                Live Workbench Views
-              </span>
+              <span className="rounded-full border border-[#CCE3F5] bg-[#EBF5FF] px-2 py-0.5 text-[10px] font-semibold text-[#006FE8]">Live Workbench Views</span>
             </div>
-            <ResponsiveWorkbenchScreenshot
-              src="/images/workbench/founderops/cockpit-20261014.webp"
-              alt="Authentic Workbench shell and FounderOps cockpit showing captured QA revenue, deals and customer summaries."
-              priority
-            />
+            <ResponsiveWorkbenchScreenshot src="/images/workbench/founderops/cockpit-20261014.webp" alt="Authentic Workbench shell and FounderOps cockpit showing captured QA revenue, deals and customer summaries." priority />
           </div>
-          <figcaption>
-            Workbench shell with the FounderOps projection. Captured QA records; figures are not live customer telemetry.
-          </figcaption>
+          <figcaption>Workbench shell with the FounderOps projection. Captured QA records; figures are not live customer telemetry.</figcaption>
         </figure>
       </section>
+
       <WorkspaceBenefits detailed />
-      <section id="features" className="innovtech-section">
-        <p className="innovtech-eyebrow">THE WORKSPACE, IN DETAIL</p>
-        <h2>
-          The context you need.
-          <br />
-          The work you own.
-        </h2>
-        <p className="innovtech-section-intro">
-          SpineWorkspace is the product. Its human work surface and AI
-          counterpart bring connected business context into everyday work.
-        </p>
-        <div className="innovtech-feature-grid">
-          {features.map(({ icon: Icon, title, body }, i) => (
-            <article key={title}>
-              <span className="innovtech-icon-circle">
-                <Icon size={26} />
-              </span>
-              <p className="innovtech-step-number">0{i + 1}</p>
-              <h3>{title}</h3>
-              <p>{body}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-      <section
-        id="how-it-works"
-        className="innovtech-section innovtech-white-section"
-      >
-        <p className="innovtech-eyebrow">HOW THE WORKSPACE WORKS</p>
-        <h2>
-          Understand. Prepare.
-          <br />
-          Review. Move forward.
-        </h2>
-        <p className="innovtech-section-intro">
-          A renewal review can relate a customer&apos;s contract, invoice and
-          service incident. Account Success, Finance and Engineering each see
-          the permitted evidence through their own view of the same Fabric.
-        </p>
-        <div className="innovtech-feature-grid">
-          {[
-            {
-              title: "Gather the right context",
-              body: "Start from a customer, goal, signal, or piece of work. Bring related records and evidence into the review.",
-            },
-            {
-              title: "Prepare a useful next step",
-              body: "People and their Twin work from the same context. The Twin can help assemble information and propose next steps.",
-            },
-            {
-              title: "Decide with authority",
-              body: "The responsible person reviews evidence and permissions. Authorized execution stays separate from a proposal.",
-            },
-          ].map(({ title, body }, i) => (
-            <article key={title}>
-              <p className="innovtech-eyebrow">STEP 0{i + 1}</p>
-              <h3>{title}</h3>
-              <p>{body}</p>
-            </article>
-          ))}
-        </div>
-        <Link
-          href="/platform/how-it-works"
-          className="innovtech-text-link innovtech-section-link"
-        >
-          See the underlying workflow <ArrowRight size={18} />
-        </Link>
-      </section>
       <WorkbenchViewExplorer initialDomain="founderops" />
-      <WorkspaceSubscriptionValue />
-      <section id="technology" className="innovtech-section">
-        <p className="innovtech-eyebrow">THE TECHNOLOGY UNDERNEATH</p>
-        <h2>
-          One workspace.
-          <br />A connected foundation.
-        </h2>
-        <p className="innovtech-section-intro">
-          These layers work together as the SpineWorkspace architecture. They
-          describe the technology behind the product, rather than separate
-          availability commitments.
-        </p>
+
+      <section id="how-it-works" aria-labelledby="product-workflow-title" className="innovtech-section innovtech-white-section scroll-mt-24">
+        <p className="innovtech-eyebrow">How the workspace works</p>
+        <h2 id="product-workflow-title">Understand the situation. Prepare the next step.</h2>
+        <p className="innovtech-section-intro">For a renewal review, relate the customer’s contract, invoice and service incident. Account Success, Finance and Engineering see the permitted evidence through their own views of the same Fabric.</p>
         <div className="innovtech-feature-grid">
-          {technology.map(({ icon: Icon, name, label, body, href }) => (
-            <article key={name}>
-              <span className="innovtech-icon-circle">
-                <Icon size={26} />
-              </span>
-              <h3>{name}</h3>
-              <p className="innovtech-eyebrow">{label}</p>
+          {workflow.map(({ title, body }, index) => (
+            <article key={title}>
+              <p className="innovtech-eyebrow">STEP 0{index + 1}</p>
+              <h3>{title}</h3>
               <p>{body}</p>
-              <Link href={href} className="innovtech-text-link">
-                Learn more <ArrowRight size={17} />
-              </Link>
             </article>
           ))}
         </div>
-      </section>
-      <section className="innovtech-company-section">
-        <div>
-          <p className="innovtech-eyebrow">BUILT AROUND RESPONSIBILITY</p>
-          <h2>
-            Evidence and authority
-            <br />
-            stay with the work.
-          </h2>
-          <p>
-            Connected context should make responsibility clearer. Review the
-            evidence, understand access and authority, and keep humans
-            accountable for consequential decisions.
-          </p>
-          <Link href="/security" className="innovtech-text-link">
-            Explore security and governance <ArrowRight size={18} />
-          </Link>
-        </div>
-        <div className="innovtech-company-links">
-          <Link href="/solutions">
-            Explore team use cases <ArrowRight size={20} />
-          </Link>
-          <Link href="/integrations">
-            Explore connected capabilities <ArrowRight size={20} />
-          </Link>
-          <Link href="/company">
-            Meet Spine InnovTech <ArrowRight size={20} />
-          </Link>
+        <p className="mx-auto mt-7 max-w-[850px] text-sm leading-7 text-[#4E607A]">Spine Network is designed to carry context and work checkpoints across compatible AI hosts. Each host independently verifies identity, tool access and authority before continuing.</p>
+        <div className="mt-5 flex flex-wrap justify-center gap-x-7 gap-y-3">
+          <Link href="/platform/how-it-works" className="innovtech-text-link">See the underlying workflow <ArrowRight size={18} aria-hidden /></Link>
+          <Link href="/host-connected-environment" className="innovtech-text-link">Explore host connections and continuity <ArrowRight size={18} aria-hidden /></Link>
+          <Link href="/security" className="innovtech-text-link">Security and governance <ArrowRight size={18} aria-hidden /></Link>
         </div>
       </section>
-      <section className="innovtech-final-section">
-        <p className="innovtech-eyebrow">SEE IT IN CONTEXT</p>
-        <h2>
-          Explore the workspace
-          <br />
-          with your team’s work in mind.
-        </h2>
-        <p>
-          Talk with us about your use case, supported tools, and product
-          availability.
-        </p>
-        <Link className="innovtech-button" href="/contact?intent=demo">
-          Book a demo <ArrowRight size={18} />
-        </Link>
-      </section>
+
+      <WorkspaceSolutions />
+      <WorkspaceSubscriptionValue />
     </div>
   );
 }
