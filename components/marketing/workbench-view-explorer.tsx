@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ResponsiveWorkbenchScreenshot } from "@/components/marketing/responsive-workbench-screenshot";
 import { WorkbenchShellRecording } from "./workbench-shell-recording";
 import { WorkbenchCanvasShowcase } from "./workbench-canvas-showcase";
+import { WorkbenchDashboardShowcase } from "./workbench-dashboard-showcase";
 import { WorkbenchCustomerJourney } from "./workbench-customer-journey";
 import mediaStyles from "./responsive-media.module.css";
 import {
@@ -71,7 +72,7 @@ export function WorkbenchViewExplorer({
       ? initialDomain
       : DEFAULT_DOMAIN
   );
-  const [activeTab, setActiveTab] = useState<"canvas" | "journey" | "screenshot" | "recording" | "inventory">("canvas");
+  const [activeTab, setActiveTab] = useState<"dashboard" | "canvas" | "journey" | "screenshot" | "recording" | "inventory">("dashboard");
   const [selectedViewKey, setSelectedViewKey] = useState<string>("primary");
   const [isMobileView, setIsMobileView] = useState(false);
   const [showAll, setShowAll] = useState(false);
@@ -173,7 +174,7 @@ export function WorkbenchViewExplorer({
             Live Workbench Views
           </div>
           <span className="text-xs font-medium text-[#577592]">
-            Workbench screens and canvas views
+            Editable dashboards and Canvas views
           </span>
         </div>
 
@@ -183,16 +184,11 @@ export function WorkbenchViewExplorer({
               id={`${id}-title`}
               className="text-[length:min(clamp(2rem,4vw,3.2rem),var(--marketing-heading-size))] font-semibold leading-[1.13] tracking-[-.04em]"
             >
-              Live Workbench Views. One Fabric across domains.
+              See your work. Choose your view.
             </h2>
             <p className="mt-4 text-[16px] leading-7 text-[#4E607A]">
-              Explore Workbench screens and document, database and context-graph views. Each role sees
-              the relevant projection within a consistent navigation shell, with access to shared
-              business context, operational views and Spine Twin.
-            </p>
-            <p className="mt-3 text-xs leading-6 text-[#596F89]">
-              The catalog includes additional role, shared-shell and specialist projections
-              alongside the 13 core business domains.
+              Run daily work in editable dashboards. Build documents, tables and context graphs
+              in Canvas with reusable UI Library blocks. Both share the blue Workbench shell.
             </p>
           </div>
 
@@ -246,10 +242,11 @@ export function WorkbenchViewExplorer({
         </div>
         </div>
 
-        {/* View Switcher: Interactive Screenshots vs Extracted Inventory */}
+        {/* Dashboard and Canvas are peer views within the shared Workbench. */}
         <div className="mt-8 flex flex-wrap items-center justify-between gap-4 border-b border-[#D6E8F8] pb-4">
           <div className="flex flex-wrap items-center gap-2" role="group" aria-label="Workbench Explorer Views">
             {([
+              { key: "dashboard", label: "Dashboard views", target: "workbench-dashboards" },
               { key: "canvas", label: "Canvas views", target: "workbench-canvas" },
               { key: "journey", label: "Customer journey", target: "workbench-customer-journey" },
             ] as const).map(({ key, label, target }) => (
@@ -282,7 +279,7 @@ export function WorkbenchViewExplorer({
               }`}
             >
               <Play className="h-4 w-4" aria-hidden="true" />
-              Watch the shell recording
+              Shell recording
             </button>
             <button
               type="button"
@@ -295,7 +292,7 @@ export function WorkbenchViewExplorer({
               }`}
             >
               <Layers3 className="h-4 w-4" aria-hidden="true" />
-              Declared View Catalog ({domain.views.length})
+              View catalog ({domain.views.length})
             </button>
           </div>
 
@@ -349,6 +346,7 @@ export function WorkbenchViewExplorer({
           )}
         </div>
 
+        <div hidden={activeTab !== "dashboard"}><WorkbenchDashboardShowcase /></div>
         <div hidden={activeTab !== "canvas"}><WorkbenchCanvasShowcase /></div>
         <div hidden={activeTab !== "journey"}><WorkbenchCustomerJourney /></div>
 
@@ -752,14 +750,11 @@ export function WorkbenchViewExplorer({
           </div>
         )}
 
-        {/* Compliance and Provenance Disclaimer */}
-        <div className="mt-10 flex flex-col gap-4 border-t border-[#D6E8F8] pt-6 sm:flex-row sm:items-start sm:justify-between">
+        <div className="mt-8 flex flex-col gap-4 border-t border-[#D6E8F8] pt-5 sm:flex-row sm:items-start sm:justify-between">
           <p className="max-w-2xl text-xs leading-6 text-[#596F89]">
             <ShieldCheck className="mr-1 inline h-4 w-4 align-[-3px] text-[#006FE8]" aria-hidden="true" />
-            Screens are captures from the actual Spine Workspace Workbench application. The capture
-            environment used QA fixture records; figures shown are not verified customer data or
-            operational performance. Workflow descriptions explain intended use; captures do not
-            establish completed actions. Empty collections remain empty. Production content depends on connected sources, access and policy.
+            Actual application captures with QA fixture data. Figures and host badges are not
+            verified live customer telemetry, connection proof or evidence of completed actions.
           </p>
           <Link
             href="/product/the-adaptive-workspace"

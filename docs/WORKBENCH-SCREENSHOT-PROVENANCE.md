@@ -211,3 +211,47 @@ not claimed. The original gallery and genuine recorded walkthrough remain.
 | [navigation-work](/images/workbench/native-shell/navigation-work-20261015.webp) | 1600×1680 |
 | [navigation-platform](/images/workbench/native-shell/navigation-platform-20261015.webp) | 1600×1100 |
 | [navigation-administration](/images/workbench/native-shell/navigation-administration-20261015.webp) | 1600×1100 |
+
+## Editable operational dashboard — October 16, 2026
+
+The Dashboard views selector uses four fresh captures of the real
+`/workspace/work/service/dashboard` Next.js route. The registered
+Customer Service & Support view, operational table, native shell and
+navigation are rendered by the application itself. Canvas remains a separate
+peer in the marketing selector. Dashboard record editing and Canvas block
+composition are distinct capabilities; these captures do not establish a
+freeform dashboard layout editor or persisted Canvas layouts.
+
+The isolated development checkout starts from `dev` commit
+`9ad34adbdd6234343fd0f947d9f41f06abe905eb` and includes a locally tested
+editor repair. The repair creates a scoped local override on the first
+title/notes edit, faithfully displays existing workflow states and labels
+the editor fields for accessibility. That application patch is prepared
+separately and has not been merged or deployed: its branch guard requires
+the existing integration train to finish before a new feature branch.
+Exact source-file and patch digests are in
+`WORKBENCH-EDITABLE-DASHBOARD-PROVENANCE.json`.
+
+The two ticket records are unchanged existing QA fixtures from
+`scripts/capture-workbench-library.mjs`. The existing account-at-risk
+projection fixture supplies QA shell metadata with the requested department
+set to `service`, using the repository's documented non-production capture
+pattern. A local follow-up draft was entered through the actual creation
+form and editor; its notes refer to the fixture ticket, customer and
+assignee. Search, local draft editing, reload persistence and preservation
+of the original fixture records were checked through the running UI.
+
+The existing development-only Visual QA identity is used; authorization
+and consequential-action controls remain in place. Non-GET browser requests
+were blocked, and no approval, execution or provider action was invoked.
+Fixture metrics, readiness and native host/status badges do not establish
+live customer telemetry, verified connections or completed provider effects.
+Only framework development chrome was excluded; application UI and image
+pixels were not reconstructed. Captures were encoded as lossless WebP.
+
+| Capture | Dimensions |
+| --- | --- |
+| [overview](/images/workbench/editable-dashboard/overview-20261015.webp) | 1600×1100 |
+| [editing](/images/workbench/editable-dashboard/editing-20261015.webp) | 1600×1100 |
+| [draft](/images/workbench/editable-dashboard/draft-20261015.webp) | 1600×1100 |
+| [filter](/images/workbench/editable-dashboard/filter-20261015.webp) | 1600×1100 |

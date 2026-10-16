@@ -60,8 +60,21 @@ for (const capture of nativeShell.captures) {
     assert.equal(dimensions.height, capture.height, `Native shell capture height mismatch: ${file}`);
   }
 }
+const dashboards = JSON.parse(await readFile("docs/WORKBENCH-EDITABLE-DASHBOARD-PROVENANCE.json", "utf8"));
+for (const capture of dashboards.captures) {
+  for (const file of [capture.path, "out/" + capture.path.replace(/^public\//, "")]) {
+    const digest = createHash("sha256").update(await readFile(file)).digest("hex");
+    assert.equal(digest, capture.sha256, `Editable dashboard provenance digest mismatch: ${file}`);
+    const dimensions = await sharp(file).metadata();
+    assert.equal(dimensions.width, capture.width, `Editable dashboard width mismatch: ${file}`);
+    assert.equal(dimensions.height, capture.height, `Editable dashboard height mismatch: ${file}`);
+  }
+}
 for (const route of ["index", "product"]) {
   const html = await readFile(`out/${route}.html`, "utf8");
+  assert.ok(html.includes('id="workbench-dashboards"'), `Missing editable dashboard showcase: ${route}`);
+  assert.ok(html.includes("/images/workbench/editable-dashboard/overview-20261015.webp"), `Missing authentic dashboard capture: ${route}`);
+  assert.ok(html.includes("Dashboard views") && html.includes("Canvas views"), `Dashboard and Canvas peers missing: ${route}`);
   assert.ok(html.includes("Sidebar structure"), `Missing native sidebar explorer: ${route}`);
   assert.ok(html.includes("/images/workbench/native-shell/document-20261015.webp"), `Missing complete native shell: ${route}`);
   assert.ok(!html.includes("/images/workbench/canvas/document-20261015.webp"), `Superseded isolated component is still rendered: ${route}`);

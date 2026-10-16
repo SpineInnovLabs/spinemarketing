@@ -5,12 +5,11 @@ import { Maximize2, X } from "lucide-react";
 import mediaStyles from "./responsive-media.module.css";
 
 const views = [
-  { id: "workbench", label: "Workbench", title: "The role-based operating view.", detail: "The application’s Workbench surface brings records, priorities and contextual actions into the same workspace. Metrics without a binding remain unbound." },
-  { id: "document", label: "Document", title: "A document inside the complete Workbench shell.", detail: "The actual Canvas workspace combines editable text, a record table, metric blocks and contextual Twin assistance, with the native sidebar and top bar in place." },
-  { id: "database", label: "Database", title: "The same records in the application’s database view.", detail: "The native database mode shows the renewal contract and expansion opportunity with status, stage and owner, alongside its search and record controls." },
-  { id: "graph", label: "Context graph", title: "Context and relationships on the application canvas.", detail: "The graph presents a renewal work item, a decision, an agreement and its related diagram using the application’s existing graph-test envelope." },
-  { id: "blocks", label: "Block library", title: "The Canvas component library, in context.", detail: "The native library panel offers reusable text, table, metric, action and Twin blocks without leaving the document workspace." },
-  { id: "library", label: "Workbench library", title: "Reusable Workbench and Canvas layouts.", detail: "The application’s Library surface presents domain templates, Canvas presets, UI components and saved layouts within the same shell." },
+  { id: "document", label: "Document", title: "Documents with working context.", detail: "Combine editable text, record tables, metric blocks and Twin assistance in Canvas." },
+  { id: "database", label: "Database", title: "The same records, as a table.", detail: "Review a renewal contract and expansion opportunity with status, stage and owner." },
+  { id: "graph", label: "Context graph", title: "See how the work connects.", detail: "Explore a renewal work item, decision, agreement and related diagram." },
+  { id: "blocks", label: "Block library", title: "Build with reusable blocks.", detail: "Add text, tables, metrics, actions and Twin blocks from the Canvas UI Library." },
+  { id: "library", label: "Workbench library", title: "Start from a template.", detail: "Browse domain templates, Canvas presets and UI components in the same shell." },
   { id: "sidebar", label: "Sidebar structure", title: "The application’s complete navigation structure.", detail: "Home, My Work, Communications, Personal, Work, Platform and Administration keep their native order and nesting. The Work menu reflects the Account Success QA profile." },
 ] as const;
 
@@ -33,7 +32,7 @@ export function WorkbenchCanvasShowcase() {
   const [actualSize, setActualSize] = useState(false);
   const dialogRef = useRef<HTMLDialogElement>(null);
   const titleId = useId();
-  const view = views.find(item => item.id === active) ?? views[1];
+  const view = views.find(item => item.id === active) ?? views[0];
   const sidebarSection = sidebarSections.find(item => item.id === sidebar) ?? sidebarSections[0];
   const imageKey = active === "sidebar" ? (sidebar === "overview" ? "document" : `navigation-${sidebar}`) : active;
   const imagePath = `/images/workbench/native-shell/${imageKey}-20261015.webp`;
@@ -95,7 +94,10 @@ export function WorkbenchCanvasShowcase() {
           </button>
         </figure>
       </div>
-      <p className="mt-4 text-xs leading-6 text-[#596F89]">Captured from the application’s unmodified shell, sidebar and Workbench components, composed locally with existing QA fixture records. Populated Canvas captures use the component’s record input; the current routed page does not yet supply those records. Native sync and host badges describe the captured UI, not verified connections, live customer telemetry or completed provider actions. Enlarge any capture to inspect the complete interface.</p>
+      <details className="mt-4 text-xs leading-6 text-[#596F89]">
+        <summary className="w-fit cursor-pointer rounded-sm font-medium focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#006FE8]">About these captures</summary>
+        <p className="mt-2 max-w-3xl">Native application components composed locally with existing QA fixture records. Populated Canvas captures use the component’s record input; the routed page does not yet supply them. Canvas composition edits are local to the view; saved layouts are not demonstrated. Sync and host badges do not verify connections or completed actions.</p>
+      </details>
       {expanded && (
         <dialog ref={dialogRef} onClose={() => setExpanded(false)} aria-labelledby={titleId} onClick={event => { if (event.target === event.currentTarget) dialogRef.current?.close(); }} className="fixed inset-0 z-50 m-0 h-dvh max-h-none w-screen max-w-none bg-[#082B5E]/85 p-2 backdrop-blur-sm sm:p-5">
           <div className="mx-auto flex h-full max-w-[1700px] flex-col overflow-hidden rounded-xl bg-white">
