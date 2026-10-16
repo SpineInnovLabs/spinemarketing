@@ -1,0 +1,119 @@
+{
+  "capturedAt": "2026-10-16T04:45:14.334Z",
+  "sourceCommit": "9ad34adbdd6234343fd0f947d9f41f06abe905eb",
+  "sourceStatus": "M apps/web/components/l1/shared/editable-domain-view.test.tsx\n M apps/web/components/l1/shared/editable-domain-view.tsx\n M docs/CHANGELOG.md\n A docs/evidence/2026-10-15/editable-projection-drafts/README.md\n?? apps/activation/node_modules\n?? apps/auth/node_modules\n?? apps/connector/node_modules\n?? apps/desktop/node_modules\n?? apps/docs/node_modules\n?? apps/mobile/node_modules\n?? apps/one-access-console/node_modules\n?? apps/one-access/node_modules\n?? apps/platform-console/node_modules\n?? apps/platform/node_modules\n?? node_modules\n?? packages/accelerators/node_modules\n?? packages/adapters/node_modules\n?? packages/adk/node_modules\n?? packages/analytics/node_modules\n?? packages/api/node_modules\n?? packages/auth-connectors-mfe/node_modules\n?? packages/auth-onboarding-mfe/node_modules\n?? packages/auth/node_modules\n?? packages/bootstrap/node_modules\n?? packages/capability/node_modules\n?? packages/cloudflare-adapters/node_modules\n?? packages/coda-pack/node_modules\n?? packages/config-fabric/node_modules\n?? packages/config/node_modules\n?? packages/connector-contracts/node_modules\n?? packages/connector-utils/node_modules\n?? packages/connectors/node_modules\n?? packages/context-contracts/node_modules\n?? packages/context/node_modules\n?? packages/contracts/node_modules\n?? packages/core/node_modules\n?? packages/db/node_modules\n?? packages/descope-mcp/node_modules\n?? packages/design-system/node_modules\n?? packages/discovery-fabric/node_modules\n?? packages/handoff-adapters/node_modules\n?? packages/hermes-spine-memory/node_modules\n?? packages/host-platform-connector/node_modules\n?? packages/integration-tests/node_modules\n?? packages/intelligence/node_modules\n?? packages/kernel/node_modules\n?? packages/knowledge-bank-ui/node_modules\n?? packages/lib/node_modules\n?? packages/loader/node_modules\n?? packages/memory/node_modules\n?? packages/model-gateway/node_modules\n?? packages/normalizer/node_modules\n?? packages/omni-router/node_modules\n?? packages/one-access-ui/node_modules\n?? packages/orchestrator/node_modules\n?? packages/platform-mfe/node_modules\n?? packages/projection-engine/node_modules\n?? packages/provider-base/node_modules\n?? packages/rbac/node_modules\n?? packages/sdk/node_modules\n?? packages/spine-entities/node_modules\n?? packages/spine-network/node_modules\n?? packages/spine-schema-generator/node_modules\n?? packages/spine-schema/node_modules\n?? packages/spineworkspace-mcp-tool-connector/node_modules\n?? packages/tenancy/node_modules\n?? packages/types/node_modules\n?? packages/ui/node_modules\n?? packages/webhooks/node_modules\n?? packages/workbench-config/node_modules\n?? packages/workbenches/node_modules",
+  "route": "/workspace/work/service/dashboard",
+  "viewport": "1600x1100",
+  "renderer": "Actual Next.js application route, native IAAppShell/IASidebar and registered ServiceDashboardView/EditableDomainView; no alternate screenshot composition.",
+  "fixture": "Unchanged COMMON_ENTITIES.tickets from scripts/capture-workbench-library.mjs. Account-at-risk projection fixture supplies existing QA shell metadata; department/projectionId request changed to service using the same documented QA injection pattern. Generic readiness is fixture-only. One local follow-up draft was created through the real form using ticket references and assignee.",
+  "identity": "Existing explicitly non-production QA identity handler with tenant-acme/wsp_acme/qa-user-001. No authentication or authority controls changed.",
+  "localRepair": {
+    "patch": "editable-projection-drafts.patch",
+    "sha256": "baf09cb051d9a278f707bcd6c10095bbf2d1e64cb9c36052ec40f2bc90608c61",
+    "integration": "Reviewable local patch on dev baseline, not merged or deployed in the application. Branch guard blocks new feature creation pending the existing integration train."
+  },
+  "network": "Loopback and public source-logo CDN GET requests only; all non-GET browser requests blocked, including the shell’s automatic capability-resolution POST. No consequential action controls invoked.",
+  "sourceFiles": [
+    {
+      "path": "apps/web/components/l1/shared/editable-domain-view.tsx",
+      "sha256": "de41c4087f61f5720744072598d1877709e084d8cf783a1868648367ac6e58da"
+    },
+    {
+      "path": "apps/web/components/l1/shared/editable-domain-view.test.tsx",
+      "sha256": "0b31dd9632a85db0c24a9066f4425cdcb1a7ad1051db3dadf7fa7808b9ffbd5d"
+    },
+    {
+      "path": "apps/web/components/l1/shared/domain-view-presets.ts",
+      "sha256": "346f5af02302a24a9e1003bb2c637dbd82f602402aa49bc6b761faed97de45fc"
+    },
+    {
+      "path": "apps/web/components/l1/service/views/dashboard-view.tsx",
+      "sha256": "d30b596902ec3f43a2d2425528aa226c440c2b04ce49765836737763427b217a"
+    },
+    {
+      "path": "apps/web/components/l1/domain-view-runtime-registry.tsx",
+      "sha256": "1bba51e6b7ba3324a6e4a32ec5326f6c266e50e923a382405f0bf53e8c1400d9"
+    },
+    {
+      "path": "apps/web/components/projections/projection-route-runtime.tsx",
+      "sha256": "ac3602d0ae5998a7b6295a093242f6f5940000b6c237aa0239c8f3b0808b6a72"
+    },
+    {
+      "path": "apps/web/lib/workbench/work-view-page.tsx",
+      "sha256": "43512fe17208956156c027f23dda507c0c32f08d1e2ea92b913589819778c76d"
+    },
+    {
+      "path": "apps/web/components/shell/ia-app-shell.tsx",
+      "sha256": "d0fea39d7b34024b339e75c6d7530b85db8fe5879841bdae8045110abb233e1a"
+    },
+    {
+      "path": "apps/web/components/shell/ia-sidebar.tsx",
+      "sha256": "ce8bbc692e6beed9af21bec3046382092fd267f39c0290f280c43135f4c5dcba"
+    },
+    {
+      "path": "apps/web/lib/hooks/use-authenticated-user.tsx",
+      "sha256": "c8a0e65c34d68f908d3733402757ae0837cfdd894759c267885a4e80b8d29893"
+    },
+    {
+      "path": "apps/web/lib/server/workspace-identity.ts",
+      "sha256": "ae6dfc0ef1e84f66f39fd0cf0cc86bdb91e29a78ad97c4ae36458d1c262e3651"
+    },
+    {
+      "path": "apps/web/lib/hooks/use-hydrate-projection.tsx",
+      "sha256": "7aca262f974b75fe2af7a342cb8867b54c8636cdd235b7290adbe87ba1bb4685"
+    },
+    {
+      "path": "scripts/capture-workbench-library.mjs",
+      "sha256": "8aea55e5cf6ee6c749d8b82de725a8fad0913a77f9a1f84373f4ee6d6b213ba8"
+    },
+    {
+      "path": "tests/visual/fixtures/account-projections.ts",
+      "sha256": "c7b2780aba545dd9453359c0d9ef3d6f9b9982b6c14b5cec722554560117d1b2"
+    }
+  ],
+  "captures": [
+    {
+      "id": "overview",
+      "path": "public/images/workbench/editable-dashboard/overview-20261015.webp",
+      "width": 1600,
+      "height": 1100,
+      "sha256": "e7f0af1bea28cd94f63efe8f3fc983dc653097f4078fccf5ecbfc6bea57e775a",
+      "detail": "Real routed Service dashboard with the two unchanged ticket fixtures, generic KPI strip, attention record, table and native blue shell. Existing status values are faithfully displayed by the local editor repair."
+    },
+    {
+      "id": "filter",
+      "path": "public/images/workbench/editable-dashboard/filter-20261015.webp",
+      "width": 1600,
+      "height": 1100,
+      "sha256": "36c6fc25b7c66c36ad346e6b40aec551dfef0cacc369d5695ab7a9ff2e213092",
+      "detail": "Used the native dashboard search to filter the table to the existing SAML ticket; no fixture records modified."
+    },
+    {
+      "id": "draft",
+      "path": "public/images/workbench/editable-dashboard/draft-20261015.webp",
+      "width": 1600,
+      "height": 1100,
+      "sha256": "860b3fb6da69f049954ed11d075f0739b46a1c4a7005efa64be95b1c88fdea6d",
+      "detail": "Opened the real Create New Dashboard Draft form. Entered a clearly local follow-up title derived from the ticket fixture and its existing assignee; no source record or provider changed."
+    },
+    {
+      "id": "editing",
+      "path": "public/images/workbench/editable-dashboard/editing-20261015.webp",
+      "width": 1600,
+      "height": 1100,
+      "sha256": "f6cb957b73cc59f4d82418c1b19eddd5c2cd382a1bcf7fd5876514c9a61034f8",
+      "detail": "Selected Edit on the newly created Local Draft and entered notes referring to the unchanged ticket fixture. The real labeled title/notes controls, local-draft badge and safe workflow controls are visible."
+    }
+  ],
+  "verifiedInteractions": [
+    "Source workflow states displayed faithfully",
+    "Native search filters records",
+    "Create scoped local draft",
+    "Edit labeled draft title/notes",
+    "Draft survives reload",
+    "First text edit of projected record persists as local override",
+    "Original fixture records unchanged",
+    "Approval/execution/verification absent from client status choices"
+  ],
+  "boundary": "Real local application rendering with QA fixtures and a documented pending UI repair. Not production customer telemetry, completed provider effects, verified host connectivity, or a persisted dashboard layout editor. Dashboard record editing and Canvas block composition are distinct capabilities. Only Next development chrome was excluded from captures."
+}

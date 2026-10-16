@@ -41,5 +41,5 @@ for (const route of ["product", "solutions", ...solutions.map(s => `solutions/${
   }
 }
 const product = readFileSync("out/product.html", "utf8");
-assert.ok(product.includes("Governed next steps"), "Product features remain public");
+assert.ok(product.includes('id="features"') && product.includes("A workspace for connected business work."), "Product features remain public");
 console.log(`Authentication entries verified: ${checks} contextual links across product, solution hub, and 20 solutions.`);

@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { SpineWorkspaceDetails } from "@/components/marketing/spine-workspace-details";
+import { STARTER_PRICING } from "@/lib/pricing";
 
 export const metadata: Metadata = {
-  title: "SpineWorkspace — Product, Features & Technology | Spine InnovTech",
+  title: "SpineWorkspace — Dashboards, Canvas & AI | Spine InnovTech",
   description:
-    "Discover Spine Workspace: governed truth and context, one Fabric projected across 13 domains, and ready-to-work operational views for humans and AI.",
+    `See editable dashboards, Canvas views and AI assistance connected to your business records. From ${STARTER_PRICING.displayPrice}/user/month, billed monthly.`,
   alternates: { canonical: "/product" },
 };
 
