@@ -3,6 +3,7 @@
 import { useEffect, useId, useRef, useState } from "react";
 import { Maximize2, X } from "lucide-react";
 import mediaStyles from "./responsive-media.module.css";
+import { WorkbenchCapturePreview, type CaptureFrame } from "./workbench-capture-preview";
 
 const views = [
   { id: "document", label: "Document", title: "Documents with working context.", detail: "Combine editable text, record tables, metric blocks and Twin assistance in Canvas." },
@@ -24,6 +25,25 @@ const sidebarSections = [
 ] as const;
 
 const choiceStyle = "min-h-11 rounded-lg px-3 py-2 text-sm font-medium focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#006FE8]";
+
+const mobileFrames: Record<(typeof views)[number]["id"], CaptureFrame> = {
+  document: [480, 330, 880, 735],
+  database: [480, 330, 880, 420],
+  graph: [485, 420, 875, 610],
+  blocks: [485, 475, 875, 465],
+  library: [290, 145, 760, 390],
+  sidebar: [0, 150, 360, 480],
+};
+
+const sidebarFrames: Record<(typeof sidebarSections)[number]["id"], CaptureFrame> = {
+  overview: [0, 150, 360, 480],
+  "my-work": [0, 170, 360, 540],
+  communications: [0, 270, 360, 375],
+  personal: [0, 325, 360, 400],
+  work: [0, 380, 360, 620],
+  platform: [0, 435, 360, 645],
+  administration: [0, 490, 360, 610],
+};
 
 export function WorkbenchCanvasShowcase() {
   const [active, setActive] = useState<(typeof views)[number]["id"]>("document");
@@ -89,8 +109,8 @@ export function WorkbenchCanvasShowcase() {
               <Maximize2 className="h-4 w-4" aria-hidden />Enlarge view
             </button>
           </figcaption>
-          <button type="button" onClick={() => { setActualSize(false); setExpanded(true); }} aria-label={`Enlarge ${imageLabel} application capture`} className={`${mediaStyles.frame} w-full cursor-zoom-in bg-[#F7FAFD] text-left focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-[#006FE8]`}>
-            <img src={imagePath} alt={`Captured SpineWorkspace frontend: ${imageLabel}, including the native blue sidebar, top bar, workspace controls and QA account menu.`} width={1600} height={imageHeight} loading="lazy" className={mediaStyles.media} />
+          <button type="button" onClick={() => { setActualSize(false); setExpanded(true); }} aria-label={`Enlarge ${imageLabel} application capture`} className="block w-full cursor-zoom-in bg-[#F7FAFD] text-left focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-[#006FE8]">
+            <WorkbenchCapturePreview src={imagePath} alt={`Captured SpineWorkspace frontend: ${imageLabel}. Enlarge to inspect the complete application shell and QA account menu.`} height={imageHeight} desktop={active === "database" ? [0, 0, 1600, 760] : undefined} mobile={active === "sidebar" ? sidebarFrames[sidebar] : mobileFrames[active]} />
           </button>
         </figure>
       </div>

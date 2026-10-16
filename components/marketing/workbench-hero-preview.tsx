@@ -3,6 +3,7 @@
 import { useEffect, useId, useRef, useState } from "react";
 import { Maximize2, X } from "lucide-react";
 import mediaStyles from "./responsive-media.module.css";
+import { WorkbenchCapturePreview } from "./workbench-capture-preview";
 
 const previews = [
   { id: "dashboard", label: "Dashboard", src: "/images/workbench/editable-dashboard/overview-20261015.webp", title: "Review daily work.", detail: "Records, attention items and local drafts in the operational dashboard.", alt: "Actual Customer Service & Support dashboard with two QA ticket records and the native blue Workbench sidebar." },
@@ -66,8 +67,8 @@ export function WorkbenchHeroPreview() {
             </video>
           </div>
         ) : (
-          <button type="button" onClick={enlarge} aria-label={`Enlarge ${view.label.toLowerCase()} product preview`} style={{ padding: 8 }} className={`${mediaStyles.frame} w-full cursor-zoom-in bg-[#F7FAFD] focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-[#006FE8]`}>
-            <img src={view.src} alt={view.alt} width={1600} height={1100} loading="eager" fetchPriority="high" className={mediaStyles.media} />
+          <button type="button" onClick={enlarge} aria-label={`Enlarge ${view.label.toLowerCase()} product preview`} className="block w-full cursor-zoom-in bg-[#F7FAFD] focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-[#006FE8]">
+            <WorkbenchCapturePreview src={view.src} alt={view.alt} desktop={active === "dashboard" ? [0, 0, 1600, 820] : undefined} mobile={active === "dashboard" ? [300, 185, 720, 610] : [480, 330, 880, 735]} eager />
           </button>
         )}
         <div className="flex flex-wrap items-start justify-between gap-2 border-t border-[#E2EEF8] px-4 py-3">

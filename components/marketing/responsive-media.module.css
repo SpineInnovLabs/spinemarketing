@@ -38,3 +38,63 @@
   min-height: 0;
   object-fit: contain;
 }
+
+.capturePresentation {
+  display: block;
+  width: 100%;
+  min-width: 0;
+}
+
+.desktopMedia {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.captureViewport {
+  display: block;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  aspect-ratio: var(--capture-ratio);
+  background: #f3f6f8;
+}
+
+.captureImage {
+  display: block;
+  position: absolute;
+  width: var(--capture-width);
+  max-width: none;
+  height: auto;
+  left: var(--capture-left);
+  top: var(--capture-top);
+}
+
+.captureHint {
+  display: none;
+}
+
+@media (max-width: 639px) {
+  .captureViewport {
+    aspect-ratio: var(--capture-mobile-ratio);
+  }
+
+  .captureImage {
+    width: var(--capture-mobile-width);
+    left: var(--capture-mobile-left);
+    top: var(--capture-mobile-top);
+  }
+
+  .captureHint {
+    display: block;
+    padding: 0.625rem 0.75rem;
+    border-top: 1px solid #e2eef8;
+    background: #f7fafd;
+    color: #315775;
+    font-size: 0.6875rem;
+    line-height: 1.5;
+    text-align: center;
+  }
+}

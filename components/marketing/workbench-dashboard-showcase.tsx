@@ -3,6 +3,7 @@
 import { useEffect, useId, useRef, useState } from "react";
 import { Maximize2, X } from "lucide-react";
 import mediaStyles from "./responsive-media.module.css";
+import { WorkbenchCapturePreview, type CaptureFrame } from "./workbench-capture-preview";
 
 const dashboardViews = [
   {
@@ -38,6 +39,14 @@ const dashboardViews = [
 ] as const;
 
 const choiceStyle = "min-h-11 rounded-lg px-3 py-2 text-sm font-medium focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#006FE8]";
+
+const previewFrames: Record<(typeof dashboardViews)[number]["id"], { desktop: CaptureFrame; mobile: CaptureFrame }> = {
+  overview: { desktop: [0, 0, 1600, 820], mobile: [300, 185, 720, 610] },
+  editing: { desktop: [0, 0, 1600, 970], mobile: [315, 315, 860, 630] },
+  draft: { desktop: [0, 0, 1600, 900], mobile: [560, 300, 480, 510] },
+  filter: { desktop: [0, 0, 1600, 820], mobile: [300, 520, 760, 280] },
+  workbench: { desktop: [0, 0, 1600, 1100], mobile: [300, 145, 920, 790] },
+};
 
 export function WorkbenchDashboardShowcase() {
   const [active, setActive] = useState<(typeof dashboardViews)[number]["id"]>("overview");
@@ -106,15 +115,13 @@ export function WorkbenchDashboardShowcase() {
             type="button"
             onClick={openCapture}
             aria-label={`Enlarge ${view.label} dashboard capture`}
-            className={`${mediaStyles.frame} w-full cursor-zoom-in bg-[#F7FAFD] text-left focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-[#006FE8]`}
+            className="block w-full cursor-zoom-in bg-[#F7FAFD] text-left focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-[#006FE8]"
           >
-            <img
+            <WorkbenchCapturePreview
               src={imagePath}
               alt={imageAlt}
-              width={1600}
-              height={1100}
-              loading="lazy"
-              className={mediaStyles.media}
+              desktop={previewFrames[view.id].desktop}
+              mobile={previewFrames[view.id].mobile}
             />
           </button>
         </figure>
