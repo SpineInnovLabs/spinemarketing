@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { STARTER_PRICING } from "@/lib/pricing";
-import { ResponsiveWorkbenchScreenshot } from "./responsive-workbench-screenshot";
+import { WorkbenchHeroPreview } from "./workbench-hero-preview";
 import { WorkspaceAuthActions } from "./workspace-auth-actions";
 import { WorkspaceBenefits, WorkspaceSolutions } from "./workspace-benefits";
 import { WorkspaceSubscriptionValue } from "./workspace-subscription-value";
@@ -30,32 +30,20 @@ export function SpineWorkspaceDetails() {
           <p className="innovtech-eyebrow">SPINEWORKSPACE · YOUR TEAM AND AI, IN CONTEXT</p>
           <h1 id="product-title">A workspace for connected business work.</h1>
           <p className="innovtech-hero-description">
-            Bring customer records, priorities and evidence into one place.
-            Use editable dashboards for day-to-day operations and Canvas views for documents, tables and graphs.
-            Your AI Twin helps prepare the next step; your team keeps control.
+            Bring records and evidence from your tools into editable dashboards and Canvas.
+            Your AI Twin prepares the next step; your team stays in control.
           </p>
           <p className="mt-5 text-sm font-semibold text-[#245EA9]">From {STARTER_PRICING.displayPrice}/{STARTER_PRICING.unit}/{STARTER_PRICING.interval} · {STARTER_PRICING.billing.toLowerCase()}</p>
-          <WorkspaceAuthActions />
           <div className="innovtech-actions">
-            <Link href="#workbench-views" className="innovtech-text-link">See the workspace <ArrowRight size={18} aria-hidden /></Link>
+            <Link href="#workbench-views" className="innovtech-button">See the workspace <ArrowRight size={18} aria-hidden /></Link>
             <Link href="/pricing" className="innovtech-text-link">See pricing <ArrowRight size={18} aria-hidden /></Link>
           </div>
         </div>
-        <figure className="innovtech-product-illustration">
-          <div className="overflow-hidden rounded-2xl border border-[#CCE3F5] bg-white shadow-[0_20px_60px_rgba(15,70,130,.12)]">
-            <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[#E2EEF8] bg-[#F7FAFD] px-4 py-2.5 text-xs">
-              <div className="flex items-center gap-1.5">
-                <span className="h-2.5 w-2.5 rounded-full bg-[#FF5F56]" />
-                <span className="h-2.5 w-2.5 rounded-full bg-[#FFBD2E]" />
-                <span className="h-2.5 w-2.5 rounded-full bg-[#27C93F]" />
-                <span className="ml-2 hidden font-mono text-[11px] font-semibold text-[#5A7391] sm:inline">/workspace/work/founderops/founder-ops</span>
-              </div>
-              <span className="rounded-full border border-[#CCE3F5] bg-[#EBF5FF] px-2 py-0.5 text-[10px] font-semibold text-[#006FE8]">Live Workbench Views</span>
-            </div>
-            <ResponsiveWorkbenchScreenshot src="/images/workbench/founderops/cockpit-20261014.webp" alt="Authentic Workbench shell and FounderOps cockpit showing captured QA revenue, deals and customer summaries." priority />
-          </div>
-          <figcaption>Workbench shell with the FounderOps projection. Captured QA records; figures are not live customer telemetry.</figcaption>
-        </figure>
+        <WorkbenchHeroPreview />
+        <div className="col-span-full flex flex-wrap gap-x-7 gap-y-1 border-t border-[#D6E8F8] pt-4 text-sm">
+          <Link href="/proof" className="inline-flex min-h-11 items-center rounded-sm font-semibold text-[#006FE8] hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#006FE8]">Inspect the product evidence</Link>
+          <Link href="/developers#integration-paths" className="inline-flex min-h-11 items-center rounded-sm font-semibold text-[#006FE8] hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#006FE8]">Evaluate integrations and access</Link>
+        </div>
       </section>
 
       <WorkspaceBenefits detailed />
@@ -83,7 +71,7 @@ export function SpineWorkspaceDetails() {
       </section>
 
       <WorkspaceSolutions />
-      <WorkspaceSubscriptionValue />
+      <WorkspaceSubscriptionValue accountActions={<WorkspaceAuthActions />} />
     </div>
   );
 }

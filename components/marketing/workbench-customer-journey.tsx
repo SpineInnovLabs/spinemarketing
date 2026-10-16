@@ -17,7 +17,7 @@ export function WorkbenchCustomerJourney() {
   const [active, setActive] = useState(0);
   const stage = stages[active];
   return (
-    <div id="workbench-customer-journey" className="mt-8">
+    <div id="workbench-customer-journey" className="mt-8 scroll-mt-24">
       <h3 className="text-xl font-semibold sm:text-2xl">From a customer request to continuing work.</h3>
       <p className="mt-3 max-w-3xl text-sm leading-7 text-[#4E607A]">Follow the renewal and SLA follow-up journey implemented in the application: enter, assemble context, prepare a proposal, review authority, check the outcome and resume the work.</p>
       <div className="mt-6 grid gap-4 lg:grid-cols-[280px_minmax(0,1fr)]">

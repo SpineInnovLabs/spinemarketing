@@ -1,15 +1,16 @@
 import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
+import type { ReactNode } from "react";
 import { PRICING_SCOPE_NOTE, STARTER_PRICING } from "@/lib/pricing";
 
 const comparisons = [
   ["CRM, finance and support tools", "Related business context across authorized records."],
-  ["Documents and dashboards", "Editable working views beside the relevant records and evidence."],
-  ["AI assistants", "Role-relevant business context and next steps people can review."],
-  ["Task and project tools", "Source evidence and decision history behind the task."],
+  ["Reporting dashboards", "Editable operational views beside related records and source evidence."],
+  ["AI chat", "Shared business context, work history and proposed next steps for human review."],
+  ["Workflow automation", "Context and review before authorized actions, with observed outcomes afterward."],
 ] as const;
 
-export function WorkspaceSubscriptionValue() {
+export function WorkspaceSubscriptionValue({ accountActions }: { accountActions?: ReactNode } = {}) {
   return (
     <>
       <section id="why" aria-labelledby="workspace-subscription-title" className="scroll-mt-24 bg-white py-16 text-[#082B5E] sm:py-20">
@@ -51,6 +52,7 @@ export function WorkspaceSubscriptionValue() {
               <Link href={STARTER_PRICING.contactHref} className="inline-flex min-h-12 items-center gap-2 rounded-xl bg-[#006FE8] px-5 text-sm font-semibold text-white hover:bg-[#0055B8] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#006FE8]">Discuss your team’s plan <ArrowRight className="h-4 w-4" aria-hidden /></Link>
               <Link href="/pricing" className="inline-flex min-h-12 items-center gap-2 rounded-sm px-2 text-sm font-semibold text-[#006FE8] hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#006FE8]">See pricing details <ArrowRight className="h-4 w-4" aria-hidden /></Link>
             </div>
+            {accountActions}
           </div>
         </div>
       </section>

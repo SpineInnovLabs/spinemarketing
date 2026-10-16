@@ -75,7 +75,7 @@ export function WorkbenchDashboardShowcase() {
   };
 
   return (
-    <div className="mt-8" id="workbench-dashboards">
+    <div className="mt-8 scroll-mt-24" id="workbench-dashboards">
       <div className="overflow-hidden rounded-2xl border border-[#CCE3F5] bg-white">
         <div className="border-b border-[#E2EEF8] bg-[#F7FAFD] p-4 sm:p-5">
           <div className="flex flex-wrap gap-2" role="group" aria-label="Dashboard view selection">

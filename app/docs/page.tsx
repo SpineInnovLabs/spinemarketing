@@ -9,7 +9,6 @@ import {
   Network,
   ShieldCheck,
   Workflow,
-  Sparkles,
   ArrowRight,
   ExternalLink,
   CheckCircle2,
@@ -28,19 +27,19 @@ export const metadata = createPageMetadata({
 const DOC_SECTIONS = [
   {
     title: "Platform Architecture & Fabric",
-    description: "Core distributed topology, business context engine, and deterministic entity resolution.",
+    description: "Shared business context, source lineage and the platform architecture.",
     icon: Network,
     badge: "Architecture",
     docs: [
       {
         title: "Spine Fabric Context Engine",
         href: "/platform/spine-fabric",
-        desc: "Contextual continuity layer binding disparate business entities without data replication.",
+        desc: "Related entities and source evidence, with existing tools retaining authority over their records.",
       },
       {
-        title: "Deterministic Ingestion & How It Works",
+        title: "Context Ingestion & How It Works",
         href: "/platform/how-it-works",
-        desc: "Pipeline specifications from raw source event to reconciled business entity state.",
+        desc: "How source context is ingested, related and reconciled into business views.",
       },
       {
         title: "Platform Architecture Overview",
@@ -56,7 +55,7 @@ const DOC_SECTIONS = [
   },
   {
     title: "Governed Runtime & Security",
-    description: "Access control policies, action gateway verification, and audit trail guarantees.",
+    description: "Access control, action authorization and outcome reconciliation.",
     icon: ShieldCheck,
     badge: "Trust & Governance",
     docs: [
@@ -68,7 +67,7 @@ const DOC_SECTIONS = [
       {
         title: "Approval Gate Twin Queues",
         href: "/product/approval-gate-twin",
-        desc: "Human-in-the-loop operational review workflows and reversible transaction gates.",
+        desc: "Review proposed actions and the evidence needed for an authorized decision.",
       },
       {
         title: "Security & Encryption Architecture",
@@ -78,7 +77,7 @@ const DOC_SECTIONS = [
       {
         title: "Business Context Integrity",
         href: "/business-context",
-        desc: "Maintaining durable cryptographic context trails across SaaS and ERP boundaries.",
+        desc: "Source evidence, relationships and decision history across connected tools.",
       },
     ],
   },
@@ -96,7 +95,7 @@ const DOC_SECTIONS = [
       {
         title: "Spine Twin Operating Principles",
         href: "/twin",
-        desc: "AI assistant constrained to authorized entity contexts with zero hallucinated writes.",
+        desc: "Context-aware assistance that prepares proposals within the applicable access and action controls.",
       },
       {
         title: "Multi-Session Task Continuity",
@@ -111,25 +110,25 @@ const DOC_SECTIONS = [
     ],
   },
   {
-    title: "Integrations & Developer Protocol",
-    description: "Connecting external systems of record, MCP endpoints, and bespoke AI environments.",
+    title: "Integrations & Technical Evaluation",
+    description: "Connector coverage, event ingestion and access requirements for compatible AI hosts.",
     icon: Code2,
     badge: "Extensibility",
     docs: [
       {
-        title: "Connected Capabilities & 65+ Connectors",
+        title: "Connector Catalog",
         href: "/integrations",
-        desc: "Pre-built connector specifications for ERP, CRM, code repositories, and messaging.",
+        desc: "Find relevant tools and confirm their supported operations and setup.",
       },
       {
-        title: "Developer Overview & API Access",
+        title: "Developer Evaluation",
         href: "/developers",
-        desc: "Model Context Protocol (MCP) server endpoints, developer guides, and auth keys.",
+        desc: "Integration paths, host connection requirements and technical evaluation.",
       },
       {
         title: "Host-Connected Environments",
         href: "/host-connected-environment",
-        desc: "Deploying Spine context natively inside enterprise AI hosts and private clusters.",
+        desc: "Host identity, capability discovery, authorization and verified execution are separate requirements.",
       },
       {
         title: "Release Notes & Changelog",
@@ -158,8 +157,8 @@ export default function DocsPage() {
           </h1>
 
           <p className="mt-4 max-w-3xl text-base leading-relaxed text-[#335377] sm:text-lg">
-            Comprehensive architectural references, runtime execution specifications, governance models,
-            and connector manifests for Spine InnovTech and the SpineWorkspace platform.
+            Explore the architecture, governance and integration paths behind SpineWorkspace.
+            Confirm supported connections and deployment access with your team’s technical evaluation.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-4">
@@ -265,7 +264,7 @@ export default function DocsPage() {
         </div>
       </section>
 
-      {/* Trust & Guarantees Strip */}
+      {/* Governance and data-handling references */}
       <section className="border-t border-[#D6E8F8] bg-[#F4F9FD] py-12">
         <div className="mx-auto max-w-6xl px-5 sm:px-8">
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
@@ -276,7 +275,7 @@ export default function DocsPage() {
                   Systems of Record Authoritative
                 </h3>
                 <p className="mt-1 text-xs text-[#526D8B]">
-                  Spine Fabric never replaces your databases or CRM. All writes remain governed and verified.
+                  Your existing tools retain their records. Consequential changes require the applicable authorization and outcome checks.
                 </p>
               </div>
             </div>
@@ -285,10 +284,10 @@ export default function DocsPage() {
               <Lock className="mt-0.5 h-5 w-5 shrink-0 text-[#006FE8]" />
               <div>
                 <h3 className="text-sm font-bold text-[#082B5E]">
-                  Zero AI Training on Data
+                  Review Data Handling
                 </h3>
                 <p className="mt-1 text-xs text-[#526D8B]">
-                  Customer business context and operational entities are never retained or used to train third-party models.
+                  Review the applicable provider terms, retention settings and processing boundaries for your deployment.
                 </p>
               </div>
             </div>
@@ -300,7 +299,7 @@ export default function DocsPage() {
                   Deterministic Action Gates
                 </h3>
                 <p className="mt-1 text-xs text-[#526D8B]">
-                  Every proposed action requires explicit policy validation and optional human-in-the-loop review.
+                  Proposed actions remain subject to access scopes, policy checks and the required human authority.
                 </p>
               </div>
             </div>
