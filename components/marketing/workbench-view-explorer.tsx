@@ -450,12 +450,14 @@ export function WorkbenchViewExplorer({
                       {narrative.tagline}
                     </h3>
                   </div>
-                  <Link
-                    href={DOMAIN_TO_SOLUTION_PATH[domain.id] ?? "/solutions"}
-                    className="inline-flex items-center gap-1.5 rounded-xl border border-[#CBE5FA] bg-white px-4 py-2 text-xs font-semibold text-[#006FE8] shadow-xs transition-colors hover:bg-[#EBF7FF]"
-                  >
-                    Explore {domain.title} Solution <ArrowRight className="h-3.5 w-3.5" />
-                  </Link>
+                  {!compact && (
+                    <Link
+                      href={DOMAIN_TO_SOLUTION_PATH[domain.id] ?? "/solutions"}
+                      className="inline-flex items-center gap-1.5 rounded-xl border border-[#CBE5FA] bg-white px-4 py-2 text-xs font-semibold text-[#006FE8] shadow-xs transition-colors hover:bg-[#EBF7FF]"
+                    >
+                      Explore {domain.title} Solution <ArrowRight className="h-3.5 w-3.5" />
+                    </Link>
+                  )}
                 </div>
 
                 {/* BENTO GRID: Workbench Showcase & 4-Part Architecture */}
@@ -637,18 +639,28 @@ export function WorkbenchViewExplorer({
                         </span>
                       </div>
                       <h4 className="mt-3 text-lg font-bold text-[#082B5E]">
-                        {domain.title} Solution
+                        {compact ? `${domain.title} View Catalog` : `${domain.title} Solution`}
                       </h4>
                       <p className="mt-2 text-xs leading-6 text-[#355579]">
                         Explore the complete declared view registry, connector bindings, and governed automation workflows for {domain.title}.
                       </p>
                     </div>
-                    <Link
-                      href={DOMAIN_TO_SOLUTION_PATH[domain.id] ?? "/solutions"}
-                      className="mt-4 inline-flex items-center justify-center gap-2 rounded-xl bg-[#006FE8] px-4 py-2.5 text-xs font-semibold text-white shadow-sm transition-colors hover:bg-[#0055B8]"
-                    >
-                      Open {domain.title} Deep-Dive <ArrowRight className="h-4 w-4" />
-                    </Link>
+                    {compact ? (
+                      <button
+                        type="button"
+                        onClick={() => setActiveTab("inventory")}
+                        className="mt-4 inline-flex items-center justify-center gap-2 rounded-xl bg-[#006FE8] px-4 py-2.5 text-xs font-semibold text-white shadow-sm transition-colors hover:bg-[#0055B8]"
+                      >
+                        Browse {domain.views.length} Declared Views <ArrowRight className="h-4 w-4" />
+                      </button>
+                    ) : (
+                      <Link
+                        href={DOMAIN_TO_SOLUTION_PATH[domain.id] ?? "/solutions"}
+                        className="mt-4 inline-flex items-center justify-center gap-2 rounded-xl bg-[#006FE8] px-4 py-2.5 text-xs font-semibold text-white shadow-sm transition-colors hover:bg-[#0055B8]"
+                      >
+                        Open {domain.title} Deep-Dive <ArrowRight className="h-4 w-4" />
+                      </Link>
+                    )}
                   </div>
                 </div>
 

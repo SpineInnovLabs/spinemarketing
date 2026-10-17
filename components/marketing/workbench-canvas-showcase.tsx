@@ -27,22 +27,22 @@ const sidebarSections = [
 const choiceStyle = "min-h-11 rounded-lg px-3 py-2 text-sm font-medium focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#006FE8]";
 
 const desktopFrames: Record<(typeof views)[number]["id"], CaptureFrame> = {
-  document: [0, 0, 1600, 960],
-  database: [275, 200, 1250, 520],
-  graph: [275, 310, 1250, 680],
-  blocks: [275, 300, 1250, 620],
-  library: [250, 110, 1280, 540],
-  sidebar: [0, 0, 520, 980],
+  document: [0, 0, 1600, 1085],
+  database: [275, 210, 1285, 535],
+  graph: [275, 325, 1285, 715],
+  blocks: [275, 325, 1285, 625],
+  library: [255, 120, 1320, 440],
+  sidebar: [0, 0, 1600, 880],
 };
 
 const sidebarDesktopFrames: Record<(typeof sidebarSections)[number]["id"], CaptureFrame> = {
-  overview: [0, 0, 520, 980],
-  "my-work": [0, 120, 520, 680],
-  communications: [0, 220, 520, 520],
-  personal: [0, 270, 520, 520],
-  work: [0, 320, 520, 760],
-  platform: [0, 380, 520, 720],
-  administration: [0, 420, 520, 680],
+  overview: [0, 0, 1600, 880],
+  "my-work": [0, 140, 1360, 680],
+  communications: [0, 180, 1360, 680],
+  personal: [0, 220, 1360, 680],
+  work: [0, 350, 1600, 1020],
+  platform: [0, 410, 1360, 650],
+  administration: [0, 430, 1360, 650],
 };
 
 const mobileFrames: Record<(typeof views)[number]["id"], CaptureFrame> = {
@@ -83,6 +83,13 @@ export function WorkbenchCanvasShowcase() {
     const nextIndex = (activeIndex + delta + views.length) % views.length;
     setActive(views[nextIndex].id);
   };
+
+  useEffect(() => {
+    for (const key of ["document", "database", "graph", "blocks", "library", "navigation-work", "navigation-platform"]) {
+      const img = new window.Image();
+      img.src = `/images/workbench/native-shell/${key}-20261015.webp`;
+    }
+  }, []);
 
   useEffect(() => {
     if (!expanded) return;
@@ -164,8 +171,10 @@ export function WorkbenchCanvasShowcase() {
               <Maximize2 className="h-4 w-4" aria-hidden />Enlarge view
             </button>
           </figcaption>
-          <button type="button" onClick={() => { setActualSize(false); setExpanded(true); }} aria-label={`Enlarge ${imageLabel} application capture`} className="block w-full cursor-zoom-in bg-[#F0F8FF] text-left focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-[#006FE8]">
-            <WorkbenchCapturePreview src={imagePath} alt={`Captured SpineWorkspace frontend: ${imageLabel}. Enlarge to inspect the complete application shell and QA account menu.`} height={imageHeight} desktop={active === "sidebar" ? sidebarDesktopFrames[sidebar] : desktopFrames[active]} mobile={active === "sidebar" ? sidebarFrames[sidebar] : mobileFrames[active]} />
+          <button type="button" onClick={() => { setActualSize(false); setExpanded(true); }} aria-label={`Enlarge ${imageLabel} application capture`} className="block w-full cursor-zoom-in bg-[#F0F8FF] p-2 text-left focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-[#006FE8] sm:p-3">
+            <div className="overflow-hidden rounded-xl border border-[#D6E8F8] bg-white shadow-2xs">
+              <WorkbenchCapturePreview src={imagePath} alt={`Captured SpineWorkspace frontend: ${imageLabel}. Enlarge to inspect the complete application shell and QA account menu.`} height={imageHeight} desktop={active === "sidebar" ? sidebarDesktopFrames[sidebar] : desktopFrames[active]} mobile={active === "sidebar" ? sidebarFrames[sidebar] : mobileFrames[active]} eager />
+            </div>
           </button>
         </figure>
       </div>

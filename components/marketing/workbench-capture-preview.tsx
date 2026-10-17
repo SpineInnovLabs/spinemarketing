@@ -29,7 +29,7 @@ export function WorkbenchCapturePreview({ src, alt, height = 1100, desktop = [0,
   return (
     <span className={mediaStyles.capturePresentation}>
       <span data-capture-preview className={mediaStyles.captureViewport} style={style}>
-        <img src={src} alt={alt} width={1600} height={height} loading={eager ? "eager" : "lazy"} fetchPriority={eager ? "high" : undefined} className={mediaStyles.captureImage} />
+        <img key={src} src={src} alt={alt} width={1600} height={height} loading={eager ? "eager" : "lazy"} fetchPriority={eager ? "high" : undefined} className={mediaStyles.captureImage} />
       </span>
       <span className={mediaStyles.captureHint}>Detail preview · Enlarge for full view</span>
     </span>

@@ -116,16 +116,16 @@ const bentoPillars = [
 const choiceStyle =
   "min-h-10 rounded-lg px-3 py-1.5 text-xs font-semibold focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#006FE8]";
 
-// Distinct desktop crop coordinates so each frame highlights the specific UI region instead of repeating the same full-window view
+// Distinct desktop crop coordinates so each frame highlights the specific UI region without slicing any cards or buttons
 const previewFrames: Record<
   (typeof dashboardViews)[number]["id"],
   { desktop: CaptureFrame; mobile: CaptureFrame }
 > = {
-  overview: { desktop: [0, 0, 1600, 820], mobile: [300, 185, 720, 610] },
-  editing: { desktop: [265, 250, 1275, 665], mobile: [315, 315, 860, 630] },
-  draft: { desktop: [430, 215, 740, 555], mobile: [560, 300, 480, 510] },
-  filter: { desktop: [265, 445, 1275, 320], mobile: [300, 520, 760, 280] },
-  workbench: { desktop: [0, 0, 1600, 760], mobile: [300, 145, 920, 790] },
+  overview: { desktop: [0, 0, 1600, 840], mobile: [300, 185, 720, 610] },
+  editing: { desktop: [265, 288, 1295, 670], mobile: [315, 290, 860, 660] },
+  draft: { desktop: [310, 220, 980, 620], mobile: [520, 285, 560, 535] },
+  filter: { desktop: [265, 285, 1295, 480], mobile: [280, 505, 1040, 250] },
+  workbench: { desktop: [0, 0, 1600, 750], mobile: [300, 145, 920, 790] },
 };
 
 export function WorkbenchDashboardShowcase() {
@@ -148,6 +148,16 @@ export function WorkbenchDashboardShowcase() {
     const nextIndex = (activeIndex + delta + dashboardViews.length) % dashboardViews.length;
     setActive(dashboardViews[nextIndex].id);
   };
+
+  useEffect(() => {
+    for (const item of dashboardViews) {
+      const img = new window.Image();
+      img.src =
+        item.id === "workbench"
+          ? "/images/workbench/native-shell/workbench-20261015.webp"
+          : `/images/workbench/editable-dashboard/${item.id}-20261015.webp`;
+    }
+  }, []);
 
   useEffect(() => {
     if (!expanded) return;
@@ -256,14 +266,17 @@ export function WorkbenchDashboardShowcase() {
             type="button"
             onClick={openCapture}
             aria-label={`Enlarge ${view.label} dashboard capture`}
-            className="block flex-1 cursor-zoom-in bg-[#F0F8FF] p-2 text-left focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-[#006FE8] sm:p-3"
+            className="flex flex-1 cursor-zoom-in items-center justify-center bg-[#F0F8FF] p-2 text-left focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-[#006FE8] sm:p-3"
           >
-            <WorkbenchCapturePreview
-              src={imagePath}
-              alt={imageAlt}
-              desktop={previewFrames[view.id].desktop}
-              mobile={previewFrames[view.id].mobile}
-            />
+            <div className="w-full overflow-hidden rounded-xl border border-[#D6E8F8] bg-white shadow-2xs">
+              <WorkbenchCapturePreview
+                src={imagePath}
+                alt={imageAlt}
+                desktop={previewFrames[view.id].desktop}
+                mobile={previewFrames[view.id].mobile}
+                eager
+              />
+            </div>
           </button>
 
           {/* Window Footer */}
@@ -281,7 +294,7 @@ export function WorkbenchDashboardShowcase() {
         {/* BENTO CELL 2: Active Storyboard Narrative & What Changes (4 cols) */}
         <MagicCard
           className="flex flex-col justify-between rounded-2xl border border-[#CBE5FA] bg-white shadow-xs lg:col-span-4"
-          innerClassName="flex h-full flex-col justify-between p-5 sm:p-6"
+          innerClassName="flex h-full flex-col justify-between p-4 sm:p-5"
           gradientColor="rgba(0, 111, 232, 0.08)"
         >
           <div aria-live="polite" aria-atomic="true">
@@ -294,12 +307,12 @@ export function WorkbenchDashboardShowcase() {
               </span>
             </div>
 
-            <h3 className="mt-3.5 text-xl font-bold leading-snug text-[#082B5E]">
+            <h3 className="mt-3 text-lg font-bold leading-snug text-[#082B5E] sm:text-xl">
               {view.title}
             </h3>
-            <p className="mt-2.5 text-sm leading-6 text-[#4E607A]">{view.detail}</p>
+            <p className="mt-2 text-xs leading-5 text-[#4E607A] sm:text-sm sm:leading-6">{view.detail}</p>
 
-            <div className="mt-4 rounded-xl border border-[#D6E8F8] bg-[#F0F8FF] p-3.5">
+            <div className="mt-3.5 rounded-xl border border-[#D6E8F8] bg-[#F0F8FF] p-3">
               <p className="text-[10px] font-bold uppercase tracking-wider text-[#006FE8]">
                 What you see in this frame
               </p>
@@ -307,7 +320,7 @@ export function WorkbenchDashboardShowcase() {
             </div>
           </div>
 
-          <div className="mt-4 flex items-start gap-2 border-t border-[#E6F2FC] pt-3.5 text-xs text-[#355579]">
+          <div className="mt-3.5 flex items-start gap-2 border-t border-[#E6F2FC] pt-3 text-xs text-[#355579]">
             <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-[#208050]" aria-hidden />
             <span>{view.governanceNote}</span>
           </div>
@@ -316,7 +329,7 @@ export function WorkbenchDashboardShowcase() {
         {/* BENTO CELL 3: Interactive 5-Step Storyboard Quick Switcher (4 cols) */}
         <MagicCard
           className="flex flex-col justify-between rounded-2xl border border-[#CBE5FA] bg-white shadow-xs lg:col-span-4"
-          innerClassName="flex h-full flex-col justify-between p-5"
+          innerClassName="flex h-full flex-col justify-between p-4 sm:p-5"
           gradientColor="rgba(0, 111, 232, 0.08)"
         >
           <div>
@@ -329,7 +342,7 @@ export function WorkbenchDashboardShowcase() {
             <p className="mt-1 text-xs text-[#4E607A]">
               Step through each operational action inside the dashboard:
             </p>
-            <div className="mt-3 space-y-1.5">
+            <div className="mt-2.5 space-y-1.5">
               {dashboardViews.map((item) => {
                 const isCurrent = item.id === active;
                 return (
@@ -337,7 +350,7 @@ export function WorkbenchDashboardShowcase() {
                     key={item.id}
                     type="button"
                     onClick={() => setActive(item.id)}
-                    className={`flex w-full items-center justify-between rounded-xl px-3 py-2 text-left text-xs font-semibold transition-all ${
+                    className={`flex w-full items-center justify-between rounded-xl px-3 py-1.5 text-left text-xs font-semibold transition-all ${
                       isCurrent
                         ? "bg-[#006FE8] text-white shadow-2xs"
                         : "border border-[#E6F2FC] bg-[#F0F8FF]/70 text-[#082B5E] hover:border-[#CBE5FA] hover:bg-[#EBF7FF]"
