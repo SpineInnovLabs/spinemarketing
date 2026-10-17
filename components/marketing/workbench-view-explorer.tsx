@@ -28,6 +28,9 @@ import {
   getDomainScreenshotNarrative,
   type WorkbenchScreenshotItem,
 } from "@/lib/workbench-screenshots";
+import { BorderBeam } from "@/components/ui/border-beam";
+import { MagicCard } from "@/components/ui/magic-card";
+import { DotPattern } from "@/components/ui/dot-pattern";
 
 const DEFAULT_DOMAIN = "founderops";
 type ExplorerTab = "dashboard" | "canvas" | "journey" | "screenshot" | "recording" | "inventory";
@@ -173,9 +176,10 @@ export function WorkbenchViewExplorer({
     <section
       id="workbench-views"
       aria-labelledby={`${id}-title`}
-      className="scroll-mt-24 border-y border-[#D6E8F8] bg-[#F0F8FF] px-5 py-16 text-[#082B5E] sm:px-8 lg:py-24"
+      className="relative overflow-hidden scroll-mt-24 border-y border-[#D6E8F8] bg-[#F0F8FF] px-5 py-16 text-[#082B5E] sm:px-8 lg:py-24"
     >
-      <div className="mx-auto max-w-[1280px]">
+      <DotPattern className="opacity-35 text-[#006FE8]/20" />
+      <div className="relative z-10 mx-auto max-w-[1280px]">
         {/* Header Block */}
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div className="inline-flex items-center gap-2 rounded-full border border-[#BBDDF8] bg-white px-3.5 py-1 text-xs font-semibold text-[#006FE8]">
@@ -402,7 +406,8 @@ export function WorkbenchViewExplorer({
                 {/* BENTO GRID: Workbench Showcase & 4-Part Architecture */}
                 <div className="grid grid-cols-1 gap-5 lg:grid-cols-3">
                   {/* BENTO CELL 1: Hero Authentic Workbench Screenshot (Spans 2 cols on lg) */}
-                  <div className="flex flex-col overflow-hidden rounded-2xl border border-[#CCE3F5] bg-white shadow-[0_18px_55px_rgba(15,70,130,.08)] lg:col-span-2">
+                  <div className="relative flex flex-col overflow-hidden rounded-2xl border border-[#CCE3F5] bg-white shadow-[0_18px_55px_rgba(15,70,130,.08)] lg:col-span-2">
+                    <BorderBeam size={280} duration={14} colorFrom="#006FE8" colorTo="#208050" />
                     {/* Workbench Capture Window Header */}
                     <div className="flex flex-wrap items-center justify-between border-b border-[#E2EEF8] bg-[#F7FAFD] px-4 py-2.5 text-xs sm:px-5 sm:py-3">
                       <div className="flex items-center gap-2">
@@ -467,7 +472,7 @@ export function WorkbenchViewExplorer({
                   {/* BENTO RIGHT STACK: 01 & 02 alongside Hero Screenshot */}
                   <div className="flex flex-col gap-5">
                     {/* BENTO CELL 2: What users see */}
-                    <article className="flex flex-1 flex-col justify-between rounded-2xl border border-[#CCE3F5] bg-white p-5 shadow-sm transition-all hover:border-[#96C7F2] hover:shadow-md">
+                    <MagicCard className="flex flex-1 flex-col justify-between rounded-2xl border border-[#CCE3F5] bg-white p-5 shadow-sm transition-all hover:border-[#96C7F2] hover:shadow-md" gradientColor="rgba(0, 111, 232, 0.08)">
                       <div>
                         <div className="flex items-center justify-between">
                           <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-[#EBF5FF] text-xs font-bold text-[#006FE8]">
@@ -488,10 +493,10 @@ export function WorkbenchViewExplorer({
                         <Eye className="h-3.5 w-3.5" />
                         <span>Shared Workbench navigation</span>
                       </div>
-                    </article>
+                    </MagicCard>
 
                     {/* BENTO CELL 3: What they can do */}
-                    <article className="flex flex-1 flex-col justify-between rounded-2xl border border-[#CCE3F5] bg-white p-5 shadow-sm transition-all hover:border-[#96C7F2] hover:shadow-md">
+                    <MagicCard className="flex flex-1 flex-col justify-between rounded-2xl border border-[#CCE3F5] bg-white p-5 shadow-sm transition-all hover:border-[#96C7F2] hover:shadow-md" gradientColor="rgba(0, 111, 232, 0.08)">
                       <div>
                         <div className="flex items-center justify-between">
                           <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-[#EBF5FF] text-xs font-bold text-[#006FE8]">
@@ -512,12 +517,12 @@ export function WorkbenchViewExplorer({
                         <CheckCircle2 className="h-3.5 w-3.5" />
                         <span>Actions follow workspace policy</span>
                       </div>
-                    </article>
+                    </MagicCard>
                   </div>
 
                   {/* BENTO ROW 2: Three equal cards across the 3 columns */}
                   {/* BENTO CELL 4: Manual work reduced */}
-                  <article className="flex flex-col justify-between rounded-2xl border border-[#CCE3F5] bg-white p-5 shadow-sm transition-all hover:border-[#96C7F2] hover:shadow-md">
+                  <MagicCard className="flex flex-col justify-between rounded-2xl border border-[#CCE3F5] bg-white p-5 shadow-sm transition-all hover:border-[#96C7F2] hover:shadow-md" gradientColor="rgba(0, 111, 232, 0.08)">
                     <div>
                       <div className="flex items-center justify-between">
                         <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-[#EBF5FF] text-xs font-bold text-[#006FE8]">
@@ -538,10 +543,10 @@ export function WorkbenchViewExplorer({
                       <LayoutDashboard className="h-3.5 w-3.5 text-[#006FE8]" />
                       <span>Connected context across work</span>
                     </div>
-                  </article>
+                  </MagicCard>
 
                   {/* BENTO CELL 5: Why it matters */}
-                  <article className="flex flex-col justify-between rounded-2xl border border-[#CCE3F5] bg-white p-5 shadow-sm transition-all hover:border-[#96C7F2] hover:shadow-md">
+                  <MagicCard className="flex flex-col justify-between rounded-2xl border border-[#CCE3F5] bg-white p-5 shadow-sm transition-all hover:border-[#96C7F2] hover:shadow-md" gradientColor="rgba(32, 128, 80, 0.08)">
                     <div>
                       <div className="flex items-center justify-between">
                         <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-[#EBF5FF] text-xs font-bold text-[#208050]">
@@ -562,10 +567,11 @@ export function WorkbenchViewExplorer({
                       <ShieldCheck className="h-3.5 w-3.5" />
                       <span>Auditable Decision Continuity</span>
                     </div>
-                  </article>
+                  </MagicCard>
 
                   {/* BENTO CELL 6: Domain Solution Gateway */}
-                  <div className="flex flex-col justify-between rounded-2xl border border-[#CCE3F5] bg-gradient-to-br from-[#082B5E] to-[#0E3D7D] p-5 text-white shadow-sm">
+                  <div className="relative flex flex-col justify-between overflow-hidden rounded-2xl border border-[#CCE3F5] bg-gradient-to-br from-[#082B5E] to-[#0E3D7D] p-5 text-white shadow-sm">
+                    <BorderBeam size={180} duration={11} colorFrom="#A4D0FF" colorTo="#006FE8" />
                     <div>
                       <div className="flex items-center justify-between">
                         <span className="rounded-full bg-white/10 px-2.5 py-0.5 text-[10px] font-semibold tracking-wider text-[#A4D0FF] uppercase">

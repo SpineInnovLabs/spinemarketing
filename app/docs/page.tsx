@@ -1,6 +1,10 @@
 import Link from "next/link";
 import { createPageMetadata, breadcrumb } from "@/lib/page-metadata";
 import { MarketingPageShell } from "@/components/marketing/marketing-page-shell";
+import { GridPattern } from "@/components/ui/grid-pattern";
+import { AnimatedShinyText } from "@/components/ui/animated-shiny-text";
+import { BorderBeam } from "@/components/ui/border-beam";
+import { MagicCard } from "@/components/ui/magic-card";
 import {
   BookOpen,
   Code2,
@@ -146,10 +150,13 @@ export default function DocsPage() {
     <MarketingPageShell breadcrumbs={breadcrumbs}>
       {/* Hero Section */}
       <section className="relative overflow-hidden border-b border-[#D6E8F8] bg-gradient-to-b from-[#F5F9FD] via-[#FAFCFF] to-white pt-24 pb-14 sm:pt-28 sm:pb-16 lg:pt-32 lg:pb-20">
-        <div className="mx-auto max-w-6xl px-5 sm:px-8">
+        <GridPattern className="opacity-45 text-[#006FE8]/15" />
+        <div className="relative z-10 mx-auto max-w-6xl px-5 sm:px-8">
           <div className="inline-flex items-center gap-2 rounded-full border border-[#BCD9F5] bg-[#EAF4FF] px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[#006FE8] shadow-xs">
             <BookOpen className="h-3.5 w-3.5" />
-            <span>Technical Documentation Hub</span>
+            <AnimatedShinyText className="text-xs font-bold uppercase tracking-wider">
+              Technical Documentation Hub
+            </AnimatedShinyText>
           </div>
 
           <h1 className="mt-4 text-3xl font-extrabold tracking-tight text-[#082B5E] sm:text-4xl lg:text-5xl">
@@ -183,31 +190,34 @@ export default function DocsPage() {
 
       {/* Machine-Readable /llms.txt Banner */}
       <section className="border-b border-[#E2EEF8] bg-[#F7FAFD] py-6">
-        <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-4 px-5 sm:flex-row sm:items-center sm:px-8">
-          <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#006FE8]/10 text-[#006FE8]">
-              <Cpu className="h-5 w-5" />
+        <div className="mx-auto max-w-6xl px-5 sm:px-8">
+          <div className="relative flex flex-col items-start justify-between gap-4 overflow-hidden rounded-2xl border border-[#CCE3F5] bg-white px-5 py-4 shadow-xs sm:flex-row sm:items-center">
+            <BorderBeam size={180} duration={12} colorFrom="#006FE8" colorTo="#208050" />
+            <div className="flex items-center gap-3">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#006FE8]/10 text-[#006FE8]">
+                <Cpu className="h-5 w-5" />
+              </div>
+              <div>
+                <p className="text-sm font-bold text-[#082B5E]">
+                  Autonomous Agents &amp; LLM Context Index
+                </p>
+                <p className="text-xs text-[#526D8B]">
+                  Looking to index Spine InnovTech documentation for AI models or MCP agents? We maintain a structured{" "}
+                  <code className="rounded bg-[#F7FAFD] px-1.5 py-0.5 font-mono text-[11px] text-[#006FE8] border border-[#CCE3F5]">
+                    /llms.txt
+                  </code>{" "}
+                  index.
+                </p>
+              </div>
             </div>
-            <div>
-              <p className="text-sm font-bold text-[#082B5E]">
-                Autonomous Agents &amp; LLM Context Index
-              </p>
-              <p className="text-xs text-[#526D8B]">
-                Looking to index Spine InnovTech documentation for AI models or MCP agents? We maintain a structured{" "}
-                <code className="rounded bg-white px-1.5 py-0.5 font-mono text-[11px] text-[#006FE8] border border-[#CCE3F5]">
-                  /llms.txt
-                </code>{" "}
-                index.
-              </p>
-            </div>
+            <a
+              href="/llms.txt"
+              className="inline-flex shrink-0 items-center gap-1.5 text-xs font-semibold text-[#006FE8] hover:underline"
+            >
+              <span>Read /llms.txt</span>
+              <ArrowRight className="h-3.5 w-3.5" />
+            </a>
           </div>
-          <a
-            href="/llms.txt"
-            className="inline-flex shrink-0 items-center gap-1.5 text-xs font-semibold text-[#006FE8] hover:underline"
-          >
-            <span>Read /llms.txt</span>
-            <ArrowRight className="h-3.5 w-3.5" />
-          </a>
         </div>
       </section>
 
@@ -218,7 +228,7 @@ export default function DocsPage() {
             {DOC_SECTIONS.map((section) => {
               const Icon = section.icon;
               return (
-                <div
+                <MagicCard
                   key={section.title}
                   className="flex flex-col rounded-2xl border border-[#CCE3F5] bg-white p-6 shadow-sm transition hover:border-[#96C7F2] hover:shadow-md sm:p-8"
                 >
@@ -257,7 +267,7 @@ export default function DocsPage() {
                       </Link>
                     ))}
                   </div>
-                </div>
+                </MagicCard>
               );
             })}
           </div>

@@ -3,6 +3,9 @@
 import Link from "next/link";
 import { Section } from "./section";
 import { FeatureGrid } from "./feature-grid";
+import { MagicCard } from "@/components/ui/magic-card";
+import { BorderBeam } from "@/components/ui/border-beam";
+import { BlurFade } from "@/components/ui/blur-fade";
 import type { ContentSectionCopy } from "@/lib/site-copy";
 
 const GLOSS: Record<string, string> = {
@@ -222,7 +225,12 @@ function planLayouts(sections: ContentSectionCopy[]): Layout[] {
 function Heading({ label, headline, className = "" }: { label?: string; headline: string; className?: string }) {
   return (
     <div className={className}>
-      {label && <p className="mb-3 text-[12px] font-bold uppercase tracking-[0.08em] text-[#0176D3]">{label}</p>}
+      {label && (
+        <p className="mb-3 inline-flex items-center gap-2 rounded-full border border-[#CCE3F5] bg-[#EAF5FC] px-3 py-0.5 text-[11px] font-bold uppercase tracking-[0.08em] text-[#006FE8]">
+          <span className="h-1.5 w-1.5 rounded-full bg-[#006FE8]" />
+          {label}
+        </p>
+      )}
       <h2 className="text-[length:min(28px,var(--marketing-heading-size))] font-semibold leading-[1.15] tracking-[-0.03em] text-[#032D60] sm:text-[length:min(34px,var(--marketing-heading-size))]">{headline}</h2>
     </div>
   );
@@ -234,21 +242,24 @@ function Body({ children }: { children: string }) {
 
 function EvidencePanel({ aside, raised = false }: { aside: Aside; raised?: boolean }) {
   return (
-    <aside
-      className={`rounded-[20px] border border-[#D9E4EF] bg-[#F3F6F9] p-6 lg:p-7 ${raised ? "shadow-[0_24px_50px_rgba(3,45,96,0.12)] lg:-mb-8 lg:-mr-6 lg:translate-y-6" : ""}`}
-      aria-label={aside.title}
-    >
-      <p className="text-[12px] font-bold uppercase tracking-[0.08em] text-[#0176D3]">{aside.kicker}</p>
-      <h3 className="mt-2 text-[length:min(20px,var(--marketing-card-size))] font-semibold tracking-[-0.02em] text-[#032D60]">{aside.title}</h3>
-      <dl className="mt-6 space-y-4">
-        {aside.rows.map((row) => (
-          <div key={row.term} className="border-t border-[#D9E4EF] pt-4 first:border-t-0 first:pt-0">
-            <dt className="text-[13px] font-semibold text-[#032D60]">{row.term}</dt>
-            <dd className="mt-1 text-[14px] leading-[1.55] text-[#33465B]">{row.detail}</dd>
-          </div>
-        ))}
-      </dl>
-    </aside>
+    <BlurFade delay={0.08} inView>
+      <aside
+        className={`relative overflow-hidden rounded-2xl border border-[#CCE3F5] bg-white p-6 lg:p-7 ${raised ? "shadow-[0_20px_50px_-12px_rgba(3,45,96,0.12)] lg:-mb-8 lg:-mr-6 lg:translate-y-6" : "shadow-sm"}`}
+        aria-label={aside.title}
+      >
+        <BorderBeam size={180} duration={14} />
+        <p className="font-mono text-[11px] font-bold uppercase tracking-[0.08em] text-[#006FE8]">{aside.kicker}</p>
+        <h3 className="mt-2 text-[length:min(20px,var(--marketing-card-size))] font-semibold tracking-[-0.02em] text-[#032D60]">{aside.title}</h3>
+        <dl className="mt-6 space-y-4">
+          {aside.rows.map((row) => (
+            <div key={row.term} className="border-t border-[#E5EFFA] pt-4 first:border-t-0 first:pt-0">
+              <dt className="text-[13px] font-semibold text-[#032D60]">{row.term}</dt>
+              <dd className="mt-1 text-[14px] leading-[1.55] text-[#33465B]">{row.detail}</dd>
+            </div>
+          ))}
+        </dl>
+      </aside>
+    </BlurFade>
   );
 }
 
@@ -281,7 +292,7 @@ function SentenceList({ section }: { section: ContentSectionCopy }) {
       <ol className="mt-8 divide-y divide-[#D9E4EF] border-y border-[#D9E4EF]">
         {sentences.map((sentence, index) => (
           <li key={sentence} className="grid gap-2 py-5 sm:grid-cols-[3.5rem_1fr] sm:items-baseline sm:gap-6">
-            <span className="text-[13px] font-semibold tabular-nums text-[#0176D3]">{String(index + 1).padStart(2, "0")}</span>
+            <span className="font-mono text-[13px] font-semibold tabular-nums text-[#006FE8]">{String(index + 1).padStart(2, "0")}</span>
             <p className="text-[16px] leading-[1.65] text-[#33465B]">{sentence}</p>
           </li>
         ))}
@@ -305,9 +316,9 @@ function Claim({ section }: { section: ContentSectionCopy }) {
 
 function TermGrid({ section, cellClass, raised = false }: { section: ContentSectionCopy; cellClass: string; raised?: boolean }) {
   const grid = (
-    <dl className="mt-10 grid gap-px overflow-hidden rounded-[16px] border border-[#D9E4EF] bg-[#D9E4EF] sm:grid-cols-2 lg:grid-cols-3">
+    <dl className="mt-10 grid gap-px overflow-hidden rounded-2xl border border-[#D9E4EF] bg-[#D9E4EF] sm:grid-cols-2 lg:grid-cols-3">
       {(section.items ?? []).map((item) => (
-        <div key={item} className={`p-5 ${cellClass}`}>
+        <div key={item} className={`p-5 transition-colors hover:bg-[#F7FAFE] ${cellClass}`}>
           <dt className="text-[15px] font-semibold text-[#032D60]">{item}</dt>
           {GLOSS[item] && <dd className="mt-1.5 text-[14px] leading-[1.55] text-[#33465B]">{GLOSS[item]}</dd>}
         </div>
@@ -320,7 +331,8 @@ function TermGrid({ section, cellClass, raised = false }: { section: ContentSect
       <Heading label={section.label} headline={section.headline} className="max-w-2xl" />
       {section.body && <div className="max-w-2xl"><Body>{section.body}</Body></div>}
       {raised ? (
-        <div className="relative z-10 -mt-4 rounded-[20px] border border-[#D9E4EF] bg-white p-6 shadow-[0_18px_48px_rgba(3,45,96,0.1)] md:-mt-8 md:p-8">
+        <div className="relative z-10 -mt-4 overflow-hidden rounded-2xl border border-[#D9E4EF] bg-white p-6 shadow-[0_18px_48px_rgba(3,45,96,0.1)] md:-mt-8 md:p-8">
+          <BorderBeam size={200} duration={16} />
           {grid}
         </div>
       ) : (
@@ -356,14 +368,14 @@ function CardList({ cards }: { cards: NonNullable<ContentSectionCopy["cards"]> }
             <span className="text-[16px] font-semibold text-[#032D60]">{card.title}</span>
             <span className="text-[15px] leading-[1.55] text-[#33465B]">
               {card.description}
-              {card.href && <span className="mt-2 block text-[13px] font-semibold text-[#0176D3]">Learn more</span>}
+              {card.href && <span className="mt-2 block text-[13px] font-semibold text-[#006FE8]">Learn more →</span>}
             </span>
           </span>
         );
         return (
           <li key={card.title}>
             {card.href ? (
-              <Link href={card.href} className="block rounded-sm hover:bg-[#F3F6F9] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0176D3]">
+              <Link href={card.href} className="block rounded-sm px-2 transition-colors hover:bg-[#F4F9FE] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006FE8]">
                 {row}
               </Link>
             ) : (
@@ -384,23 +396,24 @@ function Paired({ section }: { section: ContentSectionCopy }) {
       <Heading label={section.label} headline={section.headline} className="max-w-3xl" />
       {section.body && <div className="max-w-3xl"><Body>{section.body}</Body></div>}
       <div className="relative mt-10 pb-2 md:grid md:grid-cols-2 md:gap-6">
-        <div className="relative z-0 rounded-[20px] border border-[#D9E4EF] bg-white p-5 shadow-[0_8px_24px_rgba(3,45,96,0.06)] md:ml-6">
+        <MagicCard className="relative z-0 md:ml-6" innerClassName="p-6">
           <h3 className="text-[18px] font-semibold text-[#032D60]">{left.title}</h3>
           <ul className="mt-5 space-y-3">
             {left.items.map((item) => (
-              <li key={item} className="flex items-start gap-2 text-[14px] leading-[1.55] text-[#33465B]">
-                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#0176D3]" />
+              <li key={item} className="flex items-start gap-2.5 text-[14px] leading-[1.55] text-[#33465B]">
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#6B85A3]" />
                 {item}
               </li>
             ))}
           </ul>
-        </div>
-        <div className="relative z-20 -mt-4 rounded-[20px] border border-[#D9E4EF] bg-[#EAF5FC] p-5 shadow-[0_18px_40px_rgba(1,118,211,0.14)] md:mt-8 md:-ml-4 md:mr-6">
+        </MagicCard>
+        <div className="relative z-20 -mt-4 overflow-hidden rounded-2xl border border-[#8BC2F7] bg-[#F4F9FE] p-6 shadow-[0_18px_40px_rgba(0,111,232,0.14)] md:mt-8 md:-ml-4 md:mr-6">
+          <BorderBeam size={200} duration={12} />
           <h3 className="text-[18px] font-semibold text-[#032D60]">{right.title}</h3>
           <ul className="mt-5 space-y-3">
             {right.items.map((item) => (
-              <li key={item} className="flex items-start gap-2 text-[14px] leading-[1.55] text-[#33465B]">
-                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#0176D3]" />
+              <li key={item} className="flex items-start gap-2.5 text-[14px] leading-[1.55] text-[#33465B]">
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#006FE8]" />
                 {item}
               </li>
             ))}
@@ -422,7 +435,7 @@ function SectionBody({
   muted: boolean;
   prevLayout: Layout | null;
 }) {
-  const cellClass = muted ? "bg-white" : "bg-[#F3F6F9]";
+  const cellClass = muted ? "bg-white" : "bg-[#F4F9FE]";
 
   switch (layout) {
     case "split":
@@ -439,7 +452,8 @@ function SectionBody({
       return <TermRows section={section} />;
     case "cards":
       return (
-        <div className="relative z-10 -mt-6 rounded-[20px] border border-[#D9E4EF] bg-white p-6 shadow-[0_18px_48px_rgba(3,45,96,0.1)] md:-mt-10 md:p-8">
+        <div className="relative z-10 -mt-6 overflow-hidden rounded-2xl border border-[#CCE3F5] bg-white p-6 shadow-[0_18px_48px_rgba(3,45,96,0.08)] md:-mt-10 md:p-8">
+          <BorderBeam size={240} duration={16} />
           <Heading label={section.label} headline={section.headline} className="max-w-3xl" />
           {section.body && <div className="max-w-3xl"><Body>{section.body}</Body></div>}
           {section.cards && (

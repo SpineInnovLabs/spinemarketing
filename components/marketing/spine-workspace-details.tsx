@@ -1,6 +1,10 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { STARTER_PRICING } from "@/lib/pricing";
+import { GridPattern } from "@/components/ui/grid-pattern";
+import { AnimatedShinyText } from "@/components/ui/animated-shiny-text";
+import { MagicCard } from "@/components/ui/magic-card";
+import { BlurFade } from "@/components/ui/blur-fade";
 import { WorkbenchHeroPreview } from "./workbench-hero-preview";
 import { WorkspaceAuthActions } from "./workspace-auth-actions";
 import { WorkspaceBenefits, WorkspaceSolutions } from "./workspace-benefits";
@@ -25,10 +29,26 @@ const workflow = [
 export function SpineWorkspaceDetails() {
   return (
     <div className="innovtech-page">
-      <section className="innovtech-product innovtech-product-overview" aria-labelledby="product-title">
-        <div className="innovtech-product-copy">
-          <p className="innovtech-eyebrow">SPINEWORKSPACE · YOUR TEAM AND AI, IN CONTEXT</p>
-          <h1 id="product-title">A workspace for connected business work.</h1>
+      <section className="innovtech-product innovtech-product-overview relative overflow-hidden" aria-labelledby="product-title">
+        <GridPattern
+          width={44}
+          height={44}
+          x={-1}
+          y={-1}
+          squares={[
+            [3, 1],
+            [8, 3],
+            [14, 2],
+            [19, 4],
+          ]}
+          className="opacity-80"
+        />
+        <div className="innovtech-product-copy relative z-10">
+          <p className="innovtech-eyebrow inline-flex items-center gap-2 rounded-full border border-[#BCD9F5] bg-white/90 px-3.5 py-1 shadow-2xs backdrop-blur-md">
+            <span className="h-1.5 w-1.5 rounded-full bg-[#006FE8]" />
+            <AnimatedShinyText shimmerWidth={140}>SPINEWORKSPACE · YOUR TEAM AND AI, IN CONTEXT</AnimatedShinyText>
+          </p>
+          <h1 id="product-title" className="mt-5">A workspace for connected business work.</h1>
           <p className="innovtech-hero-description">
             Bring records and evidence from your tools into editable dashboards and Canvas.
             Your AI Twin prepares the next step; your team stays in control.
@@ -39,8 +59,10 @@ export function SpineWorkspaceDetails() {
             <Link href="/pricing" className="innovtech-text-link">See pricing <ArrowRight size={18} aria-hidden /></Link>
           </div>
         </div>
-        <WorkbenchHeroPreview />
-        <div className="col-span-full flex flex-wrap gap-x-7 gap-y-1 border-t border-[#D6E8F8] pt-4 text-sm">
+        <div className="relative z-10 min-w-0">
+          <WorkbenchHeroPreview />
+        </div>
+        <div className="relative z-10 col-span-full flex flex-wrap gap-x-7 gap-y-1 border-t border-[#D6E8F8] pt-4 text-sm">
           <Link href="/proof" className="inline-flex min-h-11 items-center rounded-sm font-semibold text-[#006FE8] hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#006FE8]">Inspect the product evidence</Link>
           <Link href="/developers#integration-paths" className="inline-flex min-h-11 items-center rounded-sm font-semibold text-[#006FE8] hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#006FE8]">Evaluate integrations and access</Link>
         </div>
@@ -53,13 +75,15 @@ export function SpineWorkspaceDetails() {
         <p className="innovtech-eyebrow">How the workspace works</p>
         <h2 id="product-workflow-title">Understand the situation. Prepare the next step.</h2>
         <p className="innovtech-section-intro">For a renewal review, relate the customer’s contract, invoice and service incident. Account Success, Finance and Engineering see the permitted evidence through their own views of the same Fabric.</p>
-        <div className="innovtech-feature-grid">
+        <div className="mx-auto mt-10 grid max-w-[1160px] gap-5 text-left md:grid-cols-3">
           {workflow.map(({ title, body }, index) => (
-            <article key={title}>
-              <p className="innovtech-eyebrow">STEP 0{index + 1}</p>
-              <h3>{title}</h3>
-              <p>{body}</p>
-            </article>
+            <BlurFade key={title} delay={index * 0.06} inView className="h-full">
+              <MagicCard className="h-full" innerClassName="p-6 sm:p-7">
+                <p className="font-mono text-xs font-bold uppercase tracking-wider text-[#006FE8]">STEP 0{index + 1}</p>
+                <h3 className="mt-4 text-lg font-semibold text-[#082B5E]">{title}</h3>
+                <p className="mt-3 text-sm leading-7 text-[#4E607A]">{body}</p>
+              </MagicCard>
+            </BlurFade>
           ))}
         </div>
         <p className="mx-auto mt-7 max-w-[850px] text-sm leading-7 text-[#4E607A]">Spine Network is designed to carry context and work checkpoints across compatible AI hosts. Each host independently verifies identity, tool access and authority before continuing.</p>

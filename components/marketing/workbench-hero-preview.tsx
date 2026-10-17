@@ -2,6 +2,7 @@
 
 import { useEffect, useId, useRef, useState } from "react";
 import { Maximize2, X } from "lucide-react";
+import { BorderBeam } from "@/components/ui/border-beam";
 import mediaStyles from "./responsive-media.module.css";
 import { WorkbenchCapturePreview } from "./workbench-capture-preview";
 
@@ -49,7 +50,8 @@ export function WorkbenchHeroPreview() {
 
   return (
     <figure data-workbench-hero-preview className="m-0 min-w-0 w-full text-[#082B5E]">
-      <div className="overflow-hidden rounded-2xl border border-[#CCE3F5] bg-white shadow-[0_22px_70px_rgba(15,70,130,.14)]">
+      <div className="relative overflow-hidden rounded-2xl border border-[#CCE3F5] bg-white shadow-[0_22px_70px_rgba(15,70,130,.14)]">
+        <BorderBeam size={260} duration={14} colorFrom="#006FE8" colorTo="#38BDF8" />
         <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[#E2EEF8] bg-[#F7FAFD] px-3 py-2">
           <div role="group" aria-label="Product preview selection" className="flex flex-wrap gap-1">
             {previews.map(({ id: key, label }) => (

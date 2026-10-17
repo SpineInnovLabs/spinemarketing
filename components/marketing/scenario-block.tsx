@@ -1,7 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { Section, SectionHeader } from "./section";
+import { MagicCard } from "@/components/ui/magic-card";
+import { BlurFade } from "@/components/ui/blur-fade";
 
 export function ScenarioBlock({
   headline,
@@ -16,22 +17,21 @@ export function ScenarioBlock({
     <Section>
       <SectionHeader headline={headline} body={body} />
       {steps && steps.length > 0 && (
-        <div className="mx-auto max-w-2xl">
+        <div className="mx-auto max-w-3xl">
           <ol className="space-y-4">
             {steps.map((step, i) => (
-              <motion.li
-                key={step}
-                initial={{ x: -12 }}
-                whileInView={{ x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
-                className="flex items-start gap-4 rounded-xl border border-[#D9E4EF] bg-[#F3F6F9] p-4"
-              >
-                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#EAF5FC] text-[13px] font-bold text-[#0176D3]">
-                  {i + 1}
-                </span>
-                <span className="pt-1 text-[15px] font-medium leading-[1.6] text-[#33465B]">{step}</span>
-              </motion.li>
+              <BlurFade key={step} delay={i * 0.06} inView>
+                <li>
+                  <MagicCard innerClassName="flex-row items-start gap-4 p-4 sm:p-5">
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border border-[#CCE3F5] bg-[#EAF5FC] font-mono text-[13px] font-bold text-[#006FE8]">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span className="pt-1 text-[15px] font-medium leading-[1.65] text-[#33465B]">
+                      {step}
+                    </span>
+                  </MagicCard>
+                </li>
+              </BlurFade>
             ))}
           </ol>
         </div>

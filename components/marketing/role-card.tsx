@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { MagicCard } from "@/components/ui/magic-card";
+import { BlurFade } from "@/components/ui/blur-fade";
 
 export function RoleCard({
   title,
@@ -16,24 +17,26 @@ export function RoleCard({
   index?: number;
 }) {
   return (
-    <motion.div
-      initial={{ y: 16 }}
-      whileInView={{ y: 0 }}
-      viewport={{ once: true, margin: "-40px" }}
-      transition={{ type: "spring", damping: 20, stiffness: 60, delay: index * 0.06 }}
-    >
+    <BlurFade delay={index * 0.05} inView className="h-full">
       <Link
         href={href}
-        className="group flex h-full flex-col rounded-2xl border border-[#D9E4EF] bg-white p-6 transition-colors hover:border-[#0176D3] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0176D3]/40"
+        className="block h-full rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006FE8]/40"
       >
-        <h3 className="text-[length:min(20px,var(--marketing-card-size))] font-semibold tracking-[-0.03em] text-[#032D60]">
-          {title}
-        </h3>
-        <p className="mt-2 flex-1 text-[14px] font-medium leading-[1.65] text-[#33465B]">{description}</p>
-        <span className="mt-4 inline-flex items-center gap-1 text-[13px] font-semibold text-[#0176D3]">
-          Explore <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
-        </span>
+        <MagicCard className="h-full" innerClassName="justify-between p-6">
+          <div>
+            <h3 className="text-[length:min(20px,var(--marketing-card-size))] font-semibold tracking-[-0.03em] text-[#032D60] group-hover:text-[#006FE8] transition-colors">
+              {title}
+            </h3>
+            <p className="mt-2.5 flex-1 text-[14px] font-medium leading-[1.65] text-[#33465B]">
+              {description}
+            </p>
+          </div>
+          <span className="mt-5 inline-flex items-center gap-1.5 text-[13px] font-semibold text-[#006FE8]">
+            Explore{" "}
+            <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
+          </span>
+        </MagicCard>
       </Link>
-    </motion.div>
+    </BlurFade>
   );
 }

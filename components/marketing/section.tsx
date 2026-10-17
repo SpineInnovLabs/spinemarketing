@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { BlurFade } from "@/components/ui/blur-fade";
+import { DotPattern } from "@/components/ui/dot-pattern";
 
 type SectionProps = {
   children: React.ReactNode;
@@ -10,11 +11,15 @@ type SectionProps = {
 };
 
 export function Section({ children, className = "", id, variant = "dark" }: SectionProps) {
-  const bg = variant === "muted" ? "bg-[#F3F6F9]" : "bg-white";
+  const bg = variant === "muted" ? "bg-[#F4F9FE]" : "bg-white";
 
   return (
-    <section id={id} className={`relative -mt-px border-t border-[#D9E4EF] py-20 md:py-24 ${bg} ${className}`}>
-      <div className="relative mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-12">{children}</div>
+    <section
+      id={id}
+      className={`relative -mt-px overflow-hidden border-t border-[#D9E6F5] py-20 md:py-24 ${bg} ${className}`}
+    >
+      {variant === "muted" && <DotPattern className="opacity-45" />}
+      <div className="relative z-10 mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-12">{children}</div>
     </section>
   );
 }
@@ -33,20 +38,17 @@ export function SectionHeader({
   const alignClass = align === "center" ? "text-center mx-auto max-w-3xl" : "max-w-3xl";
 
   return (
-    <motion.div
-      initial={{ y: 20 }}
-      whileInView={{ y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{ type: "spring", damping: 20, stiffness: 60 }}
-      className={`mb-14 ${alignClass}`}
-    >
+    <BlurFade inView className={`mb-14 ${alignClass}`}>
       {label && (
-        <div className="mb-3 text-[12px] font-bold uppercase tracking-[0.08em] text-[#0176D3]">{label}</div>
+        <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-[#CCE3F5] bg-[#EAF5FC] px-3 py-0.5 text-[11px] font-bold uppercase tracking-[0.08em] text-[#006FE8]">
+          <span className="h-1.5 w-1.5 rounded-full bg-[#006FE8]" />
+          {label}
+        </div>
       )}
       <h2 className="text-[length:min(28px,var(--marketing-heading-size))] font-semibold leading-[1.15] tracking-[-0.03em] text-[#032D60] sm:text-[length:min(34px,var(--marketing-heading-size))]">
         {headline}
       </h2>
-      {body && <p className="mt-4 text-[16px] leading-[1.65] text-[#444]">{body}</p>}
-    </motion.div>
+      {body && <p className="mt-4 text-[16px] leading-[1.65] text-[#4E607A]">{body}</p>}
+    </BlurFade>
   );
 }

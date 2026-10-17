@@ -1,6 +1,10 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { STARTER_PRICING } from "@/lib/pricing";
+import { GridPattern } from "@/components/ui/grid-pattern";
+import { AnimatedShinyText } from "@/components/ui/animated-shiny-text";
+import { MagicCard } from "@/components/ui/magic-card";
+import { BlurFade } from "@/components/ui/blur-fade";
 import { WorkbenchHeroPreview } from "./workbench-hero-preview";
 import { WorkspaceBenefits, WorkspaceSolutions } from "./workspace-benefits";
 import { WorkspaceSubscriptionValue } from "./workspace-subscription-value";
@@ -14,30 +18,57 @@ const approach = [
 const container = "mx-auto max-w-[1320px] px-5 sm:px-8 lg:px-12";
 const heading = "text-[length:min(clamp(2rem,4vw,3.8rem),var(--marketing-heading-size))] font-semibold leading-[1.12] tracking-[-.045em]";
 const body = "text-[length:min(17px,var(--marketing-body-size))] leading-[1.85] text-[#4E607A]";
-const button = "inline-flex min-h-12 items-center gap-3 rounded-xl bg-[#006FE8] px-6 text-[14px] font-semibold text-white transition-colors hover:bg-[#0055B8] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#006FE8]";
+const button = "inline-flex min-h-12 items-center gap-3 rounded-xl bg-gradient-to-b from-[#006FE8] to-[#0055B8] px-6 text-[14px] font-semibold text-white shadow-[0_8px_20px_-4px_rgba(0,111,232,0.35)] transition-all hover:from-[#0062CC] hover:to-[#00489E] hover:shadow-[0_12px_26px_-4px_rgba(0,111,232,0.45)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#006FE8]";
 
 export function InnovLabsHome() {
   return (
     <div className="bg-white text-[#082B5E]">
       <section aria-labelledby="company-title" className="relative overflow-hidden border-b border-[#D6E8F8] bg-gradient-to-b from-[#EBF5FE] via-[#F4FAFF] to-white">
-        <div className={container + " grid items-center gap-7 py-12 sm:py-16 lg:min-h-[680px] lg:grid-cols-[.85fr_1.15fr] lg:gap-x-10"}>
+        <GridPattern
+          width={44}
+          height={44}
+          x={-1}
+          y={-1}
+          squares={[
+            [2, 1],
+            [6, 3],
+            [11, 2],
+            [15, 4],
+            [19, 1],
+          ]}
+          className="opacity-85"
+        />
+        <div className={container + " relative z-10 grid items-center gap-7 py-12 sm:py-16 lg:min-h-[680px] lg:grid-cols-[.85fr_1.15fr] lg:gap-x-10"}>
           <div className="min-w-0">
-            <p className="text-[11px] font-semibold uppercase tracking-[.2em] text-[#006FE8]">SPINE INNOVTECH · SPINEWORKSPACE</p>
-            <h1 id="company-title" className="mt-6 max-w-[700px] text-[length:min(clamp(2.75rem,5.2vw,4.85rem),var(--marketing-title-size))] font-bold leading-[1.06] tracking-[-.05em] text-[#032D60]">
-              SpineWorkspace connects your tools, context and team.
-            </h1>
-            <p className={body + " mt-7 max-w-[590px]"}>
-              Bring records and evidence from your tools into editable dashboards and Canvas.
-              Your AI Twin prepares the next step; your team stays in control.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="#workbench-views" className={button}>See the workspace <ArrowRight className="h-4 w-4" aria-hidden /></Link>
-            </div>
-            <Link href="/pricing" aria-label="See pricing" className="mt-5 inline-flex min-h-11 items-center gap-2 rounded-sm text-sm font-semibold text-[#082B5E] underline decoration-[#A7C7E9] underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#006FE8]">
-              From {STARTER_PRICING.displayPrice}/{STARTER_PRICING.unit}/{STARTER_PRICING.interval} · {STARTER_PRICING.billing.toLowerCase()}
-            </Link>
+            <BlurFade delay={0.02} inView>
+              <p className="inline-flex items-center gap-2 rounded-full border border-[#BCD9F5] bg-white/90 px-3.5 py-1 text-[11px] font-semibold uppercase tracking-[.2em] text-[#006FE8] shadow-2xs backdrop-blur-md">
+                <span className="h-1.5 w-1.5 rounded-full bg-[#006FE8]" />
+                <AnimatedShinyText shimmerWidth={130}>SPINE INNOVTECH · SPINEWORKSPACE</AnimatedShinyText>
+              </p>
+            </BlurFade>
+            <BlurFade delay={0.06} inView>
+              <h1 id="company-title" className="mt-6 max-w-[700px] text-[length:min(clamp(2.75rem,5.2vw,4.85rem),var(--marketing-title-size))] font-bold leading-[1.06] tracking-[-.05em] text-[#032D60]">
+                SpineWorkspace connects your tools, context and team.
+              </h1>
+            </BlurFade>
+            <BlurFade delay={0.1} inView>
+              <p className={body + " mt-7 max-w-[590px]"}>
+                Bring records and evidence from your tools into editable dashboards and Canvas.
+                Your AI Twin prepares the next step; your team stays in control.
+              </p>
+            </BlurFade>
+            <BlurFade delay={0.14} inView>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <Link href="#workbench-views" className={button}>See the workspace <ArrowRight className="h-4 w-4" aria-hidden /></Link>
+              </div>
+              <Link href="/pricing" aria-label="See pricing" className="mt-5 inline-flex min-h-11 items-center gap-2 rounded-sm text-sm font-semibold text-[#082B5E] underline decoration-[#A7C7E9] underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#006FE8]">
+                From {STARTER_PRICING.displayPrice}/{STARTER_PRICING.unit}/{STARTER_PRICING.interval} · {STARTER_PRICING.billing.toLowerCase()}
+              </Link>
+            </BlurFade>
           </div>
-          <WorkbenchHeroPreview />
+          <BlurFade delay={0.12} inView className="min-w-0">
+            <WorkbenchHeroPreview />
+          </BlurFade>
           <div className="flex flex-wrap items-center gap-x-7 gap-y-1 border-t border-[#D6E8F8] pt-4 text-sm font-semibold text-[#006FE8] lg:col-span-2">
             <Link href="/proof" className="inline-flex min-h-11 items-center gap-2 rounded-sm hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#006FE8]">Inspect the product evidence <ArrowRight className="h-4 w-4" aria-hidden /></Link>
             <Link href="/developers#integration-paths" className="inline-flex min-h-11 items-center gap-2 rounded-sm hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#006FE8]">Evaluate integrations and access <ArrowRight className="h-4 w-4" aria-hidden /></Link>
@@ -50,15 +81,22 @@ export function InnovLabsHome() {
 
       <section id="how-it-works" aria-labelledby="home-workflow-title" className="scroll-mt-24 bg-white py-16 sm:py-20">
         <div className={container}>
-          <p className="text-[11px] font-semibold uppercase tracking-[.2em] text-[#006FE8]">How it works</p>
+          <p className="inline-flex items-center gap-2 rounded-full border border-[#CCE3F5] bg-[#EAF5FC] px-3 py-0.5 text-[11px] font-semibold uppercase tracking-[.2em] text-[#006FE8]">
+            <span className="h-1.5 w-1.5 rounded-full bg-[#006FE8]" />
+            How it works
+          </p>
           <h2 id="home-workflow-title" className={heading + " mt-5 max-w-[820px]"}>From scattered records to a reviewed next step.</h2>
-          <div className="mt-9 grid gap-4 md:grid-cols-3">
+          <div className="mt-9 grid gap-5 md:grid-cols-3">
             {approach.map(([title, description], index) => (
-              <article key={title} className="rounded-2xl border border-[#CBE5FA] bg-[#F0F8FF] p-6">
-                <p className="text-xs font-semibold text-[#006FE8]">0{index + 1}</p>
-                <h3 className="mt-4 text-[length:var(--marketing-card-size)] font-semibold leading-snug">{title}</h3>
-                <p className="mt-3 text-sm leading-7 text-[#4E607A]">{description}</p>
-              </article>
+              <BlurFade key={title} delay={index * 0.06} inView className="h-full">
+                <MagicCard className="h-full" innerClassName="p-6 sm:p-7">
+                  <span className="inline-flex h-8 w-8 items-center justify-center rounded-xl border border-[#CCE3F5] bg-[#EAF5FC] font-mono text-xs font-bold text-[#006FE8]">
+                    0{index + 1}
+                  </span>
+                  <h3 className="mt-4 text-[length:var(--marketing-card-size)] font-semibold leading-snug">{title}</h3>
+                  <p className="mt-3 text-sm leading-7 text-[#4E607A]">{description}</p>
+                </MagicCard>
+              </BlurFade>
             ))}
           </div>
           <p className="mt-6 max-w-[860px] text-sm leading-7 text-[#4E607A]">
