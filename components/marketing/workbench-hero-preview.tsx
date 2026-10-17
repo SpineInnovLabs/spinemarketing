@@ -364,22 +364,22 @@ export function WorkbenchHeroPreview() {
             <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-[#96C7F2] bg-white px-4 py-3">
               <div className="flex items-center gap-2.5">
                 <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#006FE8] text-white">
-                  <Play className="h-4 w-4 fill-current" aria-hidden />
+                  <ShieldCheck className="h-4 w-4" aria-hidden />
                 </span>
                 <div>
                   <p className="text-xs font-bold text-[#082B5E]">
-                    Want to see the live shell in motion?
+                    Portable context across AI hosts &amp; SpineWorkspace
                   </p>
                   <p className="text-[11px] text-[#4E607A]">
-                    Watch the 26-second recorded walkthrough of the Workbench shell below.
+                    Resume authorized work across ChatGPT, Claude, Cursor and the web shell without moving private credentials.
                   </p>
                 </div>
               </div>
               <Link
-                href="#workbench-recording"
+                href="/host-connected-environment"
                 className="inline-flex items-center gap-1.5 rounded-lg bg-[#EBF7FF] px-3 py-1.5 text-xs font-semibold text-[#006FE8] hover:bg-[#D6ECFF]"
               >
-                Jump to recording <ArrowRight className="h-3.5 w-3.5" aria-hidden />
+                Explore Host Continuity <ArrowRight className="h-3.5 w-3.5" aria-hidden />
               </Link>
             </div>
           </div>

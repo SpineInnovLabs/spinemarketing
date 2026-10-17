@@ -44,7 +44,12 @@ const linkedTabs = new Map<string, ExplorerTab>([
 
 // Only expose public, customer-facing operational domains with verified visual runtime captures
 const PUBLIC_WORKBENCH_DOMAINS = WORKBENCH_SOURCE_DOMAINS.filter(
-  (item) => item.audience !== "internal" && item.id !== "brandstore" && item.id !== "ops"
+  (item) =>
+    item.audience !== "internal" &&
+    item.id !== "brandstore" &&
+    item.id !== "ops" &&
+    item.id !== "founder" &&
+    item.id !== "product"
 );
 
 const DOMAIN_TO_SOLUTION_PATH: Record<string, string> = {
@@ -98,9 +103,24 @@ export function WorkbenchViewExplorer({
       const tab = linkedTabs.get(window.location.hash);
       if (tab) setActiveTab(tab);
     };
+    const handleAnchorClick = (event: MouseEvent) => {
+      const anchor = (event.target as HTMLElement | null)?.closest("a");
+      const href = anchor?.getAttribute("href");
+      if (!href || !href.startsWith("#")) return;
+      const tab = linkedTabs.get(href);
+      if (!tab) return;
+      setActiveTab(tab);
+      requestAnimationFrame(() => {
+        document.getElementById(href.slice(1))?.scrollIntoView({ block: "start" });
+      });
+    };
     revealLinkedView();
     window.addEventListener("hashchange", revealLinkedView);
-    return () => window.removeEventListener("hashchange", revealLinkedView);
+    document.addEventListener("click", handleAnchorClick);
+    return () => {
+      window.removeEventListener("hashchange", revealLinkedView);
+      document.removeEventListener("click", handleAnchorClick);
+    };
   }, []);
 
   useEffect(() => {
@@ -244,7 +264,7 @@ export function WorkbenchViewExplorer({
 
         {/* Quick Domain Selector Chips (Touch & Keyboard accessible) */}
         <div hidden={activeTab !== "screenshot" && activeTab !== "inventory"}>
-        <div className="mt-5 flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none" role="navigation" aria-label="Workbench Domain Quick Selection">
+        <div className="mt-5 flex flex-wrap items-center gap-2" role="navigation" aria-label="Workbench Domain Quick Selection">
           {PUBLIC_WORKBENCH_DOMAINS.map((item) => (
             <button
               key={item.id}

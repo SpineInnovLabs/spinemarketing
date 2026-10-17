@@ -214,6 +214,7 @@ export function WorkbenchCustomerJourney() {
                 alt={`${stage.captureCaption} — QA fixture capture illustrating ${stage.title}.`}
                 desktop={stage.desktopFrame}
                 mobile={stage.mobileFrame}
+                eager
               />
             </div>
           </div>
