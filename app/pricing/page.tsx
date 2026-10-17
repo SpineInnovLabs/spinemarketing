@@ -78,7 +78,7 @@ const primaryCtaClass = "inline-flex min-h-12 items-center justify-center gap-2 
 
 export default function PricingPage() {
   return (
-    <div className="min-h-screen bg-[#F7F9FC]">
+    <div className="min-h-screen bg-white">
       <BreadcrumbJsonLd items={[
         { name: "Home", url: absoluteUrl("/") },
         { name: "Pricing", url: absoluteUrl("/pricing") },

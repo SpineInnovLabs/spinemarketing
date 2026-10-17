@@ -1,7 +1,6 @@
 "use client";
 
 import { BlurFade } from "@/components/ui/blur-fade";
-import { DotPattern } from "@/components/ui/dot-pattern";
 
 type SectionProps = {
   children: React.ReactNode;
@@ -11,14 +10,13 @@ type SectionProps = {
 };
 
 export function Section({ children, className = "", id, variant = "dark" }: SectionProps) {
-  const bg = variant === "muted" ? "bg-[#F4F9FE]" : "bg-white";
+  const bg = variant === "muted" ? "bg-[#F0F8FF]" : "bg-white";
 
   return (
     <section
       id={id}
-      className={`relative -mt-px overflow-hidden border-t border-[#D9E6F5] py-20 md:py-24 ${bg} ${className}`}
+      className={`relative -mt-px overflow-hidden border-t border-[#D6E8F8] py-20 md:py-24 ${bg} ${className}`}
     >
-      {variant === "muted" && <DotPattern className="opacity-45" />}
       <div className="relative z-10 mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-12">{children}</div>
     </section>
   );

@@ -316,9 +316,9 @@ function Claim({ section }: { section: ContentSectionCopy }) {
 
 function TermGrid({ section, cellClass, raised = false }: { section: ContentSectionCopy; cellClass: string; raised?: boolean }) {
   const grid = (
-    <dl className="mt-10 grid gap-px overflow-hidden rounded-2xl border border-[#D9E4EF] bg-[#D9E4EF] sm:grid-cols-2 lg:grid-cols-3">
+    <dl className="mt-10 grid gap-px overflow-hidden rounded-2xl border border-[#CBE5FA] bg-[#CBE5FA] sm:grid-cols-2 lg:grid-cols-3">
       {(section.items ?? []).map((item) => (
-        <div key={item} className={`p-5 transition-colors hover:bg-[#F7FAFE] ${cellClass}`}>
+        <div key={item} className={`p-5 transition-colors hover:bg-[#EBF7FF] ${cellClass}`}>
           <dt className="text-[15px] font-semibold text-[#032D60]">{item}</dt>
           {GLOSS[item] && <dd className="mt-1.5 text-[14px] leading-[1.55] text-[#33465B]">{GLOSS[item]}</dd>}
         </div>
@@ -331,7 +331,7 @@ function TermGrid({ section, cellClass, raised = false }: { section: ContentSect
       <Heading label={section.label} headline={section.headline} className="max-w-2xl" />
       {section.body && <div className="max-w-2xl"><Body>{section.body}</Body></div>}
       {raised ? (
-        <div className="relative z-10 -mt-4 overflow-hidden rounded-2xl border border-[#D9E4EF] bg-white p-6 shadow-[0_18px_48px_rgba(3,45,96,0.1)] md:-mt-8 md:p-8">
+        <div className="relative z-10 -mt-4 overflow-hidden rounded-2xl border border-[#CBE5FA] bg-white p-6 shadow-[0_18px_48px_rgba(0,111,232,0.08)] md:-mt-8 md:p-8">
           <BorderBeam size={200} duration={16} />
           {grid}
         </div>
@@ -347,7 +347,7 @@ function TermRows({ section }: { section: ContentSectionCopy }) {
     <div>
       <Heading label={section.label} headline={section.headline} className="max-w-3xl" />
       {section.body && <div className="max-w-3xl"><Body>{section.body}</Body></div>}
-      <dl className="mt-8 divide-y divide-[#D9E4EF] border-y border-[#D9E4EF]">
+      <dl className="mt-8 divide-y divide-[#D6E8F8] border-y border-[#D6E8F8]">
         {(section.items ?? []).map((item) => (
           <div key={item} className="grid gap-1 py-4 sm:grid-cols-[240px_1fr] sm:items-baseline sm:gap-8 sm:py-5">
             <dt className="text-[15px] font-semibold text-[#032D60]">{item}</dt>
@@ -361,7 +361,7 @@ function TermRows({ section }: { section: ContentSectionCopy }) {
 
 function CardList({ cards }: { cards: NonNullable<ContentSectionCopy["cards"]> }) {
   return (
-    <ul className="divide-y divide-[#D9E4EF] border-y border-[#D9E4EF]">
+    <ul className="divide-y divide-[#D6E8F8] border-y border-[#D6E8F8]">
       {cards.map((card) => {
         const row = (
           <span className="grid gap-2 py-5 sm:grid-cols-[240px_1fr] sm:items-baseline sm:gap-8">
@@ -375,7 +375,7 @@ function CardList({ cards }: { cards: NonNullable<ContentSectionCopy["cards"]> }
         return (
           <li key={card.title}>
             {card.href ? (
-              <Link href={card.href} className="block rounded-sm px-2 transition-colors hover:bg-[#F4F9FE] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006FE8]">
+              <Link href={card.href} className="block rounded-sm px-2 transition-colors hover:bg-[#F0F8FF] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#006FE8]">
                 {row}
               </Link>
             ) : (
@@ -407,7 +407,7 @@ function Paired({ section }: { section: ContentSectionCopy }) {
             ))}
           </ul>
         </MagicCard>
-        <div className="relative z-20 -mt-4 overflow-hidden rounded-2xl border border-[#8BC2F7] bg-[#F4F9FE] p-6 shadow-[0_18px_40px_rgba(0,111,232,0.14)] md:mt-8 md:-ml-4 md:mr-6">
+        <div className="relative z-20 -mt-4 overflow-hidden rounded-2xl border border-[#8BC2F7] bg-[#EBF7FF] p-6 shadow-[0_18px_40px_rgba(0,111,232,0.12)] md:mt-8 md:-ml-4 md:mr-6">
           <BorderBeam size={200} duration={12} />
           <h3 className="text-[18px] font-semibold text-[#032D60]">{right.title}</h3>
           <ul className="mt-5 space-y-3">
@@ -435,7 +435,7 @@ function SectionBody({
   muted: boolean;
   prevLayout: Layout | null;
 }) {
-  const cellClass = muted ? "bg-white" : "bg-[#F4F9FE]";
+  const cellClass = muted ? "bg-white" : "bg-[#F0F8FF]";
 
   switch (layout) {
     case "split":
@@ -452,7 +452,7 @@ function SectionBody({
       return <TermRows section={section} />;
     case "cards":
       return (
-        <div className="relative z-10 -mt-6 overflow-hidden rounded-2xl border border-[#CCE3F5] bg-white p-6 shadow-[0_18px_48px_rgba(3,45,96,0.08)] md:-mt-10 md:p-8">
+        <div className="relative z-10 -mt-6 overflow-hidden rounded-2xl border border-[#CBE5FA] bg-white p-6 shadow-[0_18px_48px_rgba(0,111,232,0.08)] md:-mt-10 md:p-8">
           <BorderBeam size={240} duration={16} />
           <Heading label={section.label} headline={section.headline} className="max-w-3xl" />
           {section.body && <div className="max-w-3xl"><Body>{section.body}</Body></div>}

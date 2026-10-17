@@ -29,7 +29,7 @@ const notes = [
 
 export default function UpdatesPage() {
   return (
-    <div className="min-h-screen bg-[#F7F9FC]">
+    <div className="min-h-screen bg-white">
       <BreadcrumbJsonLd items={[{ name: "Home", url: absoluteUrl("/") }, { name: "Updates", url: absoluteUrl("/updates") }]} />
       <Header />
       <main id="main">

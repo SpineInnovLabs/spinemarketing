@@ -32,7 +32,7 @@ const pursuits = [
 
 export default function CompanyPage() {
   return (
-    <div className="min-h-screen bg-[#F7F9FC] text-[#111B30]">
+    <div className="min-h-screen bg-white text-[#111B30]">
       <Header />
       <main id="main" className="pt-16">
         <section className="relative overflow-hidden bg-[#F0F8FF] px-5 py-24 text-[#052858] sm:px-8 lg:py-32 innovtech-reference-surface">

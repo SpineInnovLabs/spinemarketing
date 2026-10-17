@@ -61,7 +61,7 @@ export function MagicCard({
     <Component
       ref={cardRef as React.RefObject<HTMLDivElement>}
       className={cn(
-        "group relative flex overflow-hidden rounded-2xl border border-[#D5E5F5] bg-white text-[#082B5E] shadow-[0_2px_12px_-4px_rgba(8,43,94,0.06)] transition-all duration-300 hover:border-[#8BC2F7] hover:shadow-[0_14px_34px_-10px_rgba(0,111,232,0.12)]",
+        "group relative flex overflow-hidden rounded-2xl border border-[#CBE5FA] bg-white text-[#082B5E] shadow-[0_4px_18px_-4px_rgba(0,111,232,0.06)] transition-all duration-300 hover:border-[#006FE8] hover:shadow-[0_14px_34px_-10px_rgba(0,111,232,0.14)]",
         className
       )}
       {...props}

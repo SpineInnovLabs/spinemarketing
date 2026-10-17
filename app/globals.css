@@ -337,18 +337,17 @@ html[data-theme="light"] {
 .marketing-surface [style*="--gradient-primary"][class],
 .marketing-surface [style*="--gradient-primary"] [class] { color: #fff; }
 
-/* Small labels and links need a deeper blue on pale surfaces. Filled actions
-   and icon colours retain the bright-blue brand token. */
+/* Preserve vibrant electric Ice Blue (#006fe8) on pale and white surfaces. */
 main :is(.text-primary, [class~="text-[#006FE8]"], [class~="text-[#0176D3]"]):not(svg):not(dialog *) {
-  color: #0055b8;
+  color: #006fe8;
 }
 main :is([class~="text-[#5082C8]"], [class~="text-[#6688BA]"], [class~="text-[#6A8FC5]"], [class~="text-[#7394C2]"], [class~="text-[#7A98C4]"]):not(svg) {
-  color: #526479;
+  color: #3b6ea5;
 }
 main .text-emerald-400:not(svg) { color: #047857; }
 main .text-red-600:not(svg) { color: #b91c1c; }
-main .innovtech-eyebrow { color: #0055b8; }
-main :is(.innovtech-governance, .innovtech-step-number) { color: #526479; }
+main .innovtech-eyebrow { color: #006fe8; }
+main :is(.innovtech-governance, .innovtech-step-number) { color: #4e607a; }
 
 
 .section-divider {

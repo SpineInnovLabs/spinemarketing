@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { STARTER_PRICING } from "@/lib/pricing";
-import { GridPattern } from "@/components/ui/grid-pattern";
 import { AnimatedShinyText } from "@/components/ui/animated-shiny-text";
 import { MagicCard } from "@/components/ui/magic-card";
 import { BlurFade } from "@/components/ui/blur-fade";
@@ -18,30 +17,17 @@ const approach = [
 const container = "mx-auto max-w-[1320px] px-5 sm:px-8 lg:px-12";
 const heading = "text-[length:min(clamp(2rem,4vw,3.8rem),var(--marketing-heading-size))] font-semibold leading-[1.12] tracking-[-.045em]";
 const body = "text-[length:min(17px,var(--marketing-body-size))] leading-[1.85] text-[#4E607A]";
-const button = "inline-flex min-h-12 items-center gap-3 rounded-xl bg-gradient-to-b from-[#006FE8] to-[#0055B8] px-6 text-[14px] font-semibold text-white shadow-[0_8px_20px_-4px_rgba(0,111,232,0.35)] transition-all hover:from-[#0062CC] hover:to-[#00489E] hover:shadow-[0_12px_26px_-4px_rgba(0,111,232,0.45)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#006FE8]";
+const button = "inline-flex min-h-12 items-center gap-3 rounded-xl bg-[#006FE8] px-6 text-[14px] font-semibold text-white shadow-[0_6px_18px_rgba(0,111,232,0.28)] transition-all hover:bg-[#0055B8] hover:shadow-[0_10px_24px_rgba(0,111,232,0.36)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#006FE8]";
 
 export function InnovLabsHome() {
   return (
     <div className="bg-white text-[#082B5E]">
-      <section aria-labelledby="company-title" className="relative overflow-hidden border-b border-[#D6E8F8] bg-gradient-to-b from-[#EBF5FE] via-[#F4FAFF] to-white">
-        <GridPattern
-          width={44}
-          height={44}
-          x={-1}
-          y={-1}
-          squares={[
-            [2, 1],
-            [6, 3],
-            [11, 2],
-            [15, 4],
-            [19, 1],
-          ]}
-          className="opacity-85"
-        />
+      <section aria-labelledby="company-title" className="relative overflow-hidden border-b border-[#D6E8F8] bg-gradient-to-b from-[#EBF7FF] via-[#F0F8FF] to-white">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-15%,rgba(0,111,232,0.12),transparent_70%)]" aria-hidden />
         <div className={container + " relative z-10 grid items-center gap-7 py-12 sm:py-16 lg:min-h-[680px] lg:grid-cols-[.85fr_1.15fr] lg:gap-x-10"}>
           <div className="min-w-0">
             <BlurFade delay={0.02} inView>
-              <p className="inline-flex items-center gap-2 rounded-full border border-[#BCD9F5] bg-white/90 px-3.5 py-1 text-[11px] font-semibold uppercase tracking-[.2em] text-[#006FE8] shadow-2xs backdrop-blur-md">
+              <p className="inline-flex items-center gap-2 rounded-full border border-[#CBE5FA] bg-[#F0F8FF] px-3.5 py-1 text-[11px] font-semibold uppercase tracking-[.2em] text-[#006FE8] shadow-2xs">
                 <span className="h-1.5 w-1.5 rounded-full bg-[#006FE8]" />
                 <AnimatedShinyText shimmerWidth={130}>SPINE INNOVTECH · SPINEWORKSPACE</AnimatedShinyText>
               </p>

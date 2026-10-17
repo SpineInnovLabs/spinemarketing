@@ -1,17 +1,17 @@
 "use client";
 
 import { useEffect, useId, useRef, useState } from "react";
-import { Maximize2, X } from "lucide-react";
+import { ChevronLeft, ChevronRight, Maximize2, X } from "lucide-react";
 import mediaStyles from "./responsive-media.module.css";
 import { WorkbenchCapturePreview, type CaptureFrame } from "./workbench-capture-preview";
 
 const views = [
-  { id: "document", label: "Document", title: "Documents with working context.", detail: "Combine editable text, record tables, metric blocks and Twin assistance in Canvas." },
-  { id: "database", label: "Database", title: "The same records, as a table.", detail: "Review a renewal contract and expansion opportunity with status, stage and owner." },
-  { id: "graph", label: "Context graph", title: "See how the work connects.", detail: "Explore a renewal work item, decision, agreement and related diagram." },
-  { id: "blocks", label: "Block library", title: "Build with reusable blocks.", detail: "Add text, tables, metrics, actions and Twin blocks from the Canvas UI Library." },
-  { id: "library", label: "Workbench library", title: "Start from a template.", detail: "Browse domain templates, Canvas presets and UI components in the same shell." },
-  { id: "sidebar", label: "Sidebar structure", title: "The application’s complete navigation structure.", detail: "Home, My Work, Communications, Personal, Work, Platform and Administration keep their native order and nesting. The Work menu reflects the Account Success QA profile." },
+  { id: "document", step: "01", label: "Document", title: "Documents with working context.", detail: "Combine editable text, record tables, metric blocks and Twin assistance in Canvas." },
+  { id: "database", step: "02", label: "Database", title: "The same records, as a table.", detail: "Review a renewal contract and expansion opportunity with status, stage and owner." },
+  { id: "graph", step: "03", label: "Context graph", title: "See how the work connects.", detail: "Explore a renewal work item, decision, agreement and related diagram." },
+  { id: "blocks", step: "04", label: "Block library", title: "Build with reusable blocks.", detail: "Add text, tables, metrics, actions and Twin blocks from the Canvas UI Library." },
+  { id: "library", step: "05", label: "Workbench library", title: "Start from a template.", detail: "Browse domain templates, Canvas presets and UI components in the same shell." },
+  { id: "sidebar", step: "06", label: "Sidebar structure", title: "The application’s complete navigation structure.", detail: "Home, My Work, Communications, Personal, Work, Platform and Administration keep their native order and nesting. The Work menu reflects the Account Success QA profile." },
 ] as const;
 
 const sidebarSections = [
@@ -52,12 +52,18 @@ export function WorkbenchCanvasShowcase() {
   const [actualSize, setActualSize] = useState(false);
   const dialogRef = useRef<HTMLDialogElement>(null);
   const titleId = useId();
-  const view = views.find(item => item.id === active) ?? views[0];
+  const activeIndex = Math.max(0, views.findIndex(item => item.id === active));
+  const view = views[activeIndex] ?? views[0];
   const sidebarSection = sidebarSections.find(item => item.id === sidebar) ?? sidebarSections[0];
   const imageKey = active === "sidebar" ? (sidebar === "overview" ? "document" : `navigation-${sidebar}`) : active;
   const imagePath = `/images/workbench/native-shell/${imageKey}-20261015.webp`;
   const imageHeight = imageKey === "navigation-work" ? 1680 : 1100;
   const imageLabel = active === "sidebar" ? `${sidebarSection.label} sidebar structure` : view.label;
+
+  const stepCanvasView = (delta: number) => {
+    const nextIndex = (activeIndex + delta + views.length) % views.length;
+    setActive(views[nextIndex].id);
+  };
 
   useEffect(() => {
     if (!expanded) return;
@@ -76,21 +82,47 @@ export function WorkbenchCanvasShowcase() {
 
   return (
     <div className="mt-8 scroll-mt-24" id="workbench-canvas">
-      <div className="overflow-hidden rounded-2xl border border-[#CCE3F5] bg-white">
-        <div className="border-b border-[#E2EEF8] bg-[#F7FAFD] p-4 sm:p-5">
-          <div className="flex flex-wrap gap-2" role="group" aria-label="Workbench view selection">
-            {views.map(({ id, label }) => (
-              <button key={id} type="button" aria-pressed={active === id} onClick={() => setActive(id)} className={`${choiceStyle} ${active === id ? "bg-[#006FE8] text-white" : "text-[#315775] hover:bg-[#E2EEF8]"}`}>
-                {label}
+      <div className="overflow-hidden rounded-2xl border border-[#CBE5FA] bg-white shadow-[0_14px_40px_rgba(0,111,232,0.06)]">
+        <div className="border-b border-[#D6E8F8] bg-[#F0F8FF] p-4 sm:p-5">
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <div className="flex flex-wrap gap-2" role="group" aria-label="Workbench view selection">
+              {views.map(({ id, step, label }) => (
+                <button key={id} type="button" aria-pressed={active === id} onClick={() => setActive(id)} className={`${choiceStyle} inline-flex items-center gap-2 transition-all ${active === id ? "bg-[#006FE8] text-white shadow-xs" : "border border-[#CBE5FA] bg-white text-[#315775] hover:bg-[#EBF7FF]"}`}>
+                  <span className={`rounded px-1.5 py-0.5 font-mono text-[11px] font-bold ${active === id ? "bg-white/20 text-white" : "bg-[#EBF7FF] text-[#006FE8]"}`}>
+                    {step}
+                  </span>
+                  {label}
+                </button>
+              ))}
+            </div>
+            <div className="flex items-center gap-1.5">
+              <span className="mr-1 rounded-full border border-[#BBDDF8] bg-white px-2.5 py-1 font-mono text-[11px] font-semibold text-[#006FE8]">
+                Frame {view.step} / 06
+              </span>
+              <button
+                type="button"
+                onClick={() => stepCanvasView(-1)}
+                aria-label="Previous Canvas frame"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-[#CBE5FA] bg-white text-[#082B5E] transition-colors hover:bg-[#EBF7FF] hover:text-[#006FE8]"
+              >
+                <ChevronLeft className="h-4 w-4" aria-hidden />
               </button>
-            ))}
+              <button
+                type="button"
+                onClick={() => stepCanvasView(1)}
+                aria-label="Next Canvas frame"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-[#CBE5FA] bg-white text-[#082B5E] transition-colors hover:bg-[#EBF7FF] hover:text-[#006FE8]"
+              >
+                <ChevronRight className="h-4 w-4" aria-hidden />
+              </button>
+            </div>
           </div>
           {active === "sidebar" && (
-            <div className="mt-4 border-t border-[#D9E8F4] pt-4">
+            <div className="mt-4 border-t border-[#D6E8F8] pt-4">
               <p className="mb-2 text-xs font-semibold text-[#4E607A]">Explore a sidebar section</p>
               <div className="flex flex-wrap gap-2" role="group" aria-label="Sidebar section selection">
                 {sidebarSections.map(({ id, label }) => (
-                  <button key={id} type="button" aria-pressed={sidebar === id} onClick={() => setSidebar(id)} className={`${choiceStyle} border ${sidebar === id ? "border-[#006FE8] bg-[#EBF5FF] text-[#005CBF]" : "border-[#D9E8F4] bg-white text-[#315775] hover:bg-[#E2EEF8]"}`}>
+                  <button key={id} type="button" aria-pressed={sidebar === id} onClick={() => setSidebar(id)} className={`${choiceStyle} border ${sidebar === id ? "border-[#006FE8] bg-[#EBF7FF] text-[#006FE8]" : "border-[#CBE5FA] bg-white text-[#315775] hover:bg-[#EBF7FF]"}`}>
                     {label}
                   </button>
                 ))}
@@ -99,17 +131,21 @@ export function WorkbenchCanvasShowcase() {
           )}
         </div>
         <figure>
-          <figcaption className="flex flex-wrap items-start justify-between gap-4 border-b border-[#E2EEF8] px-5 py-4">
+          <figcaption className="flex flex-wrap items-start justify-between gap-4 border-b border-[#D6E8F8] bg-white px-5 py-4">
             <div className="min-w-0 flex-1 basis-64" aria-live="polite" aria-atomic="true">
-              <h3 className="text-[length:var(--marketing-card-size)] font-semibold leading-snug">{view.title}</h3>
+              <div className="mb-1 flex items-center gap-2 text-xs font-semibold text-[#006FE8]">
+                <span className="rounded bg-[#EBF7FF] px-2 py-0.5 font-mono">Storyboard {view.step}</span>
+                <span>{view.label}</span>
+              </div>
+              <h3 className="text-[length:var(--marketing-card-size)] font-semibold leading-snug text-[#082B5E]">{view.title}</h3>
               <p className="mt-2 text-sm leading-6 text-[#4E607A]">{view.detail}</p>
               {active === "sidebar" && <p className="mt-2 text-sm leading-6 text-[#315775]"><strong>{sidebarSection.label}:</strong> {sidebarSection.detail}</p>}
             </div>
-            <button type="button" onClick={() => { setActualSize(false); setExpanded(true); }} className={`${choiceStyle} inline-flex items-center gap-2 border border-[#CCE3F5] text-[#005CBF] hover:bg-[#EBF5FF]`}>
+            <button type="button" onClick={() => { setActualSize(false); setExpanded(true); }} className={`${choiceStyle} inline-flex items-center gap-2 border border-[#CBE5FA] bg-[#F0F8FF] text-[#006FE8] hover:bg-[#EBF7FF]`}>
               <Maximize2 className="h-4 w-4" aria-hidden />Enlarge view
             </button>
           </figcaption>
-          <button type="button" onClick={() => { setActualSize(false); setExpanded(true); }} aria-label={`Enlarge ${imageLabel} application capture`} className="block w-full cursor-zoom-in bg-[#F7FAFD] text-left focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-[#006FE8]">
+          <button type="button" onClick={() => { setActualSize(false); setExpanded(true); }} aria-label={`Enlarge ${imageLabel} application capture`} className="block w-full cursor-zoom-in bg-[#F0F8FF] text-left focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-[#006FE8]">
             <WorkbenchCapturePreview src={imagePath} alt={`Captured SpineWorkspace frontend: ${imageLabel}. Enlarge to inspect the complete application shell and QA account menu.`} height={imageHeight} desktop={active === "database" ? [0, 0, 1600, 760] : undefined} mobile={active === "sidebar" ? sidebarFrames[sidebar] : mobileFrames[active]} />
           </button>
         </figure>

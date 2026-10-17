@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { createPageMetadata, breadcrumb } from "@/lib/page-metadata";
 import { MarketingPageShell } from "@/components/marketing/marketing-page-shell";
-import { GridPattern } from "@/components/ui/grid-pattern";
 import { AnimatedShinyText } from "@/components/ui/animated-shiny-text";
 import { BorderBeam } from "@/components/ui/border-beam";
 import { MagicCard } from "@/components/ui/magic-card";
@@ -149,10 +148,9 @@ export default function DocsPage() {
   return (
     <MarketingPageShell breadcrumbs={breadcrumbs}>
       {/* Hero Section */}
-      <section className="relative overflow-hidden border-b border-[#D6E8F8] bg-gradient-to-b from-[#F5F9FD] via-[#FAFCFF] to-white pt-24 pb-14 sm:pt-28 sm:pb-16 lg:pt-32 lg:pb-20">
-        <GridPattern className="opacity-45 text-[#006FE8]/15" />
+      <section className="relative overflow-hidden border-b border-[#D6E8F8] bg-gradient-to-b from-[#EBF7FF] via-[#F0F8FF] to-white pt-24 pb-14 sm:pt-28 sm:pb-16 lg:pt-32 lg:pb-20">
         <div className="relative z-10 mx-auto max-w-6xl px-5 sm:px-8">
-          <div className="inline-flex items-center gap-2 rounded-full border border-[#BCD9F5] bg-[#EAF4FF] px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[#006FE8] shadow-xs">
+          <div className="inline-flex items-center gap-2 rounded-full border border-[#CBE5FA] bg-[#F0F8FF] px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-[#006FE8] shadow-2xs">
             <BookOpen className="h-3.5 w-3.5" />
             <AnimatedShinyText className="text-xs font-bold uppercase tracking-wider">
               Technical Documentation Hub
@@ -163,7 +161,7 @@ export default function DocsPage() {
             Spine InnovTech Documentation
           </h1>
 
-          <p className="mt-4 max-w-3xl text-base leading-relaxed text-[#335377] sm:text-lg">
+          <p className="mt-4 max-w-3xl text-base leading-relaxed text-[#4E607A] sm:text-lg">
             Explore the architecture, governance and integration paths behind SpineWorkspace.
             Confirm supported connections and deployment access with your team’s technical evaluation.
           </p>
@@ -178,7 +176,7 @@ export default function DocsPage() {
             </Link>
             <a
               href="/llms.txt"
-              className="inline-flex items-center gap-2 rounded-xl border border-[#CCE3F5] bg-white px-5 py-2.5 text-sm font-semibold text-[#006FE8] shadow-xs transition hover:bg-[#EBF5FF]"
+              className="inline-flex items-center gap-2 rounded-xl border border-[#CBE5FA] bg-white px-5 py-2.5 text-sm font-semibold text-[#006FE8] shadow-xs transition hover:bg-[#EBF7FF]"
             >
               <FileCode2 className="h-4 w-4" />
               <span>Machine-Readable /llms.txt</span>
@@ -189,21 +187,21 @@ export default function DocsPage() {
       </section>
 
       {/* Machine-Readable /llms.txt Banner */}
-      <section className="border-b border-[#E2EEF8] bg-[#F7FAFD] py-6">
+      <section className="border-b border-[#D6E8F8] bg-[#F0F8FF] py-6">
         <div className="mx-auto max-w-6xl px-5 sm:px-8">
-          <div className="relative flex flex-col items-start justify-between gap-4 overflow-hidden rounded-2xl border border-[#CCE3F5] bg-white px-5 py-4 shadow-xs sm:flex-row sm:items-center">
-            <BorderBeam size={180} duration={12} colorFrom="#006FE8" colorTo="#208050" />
+          <div className="relative flex flex-col items-start justify-between gap-4 overflow-hidden rounded-2xl border border-[#CBE5FA] bg-white px-5 py-4 shadow-xs sm:flex-row sm:items-center">
+            <BorderBeam size={180} duration={12} colorFrom="#006FE8" colorTo="#38BDF8" />
             <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#006FE8]/10 text-[#006FE8]">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#EBF7FF] text-[#006FE8]">
                 <Cpu className="h-5 w-5" />
               </div>
               <div>
                 <p className="text-sm font-bold text-[#082B5E]">
                   Autonomous Agents &amp; LLM Context Index
                 </p>
-                <p className="text-xs text-[#526D8B]">
+                <p className="text-xs text-[#4E607A]">
                   Looking to index Spine InnovTech documentation for AI models or MCP agents? We maintain a structured{" "}
-                  <code className="rounded bg-[#F7FAFD] px-1.5 py-0.5 font-mono text-[11px] text-[#006FE8] border border-[#CCE3F5]">
+                  <code className="rounded bg-[#F0F8FF] px-1.5 py-0.5 font-mono text-[11px] text-[#006FE8] border border-[#CBE5FA]">
                     /llms.txt
                   </code>{" "}
                   index.

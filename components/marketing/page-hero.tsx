@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button";
 import { BlurFade } from "@/components/ui/blur-fade";
 import { AnimatedShinyText } from "@/components/ui/animated-shiny-text";
 import { BorderBeam } from "@/components/ui/border-beam";
-import { GridPattern } from "@/components/ui/grid-pattern";
 import type { PageHeroCopy } from "@/lib/site-copy";
 import type { ReactNode } from "react";
 
@@ -19,7 +18,7 @@ type PageHeroProps = PageHeroCopy & {
 
 /** Shared glass frame for marketing hero art. Buttons stay solid and are not included. */
 export const heroGlassClass =
-  "hero-glass relative overflow-hidden min-w-0 max-w-full rounded-2xl border border-[#CCE3F5] bg-white/95 shadow-[0_20px_60px_-15px_rgba(3,45,96,0.12)] backdrop-blur-xl";
+  "hero-glass relative overflow-hidden min-w-0 max-w-full rounded-2xl border border-[#CBE5FA] bg-white shadow-[0_20px_60px_-15px_rgba(0,111,232,0.12)]";
 
 function HeroBackdrop({ ice }: { ice?: boolean }) {
   return (
@@ -27,23 +26,9 @@ function HeroBackdrop({ ice }: { ice?: boolean }) {
       <div
         className={`absolute inset-0 ${
           ice
-            ? "bg-[radial-gradient(ellipse_80%_60%_at_50%_-15%,rgba(0,111,232,0.12),transparent_70%)]"
-            : "bg-[radial-gradient(ellipse_75%_55%_at_50%_-10%,rgba(0,111,232,0.09),transparent_70%)]"
+            ? "bg-[radial-gradient(ellipse_85%_65%_at_50%_-15%,rgba(0,111,232,0.14),transparent_72%)]"
+            : "bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(0,111,232,0.10),transparent_70%)]"
         }`}
-      />
-      <GridPattern
-        width={44}
-        height={44}
-        x={-1}
-        y={-1}
-        squares={[
-          [3, 2],
-          [7, 1],
-          [12, 3],
-          [16, 2],
-          [21, 4],
-        ]}
-        className="opacity-85"
       />
     </div>
   );
@@ -63,7 +48,7 @@ export function PageHero({
   const ice = tone === "ice";
 
   return (
-    <section className="relative overflow-x-clip border-b border-[#D6E8F8] bg-gradient-to-b from-[#F4F9FE] via-[#FAFCFF] to-white pt-[96px] pb-14 sm:pb-16 lg:pt-[112px] lg:pb-20">
+    <section className="relative overflow-x-clip border-b border-[#D6E8F8] bg-gradient-to-b from-[#EBF7FF] via-[#F4FAFF] to-white pt-[96px] pb-14 sm:pb-16 lg:pt-[112px] lg:pb-20">
       <HeroBackdrop ice={ice} />
       <div className="relative mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-12">
         <div
@@ -76,7 +61,7 @@ export function PageHero({
           <div className="min-w-0 text-left">
             {badge ? (
               <BlurFade delay={0.02} inView>
-                <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#BCD9F5] bg-white/90 px-3.5 py-1 text-[11px] font-bold uppercase tracking-[0.08em] text-[#006FE8] shadow-2xs backdrop-blur-md">
+                <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#CBE5FA] bg-[#F0F8FF] px-3.5 py-1 text-[11px] font-bold uppercase tracking-[0.08em] text-[#006FE8] shadow-2xs">
                   <span className="h-1.5 w-1.5 rounded-full bg-[#006FE8]" />
                   <AnimatedShinyText shimmerWidth={120}>{badge}</AnimatedShinyText>
                 </p>

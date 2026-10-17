@@ -8,7 +8,7 @@ export function ProofCard({ card, index }: { card: ProofCardCopy; index: number 
   return (
     <BlurFade delay={index * 0.05} inView className="h-full">
       <MagicCard className="h-full" innerClassName="p-6">
-        <p className="inline-flex w-fit items-center rounded-full border border-[#D5E5F5] bg-[#F4F9FE] px-2.5 py-0.5 font-mono text-[10px] font-bold uppercase tracking-[0.08em] text-[#006FE8]">
+        <p className="inline-flex w-fit items-center rounded-full border border-[#BBDDF8] bg-[#F0F8FF] px-2.5 py-0.5 font-mono text-[10px] font-bold uppercase tracking-[0.08em] text-[#006FE8]">
           Demonstration
         </p>
         {card.metric && (

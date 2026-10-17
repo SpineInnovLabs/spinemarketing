@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { STARTER_PRICING } from "@/lib/pricing";
-import { GridPattern } from "@/components/ui/grid-pattern";
 import { AnimatedShinyText } from "@/components/ui/animated-shiny-text";
 import { MagicCard } from "@/components/ui/magic-card";
 import { BlurFade } from "@/components/ui/blur-fade";
@@ -29,22 +28,10 @@ const workflow = [
 export function SpineWorkspaceDetails() {
   return (
     <div className="innovtech-page">
-      <section className="innovtech-product innovtech-product-overview relative overflow-hidden" aria-labelledby="product-title">
-        <GridPattern
-          width={44}
-          height={44}
-          x={-1}
-          y={-1}
-          squares={[
-            [3, 1],
-            [8, 3],
-            [14, 2],
-            [19, 4],
-          ]}
-          className="opacity-80"
-        />
+      <section className="innovtech-product innovtech-product-overview relative overflow-hidden bg-gradient-to-b from-[#EBF7FF] via-[#F0F8FF] to-white" aria-labelledby="product-title">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-15%,rgba(0,111,232,0.12),transparent_70%)]" aria-hidden />
         <div className="innovtech-product-copy relative z-10">
-          <p className="innovtech-eyebrow inline-flex items-center gap-2 rounded-full border border-[#BCD9F5] bg-white/90 px-3.5 py-1 shadow-2xs backdrop-blur-md">
+          <p className="innovtech-eyebrow inline-flex items-center gap-2 rounded-full border border-[#CBE5FA] bg-white px-3.5 py-1 shadow-2xs">
             <span className="h-1.5 w-1.5 rounded-full bg-[#006FE8]" />
             <AnimatedShinyText shimmerWidth={140}>SPINEWORKSPACE · YOUR TEAM AND AI, IN CONTEXT</AnimatedShinyText>
           </p>

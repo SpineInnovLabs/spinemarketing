@@ -2,7 +2,6 @@ import Link from "next/link";
 import { ArrowRight, Database, Layers3, PanelsTopLeft } from "lucide-react";
 import { MagicCard } from "@/components/ui/magic-card";
 import { BlurFade } from "@/components/ui/blur-fade";
-import { DotPattern } from "@/components/ui/dot-pattern";
 
 const benefits = [
   {
@@ -45,7 +44,7 @@ export function WorkspaceBenefits({ detailed = false }: { detailed?: boolean }) 
       className="scroll-mt-24 bg-white py-16 text-[#082B5E] sm:py-20"
     >
       <div id={detailed ? "features" : "why-spineworkspace"} className="mx-auto max-w-[1320px] scroll-mt-24 px-5 sm:px-8 lg:px-12">
-        <p className="inline-flex items-center gap-2 rounded-full border border-[#CCE3F5] bg-[#EAF5FC] px-3 py-0.5 text-[11px] font-semibold uppercase tracking-[.2em] text-[#006FE8]">
+        <p className="inline-flex items-center gap-2 rounded-full border border-[#CBE5FA] bg-[#F0F8FF] px-3 py-0.5 text-[11px] font-semibold uppercase tracking-[.2em] text-[#006FE8]">
           <span className="h-1.5 w-1.5 rounded-full bg-[#006FE8]" />
           What you get
         </p>
@@ -60,7 +59,7 @@ export function WorkspaceBenefits({ detailed = false }: { detailed?: boolean }) 
             <BlurFade key={title} delay={index * 0.06} inView className="h-full">
               <MagicCard className="h-full" innerClassName="justify-between p-6 sm:p-7">
                 <div>
-                  <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-[#CCE3F5] bg-[#F0F8FF] text-[#006FE8] shadow-2xs">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-xl border border-[#CBE5FA] bg-[#F0F8FF] text-[#006FE8] shadow-2xs">
                     <Icon className="h-5 w-5" aria-hidden />
                   </span>
                   <h3 className="mt-5 text-[length:var(--marketing-card-size)] font-semibold leading-[1.4] tracking-[-.025em]">{title}</h3>
@@ -81,10 +80,9 @@ export function WorkspaceBenefits({ detailed = false }: { detailed?: boolean }) 
 
 export function WorkspaceSolutions() {
   return (
-    <section id="solutions" aria-labelledby="workspace-solutions-title" className="relative scroll-mt-24 overflow-hidden bg-[#F4F9FE] py-16 text-[#082B5E] sm:py-20">
-      <DotPattern className="opacity-45" />
+    <section id="solutions" aria-labelledby="workspace-solutions-title" className="relative scroll-mt-24 overflow-hidden border-t border-[#D6E8F8] bg-[#EBF7FF] py-16 text-[#082B5E] sm:py-20">
       <div className="relative z-10 mx-auto max-w-[1320px] px-5 sm:px-8 lg:px-12">
-        <p className="inline-flex items-center gap-2 rounded-full border border-[#CCE3F5] bg-white px-3 py-0.5 text-[11px] font-semibold uppercase tracking-[.2em] text-[#006FE8]">
+        <p className="inline-flex items-center gap-2 rounded-full border border-[#CBE5FA] bg-white px-3 py-0.5 text-[11px] font-semibold uppercase tracking-[.2em] text-[#006FE8]">
           <span className="h-1.5 w-1.5 rounded-full bg-[#006FE8]" />
           Solutions for your team
         </p>

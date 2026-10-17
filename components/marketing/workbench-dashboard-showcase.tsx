@@ -1,37 +1,42 @@
 "use client";
 
 import { useEffect, useId, useRef, useState } from "react";
-import { Maximize2, X } from "lucide-react";
+import { ChevronLeft, ChevronRight, Maximize2, X } from "lucide-react";
 import mediaStyles from "./responsive-media.module.css";
 import { WorkbenchCapturePreview, type CaptureFrame } from "./workbench-capture-preview";
 
 const dashboardViews = [
   {
     id: "overview",
+    step: "01",
     label: "Operational dashboard",
     title: "Daily work, in one dashboard.",
     detail: "Review Customer Service & Support records, KPIs and items needing attention. Search, filter and inspect without leaving the Workbench.",
   },
   {
     id: "editing",
+    step: "02",
     label: "Edit a local draft",
     title: "Edit the draft. Keep the context.",
     detail: "Update a local draft’s title and notes beside its owner, date and status. Connected source records stay under the authorized workflow.",
   },
   {
     id: "draft",
+    step: "03",
     label: "Create a draft",
     title: "Capture the next item.",
     detail: "Create a local draft with a title, owner and date. Update working status; approvals and execution follow the governed action path.",
   },
   {
     id: "filter",
+    step: "04",
     label: "Search and filter",
     title: "Find the work that needs attention.",
     detail: "Search records and filter by status while the dashboard stays in place.",
   },
   {
     id: "workbench",
+    step: "05",
     label: "Workbench shell",
     title: "The role-based operating shell.",
     detail: "The Account Success shell keeps records, Inspect and Ask Twin together. Metrics without a source binding remain unbound.",
@@ -54,7 +59,8 @@ export function WorkbenchDashboardShowcase() {
   const [actualSize, setActualSize] = useState(false);
   const dialogRef = useRef<HTMLDialogElement>(null);
   const titleId = useId();
-  const view = dashboardViews.find((item) => item.id === active) ?? dashboardViews[0];
+  const activeIndex = Math.max(0, dashboardViews.findIndex((item) => item.id === active));
+  const view = dashboardViews[activeIndex] ?? dashboardViews[0];
   const isNativeShell = view.id === "workbench";
   const imagePath = isNativeShell
     ? "/images/workbench/native-shell/workbench-20261015.webp"
@@ -62,6 +68,11 @@ export function WorkbenchDashboardShowcase() {
   const imageAlt = isNativeShell
     ? "Captured native SpineWorkspace Account Success Workbench shell with unbound KPI values, two QA records, Inspect and Ask Twin controls, and the complete blue sidebar."
     : `Captured SpineWorkspace Customer Service & Support dashboard: ${view.label}, with the real operational dashboard controls and native blue sidebar.`;
+
+  const stepDashboardView = (delta: number) => {
+    const nextIndex = (activeIndex + delta + dashboardViews.length) % dashboardViews.length;
+    setActive(dashboardViews[nextIndex].id);
+  };
 
   useEffect(() => {
     if (!expanded) return;
@@ -85,29 +96,57 @@ export function WorkbenchDashboardShowcase() {
 
   return (
     <div className="mt-8 scroll-mt-24" id="workbench-dashboards">
-      <div className="overflow-hidden rounded-2xl border border-[#CCE3F5] bg-white">
-        <div className="border-b border-[#E2EEF8] bg-[#F7FAFD] p-4 sm:p-5">
+      <div className="overflow-hidden rounded-2xl border border-[#CBE5FA] bg-white shadow-[0_14px_40px_rgba(0,111,232,0.06)]">
+        <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#D6E8F8] bg-[#F0F8FF] p-4 sm:p-5">
           <div className="flex flex-wrap gap-2" role="group" aria-label="Dashboard view selection">
-            {dashboardViews.map(({ id, label }) => (
+            {dashboardViews.map(({ id, step, label }) => (
               <button
                 key={id}
                 type="button"
                 aria-pressed={active === id}
                 onClick={() => setActive(id)}
-                className={`${choiceStyle} ${active === id ? "bg-[#006FE8] text-white" : "text-[#315775] hover:bg-[#E2EEF8]"}`}
+                className={`${choiceStyle} inline-flex items-center gap-2 transition-all ${active === id ? "bg-[#006FE8] text-white shadow-xs" : "border border-[#CBE5FA] bg-white text-[#315775] hover:bg-[#EBF7FF]"}`}
               >
+                <span className={`rounded px-1.5 py-0.5 font-mono text-[11px] font-bold ${active === id ? "bg-white/20 text-white" : "bg-[#EBF7FF] text-[#006FE8]"}`}>
+                  {step}
+                </span>
                 {label}
               </button>
             ))}
           </div>
+          <div className="flex items-center gap-1.5">
+            <span className="mr-1 rounded-full border border-[#BBDDF8] bg-white px-2.5 py-1 font-mono text-[11px] font-semibold text-[#006FE8]">
+              Frame {view.step} / 05
+            </span>
+            <button
+              type="button"
+              onClick={() => stepDashboardView(-1)}
+              aria-label="Previous dashboard frame"
+              className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-[#CBE5FA] bg-white text-[#082B5E] transition-colors hover:bg-[#EBF7FF] hover:text-[#006FE8]"
+            >
+              <ChevronLeft className="h-4 w-4" aria-hidden />
+            </button>
+            <button
+              type="button"
+              onClick={() => stepDashboardView(1)}
+              aria-label="Next dashboard frame"
+              className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-[#CBE5FA] bg-white text-[#082B5E] transition-colors hover:bg-[#EBF7FF] hover:text-[#006FE8]"
+            >
+              <ChevronRight className="h-4 w-4" aria-hidden />
+            </button>
+          </div>
         </div>
         <figure>
-          <figcaption className="flex flex-wrap items-start justify-between gap-4 border-b border-[#E2EEF8] px-5 py-4">
+          <figcaption className="flex flex-wrap items-start justify-between gap-4 border-b border-[#D6E8F8] bg-white px-5 py-4">
             <div className="min-w-0 flex-1 basis-64" aria-live="polite" aria-atomic="true">
-              <h3 className="text-[length:var(--marketing-card-size)] font-semibold leading-snug">{view.title}</h3>
+              <div className="mb-1 flex items-center gap-2 text-xs font-semibold text-[#006FE8]">
+                <span className="rounded bg-[#EBF7FF] px-2 py-0.5 font-mono">Storyboard {view.step}</span>
+                <span>{view.label}</span>
+              </div>
+              <h3 className="text-[length:var(--marketing-card-size)] font-semibold leading-snug text-[#082B5E]">{view.title}</h3>
               <p className="mt-2 text-sm leading-6 text-[#4E607A]">{view.detail}</p>
             </div>
-            <button type="button" onClick={openCapture} className={`${choiceStyle} inline-flex items-center gap-2 border border-[#CCE3F5] text-[#005CBF] hover:bg-[#EBF5FF]`}>
+            <button type="button" onClick={openCapture} className={`${choiceStyle} inline-flex items-center gap-2 border border-[#CBE5FA] bg-[#F0F8FF] text-[#006FE8] hover:bg-[#EBF7FF]`}>
               <Maximize2 className="h-4 w-4" aria-hidden />Enlarge dashboard
             </button>
           </figcaption>
@@ -115,7 +154,7 @@ export function WorkbenchDashboardShowcase() {
             type="button"
             onClick={openCapture}
             aria-label={`Enlarge ${view.label} dashboard capture`}
-            className="block w-full cursor-zoom-in bg-[#F7FAFD] text-left focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-[#006FE8]"
+            className="block w-full cursor-zoom-in bg-[#F0F8FF] text-left focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-[#006FE8]"
           >
             <WorkbenchCapturePreview
               src={imagePath}

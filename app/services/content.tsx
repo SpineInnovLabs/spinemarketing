@@ -50,7 +50,7 @@ export function ServicesContent() {
           </Link>
         </div>
       </section>
-      <section className="bg-[#F7F9FC] px-5 py-24 sm:px-8 lg:py-32">
+      <section className="bg-[#F0F8FF] px-5 py-24 sm:px-8 lg:py-32">
         <div className="mx-auto max-w-[1220px]">
           <p className="text-xs font-semibold uppercase tracking-[.21em] text-[#2360BC]">What we focus on</p>
           <h2 className="mt-6 max-w-[850px] text-[length:min(clamp(2.5rem,4.7vw,4.6rem),var(--marketing-heading-size))] font-semibold leading-[1.13] tracking-[-.055em] text-[#10294D]">Architecture, collaboration and governed execution.</h2>
