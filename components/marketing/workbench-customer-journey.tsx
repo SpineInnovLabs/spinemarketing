@@ -25,7 +25,7 @@ const stages: readonly {
     evidence: "E2E-01–05, E2E-17",
     captureSrc: "/images/workbench/native-shell/workbench-20261015.webp",
     captureCaption: "Stage 01 · Authorized Account Success Workbench shell & role entry",
-    desktopFrame: [0, 0, 1600, 900],
+    desktopFrame: [0, 0, 1480, 820],
     mobileFrame: [300, 145, 920, 790],
   },
   {
@@ -36,7 +36,7 @@ const stages: readonly {
     evidence: "E2E-06–07",
     captureSrc: "/images/workbench/native-shell/navigation-platform-20261015.webp",
     captureCaption: "Stage 02 · Platform Ecosystem, Spine & Runtime capability bindings",
-    desktopFrame: [0, 0, 1600, 900],
+    desktopFrame: [0, 120, 960, 720],
     mobileFrame: [0, 435, 360, 645],
   },
   {
@@ -47,7 +47,7 @@ const stages: readonly {
     evidence: "E2E-08–10",
     captureSrc: "/images/workbench/editable-dashboard/draft-20261015.webp",
     captureCaption: "Stage 03 · Capturing a structured renewal work item in the dashboard",
-    desktopFrame: [0, 0, 1600, 900],
+    desktopFrame: [420, 210, 760, 560],
     mobileFrame: [560, 300, 480, 510],
   },
   {
@@ -58,7 +58,7 @@ const stages: readonly {
     evidence: "E2E-11–12",
     captureSrc: "/images/workbench/native-shell/document-20261015.webp",
     captureCaption: "Stage 04 · Twin renewal proposal beside human review authority in Canvas",
-    desktopFrame: [0, 0, 1600, 900],
+    desktopFrame: [270, 520, 1260, 520],
     mobileFrame: [480, 330, 880, 735],
   },
   {
@@ -69,7 +69,7 @@ const stages: readonly {
     evidence: "E2E-13–14",
     captureSrc: "/images/workbench/editable-dashboard/editing-20261015.webp",
     captureCaption: "Stage 05 · Status, owner and outcome reconciliation in the operational view",
-    desktopFrame: [0, 0, 1600, 970],
+    desktopFrame: [265, 250, 1275, 665],
     mobileFrame: [315, 315, 860, 630],
   },
   {
@@ -80,7 +80,7 @@ const stages: readonly {
     evidence: "E2E-15–18",
     captureSrc: "/images/workbench/native-shell/graph-20261015.webp",
     captureCaption: "Stage 06 · Persisted work item, decision and context graph across hosts",
-    desktopFrame: [0, 0, 1600, 900],
+    desktopFrame: [275, 310, 1250, 680],
     mobileFrame: [485, 420, 875, 610],
   },
 ] as const;

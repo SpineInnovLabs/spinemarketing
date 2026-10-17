@@ -26,6 +26,25 @@ const sidebarSections = [
 
 const choiceStyle = "min-h-11 rounded-lg px-3 py-2 text-sm font-medium focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#006FE8]";
 
+const desktopFrames: Record<(typeof views)[number]["id"], CaptureFrame> = {
+  document: [0, 0, 1600, 960],
+  database: [275, 200, 1250, 520],
+  graph: [275, 310, 1250, 680],
+  blocks: [275, 300, 1250, 620],
+  library: [250, 110, 1280, 540],
+  sidebar: [0, 0, 520, 980],
+};
+
+const sidebarDesktopFrames: Record<(typeof sidebarSections)[number]["id"], CaptureFrame> = {
+  overview: [0, 0, 520, 980],
+  "my-work": [0, 120, 520, 680],
+  communications: [0, 220, 520, 520],
+  personal: [0, 270, 520, 520],
+  work: [0, 320, 520, 760],
+  platform: [0, 380, 520, 720],
+  administration: [0, 420, 520, 680],
+};
+
 const mobileFrames: Record<(typeof views)[number]["id"], CaptureFrame> = {
   document: [480, 330, 880, 735],
   database: [480, 330, 880, 420],
@@ -146,7 +165,7 @@ export function WorkbenchCanvasShowcase() {
             </button>
           </figcaption>
           <button type="button" onClick={() => { setActualSize(false); setExpanded(true); }} aria-label={`Enlarge ${imageLabel} application capture`} className="block w-full cursor-zoom-in bg-[#F0F8FF] text-left focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-[#006FE8]">
-            <WorkbenchCapturePreview src={imagePath} alt={`Captured SpineWorkspace frontend: ${imageLabel}. Enlarge to inspect the complete application shell and QA account menu.`} height={imageHeight} desktop={active === "database" ? [0, 0, 1600, 760] : undefined} mobile={active === "sidebar" ? sidebarFrames[sidebar] : mobileFrames[active]} />
+            <WorkbenchCapturePreview src={imagePath} alt={`Captured SpineWorkspace frontend: ${imageLabel}. Enlarge to inspect the complete application shell and QA account menu.`} height={imageHeight} desktop={active === "sidebar" ? sidebarDesktopFrames[sidebar] : desktopFrames[active]} mobile={active === "sidebar" ? sidebarFrames[sidebar] : mobileFrames[active]} />
           </button>
         </figure>
       </div>

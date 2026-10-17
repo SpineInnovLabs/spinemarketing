@@ -59,7 +59,7 @@ export function SolutionDomainFeatures({ slug }: { slug: string }) {
           <p className="mt-4 max-w-3xl text-sm leading-relaxed text-[#4E607A]">These feature patterns use connected, permitted information. Supported systems and authorized actions are confirmed for your deployment.</p>
         </div>
       </Section>
-      {workbenchId ? <WorkbenchViewExplorer initialDomain={workbenchId} compact /> : null}
+      {workbenchId ? <WorkbenchViewExplorer initialDomain={workbenchId} compact defaultTab="screenshot" /> : null}
       <Section id="domain-workflow" className="scroll-mt-24">
         <SectionHeader align="left" label="Example workflow" headline={`${domain.name}: a decision with its context.`} />
         <ol className="mt-10 grid gap-5 lg:grid-cols-3">

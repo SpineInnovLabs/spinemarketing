@@ -73,9 +73,11 @@ const DOMAIN_TO_SOLUTION_PATH: Record<string, string> = {
 export function WorkbenchViewExplorer({
   initialDomain = DEFAULT_DOMAIN,
   compact = false,
+  defaultTab = "dashboard",
 }: {
   initialDomain?: string;
   compact?: boolean;
+  defaultTab?: ExplorerTab;
 }) {
   const id = useId();
   const [selected, setSelected] = useState(
@@ -83,7 +85,7 @@ export function WorkbenchViewExplorer({
       ? initialDomain
       : DEFAULT_DOMAIN
   );
-  const [activeTab, setActiveTab] = useState<ExplorerTab>("dashboard");
+  const [activeTab, setActiveTab] = useState<ExplorerTab>(defaultTab);
   const [selectedViewKey, setSelectedViewKey] = useState<string>("primary");
   const [isMobileView, setIsMobileView] = useState(false);
   const [showAll, setShowAll] = useState(false);

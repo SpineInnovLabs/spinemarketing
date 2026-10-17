@@ -1,171 +1,410 @@
 "use client";
 
-import { useEffect, useId, useRef, useState } from "react";
-import { ChevronLeft, ChevronRight, Maximize2, X } from "lucide-react";
+import { useState } from "react";
+import Link from "next/link";
+import {
+  ArrowRight,
+  CheckCircle2,
+  ChevronLeft,
+  ChevronRight,
+  Database,
+  FileText,
+  GitBranch,
+  LayoutDashboard,
+  Layers,
+  Lock,
+  Play,
+  ShieldCheck,
+  Sparkles,
+  Users,
+} from "lucide-react";
 import { BorderBeam } from "@/components/ui/border-beam";
-import mediaStyles from "./responsive-media.module.css";
-import { WorkbenchCapturePreview } from "./workbench-capture-preview";
 
-const previews = [
-  { id: "dashboard", step: "01", label: "Dashboard", src: "/images/workbench/editable-dashboard/overview-20261015.webp", title: "Review daily work.", detail: "Records, attention items and local drafts in the operational dashboard.", alt: "Actual Customer Service & Support dashboard with two QA ticket records and the native blue Workbench sidebar." },
-  { id: "canvas", step: "02", label: "Canvas", src: "/images/workbench/native-shell/document-20261015.webp", title: "Work in a connected document.", detail: "Text, tables and Twin assistance together in the Canvas view.", alt: "Actual Canvas components showing a QA renewal document, record table and Twin work session in the complete blue application shell." },
-  { id: "recording", step: "03", label: "Watch 26 seconds", src: "/images/workbench/founderops/cockpit-20261014.webp", title: "Inside the real Workbench shell.", detail: "Play the recorded navigation, operating view and search interactions.", alt: "FounderOps Workbench recording poster with QA records." },
+const storyScenes = [
+  {
+    id: "context",
+    step: "01",
+    label: "Connect Context",
+    badge: "Spine Fabric · Context Layer",
+    title: "Unify records around real business entities.",
+    detail:
+      "Connect CRM accounts, support tickets, contracts and billing records into one permissioned context graph before anyone—or any AI—takes action.",
+    ctaLabel: "Explore Customer Journey",
+    ctaHref: "#workbench-customer-journey",
+  },
+  {
+    id: "views",
+    step: "02",
+    label: "Work in Views",
+    badge: "Workbench · Dashboards + Canvas",
+    title: "Operate in editable dashboards and Canvas.",
+    detail:
+      "Run daily queues, KPIs and local drafts in role-based dashboards, or switch to Canvas for connected documents, live tables and context graphs.",
+    ctaLabel: "Explore Dashboard Bento",
+    ctaHref: "#workbench-dashboards",
+  },
+  {
+    id: "governance",
+    step: "03",
+    label: "Review & Continue",
+    badge: "Spine Twin · Governed Action",
+    title: "AI prepares the next step. Humans approve.",
+    detail:
+      "Ask your AI Twin to summarize risks or draft a follow-up with linked evidence. Consequential writes stay behind your approval gate and carry across hosts.",
+    ctaLabel: "Watch 26s Shell Walkthrough",
+    ctaHref: "#workbench-recording",
+  },
 ] as const;
 
-const control = "min-h-11 rounded-lg px-3 py-2 text-xs font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#006FE8]";
-
 export function WorkbenchHeroPreview() {
-  const id = useId();
-  const [active, setActive] = useState<(typeof previews)[number]["id"]>("dashboard");
-  const [expanded, setExpanded] = useState(false);
-  const [actualSize, setActualSize] = useState(false);
-  const dialogRef = useRef<HTMLDialogElement>(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const activeIndex = previews.findIndex((preview) => preview.id === active);
-  const currentIndex = activeIndex >= 0 ? activeIndex : 0;
-  const view = previews[currentIndex];
-
-  useEffect(() => {
-    const video = videoRef.current;
-    return () => video?.pause();
-  }, [active]);
-
-  useEffect(() => {
-    if (!expanded) return;
-    const dialog = dialogRef.current;
-    if (!dialog) return;
-    const previousFocus = document.activeElement;
-    const previousOverflow = document.body.style.overflow;
-    dialog.showModal();
-    document.body.style.overflow = "hidden";
-    return () => {
-      dialog.close();
-      document.body.style.overflow = previousOverflow;
-      if (previousFocus instanceof HTMLElement) previousFocus.focus();
-    };
-  }, [expanded]);
-
-  const enlarge = () => {
-    setActualSize(false);
-    setExpanded(true);
-  };
+  const [activeIndex, setActiveIndex] = useState(0);
+  const current = storyScenes[activeIndex] ?? storyScenes[0];
 
   const stepScene = (delta: number) => {
-    videoRef.current?.pause();
-    const nextIndex = (currentIndex + delta + previews.length) % previews.length;
-    setActive(previews[nextIndex].id);
+    setActiveIndex((prev) => (prev + delta + storyScenes.length) % storyScenes.length);
   };
 
   return (
-    <figure data-workbench-hero-preview className="m-0 min-w-0 w-full text-[#082B5E]">
-      <div className="relative overflow-hidden rounded-2xl border border-[#CBE5FA] bg-white shadow-[0_22px_70px_rgba(0,111,232,0.12)]">
-        <BorderBeam size={260} duration={14} colorFrom="#006FE8" colorTo="#38BDF8" />
-        {/* Storyboard Scene Bar */}
-        <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[#D6E8F8] bg-[#F0F8FF] px-3 py-2.5">
-          <div role="group" aria-label="Product preview selection" className="flex flex-wrap gap-1.5">
-            {previews.map(({ id: key, step, label }) => (
+    <div
+      aria-label="SpineWorkspace visual architecture storyboard"
+      className="relative overflow-hidden rounded-2xl border border-[#BBDDF8] bg-white shadow-[0_20px_60px_rgba(0,111,232,0.10)]"
+    >
+      <BorderBeam size={260} duration={14} colorFrom="#006FE8" colorTo="#38BDF8" />
+
+      {/* Top Storyboard Navigation Bar */}
+      <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[#D6E8F8] bg-[#F0F8FF] px-3.5 py-2.5 sm:px-4">
+        <div className="flex flex-wrap gap-1.5" role="tablist" aria-label="Hero visual storyboard scenes">
+          {storyScenes.map(({ id, step, label }, idx) => {
+            const isActive = idx === activeIndex;
+            return (
               <button
-                key={key}
+                key={id}
                 type="button"
-                aria-pressed={active === key}
-                onClick={() => {
-                  videoRef.current?.pause();
-                  setActive(key);
-                }}
-                className={`${control} inline-flex items-center gap-1.5 ${
-                  active === key
-                    ? "bg-[#006FE8] text-white shadow-2xs"
+                role="tab"
+                aria-selected={isActive}
+                onClick={() => setActiveIndex(idx)}
+                className={`inline-flex min-h-9 items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-semibold transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#006FE8] ${
+                  isActive
+                    ? "bg-[#006FE8] text-white shadow-xs"
                     : "border border-[#CBE5FA] bg-white text-[#082B5E] hover:bg-[#EBF7FF]"
                 }`}
               >
-                <span className={`font-mono text-[10px] font-bold ${active === key ? "text-[#CBE5FA]" : "text-[#006FE8]"}`}>
+                <span
+                  className={`rounded px-1.5 py-0.5 font-mono text-[10px] font-bold ${
+                    isActive ? "bg-white/20 text-white" : "bg-[#EBF7FF] text-[#006FE8]"
+                  }`}
+                >
                   {step}
                 </span>
-                <span>{label}</span>
+                {label}
               </button>
-            ))}
-          </div>
-          <div className="flex items-center gap-1.5">
-            <span className="rounded-full border border-[#CBE5FA] bg-white px-2.5 py-1 text-[10px] font-semibold text-[#006FE8]">
-              Live Workbench Views
-            </span>
-            <div className="inline-flex items-center rounded-lg border border-[#CBE5FA] bg-white p-0.5">
-              <button
-                type="button"
-                onClick={() => stepScene(-1)}
-                aria-label="Previous storyboard scene"
-                className="inline-flex h-7 w-7 items-center justify-center rounded-md text-[#082B5E] transition-colors hover:bg-[#EBF7FF] hover:text-[#006FE8]"
-              >
-                <ChevronLeft className="h-3.5 w-3.5" aria-hidden />
-              </button>
-              <span className="px-1.5 font-mono text-[10px] font-bold text-[#006FE8]">
-                {view.step}/03
-              </span>
-              <button
-                type="button"
-                onClick={() => stepScene(1)}
-                aria-label="Next storyboard scene"
-                className="inline-flex h-7 w-7 items-center justify-center rounded-md text-[#082B5E] transition-colors hover:bg-[#EBF7FF] hover:text-[#006FE8]"
-              >
-                <ChevronRight className="h-3.5 w-3.5" aria-hidden />
-              </button>
-            </div>
-          </div>
+            );
+          })}
         </div>
 
-        {/* Authentic Workbench Frame */}
-        {active === "recording" ? (
-          <div className={`${mediaStyles.frame} bg-white`} style={{ padding: 8 }}>
-            <video ref={videoRef} controls playsInline preload="none" width={1440} height={900} poster={view.src} aria-label="Hero recorded Workbench shell walkthrough" aria-describedby={`${id}-provenance`} className={`${mediaStyles.media} bg-white`}>
-              <source src="/videos/workbench/workbench-shell-20261014.mp4" type="video/mp4" />
-              <track kind="captions" src="/videos/workbench/workbench-shell-20261014.vtt" srcLang="en" label="English scene descriptions" default />
-              <a href="/videos/workbench/workbench-shell-20261014.mp4">Download the shell recording</a>
-            </video>
-          </div>
-        ) : (
-          <button type="button" onClick={enlarge} aria-label={`Enlarge ${view.label.toLowerCase()} product preview`} className="block w-full cursor-zoom-in bg-white focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-[#006FE8]">
-            <WorkbenchCapturePreview src={view.src} alt={view.alt} desktop={active === "dashboard" ? [0, 0, 1600, 820] : undefined} mobile={active === "dashboard" ? [300, 185, 720, 610] : [480, 330, 880, 735]} eager />
+        <div className="flex items-center gap-1.5">
+          <span className="hidden font-mono text-[11px] font-semibold text-[#006FE8] sm:inline">
+            Story {current.step}/03
+          </span>
+          <button
+            type="button"
+            onClick={() => stepScene(-1)}
+            aria-label="Previous storyboard scene"
+            className="inline-flex h-8 w-8 items-center justify-center rounded-lg border border-[#CBE5FA] bg-white text-[#082B5E] transition-colors hover:bg-[#EBF7FF] hover:text-[#006FE8]"
+          >
+            <ChevronLeft className="h-4 w-4" aria-hidden />
           </button>
-        )}
-
-        {/* Storyboard Scene Narrative Footer */}
-        <div className="flex flex-wrap items-center justify-between gap-2 border-t border-[#D6E8F8] bg-[#F0F8FF] px-4 py-3">
-          <div className="min-w-0 flex-1 basis-48 text-xs leading-6" aria-live="polite" aria-atomic="true">
-            <span className="mr-2 inline-flex items-center rounded-md border border-[#CBE5FA] bg-white px-1.5 py-0.5 font-mono text-[10px] font-bold uppercase text-[#006FE8]">
-              Scene {view.step}
-            </span>
-            <strong className="text-sm text-[#082B5E]">{view.title}</strong>{" "}
-            <span className="text-[#4E607A]">{view.detail}</span>
-          </div>
-          {active !== "recording" && (
-            <button type="button" onClick={enlarge} className={`${control} inline-flex items-center gap-1.5 border border-[#CBE5FA] bg-white text-[#006FE8] hover:bg-[#EBF7FF]`}>
-              <Maximize2 className="h-3.5 w-3.5" aria-hidden />Enlarge
-            </button>
-          )}
+          <button
+            type="button"
+            onClick={() => stepScene(1)}
+            aria-label="Next storyboard scene"
+            className="inline-flex h-8 w-8 items-center justify-center rounded-lg border border-[#CBE5FA] bg-white text-[#082B5E] transition-colors hover:bg-[#EBF7FF] hover:text-[#006FE8]"
+          >
+            <ChevronRight className="h-4 w-4" aria-hidden />
+          </button>
         </div>
       </div>
-      <figcaption id={`${id}-provenance`} className="mt-3 text-xs leading-6 text-[#4E607A]">Actual application UI with QA fixtures. Figures and host badges are not verified live customer telemetry or connection proof.</figcaption>
-      <details className="mt-1 text-xs leading-6 text-[#4E607A]">
-        <summary className="w-fit cursor-pointer rounded-sm font-medium text-[#006FE8] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#006FE8]">Capture notes</summary>
-        <p className="mt-2">Dashboard captures include the documented local draft/status repair. Canvas uses native components composed with QA record inputs; saved layouts are not demonstrated. The recording shows real shell interactions. None establishes completed provider actions. Full source and test boundaries appear in the Workbench explorer and product evidence page.</p>
-      </details>
-      {expanded && (
-        <dialog ref={dialogRef} aria-labelledby={`${id}-title`} onClose={() => setExpanded(false)} onClick={(event) => { if (event.target === event.currentTarget) dialogRef.current?.close(); }} className="fixed inset-0 z-50 m-0 h-dvh max-h-none w-screen max-w-none bg-[#082B5E]/85 p-2 backdrop-blur-sm sm:p-5">
-          <div className="mx-auto flex h-full max-w-[1700px] flex-col overflow-hidden rounded-xl bg-white">
-            <div className="flex shrink-0 flex-wrap items-center justify-between gap-2 border-b border-[#D6E8F8] bg-[#F0F8FF] px-3 py-2 sm:px-5">
-              <h2 id={`${id}-title`} className="text-sm font-semibold text-[#082B5E]">Live Workbench Views · {view.label}</h2>
-              <div className="flex items-center gap-1">
-                <button type="button" aria-pressed={actualSize} onClick={() => setActualSize((value) => !value)} className={`${control} border border-[#CBE5FA] bg-white text-[#006FE8]`}>{actualSize ? "Fit to screen" : "Actual size"}</button>
-                <button type="button" onClick={() => dialogRef.current?.close()} aria-label="Close product preview" className={`${control} inline-flex min-w-11 items-center justify-center`}><X className="h-5 w-5" aria-hidden /></button>
+
+      {/* Interactive Architectural Visual Story Canvas (No Screenshots) */}
+      <div className="bg-gradient-to-b from-[#F4FAFF] via-[#F0F8FF] to-white p-4 sm:p-6">
+        {/* Scene Header Pill */}
+        <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
+          <span className="inline-flex items-center gap-2 rounded-full border border-[#BBDDF8] bg-white px-3 py-1 text-[11px] font-semibold text-[#006FE8] shadow-2xs">
+            <span className="h-2 w-2 rounded-full bg-[#006FE8]" />
+            {current.badge}
+          </span>
+          <span className="font-mono text-[11px] font-medium text-[#4E607A]">
+            Interactive System Storyboard
+          </span>
+        </div>
+
+        {/* SCENE 01: CONNECT CONTEXT (SPINE FABRIC VISUAL DIAGRAM) */}
+        {current.id === "context" && (
+          <div className="grid gap-3.5 sm:grid-cols-12">
+            {/* Left Column: Connected Source Systems */}
+            <div className="flex flex-col justify-between gap-2.5 sm:col-span-4">
+              <p className="text-[10px] font-bold uppercase tracking-wider text-[#006FE8]">
+                1. Permitted Sources
+              </p>
+              {[
+                { icon: Users, name: "CRM & Accounts", meta: "Deals · Contacts · Stages" },
+                { icon: Layers, name: "Service & Support", meta: "Tickets · SLA · Escalations" },
+                { icon: FileText, name: "Contracts & Docs", meta: "MSA · Clauses · Renewals" },
+                { icon: Database, name: "Finance & Billing", meta: "Invoices · ARR · Terms" },
+              ].map(({ icon: Icon, name, meta }) => (
+                <div
+                  key={name}
+                  className="flex items-center gap-2.5 rounded-xl border border-[#CBE5FA] bg-white p-2.5 shadow-2xs"
+                >
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#EBF7FF] text-[#006FE8]">
+                    <Icon className="h-4 w-4" aria-hidden />
+                  </span>
+                  <div className="min-w-0">
+                    <p className="truncate text-xs font-semibold text-[#082B5E]">{name}</p>
+                    <p className="truncate text-[10px] text-[#577592]">{meta}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Center/Right Column: Unified Entity Context Graph */}
+            <div className="flex flex-col justify-between rounded-xl border border-[#96C7F2] bg-white p-4 shadow-xs sm:col-span-8">
+              <div>
+                <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[#E6F2FC] pb-3">
+                  <div>
+                    <p className="text-[10px] font-bold uppercase tracking-wider text-[#006FE8]">
+                      2. Unified Entity Context · Spine Fabric
+                    </p>
+                    <h3 className="mt-0.5 text-sm font-bold text-[#082B5E]">
+                      Anchor Entity: Acme Corporation
+                    </h3>
+                  </div>
+                  <span className="rounded-full border border-[#BBDDF8] bg-[#EBF7FF] px-2.5 py-0.5 font-mono text-[10px] font-semibold text-[#006FE8]">
+                    spine.account:acme
+                  </span>
+                </div>
+
+                {/* Connected Nodes */}
+                <div className="mt-3.5 grid gap-2.5 sm:grid-cols-2">
+                  <div className="rounded-xl border border-[#D6E8F8] bg-[#F0F8FF] p-3">
+                    <div className="flex items-center justify-between text-[10px] font-semibold text-[#006FE8]">
+                      <span>COMMERCIAL RECORD</span>
+                      <span className="rounded bg-white px-1.5 py-0.5 font-mono">Negotiation</span>
+                    </div>
+                    <p className="mt-1 text-xs font-bold text-[#082B5E]">Acme Renewal Contract</p>
+                    <p className="mt-0.5 text-[11px] text-[#4E607A]">
+                      Linked to Clause 14.2 &amp; Expansion License
+                    </p>
+                  </div>
+
+                  <div className="rounded-xl border border-[#D6E8F8] bg-[#F0F8FF] p-3">
+                    <div className="flex items-center justify-between text-[10px] font-semibold text-[#006FE8]">
+                      <span>OPERATIONAL SIGNAL</span>
+                      <span className="rounded bg-white px-1.5 py-0.5 font-mono">tkt-501</span>
+                    </div>
+                    <p className="mt-1 text-xs font-bold text-[#082B5E]">SSO Verification Follow-Up</p>
+                    <p className="mt-0.5 text-[11px] text-[#4E607A]">
+                      Support queue context linked to account owner
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Authority & Scope Bar */}
+              <div className="mt-4 flex flex-wrap items-center justify-between gap-2 rounded-lg border border-[#CBE5FA] bg-[#EBF7FF]/70 px-3 py-2 text-[11px] font-medium text-[#082B5E]">
+                <span className="inline-flex items-center gap-1.5">
+                  <Lock className="h-3.5 w-3.5 text-[#006FE8]" aria-hidden />
+                  Source systems remain authoritative
+                </span>
+                <span className="font-mono text-[10px] font-semibold text-[#006FE8]">
+                  Role-scoped access verified
+                </span>
               </div>
             </div>
-            <div tabIndex={0} role="region" aria-label="Scrollable product preview" className={`${actualSize ? "" : mediaStyles.fitRegion} min-h-0 flex-1 overflow-auto bg-[#F0F8FF] p-2 focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-[#006FE8]`}>
-              <img src={view.src} alt={view.alt} width={1600} height={1100} className={actualSize ? "h-auto w-[1600px] max-w-none" : mediaStyles.fitImage} />
-            </div>
-            <p className="shrink-0 border-t border-[#D6E8F8] bg-white px-3 py-2 text-xs leading-5 text-[#4E607A]">QA fixture capture. Capture-specific source and test limits are available in the Workbench view explorer.</p>
           </div>
-        </dialog>
-      )}
-    </figure>
+        )}
+
+        {/* SCENE 02: WORK IN SHARED VIEWS (DASHBOARDS + CANVAS BENTO PREVIEW) */}
+        {current.id === "views" && (
+          <div className="grid gap-3.5 sm:grid-cols-2">
+            {/* Peer 1: Editable Operational Dashboards */}
+            <div className="flex flex-col justify-between rounded-xl border border-[#96C7F2] bg-white p-4 shadow-xs">
+              <div>
+                <div className="flex items-center justify-between">
+                  <span className="inline-flex items-center gap-1.5 rounded-lg bg-[#EBF7FF] px-2.5 py-1 text-[11px] font-bold text-[#006FE8]">
+                    <LayoutDashboard className="h-3.5 w-3.5" aria-hidden />
+                    Operational Dashboards
+                  </span>
+                  <span className="font-mono text-[10px] font-semibold text-[#577592]">
+                    13 Domains
+                  </span>
+                </div>
+                <h3 className="mt-3 text-sm font-bold text-[#082B5E]">
+                  Run daily queues, KPIs &amp; local drafts
+                </h3>
+                <div className="mt-3 grid grid-cols-3 gap-2">
+                  {[
+                    ["Tracked", "Live Queue"],
+                    ["Drafts", "Local Outbox"],
+                    ["Filters", "By Status"],
+                  ].map(([k, v]) => (
+                    <div key={k} className="rounded-lg border border-[#D6E8F8] bg-[#F0F8FF] p-2">
+                      <p className="text-[10px] text-[#577592]">{k}</p>
+                      <p className="mt-0.5 text-xs font-bold text-[#082B5E]">{v}</p>
+                    </div>
+                  ))}
+                </div>
+                <ul className="mt-3 space-y-1.5 text-xs text-[#4E607A]">
+                  <li className="flex items-center gap-2">
+                    <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-[#006FE8]" aria-hidden />
+                    Search, filter and inspect records in place
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-[#006FE8]" aria-hidden />
+                    Create and edit scoped local drafts safely
+                  </li>
+                </ul>
+              </div>
+              <Link
+                href="#workbench-dashboards"
+                className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold text-[#006FE8] hover:underline"
+              >
+                Open Dashboard Bento Grid <ArrowRight className="h-3.5 w-3.5" aria-hidden />
+              </Link>
+            </div>
+
+            {/* Peer 2: Collaborative Canvas */}
+            <div className="flex flex-col justify-between rounded-xl border border-[#96C7F2] bg-white p-4 shadow-xs">
+              <div>
+                <div className="flex items-center justify-between">
+                  <span className="inline-flex items-center gap-1.5 rounded-lg bg-[#EBF7FF] px-2.5 py-1 text-[11px] font-bold text-[#006FE8]">
+                    <GitBranch className="h-3.5 w-3.5" aria-hidden />
+                    Collaborative Canvas
+                  </span>
+                  <span className="font-mono text-[10px] font-semibold text-[#577592]">
+                    10 UI Blocks
+                  </span>
+                </div>
+                <h3 className="mt-3 text-sm font-bold text-[#082B5E]">
+                  Documents, database tables &amp; context graphs
+                </h3>
+                <div className="mt-3 grid grid-cols-3 gap-2">
+                  {[
+                    ["Document", "Rich Context"],
+                    ["Database", "Live Table"],
+                    ["Graph", "Entity Links"],
+                  ].map(([k, v]) => (
+                    <div key={k} className="rounded-lg border border-[#D6E8F8] bg-[#F0F8FF] p-2">
+                      <p className="text-[10px] text-[#577592]">{k}</p>
+                      <p className="mt-0.5 text-xs font-bold text-[#082B5E]">{v}</p>
+                    </div>
+                  ))}
+                </div>
+                <ul className="mt-3 space-y-1.5 text-xs text-[#4E607A]">
+                  <li className="flex items-center gap-2">
+                    <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-[#006FE8]" aria-hidden />
+                    Compose with reusable UI Library blocks
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-[#006FE8]" aria-hidden />
+                    Same records as your operational dashboard
+                  </li>
+                </ul>
+              </div>
+              <Link
+                href="#workbench-canvas"
+                className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold text-[#006FE8] hover:underline"
+              >
+                Explore Canvas Views <ArrowRight className="h-3.5 w-3.5" aria-hidden />
+              </Link>
+            </div>
+          </div>
+        )}
+
+        {/* SCENE 03: GOVERNED AI TWIN & HOST CONTINUITY */}
+        {current.id === "governance" && (
+          <div className="space-y-3.5">
+            <div className="grid gap-3 sm:grid-cols-3">
+              {[
+                {
+                  step: "Step 1",
+                  icon: Sparkles,
+                  title: "Twin Prepares",
+                  body: "Summarizes account signals, risks and agreement clauses into a reviewable draft.",
+                },
+                {
+                  step: "Step 2",
+                  icon: ShieldCheck,
+                  title: "Human Approval Gate",
+                  body: "Team reviews linked evidence and explicitly authorizes any external system change.",
+                },
+                {
+                  step: "Step 3",
+                  icon: Layers,
+                  title: "Host Continuity",
+                  body: "Carry context checkpoints across SpineWorkspace, ChatGPT, Claude and Cursor.",
+                },
+              ].map(({ step, icon: Icon, title, body }) => (
+                <div
+                  key={title}
+                  className="rounded-xl border border-[#CBE5FA] bg-white p-3.5 shadow-2xs"
+                >
+                  <div className="flex items-center justify-between">
+                    <span className="rounded bg-[#EBF7FF] px-2 py-0.5 font-mono text-[10px] font-bold text-[#006FE8]">
+                      {step}
+                    </span>
+                    <Icon className="h-4 w-4 text-[#006FE8]" aria-hidden />
+                  </div>
+                  <h3 className="mt-2.5 text-xs font-bold text-[#082B5E]">{title}</h3>
+                  <p className="mt-1 text-[11px] leading-5 text-[#4E607A]">{body}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-[#96C7F2] bg-white px-4 py-3">
+              <div className="flex items-center gap-2.5">
+                <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#006FE8] text-white">
+                  <Play className="h-4 w-4 fill-current" aria-hidden />
+                </span>
+                <div>
+                  <p className="text-xs font-bold text-[#082B5E]">
+                    Want to see the live shell in motion?
+                  </p>
+                  <p className="text-[11px] text-[#4E607A]">
+                    Watch the 26-second recorded walkthrough of the Workbench shell below.
+                  </p>
+                </div>
+              </div>
+              <Link
+                href="#workbench-recording"
+                className="inline-flex items-center gap-1.5 rounded-lg bg-[#EBF7FF] px-3 py-1.5 text-xs font-semibold text-[#006FE8] hover:bg-[#D6ECFF]"
+              >
+                Jump to recording <ArrowRight className="h-3.5 w-3.5" aria-hidden />
+              </Link>
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* Bottom Storyboard Narrative Bar */}
+      <div
+        className="flex flex-wrap items-center justify-between gap-3 border-t border-[#D6E8F8] bg-white px-4 py-3 text-xs sm:px-5"
+        aria-live="polite"
+      >
+        <p className="min-w-0 flex-1 text-[#355579]">
+          <span className="mr-2 inline-block rounded bg-[#EBF7FF] px-1.5 py-0.5 font-mono text-[10px] font-bold text-[#006FE8]">
+            Scene {current.step}
+          </span>
+          <strong className="font-semibold text-[#082B5E]">{current.title}</strong>{" "}
+          {current.detail}
+        </p>
+        <Link
+          href={current.ctaHref}
+          className="inline-flex shrink-0 items-center gap-1.5 rounded-lg border border-[#CBE5FA] bg-[#F0F8FF] px-3 py-1.5 font-semibold text-[#006FE8] transition-colors hover:bg-[#EBF7FF]"
+        >
+          {current.ctaLabel} <ArrowRight className="h-3.5 w-3.5" aria-hidden />
+        </Link>
+      </div>
+    </div>
   );
 }
